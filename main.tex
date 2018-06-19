@@ -1,0 +1,120 @@
+%!TEX TS-program = luatex
+%!TEX encoding = UTF-8 Unicode
+%times,
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The Legrand Orange Book
+% LaTeX Template
+% Version 2.0 (9/2/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% Important note:
+% Chapter heading images should have a 2:1 width:height ratio,
+% e.g. 920px width and 460px height.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[%fleqn
+,twoside]{bookszabo}
+\usepackage{amsmath}
+\usepackage{anyfontsize}
+\usepackage{amssymb}
+%\usepackage{draftwatermark}
+%\SetWatermarkText{\textsc{Draft Translation}}
+%\SetWatermarkLightness{0.88}
+%\SetWatermarkScale{0.4}
+%\usepackage{setspace}
+%\usepackage{marginfix}
+%\usepackage{tensor}
+%\usepackage{indentfirst}
+%\usepackage{cancel}
+\usepackage{bm}
+
+%\usepackage{draftwatermark}
+%\SetWatermarkText{\textsc{Draft Translation}}
+%\SetWatermarkLightness{0.88}
+%\SetWatermarkScale{0.4}
+%\usepackage{setspace}
+%\usepackage{marginfix}
+%\usepackage{tabularx}
+
+
+\newcounter{defcounter}
+\setcounter{defcounter}{0}
+
+\newenvironment{mymath}{%
+	\addtocounter{equation}{-1}
+	\refstepcounter{defcounter}
+	\renewcommand\theequation{D\thedefcounter}
+	\begin{equation}}
+{\end{equation}}
+
+
+
+\makeatletter \newcommand\figcaption{\def\@captype{figure}\caption} \newcommand\tabcaption{\def\@captype{table}\caption} \makeatother
+
+
+\newcounter{mparcnt}[chapter]
+\renewcommand\themparcnt{\small{$^{\arabic{mparcnt}}$}}
+\newcommand\mpar[1]{\refstepcounter{mparcnt}{$^{\arabic{mparcnt}}$}\marginpar{\themparcnt\scriptsize#1}}
+\makeatother
+
+\linespread{1.2}
+%\usepackage{eso-pic}
+
+
+\input{structure}
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+\begin{document}
+\allowdisplaybreaks
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+%\begingroup
+%\thispagestyle{empty}
+%\begin{tikzpicture}[remember picture,overlay]
+%\coordinate [below=12cm] (midpoint) at (current page.north);
+%\node at (current page.north west)
+%{\begin{tikzpicture}[remember picture,overlay]
+%\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{background}}; % Background image
+%\draw[anchor=north] (midpoint) node [fill=orange,fill opacity=0.2,text opacity=1,inner sep=1cm]{\Huge\centering\sffamily\parbox[c][][t]{\paperwidth}{\bf \centering \zihao{-0}  现代量子化学\\[-20pt]{\zihao{2}高等电子结构理论导引}\\[30pt] % Book title
+%{\bf \zihao{3} \fontspec{CMU Concrete}原著：Attila Szabo Neil S. Ostlund \\翻译：超理汉化组\\[-20pt]\chntoday}
+%}};
+%\end{tikzpicture}};
+%\end{tikzpicture}
+%\vfill
+%\endgroup
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+
+%\chapterimage{chapter_head_1.pdf}
+\input{Preface}
+
+\tableofcontents % Print the table of contents itself
+%\pagestyle{fancy} % Print headers again
+\setcounter{page}{0}
+
+
+\input{./Chaps/Chap1}
+\input{./Chaps/Chap2}
+\input{./Chaps/Chap3}
+\input{./Chaps/Chap4}
+\input{./Chaps/Chap5}
+\input{./Chaps/Chap6}
+\input{./Chaps/Chap7}
+
+\end{document}
