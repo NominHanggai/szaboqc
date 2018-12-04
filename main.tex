@@ -1,6 +1,5 @@
-%!TEX TS-program = luatex
+%!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
-%times,
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -17,8 +16,7 @@
 % e.g. 920px width and 460px height.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[%fleqn
-,twoside]{bookszabo}
+\documentclass{bookszabo}
 \usepackage{amsmath}
 \usepackage{anyfontsize}
 \usepackage{amssymb}
@@ -63,10 +61,10 @@
 \makeatother
 
 \linespread{1.2}
-%\usepackage{eso-pic}
 
 
 \input{structure}
+
 %----------------------------------------------------------------------------------------
 
 
@@ -76,6 +74,7 @@
 
 
 \begin{document}
+	\bibliography{bib}
 \allowdisplaybreaks
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -108,13 +107,14 @@
 %\pagestyle{fancy} % Print headers again
 \setcounter{page}{0}
 
+%注意替换\ts -> \mathscr{S}, \cs _> a^\dagger, \sch -> Schr\''odinger, \hs 为\mathscr{H}, \vs -> \mathscr{V}, 算子 -> 算符. \ht
 
-\input{./Chaps/Chap1}
-\input{./Chaps/Chap2}
-\input{./Chaps/Chap3}
-\input{./Chaps/Chap4}
-\input{./Chaps/Chap5}
-\input{./Chaps/Chap6}
-\input{./Chaps/Chap7}
+\include{./Chaps/Chap1}
+\include{./Chaps/Chap2}
+\include{./Chaps/Chap3}
+\include{./Chaps/Chap4}
+\include{./Chaps/Chap5}
+\include{./Chaps/Chap6}
+\include{./Chaps/Chap7}
 
 \end{document}
