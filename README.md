@@ -1,2 +1,2 @@
 # Modern Quantum Chemistry
-Attila&lt;Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory>中文翻译
+Attila Szabo著 _Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory_ 中文翻译
