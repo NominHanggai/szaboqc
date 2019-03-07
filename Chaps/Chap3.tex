@@ -34,12 +34,12 @@ Hartree-Fock理论在一些特殊情形下会涉及多行列式波函数, 比如
 \begin{align}
 \ket{\Psi_0} = \ket{\chi_1\chi_2\cdots\chi_a\chi_b\cdots\chi_N}
 \end{align}
-成为该形式下$N$-电子系统(由算符$\hs$表征)之基态的最佳近似. 根据变分原理, 最优的自旋轨道就是那些使如下的能量最小的轨道：
+成为该形式下$N$-电子系统(由算符$\hs$表征)之基态的最佳近似. 根据变分原理, 最优的自旋轨道就是那些使下式能量最小的轨道：
 \begin{align}
 E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \sum_a\braket{a|h|a} + \frac{1}{2}\sum_{ab}\braket{ab||ab}\notag \\
     & = \sum_a\braket{a|h|a} + \frac{1}{2}\sum_{ab}[aa|bb]-[ab|ba]
 \end{align}
-通过3.2节中的最小化手续, 我们可以有条理地变化自旋轨道$\{\chi_a\}$, 但要加上正交性的限制条件：
+通过3.2节中的最小化手续, 我们可以有系统地变化自旋轨道$\{\chi_a\}$, 唯一的限制就是要求它们相互正交：
 \begin{align}
 \braket{\chi_a|\chi_b} = \delta_{ab}
 \end{align} 

@@ -1274,7 +1274,7 @@ width=\textwidth,
 }
 
 \section{轨道微扰论的图表示}
-\ref{sec6.2}中我们为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示穴和粒子的自旋轨道, 用点来对应单粒子微扰$\v$. 然后我们画出和之前同样的一组图, 用指标$a$, $b$, ...来标记穴, 用$r$, $s$, ...来标记粒子. 所以就有
+\ref{sec6.2}中为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示空穴和粒子的自旋轨道, 用点来对应单粒子微扰$\v$. 然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
 \begin{center}	
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\tiny
@@ -1329,7 +1329,7 @@ width=\textwidth,
 	\item \textit{对所有的粒子和空穴指标求和.}
 \end{enumerate}
 
-利用以上规则，我们有
+利用以上规则，有
 \begin{gather}
 	E_0^{(1)} = \begin{tikzpicture}[baseline={([yshift=-5pt]current bounding box.center)},scale=.6]
 	\tiny
@@ -1360,7 +1360,7 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1
 \begin{align}
 \sum^N = 2\sum^{N/2}
 \end{align}
-我们会在\ref{sec6.7}中看到，更一般的情形下，做这种转换时，要把每个图的值乘以$2^l$, $l$是闭合圈图的数目。
+在\ref{sec6.7}中我们将看到，更一般的情形下，做这种转换时，要把每个图的值乘以$2^l$, $l$是闭合圈图的数目。
 \exercise{
 求出闭壳层闭壳层环多烯的四阶能量：
 \begin{enumerate}[a.]
@@ -1417,25 +1417,6 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1
 	\item 对于苯，证明用图形算出的四阶能量与练习6.6中独立得出的值完全相同。
 \end{enumerate}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \section{相关能的微扰展开}
@@ -1569,13 +1550,14 @@ E_0^{(2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \begin{equation}
 E_0^{(3)} = \frac{K_{12}^2(J_{11}+J_{22}-4J_{12}+2K_{12})}{4(\epsilon_1-\epsilon_2)^2}
 \end{equation}
-现在来证明\eqref{6.77}中的二阶能就是一般性的表达式\eqref{6.74}的特例. 由于只有一个穴轨道$a=b=1$,  同样的, $r=s=2$, 所以\eqref{6.74}变为
+现在来证明\eqref{6.77}中的二阶能就是一般性的表达式\eqref{6.74}的特例. 由于只有一个空穴轨道$a=b=1$,  同样的, $r=s=2$, 所以\eqref{6.74}变为
 \begin{align*}
 E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} \\
           & = \frac{|\braket{11|22}|^2}{2(\epsilon_1-\epsilon_2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \end{align*}
 在\ref{sec6.7.2}中, 我们会证明\eqref{6.75}中的三阶能量表达式可以给出\eqref{6.78}中的结果.
 \exercise{从\eqref{6.76}出发推导\eqref{6.77}\eqref{6.78}.}
+
 \section{RS微扰展开的$N$依赖性}
 \section{相关能微扰展开的图表示}
 \subsection{Hugenholtz图}
