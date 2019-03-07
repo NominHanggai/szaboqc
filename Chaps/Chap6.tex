@@ -1324,8 +1324,43 @@ width=\textwidth,
 	\draw (12,-5.5)node{$n=4$};
 	\end{tikzpicture}
 \end{center}
+计算这些图的规则和之前的一样(把$E_i^{(0)}$换成$\epsilon_i^{(0)}$), 但第四条规则需要改成
+\begin{enumerate}[$4'.$]
+	\item \textit{对所有的粒子和空穴指标求和.}
+\end{enumerate}
 
-
+利用以上规则，我们有
+\begin{gather}
+	E_0^{(1)} = \begin{tikzpicture}[baseline={([yshift=-5pt]current bounding box.center)},scale=.6]
+	\tiny
+	\draw[blue] (0,4.25)circle(.7cm) (.7,4.25)node{\tikz{\filldraw[blue](0,0)circle(1pt)}} (0,4.25+.7)node[above]{a};
+	\end{tikzpicture}\\
+	E_0^{(2)} = \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+	\path [draw=blue,postaction={on each segment={mid arrow}}] 
+	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm)node[left,midway]{a};\end{tikzpicture}
+	=\sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}}
+\end{gather}
+可以发现这些结果和\eqref{6.43b,c}中的一样。 $E_0^{(3)}$算出后， 为
+\begin{align}
+E_0^{(0)} & = 
+\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+\path [draw=blue,postaction={on each segment={mid arrow}}] 
+(0,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+arc (225:180:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (180:135:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[left,midway]{a};
+\end{tikzpicture}
++
+\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+\path [draw=blue,postaction={on each segment={mid arrow}}] 
+(2.5,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:180:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(180:225:2.12cm)node[left,midway]{b};\end{tikzpicture} \notag\\
+& = \sum_{ars}\frac{v_{as}v_{sr}v_{ra}}{(\epsilon_a^{(0)}-\epsilon_s^{(0)})(\epsilon^{(0)}_a-\epsilon^{(0)}_r)} - \sum_{abr}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon_a^{(0)}-\epsilon_r^{(0)})(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}
+\end{align}
+这与练习6.4中所得的结果一样。 最后，对于闭壳层体系，由于矩阵元$v_{ij}$只有当$i,j$有相同自旋时才不为零， 所以可将对自旋轨道的求和改为对空间轨道求和，并在每个图的值上乘以$2$, 也即
+\begin{align}
+\sum^N = 2\sum^{N/2}
+\end{align}
+我们会在\ref{sec6.7}中看到，更一般的情形下，做这种转换时，要把每个图的值乘以$2^l$, $l$是闭合圈的数目。
 
 
 
