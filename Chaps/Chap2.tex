@@ -1017,12 +1017,12 @@ Hartree-Fock基态能量就成为
 	\caption{\bf 关于自旋轨道($\chi$)以及关于空间轨道$\psi$的单、双电子积分}
 	\begin{tabular}{l}
 		\hline
-		\multicolumn{1}{c}{\itshape 自旋轨道}\\
+		\multicolumn{1}{c}{\textit{自旋轨道}}\\
 		\parbox{\textwidth}{$[i|h|j]=\braket{i|h|j}=\int\ddx_1\chi_i^*(\bo{x}_1)h(\bo{r}_1)\chi_j(\bo{x}_1) $}\\
 		$\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\ddx_1\ddx_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)=[ik|jl] $\\
 		$[ij|kl]=[\chi_i\chi_j|\chi_k\chi_l]=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j(\bo{x}_2)r_{12}^{-1}\chi_k^*(\bo{x}_1)\chi_l(\bo{x}_2) = \braket{ik|jl}$\\
 		$\braket{ij||kl}=\braket{ij|kl} - \braket{ij|lk}=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2) $\\
-		\multicolumn{1}{c}{\itshape 空间轨道}\\
+		\multicolumn{1}{c}{\textit{空间轨道}}\\
 		$(i|h|j)=h_{ij} = (\psi_i|h|\psi_j)=\int\dd\bo{r}_1\psi_i^*(\bo{r}_1)h(\bo{r}_1)\psi_j(\bo{r}_1)$\\
 		$(ij|kl)=(\psi_i\psi_j|\psi_k\psi_l)=\int\dd\bo{r}_1\dd\bo{r}_2\psi_i^*(\bo{r}_1)\psi_j(\bo{r}_1)r_{12}^{-1}\psi_k^*(\bo{r_2})\psi_l(\bo{r}_2) $\\
 		$J_{ij}\,\,=(ii|jj)$ 库伦积分\\
@@ -1129,7 +1129,7 @@ $\ket{K}$中的$\chi_m,\chi)n$在$\ket{L}$中变成$\chi_p,\chi)q$，其余都�
 \begin{equation*}
 \ket{\Psi_2}=\ket{crds}=-\ket{crsd}=\ket{srcd}
 \end{equation*}
-现在两个行列式的相似度最大，只在两列上不一样。现在使用{\itshape 情况三}的规则可以，有如下对应：
+现在两个行列式的相似度最大，只在两列上不一样。现在使用{\textit{情况三}}的规则可以，有如下对应：
 \[\begin{array}{cc}
 \ket{K}=\ket{\Psi_1}&\ket{L}=\ket{\Psi_2}\\
 m\equiv a & p\equiv s\\
@@ -1160,7 +1160,7 @@ h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 \braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\frac{1}{2}\sum_m^N\sum_{n>m}^N\braket{mn||mn}\\
 =&\sum_m[m|h|m]+\sum_m^N\sum_{n>m}^N[mm|nn]-[mn|nm]
 \end{align}
-反对称双电子积分的求和遍及$\ket{K}$中所有不同的占据自旋轨道对儿$\chi_m,\chi_n$. 这个事实可以帮我们记忆如何把单个行列式对应的能量用关于自旋轨道的单、双电子积分表示出来：{\itshape 每个占据的自旋轨道$\chi_i$各在总能中贡献一个$\braket{i|h|i}$项，并且每一对占据自旋轨道$\chi_i,\chi_j$都贡献一个$\braket{ij||ij}$项。}因此，可将$N$电子体系的总能（在单Slater行列式描述下）视作"单电子能量"(即在$\chi_i$轨道上电子所对应的$\braket{i|h|i}$)之和，再加上每对电子之间的"相互作用能"（$\chi_i,\chi_j$上的电子对应着$\braket{ij||ij}$）之和。在使用这种语言的时候, 要记住这仅是为方便记忆. 物理上, 两电子间的相互作用通过库伦项来体现,而非反对称的双电子积分.
+反对称双电子积分的求和遍及$\ket{K}$中所有不同的占据自旋轨道对儿$\chi_m,\chi_n$. 这个事实可以帮我们记忆如何把单个行列式对应的能量用关于自旋轨道的单、双电子积分表示出来：\textit{ 每个占据的自旋轨道$\chi_i$各在总能中贡献一个$\braket{i|h|i}$项，并且每一对占据自旋轨道$\chi_i,\chi_j$都贡献一个$\braket{ij||ij}$项。}因此，可将$N$电子体系的总能（在单Slater行列式描述下）视作"单电子能量"(即在$\chi_i$轨道上电子所对应的$\braket{i|h|i}$)之和，再加上每对电子之间的"相互作用能"（$\chi_i,\chi_j$上的电子对应着$\braket{ij||ij}$）之和。在使用这种语言的时候, 要记住这仅是为方便记忆. 物理上, 两电子间的相互作用通过库伦项来体现,而非反对称的双电子积分.
 
 \exercise{
 从方程(2.107)推出(2.110)

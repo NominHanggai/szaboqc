@@ -1,0 +1,12 @@
+%mem=1gb
+%cpu=0-7
+% chk=heh.chk
+# pop=none scan hf/sto-3g units=au Geom=nocrowd
+
+we
+
+1 1
+H
+He 1 R
+
+R 0.5 301 0.01

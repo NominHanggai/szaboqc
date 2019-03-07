@@ -1,44 +1,11 @@
 %!TEX TS-program = lualatex
 %!TEX encoding = UTF-8 Unicode
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Legrand Orange Book
-% LaTeX Template
-% Version 2.0 (9/2/15)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-% Important note:
-% Chapter heading images should have a 2:1 width:height ratio,
-% e.g. 920px width and 460px height.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass{bookszabo}
 \usepackage{amsmath}
 \usepackage{anyfontsize}
 \usepackage{amssymb}
-%\usepackage{draftwatermark}
-%\SetWatermarkText{\textsc{Draft Translation}}
-%\SetWatermarkLightness{0.88}
-%\SetWatermarkScale{0.4}
-%\usepackage{setspace}
-%\usepackage{marginfix}
-%\usepackage{tensor}
-%\usepackage{indentfirst}
-%\usepackage{cancel}
 \usepackage{bm}
-
-%\usepackage{draftwatermark}
-%\SetWatermarkText{\textsc{Draft Translation}}
-%\SetWatermarkLightness{0.88}
-%\SetWatermarkScale{0.4}
-%\usepackage{setspace}
-%\usepackage{marginfix}
-%\usepackage{tabularx}
-
 
 \newcounter{defcounter}
 \setcounter{defcounter}{0}
@@ -74,8 +41,6 @@
 
 
 \begin{document}
-	\bibliography{bib}
-\allowdisplaybreaks
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -101,7 +66,7 @@
 
 
 %\chapterimage{chapter_head_1.pdf}
-\input{Preface}
+%\input{Preface}
 
 \tableofcontents % Print the table of contents itself
 %\pagestyle{fancy} % Print headers again
@@ -109,12 +74,12 @@
 
 %注意替换\ts -> \mathscr{S}, \cs _> a^\dagger, \sch -> Schr\''odinger, \hs 为\mathscr{H}, \vs -> \mathscr{V}, 算子 -> 算符. \ht
 
-\include{./Chaps/Chap1}
-\include{./Chaps/Chap2}
-\include{./Chaps/Chap3}
-\include{./Chaps/Chap4}
-\include{./Chaps/Chap5}
+%\include{./Chaps/Chap1}
+%\include{./Chaps/Chap2}
+%\include{./Chaps/Chap3}
+%\include{./Chaps/Chap4}
+%\include{./Chaps/Chap5}
 \include{./Chaps/Chap6}
-\include{./Chaps/Chap7}
+%\include{./Chaps/Chap7}
 
 \end{document}
