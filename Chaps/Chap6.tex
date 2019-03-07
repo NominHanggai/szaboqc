@@ -1279,12 +1279,12 @@ width=\textwidth,
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\tiny
 	\draw[blue] (0,4.25)circle(.7cm) (.7,4.25)node{\tikz{\filldraw[blue](0,0)circle(1pt)}} (0,4.25+.7)node[above]{a};
-	\draw (12,4.25)node{$n=2$};
+	\draw (12,4.25)node{\normalsize$n=2$};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
 	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
 	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm)node[left,midway]{s};
-	\draw (12,1.5)node{$n=2$};
+	\draw (12,1.5)node{\normalsize$n=2$};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
 	(0,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
@@ -1293,12 +1293,12 @@ width=\textwidth,
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
 	(2.5,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
 	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:180:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(180:225:2.12cm)node[left,midway]{b};
-	\draw (12,-2)node{$n=3$};
+	\draw (12,-2)node{\normalsize$n=3$};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
 	(0,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
 	arc (225:195:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (195:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (165:135:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[right,midway]{a};
+	arc (165:135:2.12cm)node[left,midway]{t} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[right,midway]{a};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
 	(2,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
@@ -1321,7 +1321,7 @@ width=\textwidth,
 	\path [draw=blue,postaction={on each segment={mid reverse arrow}}]
 	(10,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
 	arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (10,-7.);
-	\draw (12,-5.5)node{$n=4$};
+	\draw (12,-5.5)node{\normalsize $n=4$};
 	\end{tikzpicture}
 \end{center}
 计算这些图的规则和之前的一样(把$E_i^{(0)}$换成$\epsilon_i^{(0)}$), 但第四条规则需要改成
@@ -1360,9 +1360,63 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1
 \begin{align}
 \sum^N = 2\sum^{N/2}
 \end{align}
-我们会在\ref{sec6.7}中看到，更一般的情形下，做这种转换时，要把每个图的值乘以$2^l$, $l$是闭合圈的数目。
-
-
+我们会在\ref{sec6.7}中看到，更一般的情形下，做这种转换时，要把每个图的值乘以$2^l$, $l$是闭合圈图的数目。
+\exercise{
+求出闭壳层闭壳层环多烯的四阶能量：
+\begin{enumerate}[a.]
+	\item 证明
+		\begin{equation*}
+		\begin{tikzpicture}[baseline={(current bounding box.center)},postaction={on each segment={mid reverse arrow}},scale=.6]
+		\path [draw=blue,postaction={on each segment={mid arrow}}]
+		(6,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+		arc (-45:-15:2.12cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
+		\end{tikzpicture}
+		=		
+		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
+			\path [draw=blue,postaction={on each segment={mid arrow}}]
+			(2,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+			arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};\end{tikzpicture}
+		=
+		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
+			\path [draw=blue,postaction={on each segment={mid arrow}}]
+			(0,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+			arc (225:195:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (195:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+			arc (165:135:2.12cm)node[left,midway]{t} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[right,midway]{a};
+		\end{tikzpicture}
+		=
+		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
+		\path [draw=blue,postaction={on each segment={mid arrow}}]
+		(4,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+		arc (225:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (165:135:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+		arc (45:-15:2.12cm)node[right,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[right,midway]{b};
+		\end{tikzpicture}
+		=
+		\frac{N\beta}{64}
+		\end{equation*}
+		以及
+		\begin{equation*}
+		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
+			\path [draw=blue,postaction={on each segment={mid arrow}}]
+			(8,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+			arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (8,-7.);
+		\end{tikzpicture}
+		=
+		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
+		\path [draw=blue,postaction={on each segment={mid reverse arrow}}]
+		(10,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+		arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (10,-7.);
+		\draw (12,-5.5)node{$n=4$};
+		\end{tikzpicture}
+		=-\frac{3N\beta}{128}
+		\end{equation*}
+		继而有
+		\begin{equation*}
+		E_0^{(4)} = \frac{N\beta}{64}
+		\end{equation*}
+		因此环多烯（$N>6$）的共振能算到第四阶就是$(1/4+1/64)N\beta=0.2656 N\beta$, 和渐近的精确值$0.2732\beta$相比非常接近（占97\%）。
+	\item 对于苯，证明用图形算出的四阶能量与练习6.6中独立得出的值完全相同。
+\end{enumerate}
+}
 
 
 
