@@ -192,7 +192,7 @@ c_1\\c_2
 \label{sec6.2}
 上节末尾我们已经看到, 即使是最简单的两态问题，其高阶能量公式也相当复杂。本章的主要目标就是将Hartree-Fock基态作为零阶态来得到相关能的微扰展开公式. 在这种情况下, 高阶能量的表达式愈将复杂. 因此若能找到某种相对简单的方法, 将高阶展开中的各项归类并表示出来, 那将再好不过. 本节来介绍一种图形化方法, 用图形表示微扰展开. 我们并不会严格地推导图形微扰论, 而是从一个简单的例子开始, 推测出微扰展开和一组含义明确的图形之间的对应关系. 然后我们再``猜出"将图形转化为数学式子的规则, 并展示其正确性.接下来会推广之前的图形及规则, 并在每一步都检查有图形所得的式子和直接推导所得式子之间的一致性. 用这种办法是望读者能习惯并认可这些图形.
 
-微扰展开的图形表示首先出现在量子电动力学中. 是Feynman首创了这种办法, 并在他的Nobel讲座上介绍了其想法的演变发展. 此处引用他的几句话``我其余的工作就是发展了计算技巧, 用图形来帮助人们更快地分析微扰论. 这个工具最初基本上是猜出来的.."``即使是从物理学家的层面来讲, 我也并未证明这些规则和方程可以通过传统的电动力学得到, 但是从平时的``胡搞"中我已经知道, 所有这些东西和传统的电动力学毫无二致."
+微扰展开的图形表示首先出现在量子电动力学中. Feynman首创了这种办法, 并在他的Nobel讲座上介绍了其想法的演变发展. 此处引用他的几句话``我其余的工作就是发展了计算技巧, 用图形来帮助人们更快地分析微扰论. 这个工具最初基本上是猜出来的.."``即使是从物理学家的层面来讲, 我也并未证明这些规则和方程可以通过传统的电动力学得到, 但是从平时的``胡搞"中我已经知道, 所有这些东西和传统的电动力学毫无二致."
 
 \subsection{两态系统的图微扰论}
 上节考察了两态问题, 并得到了基态本征值表达式, 此处介绍该表达式中各项所对应的图形表示. 首先, 用一个点来表示微扰$\vs$ :
@@ -200,7 +200,7 @@ c_1\\c_2
 \draw (0,0)[<->] node[left]{$\vs$} -- (1,0)node[right]{$\bullet$};
 \end{tikzpicture}
 \]
-两个零阶态$\ket{1},\ket{2}$由向上和向下的箭头表示:
+两个零阶态$\ket{1}$, $\ket{2}$由向上和向下的箭头表示:
 \begin{align*}
 \ket{1}\longleftrightarrow\quad \feynmandiagram [scale=.5,baseline=(current bounding box.center)][layered layout, vertical=a to b] {
 	a -- [ fermion] b,
@@ -452,7 +452,7 @@ c_1\\c_2
 	\item 每个点为分母贡献一个因子$\braket{\textit{穿入线的标号}|\vs|\textit{穿出线的标号}}$.
 	\item 每一对相邻点贡献一个分母上的因子\[ \sum E_\mathrm{空穴}-\sum E^{(0)}_\mathrm{粒子}\]
 	其中求和遍及所有与两个点之间的一条水平线相交的空穴线和粒子线.
-	\item 表达式的正负号为$(-)^{h+l}$, $h$是空穴线的数目, $l$是闭合圆圈的数目. 本节的图中$l$总是1, 这里给出更一般的规则以利后用.
+	\item 表达式的正负号为$(-)^{h+l}$, $h$是空穴线的数目, $l$是闭合圈图的数目. 本节的图中$l$总是1, 这里给出更一般的规则以利后用.
 \end{enumerate}
 这个规则很容易运用. 考虑四阶图
 \begin{equation*}
@@ -472,7 +472,7 @@ c_1\\c_2
 \end{scope}
 \end{tikzpicture}
 \end{equation*}
-最上面的两个点每个为分母贡献一个因子$\braket{2|\vs|1}=V_{21}$, 剩余的点每个贡献$\braket{1|\vs|2}=V_{12}$. 虚线$A,C$每个都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 虚线$B$贡献一个因子$(2E_1^{(0)} - 2E_2^{(0)})$. 此外, 该图有2个空穴线($h=2$)1个闭合圈($l=1$), 所以要将式子乘以$(-1)^3$. 所以最终有
+最上面的两个点每个为分母贡献一个因子$\braket{2|\vs|1}=V_{21}$, 剩余的点每个贡献$\braket{1|\vs|2}=V_{12}$. 虚线$A,C$每个都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 虚线$B$贡献一个因子$(2E_1^{(0)} - 2E_2^{(0)})$. 此外, 该图有2个空穴线($h=2$)1个闭合圈图($l=1$), 所以要将式子乘以$(-1)^3$. 所以最终有
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)}, scale=1]
 \diagsize
@@ -937,7 +937,7 @@ arc (45:-45:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circl
 \end{align}
 注意以这种方式生成的这类图全部是对角的. 对这类图求和给出
 \begin{align}
-\Delta = \sum_n' \frac{V_{1n}V_{n1}}{(E_1^{(0)} + V_{11}) - (E_n^{(0)} + V_{nn})}
+\Delta = \sideset{}{'}\sum_n \frac{V_{1n}V_{n1}}{(E_1^{(0)} + V_{11}) - (E_n^{(0)} + V_{nn})}
 \end{align}
 其中求和号上的一撇意思是求和时去掉$n=1$这项. 再次注意到上面所得的结果就是具有能量移动分母的二阶(微扰能量)表达式. 我们之后会知道, 几何级数求和技术可用以获得\hft 能量的微扰修正.
 \section{轨道微扰论: 单粒子微扰}
@@ -1044,7 +1044,7 @@ E_0^{(2)} = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 \end{align*}
 你可以从二阶能量的一般表达式(式(6.12))开始, 将其用在$N$-电子体系中：
 \begin{align*}
-E_0^{(2)} = \sum_n'\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\right|^2}{E_0^{(0)} - E_n^{(0)}}
+E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\right|^2}{E_0^{(0)} - E_n^{(0)}}
 \end{align*}
 此处求和遍及除基态外的所有态.
 
@@ -1057,7 +1057,7 @@ E_0^{(2)} = \sum_n'\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\right|^2}{E_0^
 \begin{enumerate}[a.]
 	\item 证明
 		\begin{align*}
-		B_0^{(3)} = -E_0^{(1)}\sum_n'\frac{ \braket{\Psi_0|\vs|^2}}{(E_0^{(0)} - E_n^{(0)})^2} = - \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )}
+		B_0^{(3)} = -E_0^{(1)}\sideset{}{'}\sum_n\frac{ \braket{\Psi_0|\vs|^2}}{(E_0^{(0)} - E_n^{(0)})^2} = - \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )}
 		\end{align*}
 	\item 证明
 		\begin{align*}
@@ -1482,7 +1482,7 @@ E_0 = E_0^{(0)} + E_0^{(1)} = \sum_a\epsilon_a - \frac{1}{2}\sum_{ab}\braket{ab|
 
 二阶能量的一般表达式在\ref{sec6.1}节已经推导过, 为
 \begin{align}
-E_0^{(2)} = \sum_n'\frac{|\braket{0|\vs|n}|^2}{E_0^{(2)} - E_n^{(0)}}
+E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(2)} - E_n^{(0)}}
 \end{align}
 其中求和遍及系统除了基态外的所有态. $\ket{0} = \ket{\Psi_0}$是很清楚的, 但是$\ket{n}$等于什么? $\ket{n}$不可能是单重激发, 因为
 \begin{align}
@@ -1555,13 +1555,81 @@ E_0^{(3)} = \frac{K_{12}^2(J_{11}+J_{22}-4J_{12}+2K_{12})}{4(\epsilon_1-\epsilon
 E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} \\
           & = \frac{|\braket{11|22}|^2}{2(\epsilon_1-\epsilon_2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \end{align*}
-在\ref{sec6.7.2}中, 我们会证明\eqref{6.75}中的三阶能量表达式可以给出\eqref{6.78}中的结果.
+\ref{sec6.7.2}将证明\eqref{6.75}中的三阶能量表达式可以给出\eqref{6.78}中的结果.
 \exercise{从\eqref{6.76}出发推导\eqref{6.77}\eqref{6.78}.}
 
 \section{RS微扰展开的$N$依赖性}
+本章的引言中曾提过， Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性。通过仔细检验每个阶的代数表达式，他证明了，对$n=0,1,\ldots,6$, $E_0^{(n)}$确实正比于粒子数。但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 这里我们简要叙述一下Brueckner的分析过程。\ref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，该定理用RS微扰论的图表示证明了Brueckne的的猜想适用于所有阶的微扰。我们来考虑一个由$N$个无相互作用的极小基$\hd$组成的超分子。我们会证明，利用\ref{sec6.2}中所推导的一般表达式，这个超分子的一、二、三、阶能量等于$N$乘单个单个分子的对应能量。此模型就是我们在第四章证明DCI给出的关联能量正比于$N^{1/2}$时(在大$N$极限下)所用过的。之前我们曾如此标记超分子的轨道：
+\begin{equation*}
+\begin{tikzpicture}
+\draw (0,0)--node[below]{$1_1$}++(0.7,0) ++(0.3,0)--node[below]{$1_2$}++(0.7,0) ++(0.3,0)--node[below]{$1_3$}++(0.7,0) ++(0.65,0.2) node{$\cdots$} +(.35,0) ++(0.3,-.2)--node[below]{$1_N$}++(0.7,0);
+
+\draw (0,.4)--node[above]{$2_1$}++(0.7,0) ++(0.3,0)--node[above]{$2_2$}++(0.7,0) ++(0.3,0)--node[above]{$2_3$}++(0.7,0) ++(0.65,0.2)  +(.35,0) ++(0.3,-.2)--node[above]{$2_N$}++(0.7,0);
+\end{tikzpicture}
+\end{equation*}
+而且假若双电子积分包含了不同单位上的轨道，那么积分为零。此体系的\hft 波函数为
+\begin{equation}
+\ket{\Psi_0} = \ket{1_1\bar{1}_1 1_2\bar{1}_2 \cdots 1_N\bar{1}_N}
+\end{equation}
+若$\hs$是对应的\hft\ha(前节提过), 那么零阶及一阶能量就是
+\begin{equation}
+E_0^{(0)} = \braket{\Psi_0|\hs_0|\Psi_0}=2\sum_{i=1}^{N}\braket{1_i|f|1_i}=2N\epsilon_1
+\end{equation}
+及
+\begin{equation}
+E_0^{(1)} = \braket{\Psi_0|\vs|\Psi_0}=-\sum_{i=1}^{N}\braket{1+i1_i|1_i1_i}=-NJ_{11}
+\end{equation}
+这个超分子的\hft 能量就是
+\begin{equation}
+E_0=\braket{\Psi_0|\hs_0+\vs|\Psi_0} = E_0^{(0)} + E_0^{(0)} = N(2\epsilon_1-J_{11})
+\end{equation}
+这确实是$N$乘以单个分子的\hft 能量。一般的二阶能量表达式为
+\begin{align}
+E_0^{(2)} = \sideset{}{'}\sum_n \frac{|\braket{0|\vs|n}|^2}{E_0^{(0)}-E_n^{(0)}}
+\end{align}
+很清楚，$\ket{0}=\ket{\Psi_0}$,而且而且态$\ket{n}$肯定是双激发$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$. 对这些这些态
+\begin{gather}
+E_0^{(0)} - E_n{(0)} = 2(\epsilon_1 - \epsilon_2)\\
+\braket{\Psi_0|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}} = \braket{1_i\bar{1}_i | 2_i\bar{2}_i} - \braket{1_i\bar{1}_i|\bar{2}_i2_i} = \braket{11|22}=K_{12}
+\end{gather}
+而且对$n$的求和可以换成对$i$的求和，那么就有
+\begin{align}
+E_0^{(2)} = \sum_{i=1}^{N} \frac{|\braket{\Psi_0|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}|^2}{2(\epsilon_1-\epsilon_2)} = \frac{NK_{12}^2}{2(\epsilon_1-\epsilon_2)}
+\end{align}
+再一次，我们证明了这就是每个单元的二阶能量乘以$N$.
+
+三阶能量的一般表达式(\eqref{6.15})为
+\begin{align}
+E_0^{(3)} = A_0^{(3)} + B_{0}^{(3)}
+\end{align}
+式中
+\begin{gather}
+A_0^{(3)} = \sideset{}{'}\sum_n \sideset{}{'}\sum_m \frac{\braket{0|\vs|n}\braket{n|\vs|m}\braket{m|\vs|0}}{(E_0^{(0)} - E_n^{(0)}) (E_0^{(0)} - E_0^{(m)}) }\\
+B_0^{(3)} = -E_0^{(1)}\sideset{}{'}{\sum}_n\frac{|\braket{0|\vs|n}|^2}{(E_0^{(0)} - E_n^{(0)})^2}
+\end{gather}
+初看，三阶能量好像没有正确的$N$依赖性，因为$B_0^{(3)}$正比于$N^2$:
+\begin{align}
+B_0^{(3)} = -(-NJ_{11}) \sum_{i=1}^{N} \frac{K_{12}^2}{(2\epsilon_1 - 2\epsilon_2)^2} = \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1-\epsilon_2)^2}
+\end{align}
+其中用到了\eqref{6.80b}\eqref{6.83a,b}. 若想三阶能量正比于$N$, 那么这一项肯定要被$A_0^{(3)}$中的某部分消掉。这正是本节开头所提的Brueckner曾发现的那种抵消。现在更仔细地分析$A_0^{(3)}$。 很清楚，$\ket{n}$和$\ket{m}$需是$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$这样的态，因此
+\begin{align}
+A_0^{(3)} = \sum_{i=1}^{N} \frac{\braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}K_{12}^2}{4(\epsilon_1 - \epsilon_2)^2}
+\end{align}
+式中只写出了对角元，因涉及涉及不同单位上轨道的双电子积权威全为零。可以证明
+\begin{align}\braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}} = \braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\hs-\hs_0|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}=-NJ_{11} + J_{11} + J_{22} - 4J_{12} + 2K_{12}
+\end{align}
+因此有
+\begin{align}
+A_0^{(3)} = - \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1 - \epsilon_2)^2} + \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 2K_{12})}{4(\epsilon_1 - \epsilon_2)^2}
+\end{align}
+如此，包含$N^2$的项的确被消掉了，余下的就是
+\begin{align}
+E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 2K_{12})}{4(\epsilon_1 - \epsilon_2)^2}
+\end{align}
+如同$E_0^{(1)}$ $E_0^{(1)}$一样，这就是$N$乘每个$\hd$的三阶能量(\eqref{6.78}). 注意到\eqref{6.78}是在基组内按照Taloy展开得到的，这两种表达式等价，自洽性得到了检验。虽然这个例子远非一个证明，但我们仍希望它可提供提供这样的信心：RS微扰论——相较于DCI——所得到的对相关能的近似，是尺寸一致的（也即，有正确的$N$依赖性）。
 \section{相关能微扰展开的图表示}
 \subsection{Hugenholtz图}
 \subsection{Goldstone图}
 \subsection{对图求和}
 \subsection{什么是Linked-Cluster定理?}
-\subsection{一些算例}
+\section{一些算例}
