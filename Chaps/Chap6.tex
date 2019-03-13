@@ -1649,12 +1649,12 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \section{相关能微扰展开的图表示}
 现在来介绍$n$阶微扰能的图表示。我们将零阶波函数取为\hft 波函数。其实以任一个单行列出发，都可以推导出相应的微扰展开，但\hft 波函数是最方便的一个，原因就是Brillouin定理：单激发不会混入\hft 基态。这大大简化了微扰展开式的结构. 之后给出的构建图的规则仅对\hft 微扰论成立。虽然我们并不会严格推导构建图和计算图的规则，但仍希望它们尽可能地看起来像之前结果的自然推广。
 \subsection{Hugenholtz图}
-如同前面，我们将相互作用以点来标记，将空穴和粒子用向下和向上的线标记。回看\eqref{6.72},可以发现, 二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。直接原因就是此时的微扰具有双粒子性质。因此一个合理的想法是，在表示\hft 微扰论的图中，点中应当有\emph{两}条线出，\emph{两}条线入。实际上也是如此。要得到对$n$阶能量有贡献的所有图，我们要将$n$个竖直排列的点按照如下规则，以所有可能的方式连接起来：
+如同前面，我们将相互作用以点来标记，将空穴和粒子用向下和向上的线标记。回看\eqref{6.72},可以发现, 二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。直接原因就是此时的微扰具有双粒子性质。因此一个合理的想法是，在表示\hft 微扰论的图中，点中应当有\emph{两}条线出，\emph{两}条线入。实际上也是如此。要得到对$n$阶能量有贡献的所有图，我们要将$n$个竖直排列的点按照如下要求，以所有可能的方式连接起来：
 \begin{enumerate}[1.]
 	\item 每个点都有四条线经过。
 	\item 每个图都连通。
 	\item 每个图都各不相同。
-	\item 含多于一个点的图中，每条线不能穿出穿入同一个点，也即不能有如下类型的图：
+	\item 含多于一个点的图中，每条线不能穿出穿入同一个点，也即, 不能有如下类型的图：
 		\begin{center}
 			\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 			\path [draw=blue,%postaction={on each segment={mid arrow}}
@@ -1669,7 +1669,106 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 			\end{tikzpicture}
 		\end{center}
 \end{enumerate}
+要求(2)和(3)与\ref{sec6.2}中的完全相同，要求(4)是Brillouin定理的一个“不明显”结论。就和\ref{sec6.2}中一样，图可以任意扭动，只要点的竖直顺序不变即可。使用这些规则，我们可以找到：
+		\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+	\path [draw=blue,%postaction={on each segment={mid arrow}}
+	]
+	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc (-45:45:2.12cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm) 
+	arc(-60:60:1.732cm) 
+	arc(120:240:1.732cm)
+%	arc(-60:0:1.732cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+%	arc(180:540:0.4cm)
+	;
+	\draw (2.5,1.5) node{$n=2$};
+	\path [draw=blue,%postaction={on each segment={mid arrow}}
+	]
+	(0,-3.5) 
+	node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc (-45:45:1.0607cm) 
+	node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	arc(225:135:1.0607cm) arc(45:-45:1.0607cm) arc(135:225:1.0607cm)  
+	arc(-60:60:1.73205cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	arc(120:240:1.73205cm)
+	%	arc(-60:0:1.732cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	%	arc(180:540:0.4cm)
+	;
+	\draw (2.5,-1.75) node{$n=3$};
+	\end{tikzpicture}
+\end{center}
+但在四个点的情况下，等价图的数目达到十二个，如\ref{f6.1}所示。
+\begin{figure}[H]
+		\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+	\path [draw=blue,]
+	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	arc(140:220:1.16679) arc(140:220:1.16679) arc(140:220:1.16679)
+	arc(-45:45:3.18198)  arc(135:225:3.18198);
+	
+	\path [draw=blue,]
+	(3,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:3.18198*2/3) 
+	arc(140:220:1.16679) 
+		arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+		arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+		arc(140:220:1.16679) 
+		arc(135:225:3.18198*2/3) 
+	;
+	
+	\path [draw=blue,]
+	(6,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-45:45:3.18198) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(45:-45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(45:-45:3.18198*2/3)
+	arc(225:135:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(140:220:1.16679)
+	arc(225:135:3.18198*2/3)
+	arc(135:225:3.18198)
+	;
+	
+    \path [draw=blue,]
+    (9,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    arc(-45:45:3.18198) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    arc(45:-45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    arc(-40:40:1.16679) arc(140:220:1.16679) 
+    to (9,0)
+    arc(225:135:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    to (9,4.5)
+    arc(135:225:3.18198);
+    
+	\path [draw=blue,]
+	(0,-5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(135:225:3.18198*2/3)
+	to (0,-3.5)
+		arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(135:225:3.18198*2/3)
+	to (0,-.5)
+	arc(135:225:3.18198);    
+    
+    \path[draw=blue]
+    (3,-5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(140:220:1.16679) 
+    
+    to (3,-2) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(140:220:1.16679)
+    to (3,-.5)
+    arc(135:225:3.18198);  
+	
+	
+	\end{tikzpicture}
+	\caption{text}
+	\label{f6.1}
+\end{figure}
 
+如同之前，我们将在线上画上下箭头，将所有可能的方式都列出来，而且每个点都要有两条线穿入，两条线穿出。如此，我们得到一个二阶图，三个三阶图。
+
+这些图叫做Hugenholtz图。
 \subsection{Goldstone图}
 \subsection{对图求和}
 \subsection{什么是Linked-Cluster定理?}
