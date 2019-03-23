@@ -8,5 +8,85 @@ E_\mathrm{corr}=\mathscr{E}_0-E_0
 \section{双激发CI}
 \section{计算示例}
 \section{自然轨道与单粒子约化密度矩阵}
+目前为止我们所涉及的行列式和组态都由一组正则\hft 轨道构成。由此得到的CI展开收敛很慢。但很清楚的一点是，任意单电子基构成的$N$-电子组态都可以用来做CI计算。因此，我们可以问，能否找到一组单电子基，由该基组得到的CI展开比\hft 基下的CI展开收敛更快？若是如此，我们就能用更少的组态得到相同的结果。由P.-O L\"owdin引入的\emph{自然轨道}就构成这样一组基。
+
+为定义自然轨道，先来考虑$N$电子系统的一阶密度矩阵。给定一归一化波函数$\Phi$, 则$\Phi(\mathbf{x}_1,\ldots,\mathbf{x}_N)\Phi^*(\mathbf{x}_1,\ldots,\mathbf{x}_N)\ddx_1\cdots\ddx_N$就是电子在$\mathbf{x}_1$附近的\underline{\underline{空间-自旋}体积元}$\ddx_1$内，与此同时另外一个电子在$\mathbf{x}_2$附近的体积元$\ddx_2$内（直到N个电子为止）的概率。若仅对$\mathbf{x}_1$附近的$\ddx_1$内由一个电子的概率感兴趣，不关心其他电子在何处，则须对所有其他电子的\underline{空间-自旋}坐标作平均，也即，对$\mathbf{x}_2,\mathbf{x}_3,\ldots,\mathbf{x}_N$积分：
+\begin{align}
+\rho(\mathbf{x}_1) = N \int\ddx_2\cdots\ddx_N \,\, \Phi(\mathbf{x}_1,\ldots,\mathbf{x}_N)\Phi^*(\mathbf{x}_1,\ldots,\mathbf{x}_N)
+\end{align}
+$\rho(\mathbf{x}_1)$就称作\underline{N-电子系统}内单个电子的\emph{约化密度函数}。式中的归一化因子$N$是为了使对密度的积分等于总电子数：
+\begin{align}
+\int\ddx_1\,\,\rho(\mathbf{x_1}) = N
+\end{align}
+现在将密度函数$\rho(\mathbf{x}_1)$推广为密度矩阵$\gamma(\mathbf{x}_1,\mathbf{x}_1')$, 定义如下;
+\begin{align}
+\label{4.35}
+\gamma(\mathbf{x}_1,\mathbf{x}_1') = N \int\ddx_2\cdots\ddx_N \,\, \Phi(\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_N)\Phi^*(\mathbf{x}_1',\mathbf{x}_2,\ldots,\mathbf{x}_N)
+\end{align}
+这个矩阵$\gamma(\mathbf{x}_1,\mathbf{x}_1')$依赖于两个连续指标，我们把它称作\emph{一阶约化密度矩阵}或\emph{单电子约化密度矩阵}或者直接叫做\emph{一矩阵}。注意，一矩阵在连续表象下的对角元就是电子密度:
+\begin{align}
+\gamma(\mathbf{x}_1,\mathbf{x}_1) = \rho(\mathbf{x}_1)
+\end{align}
+由于$\gamma(\mathbf{x}_1,\mathbf{x}_1')$是两个变量的函数，我们可以将它用正交归一的\hft 自旋轨道$\{\chi_i\}$展开为
+\begin{align}
+\gamma(\mathbf{x}_1,\mathbf{x}_1') = \sum_{ij} \chi_i(\mathbf{x}_1) \gamma_{ij} \chi_j^*(\mathbf{x}_1)'
+\end{align}
+其中
+\begin{align}
+\gamma_{ij} = \int\ddx_1\ddx_1'\,\,\chi_i^*(\mathbf{x}_1)\gamma(\mathbf{x}_1,\mathbf{x}_1')\chi_j(\mathbf{x}_1')
+\end{align}
+由$\{\gamma_{ij}\}$构成的矩阵$\gamma$是一矩阵在正交归一基$\{\chi_i\}$下的\underline{离散表示}。
+
+\exercise{证明$\gamma$是Hermitian矩阵.
+\Next
+证明$\mathrm{tr}\,\gamma=N$.
+\Next
+考虑单电子算符
+\begin{align*}
+\mathcal{O}_1 = \sum_{i=1}^{N}h(i)
+\end{align*}
+\begin{enumerate}[a.]
+	\item 证明
+	\begin{align*}
+	\braket{\Phi|\mathcal{O}_1|\Phi} = \int\ddx_1\,\, [h(\mathbf{x}_1 \gamma(\mathbf{x}_1,\mathbf{x}_1')) ]_{\mathbf{x}_1'=\mathbf{x}_1}
+	\end{align*}
+	其中的记号$[\,\,]_{\mathbf{x}_1'=\mathbf{x}_1}$的意思是，在$h(\mathbf{x}_1)$作用到$\gamma(\mathbf{x}_1,\mathbf{x}_1')$之后，令$\mathbf{x}_1'$等于$\mathbf{x}_1$.
+	\item 证明
+	\begin{align*}
+	\braket{\Phi|\mathcal{O}_1|\Phi} = \mathrm{tr}\,\mathbf{h}\gamma
+	\end{align*}
+	其中
+	\begin{align*}
+	h_{ij} = \braket{i|h|j} = \int\ddx_1\,\, \chi^*(\mathbf{x}_1) h(\mathbf{x}_1) \chi_j(\mathbf{x}_1)
+	\end{align*}
+	如此，单电子算符的期望值就可以用\underline{一矩阵}表示出来。
+\end{enumerate}
+}
+
+若$\Phi$是\hft 基态波函数，那么可以从\underline{一矩阵}的定义（式\eqref{4.35}）证明:
+\begin{align}
+\gamma^\mathrm{HF}(\mathbf{x}_1,\mathbf{x}_1') = \sum_a \chi_a(\mathbf{x}_1)\chi_a^*(\mathbf{x}_1')
+\end{align}
+其中的求和仅遍及$\Psi_0$中的自旋轨道。如此，HF\underline{一矩阵}的离散表示非常简单——$\gamma^\mathrm{HF}$是对角的，对角元中，对应占据自旋轨道的元素为一，对应非占轨道的元素为零：
+\begin{equation}
+\begin{aligned}
+\gamma_{ij} & =\delta_{ij}&i,j\in\text{占据轨道}\\
+            & = 0 &其他\label{4.40} 
+\end{aligned}
+\end{equation}
+$\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占据数为1，未占轨道的为0.
+\exercise{
+回忆在二次量子化中，单电子算符写作：
+\begin{align*}
+\mathcal{O}_1 = \sum_{ij}\braket{i|h|j}\cs_i a_j
+\end{align*}
+\begin{enumerate}[a.]
+	\item 证明
+	\begin{align*}
+	\gamma_{ij} = \braket{\Phi|\cs_j a_i|\Phi}
+	\end{align*}
+	\item 证明$\gamma^\mathrm{HF}$的矩阵元由式\eqref{4.40}给出。
+\end{enumerate}
+}
 \section{多组态自洽场与广义价键法}
 \section{截断CI与尺寸一致性问题}
