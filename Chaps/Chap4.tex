@@ -178,5 +178,10 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 	注意这个写法中，展开式仅含$K$项。
 \end{enumerate}
 }
+我们预见看到使用自然轨道可以提升\mci{展开式}的收敛速度，那么问题就是如何将其应用到真实的计算中。难点在于，要得到自然轨道就需要\mci{一矩阵}，而后者需要CI波函数本身。因而只有当CI计算完成后才能得到自然轨道。但是很清楚，我们想要在计算前就拿到自然轨道。幸运的是，近似的自然轨道的表现往往和精确自然轨道同样好。有很多方案就是利用了这一点；这里我们只谈谈Bender和Davidson的迭代自然轨道法\endnote{C. F. Bender 和 E. R. Davidson, A natural orbital based energy calculation for helium hydride and lithium hydride, \textit{J. Phys. Chem}. \textbf{70}: 2675 (1966). }。这种方案中，某个计算所用的组态由之前的计算中所得自然轨道来生成。那么，起始阶段咸做一次小型的CI计算，仅涉及最重要的那一小部分组态（如50个），这些组态由正则\hft 轨道来构建。然后用这次计算所得的波函数求出\mci{一矩阵}，对角化后得到近似的自然轨道。用这些自然轨道中最重要的那部分，即占据数最大的那部分来构造新的50个组态；这个过一直持续下去，知道自然轨道（或能量）收敛。实际操作中，只会做几步迭代，而且往往几步迭代之后这个过程就会开始发散\endnote{
+K. H. Thunemann, J. Romelt, S. D. Peyerimhoff, and R. J. Buenker, A study of the convergence in iterative natural orbital procedures, \textit{Int. J. Quantum Chem}. \textbf{11}: 743 (1977).
+}。
 \section{多组态自洽场与广义价键法}
 \section{截断CI与尺寸一致性问题}
+
+\theendnotes
