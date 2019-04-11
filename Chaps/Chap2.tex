@@ -556,7 +556,7 @@ Hartree-Fock本征值问题\ref{2.52}的解是一组正交的Hartree-Fock自旋�
 这些本征值方程(也就是Roothan方程)将在第三章详细讲解. 此处只要明白包含K个空间基函数的基组会生成2K个自旋轨道(分别带$\alpha$自旋和$\beta$自旋), 其中有N个占据自旋轨道$\{\chi_{a}\}$, 余下$2K-N$个虚自旋轨道$\{\chi_r\}$. 由$\{\chi_{a}\}$构成的单Slater行列式就是变分Hartree-Fock框架下的基态, 我们用$\Psi_0$或$\ket{\Psi_0}$来记. $\ket{\Psi_0}$的图示如图$\ref{fig2.4}$. 在该图中, $2K$个自旋轨道按能量顺序排列, 而且忽略了可能的简并态. 图中有N个轨道被电子占据,(一个电子占据一个自旋轨道), 占据轨道由星号标记.
 选取的基函数集$\{\phi_\mu \}$越大越完全, 展开自旋轨道时的灵活性就更强, 能量期望$E_0=\braket{\Psi_0|\scr{H}|\Psi_0}$也就越低. 基组越来越大, Hartree-Fock能量$E_0$也会越来越低, 直到一个极限, 我们称之为\emph{Hartree-Fock极限}. 实际上, 任何有限的K(即基函数数目)都会产生一个高于Hartree-Fock极限的数值.
 
-\subsection{极小基H$_2$模型}
+\subsection{极小基$\hd$模型}
  \label{sec2.2.5}
 现在来介绍一个简单的模型体系, 此模型贯穿全书, 我们会用它来展示许多量子化学的思想和方法. 它就是我们熟悉的极小基MO-LCAO下的H$_2$分子. 
 
@@ -585,7 +585,7 @@ S_{12}=\int\db{r}\phi_1^*(\bo{r})\phi_2(\bo{r})
 	\draw[->] (.8,.8)--node[above,right]{$\bo{r-R_2}$}(.5,2);
 	\draw[->] (0,0)--node[above,left,pos=.65]{$\bo{r}$}(.5,2);
 	\end{tikzpicture}
-	\caption{极小基H$_2$的坐标}
+	\caption{\underline{极小基$\hd$}的坐标}
 \end{figure} 
 重叠积分依赖于距离$R_{12}=|\bo{R_1-R_2}|$, $R_{12}=0$则$S_{12}=1$, $R_{12}=\infty$那么$S_{12}=0$.
 
@@ -860,7 +860,7 @@ width=.7\textwidth,]
 \draw (0,-0.5)node[left] {$g$}--(1.5,-0.5)node[right]{1};
 \end{tikzpicture}
 \end{equation}
-局限在极小基组张成的空间内, 精确波函数就是这六个行列式的线性组合. Hartree-Fock基态中两个电子都在gerade轨道上, 所以此态有g对称性(正乘正得正). 双激发行列式中两个电子在ungerade轨道上, 此态对称性也为g(负乘负得正). 剩余的单激发行列式中电子一个在gerade轨道一个在ungerade轨道, 因此这些态对称性都是u(正乘负得负). 极小基$\mathrm{H}_2$的精确波函数$\ket{\Phi_0}$的对称性与Hartree-Fock近似下的基态一样, 都有$g$对称性. 因此, 只有带$g$对称性的行列式会出现在$\ket{\Phi_0}$的展开中, 即
+局限在极小基组张成的空间内, 精确波函数就是这六个行列式的线性组合. Hartree-Fock基态中两个电子都在gerade轨道上, 所以此态有g对称性(正乘正得正). 双激发行列式中两个电子在ungerade轨道上, 此态对称性也为g(负乘负得正). 剩余的单激发行列式中电子一个在gerade轨道一个在ungerade轨道, 因此这些态对称性都是u(正乘负得负). \underline{极小基$\mathrm{H}_2$}的精确波函数$\ket{\Phi_0}$的对称性与Hartree-Fock近似下的基态一样, 都有$g$对称性. 因此, 只有带$g$对称性的行列式会出现在$\ket{\Phi_0}$的展开中, 即
 \begin{equation}
 \ket{\Phi_0}=c_0\ket{\Psi_0} + c_{1\bar{1}}^{2\bar{2}}\ket{\Psi_{1\bar{1}}^{2\bar{2}}}=c_0\ket{\Psi_0} + c_{12}^{34}\ket{\Psi_{12}^{34}}
 \end{equation}
@@ -878,11 +878,11 @@ width=.7\textwidth,]
 
 \section{算符及其矩阵元 }
  \label{sec2.3}
-本节来讲如何求得某算符在正交归一轨道构成的行列式之间的矩阵元. 今有某算子$\mathcal{O}$与两个$N$电子行列式$\ket{K},\ket{L}$, 如何求得$\braket{K|\mathcal{O}|L}$? 所谓求矩阵元, 指的是将这个积分化为仅包含自旋轨道$\chi_i$的积分($\chi_i$即$\ket{K},\ket{L}$中的轨道), 然后再约化为仅包含空间轨道$\psi_i$的积分.  我们将以极小基$\mathrm{H}_2$为例展示该过程, 然后给出求这种矩阵元的一般规则.
+本节来讲如何求得某算符在正交归一轨道构成的行列式之间的矩阵元. 今有某算子$\mathcal{O}$与两个$N$电子行列式$\ket{K},\ket{L}$, 如何求得$\braket{K|\mathcal{O}|L}$? 所谓求矩阵元, 指的是将这个积分化为仅包含自旋轨道$\chi_i$的积分($\chi_i$即$\ket{K},\ket{L}$中的轨道), 然后再约化为仅包含空间轨道$\psi_i$的积分.  我们将以\underline{极小基$\mathrm{H}_2$}为例展示该过程, 然后给出求这种矩阵元的一般规则.
 
-\subsection{极小基$\mathrm{H}_2$的矩阵元}
+\subsection{\underline{极小基$\mathrm{H}_2$}的矩阵元}
  \label{sec2.3.1}
-我们先来计算极小基$\mathrm{H}_2$模型的full CI矩阵元(方程\ref{2.79}). 该模型的精确基态是Hartree-Fock基态$\ket{\Phi_0}=\ket{\chi_1\chi_2}=\ket{1\bar{1}}$和双激发态$\ket{\Phi_{12}^{34}}=\ket{\chi_3\chi_4}=\ket{\Phi_{1\bar{1}}^{2\bar{2}}}=\ket{2\bar{2}}$的线性组合, 我们要做的是求出对角元$\braket{{\Phi_0}|\mathscr{H} | {\Phi_0}}$, $\braket{{\Phi_{1\bar{1}}^{2\bar{2}}} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}}$(即Hartree-Fock基态和双激发态的能量)以及非对角元$\braket{{\Phi_0} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}},$$\,\braket{{\Phi_{1\bar{1}}^{2\bar{2}}}|\mathscr{H} | {\Phi_0}}$.
+我们先来计算\underline{极小基$\mathrm{H}_2$}模型的full CI矩阵元(方程\ref{2.79}). 该模型的精确基态是Hartree-Fock基态$\ket{\Phi_0}=\ket{\chi_1\chi_2}=\ket{1\bar{1}}$和双激发态$\ket{\Phi_{12}^{34}}=\ket{\chi_3\chi_4}=\ket{\Phi_{1\bar{1}}^{2\bar{2}}}=\ket{2\bar{2}}$的线性组合, 我们要做的是求出对角元$\braket{{\Phi_0}|\mathscr{H} | {\Phi_0}}$, $\braket{{\Phi_{1\bar{1}}^{2\bar{2}}} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}}$(即Hartree-Fock基态和双激发态的能量)以及非对角元$\braket{{\Phi_0} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}},$$\,\braket{{\Phi_{1\bar{1}}^{2\bar{2}}}|\mathscr{H} | {\Phi_0}}$.
 
 双电子体系的哈密顿量为
 \begin{align}
@@ -1493,13 +1493,13 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 [\psi_i\psi_j|\psi_k\psi_l] = 
 [\psi_i\psi_j|\bar{\psi}_k\bar{\psi}_l] = [\bar{\psi}_i\bar{\psi}_j|\psi_k\psi_l] = [\bar{\psi}_i\bar{\psi}_j|\bar{\psi}_k\bar{\psi}_l] = (\psi_i\psi_j|\psi_k\psi_l)
 \end{equation}
-带横线的轨道的其他排列方式积分后都为0. 因此极小基$\mathrm{H}_2$的Hartree-Fock基态能就是
+带横线的轨道的其他排列方式积分后都为0. 因此\underline{极小基$\mathrm{H}_2$}的Hartree-Fock基态能就是
 \begin{align}
 E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1)\\
     & = 1(1|h|1) + (11|11)
 \end{align} 
 \exercise{
-对自旋变量积分, 证明极小基$\mathrm{H}_2$的full CI矩阵可以写成
+对自旋变量积分, 证明\underline{极小基$\mathrm{H}_2$}的full CI矩阵可以写成
 \begin{equation}
 \mathbf{H} = \begin{pmatrix}
 2(1|h|1) + (11|11) & (12|12) \\
@@ -1507,7 +1507,7 @@ E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1)\\
 \end{pmatrix}
 \end{equation}
 }
-现在将以上结果推广到有偶数电子的$N$电子系统个中, 用空间积分表示该系统的Hartree-Fock能量. 与极小基$\mathrm{H}_2$的波函数
+现在将以上结果推广到有偶数电子的$N$电子系统个中, 用空间积分表示该系统的Hartree-Fock能量. 与\underline{极小基$\mathrm{H}_2$}的波函数
 \begin{equation}
 \ket{\Psi_0} = \ket{\chi_1\chi_2} = \ket{\psi_1\bar{\psi}_1}
 \end{equation}
@@ -1989,7 +1989,7 @@ a_i\cs_k = \delta_{ik} - \cs_ka_i
 \end{align}
 其中求和遍及整个自旋轨道集合$\{\chi_i\}$. 有一点要指出, 在这种形式的算符与电子的数目并无关系, 而且单、双电子积分都显式地出现在表达式中. 二次量子化的优点就是体系的电子数目不同时, 处理方法不变. 当研究固体时这个形式有很大便利.
 \exercise{
-令$\Psi_0 = \ket{\chi_1\chi_2} = \cs_1\cs_2\ket{\,\,}$为极小基$\mathrm{H}_2$的Hartree-Fock波函数. 请用二次量子化的办法证明
+令$\Psi_0 = \ket{\chi_1\chi_2} = \cs_1\cs_2\ket{\,\,}$为\underline{极小基$\mathrm{H}_2$}的Hartree-Fock波函数. 请用二次量子化的办法证明
 \begin{align*}
 \braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{ij}\braket{i|h|j}\braket{\,,|a_2 a_1 \cs_i a_j \cs_1\cs_2|\,\,}
 & = \braket{1|h|1} + \braket{2|h|2}
@@ -2132,7 +2132,6 @@ a) 由(2.245)导出(2.247); b)推导式(2.248).
 }
 
 多电子体系的总自旋算符就是每个电子自旋算符的矢量和：
-\newcommand{\ts}{\mathscr{S}}
 \begin{align}
 \vec{\mathscr{S}} = \sum_{i=1}^{N}\vec{s}(i)
 \end{align}
@@ -2206,7 +2205,7 @@ a) 由(2.245)导出(2.247); b)推导式(2.248).
 \begin{align}
 \ts^2\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j} = 0(0+1)\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j} = 0
 \end{align}
-可见练习2.38. 最简单的闭壳层行列式就是极小基$\mathrm{H}_2$的Hartree-Fock基态波函数：
+可见练习2.38. 最简单的闭壳层行列式就是\underline{极小基$\mathrm{H}_2$}的Hartree-Fock基态波函数：
 \begin{align}
 \ket{\Psi_0} = \ket{\psi_1\bar{\psi}_1} = [\psi_1(1)\psi_1(2)]^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2))
 \end{align}
@@ -2216,7 +2215,7 @@ a) 由(2.245)导出(2.247); b)推导式(2.248).
 用式(2.115)展开行列式, 注意到$\ts_+$与置换算符对易, 4)最后一步, $s_+\psi\beta = \psi_\alpha$, 但行列式此式为0, 因为其中有相同的两列.
 }
 
-现来看开壳层限制性行列式. 开壳层行列式\emph{不是}$\ts_2$的本征函数, 除非所有开壳层电子的自旋都平行, 如图2.12中那样. 举个例子, 考虑极小基$\hd$的四个单激发行列式(见式(2.76), 四个都是开壳层行列式). 其中的两个
+现来看开壳层限制性行列式. 开壳层行列式\emph{不是}$\ts_2$的本征函数, 除非所有开壳层电子的自旋都平行, 如图2.12中那样. 举个例子, 考虑\underline{极小基$\hd$}的四个单激发行列式(见式(2.76), 四个都是开壳层行列式). 其中的两个
 \begin{subequations}
 	\begin{align}
 	\ket{\Psi_1^{\bar{2}}} & = \ket{\bar{2}\bar{1}} = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\beta(1)\beta(2)\\
@@ -2277,7 +2276,7 @@ a) 由(2.245)导出(2.247); b)推导式(2.248).
 由此三重态的能量就闭单重态能量低. 请用波函数的空间部分解释此现象.
 }
 
-下面将刚才所得的极小基$\hd$的结果推广. 第四章和第五章会用到单重自旋匹配组态, 它由如下闭壳层Hatree-Fock基态的单激发和双激发组成：
+下面将刚才所得的\underline{极小基$\hd$}的结果推广. 第四章和第五章会用到单重自旋匹配组态, 它由如下闭壳层Hatree-Fock基态的单激发和双激发组成：
 \begin{align}
 \ket{\Psi_0} = \ket{1\bar{1}\cdots a\bar{a} b\bar{b}}
 \end{align}
@@ -2290,7 +2289,7 @@ R. Paunz, \textit{Spin Eigenfunctions}, Plenum, New York, 1979.
 \begin{align}
 \ket{^1\Psi_a^r} = 2^{-1/2}(\ket{\Psi_{\bar{a}}^{\bar{r}}} + \ket{\Psi_a^r})
 \end{align}
-若$a=1,b=2$则上面的式子就退化为极小基$\hd$的情形, 即(2.260).
+若$a=1,b=2$则上面的式子就退化为\underline{极小基$\hd$}的情形, 即(2.260).
 
 对双激发而言, 可能的单重自旋匹配组态很多, 结果已列在表2.7中. 若同一空间轨道的两个电子共同激发到另外一个空间轨道上, 由这种激发态构成的单重自旋匹配组态记为$\ket{^1\Psi_{aa}^{rr}}$. 同一空间轨道上的两个电子激发到了不同的空间轨道上, 由这种激发态构成的单重自旋匹配组态记为$\ket{^1\Psi_{aa}^{rs}}$. 不同空间轨道的两个电子激发到同一空间轨道, 由这种激发态构成的单重自旋匹配组态记为$\ket{^1\Psi_{ab}^{rr}}$. 最后一个, 不同空间轨道的两个电子激发到不同的空间轨道时, 有两个线性无关的单重自旋匹配组态, 记为$\ket{^A\Psi_{ab}^{rs}}, \ket{^B\Psi_{ab}^{rs}}$.
 
@@ -2406,7 +2405,7 @@ R. Paunz, \textit{Spin Eigenfunctions}, Plenum, New York, 1979.
 	\end{tikzpicture}
 	\caption{一个\emph{近似}为单重态的非限制性行列式. }
 \end{figure}
-非限制性单态常会收敛到对应的限制性单态上, 也就是闭壳层状态. 举个例子, 在我们的极小基$\hd$中, 在正常的兼长下, 闭壳层基态是$\ket{\psi_1\bar{\psi}_1}$, 如果两个电子的空间部分不一样, 那么能量绘上升而非下降. 但是当键长很大时, 一个电子等效地处于一个氢核旁边, 另一个电子处在另一个核旁边, 那么这两个电子的空间部分应该很不相同. 因此在大键长下, 使用非限制性行列式要闭限制性所得的能量更低, 正如我们在下一章将看到的那样.
+非限制性单态常会收敛到对应的限制性单态上, 也就是闭壳层状态. 举个例子, 在我们的\underline{极小基$\hd$}中, 在正常的兼长下, 闭壳层基态是$\ket{\psi_1\bar{\psi}_1}$, 如果两个电子的空间部分不一样, 那么能量绘上升而非下降. 但是当键长很大时, 一个电子等效地处于一个氢核旁边, 另一个电子处在另一个核旁边, 那么这两个电子的空间部分应该很不相同. 因此在大键长下, 使用非限制性行列式要闭限制性所得的能量更低, 正如我们在下一章将看到的那样.
 
 若$N^\alpha=N^\beta+1$, 那么非限制性行列式近似地为双重态(见图2.15). 非限制性双重态常作为自由基的初级描述, 自由基有一个未配对电子, 如$\mathrm{CH}_3$. 近似的三重态$\alpha$电子比$\beta$电子多两个, 如图2.16所示.
 

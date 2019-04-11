@@ -203,40 +203,26 @@ c_1\\c_2
 \]
 两个零阶态$\ket{1}$, $\ket{2}$由向上和向下的箭头表示:
 \begin{align*}
-\ket{1}\longleftrightarrow\quad \feynmandiagram [scale=.5,baseline=(current bounding box.center)][layered layout, vertical=a to b] {
-	a -- [ fermion] b,
-};\\
-\ket{2}\longleftrightarrow\quad \feynmandiagram [scale=.5,baseline=(current bounding box.center)][layered layout, vertical=b to a] {
-	a -- [ fermion] b,
-};
+\ket{1}\longleftrightarrow\quad \begin{tikzpicture}[scale=.5,baseline=(current bounding box.center)]
+\path[draw=blue,postaction={on each segment={mid arrow}}] (0,0)--(0,-1);
+\end{tikzpicture}
+\\
+\ket{2}\longleftrightarrow\quad \begin{tikzpicture}[draw=blue,scale=.5,baseline=(current bounding box.center)]
+	\path[draw=blue,postaction={on each segment={mid arrow}}] (0,-1)--(0,0);
+	\end{tikzpicture}
 \end{align*}
-
-箭头向下的线叫作``空穴"线, 箭头向上的线叫粒子线. 这些术语暂时不重要, 此处只是提早介绍一下. 由这些定义, 可以得到画出一些简单的图形来代表$\vs$的矩阵元:
+箭头向下的线叫作``空穴"线, 箭头向上的线叫粒子线. 这些术语暂时不重要, 此处只是提早介绍一下. 由这些定义, 可以画出一些简单的图形来代表$\vs$的矩阵元:
 
 
 \[
 \begin{array}{ccc}
-\braket{1|\vs|1}&=V_{11}\longleftrightarrow &\feynmandiagram [scale=.5,baseline=(current bounding box.center)][ small,layered layout, vertical=a to b, edge label = 1] {
-	a -- [ fermion] b[dot]
-	-- [fermion] c
-};
+\braket{1|\vs|1}&=V_{11}\longleftrightarrow &\tikz[baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (0,0.33)--node[right]{1}(0,0)--node[right]{1}(0,-.33);}
 \\[5mm]
-\braket{1|\vs|2}&=V_{12}\longleftrightarrow &\feynmandiagram[scale=.5,baseline=(current bounding box.center)] [ small,layered layout, horizontal=c to a] {
-	a --[opacity=.0]c,
-	a -- [edge label = 2,  anti fermion] b[dot],
-	b -- [edge label = 2, anti fermion] c,
-};
+\braket{1|\vs|2}&=V_{12}\longleftrightarrow &\tikz[scale=.5,baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (-0.77,0.77)--(0,0)--(.77,.77);}
 \\[5mm]
-\braket{1|\vs|2}&=V_{12}\longleftrightarrow &\feynmandiagram[scale=.5,baseline=(current bounding box.center)] [ small,layered layout, horizontal=a to c] {
-	a --[opacity=.0]c,
-	a -- [edge label = 2, fermion] b[dot],
-	b -- [edge label = 1, fermion] c,
-};
+\braket{1|\vs|2}&=V_{12}\longleftrightarrow &
 \\[5mm]
-\braket{1|\vs|1}&=V_{11}\longleftrightarrow &\feynmandiagram [scale=.5,baseline=(current bounding box.center)] [inline=(b.base), small,layered layout, vertical=b to a,edge label = 2] {
-	a -- [ fermion] b[dot]
-	-- [fermion] c
-};
+\braket{1|\vs|1}&=V_{11}\longleftrightarrow &
 \end{array}
 \]
 总之, 每个点上都有一线段进入, 有一线段穿出. 对应的矩阵元就是$\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
@@ -1539,7 +1525,7 @@ E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\bra
           \label{6.75}
 \end{align}
 
-作为以上方法的一个示例, 我们计算极小基$\hd$的三阶微扰能. 在第四章中已证明过, 极小基$\hd$的精确相关能为
+作为以上方法的一个示例, 我们计算\underline{极小基$\hd$}的三阶微扰能. 在第四章中已证明过, \underline{极小基$\hd$}的精确相关能为
 \begin{align}
 E_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
 \label{6.76}
@@ -1572,7 +1558,7 @@ E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \
 \exercise{从\eqref{6.76}出发推导\eqref{6.77}\eqref{6.78}.}
 
 \section{RS微扰展开的$N$依赖性}
-本章的引言中曾提过， Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性。通过仔细检验每个阶的代数表达式，他证明了，对$n=0,1,\ldots,6$, $E_0^{(n)}$确实正比于粒子数。但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 这里我们简要叙述一下Brueckner的分析过程。\ref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，该定理用RS微扰论的图表示证明了Brueckne的猜想适用于所有阶的微扰。我们来考虑一个由$N$个无相互作用的极小基$\hd$组成的超分子。我们会证明，利用\ref{sec6.2}中所推导的一般表达式，这个超分子的一、二、三、阶能量等于$N$乘单个单个分子的对应能量。此模型就是我们在第四章证明DCI给出的关联能量正比于$N^{1/2}$时(在大$N$极限下)所用过的。之前我们曾如此标记超分子的轨道：
+本章的引言中曾提过， Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性。通过仔细检验每个阶的代数表达式，他证明了，对$n=0,1,\ldots,6$, $E_0^{(n)}$确实正比于粒子数。但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 这里我们简要叙述一下Brueckner的分析过程。\ref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，该定理用RS微扰论的图表示证明了Brueckne的猜想适用于所有阶的微扰。我们来考虑一个由$N$个无相互作用的\underline{极小基$\hd$}组成的超分子。我们会证明，利用\ref{sec6.2}中所推导的一般表达式，这个超分子的一、二、三、阶能量等于$N$乘单个单个分子的对应能量。此模型就是我们在第四章证明DCI给出的关联能量正比于$N^{1/2}$时(在大$N$极限下)所用过的。之前我们曾如此标记超分子的轨道：
 \begin{equation*}
 \begin{tikzpicture}
 \draw (0,0)--node[below]{$1_1$}++(0.7,0) ++(0.3,0)--node[below]{$1_2$}++(0.7,0) ++(0.3,0)--node[below]{$1_3$}++(0.7,0) ++(0.5,0.2) node{$\cdots$} +(.5,0) ++(0.3,-.2)--node[below]{$1_N$}++(0.7,0);
