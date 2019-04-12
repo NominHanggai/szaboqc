@@ -399,7 +399,29 @@ E=\epsilon_i+\Sigma_{ii}(E)
 \epsilon_i' = \epsilon_i + \Sigma_{ii}^{(2)}(\epsilon_i)
 \end{align}
 之后我们会详细分析这个方程给出的结果.
-\section{将此框架应用于H$_2$和HeH$^+$}
+\section{将GF理论应用于H$_2$和HeH$^+$}
+上面所述的GF理论利用$\bm{\Sigma}^{(2)}(E)$来改进Koopmans定理给出的IP和EA值，要对这种办法由直观感受，最好的办法是将其用到一些已知其精确解的简单体系中。所以本节就将这套办法应用于\mci{极小基$\hd$}和$\heh$. 本节所得的一些体悟，我们会在下一节将其推广。这里我们只关注IP，对EA的分析留作习题。
+
+回忆\mci{极小基$\hd$}的做法，有一个占据分子轨道（标为1）一个非占轨道（标为2），轨道能量分别为
+\begin{subequations}
+	\begin{align}
+	\epsilon_1 & = h_{11} + J_{11}\\
+	\epsilon_2 & = h_{22} + 2J_{12} - K_{12}
+	\end{align}
+\end{subequations}
+这个模型的\mci{HF}能量为
+\begin{align}
+^NE_0 = 2h_{11} + J_{11} = 2\epsilon_1 - J_{11}
+\end{align}
+而\mci{关联能}为
+\begin{align}
+^NE_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
+\end{align}
+其中
+\begin{align}
+\Delta = (\epsilon_1 - \epsilon_2) + \frac{1}{2}(J_{11} + J_{22}) - 2J_{12} + K_{12}
+\end{align}
+那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$.
 \section{微扰理论和Green函数法}
 \section{一些算例}
 \theendnotes
