@@ -346,8 +346,59 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \Sigma_{ij}^{(2)} = \frac{1}{2}\sum_{ars}\frac{\braket{rs||ia}\braket{ja||rs}}{E+\epsilon_a-\epsilon_r-\epsilon_s} + 
 \frac{1}{2}\sum_{abr}\frac{\braket{ab||ir}\braket{jr||ab}}{E+\epsilon_r-\epsilon_a-\epsilon_b}
 \end{align}
-本章余下部分力图令读者对这个不寻常的形式有一些感觉. 将Dyson方程(7.36)同式(7.17)(7.19)比较, 就能知道为什么$\mathbf{\Sigma}(E)$叫作依赖能量的势. 应当强调, 以上的形式是精确的, 也即, 若用精确的$\mathbf{Sigma}(E)$来求解Dyson方程得到$\mathbf{G}(E)$, 那么$\mathbf{G}(E)$的极点就是$N$-粒子系统的\emph{精确}IP和EA. 当然, 我们肯定要作近似, 在GF理论中, 需对自能作近似. 若$\mathbf{\Sigma}(E)=0$, 那么$\mathbf{G}(E)=\mathbf{G}_0(E)$. 如式(7.37)所示, $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰. 这在多体微扰论中我们也曾见过: HF能量的第一个修正也是二阶的. 事实上, 比较$E^{(0)}$(式(6.72))和$\Sigma_{ij}^{(2)}$(式(7.38))的表达式, 可以看到一些共同点: 分子上都有两个反对称矩阵元; 分母只有一个因子, 其中含有某些轨道的能量. 7.5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系 . 
+本章余下部分力图令读者对这个不寻常的形式有一些感觉. 将Dyson方程(7.36)同式(7.17)(7.19)比较, 就能知道为什么$\mathbf{\Sigma}(E)$叫作依赖能量的势. 应当强调, 以上的形式是精确的, 也即, 若用精确的$\mathbf{Sigma}(E)$来求解Dyson方程得到$\mathbf{G}(E)$, 那么$\mathbf{G}(E)$的极点就是$N$-粒子系统的\emph{精确}IP和EA. 当然, 我们肯定要作近似, 在GF理论中, 需对自能作近似. 若$\mathbf{\Sigma}(E)=0$, 那么$\mathbf{G}(E)=\mathbf{G}_0(E)$. 如式(7.37)所示, $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰. 这在多体微扰论中我们也曾见过: HF能量的第一个修正也是二阶的. 事实上, 比较$E^{(0)}$(式(6.72))和$\Sigma_{ij}^{(2)}$(式(7.38))的表达式, 可以看到一些共同点: 分子上都有两个反对称矩阵元; 分母只有一个因子, 其中含有某些轨道的能量. 7.5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. \mci{MBGF表述}最吸引人的特点是, 所涉及的所有的矩阵大小全都等于HF自旋轨道的数目. 因此这种表述在单粒子图像的意义上推广了HF理论. 这种推广的代价就是引入了依赖能量的势能. 在更仔细地考虑MBGF表述之前, 我们给出$\sum_{ij}^{(2)}(E)$按\mci{空间轨道求和}写出的表达式:
+\begin{align}
+\sum_{ij}^{(2)}(E) = & \sum_{ars}^{N/2} \frac{\braket{rs|ia}(2\braket{ja|rs}-\braket{aj|rs})}{E+\epsilon_a-\epsilon_r-\epsilon_s}\notag\\
+                     & + \sum_{abr}^{N/2}\frac{\braket{ab||ir}(2\braket{jr|ib}-\braket{rj|ab})}{E+\epsilon_r-\epsilon_a-\epsilon_b}
+\end{align}
+这种形式在计算闭壳层$N$粒子体系的电离能很方便.
+\exercise{
+由\eqref{7.38}导出\eqref{7.39}.
+\Next
+$N$粒子系统的精确MBGF定义如下
+\begin{align*}
+(\mathbf{G}(E))_{ij} = & \sum_{m} \frac{\braket{^N\Phi_0|\cs_i|^{N-1}\Phi_m}\braket{^{N-1}\Phi_m|a_j|^{N}\Phi_0}}{E-(^N\es_0 - ^{N-1}\es_m)}\\
+                       & \sum_p \frac{\braket{^N\Phi_0|a_j|^{N+1}\Phi_p}\braket{^{N+1}\Phi_p|\cs_i|^{N}\Phi_0}}{E-(^{N+1}\es_p - ^{N}\es_0)}
+\end{align*}
+式中的求和指标$m$和$p$分别遍及$N-1$和$N+1$系统的所有态. $\ket{^M\Phi_k}$, $M=N,N\pm1$是$M$粒子系统的精确full CI波函数, 对应的能量为$^M\es_k=\braket{^M\Phi_k|\hs|^M\Phi_k}$, 但其中的HF自旋轨道属于$N$粒子系统. 产生算符($\cs_i$)和湮灭算符($a_i$)分别增加和移除一个HF自旋轨道.
+
+请证明以上格林函数在给定条件下可约化为式\eqref{7.30}中的HFGF:
+\begin{enumerate}[1.]
+	\item 用HF波函数$\ket{^N\Psi_0}$代替$\ket{^N\Phi_0}$.
+	\item $(N-1)$粒子系统的态用$a_a\ket{^N\Psi_0}$来近似.
+	\item $(N+1)$粒子系统的态用$\cs_r\ket{^N\Psi_0}$来近似.
+\end{enumerate}
+}
 \subsection{Dyson方程的解}
+要求得$N$粒子系统的IP和EA, 必须求解Dyson方程(式\eqref{7.36}), 得到$\mathbf{G}(E)$, 然后找出使$\mathbf{G}(E)$为无穷的$E$值. 在Dyson方程左右分别乘以$(\mathbf{G}_0(E))^{-1}$和用$(\mathbf{G}(E))^{-1}$, 就有
+\begin{align}
+(\mathbf{G}_0(E))^{-1} = (\mathbf{G}(E))^{-1} + \bm{\Sigma}(E)
+\end{align}
+求解上式得出$G(E)$, 我们发现
+\begin{align}
+\mathbf{G}(E) = ((\mathbf{G}_0(E))^{-1} - \bm{\Sigma}(E))^{-1} = (E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma(E)})^{-1}
+\end{align}
+式中用到了$\mathbf{G}_0(E)$的定义(式\eqref{7.31}). 由于矩阵的逆在行列式为零时不存在, 我们必须确定如下方程的根:
+\begin{align}
+\mathrm{det}(E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma}(E)) = 0
+\end{align}
+当$\bm{\Sigma}(E)=\mathbf{0}$时, 根就是$\epsilon_i$. 为找到Koopmans定理给出的结果的最低阶修正, 我们忽略$\bm{\Sigma}(E)$的非对角项. 如此式\eqref{7.42}就化简为
+\begin{align}
+\prod_i (E-\epsilon_i - \Sigma_{ii}(E)) = 0
+\end{align}
+要求出$\epsilon_i$的修正, 须求解下式得到$E$
+\begin{align}
+E=\epsilon_i+\Sigma_{ii}(E)
+\end{align}
+可以通过迭代的方式解出, 迭代第一步可使用$\Sigma_{ii}(E)$在$E=\epsilon_i$的值. 如此得到
+\begin{align}
+\epsilon_i' = \epsilon_i + \Sigma_{ii}(\epsilon_i)
+\end{align}
+然后将$\Sigma_{ii}(E)$在$E=\epsilon_i'$的值放入第二次迭代以求出$\epsilon_i''$. 如此进行直到收敛. $\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
+\begin{align}
+\epsilon_i' = \epsilon_i + \Sigma_{ii}^{(2)}(\epsilon_i)
+\end{align}
+之后我们会详细分析这个方程给出的结果.
 \section{将此框架应用于H$_2$和HeH$^+$}
 \section{微扰理论和Green函数法}
 \section{一些算例}
