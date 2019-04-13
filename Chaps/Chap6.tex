@@ -1656,7 +1656,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 		\end{center}
 \end{enumerate}
 要求(2)和(3)与\ref{sec6.2}中的完全相同，要求(4)是Brillouin定理的一个“不明显”结论。就和\ref{sec6.2}中一样，图可以任意扭动，只要点的竖直顺序不变即可。使用这些规则，我们可以找到：
-		\begin{center}
+	\begin{center}
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,%postaction={on each segment={mid arrow}}
 	]
@@ -1683,7 +1683,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	\draw (2.5,-1.75) node{$n=3$};
 	\end{tikzpicture}
 \end{center}
-但在四个点的情况下，等价图的数目达到十二个，如\ref{f6.1}所示。
+但在四个点的情况下， 不等价图的数目达到十二个，如\ref{f6.1}所示。
 \begin{figure}[H]
 		\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,]
@@ -1814,8 +1814,82 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \end{figure}
 
 如同之前，我们将在线上画上下箭头，将所有可能的方式都列出来，而且每个点都要有两条线穿入，两条线穿出。如此，就得到一个二阶图，三个三阶图。
+\begin{center}
+\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+\path [draw=blue, mid arrow]
+(0,0) arc(-60:60:1.732)  node[midway,right]{$s$};
+\path [draw=blue, mid arrow]
+(0,3) arc(45:-45:2.12)   node[left,midway]{$b$};
+\path [draw=blue, mid arrow]
+(0,3) arc(135:225:2.12)   node[right,midway]{$a$};
+\path [draw=blue, mid arrow]
+(0,0) arc(240:120:1.732)  node[midway,left]{$r$};
+% 下面第一个图的结点
+\node (a) at (0,-4) {\dian};
+\node (b) at (0,-2.5) {\dian};
+\node (c) at (0,-1) {\dian};
+\path [draw=blue,mid arrow]
+(a) arc(-60:60:1.732)  node[midway,right]{$s$};
+\path [draw=blue,mid arrow]
+(c) arc(45:-45:2.12/2)  node[midway,right]{\tiny$b$};
+\path [draw=blue,mid arrow]
+(b) arc(45:-45:2.12/2)  node[midway,right]{\tiny$d$};
+\path [draw=blue,mid reverse arrow]
+(a) arc(225:135:2.12/2) node[midway,left]{\tiny$c$};
+\path [draw=blue,mid reverse arrow]
+(b) arc(225:135:2.12/2) node[midway,left]{\tiny$a$};
+\path [draw=blue,mid arrow]
+(a) arc(240:120:1.732)  node[midway,left]{$r$};
+%下面第二个图
+\path [draw=blue,mid reverse arrow]
+(a)+(3,0) node{\dian} arc(-60:60:1.732)  node[midway,right]{$b$};
+\path [draw=blue,mid reverse arrow]
+(c)+(3,0) node{\dian}  arc(45:-45:2.12/2)  node[midway,right]{\tiny$s$};
+\path [draw=blue,mid reverse arrow]
+(b)+(3,0) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$v$};
+\path [draw=blue,mid arrow]
+(a)+(3,0) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$t$};
+\path [draw=blue,mid arrow]
+(b)+(3,0) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$r$};
+\path [draw=blue,mid reverse arrow]
+(a)+(3,0) node{\dian} arc(240:120:1.732)  node[midway,left]{$a$};
+%下面第三个图
+\path [draw=blue,mid reverse arrow]
+(a)+(6,0) node{\dian} arc(-60:60:1.732)  node[midway,right]{$a$};
+\path [draw=blue,mid  arrow]
+(c)+(6,0) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$b$};
+\path [draw=blue,mid arrow]
+(b)+(6,0) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$c$};
+\path [draw=blue,mid arrow]
+(a)+(6,0) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$t$};
+\path [draw=blue,mid arrow]
+(b)+(6,0) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$s$};
+\path [draw=blue,mid reverse arrow]
+(a)+(6,0) node{\dian} arc(240:120:1.732)  node[midway,left]{$r$};
+%n=xxx
+\node at (9,2)  {$n=2$};
+\node at (9,-2) {$n=3$};
+\end{tikzpicture}
+\end{center}
+这些图叫作\emph{Hugenholtz}图。
 
-这些图叫做Hugenholtz图。
+可喜的是，将这些图转换为代数表达式的规则几乎与之前的规则相同：
+\begin{enumerate}[H1.]
+	\item 每个点在分母上贡献一个反对称的矩阵元$\braket{\text{穿入标签1，穿入标签2}||\text{穿出标签1，穿出标签2}}$.
+	\item
+	每一对相邻点在分母上贡献一个因子：
+	\begin{align*}
+	\sum \epsilon_\text{空穴} - 
+	\sum \epsilon_\text{粒子} 
+	\end{align*} 
+	用一条虚线分开这两个点，虚线会与穴线和粒子线相交，式中的求和遍及所有与虚线相交的穴线和粒子线。
+	\item 
+	表达式的总符号为$(-)^{h+l}$,$h$和$l$分别是空穴线和闭合圈的数目。闭合圈数目不能单单直接从图中看出来。后面我门会讲如何从(H1)给出的代数表达式中直接看出这个数目。
+	\item 
+	将表达式对所有粒子和空穴指标求和。
+	\item 将式子乘以权重因子$2^{-k}$，$k$代表图中有$k$对等价线。等价线的意思是，两条线的出发点和结束点都一样，方向也一样。
+\end{enumerate}
+
 \subsection{Goldstone图}
 \subsection{对图求和}
 \subsection{什么是Linked-Cluster定理?}
