@@ -1630,10 +1630,10 @@ A_0^{(3)} = - \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1 - \epsilon_2)^2} + \frac{NK_
 \begin{align}
 E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 2K_{12})}{4(\epsilon_1 - \epsilon_2)^2}
 \end{align}
-如同$E_0^{(1)}$及$E_0^{(2)}$一样，这就是$N$乘每个$\hd$的三阶能量(\eqref{6.78}). 注意到\eqref{6.78}是在基组内按照Taloy展开得到的，这两种表达式等价，那么自洽性就得到了检验。虽然这个例子远非一个证明，但我们仍希望它能令读者乐于相信：RS微扰论——相较于DCI——所得到的对相关能的近似，是尺寸一致的（也即，有正确的$N$依赖性）。
+与$E_0^{(1)}$及$E_0^{(2)}$类似，上式就是$N$乘每个$\hd$的三阶能量(\eqref{6.78}). 注意到\eqref{6.78}是在基组内按照Taloy展开得到的，这两种办法给出的结果相同，那么自洽性就得到了检验。虽然这个例子算不上证明，但我们仍希望它能令读者乐于相信：RS微扰论下所得的近似相关能(相较于DCI)，是尺寸一致的（也即，有正确的$N$依赖性）。
 \exercise{推导式\eqref{6.80b}和\eqref{6.90}。}
 \section{相关能微扰展开的图表示}
-现在来介绍$n$阶微扰能的图表示。我们将零阶波函数取为\hft 波函数。其实以任一个单行列式出发，都可以推导出相应的微扰展开，但\hft 波函数是最方便的，原因就是Brillouin定理：单激发不会混入\hft 基态，这大大简化了微扰展开式的结构. 之后给出的构建图的规则仅对\hft 微扰论成立。虽然我们并不会严格推导构建图和计算图的规则，但仍希望它们尽可能地看起来像之前结果的自然推广。
+现在来介绍$n$阶微扰能的图表示。我们将零阶波函数取为\hft 波函数。其实以任一个单行列式出发，都可以推导出相应的微扰展开，但\hft 波函数是最方便的，原因就是Brillouin定理：单激发不会混入\hft 基态，这大大简化了微扰展开式的结构. 之后给出的构建图的规则仅对\hft 微扰论成立。虽然我们并不会严格推导构建图和计算图的规则，但仍希望能令它们尽可能看起来像之前结果的自然推广。
 \subsection{Hugenholtz图}
 如同前面，我们将相互作用以点来标记，将空穴和粒子用向下和向上的线标记。回看\eqref{6.72},可以发现, 二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。直接原因就是此时的微扰具有双粒子性质。因此一个合理的想法是，在表示\hft 微扰论的图中，点中应当有\emph{两}条线出，\emph{两}条线入。实际上也是如此。要得到对$n$阶能量有贡献的所有图，我们要将$n$个竖直排列的点按照如下要求，以所有可能的方式连接起来：
 \begin{enumerate}[1.]
@@ -1685,7 +1685,8 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \end{center}
 但在四个点的情况下， 不等价图的数目达到十二个，如\ref{f6.1}所示。
 \begin{figure}[H]
-		\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+	\centering
+	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,]
 	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
 	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
@@ -1828,6 +1829,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \node (a) at (0,-4) {\dian};
 \node (b) at (0,-2.5) {\dian};
 \node (c) at (0,-1) {\dian};
+% 下面第一个图
 \path [draw=blue,mid arrow]
 (a) arc(-60:60:1.732)  node[midway,right]{$s$};
 \path [draw=blue,mid arrow]
@@ -1867,14 +1869,15 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \path [draw=blue,mid reverse arrow]
 (a)+(6,0) node{\dian} arc(240:120:1.732)  node[midway,left]{$r$};
 %n=xxx
-\node at (9,2)  {$n=2$};
-\node at (9,-2) {$n=3$};
+\node at (9,1.5)  {$n=2$};
+\node at (9,-1.5) {$n=3$};
 \end{tikzpicture}
 \end{center}
 这些图叫作\emph{Hugenholtz}图。
 
 可喜的是，将这些图转换为代数表达式的规则几乎与之前的规则相同：
 \begin{enumerate}[H1.]
+	\kaiti
 	\item 每个点在分母上贡献一个反对称的矩阵元$\braket{\text{穿入标签1，穿入标签2}||\text{穿出标签1，穿出标签2}}$.
 	\item
 	每一对相邻点在分母上贡献一个因子：
@@ -1889,6 +1892,190 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	将表达式对所有粒子和空穴指标求和。
 	\item 将式子乘以权重因子$2^{-k}$，$k$代表图中有$k$对等价线。等价线的意思是，两条线的出发点和结束点都一样，方向也一样。
 \end{enumerate}
+可以看见仅有第五条(H5)和之前的规则明显不同. 具体运用这些规则时, 唯一比较难办的是确定闭合圈的数目. 具体的做法请看下例. 考虑这个二阶图:
+\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+	\path [draw=blue, mid arrow]
+	(0,0)node{\dian} arc(-60:60:1.732)  node[midway,right]{$s$};
+	\path [draw=blue, mid arrow]
+	(0,3) arc(45:-45:2.12)   node[left,midway]{$b$};
+	\path [draw=blue, mid arrow]
+	(0,3)node{\dian} arc(135:225:2.12)   node[right,midway]{$a$};
+	\path [draw=blue, mid arrow]
+	(0,0) arc(240:120:1.732)  node[midway,left]{$r$};
+	%虚线
+	\draw[densely dashed] (-2,2.25)--(2,2.25);
+	\end{tikzpicture}
+\end{center}
+很清楚, 这个图有两条空穴线, 而且有两对等价线$(r,s)$和$(a,b)$. 所有可以立即写出
+\begin{flalign*}
+&\text{\textbf{情形A}}&  &\left(\frac{1}{2}\right)^2 (-)^{2+l_A}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}&
+% \text{CA}  &&f &= m  \frac{d^2y}{dt^2};
+\end{flalign*}
+之前我们说过, 反对称矩阵元中, 两个穿入和两个穿出标号的顺序不重要, 所有上式可以等价地写为
+\begin{flalign*}
+&\text{\textbf{情形B}}&  &\left(\frac{1}{2}\right)^2 (-)^{2+l_B}\sum_{abrs}\frac{\braket{ab||rs}\braket{sr||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}&
+% \text{CA}  &&f &= m  \frac{d^2y}{dt^2};
+\end{flalign*}
+很清楚, 如果我们的规则是正确的, 则这两个式子应当相等. 那么就要看$l$这个因子如何起作用. 闭合圈的数目只有写出矩阵元的表达式之后才能确定. 为确定$l$, 先选一个特定的指标, 然后从这个指标出发, 按照如下规``走过"矩阵元:
+\begin{align}
+\braket{i\tikzmark{i}j||k\tikzmark{k}l},\quad
+\braket{i\tikzmark{j}j||k\tikzmark{l}l}
+\tikz[overlay,remember picture]
+{\draw[->,above arrow,] (i.north) to (k.north);
+ \draw[->,above arrow,] (j.north) to (l.north);
+}
+\end{align}
+直到最后到达一个与选定指标相同的指标. 所有指标都被走过一次后, 总的路径数就是$l$. 考虑情形A.
+\begin{align}
+\braket{a\tikzmark{a}b||r\tikzmark{r}s}\braket{r\tikzmark{r2}s||a\tikzmark{a2}b}\quad : \quad a\overset{1}{\to}r\overset{2}{\to}a\\
+\braket{ab\tikzmark{b}||rs\tikzmark{s}}\braket{rs\tikzmark{s2}||ab\tikzmark{b2}}\quad : \quad b\overset{1}{\to}s\overset{2}{\to}b
+\tikz[overlay,remember picture]
+{\draw[->,above arrow,] (a.north) to node[above,]{$1$} (r.north);
+ \draw[->,above arrow,] (r2.north) to node[above,]{$2$} (a2.north);
+ \draw[->,above arrow,] (b.north) to node[above,]{$2$} (s.north);
+ \draw[->,above arrow,] (s2.north) to node[above,]{$2$} (b2.north);
+}
+\end{align}
+那么$l_A=2$. 对于情形B, 我们有
+\begin{align}
+\braket{a\tikzmark{a}b\tikzmark{b}||r\tikzmark{r}s\tikzmark{s}}\braket{s\tikzmark{s2}r\tikzmark{r2}||a\tikzmark{a2}b\tikzmark{b2}}
+\quad : \quad a\overset{1}{\to} r \overset{2}{\to} b \overset{3}{\to} s \overset{4}{\to} a
+\tikz[overlay,remember picture]
+{\draw[->,above arrow,] (a.north) to node[above,]{$1$} (r.north);
+ \draw[->,above arrow,] (r2.north) to node[above,]{$2$} (b2.north);
+ \draw[->,below arrow,] (b.south) to node[above,]{$3$} (s.south);
+ \draw[->,below arrow,] (s2.south) to node[above,]{$2$} (a2.south);
+}
+\end{align}
+由于一条路就走遍了所有指标, 所以$l_B=1$. 又因为
+\begin{align}
+\braket{rs||ab} = - \braket{sr||ab}
+\end{align}
+所以情形A和B给出的式子是相同的, 也即
+\begin{align*}
+E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}
+\end{align*}
+该式与\eqref{6.72}的结果相同, 后者是用算式推得的. 现在来计算剩余的三个三阶图, 主要关注如何确定$l$:
+\begin{align*}
+\begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
+% 下面第一个图的结点
+\node (a) at (0,-4) {\dian};
+\node (b) at (0,-2.5) {\dian};
+\node (c) at (0,-1) {\dian};
+% 下面第一个图
+\path [draw=blue,mid arrow]
+(a) arc(-60:60:1.732)  node[midway,right]{$s$};
+\path [draw=blue,mid arrow]
+(c) arc(45:-45:2.12/2)  node[midway,right]{\tiny$d$};
+\path [draw=blue,mid arrow]
+(b) arc(45:-45:2.12/2)  node[midway,right]{\tiny$b$};
+\path [draw=blue,mid reverse arrow]
+(a) arc(225:135:2.12/2) node[midway,left]{\tiny$a$};
+\path [draw=blue,mid reverse arrow]
+(b) arc(225:135:2.12/2) node[midway,left]{\tiny$c$};
+\path [draw=blue,mid arrow]
+(a) arc(240:120:1.732)  node[midway,left]{$r$};
+\end{tikzpicture} 
+= 
+\left(\frac{1}{2}\right)^3 (-)^{4+l}\sum_{abcdrs}
+\frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a  + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_r-\epsilon_s)}
+\end{align*}
+有两条路径$a\to r\to c\to a$和$b\to s\to d\to b$, 因此$l$为$2$.
+\begin{align*}
+\begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
+% 下面第一个图的结点
+\coordinate (a) at (0,-4);
+\coordinate (b) at (0,-2.5);
+\coordinate (c) at (0,-1);
+% 下面第一个图
+\path [draw=blue,mid reverse arrow]
+(a) node{\dian} arc(-60:60:1.732)  node[midway,right]{$b$};
+\path [draw=blue,mid reverse arrow]
+(c) node{\dian}  arc(45:-45:2.12/2)  node[midway,right]{\tiny$u$};
+\path [draw=blue,mid reverse arrow]
+(b) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$s$};
+\path [draw=blue,mid arrow]
+(a) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$r$};
+\path [draw=blue,mid arrow]
+(b) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$t$};
+\path [draw=blue,mid reverse arrow]
+(a) node{\dian} arc(240:120:1.732)  node[midway,left]{$a$};
+\end{tikzpicture} 
+& = 
+\left(\frac{1}{2}\right)^3 (-)^{4+l}\sum_{abrstu}
+\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_t-\epsilon_u)}\\
+\intertext{这里的$l=2$, 因为全部路径是$a\to r\to t\to a$和$b\to s\to u \to b$. 最后一个图是}
+\begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
+% 下面第一个图的结点
+\coordinate (a) at (0,-4);
+\coordinate (b) at (0,-2.5);
+\coordinate (c) at (0,-1);
+%下面第三个图
+\path [draw=blue,mid reverse arrow]
+(a) node{\dian} arc(-60:60:1.732)  node[midway,right]{$a$};
+\path [draw=blue,mid  arrow]
+(c) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$c$};
+\path [draw=blue,mid arrow]
+(b) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$b$};
+\path [draw=blue,mid arrow]
+(a) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$s$};
+\path [draw=blue,mid arrow]
+(b) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$t$};
+\path [draw=blue,mid reverse arrow]
+(a) node{\dian} arc(240:120:1.732)  node[midway,left]{$r$};
+\end{tikzpicture} 
+&= 
+(-)^{4+l}\sum_{abcrst}
+\frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b - \epsilon_s - \epsilon_r)(\epsilon_a+\epsilon_c-\epsilon_r-\epsilon_t)}
+\end{align*}
+此处$l=3$, 因为全部路径有三条: $a\to r\to a $, $b\to s\to b$, $c\to t\to c$.
+那么三阶能量就是:
+\begin{align*}
+E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
+\frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_r-\epsilon_s)}\\
+&+\frac{1}{8}\sum_{abrstu}
+\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_t-\epsilon_u)}\\
+&+ \sum_{abcrst}
+\frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b - \epsilon_s - \epsilon_r)(\epsilon_a+\epsilon_c-\epsilon_r-\epsilon_t)}
+\end{align*}
+与式\eqref{6.75}中所引的结果相同.
+\exercise{
+证明如下的四阶图
+\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.8]
+	% 结点
+	\small
+	\node[inner sep=0] (a) at (0,-4) {\dian};
+	\node[inner sep=0] (b) at (0,-3) {\dian};
+	\node[inner sep=0] (c) at (0,-2) {\dian};
+	\node[inner sep=0] (d) at (0,-1) {\dian};
+	%图
+	\path [draw=blue,mid arrow]
+	(a) arc(-50:50:1.958110934) node[midway,right]{$s$};
+	\path [draw=blue,mid arrow]
+	(d) arc(45:-45:1.414) node[midway,left]{\tiny$c$} ;
+	\draw [draw=blue,mid arrow]
+	(b) -- node[right,midway]{$b$} (a);
+	\path [draw=blue, mid reverse arrow]
+	(a) arc(225:135:1.414) node[right,midway]{\tiny$e$} ;
+	\path [draw=blue, mid arrow=0.3]
+	(c) arc(30:-30:1) ;
+	\node at (0,-2-0.3) {\tiny$d$};
+	\path [draw=blue, mid arrow=0.3]
+	(b) arc(210:150:1) ;
+	\node at (0,-3+0.3) {\tiny$t$};
+	\path [draw=blue, mid arrow]
+	(c) to node[left,midway]{$a$} (d);
+	\path [draw=blue, mid reverse arrow]
+	(d) arc(130:230:1.958110934) node[left,midway]{$r$};
+	\end{tikzpicture}
+\end{center}
+	等于
+	\begin{align*}
+	-\frac{1}{2}\sum_{abcderst}\frac{\braket{rs||ac}\braket{at||de}\braket{dc||tb}\braket{cb||rs}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{d}+\epsilon_{e}-\epsilon_{r}-\epsilon_{t}-\epsilon_{s})(\epsilon_{b}+\epsilon_{e}-\epsilon_{r}-\epsilon_{s})}
+	\end{align*}
+}
 
 \subsection{Goldstone图}
 \subsection{对图求和}

@@ -100,10 +100,12 @@
 \newcommand{\es}{\mathscr{E}}
 %\renewcommand{\textit}[1]{\textgt{#1}}
 %\renewcommand{\itshape}{\jfontspec{FandolKai}}
+\newcommand{\kaiti}{\jfontspec{FandolKai}}
 \renewcommand{\emph}[1]{\textbf{#1}}
 
 
-%\usepackage{chapterbib}
+\usepackage{calc}
+%use \settowidth, \widthof
 
 \usepackage{endnotes}
 \renewcommand{\makeenmark}{\hbox{$^\theenmark$}}
@@ -184,20 +186,25 @@
 	% style to add an arrow in the middle of a path
 	mid arrow/.style={postaction={decorate,decoration={
 				markings,
-				mark=at position .55 with {\draw[arrows = {-Latex[width=0pt 7, length=5pt]}] (0pt,.0pt) -- (1.8pt,0pt);}
+				mark=at position #1 with {\draw[arrows = {-Latex[width=0pt 7, length=5pt]}] (0pt,.0pt) -- (1.8pt,0pt);}
 	}}},
-	mid arrow seg/.style={on each segmental={
-		    {decorate,decoration={
-				markings,
-				mark=at position .55 with {\draw[arrows = {-Latex[width=0pt 7, length=5pt]}] (0pt,.0pt) -- (1.8pt,0pt);}
-	}}}},
+	mid arrow/.default={.55},
 	% style to add an reverse arrow in the middle of a path
 	mid reverse arrow/.style={postaction={decorate,decoration={
 			markings,
 			mark=at position .45 with {\draw[arrows = {-Latex[width=0pt 7, length=5pt]}] (1.8pt,.0pt) -- (0pt,0pt);}
 }}},
+	above arrow/.style={to path={-- ++(0, .2) -| (\tikztotarget)},arrows = {-Latex[width=0pt 7, length=5pt]}},
+	below arrow/.style={to path={-- ++(0,-.2) -| (\tikztotarget)}}
 }
+\newlength{\wletter}
+\newlength{\hletter}
+\newcommand{\tikzmark}[1]{
+	\settowidth{\wletter}{\text{$\mathsurround=0pt i$}}
+	\settoheight{\hletter}{\text{$\mathsurround=0pt i$}}
+	\tikz[overlay,remember picture,inner sep=0,minimum height=\hletter] \node[shift={(-.4\wletter,.45\hletter)}] (#1) {};}
 \newcommand{\dian}{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+
 %\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{float}
 \renewcommand{\normalsize}{\fontsize{8pt}{9.6pt}\selectfont}
