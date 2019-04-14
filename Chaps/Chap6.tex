@@ -2078,6 +2078,96 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 }
 
 \subsection{Goldstone图}
+本节介绍多提微扰论的另外一种图表示：Goldstone所引入的Goldston图。Goldstone图直接对应着平常的双电子积分，而且只需观察就能确定闭合圈的数目。不过在给定的微扰阶上， Goldstone图比Hugenholtz图的数目多。Goldstone图中我们用虚线表示双粒子相互作用（而非用点）。粒子和空穴态仍然用箭头表示，但每个相互作用（虚线）的端点会有一条线进入，一条线穿出。举个例子，Hugenholtz图中的如下单位
+\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+	\coordinate (a) at (0,0);
+	\node at (a) {\dian};
+	\path[draw=blue,mid arrow]
+	(-2,-2) to (a);
+	\path[draw=blue,mid arrow]
+	(-1,-2) to (a);
+	\path[draw=blue,mid reverse arrow]
+	(1,-2) to (a);
+	\path[draw=blue,mid reverse arrow]
+	(2,-2) to (a);
+	\end{tikzpicture}
+\end{center}
+在Goldstone图中要用两个单位表示：
+\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.west)},scale=.6]
+	\coordinate (a)  at (0,0);
+	\coordinate (a1) at ($(a)+(-1,-1.5)$);
+	\coordinate (a2) at ($(a)+(1,-1.5)$);
+	\coordinate (b) at  (3,0);
+	\coordinate (b1) at ($(b)+(-1,-1.5)$);
+	\coordinate (b2) at ($(b)+(1,-1.5)$);
+	\path[draw=blue,mid arrow seg]
+	(a1) to node[left]{$r$} (a)
+	(a) to node[right]{$b$}  (a2)
+	(b1) to node[left]{$s$}(b)
+	(b) to node[right]{$a$}(b2);
+	\draw[densely dotted]
+	(a)--(b);
+	\end{tikzpicture}
+	\qquad\qquad
+	\begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
+	\coordinate (a)  at (0,0);
+	\coordinate (a1) at ($(a)+(-1,-1.5)$);
+	\coordinate (a2) at ($(a)+(1,-1.5)$);
+	\coordinate (b) at  (3,0);
+	\coordinate (b1) at ($(b)+(-1,-1.5)$);
+	\coordinate (b2) at ($(b)+(1,-1.5)$);
+	\path[draw=blue,mid arrow seg]
+	(a1) to node[left]{$r$} (a)
+	(a) to node[right]{$a$}  (a2)
+	(b1) to node[left]{$s$}(b)
+	(b) to node[right]{$b$}(b2);
+	\draw[densely dotted]
+	(a)--(b);
+	\end{tikzpicture}
+\end{center}
+这种方式下反对称的矩阵元不再出现。读者可以将上面两种图的对应想象为: 将点切开并拉向两边，然后用两种不同的方式标记箭头。把对应阶数的Hugenholtz图``拉开”，就得到该阶数下的Goldstone图。比如
+\begin{center}
+\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+\path [draw=blue, mid arrow]
+(0,-1.5)node{\dian} arc(-60:60:1.732)  node[midway,right]{$s$};
+\path [draw=blue, mid arrow]
+(0,1.5) arc(45:-45:2.12)   node[left,midway]{$b$};
+\path [draw=blue, mid arrow]
+(0,1.5)node{\dian} arc(135:225:2.12)   node[right,midway]{$a$};
+\path [draw=blue, mid arrow]
+(0,-1.5) arc(240:120:1.732)  node[midway,left]{$r$};
+
+\draw[->,draw=blue] (1.5,.2 )-- +(1.5,1.3);
+\draw[->,draw=blue] (1.5,-.2)-- +(1.5,-1.3);
+\coordinate (a) at (4,2.5);
+\coordinate (b) at ($(a)+(2,0)$);
+\coordinate (c) at ($(a)+(0,-2)$);
+\coordinate (d) at ($(c)+(2,0)$);
+\path[mid arrow seg,draw=blue]
+(c) arc(225:135:1.414) node[midway,left]{$r$}  
+(a) arc( 45:-45:1.414) node[midway,right]{$b$}  
+(d) arc(225:135:1.414) node[midway,left]{$s$}  
+(b) arc( 45:-45:1.414) node[midway,right] {$a$}; 
+\draw[draw=blue,densely dotted]
+(a)--(b)
+(c)--(d);
+\coordinate (e) at (4,-2.5+2);
+\coordinate (f) at ($(e)+(2,0)$);
+\coordinate (g) at ($(e)+(0,-2)$);
+\coordinate (h) at ($(g)+(2,0)$);
+\path[mid arrow seg,draw=blue]
+(g) arc(225:135:1.414) node[midway,left]{$r$}  
+(f) arc( 45:-45:1.414) node[midway,right]{$s$} ; 
+\path[mid arrow seg=.25,draw=blue]
+(e) to node[pos=.25,right]{$a$} (h)
+(f) to node[pos=.25,left]{$b$} (g);
+\draw[draw=blue,densely dotted]
+(e)--(f)
+(g)--(h);
+\end{tikzpicture}
+\end{center}
 \subsection{对图求和}
 \subsection{什么是Linked-Cluster定理?}
 \section{一些算例}
