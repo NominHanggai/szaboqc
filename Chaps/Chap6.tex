@@ -2159,7 +2159,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \coordinate (h) at ($(g)+(2,0)$);
 \path[mid arrow seg,draw=blue]
 (g) arc(225:135:1.414) node[midway,left]{$r$}  
-(f) arc( 45:-45:1.414) node[midway,right]{$s$} ; 
+(h) arc(-45:45:1.414) node[midway,right]{$s$} ; 
 \path[mid arrow seg=.25,draw=blue]
 (e) to node[pos=.25,right]{$a$} (h)
 (f) to node[pos=.25,left]{$b$} (g);
@@ -2207,6 +2207,150 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \begin{table}[H]
 	\caption{二阶和三阶Goldstone图.}
 	\begin{tabular}{ccc}
+		\hline
+		1 & \tikz[baseline={(current bounding box.center)},scale=.6]{
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:135:1.414) node[midway,left]{$r$}  
+		(a) arc( 45:-45:1.414) node[midway,right]{$a$}  
+		(d) arc(225:135:1.414) node[midway,left]{$b$}  
+		(b) arc( 45:-45:1.414) node[midway,right] {$s$}; 
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		} 
+		& $(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		2 & \tikz[baseline={(current bounding box.center)},scale=.6]{
+					\coordinate (e) at (4,-2.5+2);
+					\coordinate (f) at ($(e)+(2,0)$);
+					\coordinate (g) at ($(e)+(0,-2)$);
+					\coordinate (h) at ($(g)+(2,0)$);
+					\path[mid arrow seg,draw=blue]
+					(g) arc(225:135:1.414) node[midway,left]{$r$}  
+					(h) arc(-45: 45:1.414) node[midway,right]{$s$} ; 
+					\path[mid arrow seg=.75,draw=blue]
+					(e) to node[pos=.75,right]{$b$} (h)
+					(f) to node[pos=.75,left]{$a$} (g);
+					\draw[draw=blue,densely dotted]
+					(e)--(f)
+					(g)--(h);
+					\path[use as bounding box] ($(g)-(.5,.5)$) rectangle ($(f)+(.5,.5)$);
+					} 
+		& $(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline
+		
+			1 & \tikz[baseline={(current bounding box.center)},scale=.6]{
+					\coordinate (a) at (4,-2.5+2);
+					\coordinate (b) at ($(a)+(2,0)$);
+					\coordinate (c) at ($(a)+(0,-2)$);
+					\coordinate (d) at ($(c)+(2,0)$);
+					\path[mid arrow seg,draw=blue]
+					(a) arc(135:225:1.414) node[midway,left]{$a$}  
+					(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+					(m) arc(0:45:1.414)node[midway,right]{$t$}
+					(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
+					(n) arc(180:135:1.414) node[midway,left]{$s$}
+					(b) arc(45:-45:1.414) node[midway,right]{$b$}
+					; 
+					\draw[draw=blue,densely dotted]
+					(m)--(n);
+					\draw[draw=blue,densely dotted]
+					(a)--(b)
+					(c)--(d);
+					\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		} 
+		& $(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrsut}\frac{\braket{ab|ru}\braket{ru|ts}\braket{ts|ba}}{(\epsilon_{a}+\epsilon_{d}-\epsilon_{r}-\epsilon_{u})(\epsilon_{a}+\epsilon_{b}-\epsilon_{t}-\epsilon_{s})}$\\\hline
+			2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+					\coordinate (a) at (4,-2.5+2);
+						\coordinate (b) at ($(a)+(2,0)$);
+						\coordinate (c) at ($(a)+(0,-2)$);
+						\coordinate (d) at ($(c)+(2,0)$);
+						\path[mid reverse arrow seg=.45,draw=blue]
+						(a) arc(135:225:1.414) node[midway,left]{$r$}  
+						(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$a$} 
+						(m) arc(0:45:1.414)node[midway,right]{$c$}
+						(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$d$}
+						(n) arc(180:135:1.414) node[midway,left]{$b$}
+						(b) arc(45:-45:1.414) node[midway,right]{$s$}
+						;
+						\draw[draw=blue,densely dotted]
+						(m)--(n);
+						\draw[draw=blue,densely dotted]
+						(a)--(b)
+						(c)--(d);
+						 \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture} 
+		& $(-)^{4+2}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ad|rs}\braket{cb|ad}\braket{rs|cb}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+					
+					3 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\coordinate (a) at (4,-2.5+2);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg=.45,draw=blue]
+		(a) arc(135:225:1.414) node[midway,left]{$a$}  
+		(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+		(m) arc(0:45:1.414)node[midway,right]{$s$};
+		\path[mid reverse arrow seg=.45,draw=blue]
+		(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$c$}
+		(n) arc(180:135:1.414) node[midway,left]{$b$}
+		(b) arc(45:-45:1.414) node[midway,right]{$t$}
+		;
+		\draw[draw=blue,densely dotted]
+		(m)--(n);
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture} 
+		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{ac|rt}\braket{rb|sc}\braket{st|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		
+					4 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\coordinate (a) at (4,-2.5+2);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg=.45,draw=blue]
+		(c) arc(225:180:1.414) coordinate(m) node[midway,left]{$r$}
+		(m) arc(180:135:1.414) node[midway,left]{$s$} 
+		(a) arc(45:0:1.414)    coordinate(n) node[midway,right]{$a$}
+		(n) arc(0:-45:1.414)   node[midway,right]{$b$};
+		\path [mid arrow seg=.45,draw=blue]
+		(b) arc(45:-45:1.414) node[midway,right]{$c$}
+		(d) arc(225:135:1.414) node[midway,left]{$t$};
+		\draw[draw=blue,densely dotted]
+		(m)--(n);
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture} 
+		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		
+		5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2.5,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2.5,0)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:135:1.414)  node[midway,left]{$r$} 
+		(a) arc(45:-45:1.414)   node[midway,right]{$a$}
+		($(a)+(2.5/2,0)$) arc(45:-45:1.414/2) coordinate (m)  node[midway,right]{$b$} % 从(a)向右挪1单位那个点开始画
+		(m) arc(225:135:1.414/2) node[midway,left]{$s$};
+		\path [mid arrow seg,draw=blue]
+		(d) arc(225:135:1.414/2) coordinate (n) node[midway,left]{$t$}
+		(n) arc(45:-45:1.414/2) node[midway,right]{$c$};
+		\draw[draw=blue,densely dotted]
+		(m)--(n);
+		\draw[draw=blue,densely dotted]
+		(a)--($(a)+(2.5/2,0)$)
+		(c)--(d);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+		\end{tikzpicture} 
+		& $(-)^{3+3}\sum_{abcrst}\frac{\braket{ac|rt}\braket{bt|sc}\braket{rs|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		
+		
 	\end{tabular}
 \end{table}
 

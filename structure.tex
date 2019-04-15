@@ -161,28 +161,6 @@
 			},
 		},
 	},
-	on each segmental/.style={draw=blue,
-		decorate,
-		decoration={
-			show path construction,
-			moveto code={},
-			lineto code={
-				\path [#1]
-				(\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
-			},
-			curveto code={
-				\path [#1] (\tikzinputsegmentfirst)--
-				.. controls
-				(\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
-				..
-				(\tikzinputsegmentlast);
-			},
-			closepath code={
-				\path [#1]
-				(\tikzinputsegmentfirst) -- (\tikzinputsegmentlast);
-			},
-		},
-	},
 	% style to add an arrow in the middle of a path
 	mid arrow/.style={postaction={decorate,decoration={
 				markings,
@@ -198,7 +176,11 @@
 	mid reverse arrow/.style={postaction={decorate,decoration={
 			markings,
 			mark=at position .45 with {\draw[arrows = {-Latex[width=0pt 7, length=5pt]}] (1.8pt,.0pt) -- (0pt,0pt);}
-}}},
+	}}},
+	mid reverse arrow seg/.style={postaction={on each segment={decorate,decoration={
+				markings,
+				mark=at position #1 with {\draw[arrows = {-Latex[width=0pt 7, length=5pt]}] (1.8pt,.0pt) -- (0pt,0pt);}}
+	}}},
 	above arrow/.style={to path={-- ++(0, .2) -| (\tikztotarget)},arrows = {-Latex[width=0pt 7, length=5pt]}},
 	below arrow/.style={to path={-- ++(0,-.2) -| (\tikztotarget)}}
 }
