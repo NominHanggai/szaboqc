@@ -2168,9 +2168,56 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 (g)--(h);
 \end{tikzpicture}
 \end{center}
+这两个Goldstone图分别叫作直接图和交换图.
+
+\ref{t6.2}中列出了\hft 微扰论中所有的二阶和三阶Golstone图. 计算这些图的规则是:
+\begin{enumerate}[G1.]
+	\item 每条相互作用线:
+	\begin{center}
+		\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
+		\coordinate (a) at (0,0);
+		\coordinate (a2) at ($(a)+(-1.5,-1.2)$);
+		\coordinate (a1) at ($(a)+(-1.5, 1.2)$);
+		\coordinate (b) at($(a)+(3,0)$);
+		\coordinate (b1) at ($(b)+(1.5, 1.2)$);
+		\coordinate (b2) at ($(b)+(1.5,-1.2)$);
+		\path [draw=blue]
+		(a2) to (a)
+		(a1) to (a)
+		(b2) to (b)
+		(b1) to (b);
+		\draw[densely dotted,]
+		(a)--(b);
+		\end{tikzpicture}
+	\end{center}
+	都在分子上贡献一个矩阵元因子$\braket{\text{穿入标签左,穿入标签右}|\text{穿出标签左,穿出标签右}}$.
+	\item 每对相邻的\mci{相互作用线}在分母上贡献一个因子
+	\begin{align*}
+	\sum \epsilon_\text{空穴} - \sum \epsilon_\text{粒子}
+	\end{align*}
+	在相邻的两条\mci{相互作用线}间划一条分隔虚线, 式中求和遍及所有与这条虚线相交的空穴线和粒子线.
+	\item 表达式总的符号为$(-)^{h+l}$. $h$是空穴线的数目, $l$是闭合圈的数目.
+	\item 将表达式对所有空穴和粒子指标求和.
+	\item 如果某个图有一个垂直于纸面的镜像对称面, 那么对应式子前面要乘以因子$1/2$.
+	\item 对于闭壳层体系, 对自旋轨道的求和等于对空间轨道求和的$2^l$倍, 即
+	\begin{align*}
+	\sum^N = (2)^l\sum^{N/2}.
+	\end{align*}
+\end{enumerate}
+\begin{table}[H]
+	\caption{二阶和三阶Goldstone图.}
+	\begin{tabular}{ccc}
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\caption{续表.}
+	\begin{tabular}{ccc}
+	\end{tabular}
+\end{table}
 \subsection{对图求和}
 \subsection{什么是Linked-Cluster定理?}
-Goldstone的\mci{连接簇}(linked-cluster)定理一般性地用图技术证明了Brueckner猜想， 即RS微扰论在每一阶都是尺寸一致(size-consistent)的。那些正比于$N^2$的项所对应的图包含分离的几部分（即\emph{未连接}图）.Goldstone用含时的技术证明了这类图一定不回出现在$n$阶能量的最终表达式中。因此Goldstone将$n$阶能量用\emph{连接}图写出来。本章内，我们仅运用了连接图。我们希望，通过这么多对一致性的检查，（比较用图和代数式所得的两种结果），能令读者相信RS微扰论的所有形式(即$N$-态、轨道等等形式)都能仅用连接图表示出来（或者至少相信这个说法是合理的）。需要强调，``尺寸一致"这个术语在本书中的意思是，在某个理论中，能量按照多体系统的尺寸线性增长。仅当系统是$N$个独立的闭壳层单个分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变，尺寸一致这个词意味着系统的能量是$N$倍的单体能量。
+Goldstone的\mci{连接簇}(linked-cluster)定理一般性地用图技术证明了Brueckner猜想， 即RS微扰论在每一阶都是尺寸一致(size-consistent)的。那些正比于$N^2$的项所对应的图包含分离的几部分（即\emph{未连接}图）.Goldstone用含时的技术证明了这类图一定不回出现在$n$阶能量的最终表达式中。因此Goldstone将$n$阶能量用\emph{连接}图写出来。本章内，我们仅运用了连接图。我们希望，通过这么多对一致性的检查，（比较用图和代数式所得的两种结果），能令读者相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能仅用连接图表示出来（或者至少相信这个说法合理）。需要强调，``尺寸一致"这个术语在本书中的意思是，在某个理论中，能量按照多体系统的尺寸线性增长。仅当系统是$N$个独立的闭壳层单个分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
 \exercise{
 某个超分子由$N$个无相互作用的极小基$\hd$分子组成，请通过计算\ref{t6.2}中Goldstone图，得到该系统的$E_0^{(3)}$。将你的结果与\eqref{6.92}相比，后者是从代数上直接消掉正比于$N^2$的项后得到的。\emph{提示:} 直接证明这个超分子的每一个Goldtone图的值都是$N$乘以单个分子的对应值。
 }
