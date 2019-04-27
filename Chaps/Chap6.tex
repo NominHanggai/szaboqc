@@ -2209,6 +2209,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	\begin{tabular}{ccc}
 		\hline
 		1 & \tikz[baseline={(current bounding box.center)},scale=.6]{
+		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
 		\coordinate (d) at ($(c)+(2,0)$);
@@ -2520,7 +2521,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(c) arc(225:135:1.414)  node[midway,left]{$r$}
 		(p) arc(-45:45:1.414/2) node[midway,right]{$s$} 
 		(n) arc(225:135:1.414/2)node[midway,left]{$t$}
-		    arc(45:-45:1.414/2) node[midway,left]{$c$}
+		    arc(45:-45:1.414/2) node[midway,right]{$c$}
 		;
 		\path[mid arrow seg=.85,draw=blue]
 		(a) to node[pos=.85,below]{$a$} (p);
@@ -2534,9 +2535,158 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture} 
 		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{t}-\epsilon_{r})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-		
 	\end{tabular}
 \end{table}
+这里我们实际地运用一下这些规则, 试着用图计算二阶能量. 将二阶能量中的\emph{直接图}按垂直于纸面的镜面进行反射,
+\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\coordinate (a) at (0,0);
+		\coordinate (b) at ($(a)+(2.5,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2.5,0)$);
+		\path[mid arrow seg,draw=blue]
+		(c) arc(225:135:1.414) 
+		(a) arc( 45:-45:1.414)
+		(d) arc(225:135:1.414)
+		(b) arc( 45:-45:1.414) ; 
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d);
+		\coordinate (p) at ($.7*(1,1/1.732)$);
+		\coordinate (m) at ($.5*(a)+.5*(b)$);
+		\coordinate (n) at ($.5*(c)+.5*(d)$);
+		\path[draw=blue,thick]
+		($(m)+(p)$) to ($(m)-(p)$) to
+		 ($(n)-(p)$) to ($(n)+(p)$) to cycle;
+		 \draw[densely dotted,thick]
+		(m) -- (n)
+		;
+	\end{tikzpicture}
+	$\longrightarrow$
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+	\coordinate (a) at (0,0);
+	\coordinate (b) at ($(a)+(2.5,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2.5,0)$);
+	\path[mid arrow seg,draw=blue]
+	(c) arc(225:135:1.414) 
+	(a) arc( 45:-45:1.414)
+	(d) arc(225:135:1.414)
+	(b) arc( 45:-45:1.414) ; 
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\end{tikzpicture}
+	$\equiv$
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+	\coordinate (a) at (0,0);
+	\coordinate (b) at ($(a)+(2.5,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2.5,0)$);
+	\path[mid arrow seg,draw=blue]
+	(c) arc(225:135:1.414) 
+	(a) arc( 45:-45:1.414)
+	(d) arc(225:135:1.414)
+	(b) arc( 45:-45:1.414) ; 
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\end{tikzpicture}
+\end{center}
+可见镜面反射下这个图不变, 所以权重因子就是$1/2$. 又因为图中有两条空穴线和一个闭合圈, 所以这个图对应的值为
+\begin{align*}
+\tikz[baseline={(current bounding box.center)},scale=.6]{
+	\coordinate (a) at (0,0);
+	\coordinate (b) at ($(a)+(2,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2,0)$);
+	\path[mid arrow seg,draw=blue]
+	(c) arc(225:135:1.414) node[midway,left]{$r$}  
+	(a) arc( 45:-45:1.414) node[midway,right]{$a$}  
+	(d) arc(225:135:1.414) node[midway,left]{$b$}  
+	(b) arc( 45:-45:1.414) node[midway,right] {$s$}; 
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+} 
+=
+\frac{1}{2}(-)^4\sum_{abrs} \frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s}
+\end{align*}
+同样地, \emph{交换}图也有一个镜面, 如图:
+\begin{center}
+	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+	\coordinate (a) at (0,0);
+	\coordinate (b) at ($(a)+(2.5,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2.5,0)$);
+	\path[mid arrow seg,draw=blue]
+	(c) arc(225:135:1.414) 
+	(d) arc(-45:45:1.414);
+	\coordinate (q) at ($.25*(a)+.25*(b)+.25*(c)+.25*(d)$);
+	\path[mid arrow seg=.25,draw=blue]
+	(a) to (q)
+	(b) to (q);
+	\path[mid arrow seg=.75,draw=blue]
+	(q) to (c)
+	(q) to (d);
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\coordinate (p) at ($.7*(1,.85*1/1.732)$);
+	\coordinate (m) at ($.5*(a)+.5*(b)$);
+	\coordinate (n) at ($.5*(c)+.5*(d)$);
+	\path[draw=blue,thick]
+	($(m)+(p)$) to ($(m)-(p)$) to
+	($(n)-(p)$) to ($(n)+(p)$) to cycle;
+	\draw[densely dotted,thick]
+	(m) -- (n);
+	\end{tikzpicture}
+	$\longrightarrow$
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+	\coordinate (a) at (0,0);
+	\coordinate (b) at ($(a)+(2.5,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2.5,0)$);
+	\path[mid arrow seg,draw=blue]
+	(c) arc(225:135:1.414) 
+	(d) arc(-45:45:1.414);
+	\coordinate (q) at ($.25*(a)+.25*(b)+.25*(c)+.25*(d)$);
+	\path[mid arrow seg=.5,draw=blue]
+	(a) to (q)
+	(b) to (q);
+	\path[draw=blue]
+	(q) to (c)
+	(q) to (d);
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\end{tikzpicture}
+\end{center}
+所以权重因子同样是$1/2$. 图中有两条空穴线, 一个闭合圈$(r\to b\to s\to a\to r)$, 这个图的值为
+\begin{align*}
+\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+\coordinate (a) at (0,0);
+\coordinate (b) at ($(a)+(2.5,0)$);
+\coordinate (c) at ($(a)+(0,-2)$);
+\coordinate (d) at ($(c)+(2.5,0)$);
+\path[mid arrow seg,draw=blue]
+(c) arc(225:135:1.414) node[midway,left]{$r$}
+(d) arc(-45:45:1.414) node[midway,right]{$s$};
+\coordinate (q) at ($.25*(a)+.25*(b)+.25*(c)+.25*(d)$);
+\path[mid arrow seg=.5,draw=blue]
+(a) to node[midway,right]{$b$}(q);
+\path[draw=blue] (b) to (q);
+\path[mid arrow seg=.5,draw=blue]
+(q) to node[midway,right]{$a$} (c);
+\path[draw=blue] (q) to (d);
+\draw[draw=blue,densely dotted]
+(a)--(b)
+(c)--(d);
+\end{tikzpicture}
+=
+\frac{1}{2}(-)^{2+1} \sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a+\epsilon_b-\epsilon_r\-\epsilon_s}
+\end{align*}
+可以看出以上两式加和就是\eqref{6.73}中的结果. 更进一步, 对于闭壳层体系我们利用规则(G6), 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 在交换图前面乘以$2^1$, 这样就得到了式\eqref{6.74}中的结果. \ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 读者若想检验自己对上面所介绍的规则的理解, 可以试着计算这些图, 并与表中给出的结果对照.
 
 \subsection{对图求和}
 \subsection{什么是Linked-Cluster定理?}
