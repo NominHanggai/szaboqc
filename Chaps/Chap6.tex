@@ -2223,7 +2223,8 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(c)--(d);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		} 
-		& $(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		2 & \tikz[baseline={(current bounding box.center)},scale=.6]{
+		& $(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		
+		2 & \tikz[baseline={(current bounding box.center)},scale=.6]{
 					\coordinate (e) at (4,-2.5+2);
 					\coordinate (f) at ($(e)+(2,0)$);
 					\coordinate (g) at ($(e)+(0,-2)$);
@@ -2689,9 +2690,81 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 可以看出以上两式加和就是\eqref{6.73}中的结果. 更进一步, 对于闭壳层体系我们利用规则(G6), 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 在交换图前面乘以$2^1$, 这样就得到了式\eqref{6.74}中的结果. \ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 读者若想检验自己对上面所介绍的规则的理解, 可以试着计算这些图, 并与表中给出的结果对照.
 
 \subsection{对图求和}
-\ref{sec6.2.3}节中我们已经看到，可以某一类特定的图求和至无穷阶，因为
+\ref{sec6.2.3}节中已经看到，某些特定类别的图可以求和至无穷阶，因为这些图构成了几何级数。Goldstone图也可以做类似的求和。之前在$N$态问题中，我们仅求和了对角图，对角图的意思是，它们是在二阶图上加点得来的，而且每个点上的出线和入线的标签要相同。对Goldstone图也可以进行类似的操作。首先由二阶的直接图和交换图出发，在上面加入相互作用线，同时保证，与相互作用线相交的空穴线或粒子线上的标签在交点上下完全一样。举个例子，考虑如下的一组图：
+\begin{equation*}
+\Delta = 
+\tikz[baseline={(current bounding box.center)},scale=.5]{
+	\coordinate (a) at (4,-2.5+2);
+	\coordinate (b) at ($(a)+(2,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2,0)$);
+	\path[mid arrow seg,draw=blue]
+	(a) arc(135:225:1.414) node[midway,left]{$a$}  
+	(c) arc(-45:45:1.414) coordinate(m) node[midway,right]{$r$} 
+%	(m) arc(0:45:1.414)node[midway,right]{$t$}
+	(d) arc(225:135:1.414) coordinate(n) node[midway,left]{$u$}
+%	(n) arc(180:135:1.414) node[midway,left]{$s$}
+	(b) arc(45:-45:1.414) node[midway,right]{$b$}
+	; 
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+} 
++
+\tikz[baseline={(current bounding box.center)},scale=.6]{
+	\coordinate (a) at (4,-2.5+2);
+	\coordinate (b) at ($(a)+(2,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2,0)$);
+	\path[mid arrow seg,draw=blue]
+	(a) arc(135:225:1.414) node[midway,left]{$a$}  
+	(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+	(m) arc(0:45:1.414)node[midway,right]{$t$}
+	(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
+	(n) arc(180:135:1.414) node[midway,left]{$s$}
+	(b) arc(45:-45:1.414) node[midway,right]{$b$}
+	; 
+	\draw[draw=blue,densely dotted]
+	(m)--(n);
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+} 
++
+\tikz[baseline={(current bounding box.center)},scale=.8]{
+	\coordinate (a) at (4,-2.5+2);
+	\coordinate (b) at ($(a)+(2,0)$);
+	\coordinate (c) at ($(a)+(0,-2)$);
+	\coordinate (d) at ($(c)+(2,0)$);
+	\path[mid arrow seg,draw=blue]
+	(a) arc(135:225:1.414) node[midway,left]{$a$}  
+	(c) arc(-45:-15:1.414) coordinate(c1) node[midway,right]{$r$} 
+	(c1) arc(-15:15:1.414) coordinate(m) node[midway,right]{$r$} 
+	(m) arc(15:45:1.414)node[midway,right]{$r$}
+	(d) arc(225:195:1.414) coordinate(d1) node[midway,left]{$s$}
+	(d1) arc(195:165:1.414) coordinate(n) node[midway,left]{$s$}
+	(n) arc(165:135:1.414) node[midway,left]{$s$}
+	(b) arc(45:-45:1.414) node[midway,right]{$b$}
+	; 
+	\draw[draw=blue,densely dotted]
+	(m)--(n)
+	(c1)--(d1);
+	\draw[draw=blue,densely dotted]
+	(a)--(b)
+	(c)--(d);
+	\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+} + \cdots
+\end{equation*}
+式中所有图都带一个$1/2$的权重因子. 而且由于这些图的空穴线和粒子线数目都相同，闭合圈的数目也一样，所以它们的正负号也一样。把图翻译成式子后就有
+\begin{align*}
+\Delta =& \frac{1}{2}\frac{|\braket{rs|ab}|^2}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}\left[ 1+ \frac{\braket{rs|rs}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}+ \left( \frac{\braket{rs|rs}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}\right)^2 + \cdots \right]\\
+=& \frac{1}{2}\frac{|\braket{rs|ab}|^2}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s} - \braket{rs|rs}}
+\end{align*}
+
 \subsection{什么是Linked-Cluster定理?}
-Goldstone的\mci{连接簇}(linked-cluster)定理一般性地用图技术证明了Brueckner猜想， 即RS微扰论在每一阶都是尺寸一致(size-consistent)的。那些正比于$N^2$的项所对应的图包含分离的几部分（即\emph{未连接}图）.Goldstone用含时的技术证明了这类图一定不回出现在$n$阶能量的最终表达式中。因此Goldstone将$n$阶能量用\emph{连接}图写出来。本章内，我们仅运用了连接图。我们希望，通过这么多对一致性的检查，（比较用图和代数式所得的两种结果），能令读者相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能仅用连接图表示出来（或者至少相信这个说法合理）。需要强调，``尺寸一致"这个术语在本书中的意思是，在某个理论中，能量按照多体系统的尺寸线性增长。仅当系统是$N$个独立的闭壳层单个分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
+Goldstone在他的\mci{连接簇}(linked-cluster)定理中用图形技术证明, 在更一般的情况下，Brueckner猜想依然成立， 也即，RS微扰论的每一阶都是尺寸一致(size-consistent)的。正比于$N^2$的项所对应的图由分离的几部分（即\emph{未连接}图）构成， Goldstone用含时技巧证明了这类图不会出现在$n$阶能量的最终表达式中。因此他把$n$阶能量纯粹用\emph{连接}图表示了出来。本章所用的图全部是连接图。之前我们已经多次对比了图方法和代数方法所得的两种结果，它们完全一致，读者可以相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能单纯用连接图表示出来（或者至少相信这个说法的合理性）。这里要说明以下尺寸一致这个词的含义，当我们说某个理论尺寸一致时，意思是，该理论给出的多体系统能量随系统大小线性增长。仅当系统是$N$个独立的闭壳层分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
 \exercise{
 某个超分子由$N$个无相互作用的极小基$\hd$分子组成，请通过计算\ref{t6.2}中的Goldstone图，得到该系统的$E_0^{(3)}$。将你的结果与\eqref{6.92}相比，后者是从代数上直接消掉正比于$N^2$的项后得到的。\emph{提示:} 直接证明这个超分子的每一个Goldtone图的值都是$N$乘以单个分子的对应值。
 }
