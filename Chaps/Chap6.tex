@@ -777,6 +777,7 @@ arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circ
 其中指标$m,n,k$的值不取$i$. 用6.1节介绍的方法得出四阶能量的代数表达式并与图形方法所得的结果比较.
 } 
 \subsection{对图求和}
+\label{sec6.2.3}
 图微扰论中的一个重要技术就是对某些特定类的图进行无穷阶求和. 为说明这个技术我们考虑两态系统. 对二阶有贡献的唯一图就是
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
@@ -2007,7 +2008,7 @@ E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon
 \frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_t-\epsilon_u)}\\
 \intertext{这里的$l=2$, 因为全部路径是$a\to r\to t\to a$和$b\to s\to u \to b$. 最后一个图是}
 \begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
-% 下面第一个图的结点
+% 下面第3个图的结点
 \coordinate (a) at (0,-4);
 \coordinate (b) at (0,-2.5);
 \coordinate (c) at (0,-1);
@@ -2206,6 +2207,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \end{enumerate}
 \begin{table}[H]
 	\caption{二阶和三阶Goldstone图.}
+	\label{t6.2}
 	\begin{tabular}{ccc}
 		\hline
 		1 & \tikz[baseline={(current bounding box.center)},scale=.6]{
@@ -2688,7 +2690,75 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \frac{1}{2}(-)^{2+1} \sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a+\epsilon_b-\epsilon_r\-\epsilon_s}
 \end{align*}
 可以看出以上两式加和就是\eqref{6.73}中的结果. 更进一步, 对于闭壳层体系我们利用规则(G6), 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 在交换图前面乘以$2^1$, 这样就得到了式\eqref{6.74}中的结果. \ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 读者若想检验自己对上面所介绍的规则的理解, 可以试着计算这些图, 并与表中给出的结果对照.
+\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到\ref{t6.2}中所列的Goldstone图. 这可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
+	\begin{align*}
+	\tikz[baseline={(current bounding box.center)},scale=.6]{
+		\coordinate (a) at (4,-2.5+2);
+		\coordinate (b) at ($(a)+(2,0)$);
+		\coordinate (c) at ($(a)+(0,-2)$);
+		\coordinate (d) at ($(c)+(2,0)$);
+		\path[mid arrow seg,draw=blue]
+		(a) arc(135:225:1.414) node[midway,left]{$a$}  
+		(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+		(m) arc(0:45:1.414)node[midway,right]{$t$}
+		(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
+		(n) arc(180:135:1.414) node[midway,left]{$s$}
+		(b) arc(45:-45:1.414) node[midway,right]{$b$}
+		; 
+		\draw[draw=blue,densely dotted]
+		(m)--(n);
+		\draw[draw=blue,densely dotted]
+		(a)--(b)
+		(c)--(d);
+		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+	} 
+	\end{align*}
+很容易看出结果是下图:
+	\begin{align*}
+	\begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
+	% 下面第一个图的结点
+	\coordinate (a) at (0,-4);
+	\coordinate (b) at (0,-2.5);
+	\coordinate (c) at (0,-1);
+	% 下面第一个图
+	\path [draw=blue,mid reverse arrow]
+	(a) node{\dian} arc(-60:60:1.732)  node[midway,right]{$b$};
+	\path [draw=blue,mid reverse arrow]
+	(c) node{\dian}  arc(45:-45:2.12/2)  node[midway,right]{\tiny$s$};
+	\path [draw=blue,mid reverse arrow]
+	(b) node{\dian} arc(45:-45:2.12/2)  node[midway,right]{\tiny$u$};
+	\path [draw=blue,mid arrow]
+	(a) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$r$};
+	\path [draw=blue,mid arrow]
+	(b) node{\dian} arc(225:135:2.12/2) node[midway,left]{\tiny$t$};
+	\path [draw=blue,mid reverse arrow]
+	(a) node{\dian} arc(240:120:1.732)  node[midway,left]{$a$};
+	\end{tikzpicture} 
+	\end{align*}
+同样地, 把\ref{t6.2}中的三阶Hugenholtz图压在一起, 就能得到对应的Goldstone图. 请你验证, 上面所得的Hugenholtz图的值确实与其对应的全部Goldstone图的值之和相同.
+}
 
+下面我们举个例子, 在极小基$\hd$ 模型下计算\ref{t6.2}中二阶和三阶图的值, 我们会看见所得值与之前的结果完全一样(\ref{6.77}\ref{6.78}). 我们首先转换到对空间轨道的求和, 这一步要乘以$2^l$, $l$是闭合圈的数目. 然后把所有空穴指标都标为$1$, 把所有粒子指标标为$2$. 对于两个二阶图来说, 我们可以写出
+\begin{align*}
+1\leftrightarrow (2)^2(1/2)\frac{\braket{11|22}^2}{(2\epsilon_1-2\epsilon_2)} & = \frac{K_{12}^2}{(\epsilon_1-\epsilon_2)}\\
+2\leftrightarrow -(2)(1/2)\frac{\braket{11|22}^2}{(2\epsilon_1-2\epsilon_2)} & = -\frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
+\end{align*}
+二者加和就得到二阶能量, 结果与\ref{6.77}相同. 对三阶图我们可以写出:
+\begin{align*}
+1&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{22}}{2(\epsilon_1 - \epsilon_2)^2}\\
+2&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{11}}{2(\epsilon_1 - \epsilon_2)^2}\\
+3&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
+4&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{22}}{(\epsilon_1 - \epsilon_2)^2}\\
+5&\leftrightarrow (2)^3 \frac{\braket{11|22}\braket{12|12}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = 2\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
+6&\leftrightarrow (2) \frac{\braket{11|22}\braket{21|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2K_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
+7&\leftrightarrow -(2)\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{11}}{4(\epsilon_1 - \epsilon_2)^2}\\
+8&\leftrightarrow -(2)\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2J_{22}}{4(\epsilon_1 - \epsilon_2)^2}\\
+9&\leftrightarrow (2) \frac{\braket{11|22}\braket{12|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
+10&\leftrightarrow (2) \frac{\braket{11|22}\braket{21|21}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{12}}{2(\epsilon_1 - \epsilon_2)^2}\\
+11&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
+12&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{12|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}
+\end{align*}
+读者可以自行验证以上十二个式子之和确实等于\ref{6.78}中给出的三阶能量.
 \subsection{对图求和}
 \ref{sec6.2.3}节中已经看到，某些特定类别的图可以求和至无穷阶，因为这些图构成了几何级数。Goldstone图也可以做类似的求和。之前在$N$态问题中，我们仅求和了对角图，对角图的意思是，它们是在二阶图上加点得来的，而且每个点上的出线和入线的标签要相同。对Goldstone图也可以进行类似的操作。首先由二阶的直接图和交换图出发，在上面加入相互作用线，同时保证，与相互作用线相交的空穴线或粒子线上的标签在交点上下完全一样。举个例子，考虑如下的一组图：
 \begin{equation*}
