@@ -1919,16 +1919,16 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 % \text{CA}  &&f &= m  \frac{d^2y}{dt^2};
 \end{flalign*}
 很清楚, 如果我们的规则是正确的, 则这两个式子应当相等. 那么就要看$l$这个因子如何起作用. 闭合圈的数目只有写出矩阵元的表达式之后才能确定. 为确定$l$, 先选一个特定的指标, 然后从这个指标出发, 按照如下规``走过"矩阵元:
-\begin{align}
+\begin{align*}
 \braket{i\tikzmark{i}j||k\tikzmark{k}l},\quad
 \braket{i\tikzmark{j}j||k\tikzmark{l}l}
 \tikz[overlay,remember picture]
 {\draw[->,above arrow,] (i.north) to (k.north);
  \draw[->,above arrow,] (j.north) to (l.north);
 }
-\end{align}
+\end{align*}
 直到最后到达一个与选定指标相同的指标. 所有指标都被走过一次后, 总的路径数就是$l$. 考虑情形A.
-\begin{align}
+\begin{align*}
 \braket{a\tikzmark{a}b||r\tikzmark{r}s}\braket{r\tikzmark{r2}s||a\tikzmark{a2}b}\quad : \quad a\overset{1}{\to}r\overset{2}{\to}a\\
 \braket{ab\tikzmark{b}||rs\tikzmark{s}}\braket{rs\tikzmark{s2}||ab\tikzmark{b2}}\quad : \quad b\overset{1}{\to}s\overset{2}{\to}b
 \tikz[overlay,remember picture]
@@ -1937,9 +1937,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
  \draw[->,above arrow,] (b.north) to node[above,]{$2$} (s.north);
  \draw[->,above arrow,] (s2.north) to node[above,]{$2$} (b2.north);
 }
-\end{align}
+\end{align*}
 那么$l_A=2$. 对于情形B, 我们有
-\begin{align}
+\begin{align*}
 \braket{a\tikzmark{a}b\tikzmark{b}||r\tikzmark{r}s\tikzmark{s}}\braket{s\tikzmark{s2}r\tikzmark{r2}||a\tikzmark{a2}b\tikzmark{b2}}
 \quad : \quad a\overset{1}{\to} r \overset{2}{\to} b \overset{3}{\to} s \overset{4}{\to} a
 \tikz[overlay,remember picture]
@@ -1948,11 +1948,11 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
  \draw[->,below arrow,] (b.south) to node[above,]{$3$} (s.south);
  \draw[->,below arrow,] (s2.south) to node[above,]{$2$} (a2.south);
 }
-\end{align}
+\end{align*}
 由于一条路就走遍了所有指标, 所以$l_B=1$. 又因为
-\begin{align}
+\begin{align*}
 \braket{rs||ab} = - \braket{sr||ab}
-\end{align}
+\end{align*}
 所以情形A和B给出的式子是相同的, 也即
 \begin{align*}
 E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}
@@ -2690,7 +2690,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \frac{1}{2}(-)^{2+1} \sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a+\epsilon_b-\epsilon_r\-\epsilon_s}
 \end{align*}
 可以看出以上两式加和就是\eqref{6.73}中的结果. 更进一步, 对于闭壳层体系我们利用规则(G6), 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 在交换图前面乘以$2^1$, 这样就得到了式\eqref{6.74}中的结果. \ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 读者若想检验自己对上面所介绍的规则的理解, 可以试着计算这些图, 并与表中给出的结果对照.
-\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到\ref{t6.2}中所列的Goldstone图. 这可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
+\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到\ref{t6.2}中所列的这些Goldstone图. 这个过程可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
 	\begin{align*}
 	\tikz[baseline={(current bounding box.center)},scale=.6]{
 		\coordinate (a) at (4,-2.5+2);
@@ -2832,7 +2832,24 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \Delta =& \frac{1}{2}\frac{|\braket{rs|ab}|^2}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}\left[ 1+ \frac{\braket{rs|rs}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}+ \left( \frac{\braket{rs|rs}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}\right)^2 + \cdots \right]\\
 =& \frac{1}{2}\frac{|\braket{rs|ab}|^2}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s} - \braket{rs|rs}}
 \end{align*}
+可见求和式是一个几何级数, 如前所述, 几何级数给出一个能量移动了的的分母. 若按照上面所述的规则画出所有允许的图, 然后求和, 就可以得到
+\begin{align}
+E_\mathrm{corr}(\mathrm{EN}) = -\frac{1}{4}\sum_{abrs}\frac{|\braket{ab||rs}|}{\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{ab}^{rs}}}
+\end{align}
+这个结果和前一章中用pstein-Nesbet对能(pair energies)给出的结果一样(\ref{5.15}\ref{5.16}).
 
+最后我们再提一个例子, 如果把所有\emph{双激发}图(这些图中的虚线仅穿过两个空穴线和两个粒子线)加和起来, 我们就得到了Bartlett与其合作者提出的\mci{双激发多体微扰论(D-MBPT($\infty$))}. 这个近似相当于\ref{secec5.2.3}中讨论过的线性CCA(线性耦合簇近似). 按照那里的讨论, 正确的关联能就是
+\begin{align}
+E_\mathrm{corr}(\mathrm{D-MBPT}(\infty)) = -\mathbf{B^\dagger(D)}^{-1}\mathbf{B}
+\end{align}
+其中
+\begin{subequations}
+\begin{align}
+(\mathbf{B}^\dagger)_{rasb} &= \braket{\Psi_0|\hs|\Psi_{ab}^{rs}}\\
+(\mathbf{D}^\dagger)_{rasb,tcud} &= \braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{cd}^{tu}}
+\end{align}
+\end{subequations}
+注意, 如果仅取$\mathbf{D}$的对角部分来近似$\mathbf{D}$, 我们就返回了Epstein-Nesbet二阶能量. 与$E_\mathrm{corr}(\mathrm{EN})$不同, $E_\mathrm{corr}(\mathrm{D-MBPT}(\infty)$精确到了三阶微扰. 在第四阶上, 它缺失了来自三重, 三重和四重激发的贡献.
 \subsection{什么是Linked-Cluster定理?}
 Goldstone在他的\mci{连接簇}(linked-cluster)定理中用图形技术证明, 在更一般的情况下，Brueckner猜想依然成立， 也即，RS微扰论的每一阶都是尺寸一致(size-consistent)的。正比于$N^2$的项所对应的图由分离的几部分（即\emph{未连接}图）构成， Goldstone用含时技巧证明了这类图不会出现在$n$阶能量的最终表达式中。因此他把$n$阶能量纯粹用\emph{连接}图表示了出来。本章所用的图全部是连接图。之前我们已经多次对比了图方法和代数方法所得的两种结果，它们完全一致，读者可以相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能单纯用连接图表示出来（或者至少相信这个说法的合理性）。这里要说明以下尺寸一致这个词的含义，当我们说某个理论尺寸一致时，意思是，该理论给出的多体系统能量随系统大小线性增长。仅当系统是$N$个独立的闭壳层分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
 \exercise{
