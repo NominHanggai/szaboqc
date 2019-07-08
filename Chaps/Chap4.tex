@@ -170,8 +170,8 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 	\begin{align*}
 	\zeta_i = \sum_k\psi_k U_{ki}
 	\end{align*}
-	因为$\mathbf{U}$对角化了\mci{一矩阵}，所以$\zeta_i$就是这个双电子体系的\mci{自然空间轨道}.
-	\item 最后，由于$\mathbf{C}$是对称矩阵，$\mathbf{U}$可以选成实矩阵。请证明，按照\mci{自然空间轨道}, 上面a中给出的$\ket{^1\Phi_0}$可以重写为
+	因为$\mathbf{U}$对角化了\mci{一矩阵}，所以$\zeta_i$就是这个双电子体系的\mci{自然\mci{空间轨道}}.
+	\item 最后，由于$\mathbf{C}$是对称矩阵，$\mathbf{U}$可以选成实矩阵。请证明，按照\mci{自然\mci{空间轨道}}, 上面a中给出的$\ket{^1\Phi_0}$可以重写为
 	\begin{align*}
 	\ket{^1\Phi_0} = \sum_{i=1}^{K}d_i\ket{\zeta_i\bar{\zeta}_i}
 	\end{align*}
@@ -179,9 +179,52 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 \end{enumerate}
 }
 我们预见看到使用自然轨道可以提升\mci{展开式}的收敛速度，那么问题就是如何将其应用到真实的计算中。难点在于，要得到自然轨道就需要\mci{一矩阵}，而后者需要CI波函数本身。因而只有当CI计算完成后才能得到自然轨道。但是很清楚，我们想要在计算前就拿到自然轨道。幸运的是，近似的自然轨道的表现往往和精确自然轨道同样好。有很多方案就是利用了这一点；这里我们只谈谈Bender和Davidson的迭代自然轨道法\endnote{C. F. Bender 和 E. R. Davidson, A natural orbital based energy calculation for helium hydride and lithium hydride, \textit{J. Phys. Chem}. \textbf{70}: 2675 (1966). }。这种方案中，某个计算所用的组态由之前的计算中所得自然轨道来生成。那么，起始阶段咸做一次小型的CI计算，仅涉及最重要的那一小部分组态（如50个），这些组态由正则\hft 轨道来构建。然后用这次计算所得的波函数求出\mci{一矩阵}，对角化后得到近似的自然轨道。用这些自然轨道中最重要的那部分，即占据数最大的那部分来构造新的50个组态；这个过一直持续下去，直到自然轨道（或能量）收敛。实际操作中，只会做几步迭代，而且往往几步迭代之后这个过程就开始发散了\endnote{
+我们看到, 使用自然轨道可以让\mci{展开式}加速收敛，那么问题就是如何将其应用到实际计算中。难点在于，要得到自然轨道就需要\mci{一矩阵}，而后者需要CI波函数本身。因而只有当CI计算完成后才能得到自然轨道。但是很清楚，我们想要在计算前就拿到自然轨道。幸运的是，近似的自然轨道的表现往往和精确自然轨道同样好。有很多方案就是利用了这一点；这里我们只谈谈Bender和Davidson的迭代自然轨道法\endnote{C. F. Bender 和 E. R. Davidson, A natural orbital based energy calculation for helium hydride and lithium hydride, \textit{J. Phys. Chem}. \textbf{70}: 2675 (1966). }。这种方案中，某个计算所用的组态由之前的计算中所得自然轨道来生成。那么，起始阶段咸做一次小型的CI计算，仅涉及最重要的那一小部分组态（如50个），这些组态由正则\hft 轨道来构建。然后用这次计算所得的波函数求出\mci{一矩阵}，对角化后得到近似的自然轨道。用这些自然轨道中最重要的那部分，即占据数最大的那部分来构造新的50个组态；这个过一直持续下去，直到自然轨道（或能量）收敛。实际操作中，只会做几步迭代，而且往往迭代次数多了之后这个过程就开始发散\endnote{
 K. H. Thunemann, J. Romelt, S. D. Peyerimhoff, and R. J. Buenker, A study of the convergence in iterative natural orbital procedures, \textit{Int. J. Quantum Chem}. \textbf{11}: 743 (1977).
 }。
 \section{多组态自洽场与广义价键法}
+我们已经知道, 正则\hft 轨道并非CI计算中的最佳选择. 我们现在考虑一个多行列式波函数, 它包含较少的组态. 我们改用什么轨道来构建这些组态, 以得到最优的结果呢? 由变分原理可知, 我们应该令轨道变化, 使能量达到最低. 这个胡言事故多组态自洽场(multiconfiguration self-sonsistent field, MCSCF)方法的中心思想. MCSCF波函数是一种截断的CI展开:
+\begin{align}
+\ket{\Psi_\mathrm{MCSCF}} = \sum_I c_I\ket{\Psi_I}
+\label{4.47}
+\end{align}
+其中的展开系数$(c_I)$和$\ket{\Psi_I}$中的正交归一轨道同时进行优化. 对于闭壳层体系, 如果展开式\eqref{4.47}中只有一个行列式, 此时MCSCF就等价于\hft. 要得到MCSCF波函数需求解一组方程, 这组方程比限制性\hft 中的Roothaan方程更复杂. Wahl和Das的综述中讨论了MCSCF问题的几种求解方法\endnote{
+A. C. Wahl and G. Das, The multiconfiguration self-consistent field method, in \textit{
+Methods of Electronic Structure Theory,
+} H. F. Schaefer III (Ed.), Plenum, New York, 1977, p. 51. 除了形式理论的讨论之外, 此文章还给出了一些数值结果.
+}.
+
+为了更清晰地说明MCSCF方法, 我们考虑基态$\hd$的例子. 对于氢气分子, 最简单的MCSCF波函数由两个闭壳层组态组合而成:
+\begin{align}
+\ket{\Psi_\mathrm{MCSCF}} = c_A\ket{\psi_A\bar{\psi}_A} + c_B\ket{\psi_B\bar{\psi}_B} 
+\end{align}
+而正交归一轨道$\psi_A$和$\psi_B$可用一组原子轨道展开:
+\begin{align}
+\psi_i=\sum_\mu C_{\mu i}\phi_i\quad i=A,B
+\end{align}
+MCSCF能量 要通过最小化$\braket{\Psi_\mathrm{MCSCF}|\hs|\Psi_\mathrm{MCSCF}}$来得到, 而且最小化时要满足约束
+\begin{align}
+\braket{\psi_A|\psi_A} = \braket{\psi_B|\psi_B}=1\quad \braket{\psi_A|\psi_B}=0
+\end{align}
+以及
+\begin{align}
+c_A^2 + c_B^2 = 1
+\end{align}
+以此得到最优的CI展开系数(即$c_A$或$c_B$)和最优轨道$\psi_A,\psi_B$(相当于得到一组最优的展开系数$C_{\mu i}, i=A,B$). 如果用极小基来描述$\hd$, 那么$\psi_A,\psi_B$可以利用对称性得到($\psi_A,\psi_B$就是$\psi_1,\psi_2$), 此时$\Psi_\mathrm{MCSCF}$相当于full CI波函数. 但若用更大的基组, 那么得到MCSCF能量会比full CI能量高, 而比用\hft 正则轨道构成的双组态CI展开所得的能量低.
+
+本节最后我们来考察W. A. Goddard III及其合作者提出的广义价键波(generalized valence bond, GVB)函数, 它可以视作MCSCF波函数的特殊形式. GVB的要点可以用$\hd$来说明. Heitler-London价键波函数写作:
+\begin{align}
+\ket{\Psi_\mathrm{VB}} = (2(1+S_{12}^2))^{-1/2} [\phi_1(1)\phi_2(2) + \phi_1(2)\phi_2(1)]2^{-1/2}(\alpha(1)\beta(2)-\alpha(2)\beta(1))
+\end{align}
+式中的$\phi_1,\phi_2$分别是以原子核1和2为中心的非正交\emph{原子}轨道($\braket{\phi_1|\phi_2}=S_{12}$). GVB波函数的形式与VB的形式一样:
+\begin{align}
+\ket{\Psi_\mathrm{VB}} = (2(1+S^2))^{-1/2} [u(1)v(2) + u(2)v(1)]2^{-1/2}(\alpha(1)\beta(2)-\alpha(2)\beta(1))
+\end{align}
+但是非正交的GVB轨道$u,v$($\braket{u|v}=S$)要以变分的方式来确定. 这就是说, 这两个非正交的轨道$u,v$要线用一个基组展开, 展开系数要通过最小化$\ket{\Psi_\mathrm{GVB}}$能量的方式来确定. 因此GVB波函数就是VB波函数的推广, 只是前者要用自洽的方式来得到. GVB方法有许多很好的特点, 其中之一就是它可以正切地描述分子解离为开壳层碎片的过程. 如果使用相同的基组来展开正交的MCSCF轨道($\psi_A,\psi_B$)和非正交的GVB轨道($u,v$), 可以证明(见习题4.9), 最简单的两组态MCSCF波函数(式\eqref{4.48})等价于GVB波函数(式\eqref{4.52}).
+
+
+
+
 \section{截断CI与尺寸一致性问题}
 
 \theendnotes
