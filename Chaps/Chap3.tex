@@ -1725,7 +1725,7 @@ E_\mathrm{tot} = E_0 + 1/R = -1.1167\au
 	every axis y label/.style={rotate=90,at={(axis description cs:-.15,.5)}},
 	ylabel={$E(\hd)-2E(\mathrm{H})\,(\au)$},
 	]
-	\addplot [domain=.26:6, thick, mark=none, blue] table{h2.dat};
+	\addplot [domain=.26:6, thick, mark=none, blue] table{./Pictures/h2.dat};
 	\addplot [domain=.26:6, thick,dashed, mark=none,, blue] table{wolniewicz.dat};
 	\draw[<-] (2.7,-.08578740)--(3.2,-.08578740)node[right]{精确};
 	\draw     (3.6,-.12)node{(Kolos-Wolniewicz)};
@@ -2086,7 +2086,7 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 
 	every axis y label/.style={rotate=90,at={(axis description cs:-.15,.5)}},
 	ylabel={$E(\heh)-2E(\mathrm{He})\,(\au)$},
 	]
-	\addplot [domain=.26:6, thick, mark=none, blue] table[y expr=\thisrowno{1}+2.6438] {heh-tot-ener.txt};
+	\addplot [domain=.26:6, thick, mark=none, blue] table[y expr=\thisrowno{1}+2.6438] {./Pictures/heh-tot-ener.txt};
 	
 	\addplot [domain=.035:6, thick,dashed, mark=none, blue] table[y expr = -(\thisrowno{3}-2.9037244)] {W-heh.dat};
 	\draw[->] (1.7,0.1)node[right,above]{\parbox{\twoc}{精确\\(Wolniewicz)}}--(1.5,-.06578740);
