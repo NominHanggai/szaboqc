@@ -15,17 +15,115 @@ E_\mathrm{corr}=\mathscr{E}_0-E_0
 \section{多组态波函数及Full CI矩阵的结构}
 为简单计, 本章假设分子有偶数个电子, 并假设这些分子都能用闭壳层HF行列式$\ket{\Psi_0}$来较好地表示. 设想我们已经求解完毕了有限基下的Roothaan方程, 得到了$2K$个自旋轨道${\chi_i}$. 能量最低的$N$个自旋轨道构成$\ket{\Psi_0}$. 第二章中介绍过, 由这$2K$个自选轨道可以构造出很多其他的$N$电子行列式. 将N电子函数和\hft 波函数$\Psi_0$作比较, 指出那里不同, 用这种指出不同的方式来描述$N$电子波函数会很方便. 那么可能的行列式就包含$\ket{\Psi_0}$, 单激发行列式$\ket{\Psi_a^r}$(与$\ket{\Psi_0}$, 一个自旋轨道$\chi_a$被换成$\chi_r$), 双激发行列式$\ket{\Psi_{ab}^{rs}}$等等, 直到$N$重激发行列式. 这些多电子波函数可以构成一组基, 将精确多电子波函数$\ket{\Phi_0}$展开. 如果$\ket{\Psi_0}$是对$\ket{\Phi_0}$的良好近似, 那么从变分原理可以知, 我们能构造一个更好的近似如下(当基组完备时就是精确解):
 \begin{align}
-\ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}} + \sum_{\substack{a<b<c\\r<s<t}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}}} + \cdots \tag{4.2a}
+\ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}c_{ab}^{rs}}\ket{\Psi_{ab}^{rs}} + \sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}} + \cdots \tag{4.2a}
 \label{4.2a}
 \end{align}
-这就是full CI波函数的形式. 求和号上对指标的限制(如$a<b, r<s$等)保证了一个激发态行列式只在展开出现一次.有时为了方便, 在当进行数学形式上的操作时, 会把这些限制去掉, 把\eqref{4.2a}重新写为
+这就是full CI波函数的形式. 求和号上对指标的限制(如$a<b, r<s$等)保证了一个激发态行列式只在展开出现一次.有时为了方便, 当进行数学形式上的操作时, 会把这些限制去掉, 把\eqref{4.2a}重新写为
 \begin{align}
-\ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}} + \sum_{\substack{a<b<c\\r<s<t}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}}} + \cdots \tag{4.2b}
+\label{4.2}
+\ket{\Phi_0} =& c_0\ket{\Psi_0}+ \left( \frac{1}{1!} \right)^2\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \left( \frac{1}{2!} \right)^2\sum_{\substack{abrs}}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}\notag \\
+&+\left( \frac{1}{3!} \right)^2 \sum_{\substack{abc\\rst}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+\left( \frac{1}{4!} \right)^2 \sum_{\substack{abcd\\rstu}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}} + \cdots \tag{4.2b}
 \addtocounter{equation}{1}\end{align}
+式中的因子$(1/n!)^2$可以确保每个激发行列式确实只被包含了一次. 比如, 没有指标限制时, 双激发的求和包括下面几项
+\begin{align*}
+c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}, 
+c_{ba}^{rs}\ket{\Psi_{ba}^{rs}}, 
+c_{ab}^{sr}\ket{\Psi_{ab}^{sr}},
+c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
+\end{align*}
+现在如果我们要求系数$c_{ab}^{rs}$是反对称的, 即$a,b$(或$r,s$)交换时系数变号, 正如波函数是反对称的一样, 那么这四项都是等同的. 因此才要增加一个因子$1/4$来确保每个行列式只被计入一次.
+
+总共有多少个$n$重激发呢？如果有$2K$个自旋轨道, 那么$N$个占据轨道构成$\ket{\Psi_0}$, $2K-N$个是空轨道. 可以从$\ket{\Psi_0}$中选出$n$个占据轨道, 选法有$\binom{N}{n}$种. 同样, 从$2K-n$个空轨道中挑出$n$个轨道, 选法有$\binom{2K-N}{n}$种. 因此, $n$重激发行列式总共有$\binom{N}{n}\binom{2K-N}{n}$种. 即使是小分子, 用不大的基组, 所生成的$n$重激发行列式也是相当多的（除了$n=0,1$的情况）. 在这么多的行列式中, 很多是可以去掉的 （虽然去掉之后仍有很多）,这是由于具有不同自旋的波函数不发生混合 （即$\braket{\Psi_i|\hs|\Psi_j}=0$, 若$\ket{\Psi_j}$有不一样的自旋）. 设想我们只关心单重态, 那么可以从尝试函数中把那些$\alpha,\beta$电子数不同的行列式去掉, 也即只留下$\ts_z$本征值为0的那些行列式. 进一步, 我们在\ref{sec2.5}中已经知道, 对这些余下的行列式进行恰当的线性组合, 可以构造出\emph{自旋匹配组态}, 也即$\ts^2$的本征函数. 因此, 如果只对单重态感兴趣, 就只需在尝试波函数中包含单重的自旋匹配组态. 虽然在实际计算中总是使用自旋匹配组态, 但直接用行列式来推导形式理论是很方便的, 因为表达式会更简单.
+
+有了\eqref{4.2}中的尝试函数, 现在用线性变分法求对应的能量. 在\ref{chap1}中已经提过, 这个过程中要先将\ha 在N电子函数（即\eqref{4.2}中的那些函数）构成的基下的矩阵写出来, 然后求出其本征值. 这个矩阵叫做full CI矩阵, 这种方法就叫full CI. 最低的本征值对应基态能量的上界. 更高的本征值对应激发态能量的上界. 此处只关心最低的本征值. 用某个特定基组得到的最低本征值与\hft 能量的差值称作这个基组的\phrase{\emph{基组关联能}}. 当单电子基组接近完备时, 基组关联能就趋于精确的关联能. 但如果在某个单电子基组下用full CI来求出了基组关联能, 这个能量在这个基组构成的子空间中已经是精确的. 因此, 这种方式可作为基准, 来测试其他方法在某个相同（指与full CI所用基组相同）基组下的表现. 给定一个单电子基组, full CI就是我们能做到的最精确的方法了.
+
+为了研究full CI矩阵的结构, 我们把\eqref{4.2}的展开重新简写作
+\begin{align}
+\ket{\Phi_0} = c_0\ket{\Psi_0} + c_S\ket{S}+c_D\ket{D} + c_T\ket{T} + c_Q\ket{Q} + \cdots
+\end{align}
+式中$\ket{S}$表示单激发的那些项, $\ket{D}$表示双激发的那些项等等. 用这个记号表示的full CI矩阵写在\ref{fig.4.1}中. 下面是一些重要的性质
+\begin{enumerate}[1.]
+	\item HF基态和单激发组态之间没有耦合, 即$\braket{\Psi_0|\hs|S}=0$. 这是Brillouin定理的结论（见\ref{sec3.3.2}, 定理指出, 所有形如$\braket{\Psi_0|\hs|\Psi_a^r}$的矩阵元都为0）.
+	\item
+	$\ket{\Psi_0}$和三激发, 四激发之间没有耦合. 类似, 单激发和四激发之间也没有耦合. 这是由于, 如果两个行列式中有两个以上自选轨道不同, 那么这两个行列式之间的\ha 矩阵元就为0. 由此有一个结论, 矩阵中非零的区块是很稀疏的. 比如, 这个符号$\braket{D|\hs|Q}$所代表的矩阵元为
+	\begin{align*}
+	\braket{D|\hs|Q} \leftrightarrow \braket{\Psi_{ab}^{rs}|\hs|\Psi_{cdef}^{tuvw}}
+	\end{align*}
+	这种类型的矩阵元若想不为0, 那么指标$a,b$必须包含在$\{c,d,e,f\}$中, $r,s$必须包含在$t,u,v,w$中.
+	
+	\item
+	由于单激发不直接与$\ket{\Psi_0}$混合, 可以预期他们对基态能量的影响很小. 为什么影响不为0？这是由于单激发与双激发会发生混合, 通过这个混合, 单激发间接地与$\ket{\Psi_0}$作用. 虽然这个影响对基态能量效果很小, 但是却影响着电荷分布. 而且我们后面会看到, 要正确描述单电子性质（如偶极矩）, 必须要包含单激发. 对于激发态, 情况就很不同, 分子的电子谱的计算中, 单激发起的作用非常大.
+	\item 
+	由于双激发与$\ket{\Psi_0}$直接混合, 可以预见双激发对关联能, 尤其是小分子的关联能, 有决定性的作用. 进一步, 人们发现, 如果只看关心基态能量, 四重激发比三激发和单激发还要重要.
+	\item
+	计算时所需的所有的矩阵元都可以按\ref{chap2}中给出的规则得到. 如前所述, 计算时要用自旋匹配组态. 在\ref{sec2.5}中对单激发和双激发讨论过这一点. \ref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者也许会想用这些矩阵元规则测试一下自己的才能, 或者通过演算表中的项来测试自己的耐力、
+\end{enumerate}
+		\begin{figure}[H]
+	\[
+	\begin{blockarray}{*{7}{c}}
+	&      &\ket{\Psi_a^r} &\ket{\Psi_{ab}^{rs}}  &\ket{\Psi_{abc}^{rst}} & \ket{\Psi_{abcd}^{rstu}} &\cdots\\
+	&\ket{\Psi_0}& \ket{S}        &\ket{D}&\ket{T}&\ket{Q}&{\cdots}\\
+	\begin{block}{c[cccccc]}
+	\bra{\Psi_0}&\braket{\Psi_0|\mathcal{H}|\Psi_0} & 0 & \braket{\Psi_0|H|D} & 0 & 0 & \cdots\\
+	\bra{S}& &\braket{S|\hs|S} &\braket{S|\hs|D} & \braket{S|\hs|T} & 0 & \cdots\\
+	\bra{D}& && \braket{D|\hs|D}& \braket{D|\hs|T}& \braket{D|\hs|Q}    &\cdots\\
+	\bra{T}& && & \braket{T|\hs|T} & \braket{T|\hs|Q} & \cdots\\
+	\bra{Q}& & & & &\braket{Q|\hs|Q}&\cdots\\
+	{\vdots}&&&&&\vdots\\
+	\end{block}	
+	\end{blockarray}
+	\]
+	\vspace{-40pt}
+	\begin{align*}
+	\braket{S|\hs|T} \leftrightarrow \braket{\Psi_a^r|\hs|\Psi_{cde}^{tuv}}\\
+	\braket{D|\hs|D} \leftrightarrow \braket{\Psi_{ab}^{rs}|\hs|\Psi_{cd}^{tu}}\\
+	\end{align*}
+	\vspace{-30pt}
+	\caption{Full CI矩阵的结构. 该矩阵是hermitian的, 这里只写出了上三角部分.}
+\end{figure}
+
+\begin{table}[H]
+		\caption{实轨道构成的\phrase{单重态对称匹配组态}的一些矩阵元.}
+		\hrule
+		\vspace{5pt}
+		单激发\par
+$\braket{\Psi_0|\hs|\Psi_{ab}^{rs}} = 0$\\
+$\braket{^1\Psi_a^r|\hs-\es|^1\Psi_b^s} = (\epsilon_r-\epsilon_a)\delta_{rs}\delta_{ab}-(rs|ba)+2(ra|bs)$
+
+		双激发
+
+$\braket{\Psi_0|\hs|^1\Psi_{aa}^{rr}}  = K_{ra}$\\
+$\braket{\Psi_0|\hs|^1\Psi_{aa}^{rs}} = 2^{1/2}(sa|ra)$\\
+$\braket{\Psi_0|\hs|^1\Psi_{ab}^{rr}} = 2^{1/2}(rb|sa)$\\
+$\braket{\Psi_0|\hs|^A\Psi_{ab}^{rs}} = 3^{1/2}((ra|sb)-(rb|sa))$\\
+$\braket{\Psi_0|\hs|^B\Psi_{ab}^{rs}} = (ra|sb)$\\
+$\braket{^1\Psi_{aa}^{rr}|\hs-E_0|^1\Psi_{aa}^{rr}} = 2(\epsilon_r-\epsilon_a) + J_{aa} + J_{rr} -4J_{ra} + 2K_{ra}
+$\par
+$\braket{^1\Psi_{aa}^{rs}|\hs-E_0|^1\Psi_{aa}^{rs}} = \epsilon_r+\epsilon_s -2\epsilon_{a}+ J_{aa} + J_{rs} +K_{rs} -2J_{sa} -2J_{ra} K_{sa} + K_{ra}
+$\par
+$\braket{^1\Psi_{aa}^{rr}|\hs-E_0|^1\Psi_{ab}^{rr}} = 2\epsilon_r-\epsilon_a -\epsilon_{b}+ J_{rr} + J_{ab} +K_{ab} -2J_{rb} -2J_{ra} + K_{rb} + K_{ra}
+$\par
+$\arraycolsep=1.4pt\begin{array}[t]{ll}\braket{^A\Psi_{ab}^{rs}|\hs-E_0|^A\Psi_{ab}^{rs}} =& 
+ \epsilon_{r}+\epsilon_{s}-\epsilon_{a}-\epsilon_{b}+J_{a b}+J_{r s}-K_{a b} \\
+&-K_{r s}-J_{s b}-J_{s a}-J_{r b}-J_{r a}+\frac{3}{2}\left(K_{s b}+K_{s a}+K_{r b}+K_{r a}\right)\end{array}$\par
+
+$\arraycolsep=1.4pt
+\begin{array}[t]{ll}\braket{^B\Psi_{ab}^{rs}|\hs-E_0|^B\Psi_{ab}^{rs}} = &\varepsilon_{r}+\varepsilon_{s}-\varepsilon_{a}-\varepsilon_{b}+J_{a b}+J_{r s}+K_{a b}\\
+&+K_{r s}-J_{s b}-J_{s a}-J_{r b}-J_{r a}+\frac{1}{2}\left(K_{s b}+K_{s a}+K_{r b}+K_{r a}\right)\end{array}$\par
+$\braket{^A\Psi_{ab}^{rs}|\hs|^B\Psi_{ab}^{rs}}=(3 / 4)^{1 / 2}\left(K_{* b}-K_{\mathrm{sa}}-K_{r b}+K_{r o}\right)$
+\vspace{5pt}
+		\hrule
+	\end{table}
+
+
 
 \subsection{中间归一化及相关能的表达式}
-\section{双激发CI}
-\section{计算示例}
+\begin{align}
+\ket{\Phi_0} = &\ket{\Psi_0}+\sum_{ct}c_c^t\ket{\Psi_{c}^t} + \sum_{\substack{c<d\\t<u}c_{cd}^{tu}}\ket{\Psi_{cd}^{tu}}\notag\\
+& + \sum_{\substack{c<d<e\\t<u<v}}c_{cde}^{tuv}\ket{\Psi_{cde}^{tuv}}+ \sum_{\substack{c<d<e<f\\t<u<v<w}}c_{cdef}^{twuv}\ket{\Psi_{cdef}^{twuv}} + \cdots
+\end{align}
+\section{双激发CI}\mbox{}
+\section{计算示例}\mbox{}
 \section{自然轨道与单粒子约化密度矩阵}
 目前为止我们所涉及的行列式和组态都由一组正则\hft 轨道构成。由此得到的CI展开收敛很慢。但很清楚的一点是，任意单电子基构成的$N$-电子组态都可以用来做CI计算。因此，我们可以问，能否找到一组单电子基，由该基组得到的CI展开比\hft 基下的CI展开收敛更快？若是如此，我们就能用更少的组态得到相同的结果。由P.-O L\"owdin引入的\emph{自然轨道}就构成这样一组基。
 
@@ -55,7 +153,7 @@ $\rho(\mathbf{x}_1)$就称作\underline{N-电子系统}内单个电子的\emph{�
 \begin{align}
 \gamma_{ij} = \int\ddx_1\ddx_1'\,\,\chi_i^*(\mathbf{x}_1)\gamma(\mathbf{x}_1,\mathbf{x}_1')\chi_j(\mathbf{x}_1')
 \end{align}
-由$\{\gamma_{ij}\}$构成的矩阵$\gamma$是一矩阵在正交归一基$\{\chi_i\}$下的\underline{离散表示}。
+由$\{\gamma_{ij}\}$构成的矩阵$\gamma$是\phrase{一矩阵}在正交归一基$\{\chi_i\}$下的\phrase{离散表示}。
 
 \exercise{证明$\gamma$是Hermitian矩阵.
 \Next
