@@ -118,12 +118,13 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \subsection{半归一化及相关能的表达式}
 了解了full CI矩阵的结构之后, 我们来仔细研究CI方法用于系统基态时的形式. 若$\ket{\Psi_0}$可以较好地近似系统的基态波函数$\ket{\Phi_0}$, 那么CI展开式中, 系数$c_0$会比其他系数大得多. 因此为方便计, 可将$\jt$写成\emph{\phrase{半归一化}} (intermediate normalization) 的形式
 \begin{align}
+\label{4.4}
 \jt =& \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}}\notag\\
 &+\sum_{\substack{c<d<e\\t<u<v}} c_{cde}^{tuv}\ket{\Psi_{cde}^{tuv}} +\sum_{\substack{c<d<e<f\\t<u<v<w}} c_{cdef}^{tuvw}\ket{\Psi_{cdef}^{tuvw}}
 \end{align}
 由于
 \begin{align}
-\braket{\jtn|\jtn} = 1 + \sum_{ct}(c_c^t)^2 + \sum_{\substack{c<d\\t<u}} (c_{cd}^{tu})^2 + \cdots
+\braket{\jtn|\jtn} = 1 + \sum_{ct}(c_c^t)^2 + \sum_{\substack{c<d\\t<u}} (c_{cd}^{tu})^2 + \cdots \notag
 \end{align}
 所以波函数其实并未归一化, 但它却满足
 \begin{align}
@@ -131,14 +132,24 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \end{align}
 给定一个半归一化的$\jt$, 假如愿意, 总可以令其归一化, 只要把展开式中每一项都乘以一个常数就行 （即$\ket{\jt'}=c'\ket{\jt}$, $c'$选成满足$\braket{\jt'|\jt}=1$的数）.
 
-\ref{chap1}讨论过线性变分法的等价形式就是
+\ref{chap1}已经讨论过, 线性变分法实际上等价如下过程, 先写出
 \begin{align}
 \hs\jt = \es_0\jt
 \end{align}
+其中$ \jt $由\eqref{4.4}给出. 然后将此方程顺次乘以$ \bra{\Psi_0},\bra{\Psi_a^r} ,\bra{\Psi_{ab}^{rs}}$即可. 在完成该过程之前, 我们为方便, 先在\eqref{4.6}的两边减去$ E_0\jt $, 如此\eqref{4.6}就改写成
 \begin{align}
-\ket{\Phi_0} = &\ket{\Psi_0}+\sum_{ct}c_c^t\ket{\Psi_{c}^t} + \sum_{\substack{c<d\\t<u}c_{cd}^{tu}}\ket{\Psi_{cd}^{tu}}\notag\\
-& + \sum_{\substack{c<d<e\\t<u<v}}c_{cde}^{tuv}\ket{\Psi_{cde}^{tuv}}+ \sum_{\substack{c<d<e<f\\t<u<v<w}}c_{cdef}^{twuv}\ket{\Psi_{cdef}^{twuv}} + \cdots
+(\hs -E_0)\jt = (\es_0-E_0)\jt = E_\mathrm{corr} \jt
+\end{align} 
+式中$E_\mathrm{corr}$就是关联能. 若在上式两边乘以$\bra{\Psi_0}$则有
+\begin{align}
+\braket{\hjtn|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\hjtn\jtn} = E_\mathrm{corr}
 \end{align}
+式中我们已经利用了$\jt$是半归一化的这一事实. 现在考虑该方程的左半边. 利用展开式 \eqref{4.4}, 得到
+\begin{align}
+\braket{\hjtn|\hs-E_0|\jtn} & = \bra{\hjtn}|\hs-E_0|\left( \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}} \right)\notag \\
+&=\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}}
+\end{align}
+式中已经使用过Brillouin定理 ($ \braket{\hjtn|\hs|\Psi_c^t }=0$) 以及三重和更高的激发不与$\hjt$混合的事实 （因为他们之间相差多于两个自旋轨道）. 
 \section{双激发CI}\mbox{}
 \section{计算示例}\mbox{}
 \section{自然轨道与单粒子约化密度矩阵}
