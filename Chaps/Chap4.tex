@@ -149,7 +149,34 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \braket{\hjtn|\hs-E_0|\jtn} & = \bra{\hjtn}|\hs-E_0|\left( \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}} \right)\notag \\
 &=\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}}
 \end{align}
-式中已经使用过Brillouin定理 ($ \braket{\hjtn|\hs|\Psi_c^t }=0$) 以及三重和更高的激发不与$\hjt$混合的事实 （因为他们之间相差多于两个自旋轨道）. 
+式中已经使用过Brillouin定理 ($ \braket{\hjtn|\hs|\Psi_c^t }=0$) 以及三重和更高的激发不与$\hjt$混合的事实 （因为它们之间相差多于两个自旋轨道）. 同时使用\eqref{4.8}\eqref{4.9}就将\phrase{关联能}清楚地写出
+\begin{align}
+E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}}
+\end{align}
+因此, 若使用半归一化的CI函数, 则关联能仅决定于双激发的系数. 这不是说在CI的基态精确解中只需包含双激发, 要注意系数$ \{c_{ab}^{rs}\} $会受其他激发的影响. 为了明确这点, 我们在\eqref{4.7}上左乘$ \bra{\Psi_a^r} $, 得到
+\begin{align}
+\braket{\Psi_a^r|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\Psi_a^r|\jtn}
+\end{align}
+将然后利用 Brillouin 定理, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{双激发CI}\mbox{}
 \section{计算示例}\mbox{}
 \section{自然轨道与单粒子约化密度矩阵}

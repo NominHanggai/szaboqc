@@ -12,6 +12,7 @@
 
 # SyncTeX
 *.synctex.gz
+*.synctex(busy)
 
 # LaTeX Beamer
 *.snm
