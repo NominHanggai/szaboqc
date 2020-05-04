@@ -23,3 +23,10 @@
 # BibTeX
 *.bbl
 *.blg
+
+# 'tikz/external' library files
+*.dpth
+*.dep
+*.log
+*.ent
+*.auxlock

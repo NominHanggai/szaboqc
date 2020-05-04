@@ -488,7 +488,7 @@ c_1\\c_2
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]
 	\filldraw[blue] 
 (4.50,0)circle(1pt)   (4.5,3)circle(1pt); 
-\path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,3) arc (45:15:2.12cm)node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (15:-15:2.12cm)node[right,midway]{1}node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (-15:-45:2.12cm)
+\path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,3) arc (45:15:2.12cm)node[right,midway]{1} node{\dian} arc (15:-15:2.12cm)node[right,midway]{1}node{\dian} arc (-15:-45:2.12cm)
 (4.5,0) arc(225:135:2.12cm)node[left,midway]{2};
 \end{tikzpicture}\vspace{.5cm}\\
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
@@ -503,7 +503,7 @@ c_1\\c_2
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
 \filldraw[blue] 
 (4.50,0)circle(1pt)   (4.5,3)circle(1pt); 
-\path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,0) arc (-45:-15:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (-15:45:2.12cm)node[right,midway]{2}node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+\path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,0) arc (-45:-15:2.12cm)node[right,midway]{2} node{\dian} arc (-15:45:2.12cm)node[right,midway]{2}node{\dian}
 (4.5,3) arc(135:165:2.12cm)node[left,midway]{1} arc(165:225:2.12cm)node[midway,left]{1};
 \end{tikzpicture}\vspace{.5cm}\\
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
@@ -518,7 +518,7 @@ c_1\\c_2
 &\equiv \hspace{.5cm}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(6,0)arc(290:365:1.58cm)node[right,midway]{2}node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (90:160:1) node[above,pos=.5]{1}node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:45:1.58)node[right,pos=.6]{2}node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{1}node[pos=1]{\tikz{\filldraw[blue](0,0)circle(1pt)}}(6,0) ;
+(6,0)arc(290:365:1.58cm)node[right,midway]{2}node{\dian} arc (90:160:1) node[above,pos=.5]{1}node{\dian} arc(-15:45:1.58)node[right,pos=.6]{2}node{\dian} to [bend right] node[left,midway]{1}node[pos=1]{\dian}(6,0) ;
 \end{tikzpicture}
 \end{align*}
 这事实告诉我们, 画图时不必将各点严格按照竖线排列. 实际上, \emph{在不改变各点竖直顺序的前提下, 我们可以对图进行任意扭动}.
@@ -542,79 +542,89 @@ c_1\\c_2
 }
 \begin{table}[H]
 	\caption{图到公式的转换}
-	\begin{tabularx}{\textwidth}{cY}\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]  
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm)node[left,midway]{1};
-	\end{tikzpicture} & $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}}{E_1^{(0)}-E_2^{(0)}}=\dfrac{V_{12}V_{21}}{E_1^{(0)}-E_2^{(0)}}$ \\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:0:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (0:45:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (135:225:2.12cm)node[left,midway]{1};
-	\end{tikzpicture} & 
-	$(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{22}V_{21}}{(E_1^{(0)}-E_2^{(0)})^2}$ \\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (225:135:2.12cm)node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (45:0:2.12cm)node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (0:-45:2.12cm)node[left,midway]{1};
-	\end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^2}$\\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]  
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(165:195:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(195:225:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
-	\end{tikzpicture} 
-	& $(-)^{3+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{21}V_{11}^2}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:-15:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-15:45:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (135:165:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (165:225:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
-	\end{tikzpicture} & 
-	$(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (225:165:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (165:135:2.12cm)node[right,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (45:-15:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (-15:-45:2.12cm)node[left,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
-	\end{tikzpicture} & 
-	$(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (225:195:2.12cm)node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (195:165:2.12cm)node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (165:135:2.12cm)node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc (45:-45:2.12cm)node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
-	\end{tikzpicture} & 
-	$(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|2}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}^2V_{21}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(6,0) to [bend right] node[right,midway]{2} node[pos=0]{\dian}
-	(7,2) to [bend right] node[above,midway]{1} node[pos=0]{\dian}
-	(6,1) to [bend right] node[right,midway]{2} node[pos=0]{\dian}
-	(5,2.8) to [bend right] node[left,midway]{1} node[pos=0]{\dian}
-	(6,0) ;
-	\end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
-	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
-	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(6,0) to [bend left] node[left,midway]{2} node[pos=0]{\dian}
-	(5,3) to [bend left] node[right,midway]{1} node[pos=0]{\dian}
-	(6,1) to [bend left] node[above,midway]{2} node[pos=0]{\dian}
-	(7,1.8) to [bend left] node[right,midway]{1} node[pos=0]{\dian}
-	(6,0);
-	\end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
-	\end{tabularx}
+    \begin{tabular}{cl}
+    \hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]  
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (-45:45:2.12cm)node[right,midway]{2} node{\dian} arc(135:225:2.12cm)node[left,midway]{1};
+    \end{tikzpicture} & $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}}{E_1^{(0)}-E_2^{(0)}}=\dfrac{V_{12}V_{21}}{E_1^{(0)}-E_2^{(0)}}$ \\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (-45:0:2.12cm)node[right,midway]{2} node{\dian}
+    arc (0:45:2.12cm)node[right,midway]{2} node{\dian} 
+    arc (135:225:2.12cm)node[left,midway]{1};
+    \end{tikzpicture} & 
+    $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{22}V_{21}}{(E_1^{(0)}-E_2^{(0)})^2}$ \\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (225:135:2.12cm)node[left,midway]{2} node{\dian}
+    arc (45:0:2.12cm)node[right,midway]{1} node{\dian} 
+    arc (0:-45:2.12cm)node[left,midway]{1};
+    \end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2}=\dfrac{V_{12}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^2}$\\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]  
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (-45:45:2.12cm)node[right,midway]{2} node{\dian} arc(135:165:2.12cm)node[left,midway]{1} node{\dian}
+    arc(165:195:2.12cm)node[left,midway]{1} node{\dian}
+    arc(195:225:2.12cm)node[left,midway]{1} node{\dian};
+    \end{tikzpicture} 
+    & $(-)^{3+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{21}V_{11}^2}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (-45:-15:2.12cm)node[right,midway]{2} node{\dian}
+    arc (-15:45:2.12cm)node[right,midway]{2} node{\dian} 
+    arc (135:165:2.12cm)node[left,midway]{1} node{\dian} 
+    arc (165:225:2.12cm)node[left,midway]{1} node{\dian} ;
+    \end{tikzpicture} & 
+    $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (225:165:2.12cm)node[right,midway]{2} node{\dian}
+    arc (165:135:2.12cm)node[right,midway]{2} node{\dian} 
+    arc (45:-15:2.12cm)node[left,midway]{1} node{\dian} 
+    arc (-15:-45:2.12cm)node[left,midway]{1} node{\dian} ;
+    \end{tikzpicture} & 
+    $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|1}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}V_{21}V_{11}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55] 
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (4.5,0) node{\dian}
+    arc (225:195:2.12cm)node[left,midway]{2} node{\dian}
+    arc (195:165:2.12cm)node[left,midway]{2} node{\dian} 
+    arc (165:135:2.12cm)node[left,midway]{2} node{\dian} 
+    arc (45:-45:2.12cm)node[right,midway]{1} node{\dian} ;
+    \end{tikzpicture} & 
+    $(-)^{1+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|2}\braket{2|\vs|2}\braket{1|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^3}=\dfrac{V_{12}V_{22}^2V_{21}}{(E_1^{(0)}-E_2^{(0)})^3}$ \\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (6,0) to [bend right] node[right,midway]{2} node[pos=0]{\dian}
+    (7,2) to [bend right] node[above,midway]{1} node[pos=0]{\dian}
+    (6,1) to [bend right] node[right,midway]{2} node[pos=0]{\dian}
+    (5,2.8) to [bend right] node[left,midway]{1} node[pos=0]{\dian}
+    (6,0) ;
+    \end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
+    \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.55]
+    \diagsize
+    \path [draw=blue,postaction={on each segment={mid arrow}}] 
+    (6,0) to [bend left] node[left,midway]{2} node[pos=0]{\dian}
+    (5,3) to [bend left] node[right,midway]{1} node[pos=0]{\dian}
+    (6,1) to [bend left] node[above,midway]{2} node[pos=0]{\dian}
+    (7,1.8) to [bend left] node[right,midway]{1} node[pos=0]{\dian}
+    (6,0);
+    \end{tikzpicture} & $(-)^{2+1}\dfrac{\braket{1|\vs|2}\braket{2|\vs|1}\braket{1|\vs|2}\braket{2|\vs|1}}{(E_1^{(0)}-E_2^{(0)})^2(2E_1^{(0)} - 2E_2^{(0)})}=\dfrac{(V_{12}V_{21})^2}{2(E_1^{(0)}-E_2^{(0)})^3}$\\\hline
+\end{tabular}
 \label{t6.1}
 \end{table}
 
@@ -623,68 +633,68 @@ c_1\\c_2
 \begin{equation*}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node{\dian}
+arc (180:135:2.12cm) node{\dian} 
+arc (45:-45:2.12cm) node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
 可以按不同的方式来标记：
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm) node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{2} node{\dian}
+arc (180:135:2.12cm) node[left,midway]{2} node{\dian} 
+arc (45:-45:2.12cm) node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{3} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{2} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)  node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{3} node{\dian}
+arc (180:135:2.12cm) node[left,midway]{2} node{\dian} 
+arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{3}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{3}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)  node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{3}  node{\dian}
+arc (180:135:2.12cm) node[left,midway]{3}  node{\dian} 
+arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{4} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{3} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)  node[right,midway]{1}node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{4} node{\dian}
+arc (180:135:2.12cm) node[left,midway]{3} node{\dian} 
+arc (45:-45:2.12cm)  node[right,midway]{1}node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{4}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{2}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)  node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{4}  node{\dian}
+arc (180:135:2.12cm) node[left,midway]{2}  node{\dian} 
+arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
 等等. 一般地我们可以写出
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{$m$}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{$n$}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)  node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{$m$}  node{\dian}
+arc (180:135:2.12cm) node[left,midway]{$n$}  node{\dian} 
+arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
 其中的标号$m,n$可以独立地取$2$到$N$的任何值. 其中一类图如下
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{$n$}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{$n$}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)  node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{$n$}  node{\dian}
+arc (180:135:2.12cm) node[left,midway]{$n$}  node{\dian} 
+arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
 我们称这样的图为\emph{对角的}. 为得到这些推广了的图的数学表达式, 我们需要在之前的规则上增加一条：
@@ -697,24 +707,24 @@ arc (45:-45:2.12cm)  node[right,midway]{1} node{\tikz{\filldraw[blue](0,0)circle
 \begin{align}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 		\path [draw=blue,postaction={on each segment={mid arrow}}] 
-		(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc (-45:45:2.12cm) node[right,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc (135:225:2.12cm)node[left,midway]{1}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+		(4.5,0) node{\dian}
+		arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
+		arc (135:225:2.12cm)node[left,midway]{1}  node{\dian};
 	\end{tikzpicture} & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sum_n'\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}\\
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{$m$}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{$n$}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (45:-45:2.12cm)node[right,midway]{1}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(4.5,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{$m$}  node{\dian}
+arc (180:135:2.12cm) node[left,midway]{$n$}  node{\dian} 
+arc (45:-45:2.12cm)node[right,midway]{1}  node{\dian};
 \end{tikzpicture} 
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:180:2.12cm)node[left,midway]{1}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:225:2.12cm)node[left,midway]{1}  node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(4.5,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
+arc (135:180:2.12cm)node[left,midway]{1}  node{\dian}
+arc (180:225:2.12cm)node[left,midway]{1}  node{\dian};
 \end{tikzpicture} 
 & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sum_n'\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}
 \end{align}
@@ -725,37 +735,37 @@ arc (180:225:2.12cm)node[left,midway]{1}  node{\tikz{\filldraw[blue](0,0)circle(
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:195:2.12cm) node[left,midway]{$m$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (195:165:2.12cm) node[left,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (165:135:2.12cm) node[left,midway]{$k$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+(4.5,0) node{\dian}
+arc (225:195:2.12cm) node[left,midway]{$m$} node{\dian}
+arc (195:165:2.12cm) node[left,midway]{$n$} node{\dian}
+arc (165:135:2.12cm) node[left,midway]{$k$} node{\dian}
 
-arc (45:-45:2.12cm) node[right,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+arc (45:-45:2.12cm) node[right,midway]{$i$} node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:165:2.12cm) node[left,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (165:195:2.12cm)  node[left,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (195:225:2.12cm)  node[left,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
+arc (135:165:2.12cm) node[left,midway]{$i$} node{\dian} 
+arc (165:195:2.12cm)  node[left,midway]{$i$} node{\dian} 
+arc (195:225:2.12cm)  node[left,midway]{$i$} node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:-15:2.12cm) node[right,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-15:45:2.12cm) node[right,midway]{$m$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:165:2.12cm) node[left,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-arc (165:225:2.12cm)  node[left,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} ;
+(4.5,0) node{\dian}
+arc (-45:-15:2.12cm) node[right,midway]{$n$} node{\dian}
+arc (-15:45:2.12cm) node[right,midway]{$m$} node{\dian}
+arc (135:165:2.12cm) node[left,midway]{$i$} node{\dian} 
+arc (165:225:2.12cm)  node[left,midway]{$i$} node{\dian} ;
 \end{tikzpicture}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(4.5,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:195:2.12cm) node[left,midway]{$m$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (195:135:2.12cm) node[left,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+(4.5,0) node{\dian}
+arc (225:195:2.12cm) node[left,midway]{$m$} node{\dian}
+arc (195:135:2.12cm) node[left,midway]{$n$} node{\dian}
 
-arc (45:-15:2.12cm) node[right,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+arc (45:-15:2.12cm) node[right,midway]{$i$} node{\dian}
+arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\dian};
 \end{tikzpicture}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -782,9 +792,9 @@ arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\tikz{\filldraw[blue](0,0)circ
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:45:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (135:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \end{equation*}
 在此图上加点可以生成一系列的图, 现在考虑这些图的求和：
@@ -793,64 +803,64 @@ arc (135:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circl
 \left[
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$2$} node{\dian}
+arc (135:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}\right]
 +
 \left[
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:180:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$2$} node{\dian}
+arc (135:180:2.12cm) node[left,midway]{$1$} node{\dian}
+arc (180:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (45:-45:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (180:135:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \right]
 + 
 \left[
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:165:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (165:195:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (195:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$2$} node{\dian}
+arc (135:165:2.12cm) node[left,midway]{$1$} node{\dian}
+arc (165:195:2.12cm) node[left,midway]{$1$} node{\dian}
+arc (195:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:195:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (195:165:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (165:135:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (45:-45:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (225:195:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (195:165:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (165:135:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \end{tikzpicture}
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:-15:2.12cm) node[right,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-15:45:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:165:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (165:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:-15:2.12cm) node[right,midway]{$2$} node{\dian}
+arc (-15:45:2.12cm) node[right,midway]{$1$} node{\dian}
+arc (135:165:2.12cm) node[left,midway]{$1$} node{\dian}
+arc (165:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.4] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:165:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (165:135:2.12cm) node[left,midway]{$2$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (45:-15:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-15:-45:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (225:165:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (165:135:2.12cm) node[left,midway]{$2$} node{\dian}
+arc (45:-15:2.12cm) node[right,midway]{$1$} node{\dian}
+arc (-15:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \right]+\cdots
 \end{align}  
@@ -899,26 +909,26 @@ V_{21} & 0
 \left[
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
+arc (135:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}\right]
 +
 \left[
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm) node[right,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (135:180:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:225:2.12cm) node[left,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (-45:45:2.12cm) node[right,midway]{$n$} node{\dian}
+arc (135:180:2.12cm) node[left,midway]{$1$} node{\dian}
+arc (180:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm) node[left,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (180:135:2.12cm) node[left,midway]{$n$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (45:-45:2.12cm) node[right,midway]{$1$} node{\tikz{\filldraw[blue](0,0)circle(1pt)}};
+(0,0) node{\dian}
+arc (225:180:2.12cm) node[left,midway]{$n$} node{\dian}
+arc (180:135:2.12cm) node[left,midway]{$n$} node{\dian}
+arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \right]+\cdots
 \end{align}
@@ -1263,53 +1273,53 @@ width=\textwidth,
 }
 
 \section{轨道微扰论的图表示}
-\ref{sec6.2}中为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示空穴和粒子的自旋轨道, 用点来对应单粒子微扰$\v$. 然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
+\ref{sec6.2}中为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示空穴和粒子的自旋轨道, 用点来对应单粒子微扰$v$. 然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
 \begin{center}	
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\tiny
-	\draw[blue] (0,4.25)circle(.7cm) (.7,4.25)node{\tikz{\filldraw[blue](0,0)circle(1pt)}} (0,4.25+.7)node[above]{a};
+	\draw[blue] (0,4.25)circle(.7cm) (.7,4.25)node{\dian} (0,4.25+.7)node[above]{a};
 	\draw (12,4.25)node{\normalsize$n=2$};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm)node[left,midway]{s};
+	(0,0) node{\dian}
+	arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:225:2.12cm)node[left,midway]{s};
 	\draw (12,1.5)node{\normalsize$n=2$};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(0,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (225:180:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (180:135:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[left,midway]{a};
+	(0,-3.5) node{\dian}
+	arc (225:180:2.12cm)node[left,midway]{s} node{\dian} arc (180:135:2.12cm)node[left,midway]{r} node{\dian} arc(45:-45:2.12cm)node[left,midway]{a};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(2.5,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:180:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(180:225:2.12cm)node[left,midway]{b};
+	(2.5,-3.5) node{\dian}
+	arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[left,midway]{a} node{\dian} arc(180:225:2.12cm)node[left,midway]{b};
 	\draw (12,-2)node{\normalsize$n=3$};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
-	(0,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (225:195:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (195:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (165:135:2.12cm)node[left,midway]{t} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[right,midway]{a};
+	(0,-7.) node{\dian}
+	arc (225:195:2.12cm)node[left,midway]{r} node{\dian} arc (195:165:2.12cm)node[left,midway]{s} node{\dian}
+	arc (165:135:2.12cm)node[left,midway]{t} node{\dian} arc(45:-45:2.12cm)node[right,midway]{a};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
-	(2,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};
+	(2,-7.) node{\dian}
+	arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} node{\dian} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
-	(4,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (225:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (165:135:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (45:-15:2.12cm)node[right,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[right,midway]{b};
+	(4,-7.) node{\dian}
+	arc (225:165:2.12cm)node[left,midway]{s} node{\dian} arc (165:135:2.12cm)node[left,midway]{r} node{\dian}
+	arc (45:-15:2.12cm)node[right,midway]{a} node{\dian} arc(-15:-45:2.12cm)node[right,midway]{b};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
-	(6,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:-15:2.12cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
+	(6,-7.) node{\dian}
+	arc (-45:-15:2.12cm)node[right,midway]{s} node{\dian} arc(-15:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
 	
 	\path [draw=blue,postaction={on each segment={mid arrow}}]
-	(8,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (8,-7.);
+	(8,-7.) node{\dian}
+	arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (8,-7.);
 	
 
 	\path [draw=blue,postaction={on each segment={mid reverse arrow}}]
-	(10,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (10,-7.);
+	(10,-7.) node{\dian}
+	arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (10,-7.);
 	\draw (12,-5.5)node{\normalsize $n=4$};
 	\end{tikzpicture}
 \end{center}
@@ -1322,12 +1332,12 @@ width=\textwidth,
 \begin{subequations}
 	\begin{gather}
 	E_0^{(1)} = \begin{tikzpicture}[baseline={([yshift=-5pt]current bounding box.center)},scale=.6]
-	\draw[blue] (0,4.25)circle(.7cm) (.7,4.25)node{\tikz{\filldraw[blue](0,0)circle(1pt)}} (0,4.25+.7)node[above]{a};
+	\draw[blue] (0,4.25)circle(.7cm) (.7,4.25)node{\dian} (0,4.25+.7)node[above]{a};
 	\end{tikzpicture}\\
 	E_0^{(2)} = \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 	\path [draw=blue,postaction={on each segment={mid arrow}}] 
-	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm)node[left,midway]{a};\end{tikzpicture}
+	(0,0) node{\dian}
+	arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:225:2.12cm)node[left,midway]{a};\end{tikzpicture}
 	=\sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}}
 	\end{gather}
 \end{subequations}
@@ -1337,14 +1347,14 @@ width=\textwidth,
 E_0^{(0)} & = 
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(0,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (225:180:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (180:135:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[left,midway]{a};
+(0,-3.5) node{\dian}
+arc (225:180:2.12cm)node[left,midway]{s} node{\dian} arc (180:135:2.12cm)node[left,midway]{r} node{\dian} arc(45:-45:2.12cm)node[left,midway]{a};
 \end{tikzpicture}
 +
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
-(2.5,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:180:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(180:225:2.12cm)node[left,midway]{b};\end{tikzpicture} \notag\\
+(2.5,-3.5) node{\dian}
+arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[left,midway]{a} node{\dian} arc(180:225:2.12cm)node[left,midway]{b};\end{tikzpicture} \notag\\
 & = \sum_{ars}\frac{v_{as}v_{sr}v_{ra}}{(\epsilon_a^{(0)}-\epsilon_s^{(0)})(\epsilon^{(0)}_a-\epsilon^{(0)}_r)} - \sum_{abr}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon_a^{(0)}-\epsilon_r^{(0)})(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}\tag{6.56c}
 \end{align}
 这与练习6.4中所得的结果一样。 最后，对于闭壳层体系，由于矩阵元$v_{ij}$只有当$i,j$有相同自旋时才不为零， 所以可将对自旋轨道的求和改为对空间轨道求和，并在每个图的值上乘以$2$, 也即
@@ -1359,27 +1369,27 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1
 		\begin{equation*}
 		\begin{tikzpicture}[baseline={(current bounding box.center)},postaction={on each segment={mid reverse arrow}},scale=.6]
 		\path [draw=blue,postaction={on each segment={mid arrow}}]
-		(6,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc (-45:-15:2.12cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
+		(6,-7.) node{\dian}
+		arc (-45:-15:2.12cm)node[right,midway]{s} node{\dian} arc(-15:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} arc(165:225:2.12cm)node[left,midway]{b};
 		\end{tikzpicture}
 		=		
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 			\path [draw=blue,postaction={on each segment={mid arrow}}]
-			(2,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-			arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:165:2.12cm)node[left,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};\end{tikzpicture}
+			(2,-7.) node{\dian}
+			arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:165:2.12cm)node[left,midway]{a} node{\dian} arc(165:195:2.12cm)node[left,midway]{b} arc(195:225:2.12cm)node[left,midway]{c};\end{tikzpicture}
 		=
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 			\path [draw=blue,postaction={on each segment={mid arrow}}]
-			(0,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-			arc (225:195:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (195:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-			arc (165:135:2.12cm)node[left,midway]{t} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(45:-45:2.12cm)node[right,midway]{a};
+			(0,-7.) node{\dian}
+			arc (225:195:2.12cm)node[left,midway]{r} node{\dian} arc (195:165:2.12cm)node[left,midway]{s} node{\dian}
+			arc (165:135:2.12cm)node[left,midway]{t} node{\dian} arc(45:-45:2.12cm)node[right,midway]{a};
 		\end{tikzpicture}
 		=
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 		\path [draw=blue,postaction={on each segment={mid arrow}}]
-		(4,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc (225:165:2.12cm)node[left,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc (165:135:2.12cm)node[left,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc (45:-15:2.12cm)node[right,midway]{a} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[right,midway]{b};
+		(4,-7.) node{\dian}
+		arc (225:165:2.12cm)node[left,midway]{s} node{\dian} arc (165:135:2.12cm)node[left,midway]{r} node{\dian}
+		arc (45:-15:2.12cm)node[right,midway]{a} node{\dian} arc(-15:-45:2.12cm)node[right,midway]{b};
 		\end{tikzpicture}
 		=
 		\frac{N\beta}{64}
@@ -1388,14 +1398,14 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1
 		\begin{equation*}
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 			\path [draw=blue,postaction={on each segment={mid arrow}}]
-			(8,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-			arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (8,-7.);
+			(8,-7.) node{\dian}
+			arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (8,-7.);
 		\end{tikzpicture}
 		=
 		\begin{tikzpicture}[baseline={(current bounding box.center)}, postaction={on each segment={mid arrow}},scale=.6]
 		\path [draw=blue,postaction={on each segment={mid reverse arrow}}]
-		(10,-7.) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc (-45:15:2.12cm)node[right,midway]{r} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(-15:-45:2.12cm)node[left,midway]{b} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(225:180:2.57cm)node[right,midway]{s} node{\tikz{\filldraw[blue](0,0)circle(1pt)}} to [bend right] node[left,midway]{s} (10,-7.);
+		(10,-7.) node{\dian}
+		arc (-45:15:2.12cm)node[right,midway]{r} node{\dian} arc(-15:-45:2.12cm)node[left,midway]{b} node{\dian} arc(225:180:2.57cm)node[right,midway]{s} node{\dian} to [bend right] node[left,midway]{s} (10,-7.);
 		\draw (12,-5.5)node{$n=4$};
 		\end{tikzpicture}
 		=-\frac{3N\beta}{128}
@@ -1645,11 +1655,11 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 			\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 			\path [draw=blue,%postaction={on each segment={mid arrow}}
 			]
-			(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-			arc (-45:45:2.12cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm) 
+			(0,0) node{\dian}
+			arc (-45:45:2.12cm) node{\dian} arc(135:225:2.12cm) 
 			arc(-60:60:1.732cm) 
 			arc(120:240:1.732cm)
-			arc(-60:0:1.732cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+			arc(-60:0:1.732cm) node{\dian}
 			arc(180:540:0.4cm)
 			;
 			\end{tikzpicture}
@@ -1660,25 +1670,21 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,%postaction={on each segment={mid arrow}}
 	]
-	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc (-45:45:2.12cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:2.12cm) 
+	(0,0) node{\dian}
+	arc (-45:45:2.12cm) node{\dian} arc(135:225:2.12cm) 
 	arc(-60:60:1.732cm) 
 	arc(120:240:1.732cm)
-%	arc(-60:0:1.732cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-%	arc(180:540:0.4cm)
 	;
 	\draw (2.5,1.5) node{$n=2$};
 	\path [draw=blue,%postaction={on each segment={mid arrow}}
 	]
 	(0,-3.5) 
-	node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	node{\dian}
 	arc (-45:45:1.0607cm) 
-	node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	node{\dian} 
 	arc(225:135:1.0607cm) arc(45:-45:1.0607cm) arc(135:225:1.0607cm)  
-	arc(-60:60:1.73205cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	arc(-60:60:1.73205cm) node{\dian} 
 	arc(120:240:1.73205cm)
-	%	arc(-60:0:1.732cm) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	%	arc(180:540:0.4cm)
 	;
 	\draw (2.5,-1.75) node{$n=3$};
 	\end{tikzpicture}
@@ -1688,117 +1694,105 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	\centering
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,]
-	(0,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
-	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+	(0,0) node{\dian}
+	arc(-40:40:1.16679)  node{\dian} 
+	arc(-40:40:1.16679)  node{\dian} 
+	arc(-40:40:1.16679)  node{\dian} 
 	arc(140:220:1.16679) arc(140:220:1.16679) arc(140:220:1.16679)
 	arc(-45:45:3.18198)  arc(135:225:3.18198);
-	
 	\path [draw=blue,]
-	(3,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(135:225:3.18198*2/3) 
+	(3,0) node{\dian}
+	arc(-40:40:1.16679)  node{\dian}
+	arc(-45:45:3.18198*2/3) node{\dian} arc(135:225:3.18198*2/3) 
 	arc(140:220:1.16679) 
-		arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}} 
+		arc(-45:45:3.18198*2/3) node{\dian}
+		arc(-40:40:1.16679)  node{\dian} 
 		arc(140:220:1.16679) 
 		arc(135:225:3.18198*2/3) 
 	;
 	
 	\path [draw=blue,]
-	(6,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-45:45:3.18198) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(45:-45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-40:40:1.16679)  node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	(6,0) node{\dian}
+	arc(-45:45:3.18198) node{\dian}
+	arc(45:-45:3.18198*2/3) node{\dian}
+	arc(-40:40:1.16679)  node{\dian}
 	arc(45:-45:3.18198*2/3)
-	arc(225:135:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(225:135:3.18198*2/3) node{\dian}
 	arc(140:220:1.16679)
 	arc(225:135:3.18198*2/3)
 	arc(135:225:3.18198)
 	;
-	
     \path [draw=blue,]
-    (9,0) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-    arc(-45:45:3.18198) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-    arc(45:-45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    (9,0) node{\dian}
+    arc(-45:45:3.18198) node{\dian}
+    arc(45:-45:3.18198*2/3) node{\dian}
     arc(-40:40:1.16679) arc(140:220:1.16679) 
     to (9,0)
-    arc(225:135:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+    arc(225:135:3.18198*2/3) node{\dian}
     to (9,4.5)
     arc(135:225:3.18198);
-    
 	\path [draw=blue,]
-	(0,-5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	(0,-5) node{\dian}
+	arc(-45:45:3.18198*2/3) node{\dian}
 	arc(135:225:3.18198*2/3)
-	to (0,-3.5)node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-		arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	to (0,-3.5)node{\dian}
+		arc(-45:45:3.18198*2/3) node{\dian}
 	arc(135:225:3.18198*2/3)
 	to (0,-.5)
 	arc(135:225:3.18198);    
-    
     \path[draw=blue]
-    (3,-5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-    arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(140:220:1.16679) 
-    
-    to (3,-2) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-    arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}} arc(140:220:1.16679)
+    (3,-5) node{\dian}
+    arc(-40:40:1.16679) node{\dian} arc(140:220:1.16679) 
+    to (3,-2) node{\dian}
+    arc(-40:40:1.16679) node{\dian} arc(140:220:1.16679)
     to (3,-.5)
     arc(135:225:3.18198);  
-	
 	\path[draw=blue]
-	(6,-5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}  arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(40:-40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}  to (6,-3.5)
+	(6,-5) node{\dian}
+	arc(-40:40:1.16679) node{\dian}  arc(-45:45:3.18198*2/3) node{\dian}
+	arc(40:-40:1.16679) node{\dian}  to (6,-3.5)
 	arc(140:220:1.16679) arc(225:135:3.18198*2/3)  arc(220:140:1.16679) 
 	arc(135:225:3.18198);
-	
 	\path[draw=blue]
-	(9,-5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-50:50:2.937166401) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	to (9,-2) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	(9,-5) node{\dian}
+	arc(-50:50:2.937166401) node{\dian}
+	to (9,-2) node{\dian}
 	arc(70:-70:0.79813332935)  arc(250:110:0.79813332935)
-	to (9,-3.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	to (9,-3.5) node{\dian}
 	to (9,-5)
-%	arc (210:135:4.5)
 	arc(215:145:3.92275529015)
 	arc (130:230:2.937166401)
 	;
-	
 	\path[draw=blue]
-	(0,-10) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(140:220:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	(0,-10) node{\dian}
+	arc(-45:45:3.18198*2/3) node{\dian}
+	arc(-40:40:1.16679) node{\dian}
+	arc(140:220:1.16679) node{\dian}
 	to (0,-5.5)
 	arc(135:225:3.18198*2/3)
 	arc(140:220:1.16679)
 	arc(-40:40:1.16679)
 	to (0,-10)
 	;
-	
 	\path[draw=blue]
-	(3,-10) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-    arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	(3,-10) node{\dian}
+    arc(-45:45:3.18198*2/3) node{\dian}
 	arc(135:225:3.18198*2/3)
 	arc(-30:30:3)
-	to (3,-5.5) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	to (3,-5.5) node{\dian}
 	arc(150:210:3)
 	arc(-45:45:3.18198*2/3)
 	arc(135:225:3.18198*2/3);
-	
 	\path[draw=blue]
-	(6,-10) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(-45:45:3.18198*2/3) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	(6,-10) node{\dian}
+	arc(-45:45:3.18198*2/3) node{\dian}
 	to (6,-8.5)
-	arc(-40:40:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
-	arc(140:220:1.16679) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-40:40:1.16679) node{\dian}
+	arc(140:220:1.16679) node{\dian}
 	arc(225:135:3.18198*2/3)
 	arc(135:225:3.18198)
-	arc(-45:45:3.18198) node{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+	arc(-45:45:3.18198) node{\dian}
 	arc(60:-60:2.59807621135);
-	
 	\path[draw=blue]
 	(9,-10) 
 	arc(-45:45:3.18198)
@@ -1918,12 +1912,13 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 % \text{CA}  &&f &= m  \frac{d^2y}{dt^2};
 \end{flalign*}
 很清楚, 如果我们的规则是正确的, 则这两个式子应当相等. 那么就要看$l$这个因子如何起作用. 闭合圈的数目只有写出矩阵元的表达式之后才能确定. 为确定$l$, 先选一个特定的指标, 然后从这个指标出发, 按照如下规``走过"矩阵元:
+\tikzexternaldisable
 \begin{align*}
 \braket{i\tikzmark{i}j||k\tikzmark{k}l},\quad
 \braket{i\tikzmark{j}j||k\tikzmark{l}l}
 \tikz[overlay,remember picture]
 {\draw[->,above arrow,] (i.north) to (k.north);
- \draw[->,above arrow,] (j.north) to (l.north);
+    \draw[->,above arrow,] (j.north) to (l.north);
 }
 \end{align*}
 直到最后到达一个与选定指标相同的指标. 所有指标都被走过一次后, 总的路径数就是$l$. 考虑情形A.
@@ -1932,9 +1927,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \braket{ab\tikzmark{b}||rs\tikzmark{s}}\braket{rs\tikzmark{s2}||ab\tikzmark{b2}}\quad : \quad b\overset{1}{\to}s\overset{2}{\to}b
 \tikz[overlay,remember picture]
 {\draw[->,above arrow,] (a.north) to node[above,]{$1$} (r.north);
- \draw[->,above arrow,] (r2.north) to node[above,]{$2$} (a2.north);
- \draw[->,above arrow,] (b.north) to node[above,]{$2$} (s.north);
- \draw[->,above arrow,] (s2.north) to node[above,]{$2$} (b2.north);
+    \draw[->,above arrow,] (r2.north) to node[above,]{$2$} (a2.north);
+    \draw[->,above arrow,] (b.north) to node[above,]{$2$} (s.north);
+    \draw[->,above arrow,] (s2.north) to node[above,]{$2$} (b2.north);
 }
 \end{align*}
 那么$l_A=2$. 对于情形B, 我们有
@@ -1943,11 +1938,12 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \quad : \quad a\overset{1}{\to} r \overset{2}{\to} b \overset{3}{\to} s \overset{4}{\to} a
 \tikz[overlay,remember picture]
 {\draw[->,above arrow,] (a.north) to node[above,]{$1$} (r.north);
- \draw[->,above arrow,] (r2.north) to node[above,]{$2$} (b2.north);
- \draw[->,below arrow,] (b.south) to node[above,]{$3$} (s.south);
- \draw[->,below arrow,] (s2.south) to node[above,]{$2$} (a2.south);
+    \draw[->,above arrow,] (r2.north) to node[above,]{$2$} (b2.north);
+    \draw[->,below arrow,] (b.south) to node[above,]{$3$} (s.south);
+    \draw[->,below arrow,] (s2.south) to node[above,]{$2$} (a2.south);
 }
 \end{align*}
+\tikzexternalenable
 由于一条路就走遍了所有指标, 所以$l_B=1$. 又因为
 \begin{align*}
 \braket{rs||ab} = - \braket{sr||ab}
@@ -2207,159 +2203,159 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \begin{table}[H]
 	\caption{二阶和三阶Goldstone图.}
 	\label{t6.2}
-	\begin{tabular}{ccc}
-		\hline
-		1 & \tikz[baseline={(current bounding box.center)},scale=.6]{
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:135:1.414) node[midway,left]{$r$}  
-		(a) arc( 45:-45:1.414) node[midway,right]{$a$}  
-		(d) arc(225:135:1.414) node[midway,left]{$b$}  
-		(b) arc( 45:-45:1.414) node[midway,right] {$s$}; 
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		} 
-		& $(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		
-		2 & \tikz[baseline={(current bounding box.center)},scale=.6]{
-					\coordinate (e) at (4,-2.5+2);
-					\coordinate (f) at ($(e)+(2,0)$);
-					\coordinate (g) at ($(e)+(0,-2)$);
-					\coordinate (h) at ($(g)+(2,0)$);
-					\path[mid arrow seg,draw=blue]
-					(g) arc(225:135:1.414) node[midway,left]{$r$}  
-					(h) arc(-45: 45:1.414) node[midway,right]{$s$} ; 
-					\path[mid arrow seg=.75,draw=blue]
-					(e) to node[pos=.75,right]{$b$} (h)
-					(f) to node[pos=.75,left]{$a$} (g);
-					\draw[draw=blue,densely dotted]
-					(e)--(f)
-					(g)--(h);
-					\path[use as bounding box] ($(g)-(.5,.5)$) rectangle ($(f)+(.5,.5)$);
-					} 
-		& $(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline
-		
-			1 & \tikz[baseline={(current bounding box.center)},scale=.6]{
-					\coordinate (a) at (4,-2.5+2);
-					\coordinate (b) at ($(a)+(2,0)$);
-					\coordinate (c) at ($(a)+(0,-2)$);
-					\coordinate (d) at ($(c)+(2,0)$);
-					\path[mid arrow seg,draw=blue]
-					(a) arc(135:225:1.414) node[midway,left]{$a$}  
-					(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
-					(m) arc(0:45:1.414)node[midway,right]{$t$}
-					(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
-					(n) arc(180:135:1.414) node[midway,left]{$s$}
-					(b) arc(45:-45:1.414) node[midway,right]{$b$}
-					; 
-					\draw[draw=blue,densely dotted]
-					(m)--(n);
-					\draw[draw=blue,densely dotted]
-					(a)--(b)
-					(c)--(d);
-					\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		} 
-		& $(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrsut}\frac{\braket{ab|ru}\braket{ru|ts}\braket{ts|ba}}{(\epsilon_{a}+\epsilon_{d}-\epsilon_{r}-\epsilon_{u})(\epsilon_{a}+\epsilon_{b}-\epsilon_{t}-\epsilon_{s})}$\\\hline
-			2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
-					\coordinate (a) at (4,-2.5+2);
-						\coordinate (b) at ($(a)+(2,0)$);
-						\coordinate (c) at ($(a)+(0,-2)$);
-						\coordinate (d) at ($(c)+(2,0)$);
-						\path[mid reverse arrow seg=.45,draw=blue]
-						(a) arc(135:225:1.414) node[midway,left]{$r$}  
-						(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$a$} 
-						(m) arc(0:45:1.414)node[midway,right]{$c$}
-						(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$d$}
-						(n) arc(180:135:1.414) node[midway,left]{$b$}
-						(b) arc(45:-45:1.414) node[midway,right]{$s$}
-						;
-						\draw[draw=blue,densely dotted]
-						(m)--(n);
-						\draw[draw=blue,densely dotted]
-						(a)--(b)
-						(c)--(d);
-						 \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture} 
-		& $(-)^{4+2}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ad|rs}\braket{cb|ad}\braket{rs|cb}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
-					
-					3 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
-		\coordinate (a) at (4,-2.5+2);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(a) arc(135:225:1.414) node[midway,left]{$a$}  
-		(c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
-		(m) arc(0:45:1.414)node[midway,right]{$s$};
-		\path[mid reverse arrow seg=.45,draw=blue]
-		(d) arc(225:180:1.414) coordinate(n) node[midway,left]{$c$}
-		(n) arc(180:135:1.414) node[midway,left]{$b$}
-		(b) arc(45:-45:1.414) node[midway,right]{$t$}
-		;
-		\draw[draw=blue,densely dotted]
-		(m)--(n);
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture} 
-		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{ac|rt}\braket{rb|sc}\braket{st|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-		
-					4 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
-		\coordinate (a) at (4,-2.5+2);
-		\coordinate (b) at ($(a)+(2,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2,0)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:180:1.414) coordinate(m) node[midway,left]{$r$}
-		(m) arc(180:135:1.414) node[midway,left]{$s$} 
-		(a) arc(45:0:1.414)    coordinate(n) node[midway,right]{$a$}
-		(n) arc(0:-45:1.414)   node[midway,right]{$b$};
-		\path [mid arrow seg,draw=blue]
-		(b) arc(45:-45:1.414) node[midway,right]{$c$}
-		(d) arc(225:135:1.414) node[midway,left]{$t$};
-		\draw[draw=blue,densely dotted]
-		(m)--(n);
-		\draw[draw=blue,densely dotted]
-		(a)--(b)
-		(c)--(d);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture} 
-		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-		
-		5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
-		\coordinate (a) at (0,0);
-		\coordinate (b) at ($(a)+(2.5,0)$);
-		\coordinate (c) at ($(a)+(0,-2)$);
-		\coordinate (d) at ($(c)+(2.5,0)$);
-		\path[mid arrow seg,draw=blue]
-		(c) arc(225:135:1.414)  node[midway,left]{$r$} 
-		(a) arc(45:-45:1.414)   node[midway,right]{$a$}
-		($(a)+(2.5/2,0)$) arc(45:-45:1.414/2) coordinate (m)  node[midway,right]{$b$} % 从(a)向右挪1单位那个点开始画
-		(m) arc(225:135:1.414/2) node[midway,left]{$s$};
-		\path [mid arrow seg,draw=blue]
-		(d) arc(225:135:1.414/2) coordinate (n) node[midway,left]{$t$}
-		(n) arc(45:-45:1.414/2) node[midway,right]{$c$};
-		\draw[draw=blue,densely dotted]
-		(m)--(n);
-		\draw[draw=blue,densely dotted]
-		(a)--($(a)+(2.5/2,0)$)
-		(c)--(d);
-		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
-		\end{tikzpicture} 
-		& $(-)^{3+3}\sum_{abcrst}\frac{\braket{ac|rt}\braket{bt|sc}\braket{rs|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
-	\end{tabular}
+\begin{tabular}{ccl}
+    \hline
+    1 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (0,0);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (c) arc(225:135:1.414) node[midway,left]{$r$}  
+    (a) arc( 45:-45:1.414) node[midway,right]{$a$}  
+    (d) arc(225:135:1.414) node[midway,left]{$b$}  
+    (b) arc( 45:-45:1.414) node[midway,right] {$s$}; 
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture}
+    & $\displaystyle(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline		
+    2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (e) at (4,-2.5+2);
+    \coordinate (f) at ($(e)+(2,0)$);
+    \coordinate (g) at ($(e)+(0,-2)$);
+    \coordinate (h) at ($(g)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (g) arc(225:135:1.414) node[midway,left]{$r$}  
+    (h) arc(-45: 45:1.414) node[midway,right]{$s$} ; 
+    \path[mid arrow seg=.75,draw=blue]
+    (e) to node[pos=.75,right]{$b$} (h)
+    (f) to node[pos=.75,left]{$a$} (g);
+    \draw[draw=blue,densely dotted]
+    (e)--(f)
+    (g)--(h);
+    \path[use as bounding box] ($(g)-(.5,.5)$) rectangle ($(f)+(.5,.5)$);
+    \end{tikzpicture}
+    & $\displaystyle(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}$\\\hline
+    
+    1 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (a) arc(135:225:1.414) node[midway,left]{$a$}  
+    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+    (m) arc(0:45:1.414)node[midway,right]{$t$}
+    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$u$}
+    (n) arc(180:135:1.414) node[midway,left]{$s$}
+    (b) arc(45:-45:1.414) node[midway,right]{$b$}
+    ; 
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{2+2}\left(\frac{1}{2}\right)\sum_{abrsut}\frac{\braket{ab|ru}\braket{ru|ts}\braket{ts|ba}}{(\epsilon_{a}+\epsilon_{d}-\epsilon_{r}-\epsilon_{u})(\epsilon_{a}+\epsilon_{b}-\epsilon_{t}-\epsilon_{s})}$\\\hline
+    2 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid reverse arrow seg=.45,draw=blue]
+    (a) arc(135:225:1.414) node[midway,left]{$r$}  
+    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$a$} 
+    (m) arc(0:45:1.414)node[midway,right]{$c$}
+    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$d$}
+    (n) arc(180:135:1.414) node[midway,left]{$b$}
+    (b) arc(45:-45:1.414) node[midway,right]{$s$}
+    ;
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{4+2}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ad|rs}\braket{cb|ad}\braket{rs|cb}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+    
+    3 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (a) arc(135:225:1.414) node[midway,left]{$a$}  
+    (c) arc(-45:0:1.414) coordinate(m) node[midway,right]{$r$} 
+    (m) arc(0:45:1.414)node[midway,right]{$s$};
+    \path[mid reverse arrow seg=.45,draw=blue]
+    (d) arc(225:180:1.414) coordinate(n) node[midway,left]{$c$}
+    (n) arc(180:135:1.414) node[midway,left]{$b$}
+    (b) arc(45:-45:1.414) node[midway,right]{$t$}
+    ;
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{ac|rt}\braket{rb|sc}\braket{st|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+    
+    4 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (4,-2.5+2);
+    \coordinate (b) at ($(a)+(2,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2,0)$);
+    \path[mid arrow seg,draw=blue]
+    (c) arc(225:180:1.414) coordinate(m) node[midway,left]{$r$}
+    (m) arc(180:135:1.414) node[midway,left]{$s$} 
+    (a) arc(45:0:1.414)    coordinate(n) node[midway,right]{$a$}
+    (n) arc(0:-45:1.414)   node[midway,right]{$b$};
+    \path [mid arrow seg,draw=blue]
+    (b) arc(45:-45:1.414) node[midway,right]{$c$}
+    (d) arc(225:135:1.414) node[midway,left]{$t$};
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--(b)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+    
+    5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
+    \coordinate (a) at (0,0);
+    \coordinate (b) at ($(a)+(2.5,0)$);
+    \coordinate (c) at ($(a)+(0,-2)$);
+    \coordinate (d) at ($(c)+(2.5,0)$);
+    \path[mid arrow seg,draw=blue]
+    (c) arc(225:135:1.414)  node[midway,left]{$r$} 
+    (a) arc(45:-45:1.414)   node[midway,right]{$a$}
+    ($(a)+(2.5/2,0)$) arc(45:-45:1.414/2) coordinate (m)  node[midway,right]{$b$} % 从(a)向右挪1单位那个点开始画
+    (m) arc(225:135:1.414/2) node[midway,left]{$s$};
+    \path [mid arrow seg,draw=blue]
+    (d) arc(225:135:1.414/2) coordinate (n) node[midway,left]{$t$}
+    (n) arc(45:-45:1.414/2) node[midway,right]{$c$};
+    \draw[draw=blue,densely dotted]
+    (m)--(n);
+    \draw[draw=blue,densely dotted]
+    (a)--($(a)+(2.5/2,0)$)
+    (c)--(d);
+    \path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
+    \end{tikzpicture} 
+    & $\displaystyle(-)^{3+3}\sum_{abcrst}\frac{\braket{ac|rt}\braket{bt|sc}\braket{rs|ab}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+\end{tabular}
 \end{table}
 
 \begin{table}[H]
 	\caption{续表.}
-	\begin{tabular}{ccc}\hline
+	\begin{tabular}{ccl}\hline
 		6 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
@@ -2383,10 +2379,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(m)--(n);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture}
-		& $(-)^{3+1}\sum_{abcrst}\frac{\braket{cb|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+		& $\displaystyle(-)^{3+1}\sum_{abcrst}\frac{\braket{cb|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
 		
 		7 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
@@ -2407,10 +2403,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(m)--(n);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture}
-		& $(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+		& $\displaystyle(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
 		
 		8 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
@@ -2433,10 +2429,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(m)--(n);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture}
-		& $(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+		& $\displaystyle(-)^{2+1}\left(\frac{1}{2}\right)\sum_{abcdrs}\frac{\braket{ac|rs}\braket{db|ac}\braket{sr|db}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{d}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
 		
 		9 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
@@ -2457,10 +2453,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(m)--(n);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture}
-		& $(-)^{3+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{bc|rt}\braket{ar|bs}\braket{ts|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		& $\displaystyle(-)^{3+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{bc|rt}\braket{ar|bs}\braket{ts|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
 		
 		10 & 
-		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
@@ -2481,9 +2477,9 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(m)--(n);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture}
-		& $(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{cb|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		& $\displaystyle(-)^{4+1}\left(\frac{1}{2}\right)\sum_{abcrst}\frac{\braket{cb|rt}\braket{ra|sb}\braket{st|ac}}{(\epsilon_{c}+\epsilon_{b}-\epsilon_{r}-\epsilon_{t})(\epsilon_{a}+\epsilon_{c}-\epsilon_{s}-\epsilon_{t})}$\\\hline
 
-		5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		11 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (b) at ($(a)+(2.5,0)$);
 		\coordinate (c) at ($(a)+(0,-2)$);
@@ -2509,9 +2505,9 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(c)--(m);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture} 
-		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{ab|rs}\braket{sc|at}\braket{rt|bc}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
+		& $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{ab|rs}\braket{sc|at}\braket{rt|bc}}{(\epsilon_{a}+\epsilon_{c}-\epsilon_{r}-\epsilon_{s})(\epsilon_{c}+\epsilon_{b}-\epsilon_{s}-\epsilon_{t})}$\\\hline
 
-		5 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
+		12 & \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.75]
 		\coordinate (a) at (0,0);
 		\coordinate (c) at ($(a)+(0,-2)$);
 		\coordinate (d) at ($(c)+(2.5,0)$);
@@ -2536,7 +2532,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		(a)--(b);
 		\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 		\end{tikzpicture} 
-		& $(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{t}-\epsilon_{r})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
+		& $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{t}-\epsilon_{r})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
 	\end{tabular}
 \end{table}
 这里我们实际地运用一下这些规则, 试着用图计算二阶能量. 将二阶能量中的\emph{直接图}按垂直于纸面的镜面进行反射,

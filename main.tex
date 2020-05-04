@@ -7,26 +7,6 @@
 \usepackage{amssymb}
 \usepackage{bm}
 
-\newcounter{defcounter}
-\setcounter{defcounter}{0}
-
-\newenvironment{mymath}{%
-	\addtocounter{equation}{-1}
-	\refstepcounter{defcounter}
-	\renewcommand\theequation{D\thedefcounter}
-	\begin{equation}}
-{\end{equation}}
-
-
-
-\makeatletter \newcommand\figcaption{\def\@captype{figure}\caption} \newcommand\tabcaption{\def\@captype{table}\caption} \makeatother
-
-
-\newcounter{mparcnt}[chapter]
-\renewcommand\themparcnt{\small{$^{\arabic{mparcnt}}$}}
-\newcommand\mpar[1]{\refstepcounter{mparcnt}{$^{\arabic{mparcnt}}$}\marginpar{\themparcnt\scriptsize#1}}
-\makeatother
-
 \linespread{1.2}
 
 
@@ -34,13 +14,13 @@
 
 
 \begin{document}
-\input{Preface}
+\include{./Chaps/preface}
 
 \tableofcontents % Print the table of contents itself
 \setcounter{page}{0}
 
 %注意替换\ts -> \mathscr{S}, \cs _> a^\dagger, \sch -> Schr\''odinger, \hs 为\mathscr{H}, \vs -> \mathscr{V}, 算子 -> 算符. \ht
-
+%
 \include{./Chaps/Chap1}
 \include{./Chaps/Chap2}
 \include{./Chaps/Chap3}

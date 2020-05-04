@@ -1310,9 +1310,9 @@ p=\alpha+\beta
 	\addplot [domain=-1:2, samples=500, dashed, mark=none, thick, blue] {\FunctionA(x)};
 	\addplot [domain=-1:2, samples=500, dashed, mark=none, thick, blue] {\FunctionB(x)};
 	\addplot [domain=-1:2, samples=500, mark=none, thick, blue] {\FunctionC(x)};
-	\draw [->]  (-.4,2.7)node[inner sep=0](phia){$\phi^A$} (node cs:name=phia)--(-.21,2.58372);
-	\draw [->]  (.87,1.9) node[inner sep=0](phib){$\phi^B$} (node cs:name=phib)--(.7,1.71778);
-	\draw [->]  (.25,1.2) node[inner sep=0](phib){$\phi^P$} (node cs:name=phib)--(.15,.83);
+	\draw [->]  (axis cs:-.4,2.7)node[inner sep=0](phia){$\phi^A$} (node cs:name=phia)--(axis cs:-.21,2.58372);
+	\draw [->]  (axis cs:.87,1.9) node[inner sep=0](phib){$\phi^B$} (node cs:name=phib)--(axis cs:.7,1.71778);
+	\draw [->]  (axis cs:.25,1.2) node[inner sep=0](phib){$\phi^P$} (node cs:name=phib)--(axis cs:.15,.83);
 	\filldraw (0,0)circle(1pt)node[below]{A}(0.153846,0)circle(1pt)node[below]{P}(.5,0)circle(1pt)node[below]{B};
 	\end{axis}
 	\end{tikzpicture}
@@ -1404,9 +1404,9 @@ S = (\pi)^{-1/2}(2\alpha/\pi)^{3/4}\int\dd{r}e^{-r}e^{-\alpha r^2}
 	]
 	\addplot [domain=0:4, samples=500, thick, mark=none, thick, blue] {\Sf(x)};
 	\addplot [domain=0:4, samples=500, dashed, mark=none, thick, blue] {\CgfA(x)};
-	\draw(2.5,0.2)node{(a)};
-	\draw[dashed] (1.75,0.444)--+(.75,0)node[right]{STO-1G};
-	\draw (1.75,0.5)--+(.75,0)node[right]{SLATER};
+	\draw(axis cs:2.5,0.2)node{(a)};
+	\draw[dashed] (axis cs:1.75,0.444)--+(axis cs:.75,0)node[right]{STO-1G};
+	\draw (axis cs:1.75,0.5)--+(axis cs:.75,0)node[right]{SLATER};
 	\end{axis}
 	\end{tikzpicture}
 	\begin{tikzpicture}
@@ -1434,9 +1434,9 @@ S = (\pi)^{-1/2}(2\alpha/\pi)^{3/4}\int\dd{r}e^{-r}e^{-\alpha r^2}
 	]
 	\addplot [domain=0:8, samples=500, thick, mark=none, thick, blue] {4*3.1415926*(x^2)*\Sf(x)};
 	\addplot [domain=0:8, samples=500, dashed, mark=none, thick, blue] {4*3.1415926*(x^2)*\CgfA(x)};
-	\draw (6,2.5)node{(b)};
-	\draw (4.1,4)--(5.3,4)node[right]{SLATER};
-	\draw[dashed] (4.1,3.544)--(5.3,3.544)node[right]{STO-1G};
+	\draw (axis cs:6,2.5)node{(b)};
+	\draw (axis cs:4.1,4)--(5.3,4)node[right]{SLATER};
+	\draw[dashed] (axis cs:4.1,3.544)--(axis cs:5.3,3.544)node[right]{STO-1G};
 	\end{axis}
 	\end{tikzpicture}\end{minipage}
 \caption{Slater函数和高斯函数的比较：a) $1s$ Slater函数($\zeta=1.0$)用单个STO-1G的高斯函数按最小二乘拟合($\alpha=0.270950$); b) 对应径向分布函数$(4\pi r^2|\phi_{1s}(r)|^2)$的比较.}
@@ -1474,10 +1474,10 @@ S = (\pi)^{-1/2}(2\alpha/\pi)^{3/4}\int\dd{r}e^{-r}e^{-\alpha r^2}
 	\addplot [domain=0:4, samples=500, dotted, mark=none, very thick, blue] {\CgfA(x)};
 	\addplot [domain=0:4, samples=500, dashdotted, mark=none, thick, blue] {\CgfB(x)};
 	\addplot [domain=0:4, samples=500, dashed, mark=none, very thick, blue] {\CgfC(x)};
-	\draw[dashed] (1.7,0.33)--(2.5,0.33)node[right]{STO-3G};
-	\draw[dashdotted] (1.7,0.387)--(2.5,0.387)node[right]{STO-2G};
-	\draw[dotted] (1.7,0.444)--(2.5,0.444)node[right]{STO-1G};
-	\draw (1.7,0.5)--(2.5,0.5)node[right]{SLATER};
+	\draw[dashed] (axis cs:1.7,0.33)--(axis cs:2.5,0.33)node[right]{STO-3G};
+	\draw[dashdotted] (axis cs:1.7,0.387)--(axis cs:2.5,0.387)node[right]{STO-2G};
+	\draw[dotted] (axis cs:1.7,0.444)--(axis cs:2.5,0.444)node[right]{STO-1G};
+	\draw (axis cs:1.7,0.5)--(axis cs:2.5,0.5)node[right]{SLATER};
 	\end{axis}
 	\end{tikzpicture}
 \caption{
@@ -1701,43 +1701,43 @@ E_\mathrm{tot} = E_0 + 1/R = -1.1167\au
 \end{align}
 由于在这个基下氢原子的能量为$-0.4666\au$. 那么预测的$\hd$解离能就是$2(-0.4666)+1.1167=0.1835\au\equiv 4.99\,\mathrm{eV}$. 作为比较, 解离能实验值为$4.75\,\mathrm{eV}$, 符合得很好, 虽然计算所得的$\hd$能量比精确值高得多, 但是计算所得氢原子的能量也不精确, 如此有一个抵消.
 
-上面得到的解离能与实验符合得很好, 但要完整地回答解离问题, 还需要研究整个势能面. 在不同核间距下重复以上计算就得到\ref{f3.5}中所绘的势能面, 图中也绘出了由Kolos和Wolniewicz\endnote{W. Kolos and Wolniewics, Improved theoretical ground-state energy of the hydrogen molecule, \textit{J. Chem. Phys.} \textbf{49:} 404 (1968).}得到的十分精确的结果. 极小基限制性\hft 计算没有给出$R$趋于无穷时的极限. 初想这个结果好像比较奇怪. 这种完全错误的行为不是$\hd$特有的.
+上面得到的解离能与实验符合得很好, 但要完整地回答解离问题, 还需要研究整个势能面. 在不同核间距下重复以上计算就得到\ref{f3.5}中所绘的势能面, 图中也绘出了由Kolos和Wolniewicz\endnote{W. Kolos and Wolniewics, Improved theoretical ground-state energy of the hydrogen molecule, \textit{J. Chem. Phys.} \textbf{49:} 404 (1968).}得到的十分精确的结果. 极小基限制性\hft 计算没有给出$R$趋于无穷时的极限. 初想这个结果好像比较奇怪. 这种完全错误的行为并非$\hd$系统独有.
 \begin{figure}[H]\centering
-	\begin{tikzpicture}
-	\begin{axis}[
-	axis y line*=middle,
-	axis x line*=middle, 
-	tick label style={
-		/pgf/number format/fixed,
-		/pgf/number format/fixed zerofill,
-		/pgf/number format/precision=1
-	},
-	xtick={1.0,2,3,4,5,6},
-	ytick={-.2,-.1,0,.1,.2,.3,.4,.5,.6},
-	ymin=-.2,
-	ymax=0.6,
-	xmin=0,
-	xmax=6,
-	height=.8\textwidth,
-	width=.7\textwidth,
-	every axis x label/.style={at={(axis description cs:1.1,.2)}},
-	xlabel={$R$(a.u.)},
-	every axis y label/.style={rotate=90,at={(axis description cs:-.15,.5)}},
-	ylabel={$E(\hd)-2E(\mathrm{H})\,(\au)$},
-	]
-	\addplot [domain=.26:6, thick, mark=none, blue] table{./Pictures/h2.dat};
-	\addplot [domain=.26:6, thick,dashed, mark=none,, blue] table{./Pictures/wolniewicz.dat};
-	\draw[<-] (2.7,-.08578740)--(3.2,-.08578740)node[right]{精确};
-	\draw     (3.6,-.12)node{(Kolos-Wolniewicz)};
-	\draw[<-] (4.05,.17)--(4.4,.17)node[right]{STO-3G};
-	\draw (2.4,.38)circle(7pt);
-	\draw (3.6,.38)circle(7pt);
-	\draw[<->](2.4,.38)--node[above]{$R$}(3.6,.38); 
+    \begin{tikzpicture}
+     \begin{axis}[
+     axis y line*=middle,
+     axis x line*=middle, 
+     tick label style={
+         /pgf/number format/fixed,
+         /pgf/number format/fixed zerofill,
+         /pgf/number format/precision=1
+     },
+     xtick={1.0,2,3,4,5,6},
+     ytick={-.2,-.1,0,.1,.2,.3,.4,.5,.6},
+     ymin=-.2,
+     ymax=0.6,
+     xmin=0,
+     xmax=6,
+     height=.8\textwidth,
+     width=.7\textwidth,
+     every axis x label/.style={at={(axis description cs:1.1,.2)}},
+     xlabel={$R$(a.u.)},
+     every axis y label/.style={rotate=90,at={(axis description cs:-.15,.5)}},
+     ylabel={$E(\hd)-2E(\mathrm{H})\,(\au)$},
+     ]
+     \addplot [domain=.26:6, thick, mark=none, blue] table{./Pictures/h2.dat};
+     \addplot [domain=.26:6, thick,dashed, mark=none,, blue] table{./Pictures/wolniewicz.dat};
+     \draw[<-] (axis cs:2.7,-.08578740)--(axis cs:3.2,-.08578740)node[right]{精确};
+     \draw     (axis cs:3.6,-.12)node{(Kolos-Wolniewicz)};
+     \draw[<-] (axis cs:4.05,.17)--(axis cs:4.4,.17)node[right]{STO-3G};
+     \draw (axis cs:2.4,.38)circle(7pt);
+     \draw (axis cs:3.6,.38)circle(7pt);
+     \draw[<->](axis cs:2.4,.38)--node[above]{$R$}(axis cs:3.6,.38); 
 %	\draw[dashdotted] (1.7,0.387)--(2.5,0.387)node[right]{STO-2G};
 %	\draw[dotted] (1.7,0.444)--(2.5,0.444)node[right]{STO-1G};
 %	\draw (1.7,0.5)--(2.5,0.5)node[right]{SLATER};
-	\end{axis}
-	\end{tikzpicture}
+     \end{axis}
+\end{tikzpicture}
 	\caption{$\hd$的STO-3G限制性\hft 势能曲线与Kolos和Wolniewicz的精确结果对比.}
 	\label{f3.5}
 \end{figure}
@@ -2089,11 +2089,11 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 
 	\addplot [domain=.26:6, thick, mark=none, blue] table[y expr=\thisrowno{1}+2.6438] {./Pictures/heh-tot-ener.txt};
 	
 	\addplot [domain=.035:6, thick,dashed, mark=none, blue] table[y expr = -(\thisrowno{3}-2.9037244)] {./Pictures/W-heh.dat};
-	\draw[->] (1.7,0.1)node[right,above]{\parbox{\twoc}{精确\\(Wolniewicz)}}--(1.5,-.06578740);
+	\draw[->] (axis cs:1.7,0.1)node[right,above]{\parbox{\twoc}{精确\\(Wolniewicz)}}--(axis cs:1.5,-.06578740);
 %	\draw     (1.8,0.1)node[right]{(Wolniewicz)};
-	\draw[<-] (2.1,-.17)--(2.4,-.17)node[right]{STO-3G};
-	\draw (1.9,.38)circle(7pt)(1.8,.38) (2.5,.38)circle(7pt);
-	\draw[<->] (1.9,.38)--node[above]{$R$}(2.5,.38);
+	\draw[<-] (axis cs:2.1,-.17)--(axis cs:2.4,-.17)node[right]{STO-3G};
+	\draw (axis cs:1.9,.38)circle(7pt)(axis cs:1.8,.38) (axis cs:2.5,.38)circle(7pt);
+	\draw[<->] (axis cs:1.9,.38)--node[above]{$R$}(axis cs:2.5,.38);
 	%	\draw[dashdotted] (1.7,0.387)--(2.5,0.387)node[right]{STO-2G};
 	%	\draw[dotted] (1.7,0.444)--(2.5,0.444)node[right]{STO-1G};
 	%	\draw (1.7,0.5)--(2.5,0.5)node[right]{SLATER};
@@ -2129,7 +2129,7 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 
 
 至此，已经讨论过闭壳层限制性\hft 方法以及模型系统$\heh$、$\hd$, 现在想展示一些更实际的多原子分子的计算。我们这么做不实为了罗列已有的计算结果，而是想展示所有闭壳层\hft 型计算背后的主要想法，并提供计算结果与实验相比之优劣的直观感受。
 
-我们只涉及$\hd, \text{N}_2, \text{CO}$以及以及十电子家族内的$\text{CH}_4, \text{NH}_3, \text{H$_2$O}, \text{FH}$.每个每个分子都会用一系列不同层次的基组做计算。在写下这些计算的结果前，我们需先讨论一般的多原子基组并对将用的基组做详细解说。
+我们只涉及$\hd, \text{N}_2, \text{CO}$以及以及十电子族内的$\text{CH}_4, \text{NH}_3, \text{H}_2\text{O}, \text{FH}$.每个每个分子都会用一系列不同层次的基组做计算。在写下这些计算的结果前，我们需先讨论一般的多原子基组并对将用的基组做详细解说。
 、
 \section{多原子基组}
 用于多原子计算的基替数太多了，大概和量子化学家一样多。选择合适的基组并非是一种魔法，但初看确实好像如此。在下面的算例中，我们会用一系列定义好的、分层次的基组，由STO-3G开始，然后是4-31G，它的基函数大概是前者的两倍多，然后是6-31G*，它为重原子加入了$d$型函数，为氢原子加入了$p$型函数。用这些基组对一小组分子进行电子结构计算后，我们就能直觉地知道（所需精度下）该选择什么大小和具有什么特性的基组。

@@ -1,21 +1,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The Blabla Book
+% The Szabo Book
 % Structural Definitions File
-% Version 2.0 (9/2/15)
+% Version 0.9 (5/4/20)
 %
 % Original author:
-% lux.qc (lux.qc@yandex.com)
+% dynamic_poker (dynamic_poker@outlook.com)
 %
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
-
+\RequirePackage{luatex85,shellesc}
 \usepackage[top=1.39cm,bottom=1.8cm,left=1.7cm,right=1.27cm,headsep=10pt,papersize={13.8cm ,21.6cm}
 ]{geometry}
 \usepackage{indentfirst} 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{Pictures/}}
 \usepackage{tikz,pgfplots} % Required for drawing custom shapes
-\pgfplotsset{compat=newest}
+%\pgfplotsset{compat=newest}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=tikz/,
+figure name=tikz_chap\thechapter_sec\thesubsection_no,
+up to date check = md5,
+]
 \usepackage{booktabs,enumerate,threeparttable} % Required for nicer horizontal rules in tables
 \usepackage{xcolor} % Required for specifying colors by name
 \definecolor{ocre}{RGB}{0,0,0} % Define the favorite color used for highlighting throughout the book
@@ -23,18 +28,7 @@
 
 
 %----------------------------------------------------------------------------------------
-%	PAGE HEADERS
-%----------------------------------------------------------------------------------------
-
-\usepackage{fancyhdr} % Required for header and footer configuration
-%
-%\pagestyle{fancy}
-\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
-\renewcommand{\sectionmark}[1]{\markright{\normalfont\normalsize\thesection\hspace{5pt}#1}{}}
-
-
-%----------------------------------------------------------------------------------------
-%	CHINESE SETTING
+%	Chinese Settings
 %----------------------------------------------------------------------------------------
 \usepackage[format=hang,labelfont=bf]{caption}
 %\captionsetup{font={scriptsize}}
@@ -53,19 +47,27 @@
 %\usepackage[T1]{fontenc}
 %\usepackage{newpxtext,newpxmath}
 %\usepackage{newtxtext}
-%\usepackage{newtxmath,} %A systematic solution to Roman font, including math font.
+%\usepackage{newtxmath,} %A systematic solution to Roman fonts, including math fonts.
 \usepackage{braket,ulem}
 \renewcommand{\braket}[1]{\Braket{#1}}
 \renewcommand{\ket}[1]{\Ket{#1}}
 \renewcommand{\bra}[1]{\Bra{#1}}
-%\usepackage[UTF8]{ctex}
+\usepackage[UTF8,scheme=plain]{ctex}
+\usepackage{hyperref}
 %\usepackage{fontspec}
-\usepackage{luatexja-fontspec}
-\setmainjfont{FandolSong}
-\setsansjfont{FandolKai}
+%\usepackage{luatexja-fontspec}
+%\setmainjfont{FandolSong}
+%\setsansjfont{FandolKai}
 
-%\ctexset{fontset = none}
-%\setmainfont{CMU Concrete}
+%----------------------------------------------------------------------------------------
+%	Page Headers
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Required for header and footer configuration
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
+\renewcommand{\sectionmark}[1]{\markright{\normalfont\normalsize\thesection\hspace{5pt}#1}{}}
+
+%----------------------------------------------------------------------------------------
 \let\bar\undifined
 \newcommand{\bar}[1]{\overline{#1}}
 \newcommand{\scr}[1]{\mathscr{#1}}
@@ -93,9 +95,9 @@
 \newcommand{\hs}{\mathscr{H}}
 \newcommand{\vs}{\mathscr{V}}
 \newcommand{\es}{\mathscr{E}}
-%\renewcommand{\textit}[1]{\textgt{#1}}
-%\renewcommand{\itshape}{\jfontspec{FandolKai}}
-\newcommand{\kaiti}{\jfontspec{FandolKai}}
+
+\newcommand{\kaiti}{%\kaishu
+}
 \renewcommand{\emph}[1]{\textbf{#1}}
 
 
@@ -111,7 +113,7 @@
 %\let\footnote\endnote
 
 %---------------------------------------------------------------------
-% the command to generate two lines between which are the  excerise content, using amsthm to number the exercise.
+% the command to generate two lines between which are excerise content, using amsthm to number the exercise.
 \let\openbox\undefined
 \usepackage{amsthm}
 \newtheoremstyle{nx}{}{}{\normalfont}{}{\bfseries}{}{1em}{}
@@ -185,7 +187,7 @@
 	\settowidth{\wletter}{\text{$\mathsurround=0pt i$}}
 	\settoheight{\hletter}{\text{$\mathsurround=0pt i$}}
 	\tikz[overlay,remember picture,inner sep=0,minimum height=\hletter] \node[shift={(-.4\wletter,.45\hletter)}] (#1) {};}
-\newcommand{\dian}{\tikz{\filldraw[blue](0,0)circle(1pt)}}
+\newcommand{\dian}{\tikz{\filldraw[blue](0,0)circle(1pt);}}
 
 \usetikzlibrary{calc}
 %\usepackage[compat=1.1.0]{tikz-feynman}
@@ -204,8 +206,8 @@
 % 注意core-hamitonian的替换, 正则->典则
 \newcommand{\au}{\,\mathrm{a.u.}}
 \newcommand{\ts}{\mathscr{S}} %总自旋算符
+%\usepackage{soul} % the package containing the command \ul for the next command
 \newcommand{\mci}[1]{\underline{#1}}
-\usepackage{hyperref}
 \newcommand{\phrase}[1]{\underline{#1}}
 \usepackage{blkarray}%分块矩阵
 %%为方便而定义的简单代替, 最后要全部换回来.
