@@ -1,12 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The Szabo Book
 % Structural Definitions File
-% Version 0.9 (5/4/20)
+% Version 0.1 (5/4/20)
 %
-% Original author:
+% Author:
 % dynamic_poker (dynamic_poker@outlook.com)
 %
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %
 \RequirePackage{luatex85,shellesc}
 \usepackage[top=1.39cm,bottom=1.8cm,left=1.7cm,right=1.27cm,headsep=10pt,papersize={13.8cm ,21.6cm}
@@ -21,15 +20,16 @@
 figure name=tikz_chap\thechapter_sec\thesubsection_no,
 up to date check = md5,
 ]
-\usepackage{booktabs,enumerate,threeparttable} % Required for nicer horizontal rules in tables
+\usepackage{booktabs,enumerate,threeparttable
+} % Booktabs required for nicer horizontal rules in tables
 \usepackage{xcolor} % Required for specifying colors by name
 \definecolor{ocre}{RGB}{0,0,0} % Define the favorite color used for highlighting throughout the book
 \bibliographystyle{alpha}
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------
 %	Chinese Settings
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------
 \usepackage[format=hang,labelfont=bf]{caption}
 %\captionsetup{font={scriptsize}}
 \captionsetup{figurename={图}, tablename={表}}
@@ -39,11 +39,16 @@ up to date check = md5,
 \usepackage{tabularx}
 \newcolumntype{Y}{>{\centering\arraybackslash}X} % New flag to centering the width-adapted columns
 
+\usepackage{amsmath}
+\usepackage{anyfontsize}
+\usepackage{amssymb}
+\usepackage{bm}
+
 \usepackage{mathtools} % For *rcases* environment
 \usepackage[scr=boondoxo, scrscaled=1]{mathalfa}
 %\usepackage{mathrsfs}
 \usepackage{mathptmx,mathpazo}
-\usepackage{old-arrows}
+%\usepackage{old-arrows} % 
 %\usepackage[T1]{fontenc}
 %\usepackage{newpxtext,newpxmath}
 %\usepackage{newtxtext}
@@ -59,9 +64,9 @@ up to date check = md5,
 %\setmainjfont{FandolSong}
 %\setsansjfont{FandolKai}
 
-%----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------
 %	Page Headers
-%----------------------------------------------------------------------------------------
+%-----------------------------------------------------------------
 
 \usepackage{fancyhdr} % Required for header and footer configuration
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
@@ -112,13 +117,13 @@ up to date check = md5,
 \makeatother
 %\let\footnote\endnote
 
-%---------------------------------------------------------------------
+%-----------------------------------------------------------------
 % the command to generate two lines between which are excerise content, using amsthm to number the exercise.
 \let\openbox\undefined
 \usepackage{amsthm}
 \newtheoremstyle{nx}{}{}{\normalfont}{}{\bfseries}{}{1em}{}
 \theoremstyle{nx}
-\newtheorem{Xercise}{$\qquad$练习}[chapter]
+\newtheorem{Xercise}{$\quad$练习}[chapter]
 \newenvironment{xercise}{\par\vspace{\baselineskip}\noindent\hrule\vspace{.5\baselineskip}\Xercise}
 {\vspace{\baselineskip}\hrule\par\endXercise}
 
@@ -192,6 +197,12 @@ up to date check = md5,
 \usetikzlibrary{calc}
 %\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{float}
+\renewcommand{\thefootnote}{\roman{footnote}} % Change the marks of footnotes to numbers
+\usepackage{blkarray} %分块矩阵
+
+%-----------------------------------------------------------------
+%	Convinent abbreviations
+%-----------------------------------------------------------------
 \renewcommand{\normalsize}{\fontsize{8pt}{9.6pt}\selectfont}
 \newcommand{\diagsize}{\fontsize{5pt}{6.6pt}\selectfont}
 \newcommand{\cs}{a^\dagger}
@@ -200,16 +211,13 @@ up to date check = md5,
 \newcommand{\twoe}{r_{12}^{-1}}
 \newcommand{\tp}{\tilde{\Phi}}
 %\usepackage[symbol]{footmisc} 
-\renewcommand{\thefootnote}{\roman{footnote}}
 \newcommand{\bfr}{\mathbf{r}}
 \newcommand{\heh}{\mathrm{HeH}^+}
-% 注意core-hamitonian的替换, 正则->典则
 \newcommand{\au}{\,\mathrm{a.u.}}
 \newcommand{\ts}{\mathscr{S}} %总自旋算符
-%\usepackage{soul} % the package containing the command \ul for the next command
+%\usepackage{soul} % the package containing the command \ul for the \mci command
 \newcommand{\mci}[1]{\underline{#1}}
 \newcommand{\phrase}[1]{\underline{#1}}
-\usepackage{blkarray}%分块矩阵
 %%为方便而定义的简单代替, 最后要全部换回来.
 \newcommand{\jt}{\ket{\Phi_0}}
 \newcommand{\hjt}{\ket{\Psi_0}}

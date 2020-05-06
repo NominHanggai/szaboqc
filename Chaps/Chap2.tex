@@ -1,9 +1,4 @@
-% !TeX spellcheck = zh_cn
-%!TEX root = ../CallenThermo.tex
-%----------------------------------------------------------------------------------------
-%	翻译：SI
-%   校对：lh1962
-%----------------------------------------------------------------------------------------
+%!TEX root = ../main.tex
 
 \chapter{多电子波函数与多电子算符}
 \label{chap2}
@@ -402,9 +397,9 @@ $(N!)^{-1/2}$是归一化因子. 这个Slater行列式代表N个电子占据N个
 注意, 上式两个Slater行列式之间的重叠积分只有如下情况不是0: 1)$k=i$且$l=j$, 此时$\ket{K}=\ket{L}$, 重叠积分为1. 2)$k=j$且$l=i$, 此时$\ket{L}=\ket{\chi_j\chi_i}=-\ket{K}$, 重叠积分为-1.
 }
 
-到此, 我们已经知道Hartree积是独立电子波函数, 因为同时在$\dd\bo{x_1}$(在$\bo{x_1}$附近)找到电子1的概率和在$\dd\bo{x_2}$内(在$\bo{x_2}$附近)找到电子2的概率是二者的乘积. 将Hartree积反对称化后, 可以得到Slater行列式, 由此引入\emph{交换}作用, 所谓交换作用, 是指交换两个电子的空间+自旋坐标后, 概率密度$|\Psi|^2$不变. 须指出, Slater行列式中包括了\emph{交换相关}, 交换相关意思是两个有平行自旋的电子的运动时相互关联的. 由于自旋反平行的电子之间没有关联, 我们也习惯把Slater行列式叫作无相关波函数.
+到此, 我们已经知道Hartree积是独立电子波函数, 因为同时在$\dd\bo{x_1}$(在$\bo{x_1}$附近)找到电子1的概率和在$\dd\bo{x_2}$内(在$\bo{x_2}$附近)找到电子2的概率是二者的乘积. 将Hartree积反对称化后, 可以得到Slater行列式, 这样就引入了\emph{交换}作用, 交换作用得名于这个规定(要求)： $|\Psi|^2$在交换两个电子的空间+自旋坐标的操作下，保持不变. 须指出, Slater行列式中包括了\emph{交换关联}, 交换相关的意思是，自旋平行的两个电子的运动是相互关联的. 由于在Slate行列式中，自旋反平行的电子之间依然缺失关联作用，我们也习惯把Slater行列式叫作无相关波函数.
 
-为了理解交换相关的起因, 现在来看看将Hartree积反对称化之后, 电子密度受什么影响. 考虑两电子Slater行列式, 自旋轨道分别为$\chi_1,\chi_2$(即这两个轨道被占据):
+为了理解交换相关的来源, 我们来看，把Hartree积反对称化之后, 电子密度受什么影响. 考虑双电子Slater行列式, 自旋轨道分别为$\chi_1,\chi_2$（即这两个轨道被占据）：
 \begin{equation}
 \Psi(\bo{x_1,x_2})=\ket{\chi_1(\bo{x_1})\chi_2(\bo{x_2})}
 \end{equation}
@@ -2488,6 +2483,6 @@ Flurry, R. L. Jr., \textit{Symmetry Groups}, Prentice Hall, Englewood Cliffs, Ne
 
 Mattuck, R. D., 2nd ed., \textit{A Guide to Feynman Diagrams in the Many-Body Problem}, McGraw-Hill, New York, 1976. 第七章用比本书更高级的方式介绍了二次量子化.
 
-McWeeny, R. and Sutcliffe, B. T., \textit{Methods of Molecular Quantum Mechanics}, 2nd ed., Academic Press, New York, 1976. 讨论了计算由非正交自旋轨道构成的Slater行列式的矩阵元的规则. 此书对如何得到自旋本征函数也作了简明介绍.
+McWeeny, R. and Sutcliffe, B. T., \textit{Methods of Molecular Quantum Mechanics}, 2nd ed., Academic Press, New York, 1976. 讨论了计算由非正交自旋轨道构成的Slater行列式的矩阵元的规则. 该书也简明介绍了如何得到自旋本征函数.
 
-Slater, J. C., \textit{Quantum Theory of Matter}, 2nd ed., McGraw-Hill, New York, 1968. 第十一章讨论了行列式波函数, 并以与本书较为不同的方式推导了行列式间的矩阵元.
+Slater, J. C., \textit{Quantum Theory of Matter}, 2nd ed., McGraw-Hill, New York, 1968. 第十一章讨论了行列式波函数, 并用略不同于本书的方式推导了行列式间的矩阵元.
