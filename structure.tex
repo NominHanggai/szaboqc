@@ -215,9 +215,9 @@ up to date check = md5,
 \newcommand{\heh}{\mathrm{HeH}^+}
 \newcommand{\au}{\,\mathrm{a.u.}}
 \newcommand{\ts}{\mathscr{S}} %总自旋算符
-%\usepackage{soul} % the package containing the command \ul for the \mci command
-\newcommand{\mci}[1]{\underline{#1}}
-\newcommand{\phrase}[1]{\underline{#1}}
+\usepackage{xeCJKfntef} % the package containing the command \CJKuderline*{} for the \mci command
+\newcommand{\mci}[1]{\CJKunderline*{#1}}
+\newcommand{\phrase}[1]{\CJKunderline*{#1}}
 %%为方便而定义的简单代替, 最后要全部换回来.
 \newcommand{\jt}{\ket{\Phi_0}}
 \newcommand{\hjt}{\ket{\Psi_0}}

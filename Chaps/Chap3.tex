@@ -1,7 +1,7 @@
 \chapter{Hartree-Fock近似}
-Hartree-Fock近似, 也即分子轨道近似, 在化学中相当重要. 这个简单的图像——电子占据着轨道——是化学家用以思考的工具, 然需记得, 虽然这个方法有时确实有效, 但它确实是一个近似. 本章中来详细介绍Hartree-Fock理论以及\emph{从头}的Hartree-Fock计算. 此章篇幅较长, 这也反映了Hartree-Fck在量子化学中的重要地位. Hartree-Fock不仅就其本身十分重要, 它也是其他考虑了电子相关效应的更精确近似的起点. 量子化学中确实有一些方法不以Hartree-Fock为基础, 但是大多数都如此. 本书之后讲述的所有方法都基于Hartree-Fock近似. 第一章及第二章已经及介绍了一些基本概念和数学工具, 这对更好的理解多电子理论的结构大有裨益. 那么现在就到了在一种绝非粗浅的层面上讨论Hartree-Fock理论本身及其计算过程的时候了.  
+Hartree-Fock近似, 也即分子轨道近似, 在化学中相当重要. 这个简单的图像——电子占据着轨道——是化学家用以思考的工具, 然需记得, 虽然这个方法有时确实有效, 但它确实是一个近似. 本章中来详细介绍Hartree-Fock理论以及\emph{从头}的Hartree-Fock计算. 此章篇幅较长, 这也反映了Hartree-Fck在量子化学中的重要地位. Hartree-Fock不仅就其本身十分重要, 它也是其他考虑了电子相关效应的更精确近似的起点. 量子化学中确实有一些方法不以Hartree-Fock为基础, 但是大多数都如此. 本书之后讲述的所有方法都基于Hartree-Fock近似. 第一章及第二章已经及介绍了一些基本概念和数学工具, 这对更好的理解多电子理论的结构大有裨益. 所以现在正是时候来深入讨论和理解Hartree-Fock理论本身及其计算过程是相当合适的。
 
-除了Hartree-Fock理论的基本框架, 本章还包括了大量从头算例.讲述这些算例的目的不是罗列已有计算结果, 而是要用以阐释重要的思想. 它们能帮助理解本章即之后介绍的方法, 读者决不能低估其重要性. 为阐述Hartree-Fock近似, 我们对正文中提到的每一个量(如总能量, 离子化势, 平衡几何结构, 偶极矩等等)都作了计算, 所用基组是一套包含不同级别的标准基组(STO-3G, 4-31G, 6-31G*, 6-31G**), 分子对象是一组标准分子($\mathrm{H}_2$, $\mathrm{CO}$, $\mathrm{N}_2$, $\mathrm{CH}_4$, $\mathrm{NH}_3$, $\mathrm{H}_2\mathrm{O}$, $\mathrm{FH}$). 打算通过这些计算为读者展示Hartree-Fock框架及其精确核不精确的地方. 本章之后章节所讲述的方法也会用这些基组和分子作例. 如此, 我们就能比较每章介绍的方法, 比如微扰理论如何改进Hartree-Fock下$CO$的偶极矩, 格林函数如何改进Hartree-Fock下$\mathrm{N}_2$的离子化势等等. 这些算例与我们所讨论的量子化学理论方法是紧密关联在一起的.
+除了Hartree-Fock理论的基本框架, 本章还包括了大量从头算例.介绍这些算例的目的不是罗列已有计算结果, 而是要借助它们来阐释基本思想. 它们能极大地帮助理解本章及之后介绍的方法, 读者决不能低估这些例子在这方面的重要性. 为阐述Hartree-Fock近似, 我们对正文中提到的每一个量(如总能量, 离子化势, 平衡几何结构, 偶极矩等等)都做了计算, 所用基组是一系列涵盖不同级别的标准基组(STO-3G, 4-31G, 6-31G*, 6-31G**), 分子对象是一组标准分子($\mathrm{H}_2$, $\mathrm{CO}$, $\mathrm{N}_2$, $\mathrm{CH}_4$, $\mathrm{NH}_3$, $\mathrm{H}_2\mathrm{O}$, $\mathrm{FH}$). 我们计划用这些计算为读者展示Hartree-Fock框架及其精确和不精确之处. 后面章节所讲述的方法也会用这些基组和分子作例. 如此, 我们就能比较每章介绍的方法, 比如微扰理论如何改进Hartree-Fock下$CO$的偶极矩, 格林函数如何改进Hartree-Fock下$\mathrm{N}_2$的离子化势等等. 这些算例与我们所讨论的量子化学理论方法是紧密关联在一起的.
 
 除了这些比较大的算例之外, 我们也会用两个较小的\emph{从头算}模型来阐述理论. 一是\underline{极小基$\hd$}模型, 之前章节已经介绍过了, 这个模型贯穿全书. 为了更具体地讲述Hartree-Fock自洽场(self-consistent-field, SCF)计算的细节, 我们另外引进一个模型——极小基下的$\mathrm{HeH}^+$. 这个模型大概是本书讲授SCF计算过程最重要的途径. 附录A.中推导了$\mathrm{HeH}^+$计算中所需的积分, 附录B.中是一段简短的双原子分子在STO-3G基组下的Hartree-Fock从头算Fortran程序. 而且包括了计算后的详细输出结果. 这个程序写得很明白, 所以读过本书并有一点Fortran知识的同仁都能读懂. 虽然程序简短, 但是其中蕴含着更大的从头算程序(如Gaussian 80
 \endnote{
@@ -1762,7 +1762,7 @@ E_\mathrm{tot} = E_0 + 1/R = -1.1167\au
 
 \underline{极小基$\hd$}的一个缺点是它只有两个基函数, 分子轨道由对称性缺点, 没办法展示出SCF手续的迭代特性. 因为$\heh$是异核分子, 它的对称性少于$\hd$的, 而且这个极小基模型的分子轨道无法由对称性决定. 由此, 对$\heh$做限制性\hft 计算就能完全展示求解Roothaan方程所涉及的原理. 
 
-带一个电荷的氦氢分子离子在质谱研究中已经被熟知很多年了. 在天体物理问题中, 人们也注意到该离子, 因为它是质子散射$\mathrm{He}$中$\mathrm{HT}$经$\beta$衰变的产物, 此外还有与其简单性相关的各种原因. 但是在实验上好像并没有很多对该离子不同电子态结构的研究. Wolniewicz做过非常精确的计算\endnote{L. Wolniewics, Variational treatment of the $\heh$ ion and the $\beta-\text{decay}$ in HT, \textit{J. Chem. Phys.} \textbf{43:} 1078 (1965).}, 计算表面它的基态的平衡键长为$1.4632\au$, 电子键能为$0.0749\au(2.309\,\mathrm{eV})$. 在基态下解离会生成氦原子和质子:
+带一个电荷的氦氢分子离子在质谱研究中已经被熟知很多年了. 在天体物理问题中, 人们也注意到该离子, 因为它是质子散射$\mathrm{He}$中$\mathrm{HT}$经$\beta$衰变的产物, 此外还有与其简单性相关的各种原因. 但是在实验上好像并没有很多对该离子不同电子态结构的研究. Wolniewicz做过非常精确的计算\endnote{L. Wolniewics, Variational treatment of the $\heh$ ion and the $\beta$-{decay} in HT, \textit{J. Chem. Phys.} \textbf{43:} 1078 (1965).}, 计算表面它的基态的平衡键长为$1.4632\au$, 电子键能为$0.0749\au(2.309\,\mathrm{eV})$. 在基态下解离会生成氦原子和质子:
 \begin{align}
 \heh(X^1\Sigma) \to \mathrm{He}(^1S) + \mathrm{H}^+
 \end{align}
@@ -1774,7 +1774,7 @@ E_\mathrm{tot} = E_0 + 1/R = -1.1167\au
 \phi_1 \simeq (\zeta_1^3/\pi)^{1/2} e^{-\zeta_1|\mathbf{r-R}_1|}\\
 \phi_2 \simeq (\zeta_2^3/\pi)^{1/2} e^{-\zeta_2|\mathbf{r-R}_1|}
 \end{align}
-基函数由三个原初高斯型收缩二乘, 收缩系数(3.221), 收缩指数是(3.221)中的按比例乘以$\zeta_1$或$\zeta_2$的平方. 现在只要确定$\mathrm{He}$的Slater指数$\zeta_1$和$\mathrm{H}$的Slater指数$\zeta_2$. 分子环境中的$\mathrm{H}$有标准STO-3G指数$\zeta_2=1.24$, 这就是在\underline{极小基$\hd$}中使用的值. 而$\mathrm{He}$没有这样的标准STO-3G指数. 分子计算中选择指数时场会用同一基组计算单个原子的能量, 指数选为对应能量最小的那个. 这种指数有时叫作``最优原子''指数. 对氢来说最优原子指数为1.0. 拓对$\mathrm{He}$做限制性\hft 计算, 使用只含一个Slater轨道$(\zeta^3/\pi)^{1/2}e^{-\zeta r}$的基组, 可以得到最优原子指数为$27/16=1.6875$. 这个值(27/16)的推导是变分原理的经典教科书例子. 由于$\heh$有一个净的正电荷, 我们预想电子云相比在独立原子$\mathrm{He,H}$中会有明显收缩. 为了说明问题我们会对$\mathrm{H}$用标准的STO-3G值$\zeta_2=1.24$, 对$\mathrm{He}$用$\zeta_1=1.6875\times 1.24=2.095$, 这个值和氢的值一样, 都比最优原子值大$1.24$倍. 如前所述, \ref{f3.6}或(3.249)(3.250)中每个STO-3G函数都是三个原初高斯型之和.
+基函数由三个原初高斯型收缩二乘, 收缩系数(3.221), 收缩指数是(3.221)中的按比例乘以$\zeta_1$或$\zeta_2$的平方. 现在只要确定$\mathrm{He}$的Slater指数$\zeta_1$和$\mathrm{H}$的Slater指数$\zeta_2$. 分子环境中的$\mathrm{H}$有标准STO-3G指数$\zeta_2=1.24$, 这就是在\underline{极小基$\hd$}中使用的值. 而$\mathrm{He}$没有这样的标准STO-3G指数. 分子计算中选择指数时场会用同一基组计算单个原子的能量, 指数选为对应能量最小的那个. 这种指数有时叫作``最优原子''指数. 对氢来说最优原子指数为1.0. 若对$\mathrm{He}$做限制性\hft 计算, 使用只含一个Slater轨道$(\zeta^3/\pi)^{1/2}e^{-\zeta r}$的基组, 可以得到最优原子指数为$27/16=1.6875$. 这个值(27/16)的推导是变分原理的经典教科书例子. 由于$\heh$有一个净的正电荷, 我们预想电子云相比在独立原子$\mathrm{He,H}$中会有明显收缩. 为了说明问题我们会对$\mathrm{H}$用标准的STO-3G值$\zeta_2=1.24$, 对$\mathrm{He}$用$\zeta_1=1.6875\times 1.24=2.095$, 这个值和氢的值一样, 都比最优原子值大$1.24$倍. 如前所述, \ref{f3.6}或(3.249)(3.250)中每个STO-3G函数都是三个原初高斯型之和.
 
 计算的下一步, 或者说多数\emph{从头算}的下一步就是计算所需的基函数积分. 附录A中说明了$1s$高斯函数的积分如何计算并给出值涉及$1s$高斯函数的直接积分公式. 附录B给出了一个FORTRAN程序以及$\heh$情形的输出, 这个程序展示了求解Roothaan方程的完整步骤, 它可在极小基下用高斯函数对所有双电子的双原子分子进行计算. 
 \begin{figure}[H]\centering
@@ -2297,10 +2297,10 @@ $\hd$的限制性波函数是由对称性确定如下的
     \psi_1^\alpha &= \cos\theta \psi_1 + \sin\theta \psi_2 \\
     \psi_1^\alpha &= \cos\theta \psi_1 - \sin\theta \psi_2 
 \end{align}
-其中的单个自由度就是$\theta$。 仅考虑$\theta$在$0$和$45$度之间取值即可。$\theta=0\text{°}$对应限制性解$\psi_a^\alpha=\psi_1^\beta=\psi_1$，而任意非零的$\theta$对应非限制性解$\psi_a^\alpha \neq \psi_1^\beta$。非限制性的虚轨道由下式给出：
+其中的单个自由度就是$\theta$。 仅考虑$\theta$在$0\text{°}$和$45\text{°}$之间取值即可。$\theta=0\text{°}$对应限制性解$\psi_a^\alpha=\psi_1^\beta=\psi_1$，而任意非零的$\theta$对应非限制性解$\psi_a^\alpha \neq \psi_1^\beta$。非限制性的虚轨道由下式给出：
 \begin{align}
-\psi_2^\alpha &= - \sin\theta \psi_1 + \cos\theta \psi_2\\
-\psi_2^\beta &=  \sin\theta \psi_1 + \cos\theta \psi_2
+\psi_2^\alpha &= - \sin\theta \psi_1 + \cos\theta \psi_2 \label{3.358}\\
+\psi_2^\beta &=  \sin\theta \psi_1 + \cos\theta \psi_2 \label{3.359}
 \end{align}
 \exercise{
 证明这组$\alpha$轨道$\{ \psi_1\alpha,\psi_2^\alpha \}$以及这组$\beta$轨道$\{ \psi_1\beta,\psi_2^\beta \}$分别构成正交归一集。
@@ -2308,14 +2308,28 @@ $\hd$的限制性波函数是由对称性确定如下的
 
 将基组展开式\eqref{3.356}\eqref{3.357}带入上面的四个式子中，就可得到非限制性分子轨道的基组展开式。我们从现在起只考虑占据分子轨道，它们由下式给出
 \begin{align}
-\psi_1^\alpha = c_1\phi_1 + c_2\phi_2\\
-\psi_1^\beta = c_2\phi_1 + c_1\phi_2
+\psi_1^\alpha = c_1\phi_1 + c_2\phi_2 \label{3.362}\\
+\psi_1^\beta = c_2\phi_1 + c_1\phi_2 \label{3.363}
 \end{align}
 其中
 \begin{align}
 c_1 = [2(1+S_{12} )]^{-1/2}\cos\theta + [2(1 - S_{12} )]^{-1/2}\sin\theta\\
 c_1 = [2(1+S_{12} )]^{-1/2}\cos\theta - [2(1 - S_{12} )]^{-1/2}\sin\theta
 \end{align}
+
+这种把$\psi_1$和$\psi_2$混合起来的做法（即式\eqref{3.358}\eqref{3.359}）使得$\phi_1,\phi_2$在$\psi_1^\alpha,\psi_1^\beta$的基组展开式中的权重能够变化，正如\eqref{3.362}\eqref{3.363}所示。若$\theta=0$，这个波函数就是限制性波函数（$c_1=c_2=[2(1+S_{12} )]^{-1/2}$）。而当$\theta$从零开始增加，此时$c_1$变大，$c_2$变小，或者等价地说，$\psi_1^\alpha$中的$\phi_1$成分增加，同时$\psi_1^\beta$中的$\phi_2$成分也增加。假若$S_{12}=0$（正是分子键长很大时的情况），那么$\theta$达到极限值$45\text{°}$，$c_1=1,c_2=0$，以及
+\begin{align}
+\begin{rcases*}
+\psi_1^\alpha \equiv \phi_1\\
+\psi_1^\beta \equiv \phi_2
+\end{rcases*}\theta = 45\text{°},\quad S_{12}=0
+\end{align}
+这恰是我们想在双氢原子体系上看到的结果，一个$\alpha$自旋的电子在$\phi_1$上，另外一个$\beta$自旋的电子在$\phi_2$上。
+
+
+
+
+
 
 
 
