@@ -421,7 +421,97 @@ E=\epsilon_i+\Sigma_{ii}(E)
 \begin{align}
 \Delta = (\epsilon_1 - \epsilon_2) + \frac{1}{2}(J_{11} + J_{22}) - 2J_{12} + K_{12}
 \end{align}
-那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$.
+那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$. 而$(N-1)$体系（即$\hd^+$）的精确本征态可以很容易就得到，这不仅是由于在这个分子中不存在关联能，而且还因为在极小基下，$\hd$的HF轨道也是$\hd^+$的最优轨道（换句话说，在这个模型下，$N$和$(N-1)$体系的HF轨道相同，弛豫能为零）。这可以从下面这个事实看欻里：$\hd$的两个HF轨道对称性不同，因此$h_{12}=0$。所以，$\hd^+$的基态能量就是
+\begin{align}
+^{N-1}\scr{E}_0 = h_{11}
+\end{align}
+第一激发态的能量为
+\begin{align}
+^{N-1}\scr{E}_1 = h_{22}
+\end{align}
+因此，极小基$\hd$的精确电离能为
+\begin{align}
+-\mathrm{IP} = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_0 = 2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{11} = \epsilon_1 + ^NE_\mathrm{corr}
+\end{align}
+注意这个电离能和用Koompan定理所得的$\hd$电离能并不相同，它们之间相差一个$^NE_\mathrm{corr}$。须指出，相差$^NE_\mathrm{corr}$这个结论一般情况下并不成立，它在这里成立仅仅是由于我们所用的模型很简单。另外需要说明，这里计算的IP是\emph{垂直}IP，因为我们一直假设$\hd$和$\hd^+$的核间距相同。最后要指出，移去$\hd$中的一个电子后，也有可能得到一个激发态的$\hd^+$。这个过程对应的电离势为
+\begin{align}
+-\mathrm{IP}' = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_1 &=  2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{22} \notag \\
+& = 2\epsilon_1 -\epsilon_2 + (2J_{12} - J_{11} - K_{12}) + ^NE_\mathrm{corr} 
+\label{7.52b}
+\end{align}
+
+现在我们用GF两类研究这个系统，并比较所得的结果和精确结果。这个模型的二阶自能可以轻松用\eqref{7.39}求得，只要将全部空穴和粒子指标分别设为1和2（即$a=b=1$, $r=s=2$）
+\begin{subequations}
+    \begin{align}\begin{array}{l}
+    \Sigma_{11}^{(2)}(E)=\frac{K_{12}^{2}}{E+\varepsilon_{1}-2 \varepsilon_{2}}=\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \label{7.53a}\\
+    \Sigma_{22}^{(2)}(E)=\frac{K_{12}^{2}}{E+\varepsilon_{2}-2 \varepsilon_{1}}=\frac{K_{12}^{2}}{E-\varepsilon_{2}-2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \\
+    \Sigma_{12}^{(2)}(E)=\Sigma_{21}^{(2)}(E)=0
+    \end{array}\end{align}
+\end{subequations}
+式中我们已经利用了这样一个事实：所有双电子积分，若不包含偶数个$1$和$2$，则由于对称性，其值为零。由于$\mathbf{\Sigma}^{(2)}(E)$是对角矩阵，所以$\mathbf{G})(E)$的矩阵元（由式\eqref{7.41}算得）为
+\begin{subequations}
+\begin{align}\begin{array}{l}
+G_{11}(E)=\left(E-\varepsilon_{1}-\Sigma_{11}^{(2)}(E)\right)^{-1} \\
+G_{22}(E)=\left(E-\varepsilon_{2}-\Sigma_{22}^{(2)}(E)\right)^{-1} \\
+G_{12}(E)=G_{21}(E)=0
+\end{array}\end{align}
+\end{subequations}
+要求出$IP$和$EA$，需求得$G_{11}(E)$和$G_{22}(E)$的极点。$G_{11}(E)$的极点满足
+\begin{align}
+E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
+\end{align}
+将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，就有
+\begin{align}
+    E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0
+\end{align}
+在求解这个二次方程以得到两个根之前，我们先求一下$\epsilon_1$的最低阶修正。利用式\eqref{7.46}，即令$\Sigma_{11}^{(2)}(E)$中的$E$等于$\epsilon_{1}$，我们有
+\begin{align}
+\varepsilon_{1}^{\prime}=\varepsilon_{1}+\Sigma_{11}^{(2)}\left(\varepsilon_{1}\right)=\varepsilon_{1}+\frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=\varepsilon_{1}+ ^NE_{0}^{(2)}
+\end{align}
+式中出现的${K_{12}^{2}}/{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}$就是$\hd$关联能的二阶微扰结果（于\ref{chap6}中求得，见式\eqref{6.77}）。这个结果让人高兴。与\eqref{7.52a}中给出的这个模型的精确结果左比较，可发现，使用GF方法，利用$\Sigma_{11}^{(2)}(E)$，仅考虑到最低阶，就给Koopman定理的结果$(\epsilon_1)$增添二阶多体微扰论能量这样一个修正项。若求得\eqref{7.55}的精确解，我们会得到什么呢？该二次方程的两个根为
+\begin{align}
+\varepsilon_{11}^{\pm} &=\varepsilon_{1}+\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \pm\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right) \notag\\
+&=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp \frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \notag\\
+&=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right)
+\end{align}
+可见，$\epsilon_{11}^-$为$\hd$电离能的负值。可以看到，这里的GF方法中隐藏着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），气形式和\eqref{7.49}中的精确结果类似。，区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（式\eqref{7.50}）。这个关联能的微扰展开在二阶上是精确的，同时也纳入了近似的高阶项。那么，另外一个根$\epsilon_{11}^+$的意义式说明？练习7.9会要求读者证明，该根对应$\hd$捕获一个电子后成为一个激发态的$\hd^-$所需的能量。
+\exercise{
+考虑$(N+1)-$粒子系统：$\hd^-$
+\begin{enumerate}[a.]
+    \item 证明在极小基描述中，
+    \begin{align*}
+    ^{N+1} \mathscr{E}_{0}-^{N} \mathscr{E}_{0}=\varepsilon_{2}-^{N} \boldsymbol{E}_{\mathrm{corr}}
+    ^{N+1} \mathscr{E}_{1}-^{N} \mathscr{B}_{0}=2 \varepsilon_{2}-\varepsilon_{1}+\left(J_{22}+K_{12}-2 J_{12}\right)-^{N} E_{\mathrm{corr}}.
+    \end{align*}
+    \item 
+    证明$\epsilon_{11}^+$（见\eqref{7.57}）为$^{N+1} \mathscr{E}_{1}-^{N} \mathscr{E}_{0}$的近似值。
+    \item
+    证明$G_{22}(E)$位于极点时满足下式
+    \begin{align*}
+    \varepsilon_{22}^{\pm}=\varepsilon_{2}-\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right)
+    \end{align*}
+    \item 
+    证明$\epsilon_{22}^+$为${}^{N+1} \mathscr{E}_{0}-{}^{N} \mathscr{E}_{0}$的近似值，$\epsilon_{22}^-$为$^{N} \mathscr{E}_{0}- {}^{N-1} \mathscr{E}_{1}$的近似值（见\eqref{7.52b}）
+\end{enumerate}
+\Next
+极小基$\hd$的三阶自能$\mathbf{\Sigma}^{(3)}(E)$的矩阵元为
+\begin{align*}
+    \Sigma_{11}^{(3)}(E)=& \frac{K_{12}^{2}\left(J_{22}-2 J_{12}+K_{12}\right)}{\left(E-2 \varepsilon_{2}+\varepsilon_{1}\right)^{2}}+\frac{K_{12}^{2}\left(J_{11}-2 J_{12}+K_{12}\right)}{\left(E-2 \varepsilon_{2}+\varepsilon_{1}\right)\left(\varepsilon_{1}-\varepsilon_{2}\right)} \\
+    &+\frac{K_{12}^{2}\left(2 J_{12}-K_{12}-J_{11}\right)}{4\left(\varepsilon_{1}-\varepsilon_{2}\right)^{2}} \\
+    \Sigma_{22}^{(3)}(E)=& \frac{K_{12}^{2}\left(2 J_{12}-K_{12}-J_{11}\right)}{\left(E-2 \varepsilon_{1}+\varepsilon_{2}\right)^{2}}+\frac{K_{12}^{2}\left(J_{22}-2 J_{12}+K_{12}\right)}{\left(E-2 \varepsilon_{1}+\varepsilon_{2}\right)\left(\varepsilon_{1}-\varepsilon_{2}\right)} \\
+    &+\frac{K_{12}^{2}\left(J_{22}+K_{12}-2 J_{12}\right)}{4\left(\varepsilon_{1}-\varepsilon_{2}\right)^{2}} \\
+    \Sigma_{12}^{(3)}(E)=& \Sigma_{21}^{(3)}(E)=0
+\end{align*}
+注意到该三阶自能包含\emph{依赖能量}的部分。现考虑第一IP（如\eqref{7.45}）的最低阶近似，利用$\mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2)}(E)+\mathbf{\Sigma}^{(3)}(E)$
+    \begin{align*}
+    \varepsilon_{1}'=\varepsilon_{1}+\Sigma_{11}^{(2)}\left(\varepsilon_{1}\right)+\Sigma_{11}^{(3)}\left(\varepsilon_{1}\right)
+    \end{align*}
+请证明，该方程右边等于$\varepsilon_{1}+{}^{N}E_{0}^{(2)}+{}^{N} E_{0}^{(3)}$，此处${}^{N}E_{0}^{(3)}$为$\hd$关联能的三阶多体微扰论结果（见\eqref{6.78}）。类似地，请证明，对$EA$的最低阶修正
+    \begin{align*}
+    \varepsilon_{2}^{\prime}=\varepsilon_{2}+\Sigma_{22}^{(2)}\left(\varepsilon_{2}\right)+\Sigma_{22}^{(3)}\left(\varepsilon_{2}\right)
+    \end{align*}
+等于$\varepsilon_{2}-({}^{N} E_{0}^{(2)}+{}^{N} E_{0}^{(3)})$。可见，对于这个模型而言，用到三阶自能并用最简单的近似来求根后，GF方法中隐藏的关联能就是三阶多体微扰论的结果。
+}
 \section{微扰理论和Green函数法}
 \section{一些算例}
 \theendnotes

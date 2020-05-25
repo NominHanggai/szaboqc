@@ -85,7 +85,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \end{figure}
 
 \begin{table}[H]
-		\caption{\phrase{实轨道构成的\phrase{单重态对称匹配组态}}的一些矩阵元.}
+		\caption{{实轨道构成的\phrase{单重对称匹配组态(singlet symmetry adapted configuration)}}所夹的一些矩阵元.}
 		\hrule
 		\vspace{5pt}
         单激发\par
@@ -132,15 +132,22 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \begin{align}
 \braket{\hjtn|\jtn} =1
 \end{align}
-给定一个半归一化的$\jt$, 假如愿意, 总可以令其归一化, 只要把展开式中每一项都乘以一个常数就行 （即$\ket{\jt'}=c'\ket{\jt}$, $c'$选成满足$\braket{\jt'|\jt}=1$的数）.
+给定一个半归一化的$\jt$, 只要愿意, 总可以令其归一化, 只要把展开式中每一项都乘以一个常数就行 （即$\ket{\jt'}=c'\ket{\jt}$, $c'$选成满足$\braket{\jt'|\jt}=1$的数）.
 
-\ref{chap1}已经讨论过, 线性变分法实际上等价如下过程, 先写出
+\makeatletter
+\HyRef@currentHtag
+\makeatother
+
+
+\autoref*{chap1}中已经讨论过, 线性变分法实际上等价如下过程： 写出
 \begin{align}
 \hs\jt = \es_0\jt
+\label{4.6}
 \end{align}
-其中$ \jt $由\eqref{4.4}给出. 然后将此方程顺次乘以$ \bra{\Psi_0},\bra{\Psi_a^r} ,\bra{\Psi_{ab}^{rs}}$即可. 在完成该过程之前, 我们为方便, 先在\eqref{4.6}的两边减去$ E_0\jt $, 如此\eqref{4.6}就改写成
+其中$ \jt $由\eqref{4.4}给出， 然后将此方程顺次乘以$ \bra{\Psi_0},\bra{\Psi_a^r} ,\bra{\Psi_{ab}^{rs}}$即完毕. 在完成该过程之前, 我们为方便, 先在\eqref{4.6}的两边减去$ E_0\jt $, 如此\eqref{4.6}就改写成
 \begin{align}
 (\hs -E_0)\jt = (\es_0-E_0)\jt = E_\mathrm{corr} \jt
+\label{4.7}
 \end{align} 
 式中$E_\mathrm{corr}$就是关联能. 若在上式两边乘以$\bra{\Psi_0}$则有
 \begin{align}
@@ -158,8 +165,27 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 因此, 若使用半归一化的CI函数, 则关联能仅决定于双激发的系数. 这不是说在CI的基态精确解中只需包含双激发, 要注意系数$ \{c_{ab}^{rs}\} $会受其他激发的影响. 为了明确这点, 我们在\eqref{4.7}上左乘$ \bra{\Psi_a^r} $, 得到
 \begin{align}
 \braket{\Psi_a^r|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\Psi_a^r|\jtn}
+\label{4.10}
 \end{align}
-将然后利用 Brillouin 定理, 
+将然后利用$\jt$的展开式以及Brillouin 定理, 上式成为
+\begin{align}
+&\sum_{c t} c_{c}^{t}\left\langle\Psi_{a}^{r}\left|\mathscr{H}-E_{0}\right| \Psi_{c}^{t}\right\rangle+\sum_{\substack{c<d \\ t<u}} c_{cd}^{t u}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{c d}^{t u}\right\rangle+\sum_{\substack{c<d<e\\ t<u<v}} c_{c d e}^{t u v}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{c d e}^{t u v}\right\rangle \notag \\
+&=E_{\mathrm{corr}} c_{a}^{r}
+\label{4.11}
+\end{align}
+该式可稍加简化：注意到单激发和三激发之间的矩阵元仅当$a=c,d,e$或$r=t,u,v$时才非零，就可将\eqref{4.11}重写为
+\begin{align}
+&\sum_{c t} c_{c}^{r}\left\langle\Psi_{a}^{r}\left|\mathscr{H}-E_{0}\right| \Psi_{c}^{r}\right\rangle+\sum_{\substack{c<d \\ t<u}} c_{cd}^{tu}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{c d}^{tu}\right\rangle+\sum_{\substack{c<d\\ t<u}} c_{acd}^{rtu}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{acd}^{rtu}\right\rangle \notag \\
+&=E_{\mathrm{corr}} c_{a}^{r}
+\label{4.12}
+\end{align}
+这个方程的重点在于，它包含着单激发
+、双激发和三激发的系数，因而也将这三者耦合起来。若继续以上的手续，依次在\eqref{4.7}上左乘$\bra{\Psi_{ab}^{rs}},\bra{\Psi_{abc}^{rst}}$等，就能得到一组从低到高的方程，必须同时求解这组方程才可得到关联能。假若要把所有可能的激发都纳入，那这组耦合方程数目会非常多。这就是full CI矩阵本身很大的另外一种说法。解释完我们目前所推出的形式理论之后，我们接下来把它运用到极小基$\hd$上，如此就回到如何把CI矩阵截断到可运算的大小上面。
+\exercise{
+从\eqref{4.11}推出\eqref{4.12}。运用非限制求和会比较方便。
+}
+
+
 
 
 

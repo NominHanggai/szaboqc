@@ -2272,7 +2272,105 @@ f^\beta (1)\psi_j^\beta(1)  & = \epsilon_j^\beta \psi_j^\beta(1)
 f^\alpha(\mathbf{r}_1) = \int\dd\omega_1 \alpha^*(\omega_1) f(\mathbf{r}_1,\omega_1)\alpha(\omega_1)\\
 f^\beta(\mathbf{r}_1) = \int\dd\omega_1 \beta^*(\omega_1) f(\mathbf{r}_1,\omega_1)\beta(\omega_1)
 \end{align}
-\subsection{基的引入: Pople-Nesbet方程}
+
+我们能利用用\eqref{3.115}中$f(\bfr_1,\omega_1)$在自旋轨道下的定义，将自旋变量积出去，得到$f^\alpha,f_\beta$的显式定义。另外一种办法是，考察非限制性行列式所定义的可能的相互作用，直接写出$f^\alpha,f_\beta$的表达式,
+\begin{center}
+	\begin{tikzpicture}[thick]
+    %=========== figure left, from bottom to top===========================
+    \draw (.5, -.6)node{$\displaystyle \psi_i^\alpha$};
+    \draw (0,0)--++(.5,0)node{$\uparrow$}-- ++(.5,0);
+    \draw (0,.6)--++(.5,0)node{$\uparrow$}-- ++(.5,0);
+    \draw (0,1.2)--++(.5,0)node{$\uparrow$}-- ++(.5,0);
+    \draw (0,1.8)--++(.5,0) -- ++(.5,0);
+    \draw (0,2.1)--++(.5,0)-- ++(.5,0);
+    \filldraw (0.5,2.4)circle(.5pt) (.5,2.6)circle(.5pt) (.5,2.8)circle(.5pt);
+    %=========== figure right, from bottom to top===========================
+    \draw (2.75,-.6)node{$\displaystyle \psi_i^\beta$};
+    \draw (2.25,.3)--++(.5,0)node{$\downarrow$}-- ++(.5,0);
+    \draw (2.25,.9)--++(.5,0)node{$\downarrow$}-- ++(.5,0);
+    \draw (2.25,1.5)--++(.5,0)-- ++(.5,0);
+    \draw (2.25,1.95)--++(.5,0)-- ++(.5,0);
+    \filldraw (2.75,2.25)circle(.5pt) (2.745,2.45)circle(.5pt) (2.75,2.65)circle(.5pt);
+    \end{tikzpicture}
+\end{center}
+算符$f^\alpha(1)$包含动能，核吸引势能以及$\alpha$自旋电子感受到的有效势能。一个$\alpha$自旋的电子所受到的有效势包括，与其他所有$\alpha$电子的库伦和交换作用，以及与所有$\beta$电子的库伦作用。那么就有
+\begin{align}
+f^\alpha(1) = h(1) + \sum_{a}^{N^\alpha}[J_a^\alpha(1) - K_a^\alpha(1)] + \sum_{a}^{N^\beta}[J_a^\beta(1)]
+\end{align}
+式中第一个求和号遍及$N_\alpha$个由$\alpha$自旋电子占据的$\psi_a^\alpha$轨道，第二个求和号遍及$N_\beta$个由$\beta$自旋电子占据的$\psi_a^\beta$轨道。动能项和势能项与自旋无关，因此这里的$h(1)$与限制性情形下的相同。$\alpha$自旋的电子可以感受到库伦势$J_a^\alpha$和交换势$-K_a^\alpha$，这两类势来自于$N_\alpha$个在$\psi_a^\alpha$轨道上的$\alpha$自旋电子。与此同时，还有库伦势$J_a^\beta$，这部分来自$N_\beta=N-N_\alpha$个在$\psi_a^\beta$轨道上的$\beta$自旋电子。上式中对$N_\alpha$个$\psi_a^\alpha$的求和包含了$\alpha$电子与她自身的相互作用。但只要注意到
+\begin{align}
+[J_a^\alpha(1) - K_a^\alpha(1)]\psi_a^\alpha = 0
+\end{align}
+所以这个自相互作用被消除了。$\beta$自旋电子对应的Fock算符为
+\begin{align}
+f^\beta(1) = h(1) + \sum_{a}^{N^\beta}[J_a^\beta(1) - K_a^\beta(1) ] + \sum_{a}^{N^\alpha}[J_a^\alpha(1)].
+\end{align}
+上面两式中的库伦与交换算符的定义与之前的定义\eqref{3.124}\eqref{3.125}类似。写出来就是
+\begin{align}
+J_a^\alpha(1) & = \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \psi_a^\alpha(2)\\
+K_a^\alpha(1)\psi_i^\alpha(1) &= \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \psi_a^\alpha(2)\right] \psi_a^\alpha(1) \\
+& = \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \mathscr{P}_{12}\psi_a^\alpha(2)\right] \psi_i^\alpha(1) \notag
+\end{align}
+$J_a^\beta,K_a^\beta$的定义也完全类似。
+
+由两个Fock算符的$f^\alpha,f^\beta$的定义式\eqref{3.316}\eqref{3.318}可见，它们对应的两个\phrase{积分-微分本征值方程}\eqref{3.312}\eqref{3.313}无法相互独立地求解。也即，$f^\alpha$依赖于$\beta$占据轨道$\psi_a^\beta$，因为$f^\alpha$中包含$J_a^\beta$。而反过来$f^\beta$也依赖于$\alpha$占据轨道$\psi_a^\beta$，因为$f^\beta$中包含$J_a^\alpha$。这两个方程必须同时迭代求解。
+\exercise{
+假如不用上面这种观察的办法写出$f^\alpha(1)$，请仿照\ref{sec3.4.1}，使用\eqref{3.314}，将自旋变量积掉，然后做一些代数运算，推出
+\begin{align*}
+f^\alpha(1) = h(1) + \sum_{a}^{N^\alpha}[J_a^\alpha(1) - K_a^\alpha(1)] + \sum_{a}^{N^\beta}[J_a^\beta(1)]
+\end{align*}
+}
+
+至此，非限制性\hft 方程已经推导完毕，我们已经能够写出非限制性轨道的能、总的非限制性能量等等。首先定义一些项：非限制性轨道$\psi_i^\alpha$或$\psi_i^\beta$上的电子的动能与核吸引势能的期望值为
+\begin{align}
+h_{ii}^\alpha = (\psi_i^\alpha|h|)
+\end{align}
+$\psi_i^\alpha$上一个电子与$\psi_i^\alpha$上一个电子之间的库伦相互作用为
+\begin{align}
+    J_{ij}^{\alpha\beta} = J_{ji}^{\beta\alpha} = (\psi_i^\alpha|J_{i}^\beta|\psi_i^\alpha) = (\psi_j^\beta|J_{i}^\alpha|\psi_j^\beta) = (\psi_i^\alpha\psi_i^\alpha|\psi_j^\beta\psi_j^\beta)
+\end{align}
+而同自旋的两个电子间的库伦相互作用为
+\begin{align}
+    J_{i j}^{\alpha \alpha}=(\psi_{i}^{\alpha}|J_{j}^{\alpha}| \psi_{i}^{\alpha})=(\psi_{j}^{\alpha}|J_{i}^{\alpha}| \psi_{j}^{\alpha})=(\psi_{i}^{\alpha} \psi_{i}^{\alpha} | \psi_{j}^{\alpha} \psi_{j}^{\alpha})
+\end{align}
+以及
+\begin{align}
+    J_{i j}^{\beta \beta}=(\psi_{i}^{\beta}|J_{j}^{\beta}| \psi_{i}^{\beta})=(\psi_{j}^{\beta}|J_{i}^{\beta}| \psi_{j}^{\beta})=(\psi_{i}^{\beta} \psi_{i}^{\beta} | \psi_{j}^{\beta} \psi_{j}^{\beta})
+\end{align}
+自旋平行的两个电子间的交换作用为
+\begin{align}
+    K_{i j}^{\alpha\alpha}=(\psi_{i}^{\alpha}|K_{j}^{\alpha}| \psi_{i}^{\alpha})=(\psi_{j}^{\alpha}|K_{i}^{\alpha}| \psi_{j}^{\alpha})=(\psi_{i}^{\alpha} \psi_{j}^{\alpha} | \psi_{j}^{\alpha} \psi_{i}^{\alpha})
+\end{align}
+以及
+\begin{align}
+    K_{i j}^{\beta\beta}=(\psi_{i}^{\beta}|K_{j}^{\beta}| \psi_{i}^{\beta})=(\psi_{j}^{\beta}|K_{i}^{\beta}| \psi_{j}^{\beta})=(\psi_{i}^{\beta} \psi_{j}^{\beta} | \psi_{j}^{\beta} \psi_{i}^{\beta})
+\end{align}
+当然，自旋相反的电子间没有交换相互作用。
+
+现在可以写出非限制性总电子能量，只要写出所有的贡献项
+\begin{align}
+    E_{0}=\sum_{a}^{N^{\alpha}} h_{a a}^{\alpha}+\sum_{a}^{N^{\beta}} h_{a a}^{\beta}+\frac{1}{2} \sum_{a}^{N^{\alpha}} \sum_{b}^{N^{\alpha}}\left(J_{a b}^{\alpha \alpha}-K_{a b}^{\alpha \alpha}\right)+\frac{1}{2} \sum_{a}^{N^{\beta}} \sum_{b}^{N^{\beta}}\left(J_{a b}^{\beta \beta}-K_{a b}^{\beta \beta}\right)+\sum_{a}^{N^{\alpha}} \sum_{b}^{N^{\beta}} J_{a b}^{a \beta}
+\end{align}
+上限为$N_\alpha$的求和遍及所有的占据轨道$\psi_a^\alpha$或$\psi_b^\alpha$. $\beta$自旋电子的规定也相同。 第三项和第四项前都有因子$\frac{1}{2}$，为消除自由求和中的双重计数。自相互作用会消失，因为$J_{a a}^{a \alpha}-K_{a a}^{\alpha \alpha}=J_{a a}^{\beta \beta}-K_{a a}^{\beta \beta}=0$，正如\eqref{3.323}\eqref{3.326}中我们验证的那样。
+\exercise{
+Li 原子的非限制性双重态基态为$\ket{\Psi_0} = \ket{ \psi_1^\alpha(1)\bra{\psi}_1^\beta(2 \psi_2^\alpha(3)) }$. 请证明， 该态的能量为 $E_0 = h_{11}^\alpha + h_{11}^\beta + h_{22}^\alpha + J_{11}^{\alpha\alpha} - K_{12}^{\alpha\alpha} + J_{11}^{\alpha\beta} + J_{21}^{\alpha\beta}$
+\Next
+非限制性轨道的能量为 $\epsilon_i^\alpha = (\psi_i^\alpha|f^\alpha|\psi_i^\alpha)$ 和$\epsilon^\beta = (\psi_i^\beta|f^\beta|\psi_i^\beta)$。请证明它们的表达式为
+\begin{align*}
+    \varepsilon_{i}^{\alpha}=h_{i i}^{\alpha}+\sum_{a}^{N^{\alpha}}\left(J_{i a}^{\alpha \alpha}-K_{i a}^{\alpha \alpha}\right)+\sum_{a}^{N^{\beta}} J_{i a}^{\alpha \beta} \\
+    \varepsilon_{i}^{\beta}=h_{i i}^{\beta}+\sum_{a}^{N^{\beta}}\left(J_{i a}^{\beta \beta}-K_{i a}^{\beta \beta}\right)+\sum_{a}^{N^{\alpha}} J_{i a}^{\beta \alpha}
+\end{align*}
+导出$E_0$的表达式，要求其中只包含轨道能量、库伦能以及交换能。
+}
+\subsection{引入基: Pople-Nesbet方程}
+要求解非限制性\hft 方程\eqref{3.312}\eqref{3.313}，我们需引入一个基组（basis set），将这两个\phrase{积分-微分方程}转化为矩阵方程\endnote{
+J. A. Pople and R. K. Nebet, Self-consistent orbitals for radicals, \textit{J. Chem. Phys.} \textbf{22:} 571 (1954).
+}，这个办法和之前推导Roothan方程时所用的一样。那么我引入一组基$\{\phi_\mu|\mu = 1,2,\ldots,K\}$并用这组基展开非限制性分子轨道：
+\begin{align}
+    \psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \\
+    \psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K\\
+\end{align}
+\eqref{3.312}\eqref{3.313}这两个本征值方程。
 \subsection{非限制性密度矩阵}
 \subsection{Fock矩阵的表达式}
 \subsection{非限制SCF方程的解}
