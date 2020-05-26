@@ -240,7 +240,7 @@ G(x,x',0) = \delta(x-x')
 \end{align*}
 满足含时\sch 方程, 而且$\phi(x,0)=\psi(x)$. 那么给定任意初始波函数$\psi(x)$, 就可以用此方程求出之后时间的波函数. 按这种办法, $G(x,x',t)$的作用就是将初始波函数沿着时间“传播”到了之后的时刻, 所以又把它叫作传播子.
 
-\noindent b. 为于本章所讨论的理论产生联系, 请证明
+\noindent b. 为了和本章所讨论的理论产生联系, 请你证明
 \begin{align*}
 G(x,x',E) & = \lim_{\epsilon\to0}(-i) \int_0^\infty\dd t e^{iEt}e^{-\epsilon t} G(x,x',t)\\
           & = -i \int_{0}^{\infty}\dd t e^{iEt}G(x,x',t)
@@ -305,9 +305,9 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \end{align}
 那么HFGF在\hft 轨道能量处有极点. 这个结果在式(7.30)中很明显.
 
-回忆Koopmans定理, 该定理称轨道能量与$N$-粒子系统的电离势和电子亲和势相关零. 特别地, 若$\ket{^N\Psi_0}$是$N$-粒子系统的\hft 波函数, 且$^{N-1}\Psi_0$是$N-1$-电子体系的近似波函数, 直接从自旋轨道$c$中挪去一个电子就得到该近似波函数. 那么
+回忆Koopmans定理, 该定理称，轨道能量与$N$-粒子系统的电离势和电子亲和势有关. 特别地, 若$\ket{{}^N\Psi_0}$是$N$-粒子系统的\hft 波函数, 且${}^{N-1}\Psi_0$是直接从自旋轨道$c$中挪去一个电子所得的波函数，也就是$N-1$-电子体系的近似波函数。那么
 \begin{align}
--\mathrm{IP} = \epsilon_c = \braket{^N\Psi_0|\hs| ^{N-1}\Psi_0} - \braket{^{N-1}\Psi_c|\hs|^{N-1}\Psi_c}
+-\mathrm{IP} = \epsilon_c = \braket{{}^N\Psi_0|\hs|{}^{N-1}\Psi_0} - \braket{{}^{N-1}\Psi_c|\hs|{}^{N-1}\Psi_c}
 \end{align}
 类似地,
 \begin{align}
@@ -315,21 +315,21 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \end{align}
 其中$\ket{^{N+1}\Psi^r}$就是将一个电子放入$r$自旋轨道中所得的$(N+1)$-粒子系统近似波函数. 如我们在第三章讨论的, 轨道能量并不对应精确的IP和EA, 原因有两个. 第一,$\ket{^{N-1}\Psi_c},\ket{^{N+1}\Psi_c}$不是(N-1)、(N+1)-粒子系统的精确HF波函数, 因为它们包含$N$-粒子系统的自旋轨道. 一般而言, $N-1,N,N+1$系统的HF轨道互不相同. 因此$(N-1)$-粒子系统(从$N$-粒子系统的$c$自旋轨道中挪去一个电子所得)的HF能量是：
 \begin{align}
-^{N-1}E_0(c) = \braket{^{N-1}\Psi_c|\hs|^{N1}\Psi_c} + ^{N-1}E_R(c)
+{}^{N-1}E_0(c) = \braket{{}^{N-1}\Psi_c|\hs|{}^{N-1}\Psi_c} + {}^{N-1}E_R(c)
 \end{align}
-式中$^{N-1}E_R(c)$这项叫作\emph{弛豫能(relaxation energy)}. 第二, 必须考虑$N$和$N\pm1$系统的相关能：
+式中${}^{N-1}E_R(c)$这项叫作\emph{弛豫能(relaxation energy)}. 第二, 必须考虑$N$和$N\pm1$系统的相关能：
 \begin{align}
-^N\scr{E}_0 = ^N_0 + ^NE_\mathrm{corr}\tag{7.34a}
+{}^N\scr{E}_0 = {}^NE_0 + {}^NE_\mathrm{corr}\tag{7.34a}
 \end{align}
 \addtocounter{equation}{-1}
 对于$N-1$-粒子系统($c$自旋轨道中的电子被挪去)：
 \begin{align}
-^{N-1}\scr{E}_0(c) = ^{N-1}E_0(c) + ^{N-1}E_\mathrm{corr}(c)\tag{7.34b}
+{}^{N-1}\scr{E}_0(c) = {}^{N-1}E_0(c) + {}^{N-1}E_\mathrm{corr}(c)\tag{7.34b}
 \end{align}
 因此, 精确的电离势可以写作：
 \begin{align}
--\mathrm{IP} & = ^N\scr{E}_0 - ^{N-1}\scr{E}_0(c)\notag\\
-             & = \epsilon_c - ^{N-1}E_R(c) + (^NE_\mathrm{corr} - ^{N-1}\scr{E}_0(c))
+-\mathrm{IP} & = {}^N\scr{E}_0 - {}^{N-1}\scr{E}_0(c)\notag\\
+             & = \epsilon_c - {}^{N-1}E_R(c) + ({}^NE_\mathrm{corr} - {}^{N-1}\scr{E}_0(c))
 \end{align}
 其中我们使用了式(7.32a)(7.33)(7.34a,b). 因此欲得到精确的IP, 则Koopmans定理的结果必须用$(N-1)$-粒子系统的弛豫能以及$N$和$(N-1)$粒子系统之间的相关能之差来修正. 电子亲和能也如此. 
 \subsection{自能}
@@ -474,7 +474,7 @@ E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 &=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp \frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \notag\\
 &=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right)
 \end{align}
-可见，$\epsilon_{11}^-$为$\hd$电离能的负值。可以看到，这里的GF方法中隐藏着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），气形式和\eqref{7.49}中的精确结果类似。，区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（式\eqref{7.50}）。这个关联能的微扰展开在二阶上是精确的，同时也纳入了近似的高阶项。那么，另外一个根$\epsilon_{11}^+$的意义式说明？练习7.9会要求读者证明，该根对应$\hd$捕获一个电子后成为一个激发态的$\hd^-$所需的能量。
+可见，$\epsilon_{11}^-$为$\hd$电离能的负值。可以看到，这里的GF方法中隐含着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），气形式和\eqref{7.49}中的精确结果类似。，区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（式\eqref{7.50}）。这个关联能的微扰展开在二阶上是精确的，同时也纳入了近似的高阶项。那么，另外一个根$\epsilon_{11}^+$的意义式说明？练习7.9会要求读者证明，该根对应$\hd$捕获一个电子后成为一个激发态的$\hd^-$所需的能量。
 \exercise{
 考虑$(N+1)-$粒子系统：$\hd^-$
 \begin{enumerate}[a.]
@@ -510,8 +510,17 @@ E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
     \begin{align*}
     \varepsilon_{2}^{\prime}=\varepsilon_{2}+\Sigma_{22}^{(2)}\left(\varepsilon_{2}\right)+\Sigma_{22}^{(3)}\left(\varepsilon_{2}\right)
     \end{align*}
-等于$\varepsilon_{2}-({}^{N} E_{0}^{(2)}+{}^{N} E_{0}^{(3)})$。可见，对于这个模型而言，用到三阶自能并用最简单的近似来求根后，GF方法中隐藏的关联能就是三阶多体微扰论的结果。
+等于$\varepsilon_{2}-({}^{N} E_{0}^{(2)}+{}^{N} E_{0}^{(3)})$。可见对于这个模型而言，用到三阶自能并用最简单的近似来求根之后，GF方法中隐含的关联能就是三阶多体微扰论的结果。
 }
+
+下面我们把GF理论运用到极小基$\heh$上。这个体系稍复杂一些，但因此也更有趣，因为$\heh$的HF轨道不是$\mathrm{HeH}^{2+}$（即对应的$(N-1)$系统）的最优轨道。$\heh$的HF轨道无法分类成偶（gerade）轨道和奇（ungerade）轨道，因此$h_{12}$不会因对称性而为零。实际上
+\begin{align}
+h_{12} = -\braket{11|12}
+\end{align}
+这是因为$f_{12} = h_{12} + \braket{11|12}$值为零。可以看到，$\mathrm{HeH}^{2+}$的基态能量并非$h_{11}$，而要写成
+\begin{align}
+{}^{N-1}\scr{E}_0 = h_{11} + {}^{N-1}E_R
+\end{align}
 \section{微扰理论和Green函数法}
 \section{一些算例}
 \theendnotes
