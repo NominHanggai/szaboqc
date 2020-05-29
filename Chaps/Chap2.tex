@@ -793,8 +793,8 @@ xlabel={Slater行列式的数目$\binom{2K}{N}$},
 every axis y label/.style={rotate=90,at={(axis description cs:-0.13,.54)}},
 ylabel={空间轨道基函数的数目K},
 %	axis on top=true,
-xmin=1,
-xmax=6.5,
+xmin=0,
+xmax=5.9,
 xtick={1,2,3,4,5},
 xticklabels={1,10,100,1000,10000},
 %x tick label style={
@@ -806,9 +806,10 @@ ymax=57,
 ytick distance=10,
 height=.7\textwidth,
 width=.7\textwidth,]
-\draw[->, thick] (2.1,23)--(2.1,50)node[above]{{极限}}; \draw (2.1,53)node[above]{{Hartree-Fock}};
-\draw[->, thick] (3.1,33)--(5,50)node[above]{精确结果};
-\draw[->,thick] (3,27)--(5,27)node[right]{Full CI};
+\draw[->, thick] (axis cs: 1,24)--(axis cs: 1,50)node[above]{{极限}};
+\draw (axis cs:1,53)node[above]{{Hartree-Fock}};
+\draw[->, thick] (axis cs:2.1,33)--(axis cs:4.7,50)node[above]{精确结果};
+\draw[->,thick] (axis cs:1.8,27)--(axis cs:4.7,27)node[right]{Full CI};
 \end{axis}
 \end{tikzpicture}
 \end{figure}
