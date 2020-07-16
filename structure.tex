@@ -226,3 +226,12 @@ up to date check = md5,
 \newcommand{\hjt}{\ket{\Psi_0}}
 \newcommand{\jtn}{\Phi_0}
 \newcommand{\hjtn}{\Psi_0}
+
+\usepackage{wasysym}
+%For the symbol \CheckedBox
+\usepackage{stackengine,scalerel}
+\newcommand\DSquare{\ThisStyle{\ensurestackMath{%
+            \stackinset{c}{}{c}{}{\scalebox{.5}{$\SavedStyle\blacksquare$}}
+            {\SavedStyle\square}}}}
+%For a filled box.
+%CR: https://tex.stackexchange.com/questions/553834/is-there-a-intermediate-checkedbox-symbol-in-latex
