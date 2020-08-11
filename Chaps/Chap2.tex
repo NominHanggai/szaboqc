@@ -21,7 +21,7 @@
 \label{2.1}
 \scr{H}\ket{\Phi}=\scr{E}\ket{\Phi}
 \end{equation}
-其中$\scr{H}$是核和电子组成的系统的Hamilton算 符，核的坐标用$\bo{R}_A$记，电子的用$\bo{r}_i$记. \ref{fig2.1}就是一个分子坐标系的示例。$i$电子与$A$核之间的距离是$r_{iA}=|\bo{r}_i-\bo{R}_A|$; $i$电子和$j$电子的距离是$r_{ij}=|\bo{r}_i-\bo{r}_j|$, A核与B核之间的距离为$R_{AB}=|\bo{R}_A-\bo{R}_B|$.若用原子坐标,则$N$个电子$M$个核的Hamiltonian就是:
+其中$\scr{H}$是核和电子组成的系统的哈密顿算符，核的坐标用$\bo{R}_A$记，电子的用$\bo{r}_i$记. \ref{fig2.1}就是一个分子坐标系的示例。$i$电子与$A$核之间的距离是$r_{iA}=|\bo{r}_i-\bo{R}_A|$; $i$电子和$j$电子的距离是$r_{ij}=|\bo{r}_i-\bo{r}_j|$, A核与B核之间的距离为$R_{AB}=|\bo{R}_A-\bo{R}_B|$.若用原子坐标,则$N$个电子$M$个核的哈密顿量就是:
 
 \begin{figure}[h]
 	\centering
@@ -124,12 +124,12 @@ Q=XQ'
 \label{sec2.1.2}
 Born-Oppenheimer近似在量子化学中占据着核心位置.这里我们仅对该近似作定性的讨论. Sutcliffe\endnote{
 B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Computational Techniques in Quantum Chemistry}, G. H. F. Diercksen,  B. T. Sutcliffe, and A. Veillard(Eds), Reidel, Boston, 1975, p. 1.
-}对该近似的定量层面作了清晰的讨论，包括如何推导对该近似的修正等. 由于原子核远比电子重，所以它们运动得较慢。因此，很大程度上可将分子中的电子视作在位置固定的核产生的势场中运动。在这个近似下，\ref{2.2}中第二项，即核动能项，可以被忽略，式中第三项，即核间排斥势可以视作常量。任意常数加到算符上产生的效果就是本征值加一常数，而本征函数不变。\ref{2.2}中剩余项称作电子的Hamilton量，或描述在M个点电荷产生的势场中运动的N个电子的Hamilton量，
+}对该近似的定量层面作了清晰的讨论，包括如何推导对该近似的修正等. 由于原子核远比电子重，所以它们运动得较慢。因此，很大程度上可将分子中的电子视作在位置固定的核产生的势场中运动。在这个近似下，\ref{2.2}中第二项，即核动能项，可以被忽略，式中第三项，即核间排斥势可以视作常量。任意常数加到算符上产生的效果就是本征值加一常数，而本征函数不变。\ref{2.2}中剩余项称作电子的哈密顿量，或描述在M个点电荷产生的势场中运动的N个电子的哈密顿量，
 \begin{equation}
 \label{2.10}
 \scr{H}_{elec}=-\sum_{i=1}^{N}\frac{1}{2}\nabla_i^2 - \sum_{i=1}^{N}\sum_{A=1}^{M}\frac{Z_A}{r_{iA}} + \sum_{i=1}^{N}\sum_{j>i}^{N}\frac{1}{r_{ij}}
 \end{equation}
-电子Hamilton量的\sch 方程为
+电子哈密顿量的\sch 方程为
 \begin{equation}
 \label{2.11}
 \scr{H}_{elec\rm}\Phi_{\rm elec}=\scr{E}_{\rm elec}\Phi_{\rm elec}
@@ -198,11 +198,11 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 \begin{equation}
 \Phi(\{\bo{r}_i\};\{\bo{R}_A\}) = \Phi_{\rm elec}(\{\bo{r}\};\{\bo{R}_A\})\Phi_{\rm elec}(\{\bo{R}_A\})
 \end{equation}
-从现在起,我们仅关心由\ref{2.11}到\ref{2.14}所代表的电子问题, 不把注意力放在振动-转动问题上.以后的表述中将舍弃下标"$\rm elec$",  这意味着仅考虑电子Hamilton来和电子波函数. 在必要和方便的时候, 我们会区分\ref{2.13}所带表的电子能量和\ref{2.14}所代表的总能量 (后者中包括核-核排斥能).
+从现在起,我们仅关心由\ref{2.11}到\ref{2.14}所代表的电子问题, 不把注意力放在振动-转动问题上.以后的表述中将舍弃下标"$\rm elec$",  这意味着仅考虑电子哈密顿量和电子波函数. 在必要和方便的时候, 我们会区分\ref{2.13}所带表的电子能量和\ref{2.14}所代表的总能量 (后者中包括核-核排斥能).
 
 \subsection{反对称/Pauli不相容原理}
 \label{sec2.1.3}
-方程\ref{2.10}中的电子Hamilton量只取决于电子的\emph{空间}坐标, 为了完整描述电子, 必须引入\emph{自旋}. 此处采用自旋的非相对论描述, 即引入两个自旋函数$\alpha(\omega)$和$\beta(\omega)$, 分别代表自旋朝上和朝下. 函数变量是$\omega$, 但该变量并无明显的意义, 从操作角度而言, 只需要自旋函数正交完备:
+方程\ref{2.10}中的电子哈密顿量只取决于电子的\emph{空间}坐标, 为了完整描述电子, 必须引入\emph{自旋}. 此处采用自旋的非相对论描述, 即引入两个自旋函数$\alpha(\omega)$和$\beta(\omega)$, 分别代表自旋朝上和朝下. 函数变量是$\omega$, 但该变量并无明显的意义, 从操作角度而言, 只需要自旋函数正交完备:
 \begin{subequations}
 	\begin{align}
 \int\dd\omega\alpha^*(\omega)\alpha(\omega)=\int\dd\omega\beta^*(\omega)\beta(\omega)=1\\
@@ -222,7 +222,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
  \end{equation}
  随之, $N$电子波函数的变量就是$ \bo{x_1,x_2,\cdots ,x_N} $, 即写作$\Phi(\bo{x_1,x_2,\cdots ,x_N})$.
  
- 由于Hamilton算子中并无自旋, 仅仅在波函数中强加自旋无法产生任何后果. 但若对波函数加上一个额外的约束, 事情就比较完美了: \emph{多电子波函数在交换任意两个电子坐标的操作下, 必须是反对称的
+ 由于哈密顿算符中并无自旋, 仅仅在波函数中强加自旋无法产生任何后果. 但若对波函数加上一个额外的约束, 事情就比较完美了: \emph{多电子波函数在交换任意两个电子坐标的操作下, 必须是反对称的
  :}
 \begin{equation}
 \label{2.20}
@@ -282,7 +282,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 \end{xercise}
 \subsection{Hartree积}
  \label{sec2.2.2}
-学习过用自旋轨道描述单电子之后, 现在来考虑电子集合的波函数, 即 $N$电子波函数. 在考察相互作用系统的精确波函数之前, 先来看一个较简单的情况: 无相互作用电子的集合, 其Hamilton量形式如下:
+学习过用自旋轨道描述单电子之后, 现在来考虑电子集合的波函数, 即 $N$电子波函数. 在考察相互作用系统的精确波函数之前, 先来看一个较简单的情况: 无相互作用电子的集合, 其哈密顿量形式如下:
 \begin{equation}
 \label{2.28}
 \scr{H}=\sum_{i=1}^{N}h(i)
@@ -294,7 +294,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 \label{2.29}
 h(i)\chi_j(\bo{x}_i)=\epsilon_j\chi_j(\bo{x}_i)
 \end{equation}
-现在的问题是, 知道了$h(i)$的本征函数, 那$\scr{H}$的本征函数是什么? 由于$\scr{H}$是单电子Hamilton量之和, 如果将每个电子的自旋轨道乘在一起:
+现在的问题是, 知道了$h(i)$的本征函数, 那$\scr{H}$的本征函数是什么? 由于$\scr{H}$是单电子哈密顿量之和, 如果将每个电子的自旋轨道乘在一起:
 \begin{equation}
 \label{2.30}
 \Psi^{\rm HP}(\bo{x_1,x_2,\cdots,x_N})=\chi_i(\bo{x_1})\chi_j(\bo{x_2})\cdots\chi_k(\bo{x_N})
@@ -323,7 +323,7 @@ Hartree积是独立电子波函数(或者叫无相关波函数, uncorrelated), �
 \end{equation*}
 即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 因为红心的概率和A的概率是不相关的(独立的). Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 但实际上, 电子1和2每时每刻都在通过Colomb(库伦)作用相互排斥, 电子1会尽可能避开电子2所在的区域, 所以两个电子之间明显是相互关联着的. 举个相关概率的例子: 2个热土豆和2个冷苹果放在桶内, 随机取一个处来, 取到热的东西的概率是1/2, 取到土豆的概率是1/2, 但取到热土豆的概率是1/2, 不等去前两者之积, 原因是"热"属性和"土豆"属性完全是相互关联着的.
 
-即使假设电子相互独立, Hamilton量取\ref{2.28}的形式, Hartree积仍有天然的缺陷: 它将电子1放在$\chi_i$轨道上, 电子2放在$\chi_j$轨道上, 把它们很明显地区分开来, 而没有考虑到电子之间不可分辨. 反对称原理不区分全同的电子, 它幽囚电子波函数在交换任意两个电子坐标的操作下必须反对称(改变正负).
+即使假设电子相互独立, 哈密顿量取\ref{2.28}的形式, Hartree积仍有天然的缺陷: 它将电子1放在$\chi_i$轨道上, 电子2放在$\chi_j$轨道上, 把它们很明显地区分开来, 而没有考虑到电子之间不可分辨. 反对称原理不区分全同的电子, 它幽囚电子波函数在交换任意两个电子坐标的操作下必须反对称(改变正负).
 \subsection{Slater行列式}
  \label{sec2.2.3}
 Hartree积不满足反对称原理, 但我们可以用如下方式得到反对称的波函数. 考虑一个两电子系统, 自旋轨道分别是$\chi_i$和$\chi_j$. 若将电子1放在$\chi_i$上, 电子2放在$\chi_j$上, 则有
@@ -350,7 +350,7 @@ $2^{1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2}$在交�
 
 \exercise{证明\ref{2.34}中的波函数$\Psi(\bo{x_1,x_2})$是归一化的
 \Next
-若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程2.33ab中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子Hamilton量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
+若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程2.33ab中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
 
 反对称波函数(\ref{2.34})可以写成行列式形式:
 \begin{equation}
@@ -487,7 +487,7 @@ P(\bo{r_1,r_2})&=\frac{1}{2}\big\{|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi
 \begin{equation}
 E_0=\braket{\Psi_0|\scr{H}|\Psi_0}
 \end{equation}
-$\scr{H}$是全电子Hamilton量. 变分中可变动的地方就是\ref{2.50}中的自旋轨道. 选择不同的自旋轨道, 求出最小能量, 由此可以导出一个方程:Hartree-Fock方程, 它决定了最优的自旋轨道. 第三章将会证明Hartree-Fock方程是如下的本征值方程:
+$\scr{H}$是全电子哈密顿量. 变分中可变动的地方就是\ref{2.50}中的自旋轨道. 选择不同的自旋轨道, 求出最小能量, 由此可以导出一个方程:Hartree-Fock方程, 它决定了最优的自旋轨道. 第三章将会证明Hartree-Fock方程是如下的本征值方程:
 \begin{equation}
 f(i)\chi(\bo{x}_i)=\epsilon\chi(\bo{x}_i)
 \label{2.52}
@@ -768,14 +768,14 @@ a_i(x_2)=\sum_jb_{ij}\chi_j(x_2)
 \begin{equation}
 \ket{\Phi}=c_0\ket{\Psi_0}+\sum_{ra}c_a^r\ket{\Psi_a^r}+\sum_{\substack{a<b\\r<s}}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}+\sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+\cdots
 \end{equation}
-求和号下的$a<b$是指对所有$a$以及所有大于$a$的$b$求和(即对所有的占据轨道对儿进行求和). 同样, $r<s$代表对所有虚轨道对儿进行求和. 由此, 展开中就包含了所有双激发组态. 三重和更高激发行列式的情况是一样的. 所以, 无穷集合$\{\ket{\Psi_i} \}=\{\ket{\Psi_0}, \ket{\Psi_a^r}, \ket{\Psi_{ab}^{rs}}, \cdots \}$就是完备集, 可用于展开$N$电子波函数. 由完备集$\ket{\Psi_i}$生成的Hamilton算符矩阵, 其本征值就是基态和激发态的准确能量即(Hamilton算符矩阵即矩阵元为$\braket{\Psi_i|\scr{H}|\Psi_j
-}$的矩阵.) 由于每个$\ket{\Psi_i}$都对应一种自旋轨道的组态(组态即生成$\ket{\Psi_i}$的那些自旋轨道), 所以这种方法叫作\emph{组态相互作用configuration interaction ({CI\rm})}. CI在第四章有详细阐述. Hamilton矩阵的最低本征值, 记为$\scr{E}_0$, 就是Born-Oppenheimer近似下体系精确的非相对论基态能量. 这个能量与Hartree-Fock极限能量$E_0$的差值就叫作\emph{相关能}:
+求和号下的$a<b$是指对所有$a$以及所有大于$a$的$b$求和(即对所有的占据轨道对儿进行求和). 同样, $r<s$代表对所有虚轨道对儿进行求和. 由此, 展开中就包含了所有双激发组态. 三重和更高激发行列式的情况是一样的. 所以, 无穷集合$\{\ket{\Psi_i} \}=\{\ket{\Psi_0}, \ket{\Psi_a^r}, \ket{\Psi_{ab}^{rs}}, \cdots \}$就是完备集, 可用于展开$N$电子波函数. 由完备集$\ket{\Psi_i}$生成的哈密顿算符矩阵, 其本征值就是基态和激发态的准确能量即(哈密顿算符矩阵即矩阵元为$\braket{\Psi_i|\scr{H}|\Psi_j
+}$的矩阵.) 由于每个$\ket{\Psi_i}$都对应一种自旋轨道的组态(组态即生成$\ket{\Psi_i}$的那些自旋轨道), 所以这种方法叫作\emph{组态相互作用configuration interaction ({CI\rm})}. CI在第四章有详细阐述. 哈密顿矩阵的最低本征值, 记为$\scr{E}_0$, 就是Born-Oppenheimer近似下体系精确的非相对论基态能量. 这个能量与Hartree-Fock极限能量$E_0$的差值就叫作\emph{相关能}:
 \begin{equation}
 E_{\mathrm{corr}}=\scr{E}_0-E_0
 \end{equation} 
 这个差值不为0是因为Hartree-Fock近似下, 有相反自旋的电子的运动没有相关.
 
-可惜上面的程序无法实际运用于多电子问题, 即无法如此求得多电子问题所有的解, 这是由于我们无法处理无限基组. 若采用有限个自旋轨道$\{\chi_i|i=1,2,\cdots,2K \}$, 那么这些轨道构成的$\binom{2K}{N}$个行列式就不是完备的$N$电子基. 然而, 若将这些行列式生成的有限维Hamilton矩阵对角化, 我们就得到这2K个自旋轨道张成的单电子子空间内的精确解(即在这个子空间内是最精确的), 换一种等价的说法, 就是这$\binom{2K}{N}$个行列式构成的$N$电子子空间内的精确解. 这种程序叫\emph{full CI}. 即使是较小的体系, 采用极小基, full CI所需要的行列式数目仍十分巨大. 因此在实际操作中, 需要对full CI展开进行截断, 即仅用$\binom{2K}{N}$个行列式中的一小部分进行计算. 图2.9是Born-Oppenheimer近似下的非相对论波函数随单电子和$N$电子基组数目增长的关系.
+可惜上面的程序无法实际运用于多电子问题, 即无法如此求得多电子问题所有的解, 这是由于我们无法处理无限基组. 若采用有限个自旋轨道$\{\chi_i|i=1,2,\cdots,2K \}$, 那么这些轨道构成的$\binom{2K}{N}$个行列式就不是完备的$N$电子基. 然而, 若将这些行列式生成的有限维哈密顿矩阵对角化, 我们就得到这2K个自旋轨道张成的单电子子空间内的精确解(即在这个子空间内是最精确的), 换一种等价的说法, 就是这$\binom{2K}{N}$个行列式构成的$N$电子子空间内的精确解. 这种程序叫\emph{full CI}. 即使是较小的体系, 采用极小基, full CI所需要的行列式数目仍十分巨大. 因此在实际操作中, 需要对full CI展开进行截断, 即仅用$\binom{2K}{N}$个行列式中的一小部分进行计算. 图2.9是Born-Oppenheimer近似下的非相对论波函数随单电子和$N$电子基组数目增长的关系.
 
 \exercise{苯的极小基包含72个自旋轨道. 计算由行列式生成的full CI的矩阵的大小. 其中有多少单激发行列式, 多少双激发行列式? }
 
@@ -860,7 +860,7 @@ width=.7\textwidth,]
 \begin{equation}
 \ket{\Phi_0}=c_0\ket{\Psi_0} + c_{1\bar{1}}^{2\bar{2}}\ket{\Psi_{1\bar{1}}^{2\bar{2}}}=c_0\ket{\Psi_0} + c_{12}^{34}\ket{\Psi_{12}^{34}}
 \end{equation}
-确定了上述展开式中的系数, 也就确定了精确波函数$\ket{\Phi_0}$和精确能量$\braket{\Phi_0|\mathscr{H}|\Phi_0}$. 为此, 我们需将全组态相互作用(full CI)矩阵对角化, 也即将以$\ket{\Phi_0}$和$\ket{\Phi_{1\bar{1}}^{2\bar{2}}}$为基底的$2\times 1$Hamiltonian矩阵对角化:
+确定了上述展开式中的系数, 也就确定了精确波函数$\ket{\Phi_0}$和精确能量$\braket{\Phi_0|\mathscr{H}|\Phi_0}$. 为此, 我们需将全组态相互作用(full CI)矩阵对角化, 也即将以$\ket{\Phi_0}$和$\ket{\Phi_{1\bar{1}}^{2\bar{2}}}$为基底的$2\times 1$哈密顿矩阵对角化:
 \begin{equation}
 \label{2.79}
 \mathbf{H}=
