@@ -20,8 +20,9 @@ E_\mathrm{corr} = \sum_{a<b}e_{ab}
 \end{align}
 其中，
 \begin{equation}\label{key}
-e_{ab} = \sum_{r<s} c_{ab}^{rs} \Braket{\Psi_0 | \sH | \Psi_{ab}^{rs}}
+e_{ab} = \sum_{r<s} c_{ab}^{rs} \Braket{\Psi_0 | \hs | \Psi_{ab}^{rs}}
 \end{equation}
+$ e_{ab} $是HF近似中占据$ \chi_a,\chi_b $两自旋轨道的电子之间的相互作用导致的相关能。虽然上面的分解是精确的，但这有误导性，因为我们需要full CI波函数来得到系数$ c_{ab}^{rs} $。这样对于一个$ N $-电子体系，我们必须考虑所有的电子来为$ ab $电子对计算精确的$ e_{ab} $。我们能不能设计一个方案来近似计算独立于其他对的电子对能量呢？如果这样，那么我们可以近似地把一个$ N $-电子问题简化为$ N(N-1)/2 $个两电子问题。独立电子对近似(IEPA)就是这样的一个方案。
 \subsection{酉变换下的不变性：例子}
 \subsection{一些算例}
 
