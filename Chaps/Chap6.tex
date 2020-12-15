@@ -11,11 +11,11 @@
 \begin{align}
 \hs_0\ket{\Psi_i^{(0)}}=E_i^{(0)}\ket{\Psi_i^{(0)}}\qquad\text{或}\qquad \hs_0\ket{i}=E_i^{(0)}\ket{i}
 \end{align}
-其中为简洁用$\ket{i}$代表$\ket{\Psi_i}$. 若微扰$\vs$在某种程度上很小，那么可以期望的是，$\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$. 现在想找出一种方法，能使$\hs_0$的本征函数和本征值系统地逼近总哈密顿量$\hs$的本征函数和本征值。为此，我们引入一个阶参数，之后再令其等于1，有:
+其中为简洁用$\ket{i}$代表$\ket{\Psi_i}$. 若微扰$\vs$在某种程度上很小，那么可以期望的是，$\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$. 现在想找出一种方法，能使$\hs_0$的本征函数和本征值系统地逼近总哈密顿量$\hs$的本征函数和本征值。为此，我们引入一个阶参数$\lambda$，之后再令其等于1，有:
 \begin{align}
 \hs=\hs_0+\lambda\vs
 \end{align}
-现将精确的本证函数与本征值展开成$\lambda$的Taylor级数,
+现将精确的本征函数与本征值展开成$\lambda$的Taylor级数,
 \begin{subequations}
 	\begin{align}
 	\es &= E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)} + \cdots\\
@@ -26,11 +26,11 @@
 
 现在设$\hs$的波函数已归一化:$\braket{i|i}=1$, 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 这种处理叫作"中间归一化", 并且, 除非$\ket{i}$与$\ket{\Phi_i}$正交, 否则总可以进行中间归一化. 将(6.4b)左乘$\bra{i}$, 得到
 \begin{align}
-\braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Phi_i^{(1)}}+\lambda^2\braket{i|\Phi_i^{(2)}} + \cdots = 1
+\braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Psi_i^{(1)}}+\lambda^2\braket{i|\Psi_i^{(2)}} + \cdots = 1
 \end{align}
 上面的方程对于所有的$\lambda$都成立($\lambda$不等于1时也成立), 那么就有
 \begin{align}
-\braket{i|\Psi_i^{(n)}} = 0\, n=1,2,3,\cdots
+\braket{i|\Psi_i^{(n)}} = 0\, \hfill n=1,2,3,\cdots
 \end{align}
 将(6.4a,6.4b)带入\ref{6.1}, 得到:
 \begin{align*}
@@ -41,9 +41,9 @@
 \begin{subequations}
 	\begin{align}
 \hs_0\ket{i}&=E_i^{(0)}\ket{i}\, n=0\\
-\hs_0\ket{\Psi_i^{(1)}} + \vs\ket{i}& = E_i^{0}\ket{\Psi_i^{(1)}} + E_i^{(1)}\ket{i}\, n=1 \\
-\hs_0\ket{\Psi_i^{(2)}}+\vs\ket{\Psi_i^{(1)}} & = E_i^{(0)}\ket{\Psi_i^{(2)}} + E_i^{(1)}\ket{\Psi_i^{(1)}} + E_i^{(2)}\ket{i} \, n=2 \\
-\hs_0\ket{\Psi_i^{(3)}}+\vs\ket{\Psi_i^{(2)}} & = E_i^{(0)}\ket{\Psi_i^{(3)}} + E_i^{(1)}\ket{\Psi_i^{(2)}} + E_I^{(2)}\ket{\Psi_i^{(2)}} +E_i^{(3)}\ket{i}\, n=1
+\hs_0\ket{\Psi_i^{(1)}} + \vs\ket{i}& = E_i^{0}\ket{\Psi_i^{(1)}} + E_i^{(1)}\ket{i}\,\hfill  n=1 \\
+\hs_0\ket{\Psi_i^{(2)}}+\vs\ket{\Psi_i^{(1)}} & = E_i^{(0)}\ket{\Psi_i^{(2)}} + E_i^{(1)}\ket{\Psi_i^{(1)}} + E_i^{(2)}\ket{i} \,\hfill  n=2 \\
+\hs_0\ket{\Psi_i^{(3)}}+\vs\ket{\Psi_i^{(2)}} & = E_i^{(0)}\ket{\Psi_i^{(3)}} + E_i^{(1)}\ket{\Psi_i^{(2)}} + E_I^{(2)}\ket{\Psi_i^{(1)}} +E_i^{(3)}\ket{i}\,\hfill  n=3
 	\end{align}
 \end{subequations}
 等等. 每个式子左乘$\ket{i}$, 由正交关系\ref{6.6}可得如下各阶能量:
@@ -67,7 +67,7 @@ E_I^{(3)} &= \braket{i|\hs|\Psi_i^{(2)}}
 \end{align*}
 又因$\hs_0$的本征函数是正交的, 将上式左乘$\bra{n}$ 得到
 \begin{align*}
-\bra{n|\Psi_i^{(1)}} = c_n^{(1)}
+\braket{n|\Psi_i^{(1)}} = c_n^{(1)}
 \end{align*}
 由(6.6)可知, $c_i^{(1)}=0$, 所以有
 \begin{align}
