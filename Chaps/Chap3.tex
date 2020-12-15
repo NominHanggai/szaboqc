@@ -560,7 +560,7 @@ Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. �
 \subsection{Brillouin定理}
 \hft 方程\eqref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 由其中能量最低的$N$个自旋轨道构成的单行列式$\ket{\Psi_0}$就是基态的\hft 近似. 正如上一章讨论的, 由集合$\{\chi_i\}$可以构造相当多的行列式. 知道了Fock算符的形式, 现在是恰好可来证明一个管子这些行列式的子集的定理. 该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\ref{f2.7}). 在精确基态的多行列式表示中, 我们可能会预想, 这些单行列式将给出领头阶修正：
 \begin{align}
-\ket{\Phi_0} = c_0\ket{\Psi_0} + \sum_{ra}\ket{\Psi_a^r}
+\ket{\Phi_0} = c_0\ket{\Psi_0} + \sum_{ra}c_a^r\ket{\Psi_a^r}
 \end{align}
 若在修正中仅考虑单激发行列式, 那么$c_a^r$可以由变分原理得到——将$\{\Psi_0,\{\Psi_a^r\}\}$基下的哈密顿矩阵对角化即可. 现在我们来研究包含单激发态的矩阵本征值问题：
 \begin{align}
@@ -581,13 +581,13 @@ c_a^r
 \end{align}
 方程右边可以进一步简化：在练习3.1中, Fock算符的矩阵元就是
 \begin{align}
-\braket{\chi_i|f\chi_j} = \braket{i|h|j} + \sum_b\braket{ib||ib}
+\braket{\chi_i|f\chi_j} = \braket{i|h|j} + \sum_b\braket{ib||jb}
 \end{align} 
 因此
 \begin{align}
-\braket{\Psi_0|\hs|\Psi_a^r} = \braket{\chi_a|f\chi_r}
+\braket{\Psi_0|\hs|\Psi_a^r} = \braket{\chi_a|f|\chi_r}
 \end{align}
-那么单激发行列式和$\ket{\Psi_0}$的混合矩阵元就等于Fock矩阵的非对角元. 根据定义, 求解\hft 本征值问题时要求非对角元$\braket{\chi_i|f|\chi_j}\neq 0(i\neq j)$. 那么就能说求解\hft 本征值方程等价于确保$\ket{\Psi_0}$不和任何单激发行列式发生混合. \eqref{3.97}中(能量)最低的解为
+那么单激发行列式和$\ket{\Psi_0}$的混合矩阵元就等于Fock矩阵的非对角元. 根据定义, 求解\hft 本征值问题时要求非对角元$\braket{\chi_i|f|\chi_j}\eq 0(i\neq j)$. 那么就能说求解\hft 本征值方程等价于确保$\ket{\Psi_0}$不和任何单激发行列式发生混合. \eqref{3.97}中(能量)最低的解为
 \begin{align}
 \begin{pmatrix}
 E_0 & 0\\
