@@ -919,11 +919,11 @@ width=.7\textwidth,]
 \exercise{
 请证明
 \begin{equation*}
-\braket{\Psi_{12}^{34}|\mathcal{O}|\Psi_{12}^{34}}=\braket{3|h|3}+\braket{4|h|4}
+\braket{\Psi_{12}^{34}|\mathcal{O}_1|\Psi_{12}^{34}}=\braket{3|h|3}+\braket{4|h|4}
 \end{equation*}
 以及
 \begin{equation*}
-\braket{\Psi_{0}|\mathcal{O}|\Psi_{12}^{34}}=
+\braket{\Psi_{0}|\mathcal{O}_1|\Psi_{12}^{34}}=
 \braket{\Psi_{12}^{34}|\mathcal{O}_1|\Psi_0}=0
 \end{equation*}
 }
@@ -933,7 +933,7 @@ width=.7\textwidth,]
 \braket{\Psi_0|\mathcal{O}_2|\Psi_0}=&\int\dd\mathbf{x}_1\dd\mathbf{x}_2[2^{-1/2}(\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2)-\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2))]^*\notag\\
 \qquad&\times r_{12}^{-1} [2^{-1/2}(\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2)-\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2))]\notag\\
 =&\frac{1}{2}\int\dd{\mathbf{x}_1}\dd{\mathbf{x}_2}\{\chi_1^*(\mathbf{x}_1)\chi_2^*(\mathbf{x}_2)r_{12}^{-1}\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2) + \chi_2^*(\mathbf{x}_1)\chi_1^*(\mathbf{x}_2)r_{12}^{-1}\chi_2(\mathbf{x_1})\chi_1(\mathbf{x}_2) \notag\\
-\qquad& - \chi_1^*(\mathbf{x}_1)\chi_2^*(\mathbf{x}_2)r_{12}^{-1}\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2) + \chi_2^*(\mathbf{x}_1)\chi_1^*(\mathbf{x}_2)r_{12}^{-1}\chi_1(\mathbf{x_1})\chi_2(\mathbf{x}_2)
+\qquad& - \chi_1^*(\mathbf{x}_1)\chi_2^*(\mathbf{x}_2)r_{12}^{-1}\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2) - \chi_2^*(\mathbf{x}_1)\chi_1^*(\mathbf{x}_2)r_{12}^{-1}\chi_1(\mathbf{x_1})\chi_2(\mathbf{x}_2)
 \}
 \end{align}
 由于$r_{12}=r_{21}$, 上式中第二个积分中的傀标(即积分变量)可以交换, 所以该项与第一项相等. 以同样的理由, 可知第三项和第四项也相等. 因此有
@@ -959,7 +959,7 @@ Hartree-Fock基态能量就成为
 用刚才介绍的方式写出极小基$\rm H_2$的full CI矩阵:
 \begin{equation*}
 \mathscr{H}=\begin{pmatrix}
-\braket{1|h|1}+\braket{2|h|2} +\braket{12|12}-\braket{12|21} &\braket{1|2|34}-\braket{12|43}\\
+\braket{1|h|1}+\braket{2|h|2} +\braket{12|12}-\braket{12|21} &\braket{12|34}-\braket{12|43}\\
 
 \braket{34|12}-\braket{34|21}& 
 \braket{3|h|3}+\braket{4|h|4} +\braket{34|34}-\braket{34|43}
