@@ -259,11 +259,13 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 	\end{cases}
 \end{equation}
 给定一由$K$个空间轨道组成的集合$\{\psi_i|i=1,2,\cdots,K \}$, 就可以构造$2K$个自旋轨道$\{\chi_i|i=1,2,\cdots, 2K\}$:
-\begin{equation}
+\begin{equation*}
+\begin{rcases}
 	\chi_{2i-1}(\bo{x})=\psi_i(\bo{r})\alpha(\omega)\\
 	\chi_{2i}=\psi_i(\bo{r})\beta(\omega)
 	\Big\}i=1,2,\cdots,K
-\end{equation}
+\end{rcases}
+\end{equation*}
 若空间轨道相互正交, 则自旋轨道也相互正交:
 \begin{equation}
 \int\dd\chi_i^*(\bo{x})\chi_j(\bo{x})=\braket{\chi_i|\chi_j}=\delta_{ij}
@@ -276,7 +278,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 其中$\bo{S}$是重叠矩阵. 请证明, 由第一组轨道乘以$\alpha$自旋函数生成的自旋轨道, 由第二组轨道乘以$\beta$自旋函数生成的自旋轨道, 总共$2K$个轨道$\{\chi_i \}$:
 \begin{equation*}
 \begin{rcases}
-\chi_{2i-1}(\bo{x})=\psi_i^\alpha(\bo{r})\alpha{\omega}\\
+\chi_{2i-1}(\bo{x})=\psi_i^\alpha(\bo{r})\alpha(\omega)\\
 \chi_{2i}=\psi_i^\beta(\bo{r})\beta(\omega)
 \Big\}i=1,2,\cdots,K
 \end{rcases}
