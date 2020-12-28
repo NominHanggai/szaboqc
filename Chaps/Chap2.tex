@@ -227,7 +227,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
  由于哈密顿算符中并无自旋, 仅仅在波函数中强加自旋无法产生任何后果. 但若对波函数加上一个额外的约束, 事情就比较完美了: \emph{多电子波函数在交换任意两个电子坐标的操作下, 必须是反对称的
  :}
 \begin{equation}
-\label{2.20}
+\label{2.22}
 \Phi(\bo{x_1,\cdots,x_i,\cdots,x_j,\cdots ,x_N})=-\Phi(\bo{x_1,\cdots,x_j,\cdots,x_i,\cdots ,x_N})
 \end{equation}
 
@@ -262,16 +262,16 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 \begin{equation*}
 \begin{rcases}
 	\chi_{2i-1}(\bo{x})=\psi_i(\bo{r})\alpha(\omega)\\
-	\chi_{2i}=\psi_i(\bo{r})\beta(\omega)
+	\chi_{2i}(\bo{x})=\psi_i(\bo{r})\beta(\omega)
 \end{rcases}
 i=1,2,\cdots,K
 \end{equation*}
 若空间轨道相互正交, 则自旋轨道也相互正交:
 \begin{equation}
-\int\dd\chi_i^*(\bo{x})\chi_j(\bo{x})=\braket{\chi_i|\chi_j}=\delta_{ij}
+\int\dd\bo{x}\chi_i^*(\bo{x})\chi_j(\bo{x})=\braket{\chi_i|\chi_j}=\delta_{ij}
 \end{equation}
 \begin{xercise}
-给定一组$K$个正交空间轨道\{$\psi_i^\alpha(\bo{r})$\}与另一组正交函数$\{\psi_i^\beta(\bo{r})\}$, 但第一组和第二组之间不正交, 即
+给定一组$K$个正交空间轨道\{$\psi_i^\alpha(\bo{r})$\}与另一组$K$个正交空间轨道$\{\psi_i^\beta(\bo{r})\}$, 但第一组和第二组之间不正交, 即
 \[
 \int\dd\bo{r}\psi_i^{\alpha*}(\bo{r})\psi_j^\beta(\bo{r})=S_{ij}
 \]
@@ -279,9 +279,9 @@ i=1,2,\cdots,K
 \begin{equation*}
 \begin{rcases}
 \chi_{2i-1}(\bo{x})=\psi_i^\alpha(\bo{r})\alpha(\omega)\\
-\chi_{2i}=\psi_i^\beta(\bo{r})\beta(\omega)
-\Big\}i=1,2,\cdots,K
+\chi_{2i}(\bo{x})=\psi_i^\beta(\bo{r})\beta(\omega)
 \end{rcases}
+i=1,2,\cdots,K
 \end{equation*}
 它们之间相互正交.
 \end{xercise}
@@ -316,19 +316,21 @@ E=\epsilon_i + \epsilon_j + \cdots + +\epsilon_k
 \end{equation} 
 我们把这样的多电子波函数叫作\emph{Hartree积}, 其中电子1用$\chi_i$描述. 电子2用$\chi_j$描述, 如此.
 
-\exercise{证明\ref{2.30}中的Hartree积是$\scr{H}=\sum_{i=1}{N}h(i)$的本征函数, 本征值是式\ref{2.32}.}
+\exercise{证明\ref{2.30}中的Hartree积是$\scr{H}=\sum_{i=1}^Nh(i)$的本征函数, 本征值是式\ref{2.32}.}
 
 Hartree积是独立电子波函数(或者叫无相关波函数, uncorrelated), 因为
 \begin{equation*}
 |\Psi^{\rm HP}(\bo{x_1,\cdots,x_N})|^2\dd\bo{x_1}\cdots\dd\bo{x_N}
 \end{equation*}
+
 即在体积微元$\dd\bo{x_1}$中找到电子1的概率, 同时在$\dd\bo{x_2}$中找到电子2的概率, 等等, 就等于(按照\ref{2.30}的定义):
 \begin{equation*}
-|\chi_(\bo{x_1})|\dd\bo{x_1}|\chi_j(\bo{x_2})|\dd\bo{x_2}\cdots|\chi_k(\bo{x_N})|\dd\bo{x_N}
+|\chi_(\bo{x_1})|^2\dd\bo{x_1}|\chi_j(\bo{x_2})|^2\dd\bo{x_2}\cdots|\chi_k(\bo{x_N})|^2\dd\bo{x_N}
 \end{equation*}
-即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 因为红心的概率和A的概率是不相关的(独立的). Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 但实际上, 电子1和2每时每刻都在通过Colomb(库伦)作用相互排斥, 电子1会尽可能避开电子2所在的区域, 所以两个电子之间明显是相互关联着的. 举个相关概率的例子: 2个热土豆和2个冷苹果放在桶内, 随机取一个处来, 取到热的东西的概率是1/2, 取到土豆的概率是1/2, 但取到热土豆的概率是1/2, 不等去前两者之积, 原因是"热"属性和"土豆"属性完全是相互关联着的.
 
-即使假设电子相互独立, 哈密顿量取\ref{2.28}的形式, Hartree积仍有天然的缺陷: 它将电子1放在$\chi_i$轨道上, 电子2放在$\chi_j$轨道上, 把它们很明显地区分开来, 而没有考虑到电子之间不可分辨. 反对称原理不区分全同的电子, 它幽囚电子波函数在交换任意两个电子坐标的操作下必须反对称(改变正负).
+即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 因为红心的概率和A的概率是不相关的(独立的). Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 但实际上, 电子1和2每时每刻都在通过Colomb(库伦)作用相互排斥, 电子1会尽可能避开电子2所在的区域, 所以两个电子之间明显是相互关联着的. 举个相关概率的例子: 2个热土豆和2个冷苹果放在桶内, 随机取一个处来, 取到热的东西的概率是1/2, 取到土豆的概率是1/2, 但取到热土豆的概率是1/2, 不等于前两者之积, 原因是"热"属性和"土豆"属性完全是相互关联着的.
+
+即使假设电子相互独立, 哈密顿量取\ref{2.28}的形式, Hartree积仍有天然的缺陷: 它将电子1放在$\chi_i$轨道上, 电子2放在$\chi_j$轨道上, 把它们很明显地区分开来, 而没有考虑到电子之间不可分辨. 反对称原理不区分全同的电子, 它要求电子波函数在交换任意两个电子坐标的操作下必须反对称(改变正负).
 \subsection{Slater行列式}
  \label{sec2.2.3}
 Hartree积不满足反对称原理, 但我们可以用如下方式得到反对称的波函数. 考虑一个两电子系统, 自旋轨道分别是$\chi_i$和$\chi_j$. 若将电子1放在$\chi_i$上, 电子2放在$\chi_j$上, 则有
@@ -347,19 +349,19 @@ Hartree积不满足反对称原理, 但我们可以用如下方式得到反对�
 \label{2.34}
 \Psi(\bo{x_1,x_2})=2^{-1/2}(\chi_i(\bo{x_1})\chi_j(\bo{x_2})-\chi_i(\bo{x_2})\chi_j(\bo{x_1}))
 \end{equation}
-$2^{1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2}$在交换电子1和2的坐标时是反对称的:
+$2^{-1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2})$在交换电子1和2的坐标时是反对称的:
 \begin{equation}
-\Psi(\bo{x_1,x_2})=-\Psi(\bo(x_2,x_1))
+\Psi(\bo{x_1,x_2})=-\Psi(\bo{x_2,x_1})
 \end{equation}
 从\ref{2.34}出发, 很明显, 当两个电子同时占据相同的自旋轨道时(即$i=j$), 电子波函数为0. 由此, 从反对称原理能立马导出Pauli不相容原理: 不能有超过一个电子占据一个自旋轨道.
 
 \exercise{证明\ref{2.34}中的波函数$\Psi(\bo{x_1,x_2})$是归一化的
 \Next
-若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程2.33ab中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
+若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程\ref{2.33a}\ref{2.33b}中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
 
 反对称波函数(\ref{2.34})可以写成行列式形式:
 \begin{equation}
-\Psi(\bo{x_1,x_2})=
+\Psi(\bo{x_1,x_2})=2^{-1/2}
 \begin{vmatrix}
 \chi_i(\bo{x_1})&\chi_j(\bo{x_1})\\
 \chi_i(\bo{x_2})&\chi_j(\bo{x_2})
@@ -376,20 +378,23 @@ $2^{1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2}$在交�
 \end{vmatrix}
 \end{equation}
 
-$(N!)^{-1/2}$是归一化因子. 这个Slater行列式代表N个电子占据N个自旋轨道$(\chi_i,\chi_j,\cdots,\chi_k)$, 而且没有规定哪个电子在哪个轨道中. 注意Slater行列式中, 行标是电子: 第一行$(\bo{x_1})$,第一行$(\bo{x_2})$等等; 列标势自旋轨道: 第一列$(\chi_i)$,第一列$(\chi_j)$等等. 交换两个电子的坐标相当于交换行列式中的两行,行列式交换两行则变号. 因此Slater行列式满足反对称原理. 若两个电子同时占据一个自旋轨道就意味着行列式有两列是一样的, 此时行列式为$0$. 所以不能够有多于一个电子占据一个自旋轨道(Pauli不相容原理). 为简便计, 引入归一化的Slater行列式的简写符号: 隐去归一化因子, 仅写出行列式的对角项:
+$(N!)^{-1/2}$是归一化因子. 这个Slater行列式代表N个电子占据N个自旋轨道$(\chi_i,\chi_j,\cdots,\chi_k)$, 而且没有规定哪个电子在哪个轨道中. 注意Slater行列式中, 行表示电子: 第一行$(\bo{x_1})$,第一行$(\bo{x_2})$等等; 列表示自旋轨道: 第一列$(\chi_i)$,第一列$(\chi_j)$等等. 交换两个电子的坐标相当于交换行列式中的两行,行列式交换两行则变号. 因此Slater行列式满足反对称原理. 若两个电子同时占据一个自旋轨道就意味着行列式有两列是一样的, 此时行列式为$0$. 所以不能够有多于一个电子占据一个自旋轨道(Pauli不相容原理). 为简便计, 引入归一化的Slater行列式的简写符号: 隐去归一化因子, 仅写出行列式的对角项:
 \begin{equation}
 \label{2.38}
 \Psi(\bo{x_1,x_2,\cdots,x_N})=\ket{\chi_i(\bo{x_1})\chi_j(\bo{x_2})\cdots\chi_k(\bo{x_N})}
 \end{equation}
+
 若我们默认电子坐标记号的顺序是$\bo{x_1,x_2,\cdots,x_N}$, 那么\ref{2.38}可以继续简写为
 \begin{equation}
 \Psi(\bo{x_1,x_2,\cdots,x_N})=\ket{\chi_i\chi_j\cdots\chi_k}
 \end{equation}
+
 由于交换行列式中的两行要改变符号, 所以上式中自旋轨道的顺序很重要. 在这种简计符号中, Slater行列式的反对称性表现在:
 \begin{equation}
-\ket{\cdots\chi_m\cdots\chi_n\cdots}=-\ket{\cdots\chi_n\cdots\chi_n\cdots}
+\ket{\cdots\chi_m\cdots\chi_n\cdots}=-\ket{\cdots\chi_n\cdots\chi_m\cdots}
 \end{equation}
-由自旋轨道出发, 我们可以将Slater行列式,决定到一个符号(即正负号不确定). 按照如上方式从自旋轨道出发而构建的Slater行列式是归一化的. 对于两个$N$电子的Slater行列式而言, 如果构成它们的(占据)自旋轨道不同, 那么这两个Slater行列式相互正交.
+
+一个Slater行列式完全由构成它的自旋轨道（即被占据的自旋轨道）决定。由正交归一的自旋轨道构成的Slater行列式是归一化的。由不同的正交归一的自旋轨道构成的N电子Slater行列式相互正交。
 
 \exercise{考虑如下Slater行列式:
 \begin{align*}
@@ -402,16 +407,16 @@ $(N!)^{-1/2}$是归一化因子. 这个Slater行列式代表N个电子占据N个
 注意, 上式两个Slater行列式之间的重叠积分只有如下情况不是0: 1)$k=i$且$l=j$, 此时$\ket{K}=\ket{L}$, 重叠积分为1. 2)$k=j$且$l=i$, 此时$\ket{L}=\ket{\chi_j\chi_i}=-\ket{K}$, 重叠积分为-1.
 }
 
-到此, 我们已经知道Hartree积是独立电子波函数, 因为同时在$\dd\bo{x_1}$(在$\bo{x_1}$附近)找到电子1的概率和在$\dd\bo{x_2}$内(在$\bo{x_2}$附近)找到电子2的概率是二者的乘积. 将Hartree积反对称化后, 可以得到Slater行列式, 这样就引入了\emph{交换}作用, 交换作用得名于这个规定(要求)： $|\Psi|^2$在交换两个电子的空间+自旋坐标的操作下，保持不变. 须指出, Slater行列式中包括了\emph{交换关联}, 交换相关的意思是，自旋平行的两个电子的运动是相互关联的. 由于在Slate行列式中，自旋反平行的电子之间依然缺失关联作用，我们也习惯把Slater行列式叫作无相关波函数.
+到此, 我们已经知道Hartree积是独立电子波函数, 因为同时在$\dd\bo{x_1}$(在$\bo{x_1}$附近)找到电子1的概率和在$\dd\bo{x_2}$内(在$\bo{x_2}$附近)找到电子2的概率是二者的乘积. 将Hartree积反对称化后, 可以得到Slater行列式, 这样就引入了\emph{交换}作用, 交换作用得名于这个规定(要求)： $|\Psi|^2$在交换两个电子的空间及自旋坐标的操作下，保持不变。 须指出, Slater行列式中包括了\emph{交换关联}, \emph{交换关联}的意思是，自旋平行的两个电子的运动是相互关联的. 由于在Slate行列式中，自旋反平行的电子之间依然缺失关联作用，我们也习惯把Slater行列式叫作无相关波函数.
 
-为了理解交换相关的来源, 我们来看，把Hartree积反对称化之后, 电子密度受什么影响. 考虑双电子Slater行列式, 自旋轨道分别为$\chi_1,\chi_2$（即这两个轨道被占据）：
+为了理解交换关联的来源, 我们来看，把Hartree积反对称化之后, 电子密度受什么影响. 考虑双电子Slater行列式, 自旋轨道分别为$\chi_1,\chi_2$（即这两个轨道被占据）：
 \begin{equation}
 \Psi(\bo{x_1,x_2})=\ket{\chi_1(\bo{x_1})\chi_2(\bo{x_2})}
 \end{equation}
 若两电子自旋相反, 而且占据不同的空间轨道:
 \begin{align}
 \chi_1(\bo{x_1})=\psi_1(\bo{r_1})\alpha(\omega_1)\\
-\chi_2(\bo{x_2})=\psi_2(\bo{r_2})\alpha(\omega_2)
+\chi_2(\bo{x_2})=\psi_2(\bo{r_2})\beta(\omega_2)
 \end{align}
 那么由此可以得到Slater行列式, 将其展开就得到:
 \begin{equation}
@@ -478,7 +483,7 @@ P(\bo{r_1,r_2})=|\psi_1(\bo{r_1})|^2|\psi_1(\bo{r_2})|^2
 P(\bo{r_1,r_2})&=\frac{1}{2}\big\{|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\notag\\
 &\quad - \left[\psi^*_1(\bo{r_1})\psi_2(\bo{r_1}) \psi^*_2(\bo{r_2})\psi_2(\bo{r_2}) + \psi_1(\bo{r_1})\psi_2^*(\bo{r_1})\psi_2(\bo{r_1})\psi_1^*(\bo{r_2})\right]\big\}
 \end{align}
-此式中多出一个交叉项, 因此概率是相关的. 这就是同自旋电子之间的交换相关作用. 注意$P(\bo{r_1,r_1})=1$, 所以两个同自旋电子处在同一点的概率为0. 我们称电子周围有\emph{费米穴}. 总之, 在单Slater行列式语言中, 同自旋电子之间的运动时相关的, 自旋相反的电子是不相关的.
+此式中多出一个交叉项, 因此概率是相关的. 这就是同自旋电子之间的交换相关作用. 注意$P(\bo{r_1,r_1})=1$, 所以两个同自旋电子处在同一点的概率为0. 我们称电子周围有\emph{费米穴}. 总之, 在单Slater行列式语言中, 同自旋电子之间的运动是相关的, 自旋相反的电子是不相关的.
 
 \subsection{Hatree-Fock近似}
  \label{sec2.2.4}
