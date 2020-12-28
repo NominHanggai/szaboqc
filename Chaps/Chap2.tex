@@ -259,13 +259,13 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 	\end{cases}
 \end{equation}
 给定一由$K$个空间轨道组成的集合$\{\psi_i|i=1,2,\cdots,K \}$, 就可以构造$2K$个自旋轨道$\{\chi_i|i=1,2,\cdots, 2K\}$:
-\begin{equation*}
+\begin{equation}
 \begin{rcases}
 	\chi_{2i-1}(\bo{x})=\psi_i(\bo{r})\alpha(\omega)\\
 	\chi_{2i}(\bo{x})=\psi_i(\bo{r})\beta(\omega)
 \end{rcases}
 i=1,2,\cdots,K
-\end{equation*}
+\end{equation}
 若空间轨道相互正交, 则自旋轨道也相互正交:
 \begin{equation}
 \int\dd\bo{x}\chi_i^*(\bo{x})\chi_j(\bo{x})=\braket{\chi_i|\chi_j}=\delta_{ij}
