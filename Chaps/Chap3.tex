@@ -294,13 +294,14 @@ E_0[\{\chi_a\}] = \sum_{a=1}^{N}[a|h|a] + \frac{1}{2}\sum_{a=1}^{N}\sum_{b=1}^{N
 \end{align}
 由于$\delta\chi_a^*(1)$是任意的, 那么上面方括号中的量对所有指标$a$都为零. 也就是
 \begin{align}
-\left[ h(1)\chi_a(1) + \sum_{b=1}^{N}(\scr{J}_b(1)-\scr{K}_b(1))\chi_a(1) -  \right] = \sum_{b=1}^{N}\epsilon_{ba}\chi_b(1)
+\left[ h(1) + \sum_{b=1}^{N}(\scr{J}_b(1)-\scr{K}_b(1))\right]\chi_a(1) = \sum_{b=1}^{N}\epsilon_{ba}\chi_b(1)
 \end{align}
 
 上面方括号中的式子就是我们所定义的Fock算符$f(1)$, 因此这个关于自旋轨道的方程的形式如下：
 \begin{align}
 f\ket{\chi_a}=\sum_{b=1}^{N}\epsilon_{ba}\ket{\chi_b}
 \end{align}
+
 这个结果第一眼看来可能有些奇怪, 因为它不是如式\eqref{3.17}那样标准的本征值形式. 原因就是任意一个由自旋轨道$\{\chi_a \}$构成的单行列式波函数$\ket{\Psi_0}$在自旋轨道本身上仍然留有一定的任意性：可以混合这些自旋轨道而不改变期望值$E_0 = \braket{\Psi_0|\hs|\Psi_0}$. 在导出Hartree-Fock方程的正则形式前, 我们需要考虑自旋轨道之间的的酉变换(幺正变换, 以下统称酉变换).
 
 \subsection{正则H-F方程}
@@ -372,6 +373,7 @@ U_{N1} & U_{N2} & \cdots & U_{NN}
 \begin{align}
 \det(\mathbf{U}) = e^{i\phi}
 \end{align}
+
 所以变换后的行列式$\ket{\Phi_0'}$(3.57)与原来的行列式只差一个相因子. 若$\mathbf{U}$是实矩阵, 则这个相因子的值只能取$\pm 1$. 由于所有的可观测性质仅依赖于$|\Psi|^2$, 所有在任何地方, 由$\{\chi_a\}$组成的原式波函数和由$\{\chi_a'\}$组成的变换后的波函数都是等同的. 在单行列式波函数下, 所有期望值在自旋轨道的任意酉变换下都不变. 因此使总能量取驻值的自旋轨道集合并不是唯一的, 而且某一组自旋轨道并不比其他轨道更有物理意义. 举个例子, 定域自旋轨道并不比离域自旋轨道更“物理”.
 
 我们利用单行列式在自旋轨道酉变换下不变的性质, 可以简化(3.49), 将其改写为关于一组特定轨道的本征值方程. 但首先需确定以上酉变换对Fock算符和Lagrange乘子的作用效果. Fock算符中依赖于自旋轨道的部分是库伦和交换算符. 经过变换后的库伦算符之和为：
@@ -392,7 +394,7 @@ U_{N1} & U_{N2} & \cdots & U_{NN}
 f'(1) = f(1)
 \end{align}
 
-现在来确定酉变换对Lagrange乘子的作用. 将(3.49)左乘$\bra{\chi_c}$就可证明Lagrange长子是Fock算符的矩阵元：
+现在来确定酉变换对Lagrange乘子的作用. 将(3.49)左乘$\bra{\chi_c}$就可证明Lagrange乘子是Fock算符的矩阵元：
 \begin{align}
 \braket{\chi_c|f|\chi_a} = \sum_{b=1}^{N}\epsilon_{ba}\braket{\chi_c|\chi_b} = \epsilon_{ca}
 \end{align}
@@ -1128,7 +1130,7 @@ F_{\mu\nu}' & = \int\dd{r}_1\,\phi^{\prime*}_\mu(1)f(1)\phi_\nu'(1)
 \subsection{期望值与布居分析}
 得到了密度矩阵、Fock矩阵等的收敛值, 就有大量手段可使用波函数$\ket{\Psi_0}$或分析计算结果. 这里只介绍其中较常用的一些量.
 
-$\mathbf{F'}$的本征值是轨道能量$\epsilon_i$.. 正如讲授Koopmans定理时讨论的, 借助占据轨道能量$\epsilon_a$可以预测电离能, 用虚轨道能量$\epsilon_r$可以预测电子亲和能. $-\epsilon_a$往往是实验龟测得电离能的合理近似, 但是$-\epsilon_r$一般没什么用处, 即使对电子亲和能的定性理解也没有帮助.
+$\mathbf{F'}$的本征值是轨道能量$\epsilon_i$.. 正如讲授Koopmans定理时讨论的, 借助占据轨道能量$\epsilon_a$可以预测电离能, 用虚轨道能量$\epsilon_r$可以预测电子亲和能. $-\epsilon_a$通常来说是电离能的实验值的一个好的近似, 但是$-\epsilon_r$一般没什么用处, 即使对电子亲和能的定性理解也没有帮助.
 
 总电子能量就是期望值$E_0 = \braket{\Psi_0|\hs|\Psi_0}$, 我们之前多次提过, 这个量可以重新写作
 \begin{align}
@@ -1172,9 +1174,9 @@ E_\mathrm{tot} = E_0 + \sum_{A}\sum_{B>A}\frac{Z_AZ_B}{R_{AB}}
 \end{align}
 分子偶极矩在按量子力学计算时的相应定义为
 \begin{align}
-\vec{\mu} = \braket{\Psi_0|-\sum_{i=1}^{N}|\Psi_0} + \sum_AZ_A\mathbf{R}_A
+\vec{\mu} = \braket{\Psi_0|-\sum_{i=1}^{N}\mathbf{r}_i|\Psi_0} + \sum_AZ_A\mathbf{R}_A
 \end{align}
-式中第一项是电子对偶极矩的贡献(按量子力学), 电子电荷为$-1$, 第二项是核的贡献(按经典做法). 电子偶极算符是$-\sum_{i=1}^{N}$, 是一组单电子算符之和. 因此利用(3.187)可有
+式中第一项是电子对偶极矩的贡献(按量子力学), 电子电荷为$-1$, 第二项是核的贡献(按经典做法). 电子偶极算符是$-\sum_{i=1}^{N}\mathbf{r}_i$, 是一组单电子算符之和. 因此利用(3.187)可有
 \begin{align}
 \vec{\mu} = -\sum_\mu\sum_\nu P_{\mu\nu}(\nu|\mathbf{r}|\mu) + \sum_AZ_A\mathbf{R}_A
 \end{align}
@@ -1186,7 +1188,7 @@ E_\mathrm{tot} = E_0 + \sum_{A}\sum_{B>A}\frac{Z_AZ_B}{R_{AB}}
 \begin{align}
 (\nu|x|\mu) = \int\dd{r}_1\,\phi_\mu^*(\bfr_1)x_1\phi_\mu(\bfr_1)
 \end{align}
-及$x,z$分量的对应值.
+及$y,z$分量的对应值.
 
 电荷密度
 \begin{align}
@@ -1200,7 +1202,7 @@ N = 2\sum_{a}^{N/2}\int\dd{r}|\psi_a(\bfr)|^2
 \end{align}
 实际上这是将所有电子按每两个电子配一个轨道分配在了分子轨道上, 若将$\psi_a$的基函数展开带入(3.194)则有
 \begin{align}
-N = \sum_\mu\sum_\nu P_{\mu\nu}S_{\nu\mu} = \sum_\mu(\mathbf{PS}_{\mu\mu}) = \mathrm{tr}\,\,\mathbf{PS}
+N = \sum_\mu\sum_\nu P_{\mu\nu}S_{\nu\mu} = \sum_\mu(\mathbf{PS})_{\mu\mu} = \mathrm{tr}\,\,\mathbf{PS}
 \end{align}
 如此, 可将$(\mathbf{PS})_{\mu\mu}$解释为$\phi_\mu$所附带的电子. 这种方式叫作\emph{Mulliken布居分析}. 设基函数放置在原子中心, 那么某分子中的原子所附带的电子数就是以该原子为中心的全部基函数中电子数目之和. 所以该原子的静电荷就为
 \begin{align}
@@ -1220,7 +1222,7 @@ N = \sum_\mu (\mathbf{S}^{1/2}\mathbf{PS}^{1/2})_{\mu\mu} = \sum_\mu \mathbf{P}_
 并可以知道式中的$\mathbf{P}'$就是对称正交化基组下的密度矩阵：
 \begin{align}
 \rho(\bfr) &= \sum_\mu\sum_\nu P'_{\mu\nu}\phi_\mu'(\bfr)\phi_\nu^{\prime *}(\bfr)\\
-\phi_{\mu}(\bfr) &= \sum_\nu(\mathbf{S})^{-1/2}_{\nu\mu}\phi_\nu(\bfr)
+\phi'_{\mu}(\bfr) &= \sum_\nu(\mathbf{S}^{-1/2})_{\nu\mu}\phi_\nu(\bfr)
 \end{align}
 $\mathbf{P}'$的对角元一般用于\emph{L\"owdin 布居分析}：
 \begin{align}
