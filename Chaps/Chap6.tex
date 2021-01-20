@@ -24,18 +24,19 @@
 \end{subequations}
 称$E_i^{(n)}$为$n$阶能量.现在的问题是如何将精确量用零阶能量以及微扰算符$\vs$在未微扰波函数间的矩阵元$\braket{i|\vs|j}$表达出来.
 
-现在设$\hs$的波函数已归一化:$\braket{i|i}=1$, 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 这种处理叫作"中间归一化", 并且, 除非$\ket{i}$与$\ket{\Phi_i}$正交, 否则总可以进行中间归一化. 将(6.4b)左乘$\bra{i}$, 得到
+现在设$\hs_0$的波函数已归一化:$\braket{i|i}=1$, 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 这种处理叫作"中间归一化", 并且, 除非$\ket{i}$与$\ket{\Phi_i}$正交, 否则总可以进行中间归一化. 将(6.4b)左乘$\bra{i}$, 得到
 \begin{align}
 \braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Psi_i^{(1)}}+\lambda^2\braket{i|\Psi_i^{(2)}} + \cdots = 1
 \end{align}
 上面的方程对于所有的$\lambda$都成立($\lambda$不等于1时也成立), 那么就有
 \begin{align}
 \braket{i|\Psi_i^{(n)}} = 0\, \hfill n=1,2,3,\cdots
+\label{6.6}
 \end{align}
 将(6.4a,6.4b)带入\ref{6.1}, 得到:
 \begin{align*}
 (\hs_0&+\lambda\vs)(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots )\\
-&=(E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)} + \lambda^2 E_i^{(2)} + \cdots )
+&=(E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)}  + \cdots )(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots)
 \end{align*}
 因为$\lambda^n$的系数对应相等，我们有
 \begin{subequations}
