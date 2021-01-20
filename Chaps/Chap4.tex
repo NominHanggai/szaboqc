@@ -15,6 +15,7 @@ E_\mathrm{corr}=\mathscr{E}_0-E_0
 
 \ref{sec4.3}中我们用一些数值计算结果来说明这个理论的一些特点. \ref{sec4.5}中引入自然轨道, 它的重要性质是, 使用自然轨道可以令\phrase{CI展开}收敛得最快. \ref{sec4.5}简要叙述另一种缩小CI展开长度的方法——多组态自洽场(multiconfiguration self-consistent field, MCSCF) 方法. 它的基本思路是用变分原理来确定CI展开中所用的轨道. 这种方法所用的尝试函数包含更少的行列式, 但优化时不仅优化行列式前的展开系数, 而且也优化轨道本身. 最后在\ref{sec4.6}中我们研究一个所有截断CI都有的缺点, 这个缺点导致所有截断CI都没办法用在大体系的计算中, 并引出下一章所介绍的替代方案.
 \section{多组态波函数及Full CI矩阵的结构}
+\label{sec4.1}
 为简单计, 本章假设分子有偶数个电子, 并假设这些分子都能用闭壳层HF行列式$\ket{\Psi_0}$来较好地表示. 设想我们已经求解完毕了有限基下的Roothaan方程, 得到了$2K$个自旋轨道${\chi_i}$. 能量最低的$N$个自旋轨道构成$\ket{\Psi_0}$. 第二章中介绍过, 由这$2K$个 自旋轨道可以构造出很多其他的$N$电子行列式. 将N电子函数和\hft 波函数$\Psi_0$作比较, 指出那里不同, 用这种指出不同的方式来描述$N$电子波函数会很方便. 那么可能的行列式就包含$\ket{\Psi_0}$, 单激发行列式$\ket{\Psi_a^r}$(与$\ket{\Psi_0}$, 一个自旋轨道$\chi_a$被换成$\chi_r$), 双激发行列式$\ket{\Psi_{ab}^{rs}}$等等, 直到$N$重激发行列式. 这些多电子波函数可以构成一组基, 将精确多电子波函数$\ket{\Phi_0}$展开. 如果$\ket{\Psi_0}$是对$\ket{\Phi_0}$的良好近似, 那么从变分原理可以知, 我们能构造一个更好的近似如下(当基组完备时就是精确解):
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}c_{ab}^{rs}}\ket{\Psi_{ab}^{rs}} + \sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}} + \cdots \tag{4.2a}
@@ -206,9 +207,9 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 
 
 \section{双激发CI}\mbox{}
-\label{sec4.3}
+\label{sec4.2}
 \section{计算示例}\mbox{}
-\label{sec4.4}
+\label{sec4.3}
 \section{自然轨道与单粒子约化密度矩阵}
 \label{sec4.4}
 目前为止我们所涉及的行列式和组态都由一组正则\hft 轨道构成。由此得到的CI展开收敛很慢。但很清楚的一点是，任意单电子基构成的$N$-电子组态都可以用来做CI计算。因此，我们可以问，能否找到一组单电子基，由该基组得到的CI展开比\hft 基下的CI展开收敛更快？若是如此，我们就能用更少的组态得到相同的结果。由P.-O L\"owdin引入的\emph{自然轨道}就构成这样一组基。
@@ -430,5 +431,5 @@ c_A^2 + c_B^2 = 1
 
 
 \section{截断CI与尺寸一致性问题}
-
+\label{sec4.6}
 \theendnotes
