@@ -62,7 +62,7 @@ E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \begin{align}
 (E_i^{(0)} - \hs_0 )\ket{\Psi_i^{(1)}} = (\vs - \braket{i|\vs|i})\ket{i}
 \end{align}
-上式不再是一个本征方程, 而成为了一个非齐次微分方程(更广义地, 成为了积分微分方程). 解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs$的本征函数展开(因为$\hs_0$的本征函数是完备的):
+上式不再是一个本征方程, 而成为了一个非齐次微分方程(更广义地, 成为了积分微分方程). 解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs_0$的本征函数展开(因为$\hs_0$的本征函数是完备的):
 \begin{align*}
 \ket{\Psi_i^{(1)}} = \sum_n c_n^{(1)}\ket{n}
 \end{align*}
@@ -72,7 +72,7 @@ E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \end{align*}
 由(6.6)可知, $c_i^{(1)}=0$, 所以有
 \begin{align}
-\ket{\Psi_i^{1}} = \sideset{}{'}\sum_n\ket{n}\bra{n}\ket{\Psi_i^{(1)}}
+\ket{\Psi_i^{(1)}} = \sideset{}{'}\sum_n\ket{n}\braket{n|\Psi_i^{(1)}}
 \end{align}
 求和号上的一撇代表不包括$n=i$的项. (6.9)左乘$\bra{n}$, 并注意到零阶波函数的正交性, 就可以得到:
 \begin{align}
@@ -92,7 +92,7 @@ E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)}
 \begin{align}
 \ket{\Psi_i^{(2)}} = \sideset{}{'}{\sum_n}\ket{n}\braket{n|\Psi_i^{(2)}}
 \end{align}
-然后荣$\bra{n}$去乘(6.7c), 得到
+然后用$\bra{n}$去乘(6.7c), 得到
 \begin{align}
 (E_i^{(0)} -E_n^{(0)} )\braket{n|\Psi_i^{(2)}} = \braket{n|\vs|\Psi_i^{(1)}} - E_i^{(1)}\braket{n|\Psi_i^{(1)}}
 \end{align}
