@@ -1484,7 +1484,7 @@ E_0 = E_0^{(0)} + E_0^{(1)} = \sum_a\epsilon_a - \frac{1}{2}\sum_{ab}\braket{ab|
 
 二阶能量的一般表达式在\ref{sec6.1}节已经推导过, 为
 \begin{align}
-E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(1)} - E_n^{(0)}}
+E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(0)} - E_n^{(0)}}
 \end{align}
 其中求和遍及系统除了基态外的所有态. $\ket{0} = \ket{\Psi_0}$是很清楚的, 但是$\ket{n}$等于什么? $\ket{n}$不可能是单重激发, 因为
 \begin{align*}
@@ -1497,7 +1497,7 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(1)} - E_n^{(0)}
 \end{align*}
 然后对所有二重激发态求和: 将所有$a$和大于$a$的$b$求和, 对所有$r$和大于$r$的$s$求和, 二阶能量就成为
 \begin{align}
-E_0^{(2)} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{\Psi_0|\sum_{i<j}|r_{ij}^{-1}|\Psi_{ab}^{rs}}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+E_0^{(2)} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{\Psi_0|\sum_{i<j} r_{ij}^{-1}|\Psi_{ab}^{rs}}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \end{align}
 注意到, 二阶能量可以表示为所有占据轨道上的每对电子贡献之和:
 \begin{align*}
