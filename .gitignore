@@ -30,3 +30,5 @@
 *.log
 *.ent
 *.auxlock
+
+*.sh
