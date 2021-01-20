@@ -44,7 +44,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0} + c_S\ket{S}+c_D\ket{D} + c_T\ket{T} + c_Q\ket{Q} + \cdots
 \end{align}
-式中$\ket{S}$表示单激发的那些项, $\ket{D}$表示双激发的那些项等等. 用这个记号表示的full CI矩阵写在\ref{fig.4.1}中. 下面是一些重要的性质
+式中$\ket{S}$表示单激发的那些项, $\ket{D}$表示双激发的那些项等等. 用这个记号表示的full CI矩阵写在\ref{f4.1}中. 下面是一些重要的性质
 \begin{enumerate}[1.]
 	\item HF基态和单激发组态之间没有耦合, 即$\braket{\Psi_0|\hs|S}=0$. 这是Brillouin定理的结论（见\ref{sec3.3.2}, 定理指出, 所有形如$\braket{\Psi_0|\hs|\Psi_a^r}$的矩阵元都为0）.
 	\item
@@ -61,7 +61,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 	\item
 	计算时所需的所有的矩阵元都可以按\ref{chap2}中给出的规则得到. 如前所述, 计算时要用自旋匹配组态. 在\ref{sec2.5}中对单激发和双激发讨论过这一点. \ref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者也许会想用这些矩阵元规则测试一下自己的才能, 或者通过演算表中的项来测试自己的耐力、
 \end{enumerate}
-		\begin{figure}[H]
+\begin{figure}[H]
 	\[
 	\begin{blockarray}{*{7}{c}}
 	&      &\ket{\Psi_a^r} &\ket{\Psi_{ab}^{rs}}  &\ket{\Psi_{abc}^{rst}} & \ket{\Psi_{abcd}^{rstu}} &\cdots\\
@@ -83,6 +83,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 	\end{align*}
 	\vspace{-30pt}
 	\caption{Full CI矩阵的结构. 该矩阵是hermitian的, 这里只写出了上三角部分.}
+	\label{f4.1}
 \end{figure}
 
 \begin{table}[H]

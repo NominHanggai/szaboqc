@@ -908,6 +908,7 @@ width=.7\textwidth,]
 其中$h(1)$是电子1的"核哈密顿量", 代表电子在核的势场中的动能和势能, 此即"核哈密顿量"的由来. 为了方便, 将总哈密顿量分成单电子和双电子部分:
 \begin{align}
 \mathcal{O}_1&=h(1)+h(2)\\
+\label{2.8.1}
 \mathcal{O}_2&=r_{12}^{-1}
 \end{align}
 
@@ -972,7 +973,7 @@ width=.7\textwidth,]
 Hartree-Fock基态能量就成为
 \begin{align}
 \braket{\Psi_0|\mathscr{H}|\Psi_0}&=\braket{\Psi_0|\mathcal{O}_1+\mathcal{O}_2|\Psi_0}\notag\\
-&=\braket{1|h|1}+\braket{2|h|2}+\braket{12||12}-\braket{12|21}
+&=\braket{1|h|1}+\braket{2|h|2}+\braket{12|12}-\braket{12|21}
 \end{align}
 
 \exercise{
@@ -994,7 +995,7 @@ Hartree-Fock基态能量就成为
 在推广上面的结果以及给出$N$电子行列式的矩阵元之前，先来总结一下此书中所用的几种不同的单、双电子积分的记号。
 关于自旋轨道的双电子积分已在\ref{2.90}中提过，即：
 \begin{equation}
-\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_1)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
+\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
 \end{equation}
 这种记发常叫作物理学家的记号。注意自旋轨道的复共轭并排出现在积分的左边，并且电子1的空间自旋坐标先出现。从以上定义可以知道：
 \begin{equation}
