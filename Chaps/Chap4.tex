@@ -206,8 +206,11 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 
 
 \section{双激发CI}\mbox{}
+\label{sec4.3}
 \section{计算示例}\mbox{}
+\label{sec4.4}
 \section{自然轨道与单粒子约化密度矩阵}
+\label{sec4.4}
 目前为止我们所涉及的行列式和组态都由一组正则\hft 轨道构成。由此得到的CI展开收敛很慢。但很清楚的一点是，任意单电子基构成的$N$-电子组态都可以用来做CI计算。因此，我们可以问，能否找到一组单电子基，由该基组得到的CI展开比\hft 基下的CI展开收敛更快？若是如此，我们就能用更少的组态得到相同的结果。由P.-O L\"owdin引入的\emph{自然轨道}就构成这样一组基。
 
 为定义自然轨道，先来考虑$N$电子系统的一阶密度矩阵。给定一归一化波函数$\Phi$, 则$\Phi(\mathbf{x}_1,\ldots,\mathbf{x}_N)\Phi^*(\mathbf{x}_1,\ldots,\mathbf{x}_N)\ddx_1\cdots\ddx_N$就是电子在$\mathbf{x}_1$附近的\underline{\underline{空间-自旋}体积元}$\ddx_1$内，与此同时另外一个电子在$\mathbf{x}_2$附近的体积元$\ddx_2$内（直到N个电子为止）的概率。若仅对$\mathbf{x}_1$附近的$\ddx_1$内由一个电子的概率感兴趣，不关心其他电子在何处，则须对所有其他电子的\underline{空间-自旋}坐标作平均，也即，对$\mathbf{x}_2,\mathbf{x}_3,\ldots,\mathbf{x}_N$积分：
@@ -383,6 +386,7 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 K. H. Thunemann, J. Romelt, S. D. Peyerimhoff, and R. J. Buenker, A study of the convergence in iterative natural orbital procedures, \textit{Int. J. Quantum Chem}. \textbf{11}: 743 (1977).
 }。
 \section{多组态自洽场与广义价键法}
+\label{sec4.5}
 我们已经知道, 正则\hft 轨道并非CI计算中的最佳选择. 我们现在考虑一个多行列式波函数, 它包含较少的组态. 我们改用什么轨道来构建这些组态, 以得到最优的结果呢? 由变分原理可知, 我们应该令轨道变化, 使能量达到最低. 这个胡言事故多组态自洽场(multiconfiguration self-sonsistent field, MCSCF)方法的中心思想. MCSCF波函数是一种截断的CI展开:
 \begin{align}
 \ket{\Psi_\mathrm{MCSCF}} = \sum_I c_I\ket{\Psi_I}
