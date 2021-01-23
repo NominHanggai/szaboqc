@@ -360,19 +360,19 @@ $2^{-1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2})$在交
 
 \exercise{证明\ref{2.34}中的波函数$\Psi(\bo{x_1,x_2})$是归一化的
 \Next
-若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程\ref{2.33a}\ ref{2.33b}中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
+若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程\ref{2.33a} \ref{2.33b}中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
 
 反对称波函数(\ref{2.34})可以写成行列式形式:
 \begin{equation}
-\Psi(\bo{x_1,x_2})=2^{-1/2}
+\Psi(\bo{x_1,x_2})=\frac{1}{2^{1/2}}
 \begin{vmatrix}
 \chi_i(\bo{x_1})&\chi_j(\bo{x_1})\\
 \chi_i(\bo{x_2})&\chi_j(\bo{x_2})
 \end{vmatrix}
 \end{equation}
-这式子叫作\emph{Slater行列式}. 对于$N$电子系统, 上式推广为
+这式子叫作\emph{Slater行列式}.对于$N$电子系统, 上式推广为
 \begin{equation}
-\Psi(\bo{x_1,x_2,\cdots,x_N})=(N!)^{-1/2}
+\Psi(\bo{x_1,x_2,\cdots,x_N})=\frac{1}{(N!)^{1/2}}
 \begin{vmatrix}
 \chi_i(\bo{x_1})&\chi_j(\bo{x_1})&\cdots&\chi_k(\bo{x_1})\\
 \chi_i(\bo{x_2})&\chi_j(\bo{x_2})&\cdots&\chi_k(\bo{x_2})\\
@@ -484,7 +484,7 @@ P(\bo{r_1,r_2})=|\psi_1(\bo{r_1})|^2|\psi_1(\bo{r_2})|^2
 仿照上面的步骤有
 \begin{align}
 P(\bo{r_1,r_2})&=\frac{1}{2}\big\{|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\notag\\
-&\quad - \left[\psi^*_1(\bo{r_1})\psi_2(\bo{r_1}) \psi^*_2(\bo{r_2})\psi_2(\bo{r_2}) + \psi_1(\bo{r_1})\psi_2^*(\bo{r_1})\psi_2(\bo{r_1})\psi_1^*(\bo{r_2})\right]\big\}
+&\quad - \left[\psi^*_1(\bo{r_1})\psi_2(\bo{r_1}) \psi^*_2(\bo{r_2})\psi_1(\bo{r_2}) + \psi_1(\bo{r_1})\psi_2^*(\bo{r_1})\psi_2(\bo{r_2})\psi_1^*(\bo{r_2})\right]\big\}
 \end{align}
 此式中多出一个交叉项, 因此概率是相关的. 这就是同自旋电子之间的交换相关作用. 注意$P(\bo{r_1,r_1})=1$, 所以两个同自旋电子处在同一点的概率为0. 我们称电子周围有\emph{费米穴}. 总之, 在单Slater行列式语言中, 同自旋电子之间的运动是相关的, 自旋相反的电子是不相关的.
 
