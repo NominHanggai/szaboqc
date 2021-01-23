@@ -215,6 +215,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 	\braket{\alpha|\beta}=\braket{\beta|\alpha}=0
 	\end{align}
 \end{subequations}
+\label{2.20}
 
 其中的积分号仅是形式上的. 用这种办法引入自旋后, 电子就由三个空间坐标加一个自旋坐标来描述. 将这四个坐标写在一起,用$\bo{x}$来表示:
  \begin{equation}
@@ -312,7 +313,7 @@ h(i)\chi_j(\bo{x}_i)=\epsilon_j\chi_j(\bo{x}_i)
 本征值是$E$, $E$是$\Psi^{\rm HP}$中每个自旋轨道的能量之和:
 \begin{equation}
 \label{2.32}
-E=\epsilon_i + \epsilon_j + \cdots + +\epsilon_k
+E=\epsilon_i + \epsilon_j + \cdots + \epsilon_k
 \end{equation} 
 我们把这样的多电子波函数叫作\emph{Hartree积}, 其中电子1用$\chi_i$描述. 电子2用$\chi_j$描述, 如此.
 
@@ -325,7 +326,7 @@ Hartree积是独立电子波函数(或者叫无相关波函数, uncorrelated), �
 
 即在体积微元$\dd\bo{x_1}$中找到电子1的概率, 同时在$\dd\bo{x_2}$中找到电子2的概率, 等等, 就等于(按照\ref{2.30}的定义):
 \begin{equation*}
-|\chi_(\bo{x_1})|^2\dd\bo{x_1}|\chi_j(\bo{x_2})|^2\dd\bo{x_2}\cdots|\chi_k(\bo{x_N})|^2\dd\bo{x_N}
+|\chi_i(\bo{x_1})|^2\dd\bo{x_1}|\chi_j(\bo{x_2})|^2\dd\bo{x_2}\cdots|\chi_k(\bo{x_N})|^2\dd\bo{x_N}
 \end{equation*}
 
 即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 因为红心的概率和A的概率是不相关的(独立的). Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 但实际上, 电子1和2每时每刻都在通过Colomb(库伦)作用相互排斥, 电子1会尽可能避开电子2所在的区域, 所以两个电子之间明显是相互关联着的. 举个相关概率的例子: 2个热土豆和2个冷苹果放在桶内, 随机取一个处来, 取到热的东西的概率是1/2, 取到土豆的概率是1/2, 但取到热土豆的概率是1/2, 不等于前两者之积, 原因是"热"属性和"土豆"属性完全是相互关联着的.
@@ -339,11 +340,13 @@ Hartree积不满足反对称原理, 但我们可以用如下方式得到反对�
 \Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_1})\chi_j(\bo{x_2})\tag{2.33a}
 \end{subequations}
 \end{equation}
+\label{2.33a}
 另一方面, 若置电子1于$\chi_j$轨道, 电子2于$\chi_i$轨道, 则有
 \begin{equation*}
 \addtocounter{equation}{-1}
 \Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_2})\chi_j(\bo{x_1})\tag{2.33b}
 \end{equation*}
+\label{2.33b}
 这两种Hartree积都明显地区分电子, 但是如果将这两种Hartree积线性组合在一起, 则可以得到满足反对称原理的波函数:
 \begin{equation}
 \label{2.34}
@@ -357,7 +360,7 @@ $2^{-1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2})$在交
 
 \exercise{证明\ref{2.34}中的波函数$\Psi(\bo{x_1,x_2})$是归一化的
 \Next
-若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程\ref{2.33a}\ref{2.33b}中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
+若$\chi_i$和$\chi_j$是某单电子算符$h$(见\ref{2.29})的本征函数, 对应本征值为$\epsilon_i,\epsilon_j$. 证明, 方程\ref{2.33a}\ ref{2.33b}中的Hartree积和\ref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\ref{2.28})的本征函数, 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
 
 反对称波函数(\ref{2.34})可以写成行列式形式:
 \begin{equation}
