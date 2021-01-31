@@ -896,11 +896,14 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 \rho(\bfr) & = 2\sum_{a}^{N/2}\psi_a^*(\bfr)\psi_a(\bfr) \notag\\
 		   & = 2\sum_{a}^{N/2}\sum_{v} C_{\nu a}^*\phi_\nu^*(\bfr)\sum_{\mu}C_{\mu a}\phi_\mu(\bfr) \notag\\
 		   & = \sum_{\mu\nu}\left[ 2\sum_{a}^{N/2}C_{\mu a}C_{\nu a}^* \right]\phi_\mu(\bfr)\phi_\nu(\bfr) \notag\\
-		   & = \sum_{\mu\nu}P_{\mu\nu} \phi_\mu(\bfr)\phi_\nu(\bfr)、
+		   & = \sum_{\mu\nu}P_{\mu\nu} \phi_\mu(\bfr)\phi_\nu(\bfr)
+\label{3.144}
 \end{align}
+
 其中我们定义了\emph{密度矩阵}，或者用另一个名字, \emph{电荷密度键级矩阵}：
 \begin{align}
 P_{\mu\nu} = 2\sum_{a}^{N/2}C_{\mu a}C_{\nu a}^*
+\label{3.145}
 \end{align}
 由\eqref{3.144}知，给定一组已知的基函数$\{\phi_\mu\}$, 矩阵$\mathbf{P}$就完全确定了电荷密度$\rho(\bfr)$. 它通过\eqref{3.145}和展开系数$\mathbf{C}$直接联系起来，那么我们就能用$C_{\mu i}$或$P_{\mu\nu}$来表示闭壳层\hft 的计算结果。
 
@@ -2001,6 +2004,7 @@ s_1^{-1/2}&0\\0&s_2^{-1/2}
 \begin{pmatrix}
 0.9291&-0.6256\\0.1398&1.1115
 \end{pmatrix}
+\label{3.270}
 \end{align}
 式\eqref{3.270}\eqref{3.269}给出了$\mathrm{HeH}^{++}$的轨道和轨道能量, 我们将其作为$\heh$的轨道和轨道能的初猜. 注意最低分子轨道$\psi_1$主要由$\phi_1$组成(系数为0.9291), 而仅混入了一点点$\phi_2$(系数0.1398). 忽视电子-电子排斥后, 电子倾向于聚集在$\mathrm{He}$附近因为它由更高的核电荷. 而加入电子-电子排斥的效应后, 随着一步步迭代, 这种现象会被逐渐缓和掉, 电子被``抹开”, 以减小电子-电子排斥.
 
@@ -2028,7 +2032,7 @@ $\mathbf{P}$的对角元说明大部分电子密度聚集在在$\mathrm{He}$附�
 \end{align}
 由于电子-电子相互作用是正值, 即(3.272)$\mathbf{G}$中的元素为正数, 所以这个新Fock矩阵中的元素比原来的芯-\ha 猜测(3.265)中的要正得多. 有了新Fock矩阵就可以求解对应本征值问题, 然后就能得到对$\mathbf{C,P}$的新猜测并重复以上整个过程直到自洽. 附录B中有一个实现该过程的程序, 还有当前例子——STO-3G $\heh$的程序输出. 岳父输出文件时应配以接下来的描述.
 
-\ref{t3.5}中列出了不同迭代次数下密度矩阵的元素及对应电子能量. 随着迭代进行, 电荷在$\mathrm{H}$附近积累, 在$\mathrm{He}$附近减少. 要得到每次迭代后能量的变分值, 需使用如下公式
+表\ref{t3.5}中列出了不同迭代次数下密度矩阵的元素及对应电子能量. 随着迭代进行, 电荷在$\mathrm{H}$附近积累, 在$\mathrm{He}$附近减少. 要得到每次迭代后能量的变分值, 需使用如下公式
 \begin{align}
 E_0 = \frac{1}{2}\sum_\mu\sum_\nu P_{\nu\mu}(H_{\mu\nu}^\mathrm{core}+F_{\mu\nu})
 \end{align}
@@ -2058,6 +2062,7 @@ E_0 = \frac{1}{2}\sum_\mu\sum_\nu P_{\nu\mu}(H_{\mu\nu}^\mathrm{core}+F_{\mu\nu}
 		        5 & 1.2862   & 0.5402   & 0.2269   & -4.227529\\
 		        6 & 1.2861   & 0.5402   & 0.2269   & -4.227529\\\hline
 	\end{tabular}
+\label{t3.5}
 \end{table}
 最低的轨道——被占轨道$\psi_1$是成键轨道, 由两个系数同号也能看出. 它主要还是由$\mathrm{He}$波函数$\phi_1$组成. 虚轨道$\psi_2$是反键轨道, 它的两个系数符号相反. 它含$\mathrm{H}$波函数$\phi_2$的成分更多, 这也是它和$\psi_1$正交所要求的. 利用Koopmans定理可以预测电离能和电子亲和能. 预测到的电离能很大($1.5975\au=43.5 \,\mathrm{eV}$), 这在阴离子物种中很自然. 预测的电子亲和能则是正的($0.0617\au=1.7\,\mathrm{eV}$), 这个预测值意味着$\heh$会结合一个电子. 这不是说$\mathrm{HeH}$就是稳定分子, 因为$\heh$的解离产物(即$\mathrm{He}+\mathrm{H}^+$)结合电子的能力更强($\mathrm{H}^+$的电子亲和能比$\heh$的电子亲和能加上解离能还要大).
 
@@ -2069,7 +2074,7 @@ P'_{22} = (\mathbf{S}^{1/2}\mathbf{PS}^{1/2})_{22} = 2(\mathbf{S}^{1/2}\mathbf{C
 
 $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 由我们的基本积分也可以确定$\mathrm{H,He^+,He}$的能量. 在当前基下, $\mathrm{H}$原子的能量与$\hd$计算中国的能量相同: $T_{22}+V_{22}^2=-0.4666\au$. 单电子原子$\mathrm{He}^+$在此基下的能量也类似$T_{11}+V_{11}^1=-1.9755\au$. $\mathrm{He}$原子在$\phi_1$上由两个电子, 它的总能除了包含动能、核吸引势外, 还有两个电子之间的排斥. 因此$\mathrm{He}$的能量为$2(T_{11}+V_{11}^1)+(\phi_1\phi_1|\phi_1\phi_1)$. 这些能量列在\ref{t3.6}中以便与\ref{t3.4}中的精确结果比较.
 
-由\ref{t3.6}中的结果可以算得如下过程的解离能：
+由表\ref{t3.6}中的结果可以算得如下过程的解离能：
 \begin{align}
 \heh & \to \text{He} + \text{H}^+ \quad \Delta E = 0.2168\,\, \text{a.u.}\\
 \heh & \to \text{He}^+ + \text{H} \quad \Delta E = 0.4168\,\, \text{a.u.}
@@ -2087,7 +2092,9 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 
 		$\heh$ ($R=1.4632$ a.u.) & -2.860662\\
 		\hline
 	\end{tabular}
+\label{t3.6}
 \end{table}
+
 \ref{f3.8}中绘出了用标准指数计算得到的势能曲线， 同时也绘出了Wolniewicz所得的精确结果结果。 STO-3G计算所得的平衡键长是$1.3782\,\,\text{a.u.}$, 和精确结相当接近，但是势阱深度却被高估了。这里没有遇到$\hd$情形（\ref{f3.5}）下的问题： 解离行为正确，因为解离产物是闭壳层的。
 \begin{figure}[htbp]\centering
 	\newlength{\twoc}
@@ -2133,7 +2140,7 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 
 	\end{axis}
 	\end{tikzpicture}
 	\caption{$\heh$的STO-3G（$\zeta_\mathrm{He}=2.0925$, $\zeta_H=1.24$）限制性\hft 势能曲线与Kolos和Wolniewicz的精确结果对比.}
-	\label{f3.5}
+\label{f3.8}
 \end{figure}
 亦如对$\hd$所做的那样，我们能解析地考察解离行为。当键拉伸时，$\psi_1$中$\phi_1$的系数增加， $\phi_2$的系数减小，电子越来越集中于$\text{He}$周围。在极限情况下，$\psi_1$就变为$\phi_1$。虚轨道$\psi_2$与$\psi_1$正交，因此变为纯的$\phi_2$, 也即
 \begin{equation}
@@ -2180,13 +2187,16 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$. 
 为避免与$\phi$混淆($\phi$太多了)，我们用$g$来表示归一化的高斯函数。收缩的形式就是
 \begin{equation}
 \phi^\mathrm{CGF}_\mu(\mathbf{r-R}_A)=\sum_{p=1}^{L}d_{p\mu}g_p(\alpha_{p\mu}-\mathbf{r-R}_P)
+\label{3.283}
 \end{equation}
+
 其中$\alpha_{p\mu}$和$d_{p\mu}$是收缩指数和收缩系数，$L$是收缩(长)度. 这些归一化的高斯原初函数是$1s$, $2p$, $3d$, ...等形式：
 \begin{align}
 g_{1s}(\alpha,\bfr)      & = (8\alpha^3/\pi^3)^{1/4}       e^{-\alpha r^2}\\
 g_{2p_x}(\alpha,\bfr)    & = (128\alpha^5/\pi^3)^{1/4}  x  e^{-\alpha r^2}\\
 g_{3d_{xy}}(\alpha,\bfr) & = (2048\alpha^7/\pi^3)^{1/4} xy e^{-\alpha r^2}
 \end{align}
+
 使用以上这些函数时，计算积分非常方便，不过对于$2s$, $3p$...这些形式的高斯原初函数，却没有这样的便利性。因此，任何具有$s$对称性的函数（如$2s,3s$ Slater函数），都要用$1s$高斯函数来展开，涉及其他对称性时办法也一样。\eqref{3.283}中的原初函数的原点$\mathbf{R}_P$一般来说都与$\mathbf{R}_A$重合. 收缩式中的原初函数的原点和高斯函数的原点不同的情况也有, 不过只在高斯波瓣基组(Gaussian lob)中才会如此. 这种基组中, 只用球形的$1s$高斯函数做近似, 它们被放在空间中在合适的位置, 如此来近似$s,p,d$...函数. 拿$2p$高斯轨道来说, 将两个符号相反的$1s$高斯波瓣(即$1s$高斯函数)的原点无限靠近, 即可以任意精度逼近$2p$型高斯函数.\footnote{
 比如两个符号相反的高斯波瓣沿$x$轴靠近: $f(\bfr)=g_{1s}(\bfr+\mathbf{\Delta x})-g_{1s}(\bfr-\mathbf{\Delta x})$, 将$1s$高斯函数的式子带入(系数记为$c$):
 \begin{align*}
