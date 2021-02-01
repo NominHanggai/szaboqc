@@ -910,12 +910,14 @@ width=.7\textwidth,]
 \end{align}
 其中$h(1)$是电子1的"核哈密顿量", 代表电子在核的势场中的动能和势能, 此即"核哈密顿量"的由来. 为了方便, 将总哈密顿量分成单电子和双电子部分:
 \begin{align}
-\mathcal{O}_1&=h(1)+h(2)\\
-\label{2.8.1}
+\mathcal{O}_1&=h(1)+h(2)
+\label{2.81}
+\end{align}
+\begin{align}
 \mathcal{O}_2&=r_{12}^{-1}
 \end{align}
 
-先来考虑矩阵元$\braket{\Psi_0|\mathcal{O}_1|\Psi_0}$, 由\ref{2.81}可知它是两项之和. 第一项为
+先来考虑矩阵元$\braket{\Psi_0|\mathcal{O}_1|\Psi_0}$, 由\eqref{2.81}可知它是两项之和. 第一项为
 \begin{align}
 \braket{\Psi_0|h(1)|\Psi_0}=&\int\db{x}_1\db{x}_2\left[2^{-1/2}\left(\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2)-\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2)\right)\right]^*\notag\\
 \qquad&\times h(\mathbf{r}_1)\left[ 2^{-1/2}\left(\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2)-\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2)\right)\right]\notag\\
@@ -968,6 +970,7 @@ width=.7\textwidth,]
 上面的积分就是\emph{双电子积分}之一例，之所以叫双电子，是因为积分变量包括电子1和2的空间坐标以及两个自旋坐标，共八个变量。习惯上，常将所有双电子积分中的傀标都写成电子1和2的坐标。现引入记号来表示含自旋轨道的双电子积分：
 \begin{equation}
 \braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_1)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
+\label{2.90}
 \end{equation}
 那么就有
 \begin{equation}
@@ -996,7 +999,7 @@ Hartree-Fock基态能量就成为
 \subsection{单、双电子积分的记法}
 \label{sec2.3.2}
 在推广上面的结果以及给出$N$电子行列式的矩阵元之前，先来总结一下此书中所用的几种不同的单、双电子积分的记号。
-关于自旋轨道的双电子积分已在\ref{2.90}中提过，即：
+关于自旋轨道的双电子积分已在\eqref{2.90}中提过，即：
 \begin{equation}
 \braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
 \end{equation}
@@ -1016,6 +1019,7 @@ Hartree-Fock基态能量就成为
 其中$\mathscr{P}_{12}$是一个算子，它的效果是交换电子1和2的坐标。注意
 \begin{align}
 \braket{ij||kk}=0
+\label{2.97}
 \end{align}
 
 但略有遗憾的是，还存在另一套自旋轨道双电子积分的记号，而且还被广泛使用，尤其是在关于Hartree-Fock理论的文献中。这套记号常称作化学家的记号，写作：
@@ -1166,7 +1170,7 @@ n\equiv b &q\equiv r
 \label{2.108}
 h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 \end{align}
-\ref{2.107}中的求和是对$\ket{K}$中的占据自旋轨道进行的. 由于(见\ref{2.97})
+\eqref{2.107}中的求和是对$\ket{K}$中的占据自旋轨道进行的. 由于(见\eqref{2.97})
 \begin{align}
 \braket{mm||mm}=\braket{nn|nn}=0
 \end{align}
