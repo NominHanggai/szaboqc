@@ -24,23 +24,24 @@
 \end{subequations}
 称$E_i^{(n)}$为$n$阶能量.现在的问题是如何将精确量用零阶能量以及微扰算符$\vs$在未微扰波函数间的矩阵元$\braket{i|\vs|j}$表达出来.
 
-现在设$\hs$的波函数已归一化:$\braket{i|i}=1$, 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 这种处理叫作"中间归一化", 并且, 除非$\ket{i}$与$\ket{\Phi_i}$正交, 否则总可以进行中间归一化. 将(6.4b)左乘$\bra{i}$, 得到
+现在设$\hs_0$的波函数已归一化:$\braket{i|i}=1$, 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 这种处理叫作"中间归一化", 并且, 除非$\ket{i}$与$\ket{\Phi_i}$正交, 否则总可以进行中间归一化. 将(6.4b)左乘$\bra{i}$, 得到
 \begin{align}
 \braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Psi_i^{(1)}}+\lambda^2\braket{i|\Psi_i^{(2)}} + \cdots = 1
 \end{align}
 上面的方程对于所有的$\lambda$都成立($\lambda$不等于1时也成立), 那么就有
 \begin{align}
 \braket{i|\Psi_i^{(n)}} = 0\, \hfill n=1,2,3,\cdots
+\label{6.6}
 \end{align}
 将(6.4a,6.4b)带入\ref{6.1}, 得到:
 \begin{align*}
 (\hs_0&+\lambda\vs)(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots )\\
-&=(E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)} + \lambda^2 E_i^{(2)} + \cdots )
+&=(E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)}  + \cdots )(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots)
 \end{align*}
 因为$\lambda^n$的系数对应相等，我们有
 \begin{subequations}
 	\begin{align}
-\hs_0\ket{i}&=E_i^{(0)}\ket{i}\, n=0\\
+\hs_0\ket{i}&=E_i^{(0)}\ket{i}\, \hfill n=0\\
 \hs_0\ket{\Psi_i^{(1)}} + \vs\ket{i}& = E_i^{0}\ket{\Psi_i^{(1)}} + E_i^{(1)}\ket{i}\,\hfill  n=1 \\
 \hs_0\ket{\Psi_i^{(2)}}+\vs\ket{\Psi_i^{(1)}} & = E_i^{(0)}\ket{\Psi_i^{(2)}} + E_i^{(1)}\ket{\Psi_i^{(1)}} + E_i^{(2)}\ket{i} \,\hfill  n=2 \\
 \hs_0\ket{\Psi_i^{(3)}}+\vs\ket{\Psi_i^{(2)}} & = E_i^{(0)}\ket{\Psi_i^{(3)}} + E_i^{(1)}\ket{\Psi_i^{(2)}} + E_I^{(2)}\ket{\Psi_i^{(1)}} +E_i^{(3)}\ket{i}\,\hfill  n=3
@@ -49,10 +50,10 @@
 等等. 每个式子左乘$\ket{i}$, 由正交关系\ref{6.6}可得如下各阶能量:
 \begin{subequations}
 \begin{align}
-E_I^{(0)} &= \braket{i|\hs|i} \\
-E_I^{(1)} &= \braket{i|\vs|i} \\
-E_I^{(2)} &= \braket{i|\hs|\Psi_i^{(1)}} \\
-E_I^{(3)} &= \braket{i|\hs|\Psi_i^{(2)}}
+E_i^{(0)} &= \braket{i|\hs|i} \\
+E_i^{(1)} &= \braket{i|\vs|i} \\
+E_i^{(2)} &= \braket{i|\vs|\Psi_i^{(1)}} \\
+E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \end{align}
 \end{subequations}
 剩下的事情就是从(6.7)解出$\ket{\Psi_i^{(n)}}$, 然后用(6.8)确定$n$阶能量.
@@ -61,7 +62,7 @@ E_I^{(3)} &= \braket{i|\hs|\Psi_i^{(2)}}
 \begin{align}
 (E_i^{(0)} - \hs_0 )\ket{\Psi_i^{(1)}} = (\vs - \braket{i|\vs|i})\ket{i}
 \end{align}
-上式不再是一个本征方程, 而成为了一个非齐次微分方程(更广义地, 成为了积分微分方程). 解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs$的本征函数展开(因为$\hs_0$的本征函数是完备的):
+上式不再是一个本征方程, 而成为了一个非齐次微分方程(更广义地, 成为了积分微分方程). 解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs_0$的本征函数展开(因为$\hs_0$的本征函数是完备的):
 \begin{align*}
 \ket{\Psi_i^{(1)}} = \sum_n c_n^{(1)}\ket{n}
 \end{align*}
@@ -71,7 +72,7 @@ E_I^{(3)} &= \braket{i|\hs|\Psi_i^{(2)}}
 \end{align*}
 由(6.6)可知, $c_i^{(1)}=0$, 所以有
 \begin{align}
-\ket{\Psi_i^{1}} = \sideset{}{'}\sum_n\ket{n}\bra{n}\ket{\Psi_i^{(1)}}
+\ket{\Psi_i^{(1)}} = \sideset{}{'}\sum_n\ket{n}\braket{n|\Psi_i^{(1)}}
 \end{align}
 求和号上的一撇代表不包括$n=i$的项. (6.9)左乘$\bra{n}$, 并注意到零阶波函数的正交性, 就可以得到:
 \begin{align}
@@ -91,7 +92,7 @@ E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)}
 \begin{align}
 \ket{\Psi_i^{(2)}} = \sideset{}{'}{\sum_n}\ket{n}\braket{n|\Psi_i^{(2)}}
 \end{align}
-然后荣$\bra{n}$去乘(6.7c), 得到
+然后用$\bra{n}$去乘(6.7c), 得到
 \begin{align}
 (E_i^{(0)} -E_n^{(0)} )\braket{n|\Psi_i^{(2)}} = \braket{n|\vs|\Psi_i^{(1)}} - E_i^{(1)}\braket{n|\Psi_i^{(1)}}
 \end{align}
@@ -103,7 +104,7 @@ E_i^{(3)} & = \braket{i|\vs|\Psi_i^{(2)}}\\
 \end{align*}
 最后再将(6.10)(6.11)插入, 就得到
 \begin{align}
-E_I^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\braket{m|\vs|i} }{(E_i^{(0)} -E_n^{(0)})(E_i^{(0)} - E_m^{(0)} )  } - E_i^{(1)} \sideset{}{'}{\sum_n} \frac{\left| \braket{i|\vs|n} \right|^2}{(E_i^{(0)} -E_n^{(0)} )^2}\notag\\
+E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\braket{m|\vs|i} }{(E_i^{(0)} -E_n^{(0)})(E_i^{(0)} - E_m^{(0)} )  } - E_i^{(1)} \sideset{}{'}{\sum_n} \frac{\left| \braket{i|\vs|n} \right|^2}{(E_i^{(0)} -E_n^{(0)} )^2}\notag\\
 & = A_i^{(3)} + B_i^{(3)}
 \label{6.15}
 \end{align}
@@ -1470,7 +1471,7 @@ E_0^{(0)} = \sum_a\epsilon_a
 \end{equation}
 这就是我们的零阶微扰能量. 一阶微扰能是
 \begin{align}
-E_0^{(0)} & = \braket{\Psi_0|\vs|\Psi_0} \notag\\
+E_0^{(1)} & = \braket{\Psi_0|\vs|\Psi_0} \notag\\
           & = \braket{\Psi_0|\sum_{i<j}r_{ij}^{-1}|\Psi_0} - \braket{\Psi_0|\sum_i v^\mathrm{HF}(i)|\Psi_0} \notag \\
           & = \frac{1}{2}\sum_{ab}\braket{ab||ab} - \sum_a\braket{a|v^\mathrm{HF}|a} \notag\\
           & = -\frac{1}{2}\sum_{ab} \braket{ab||ab}
@@ -1483,7 +1484,7 @@ E_0 = E_0^{(0)} + E_0^{(1)} = \sum_a\epsilon_a - \frac{1}{2}\sum_{ab}\braket{ab|
 
 二阶能量的一般表达式在\ref{sec6.1}节已经推导过, 为
 \begin{align}
-E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(2)} - E_n^{(0)}}
+E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(0)} - E_n^{(0)}}
 \end{align}
 其中求和遍及系统除了基态外的所有态. $\ket{0} = \ket{\Psi_0}$是很清楚的, 但是$\ket{n}$等于什么? $\ket{n}$不可能是单重激发, 因为
 \begin{align*}
@@ -1496,7 +1497,7 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(2)} - E_n^{(0)}
 \end{align*}
 然后对所有二重激发态求和: 将所有$a$和大于$a$的$b$求和, 对所有$r$和大于$r$的$s$求和, 二阶能量就成为
 \begin{align}
-E_0^{2} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{\Psi_0|\sum_{i<j}|r_{ij}^{-1}|\Psi_{ab}^{rs}}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+E_0^{(2)} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{\Psi_0|\sum_{i<j} r_{ij}^{-1}|\Psi_{ab}^{rs}}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \end{align}
 注意到, 二阶能量可以表示为所有占据轨道上的每对电子贡献之和:
 \begin{align*}
@@ -1504,7 +1505,7 @@ E_0^{(2)} = \sum_{a<b}e_{ab}^\mathrm{FO}
 \end{align*}
 式中
 \begin{align*}
-e_{ab}\mathrm{FO} =  \sum_{a<b} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+e_{ab}^{\mathrm{FO}} =  \sum_{r<s} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \end{align*}
 第五章中我们已经知道$e_{a<b}^\mathrm{FO}$是一阶对能. 因此在一阶对的水平上, 对理论给出的相关能和二阶微扰论是一样的.
 
@@ -1515,12 +1516,12 @@ E_0^{(2)} = \frac{1}{4} \sum_{abrs}\frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsi
 \end{align}
 进一步, 可以用通常的双电子积分表达二阶能量:
 \begin{align}
-E_0^{(2)} = \frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-\frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+E_0^{(2)} = \frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-\frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \label{6.73}
 \end{align}
 最后, 对于闭壳层体系, 二阶能量可以写成空间轨道的求和:
 \begin{align}
-E_0^{(2)} = \sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-\frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
+E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \label{6.74}
 \end{align}
 \exercise{
