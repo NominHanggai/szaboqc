@@ -420,7 +420,7 @@ f\ket{\chi_a} = \epsilon_a\ket{\chi_a}
 \section{H-F方程解的阐释}
 为求解\hft 方程, 需要引入基组并求解对应的矩阵方程. 但该本征值方程及其解也有不依赖于基组的一些性质, 此时正好来讨论它们.
 \subsection{轨道能量与Koopman定理}
-对于$N$-电子体系, 将行列式$\ket{\chi_1\chi_2\cdots\chi_a\chi_b\cdots\chi_N}$的能量极小化后就得到一组关于$N$个被站自旋轨道$\{\chi_a\}$的本征值方程$f\ket{\chi_a = \epsilon_a\ket{\chi_a}}$. Fock算符对这些被占轨道有泛函的依赖, 但若自旋轨道已知, 那么Fock算符就变为一个正常的厄米算符, 有无穷个本征函数：
+对于$N$-电子体系, 将行列式$\ket{\chi_1\chi_2\cdots\chi_a\chi_b\cdots\chi_N}$的能量极小化后就得到一组关于$N$个被占自旋轨道$\{\chi_a\}$的本征值方程$f\ket{\chi_a = \epsilon_a\ket{\chi_a}}$. Fock算符对这些被占轨道有泛函的依赖, 但若自旋轨道已知, 那么Fock算符就变为一个正常的厄米算符, 有无穷个本征函数：
 \begin{align}
 \label{3.70}
 f\ket{\chi_j} = \epsilon_k\ket{\chi_j}\quad j = 1,2,\ldots,\infty
@@ -465,7 +465,7 @@ f\ket{\chi_j} = \epsilon_k\ket{\chi_j}\quad j = 1,2,\ldots,\infty
 \epsilon_r & = \braket{r|h|r} + \sum_{b=1}^{N}\braket{rb||rb} -\braket{rb|br}
 \label{3.79}
 \end{align}
-现在来看这两个式子. 轨道能量$\epsilon_a$代表自旋轨道$\ket{\chi_a}$上电子的能量. 由\eqref{3.78}可知这个能量是动能加核吸引势能($\braket{a|h|a}$)再加上与余下的$N-1$个自旋轨道$\ket{\chi_b}$上的$N-1$个电子之间的的库伦($\braket{ab|ab}$)和交换($-\braket{ab|ba}$)作用, 此处$b \neq a$. 正如之前所看到的, 只有当$\ket{\chi_a,\ket{\chi_b}}$上的两个电子自旋平行时积分$\braket{ab|ba}$才不为零, 所以在一般的自旋轨道语言下, 我们并不特别指出电子的自旋, 所以对所有的电子-电子相互作用我们都写出这项$\braket{ab|ba}$, 虽然其中有一些会为零.
+现在来看这两个式子. 轨道能量$\epsilon_a$代表自旋轨道$\ket{\chi_a}$上电子的能量. 由\eqref{3.78}可知这个能量是动能加核吸引势能($\braket{a|h|a}$)再加上与余下的$N-1$个自旋轨道$\ket{\chi_b}$上的$N-1$个电子之间的的库伦($\braket{ab|ab}$)和交换($-\braket{ab|ba}$)作用, 此处$b \neq a$. 正如之前所看到的, 只有当$\ket{\chi_a},\ket{\chi_b}$上的两个电子自旋平行时积分$\braket{ab|ba}$才不为零, 所以在一般的自旋轨道语言下, 我们并不特别指出电子的自旋, 所以对所有的电子-电子相互作用我们都写出这项$\braket{ab|ba}$, 虽然其中有一些会为零.
 
 $\epsilon_a$的结果也许是可预料的. 但式\eqref{3.79}中的自旋轨道能量比较特殊. 它包括$\ket{\chi_r}$中电子的动能和核吸引势能$\braket{r|h|r}$, 这我们是知道的, 它它还包括与\hft 基态中全部$N$个电子的库伦和交换作用$\braket{rb|rb},-\braket{rb|br}$, 也就是与自旋轨道$\{\chi_b|b=1,2,\ldots,N\}$中电子的作用. 这就好象将一个电子额外加到$\ket{\Psi_0}$得到一个$(N+1)$-电子态, $\epsilon_r$表示这个额外电子的能量. 事实正是如此. 之后讨论Koopmans定理的时候会在回到这里. 现下我们来讨论占据轨道能量$\epsilon_a$与总能量$E_0$的关系.
 
@@ -622,7 +622,7 @@ E_0 & 0\\
 利用(2.115)中Slater行列式的定义, 并考虑到$\hs_0$与任何置换电子指标的算符都对易, 证明$\ket{\Psi_0}$是$\hs_0$的本征函数, 本征值为$\sum_a\epsilon_a$. 为什么$\hs_0$与置换算符对易？
 }
 
-上面的练习中证明了$\ket{\Psi_0}$是一\hft \ha 的本征函数, 对应本征值不是\hft 能量$E_0$, 而是轨道能之和$\sum_a\epsilon_a$. 实际我们可以证明由Fock算符的本征函数$\{\chi_i\}$ 组成的任意行列式都是$\hs_0$的本征函数, 本征值等于行列式中自旋轨道能量之和, 第六章仔细讨论的微扰论框架下, 我们已经得到未受扰\ha 的一组完备本征函数, 它可作为如下精确能量微扰展开的基：
+上面的练习中证明了$\ket{\Psi_0}$是一\hft{} \ha 的本征函数, 对应本征值不是\hft 能量$E_0$, 而是轨道能之和$\sum_a\epsilon_a$. 实际我们可以证明由Fock算符的本征函数$\{\chi_i\}$ 组成的任意行列式都是$\hs_0$的本征函数, 本征值等于行列式中自旋轨道能量之和, 第六章仔细讨论的微扰论框架下, 我们已经得到未受扰\ha 的一组完备本征函数, 它可作为如下精确能量微扰展开的基：
 \begin{align}
 \label{3.104}
 \scr{E}_0 = E_0^{(0)} + E_0^{(1)} + E_0^{(2)}
@@ -647,7 +647,7 @@ E_0^{(0)} = \sum_a\epsilon_a
     & = \sum_{i=1}^{N}\sum_{j>i}^{N}r_{ij}^{-1} - \sum_{i=1}^{N}v^\mathrm{HF}(i)
     \label{3.108}
 \end{align}
-即精确的电子-电子相互作用和Hartree-Fock库伦、交换势之间的查. 现在就能按下式计算\hft 能量
+即精确的电子-电子相互作用和Hartree-Fock库伦、交换势之间的差. 现在就能按下式计算\hft 能量
 \begin{align}
 E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \braket{\Psi_0|\hs_0|\Psi_0} + \braket{\Psi_0|\vs|\Psi_0} \notag\\
     & = \sum_a\epsilon_a + \braket{\Psi_0|\vs|\Psi_0} = E_0^{(0)} + E_0^{(1)}
