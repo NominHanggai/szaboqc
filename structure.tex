@@ -124,10 +124,11 @@ up to date check = md5,
 % the command to generate two lines between which are excerise content, using amsthm to number the exercise.
 \let\openbox\undefined
 \usepackage{amsthm}
+\usepackage{needspace}
 \newtheoremstyle{nx}{}{}{\normalfont}{}{\bfseries}{}{1em}{}
 \theoremstyle{nx}
 \newtheorem{Xercise}{$\quad$练习}[chapter]
-\newenvironment{xercise}{\par\vspace{\baselineskip}\noindent\hrule\vspace{.5\baselineskip}\Xercise}
+\newenvironment{xercise}{\Needspace{2\baselineskip}\par\vspace{\baselineskip}\noindent\hrule\vspace{.5\baselineskip}\Xercise}
 {\vspace{\baselineskip}\hrule\par\endXercise}
 
 \newcommand\Next{\endXercise\hrule\Xercise}
