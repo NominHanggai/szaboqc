@@ -15,7 +15,7 @@ J. S. Bingkley, R. A. Whiteside, R. Krishnan, R. Seeger, H. B. Schlegel, D. J. D
 
 3.3节继续介绍Hartree-Fock理论的形式部分. 现推导并讨论两个与Hartree-Fock方程相关的重要定理：Koopman定理和Brillouin定理. 第一个定理说的是Hartree-Fock轨道能量可以堪称离子化势和电子亲和度. 第二个定理说的是两个Hartree-Fock行列式之间的矩阵元：如果两个行列式只差一个单激发, 那么矩阵元为零. 此定理在多行列式理论中非常重要. 最后, 作为微扰论的预备知识, 我们特别定义Hartree-Fock哈密顿, 以使由Hartree-Fock自旋轨道所构成的行列式就是该哈密顿的本征函数.
 
-3.4节是本章哪个中最重要的一节. 本节来推导Rothaan方程, 有了它就可以计算闭壳层分子的Hartree-Fcok基态解. 为求解Hartree-Fock方程, 需显式地给出自旋轨道的形式, 本书使用两组自旋轨道. 限制性闭壳层自旋轨道通过Roothaan方程生成限制性闭壳层波函数. 非限制性开壳层自旋轨道由Pople-Nesbet方程生成非限制性开壳层波函数, 后者会在之后的一节讨论. 本节中, 将一组限制性闭壳层自旋轨道带入一般性的自旋轨道Hartree-Fock方程, 然后自旋轨道转化为空间轨道, 方程随之变为限制性闭壳层的. 接下来引入基组, 如此将空间上的积分微分闭壳层\hft 方程转化为一组代数方程, 也即Rotthaan方程. 接下来仔细地讨论Roothaan方程及其求解方法(自洽场过程, self-consistent-field procedure,SCF), 以及对所得波函数的诠释.
+3.4节是本章中最重要的一节. 本节来推导Rothaan方程, 有了它就可以计算闭壳层分子的Hartree-Fock基态解. 为求解Hartree-Fock方程, 需显式地给出自旋轨道的形式, 本书使用两组自旋轨道. 限制性闭壳层自旋轨道通过Roothaan方程生成限制性闭壳层波函数. 非限制性开壳层自旋轨道由Pople-Nesbet方程生成非限制性开壳层波函数, 后者会在之后的一节讨论. 本节中, 将一组限制性闭壳层自旋轨道带入一般性的自旋轨道Hartree-Fock方程, 然后自旋轨道转化为空间轨道, 方程随之变为限制性闭壳层的. 接下来引入基组, 如此将空间上的积分微分闭壳层\hft 方程转化为一组代数方程, 也即Rotthaan方程. 接下来仔细地讨论Roothaan方程及其求解方法(自洽场过程, self-consistent-field procedure,SCF), 以及对所得波函数的诠释.
 
 3.5节用两个简单的系统——极小基下的双电子分子, 同核的$\hd$和异核的$\mathrm{HeH}^+$——对闭壳层\emph{从头算}SCF过程作详细解说. 首先介绍计算这两个分子时用到的STO-3G基组, 然后将闭壳层Hartree-Fock理论用到$\hd$系统上. 这是一个很简单的模型系统, 可以用明显的解析形式来得到计算结果. 最后, 将Roothaan SCF手续用到\underline{极小基$\mathrm{HeH}^+$}上. 这个系统与$\hd$不同, 它的SCF波函数形式无法从对称性确定, 这个模型是迭代SCF手续中最简单的一个例子. 正文中对$\mathrm{HeH}^+$从头算的讲述基于附录B中给出的$\mathrm{HeH}^+$FORTRAN代码和输出结果. 读者若能随正文一起完成这个简单(但真实)的例子中的计算细节, 那么就会对闭壳层从头算SCF手续有一个明晰的了解.
 
@@ -62,7 +62,7 @@ h(1)\chi_a(1) = \epsilon_a\chi_a(1)
 \end{align}
 上式就是单个电子在核势场中的自旋态所对应的单电子\sch 方程。 式\eqref{3.4}中的第一个双电子项叫作\emph{库伦}项, 这一项在单纯的Hartree理论中也存在, 所谓Hartree理论是指使用Hartree积波函数而非反对称Hartree积波函数(即Slater行列式)的理论. 第二个双电子项叫作\emph{交换}项, 这一项是由于行列式波函数的反对称性质而产生的.
 
-库伦项有一个非常简单的解释. 在精确的理论中库伦作用由双电子算符$r_{12}^{-1}$表示. 在Hartree或Hartree-Fock理论中, 正如式\eqref{3.4}所示, $\chi_a$中的电子1辉感受到单电子库伦势：
+库伦项有一个非常简单的解释. 在精确的理论中库伦作用由双电子算符$r_{12}^{-1}$表示. 在Hartree或Hartree-Fock理论中, 正如式\eqref{3.4}所示, $\chi_a$中的电子1会感受到单电子库伦势：
 \begin{align}
 v_a^\mathrm{coul}(1) = \sum_{b\neq a} \int\dd{x}_2\,|\chi_b(2)|^2 r_{12}^{-1}
 \end{align}
@@ -70,7 +70,7 @@ v_a^\mathrm{coul}(1) = \sum_{b\neq a} \int\dd{x}_2\,|\chi_b(2)|^2 r_{12}^{-1}
 \begin{align}
 \mathscr{J}_b(1) = \int\dd{x}_2\,|\chi_b(2)|r_{12}^{-1}
 \end{align}
-这式代表$\chi_b$上的电子在$\mathbf{x}_1$处所山城的平均局域势能.
+这式代表$\chi_b$上的电子在$\mathbf{x}_1$处所产生的平均局域势能.
 
 (3.4)中的交换项来自单行列式的反对称性质, 它的形式比较特殊, 而且没有如库伦项那样简单的经典解释. 但仍可将Hartree-Fock方程(3.4)写成本征值方程的形式：
 \begin{align}
@@ -79,7 +79,7 @@ v_a^\mathrm{coul}(1) = \sum_{b\neq a} \int\dd{x}_2\,|\chi_b(2)|^2 r_{12}^{-1}
 其中引入了\emph{交换算符}$\mathscr{K}_b(1)$, 它作用在一自旋轨道$\chi_a(1)$上时的效果定义如下：
 \begin{align}
 \label{3.10}
-\mathscr{K}_b(1)\chi_a(1) = \left[ \dd{x}_2\,\chi_b^*(2)r_{12}^{-1}\chi_a(2) \right]\chi_b(1)
+\mathscr{K}_b(1)\chi_a(1) = \left[ \int\dd{x}_2\,\chi_b^*(2)r_{12}^{-1}\chi_a(2) \right]\chi_b(1)
 \end{align}
 注意它与之前对库伦算符的定义做比较：
 \begin{align}
@@ -100,7 +100,7 @@ v_a^\mathrm{coul}(1) = \sum_{b\neq a} \int\dd{x}_2\,|\chi_b(2)|^2 r_{12}^{-1}
 \label{3.14}
 \left[ h(1) + \sum_{b\neq a}\mathscr{J}_b(1) - \sum_{b\neq a}\mathscr{K}_b(1)   \right]\chi_b(1) = \epsilon_a\chi_a(1)
 \end{align}
-它有本征值方程的形式, 但是方括号中的算符作用到不同的自旋轨道$\chi_a$上时其, 算符本身也会改变(因为求和指标限制$b\neq a$). 然而通过考察式\eqref{3.10}\eqref{3.11}, 很明显有下式：
+它有本征值方程的形式, 但是方括号中的算符作用到不同的自旋轨道$\chi_a$上时, 算符本身也会改变(因为求和指标限制$b\neq a$). 然而通过考察式\eqref{3.10}\eqref{3.11}, 很明显有下式：
 \begin{align}
 \left[ \mathscr{J}_a(1) - \mathscr{K}_a(1)  \right]\chi_a(1) = 0
 \end{align}
@@ -124,17 +124,17 @@ v^\mathrm{HF}(1) = \sum_b\mathscr{J}_b(1) - \mathscr{K}_b(1)
 f(1) = h(1) + v^\mathrm{HF}(1)
 \end{align}
 
-为方便, 有时也将交换势用算符$\mathscr{P}_12$来表达, 后者向右作用, 交换电子1和2的顺序\footnote{
+为方便, 有时也将交换势用算符$\mathscr{P}_{12}$来表达, 后者向右作用, 交换电子1和2的顺序\footnote{
 实际上是交换它们所在的轨道
 }：
 \begin{align}
 \scr{K}_b(1)\chi_a(1) & = \left[ \int\dd{x}_2\,\chi_b^*(2)r_{12}^{-1}\chi_a(2) \right]\chi_b(1)\notag\\
-& = \left[ \int\dd{x}_2\,\chi_b^*(2)r_{12}^{-1}\chi_b(2) \right]\chi_a(1)
+& = \left[ \int\dd{x}_2\,\chi_b^*(2)r_{12}^{-1}\scr{P}_{12}\chi_b(2) \right]\chi_a(1)
 \end{align}
 由此, Fock算符可用$\scr{P}_{12}$重新写成：
 \begin{align}
 f(1) & = h(1) + v^\mathrm{HF}(1) \notag \\
-     & = h(1) + \sum_b\int\dd{x}_2\,\chi_b^*(2)\twoe(1-\scr{P}_12)\chi_b(2)
+     & = h(1) + \sum_b\int\dd{x}_2\,\chi_b^*(2)\twoe(1-\scr{P}_{12})\chi_b(2)
 \end{align}
 
 Hartree-Fock方程
@@ -143,7 +143,7 @@ f\ket{\chi_a} = \epsilon_a\ket{\chi_a}
 \end{align}
 这个本征值方程的本征函数是自旋轨道, 对应本征值就是该轨道的能量. 这个积分微分方程的精确解就对应“精确”的Hartree-Fock自旋轨道. 实际操作中, 仅对原子这个积分微分方程方程才能精确求解. 一般情况下, 人们会引入一组基函数来展开自旋轨道, 并求解一组对应的矩阵方程, 后面会具体讲述. 只有当基组达到完备时, 即当达到Hartree-Fock极限时, 由这种办法所得的自旋轨道 才是精确的\hft 自旋轨道.
 
-虽然(3.22)可以写作线性的本征值方程, 最好还是将视作一个伪本征值方程的, 因为方程中的Fock算符(中的库伦和交换算符)对这个伪本征值方程本身的解$\{\chi_a \}$有依赖. 因此\hft 单重实际上是非线性方程, 需要用迭代的办法求解. 
+虽然(3.22)可以写作线性的本征值方程, 最好还是将视作一个伪本征值方程的, 因为方程中的Fock算符(中的库伦和交换算符)对这个伪本征值方程本身的解$\{\chi_a \}$有依赖. 因此\hft 方程实际上是非线性方程, 需要用迭代的办法求解.
 \exercise{
 请证明Fock算符的一般矩阵元形式如下：
 \begin{align}
@@ -157,7 +157,7 @@ f\ket{\chi_a} = \epsilon_a\ket{\chi_a}
 \begin{align}
 E[\tp] = \braket{\tp|\hs|\tp}
 \end{align}
-我们说$E[\tp]$是$\tp$d的一个泛函, 因为它的值依赖于一个函数(即$\tp$)的形式, 而非依赖于单个自变量. 设想我们对$\tp$作一个任意小的变化, 可通过改变$\tp$所含的参数实现这一点. 也就是：
+我们说$E[\tp]$是$\tp$的一个泛函, 因为它的值依赖于一个函数(即$\tp$)的形式, 而非依赖于单个自变量. 设想我们对$\tp$作一个任意小的变化, 可通过改变$\tp$所含的参数实现这一点. 也就是：
 \begin{align}
 \tp \to \tp + \delta\tp
 \end{align} 
@@ -173,7 +173,7 @@ E[\tp+\delta\tp] & = \braket{\tp+\delta\tp|\hs|\tp+\delta\tp} \notag\\
 \end{align}
 这个条件保证了$E$对于$\tp$的任何变分都处于\emph{驻态}(stationary). 通常情况下, 驻点(stationary point)往往就是最小值.
 
-下面我们用变分的技巧重新推导1.3.2节中的线性变分问题对应的矩阵本征值方程, 以期对变分技巧作个展示. 个定一个线性变分尝试波函数：
+下面我们用变分的技巧重新推导1.3.2节中的线性变分问题对应的矩阵本征值方程, 以期对变分技巧作个展示. 给定一个线性变分尝试波函数：
 \begin{align}
 \ket{\tp} = \sum_{i=1}^{N}c_i\ket{\Psi_i}
 \end{align}
@@ -187,13 +187,13 @@ E = \braket{\tp|\hs|\tp} = \sum_{ij} c_i^*c_j\braket{\Psi_i|\hs|\Psi_j}
 \end{align}
 利用第一章中的Lagrange不定乘子法, 我们可以将如下的泛函对$c_i$极小化：
 \begin{align}
-\mathscr{L} & = \braket{\tp|\hs\tp} - E(\braket{\tp|\tp}-1) \notag\\
+\mathscr{L} & = \braket{\tp|\hs|\tp} - E(\braket{\tp|\tp}-1) \notag\\
             & = \sum_{ij}c_i^*c_j\braket{\Psi_i|\hs|\Psi_j} - E\left( \sum_{ij}c_i^*c_j \braket{\Psi|\Psi} - 1 \right)
 \end{align}
 其中$E$是Lagrange乘子. 下面我们令$\scr{L}$的一阶变分为零：
 \begin{align}
 \delta\scr{L} = & \sum_{ij}\delta c_i^*c_j\braket{\Psi_i|\hs|\Psi_j} - E\sum_{ij}\delta c_i^*c_j\braket{\Psi_i|\Psi_j} \notag \\
-              & +  \sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\hs|\Psi_j} - E\sum_{ij}\delta c_i^*\delta c_j\braket{\Psi_i|\Psi_j}
+              & +  \sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\hs|\Psi_j} - E\sum_{ij}c_i^*\delta c_j\braket{\Psi_i|\Psi_j}
 \end{align}
 由于$E$是实的(因此$\scr{L}$也是实的), 合并项并交换指标后, 我们得到
 \begin{align}
@@ -228,7 +228,7 @@ E = \braket{\tp|\hs|\tp} = \sum_{ij} c_i^*c_j\braket{\Psi_i|\hs|\Psi_j}
 \subsection{单行列式能量最小化}
 给定一个单行列式$\ket{\Psi_0} = \ket{\chi_1\chi_2\cdots\chi_a\chi_b\cdots\chi_N}$, 能量$E_0\braket{\Psi_0|\hs|\Psi_0}$是自旋轨道$\{\chi_a\}$的泛函. 为导出\hft 方程需要对$E_0[\{\chi_a \}]$关于自旋轨道进行极小化, 而且要满足自旋轨道正交归一的约束：
 \begin{align}
-\int\dd{x}_1\,\chi_a^*\chi_b(1) = [a|b] = \delta_{ab}
+\int\dd{x}_1\,\chi_a^*(1)\chi_b(1) = [a|b] = \delta_{ab}
 \end{align}
 这就是说, 约束形式如下：
 \begin{align}
@@ -2544,4 +2544,3 @@ c_1 = [2(1+S_{12} )]^{-1/2}\cos\theta - [2(1 - S_{12} )]^{-1/2}\sin\theta
 
 
 \theendnotes
-

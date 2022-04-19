@@ -430,7 +430,7 @@ $(N!)^{-1/2}$是归一化因子. 这个Slater行列式代表N个电子占据N个
 \begin{align}
 \label{2.45}
 P(\mathbf{r}_1,\mathbf{r}_2)\dd\bo{r_1}\dd\bo{r_2}&=\int\dd\omega_1\dd\omega_2|\Psi|^2\db{r_1}\db{r_2}\notag\\
-&=\frac{1}{2}\left[|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\right]
+&=\frac{1}{2}\left[|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\right]\db{r_1}\db{r_2}
 \end{align}
 
 \begin{figure}[h]
@@ -1001,9 +1001,9 @@ Hartree-Fock基态能量就成为
 在推广上面的结果以及给出$N$电子行列式的矩阵元之前，先来总结一下此书中所用的几种不同的单、双电子积分的记号。
 关于自旋轨道的双电子积分已在\eqref{2.90}中提过，即：
 \begin{equation}
-\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
+\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
 \end{equation}
-这种记发常叫作物理学家的记号。注意自旋轨道的复共轭并排出现在积分的左边，并且电子1的空间自旋坐标先出现。从以上定义可以知道：
+这种记法常叫作物理学家的记号。注意自旋轨道的复共轭并排出现在积分的左边，并且电子1的空间自旋坐标先出现。从以上定义可以知道：
 \begin{equation}
 \braket{ij|kl}=\braket{ji|lk}
 \end{equation}
@@ -1014,7 +1014,7 @@ Hartree-Fock基态能量就成为
 由于双电子积分经常以如下的组合形式出现，在此引入一个特别的记号来表示\emph{反对称}双电子积分：
 \begin{align}
 \braket{ij||kl}&=\braket{ij|kl} - \braket{ij|lk}\notag\\
-&=\int\dd\bo{x}_1\dd\bo{x}_2\ddx_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)
+&=\int\dd\bo{x}_1\dd\bo{x}_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)
 \end{align}
 其中$\mathscr{P}_{12}$是一个算子，它的效果是交换电子1和2的坐标。注意
 \begin{align}
@@ -1090,7 +1090,7 @@ v(i,j)=r_{ij}^{-1}
 \ket{K}=\ket{\cdots\chi_p\chi_n\cdots}
 \end{align}
 第三，两个行列式中有两个自旋轨道不同，
-$\ket{K}$中的$\chi_m,\chi)n$在$\ket{L}$中变成$\chi_p,\chi)q$，其余都一样：
+$\ket{K}$中的$\chi_m,\chi_n$在$\ket{L}$中变成$\chi_p,\chi_q$，其余都一样：
 \begin{align}
 \ket{K}=\ket{\cdots\chi_p\chi_q\cdots}
 \end{align}
