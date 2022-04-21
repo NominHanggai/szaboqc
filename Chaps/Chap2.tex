@@ -1158,7 +1158,7 @@ $\ket{K}$中的$\chi_m,\chi_n$在$\ket{L}$中变成$\chi_p,\chi_q$，其余都�
 m\equiv a & p\equiv s\\
 n\equiv b &q\equiv r
 \end{array}\]
-因此有$\braket{\Psi_1|\mathcal{O}_1|\Psi_2}=0$以及$\braket{\Psi_1|\mathcal{O}_2|\Psi_2}$.
+因此有$\braket{\Psi_1|\mathcal{O}_1|\Psi_2}=0$以及$\braket{\Psi_1|\mathcal{O}_2|\Psi_2}=\braket{ab||sr}$.
 
 通过表\ref{t2.3}\ref{t2.4}可以快速写出单个行列式$\ket{K}$的能量：
 \begin{align}
@@ -1171,16 +1171,18 @@ n\equiv b &q\equiv r
 h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 \end{align}
 \eqref{2.107}中的求和是对$\ket{K}$中的占据自旋轨道进行的. 由于(见\eqref{2.97})
+\begin{subequations}
 \begin{align}
-\braket{mm||mm}=\braket{nn|nn}=0
+\braket{mm||mm}=\braket{nn||nn}=0
 \end{align}
 以及
 \begin{align}
-\braket{mn|mn}=\braket{nm||nm}
+\braket{mn||mn}=\braket{nm||nm}
 \end{align}
+\end{subequations}
 \ref{2.107}可以写成：
 \begin{align}
-\braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\frac{1}{2}\sum_m^N\sum_{n>m}^N\braket{mn||mn}\\
+\braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\frac{1}{2}\sum_m^N\sum_{n>m}^N\braket{mn||mn}\notag\\
 =&\sum_m[m|h|m]+\sum_m^N\sum_{n>m}^N[mm|nn]-[mn|nm]
 \end{align}
 反对称双电子积分的求和遍及$\ket{K}$中所有不同的占据自旋轨道对儿$\chi_m,\chi_n$. 这个事实可以帮我们记忆如何把单个行列式对应的能量用关于自旋轨道的单、双电子积分表示出来：\textit{ 每个占据的自旋轨道$\chi_i$各在总能中贡献一个$\braket{i|h|i}$项，并且每一对占据自旋轨道$\chi_i,\chi_j$都贡献一个$\braket{ij||ij}$项。}因此，可将$N$电子体系的总能（在单Slater行列式描述下）视作``单电子能量"(即在$\chi_i$轨道上电子所对应的$\braket{i|h|i}$)之和，再加上每对电子之间的``相互作用能"（$\chi_i,\chi_j$上的电子对应着$\braket{ij||ij}$）之和。在使用这种语言的时候, 要记住这仅是为方便记忆. 物理上, 两电子间的相互作用通过库伦项来体现,而非反对称的双电子积分.
