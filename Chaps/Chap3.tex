@@ -378,8 +378,8 @@ U_{N1} & U_{N2} & \cdots & U_{NN}
 
 我们利用单行列式在自旋轨道酉变换下不变的性质, 可以简化(3.49), 将其改写为关于一组特定轨道的本征值方程. 但首先需确定以上酉变换对Fock算符和Lagrange乘子的作用效果. Fock算符中依赖于自旋轨道的部分是库伦和交换算符. 经过变换后的库伦算符之和为：
 \begin{align}
-\sum_a \scr{J}_a'(1) & = \sum_a\int\dd{x}_1\,\chi_a^{\prime*}(2)\twoe\chi_a'(2)\notag\\
-                     & = \sum_{bc}\left[ \sum_a U_{ba}^* U_{ca}\right]\int\dd{x}_2\,\chi_b^*\twoe\chi_c(2)
+\sum_a \scr{J}_a'(1) & = \sum_a\int\dd{x}_2\,\chi_a^{\prime*}(2)\twoe\chi_a'(2)\notag\\
+                     & = \sum_{bc}\left[ \sum_a U_{ba}^* U_{ca}\right]\int\dd{x}_2\,\chi_b^*(2)\twoe\chi_c(2)
 \end{align}
 只要注意到
 \begin{align}
@@ -420,15 +420,15 @@ f\ket{\chi_a} = \epsilon_a\ket{\chi_a}
 \section{H-F方程解的阐释}
 为求解\hft 方程, 需要引入基组并求解对应的矩阵方程. 但该本征值方程及其解也有不依赖于基组的一些性质, 此时正好来讨论它们.
 \subsection{轨道能量与Koopman定理}
-对于$N$-电子体系, 将行列式$\ket{\chi_1\chi_2\cdots\chi_a\chi_b\cdots\chi_N}$的能量极小化后就得到一组关于$N$个被占自旋轨道$\{\chi_a\}$的本征值方程$f\ket{\chi_a = \epsilon_a\ket{\chi_a}}$. Fock算符对这些被占轨道有泛函的依赖, 但若自旋轨道已知, 那么Fock算符就变为一个正常的厄米算符, 有无穷个本征函数：
+对于$N$-电子体系, 将行列式$\ket{\chi_1\chi_2\cdots\chi_a\chi_b\cdots\chi_N}$的能量极小化后就得到一组关于$N$个被占自旋轨道$\{\chi_a\}$的本征值方程$f\ket{\chi_a} = \epsilon_a\ket{\chi_a}$. Fock算符对这些被占轨道有泛函的依赖, 但若这些被占轨道已知, 那么Fock算符就变为一个正常的厄米算符, 有无穷个本征函数：
 \begin{align}
 \label{3.70}
-f\ket{\chi_j} = \epsilon_k\ket{\chi_j}\quad j = 1,2,\ldots,\infty
+f\ket{\chi_j} = \epsilon_j\ket{\chi_j}\quad j = 1,2,\ldots,\infty
 \end{align}
 \exercise{
 使用练习3.1中的结果证明$f_{ij}=\braket{\chi_i|f|\chi_j}$是厄米算符的矩阵元, 由此证明Fock算符是一个厄米算符.
 }
-\eqref{3.70}的每个解$\ket{\chi_j}$都有一个自旋轨道能量$\epsilon_j$. $N$个能量最低的自旋轨道就是$\ket{\Psi_0}$中的占据自旋轨道, 我们用指标$a,b,\ldots$来标价它们. 余下的无穷个自旋轨道的能量更高, 我们称其为\emph{虚}轨道或未占轨道, 并用指标$r,s,\ldots$来记. 这里的主要目的是得到轨道能量$\epsilon_a,\epsilon_b$等等的能量, 并看看能为这些轨道能量赋予什么物理意义.
+\eqref{3.70}的每个解$\ket{\chi_j}$都有一个自旋轨道能量$\epsilon_j$. $N$个能量最低的自旋轨道就是$\ket{\Psi_0}$中的占据自旋轨道, 我们用指标$a,b,\ldots$来标记它们. 余下的无穷个自旋轨道的能量更高, 我们称其为\emph{虚}轨道或未占轨道, 并用指标$r,s,\ldots$来记. 这里的主要目的是得到轨道能量$\epsilon_a,\epsilon_b$等等的能量, 并看看能为这些轨道能量赋予什么物理意义.
 
 用$\bra{\chi_i}$左乘\eqref{3.70}就可证明Fock算符在这组自旋轨道下的的矩阵表示是对角的, 其对角元就是轨道能量：
 \begin{align}
@@ -439,7 +439,7 @@ f\ket{\chi_j} = \epsilon_k\ket{\chi_j}\quad j = 1,2,\ldots,\infty
 \epsilon_i & = \braket{\chi_i|h|\chi_i} = \braket{\chi_i|h+\sum_b(\scr{J}_b-\scr{K}_b)|\chi_i}\notag\\
            & = \braket{\chi_i|h|\chi_i} + \sum_b\braket{\chi_i|\scr{J}_b|\chi_i} - \braket{\chi_i|\scr{K}_b|\chi_i}\notag\\
            & = \braket{i|h|i} + \sum_b\braket{ib|ib} - \braket{ib|bi}\notag\\
-           & = \braket{i|h|i} + \sum_b\bra{ib||ib}
+           & = \braket{i|h|i} + \sum_b\braket{ib||ib}
 \label{3.72}
 \end{align}
 此处我们根据交换、库伦算符的定义, 使用了如下等式：
@@ -462,7 +462,7 @@ f\ket{\chi_j} = \epsilon_k\ket{\chi_j}\quad j = 1,2,\ldots,\infty
 \begin{align}
 \label{3.78}
 \epsilon_a & = \braket{a|h|a} + \sum_{b\neq a}\braket{ab|ab} - \braket{ab|ba}\\
-\epsilon_r & = \braket{r|h|r} + \sum_{b=1}^{N}\braket{rb||rb} -\braket{rb|br}
+\epsilon_r & = \braket{r|h|r} + \sum_{b=1}^{N}\braket{rb|rb} - \braket{rb|br}
 \label{3.79}
 \end{align}
 现在来看这两个式子. 轨道能量$\epsilon_a$代表自旋轨道$\ket{\chi_a}$上电子的能量. 由\eqref{3.78}可知这个能量是动能加核吸引势能($\braket{a|h|a}$)再加上与余下的$N-1$个自旋轨道$\ket{\chi_b}$上的$N-1$个电子之间的的库伦($\braket{ab|ab}$)和交换($-\braket{ab|ba}$)作用, 此处$b \neq a$. 正如之前所看到的, 只有当$\ket{\chi_a},\ket{\chi_b}$上的两个电子自旋平行时积分$\braket{ab|ba}$才不为零, 所以在一般的自旋轨道语言下, 我们并不特别指出电子的自旋, 所以对所有的电子-电子相互作用我们都写出这项$\braket{ab|ba}$, 虽然其中有一些会为零.
@@ -484,7 +484,7 @@ E_0 \neq \sum_a^N \epsilon_a
 \end{align}
 $\ket{\Psi_0}$的总能不是所有轨道能量之和. 原因如下. 能量$\epsilon_a$中包括$\chi_a$上的电子与其余占据轨道(例如$\chi_b$)上的电子之间的库伦和交换作用. 但$\epsilon_b$也包括$\chi_b$电子与其余自旋轨道(如$\chi_a$)上的电子之间的库伦和交换作用. 因此当对$\epsilon_a,\epsilon_b$作加法时, $\chi_a,\chi_b$上的两个电子之间的相互作用被计入了两次. 这就是总能$E_0$的正确表达式\eqref{3.81}想对与轨道能量之和$(3.80)$多出因子$\frac{1}{2}$的原因.
 
-若总能并非轨道能量之和, 那么我们可以为轨道能量赋予何种物理意义？从$\ket{\Psi_0}=\ket{^N\Psi_0}=\ket{\chi_a\chi_2\cdots\chi_c\cdots\chi_N}$中挪去或加上一个电子这个过程可为我们提供答案. 设想要从$c$自旋轨道中挪去电子以生成一个$(N-1)$-电子的单行列式态$\ket{^{N-1}\Psi_c}$, 该波函数中的$N-1$个自旋轨道与$\ket{^N\Psi_0}$中的完全相同. 在二次量子化语言下, 这就是将$\chi_c$中的电子湮灭, 如果不关心正负号(within a sign), 我们可以写出下式
+若总能并非轨道能量之和, 那么我们可以为轨道能量赋予何种物理意义？从$\ket{\Psi_0}=\ket{^N\Psi_0}=\ket{\chi_1\chi_2\cdots\chi_c\cdots\chi_N}$中挪去或加上一个电子这个过程可为我们提供答案. 设想要从$c$自旋轨道中挪去电子以生成一个$(N-1)$-电子的单行列式态$\ket{^{N-1}\Psi_c}$, 该波函数中的$N-1$个自旋轨道与$\ket{^N\Psi_0}$中的完全相同. 在二次量子化语言下, 这就是将$\chi_c$中的电子湮灭, 如果不关心正负号(within a sign), 我们可以写出下式
 \begin{align}
 \ket{^{N-1}\Psi_c} = a_c\ket{^N\Psi_0}
 \end{align}
@@ -555,13 +555,13 @@ E = \sum_i^\mathrm{occ} \braket{i|h|i} + \frac{1}{2}\sum^\mathrm{occ}_i\sum^\mat
 
 以上结果首先有Koopman导出. 现在是时候给出Koopmans定理的具体陈述了.
 
-\textbf{Koopmans定理} 给定一个$N$-电子\hft 单行列式$\ket{^N\Psi_0}$, 其中占据和虚自旋轨道能量分别为$\epsilon_a,\epsilon_r$, 则从$\chi_a$中挪去一个电子, 保持其余轨道不变, 会产生一个$(N-1)$-电子单行列式$\ket{^{N-1}\Psi_a}$, 这个过程对应的电离能是$-\epsilon_a$. 在虚轨道$\chi_r$上增加一个电子, 保持自旋轨道不变, 生成一个$(N+1)$电子单行列式$\ket{^{N+1}\Psi^r}$, 此过程的电子亲和能为$-\epsilon_r$.
+\textbf{Koopmans定理}\ 给定一个$N$-电子\hft 单行列式$\ket{^N\Psi_0}$, 其中占据和虚自旋轨道能量分别为$\epsilon_a,\epsilon_r$, 则从$\chi_a$中挪去一个电子, 保持其余轨道不变, 会产生一个$(N-1)$-电子单行列式$\ket{^{N-1}\Psi_a}$, 这个过程对应的电离能是$-\epsilon_a$. 在虚轨道$\chi_r$上增加一个电子, 保持自旋轨道不变, 生成一个$(N+1)$电子单行列式$\ket{^{N+1}\Psi^r}$, 此过程的电子亲和能为$-\epsilon_r$.
 
 Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. 这种“冻结轨道”近似是假设$(N\pm1)$-电子态(就是正/负离子, 如果$\ket{^N\Psi_0}$为中性物种)中的自旋轨道与$N$-电子态中的一样. 这个近似忽略了$(N\pm1)$-电子态中自旋轨道的弛豫, 就是说, $\ket{^N\Psi_0}$中的自旋轨道并非$\ket{^{N-1}\Psi_a}$/$\ket{^{N+1}\Psi^r}$的最优自旋轨道. 如果分别再用另外的\hft 计算优化这两个态, 则$^{N-1}E_a,^{N+1}E^r$的能量要减少. 因此Koopmans定理忽略了弛豫会使算出的电离能和电子亲和能过正. 当然除此之外, 对波函数作单行列式金色也会产生误差, 即\emph{相关效应}, 通过\hft 之外的办法可以计算, 可对Koopmans定理的结果作进一步修正. 实际上, 当系统内电子数目越大时, 相关能也会越大. 因此相关效应会抹掉电离能的一部分弛豫误差, 而在电子亲和能的弛豫误差上再增加误差. 一般来说, Koopmans点滴能是实验电离能值合理的一阶近似, 本章后面会讨论大量的此类计算. 可惜Koopmans电子亲和能会较差. 很多中性分子增加一个电子可形成稳定的负离子. 单中性分子的\hft 计算常给出正的虚轨道能量. 电子亲和能是非常难以计算的量, 要比电离能难算得多, 除此处外, 本书中我们不会再提到电子亲和能.
 
 \subsection{Brillouin定理}
 \label{sec3.3.2}
-\hft 方程\eqref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 由其中能量最低的$N$个自旋轨道构成的单行列式$\ket{\Psi_0}$就是基态的\hft 近似. 正如上一章讨论的, 由集合$\{\chi_i\}$可以构造相当多的行列式. 知道了Fock算符的形式, 现在是恰好可来证明一个管子这些行列式的子集的定理. 该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\ref{f2.7}). 在精确基态的多行列式表示中, 我们可能会预想, 这些单行列式将给出领头阶修正：
+\hft 方程\eqref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 由其中能量最低的$N$个自旋轨道构成的单行列式$\ket{\Psi_0}$就是基态的\hft 近似. 正如上一章讨论的, 由集合$\{\chi_i\}$可以构造相当多的行列式. 知道了Fock算符的形式, 现在是恰好可来证明一个关于这些行列式的子集的定理. 该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\ref{f2.7}). 在精确基态的多行列式表示中, 我们可能会预想, 这些单行列式将给出领头阶修正：
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0} + \sum_{ra}c_a^r\ket{\Psi_a^r}
 \end{align}
@@ -606,14 +606,14 @@ E_0 & 0\\
 \end{align}
 在这种意义下, \hft 基态可以说是“稳定”的, 因为即使将单激发行列式混入, 结果也不能进一步改进. 现在我们期望双激发行列式$\braket{\Psi_{ab}^{rs}}$会对$\ket{\Psi_0}$有领头且最重要的修正. 这不是说精确基态$\ket{\Phi_0}$中没有单激发行列式$\ket{\Psi_a^r}$成分, 因为它们能通过与双激发行列式的混合间接进入$\ket{\Psi_0}$, 观察矩阵元$\braket{\Psi_a^r|\hs|\Psi_{ab}^{rs}},\braket{\Psi_{ab}^{rs}|\hs|\Psi_0}$就能知道这一点. 以上推出的重要结果就称为Brillouin定理. 
 
-\textbf{Brillouin定理} 单激发行列式$\ket{\Psi_a^r}$不会直接与参考态即Hartree-Fock行列式发生作用, 也即$\braket{\Psi_0|\hs|\Psi_a^r}=0$. 之后几章会大量使用该定理.
+\textbf{Brillouin定理}\ 单激发行列式$\ket{\Psi_a^r}$不会直接与参考态即Hartree-Fock行列式发生作用, 也即$\braket{\Psi_0|\hs|\Psi_a^r}=0$. 之后几章会大量使用该定理.
 \subsection{H-F哈密顿量}
-目前为止, 我们对Hartree-Fock近似的理解就是： 哈密顿是精确的, 而波函数用单Slater行列式来近似. 本节中，为了第六章微扰论中的需要, 提前以另外一种等价但不同的视角研究Hartree-Fock理论, 此时我们主要关注的是\ha 本身.
+目前为止, 我们对Hartree-Fock近似的理解就是： \ha 是精确的, 而波函数用单Slater行列式来近似. 本节中，为了第六章微扰论中的需要, 提前以另外一种等价但不同的视角研究Hartree-Fock理论, 此时我们主要关注的是\ha 本身.
 
 精确的电子薛定谔方程
 \begin{align}
-\hs|\ket{\Phi_0} = \scr{E}_0\ket{\Phi_0}
-\end{align}难以求解, 但可以用变分原理来寻找$\ket{\Phi_0}$的近似$\ket{\Psi_0}$. 那么现在提一个问题：是否存在某些近似的$N$-电子\ha,和本征方程是我们之前精确求解过的？或者说, 是否存在某近似的\ha, 使$\ket{\Psi_0}$就是其精确本征函数？答案是存在. \emph{\hft \ha}定义如下：
+\hs\ket{\Phi_0} = \scr{E}_0\ket{\Phi_0}
+\end{align}难以求解, 但可以用变分原理来寻找$\ket{\Phi_0}$的近似$\ket{\Psi_0}$. 那么现在提一个问题：是否存在某些近似的$N$-电子\ha 和本征方程是我们之前精确求解过的？或者说, 是否存在某近似的\ha, 使$\ket{\Psi_0}$就是其精确本征函数？答案是存在. \emph{\hft{} \ha}定义如下：
 \begin{align}
 \hs_0 = \sum_i^Nf(i)
 \end{align}
