@@ -198,7 +198,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 \begin{equation}
 \Phi(\{\bo{r}_i\};\{\bo{R}_A\}) = \Phi_{\rm elec}(\{\bo{r}\};\{\bo{R}_A\})\Phi_{\rm nucl}(\{\bo{R}_A\})
 \end{equation}
-从现在起,我们仅关心由\ref{2.11}到\ref{2.14}所代表的电子问题, 不把注意力放在振动-转动问题上.以后的表述中将舍弃下标"$\rm elec$",  这意味着仅考虑电子哈密顿量和电子波函数. 在必要和方便的时候, 我们会区分\ref{2.13}所带表的电子能量和\ref{2.14}所代表的总能量 (后者中包括核-核排斥能).
+从现在起,我们仅关心由\ref{2.11}到\ref{2.14}所代表的电子问题, 不把注意力放在振动-转动问题上.以后的表述中将舍弃下标``$\rm elec$",  这意味着仅考虑电子哈密顿量和电子波函数. 在必要和方便的时候, 我们会区分\ref{2.13}所带表的电子能量和\ref{2.14}所代表的总能量 (后者中包括核-核排斥能).
 
 \subsection{反对称/Pauli不相容原理}
 \label{sec2.1.3}
@@ -240,7 +240,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
  
  \subsection{自旋轨道与空间轨道}
  \label{sec2.2.1}
- \emph{轨道}就是单粒子(这里是一个电子)的波函数. 我们关心分子中的电子, 所以将分子中电子的波函数叫作\emph{分子轨道}. 而所谓\emph{空间轨道}$\psi_i(\bo{r})$, 则是位置矢量 $\bo{r}$的函数, 用来描述电子的空间分布: $|\psi_i(\bo{r})|^2\dd \bo{r}$即在包含$\bo{r}$的体积微元$\dd\bo{r}$中找到电子的概率. 常认为为空间分子轨道构成一组正交基
+ \emph{轨道}就是单粒子(这里是一个电子)的波函数. 我们关心分子中的电子, 所以将分子中电子的波函数叫作\emph{分子轨道}. 而所谓\emph{空间轨道}$\psi_i(\bo{r})$, 则是位置矢量 $\bo{r}$的函数, 用来描述电子的空间分布: $|\psi_i(\bo{r})|^2\dd \bo{r}$即在包含$\bo{r}$的体积微元$\dd\bo{r}$中找到电子的概率. 常认为空间分子轨道构成一组正交基
  \begin{equation}
  \int\dd\bo{r}\psi_i^*(\bo{r})\psi_j(\bo{r})=\delta_{ij}
  \end{equation}
@@ -248,7 +248,7 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
  \begin{equation}
  f(\bo{r})=\sum_{i=1}^{\infty}a_i\psi_i(\bo{r})
  \end{equation}
-其中$a_i$是常系数. 绝大多数情况, 这个集合想要完备则其元素必须无限多, 但实际运算时不可能用到完备集, 而是只用其中有限的一部分$\{\psi_i|i=1,2,\cdots,K\}$(共$K$个轨道). 这个有限集合只是完备集中特定的一部分, 使用这$K$个轨道来展开, 我们就认为这种展开在这个子空间中是"精确"的了.
+其中$a_i$是常系数. 绝大多数情况, 这个集合想要完备则其元素必须无限多, 但实际运算时不可能用到完备集, 而是只用其中有限的一部分$\{\psi_i|i=1,2,\cdots,K\}$(共$K$个轨道). 这个有限集合只是完备集中特定的一部分, 使用这$K$个轨道来展开, 我们就认为这种展开在这个子空间中是``精确"的了.
 
 为完整描述一个电子, 需要指定电子自旋. 描述电子自旋的完备集包括两个相互正交的函数$\alpha(\omega),\,\beta(\omega)$, 代表自旋朝上($\uparrow$)和自旋朝下($\downarrow$). 描述自旋和空间两部分的波函数叫作\emph{自旋轨道},$\chi(\bo{x})$,其中$\bo{x}$代表自旋坐标与空间坐标(式\ref{2.21}). 每个空间轨道都可以构造两个自旋轨道--一个对应自旋向上,一个对应向下, 只需要将空间轨道乘以$\alpha$或$\beta$即可, 如下式:
 \begin{equation}
@@ -329,7 +329,7 @@ Hartree积是独立电子波函数(或者叫无相关波函数, uncorrelated), �
 |\chi_i(\bo{x_1})|^2\dd\bo{x_1}|\chi_j(\bo{x_2})|^2\dd\bo{x_2}\cdots|\chi_k(\bo{x_N})|^2\dd\bo{x_N}
 \end{equation*}
 
-即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 因为红心的概率和A的概率是不相关的(独立的). Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 但实际上, 电子1和2每时每刻都在通过Colomb(库伦)作用相互排斥, 电子1会尽可能避开电子2所在的区域, 所以两个电子之间明显是相互关联着的. 举个相关概率的例子: 2个热土豆和2个冷苹果放在桶内, 随机取一个处来, 取到热的东西的概率是1/2, 取到土豆的概率是1/2, 但取到热土豆的概率是1/2, 不等于前两者之积, 原因是"热"属性和"土豆"属性完全是相互关联着的.
+即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 因为红心的概率和A的概率是不相关的(独立的). Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 但实际上, 电子1和2每时每刻都在通过Colomb(库伦)作用相互排斥, 电子1会尽可能避开电子2所在的区域, 所以两个电子之间明显是相互关联着的. 举个相关概率的例子: 2个热土豆和2个冷苹果放在桶内, 随机取一个处来, 取到热的东西的概率是1/2, 取到土豆的概率是1/2, 但取到热土豆的概率是1/2, 不等于前两者之积, 原因是``热"属性和``土豆"属性完全是相互关联着的.
 
 即使假设电子相互独立, 哈密顿量取\ref{2.28}的形式, Hartree积仍有天然的缺陷: 它将电子1放在$\chi_i$轨道上, 电子2放在$\chi_j$轨道上, 把它们很明显地区分开来, 而没有考虑到电子之间不可分辨. 反对称原理不区分全同的电子, 它要求电子波函数在交换任意两个电子坐标的操作下必须反对称(改变正负).
 \subsection{Slater行列式}
@@ -430,7 +430,7 @@ $(N!)^{-1/2}$是归一化因子. 这个Slater行列式代表N个电子占据N个
 \begin{align}
 \label{2.45}
 P(\mathbf{r}_1,\mathbf{r}_2)\dd\bo{r_1}\dd\bo{r_2}&=\int\dd\omega_1\dd\omega_2|\Psi|^2\db{r_1}\db{r_2}\notag\\
-&=\frac{1}{2}\left[|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\right]
+&=\frac{1}{2}\left[|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\right]\db{r_1}\db{r_2}
 \end{align}
 
 \begin{figure}[h]
@@ -501,7 +501,7 @@ P(\bo{r_1,r_2})&=\frac{1}{2}\big\{|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi
 \begin{equation}
 E_0=\braket{\Psi_0|\scr{H}|\Psi_0}
 \end{equation}
-$\scr{H}$是全电子哈密顿量. 变分中可变动的地方就是\ref{2.50}中的自旋轨道. 选择不同的自旋轨道, 求出最小能量, 由此可以导出一个方程:Hartree-Fock方程, 它决定了最优的自旋轨道. 第三章将会证明Hartree-Fock方程是如下的本征值方程:
+$\scr{H}$是全电子哈密顿量. 变分中可变动的地方就是\ref{2.50}中的自旋轨道. 选择不同的自旋轨道, 求出最小能量, 由此可以导出一个方程: Hartree-Fock方程, 它决定了最优的自旋轨道. 第三章将会证明Hartree-Fock方程是如下的本征值方程:
 \begin{equation}
 f(i)\chi(\bo{x}_i)=\epsilon\chi(\bo{x}_i)
 \label{2.52}
@@ -511,7 +511,7 @@ $f(i)$是一有效单电子算符,叫Fock算符, 其形式为:
 \label{2.53}
 f(i)=-\frac{1}{2}\nabla_i^2 - \sum_{A=1}^M\frac{Z_A}{r_{iA}} + v^{\rm HF}(i)
 \end{equation}
-$v^{HF\rm}(i)$是i电子感受到其他电子对其造成的平均势, 其定义会在第三章给出. Hartree-Fock近似的精髓在于将复杂的多电子问题转换为单电子问题, 而单电子问题是以平均的方式处理电子之间的排斥.
+$v^{\rm HF}(i)$是i电子感受到其他电子对其造成的平均势, 其定义会在第三章给出. Hartree-Fock近似的精髓在于将复杂的多电子问题转换为单电子问题, 而单电子问题是以平均的方式处理电子之间的排斥.
 
 Hartree-Fock势$v^{\rm HF}(i)$, 或者叫作i电子感受到的场, 由其他电子的自旋轨道决定(即Fock算符依赖于它的本征函数).  因此Hartree-Fock方程\ref{2.52}是非线性方程, 只能迭代求解. 求解HF方程的办法叫作自洽场(self-consistent-field, SCF)方法.
 
@@ -746,7 +746,7 @@ Hartree-Fock这种手续生成一组$2K$个自旋轨道$\{\chi_i\}$. Hartree-Foc
 		\draw (0,5.5)--+(1.5,0)node[right]{$\chi_{2K}$};
 		\draw[arrows =-latex] (.1,1.2)--++(0,3.1);
 		\draw[arrows =-latex] (.3,1.6)--(.3,4.7);
-		\draw (-.7,2)node{$\displaystyle\ket{\Psi_a^r}$};
+		\draw (-.7,2)node{$\displaystyle\ket{\Psi_{ab}^{rs}}$};
 		
 		\end{tikzpicture}\end{minipage}\qquad
 	\begin{minipage}[t]{0.6\textwidth}
@@ -777,7 +777,7 @@ a_i(x_2)=\sum_jb_{ij}\chi_j(x_2)
 \begin{equation}
 \Phi(x_1,x_2)=-\Phi(x_2,x_1)
 \end{equation}
-那么$b_{ij}=-b{ji},b_{ii}=0$, 那么
+那么$b_{ij}=-b_{ji},b_{ii}=0$, 那么
 \begin{equation}
 \begin{split}
 \Phi(x_1,x_2)&=\sum_i\sum_{j>i}b_{ij}[\chi_i(x_1)\chi_j(x_2)-\chi_j(x_1)\chi_i(x_2)]\\
@@ -790,7 +790,7 @@ a_i(x_2)=\sum_jb_{ij}\chi_j(x_2)
 \begin{equation}
 \ket{\Phi}=c_0\ket{\Psi_0}+\sum_{ra}c_a^r\ket{\Psi_a^r}+\sum_{\substack{a<b\\r<s}}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}+\sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+\cdots
 \end{equation}
-求和号下的$a<b$是指对所有$a$以及所有大于$a$的$b$求和(即对所有的占据轨道对进行求和). 同样, $r<s$代表对所有虚轨道对进行求和. 由此, 展开中就包含了所有双激发组态. 三重和更高激发行列式的情况是一样的. 所以, 无穷集合$\{\ket{\Psi_i} \}=\{\ket{\Psi_0}, \ket{\Psi_a^r}, \ket{\Psi_{ab}^{rs}}, \cdots \}$就是完备集, 可用于展开$N$电子波函数. 由完备集$\ket{\Psi_i}$生成的哈密顿算符矩阵, 其本征值就是基态和激发态的准确能量即(哈密顿算符矩阵即矩阵元为$\braket{\Psi_i|\scr{H}|\Psi_j
+求和号下的$a<b$是指对所有$a$以及所有大于$a$的$b$求和(即对所有的占据轨道对进行求和). 同样, $r<s$代表对所有虚轨道对进行求和. 由此, 展开中就包含了所有双激发组态. 三重和更高激发行列式的情况是一样的. 所以, 无穷集合$\{\ket{\Psi_i} \}=\{\ket{\Psi_0}, \ket{\Psi_a^r}, \ket{\Psi_{ab}^{rs}}, \cdots \}$就是完备集, 可用于展开$N$电子波函数. 由完备集$\ket{\Psi_i}$生成的哈密顿算符矩阵, 其本征值就是基态和激发态的准确能量(哈密顿算符矩阵即矩阵元为$\braket{\Psi_i|\scr{H}|\Psi_j
 }$的矩阵.) 由于每个$\ket{\Psi_i}$都对应一种自旋轨道的组态(组态即生成$\ket{\Psi_i}$的那些自旋轨道), 所以这种方法叫作\emph{组态相互作用configuration interaction ({CI\rm})}. CI在第四章有详细阐述. 哈密顿矩阵的最低本征值, 记为$\scr{E}_0$, 就是Born-Oppenheimer近似下体系精确的非相对论基态能量. 这个能量与Hartree-Fock极限能量$E_0$的差值就叫作\emph{相关能}:
 \begin{equation}
 E_{\mathrm{corr}}=\scr{E}_0-E_0
@@ -908,7 +908,7 @@ width=.7\textwidth,]
 \mathscr{H}&=\left( -\frac{1}{2}\nabla_1^2 - \sum_A\frac{Z_A}{r_{1A}} \right) + \left( -\frac{1}{2}\nabla_2^2 - \sum_A\frac{Z_A}{r_{2A}} \right) + \frac{1}{r_{12}}\notag\\
 &=h(1) + h(2) + \frac{1}{r_{12}}
 \end{align}
-其中$h(1)$是电子1的"核哈密顿量", 代表电子在核的势场中的动能和势能, 此即"核哈密顿量"的由来. 为了方便, 将总哈密顿量分成单电子和双电子部分:
+其中$h(1)$是电子1的``核哈密顿量", 代表电子在核的势场中的动能和势能, 此即``核哈密顿量"的由来. 为了方便, 将总哈密顿量分成单电子和双电子部分:
 \begin{align}
 \mathcal{O}_1&=h(1)+h(2)
 \label{2.81}
@@ -1001,9 +1001,9 @@ Hartree-Fock基态能量就成为
 在推广上面的结果以及给出$N$电子行列式的矩阵元之前，先来总结一下此书中所用的几种不同的单、双电子积分的记号。
 关于自旋轨道的双电子积分已在\eqref{2.90}中提过，即：
 \begin{equation}
-\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
+\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
 \end{equation}
-这种记发常叫作物理学家的记号。注意自旋轨道的复共轭并排出现在积分的左边，并且电子1的空间自旋坐标先出现。从以上定义可以知道：
+这种记法常叫作物理学家的记号。注意自旋轨道的复共轭并排出现在积分的左边，并且电子1的空间自旋坐标先出现。从以上定义可以知道：
 \begin{equation}
 \braket{ij|kl}=\braket{ji|lk}
 \end{equation}
@@ -1014,7 +1014,7 @@ Hartree-Fock基态能量就成为
 由于双电子积分经常以如下的组合形式出现，在此引入一个特别的记号来表示\emph{反对称}双电子积分：
 \begin{align}
 \braket{ij||kl}&=\braket{ij|kl} - \braket{ij|lk}\notag\\
-&=\int\dd\bo{x}_1\dd\bo{x}_2\ddx_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)
+&=\int\dd\bo{x}_1\dd\bo{x}_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)
 \end{align}
 其中$\mathscr{P}_{12}$是一个算子，它的效果是交换电子1和2的坐标。注意
 \begin{align}
@@ -1090,7 +1090,7 @@ v(i,j)=r_{ij}^{-1}
 \ket{K}=\ket{\cdots\chi_p\chi_n\cdots}
 \end{align}
 第三，两个行列式中有两个自旋轨道不同，
-$\ket{K}$中的$\chi_m,\chi)n$在$\ket{L}$中变成$\chi_p,\chi)q$，其余都一样：
+$\ket{K}$中的$\chi_m,\chi_n$在$\ket{L}$中变成$\chi_p,\chi_q$，其余都一样：
 \begin{align}
 \ket{K}=\ket{\cdots\chi_p\chi_q\cdots}
 \end{align}
@@ -1158,7 +1158,7 @@ $\ket{K}$中的$\chi_m,\chi)n$在$\ket{L}$中变成$\chi_p,\chi)q$，其余都�
 m\equiv a & p\equiv s\\
 n\equiv b &q\equiv r
 \end{array}\]
-因此有$\braket{\Psi_1|\mathcal{O}_1|\Psi_2}=0$以及$\braket{\Psi_1|\mathcal{O}_2|\Psi_2}$.
+因此有$\braket{\Psi_1|\mathcal{O}_1|\Psi_2}=0$以及$\braket{\Psi_1|\mathcal{O}_2|\Psi_2}=\braket{ab||sr}$.
 
 通过表\ref{t2.3}\ref{t2.4}可以快速写出单个行列式$\ket{K}$的能量：
 \begin{align}
@@ -1171,19 +1171,21 @@ n\equiv b &q\equiv r
 h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 \end{align}
 \eqref{2.107}中的求和是对$\ket{K}$中的占据自旋轨道进行的. 由于(见\eqref{2.97})
+\begin{subequations}
 \begin{align}
-\braket{mm||mm}=\braket{nn|nn}=0
+\braket{mm||mm}=\braket{nn||nn}=0
 \end{align}
 以及
 \begin{align}
-\braket{mn|mn}=\braket{nm||nm}
+\braket{mn||mn}=\braket{nm||nm}
 \end{align}
+\end{subequations}
 \ref{2.107}可以写成：
 \begin{align}
-\braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\frac{1}{2}\sum_m^N\sum_{n>m}^N\braket{mn||mn}\\
+\braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\frac{1}{2}\sum_m^N\sum_{n>m}^N\braket{mn||mn}\notag\\
 =&\sum_m[m|h|m]+\sum_m^N\sum_{n>m}^N[mm|nn]-[mn|nm]
 \end{align}
-反对称双电子积分的求和遍及$\ket{K}$中所有不同的占据自旋轨道对儿$\chi_m,\chi_n$. 这个事实可以帮我们记忆如何把单个行列式对应的能量用关于自旋轨道的单、双电子积分表示出来：\textit{ 每个占据的自旋轨道$\chi_i$各在总能中贡献一个$\braket{i|h|i}$项，并且每一对占据自旋轨道$\chi_i,\chi_j$都贡献一个$\braket{ij||ij}$项。}因此，可将$N$电子体系的总能（在单Slater行列式描述下）视作"单电子能量"(即在$\chi_i$轨道上电子所对应的$\braket{i|h|i}$)之和，再加上每对电子之间的"相互作用能"（$\chi_i,\chi_j$上的电子对应着$\braket{ij||ij}$）之和。在使用这种语言的时候, 要记住这仅是为方便记忆. 物理上, 两电子间的相互作用通过库伦项来体现,而非反对称的双电子积分.
+反对称双电子积分的求和遍及$\ket{K}$中所有不同的占据自旋轨道对儿$\chi_m,\chi_n$. 这个事实可以帮我们记忆如何把单个行列式对应的能量用关于自旋轨道的单、双电子积分表示出来：\textit{ 每个占据的自旋轨道$\chi_i$各在总能中贡献一个$\braket{i|h|i}$项，并且每一对占据自旋轨道$\chi_i,\chi_j$都贡献一个$\braket{ij||ij}$项。}因此，可将$N$电子体系的总能（在单Slater行列式描述下）视作``单电子能量"(即在$\chi_i$轨道上电子所对应的$\braket{i|h|i}$)之和，再加上每对电子之间的``相互作用能"（$\chi_i,\chi_j$上的电子对应着$\braket{ij||ij}$）之和。在使用这种语言的时候, 要记住这仅是为方便记忆. 物理上, 两电子间的相互作用通过库伦项来体现,而非反对称的双电子积分.
 
 \exercise{
 从方程(2.107)推出(2.110)
