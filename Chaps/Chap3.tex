@@ -835,15 +835,15 @@ S_{\mu\nu}=\int\dd{r}_1\,\phi_\mu^*(1)\phi_\nu(1)
 \end{align}
 该矩阵为$K\times K$厄米矩阵(虽然通常是实对称阵). 虽然假设基函数$\{\phi_\mu\}$为归一化且相互线性独立, 但它们一般不相互正交, 因此就互有重叠, 重叠大小为$0\leqslant|S_{\mu\nu}|\leqslant1$, 即$\mathbf{S}$的对角元为$1$非对角元的绝对值都小于$1$. 非对角元的符号取决于两个基函数的相对符号、相对取向及在空间上的分离程度. 若两个非对角元趋近于$1$(按绝对值), 即趋近于完全重叠, 那么两个基函数就趋近线性相关. 由于重叠矩阵为厄米的, 它可被一个酉矩阵对角化, 之后我们会来做这件事. 重叠矩阵的本征值可以证明一定是正数, 因此重叠矩阵是正定矩阵. 基组中的线性相关与重叠矩阵中趋于零的本征值相联系. 重叠矩阵有时也叫作度规矩阵(metric matrix).  
 
-1. \emph{Fock矩阵$\mathbf{F}$}的矩阵元为
+2. \emph{Fock矩阵$\mathbf{F}$}的矩阵元为
 \begin{align}
 F_{\mu\nu} = \int\dd{r}_1\,\phi_\mu^*(1)f(1)\phi_\nu(1)
 \end{align}
-它也是$K\times K$的和米矩阵(虽然常为实对称阵). Fock算符$f(1)$是单电子算符, 任意一组单电子函数即定义该算符的一种矩阵表示. 之前已讨论过Fock算符在自旋轨道下的矩阵元. Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩阵表示.
+它也是$K\times K$的厄米矩阵(虽然常为实对称阵). Fock算符$f(1)$是单电子算符, 任意一组单电子函数即定义该算符的一种矩阵表示. 之前已讨论过Fock算符在自旋轨道下的矩阵元. Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩阵表示.
 
 有了$\mathbf{F,S}$的定义, 就可将积分形式的\hft 方程\eqref{3.135}写为
 \begin{align}
-\sum_\nu F_{\mu\nu} C_{\nu i} = \epsilon_i\sum_{\nu}\S_{\mu\nu}C_{\nu i}\quad i=1,2,\ldots,K
+\sum_\nu F_{\mu\nu} C_{\nu i} = \epsilon_i\sum_{\nu}S_{\mu\nu}C_{\nu i}\quad i=1,2,\ldots,K
 \end{align}
 这组方程就是\emph{Roothaan方程}, 可以写成更紧凑的单个矩阵方程：
 \begin{align}

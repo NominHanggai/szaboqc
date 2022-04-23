@@ -746,7 +746,7 @@ Hartree-Fock这种手续生成一组$2K$个自旋轨道$\{\chi_i\}$. Hartree-Foc
 		\draw (0,5.5)--+(1.5,0)node[right]{$\chi_{2K}$};
 		\draw[arrows =-latex] (.1,1.2)--++(0,3.1);
 		\draw[arrows =-latex] (.3,1.6)--(.3,4.7);
-		\draw (-.7,2)node{$\displaystyle\ket{\Psi_a^r}$};
+		\draw (-.7,2)node{$\displaystyle\ket{\Psi_{ab}^{rs}}$};
 		
 		\end{tikzpicture}\end{minipage}\qquad
 	\begin{minipage}[t]{0.6\textwidth}
@@ -777,7 +777,7 @@ a_i(x_2)=\sum_jb_{ij}\chi_j(x_2)
 \begin{equation}
 \Phi(x_1,x_2)=-\Phi(x_2,x_1)
 \end{equation}
-那么$b_{ij}=-b{ji},b_{ii}=0$, 那么
+那么$b_{ij}=-b_{ji},b_{ii}=0$, 那么
 \begin{equation}
 \begin{split}
 \Phi(x_1,x_2)&=\sum_i\sum_{j>i}b_{ij}[\chi_i(x_1)\chi_j(x_2)-\chi_j(x_1)\chi_i(x_2)]\\
@@ -790,7 +790,7 @@ a_i(x_2)=\sum_jb_{ij}\chi_j(x_2)
 \begin{equation}
 \ket{\Phi}=c_0\ket{\Psi_0}+\sum_{ra}c_a^r\ket{\Psi_a^r}+\sum_{\substack{a<b\\r<s}}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}+\sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+\cdots
 \end{equation}
-求和号下的$a<b$是指对所有$a$以及所有大于$a$的$b$求和(即对所有的占据轨道对进行求和). 同样, $r<s$代表对所有虚轨道对进行求和. 由此, 展开中就包含了所有双激发组态. 三重和更高激发行列式的情况是一样的. 所以, 无穷集合$\{\ket{\Psi_i} \}=\{\ket{\Psi_0}, \ket{\Psi_a^r}, \ket{\Psi_{ab}^{rs}}, \cdots \}$就是完备集, 可用于展开$N$电子波函数. 由完备集$\ket{\Psi_i}$生成的哈密顿算符矩阵, 其本征值就是基态和激发态的准确能量即(哈密顿算符矩阵即矩阵元为$\braket{\Psi_i|\scr{H}|\Psi_j
+求和号下的$a<b$是指对所有$a$以及所有大于$a$的$b$求和(即对所有的占据轨道对进行求和). 同样, $r<s$代表对所有虚轨道对进行求和. 由此, 展开中就包含了所有双激发组态. 三重和更高激发行列式的情况是一样的. 所以, 无穷集合$\{\ket{\Psi_i} \}=\{\ket{\Psi_0}, \ket{\Psi_a^r}, \ket{\Psi_{ab}^{rs}}, \cdots \}$就是完备集, 可用于展开$N$电子波函数. 由完备集$\ket{\Psi_i}$生成的哈密顿算符矩阵, 其本征值就是基态和激发态的准确能量(哈密顿算符矩阵即矩阵元为$\braket{\Psi_i|\scr{H}|\Psi_j
 }$的矩阵.) 由于每个$\ket{\Psi_i}$都对应一种自旋轨道的组态(组态即生成$\ket{\Psi_i}$的那些自旋轨道), 所以这种方法叫作\emph{组态相互作用configuration interaction ({CI\rm})}. CI在第四章有详细阐述. 哈密顿矩阵的最低本征值, 记为$\scr{E}_0$, 就是Born-Oppenheimer近似下体系精确的非相对论基态能量. 这个能量与Hartree-Fock极限能量$E_0$的差值就叫作\emph{相关能}:
 \begin{equation}
 E_{\mathrm{corr}}=\scr{E}_0-E_0
