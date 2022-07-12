@@ -63,15 +63,15 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 		\begin{figure}[H]
 	\[
 	\begin{blockarray}{*{7}{c}}
-	&      &\ket{\Psi_a^r} &\ket{\Psi_{ab}^{rs}}  &\ket{\Psi_{abc}^{rst}} & \ket{\Psi_{abcd}^{rstu}} &\cdots\\
-	&\ket{\Psi_0}& \ket{S}        &\ket{D}&\ket{T}&\ket{Q}&{\cdots}\\
+	                 &                            & \ket{\Psi_a^r}   & \ket{\Psi_{ab}^{rs}} &\ket{\Psi_{abc}^{rst}} & \ket{\Psi_{abcd}^{rstu}} &\cdots\\
+	                 &\ket{\Psi_0}                & \ket{S}          & \ket{D}              &\ket{T}                & \ket{Q}                  &{\cdots}\\
 	\begin{block}{c[cccccc]}
-	\bra{\Psi_0}&\braket{\Psi_0|\mathcal{H}|\Psi_0} & 0 & \braket{\Psi_0|H|D} & 0 & 0 & \cdots\\
-	\bra{S}& &\braket{S|\hs|S} &\braket{S|\hs|D} & \braket{S|\hs|T} & 0 & \cdots\\
-	\bra{D}& && \braket{D|\hs|D}& \braket{D|\hs|T}& \braket{D|\hs|Q}    &\cdots\\
-	\bra{T}& && & \braket{T|\hs|T} & \braket{T|\hs|Q} & \cdots\\
-	\bra{Q}& & & & &\braket{Q|\hs|Q}&\cdots\\
-	{\vdots}&&&&&\vdots\\
+		\bra{\Psi_0} & \braket{\Psi_0|\hs|\Psi_0} & 0                & \braket{\Psi_0|H|D}  & 0                     & 0                        & \cdots \\
+		  \bra{S}    &                            & \braket{S|\hs|S} & \braket{S|\hs|D}     & \braket{S|\hs|T}      & 0                        & \cdots \\
+		  \bra{D}    &                            &                  & \braket{D|\hs|D}     & \braket{D|\hs|T}      & \braket{D|\hs|Q}         & \cdots \\
+		  \bra{T}    &                            &                  &                      & \braket{T|\hs|T}      & \braket{T|\hs|Q}         & \cdots \\
+		  \bra{Q}    &                            &                  &                      &                       & \braket{Q|\hs|Q}         & \cdots \\
+		  {\vdots}   &                            &                  &                      &                       & \vdots                   &
 	\end{block}	
 	\end{blockarray}
 	\]
@@ -105,12 +105,16 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
         $\par
         $\braket{^1\Psi_{aa}^{rr}|\hs-E_0|^1\Psi_{ab}^{rr}} = 2\epsilon_r-\epsilon_a -\epsilon_{b}+ J_{rr} + J_{ab} +K_{ab} -2J_{rb} -2J_{ra} + K_{rb} + K_{ra}
         $\par
-        $\arraycolsep=1.4pt\begin{array}[t]{ll}\braket{^A\Psi_{ab}^{rs}|\hs-E_0|^A\Psi_{ab}^{rs}} =& 
-         \epsilon_{r}+\epsilon_{s}-\epsilon_{a}-\epsilon_{b}+J_{a b}+J_{r s}-K_{a b} \\
-        &-K_{r s}-J_{s b}-J_{s a}-J_{r b}-J_{r a}+\frac{3}{2}\left(K_{s b}+K_{s a}+K_{r b}+K_{r a}\right)\end{array}$\par
         $\arraycolsep=1.4pt
-        \begin{array}[t]{ll}\braket{^B\Psi_{ab}^{rs}|\hs-E_0|^B\Psi_{ab}^{rs}} = &\varepsilon_{r}+\varepsilon_{s}-\varepsilon_{a}-\varepsilon_{b}+J_{a b}+J_{r s}+K_{a b}\\
-        &+K_{r s}-J_{s b}-J_{s a}-J_{r b}-J_{r a}+\frac{1}{2}\left(K_{s b}+K_{s a}+K_{r b}+K_{r a}\right)\end{array}$\par
+        \begin{array}[t]{ll}
+        	\braket{^A\Psi_{ab}^{rs}|\hs-E_0|^A\Psi_{ab}^{rs}} = & \epsilon_{r}+\epsilon_{s}-\epsilon_{a}-\epsilon_{b}+J_{a b}+J_{r s}-K_{a b}                      \\
+        	                                                     & -K_{r s}-J_{s b}-J_{s a}-J_{r b}-J_{r a}+\frac{3}{2}\left(K_{s b}+K_{s a}+K_{r b}+K_{r a}\right)
+        \end{array}$\par
+        $\arraycolsep=1.4pt
+        \begin{array}[t]{ll}
+        	\braket{^B\Psi_{ab}^{rs}|\hs-E_0|^B\Psi_{ab}^{rs}} = & \varepsilon_{r}+\varepsilon_{s}-\varepsilon_{a}-\varepsilon_{b}+J_{a b}+J_{r s}+K_{a b}          \\
+        	                                                     & +K_{r s}-J_{s b}-J_{s a}-J_{r b}-J_{r a}+\frac{1}{2}\left(K_{s b}+K_{s a}+K_{r b}+K_{r a}\right)
+        \end{array}$\par
         $\braket{^A\Psi_{ab}^{rs}|\hs|^B\Psi_{ab}^{rs}}=(3 / 4)^{1 / 2}\left(K_{* b}-K_{\mathrm{sa}}-K_{r b}+K_{r o}\right)$
         \vspace{5pt}
 		\hrule
@@ -325,15 +329,14 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 	\centering
 	\begin{tabular}{ccc}
 		\hline
-		&\multicolumn{2}{c}{组态数目}\\\cline{2-3}
-		占$E_\mathrm{corr}$的百分比&MO(分子轨道)&NO(自然轨道)\\\hline
-		20&14&6 \\
-		40&52&18 \\
-		60&140&50\\
-		80&351&147\\
-		90&617&362\\
-		99&1760&1652\\
-		\hline
+		                           & \multicolumn{2}{c}{组态数目} \\ \cline{2-3}
+		占$E_\mathrm{corr}$的百分比 & MO(分子轨道) &   NO(自然轨道) \\ \hline
+		          20               &    14        &       6       \\
+		          40               &    52        &      18       \\
+		          60               &   140        &      50       \\
+		          80               &   351        &      147      \\
+		          90               &   617        &      362      \\
+		          99               &   1760       &     1652      \\ \hline
 	\end{tabular}
 	\begin{tablenotes}
 		\item[a] I. Shavitt, B. J. Rosenberg, and S. Palalikit, \textit{Int. J. Quantum Chem.} \textbf{S10}: 33 (1976).
@@ -418,7 +421,7 @@ c_A^2 + c_B^2 = 1
 \end{align}
 式中的$\phi_1,\phi_2$分别是以原子核1和2为中心的非正交\emph{原子}轨道($\braket{\phi_1|\phi_2}=S_{12}$). GVB波函数的形式与VB的形式一样:
 \begin{align}
-\ket{\Psi_\mathrm{VB}} = (2(1+S^2))^{-1/2} [u(1)v(2) + u(2)v(1)]2^{-1/2}(\alpha(1)\beta(2)-\alpha(2)\beta(1))
+	\ket{\Psi_\mathrm{VB}} = (2(1+S^2))^{-1/2} [u(1)v(2) + u(2)v(1)]2^{-1/2}(\alpha(1)\beta(2)-\alpha(2)\beta(1))
 \end{align}
 但是非正交的GVB轨道$u,v$($\braket{u|v}=S$)要以变分的方式来确定. 这就是说, 这两个非正交的轨道$u,v$要线用一个基组展开, 展开系数要通过最小化$\ket{\Psi_\mathrm{GVB}}$能量的方式来确定. 因此GVB波函数就是VB波函数的推广, 只是前者要用自洽的方式来得到. GVB方法有许多很好的特点, 其中之一就是它可以正切地描述分子解离为开壳层碎片的过程. 如果使用相同的基组来展开正交的MCSCF轨道($\psi_A,\psi_B$)和非正交的GVB轨道($u,v$), 可以证明(见习题4.9), 最简单的两组态MCSCF波函数(式\eqref{4.48})等价于GVB波函数(式\eqref{4.52}).
 
