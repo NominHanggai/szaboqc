@@ -1,5 +1,5 @@
 \chapter{组态相互作用}
-上一章我们讲了\hft 近似, 虽然它在很多情形下非常成功, 但也有本身的局限. \hft 比如在预测$\text{N}_2$电离势的顺序时, 就会发生\emph{定性}的错误. 另外, 限制性HF方法无法正确描述分子解离为开壳层产物的过程(比如$\hd\to2\text{H}$). 虽然非限制HF方法可以定性正确地描述解离, 但给出的势能取现却不精确. 本书剩余部分讲述改进\hft 近似的几种办法. 我们会关心如何获得相关能($E_\mathrm{corr}$), 即精确的非相对论能量($\mathscr{E}_0$)与完备基组极限下\hft 能量($E_0$)的差值.
+上一章我们讲了\hft 近似, 虽然它在很多情形下非常成功, 但也有本身的局限. \hft 比如在预测$\text{N}_2$电离势的顺序时, 就会发生\emph{定性}的错误. 另外, 限制性HF方法无法正确描述分子解离为开壳层产物的过程(比如$\hd\to2\text{H}$). 虽然非限制HF方法可以定性正确地描述解离, 但给出的势能曲线(或者说势能面)却不精确. 本书剩余部分讲述改进\hft 近似的几种办法. 我们会关心如何获得相关能($E_\mathrm{corr}$), 即精确的非相对论能量($\mathscr{E}_0$)与完备基组极限下\hft 能量($E_0$)的差值.
 \begin{equation}
 E_\mathrm{corr}=\mathscr{E}_0-E_0
 \end{equation}
@@ -15,6 +15,7 @@ E_\mathrm{corr}=\mathscr{E}_0-E_0
 
 \ref{sec4.3}中我们用一些数值计算结果来说明这个理论的一些特点. \ref{sec4.5}中引入自然轨道, 它的重要性质是, 使用自然轨道可以令\phrase{CI展开}收敛得最快. \ref{sec4.5}简要叙述另一种缩小CI展开长度的方法——多组态自洽场(multiconfiguration self-consistent field, MCSCF) 方法. 它的基本思路是用变分原理来确定CI展开中所用的轨道. 这种方法所用的尝试函数包含更少的行列式, 但优化时不仅优化行列式前的展开系数, 而且也优化轨道本身. 最后在\ref{sec4.6}中我们研究一个所有截断CI都有的缺点, 这个缺点导致所有截断CI都没办法用在大体系的计算中, 并引出下一章所介绍的替代方案.
 \section{多组态波函数及Full CI矩阵的结构}
+\label{sec4.1}
 为简单计, 本章假设分子有偶数个电子, 并假设这些分子都能用闭壳层HF行列式$\ket{\Psi_0}$来较好地表示. 设想我们已经求解完毕了有限基下的Roothaan方程, 得到了$2K$个自旋轨道${\chi_i}$. 能量最低的$N$个自旋轨道构成$\ket{\Psi_0}$. 第二章中介绍过, 由这$2K$个 自旋轨道可以构造出很多其他的$N$电子行列式. 将N电子函数和\hft 波函数$\Psi_0$作比较, 指出那里不同, 用这种指出不同的方式来描述$N$电子波函数会很方便. 那么可能的行列式就包含$\ket{\Psi_0}$, 单激发行列式$\ket{\Psi_a^r}$(与$\ket{\Psi_0}$, 一个自旋轨道$\chi_a$被换成$\chi_r$), 双激发行列式$\ket{\Psi_{ab}^{rs}}$等等, 直到$N$重激发行列式. 这些多电子波函数可以构成一组基, 将精确多电子波函数$\ket{\Phi_0}$展开. 如果$\ket{\Psi_0}$是对$\ket{\Phi_0}$的良好近似, 那么从变分原理可以知, 我们能构造一个更好的近似如下(当基组完备时就是精确解):
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}c_{ab}^{rs}}\ket{\Psi_{ab}^{rs}} + \sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}} + \cdots \tag{4.2a}
@@ -43,7 +44,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0} + c_S\ket{S}+c_D\ket{D} + c_T\ket{T} + c_Q\ket{Q} + \cdots
 \end{align}
-式中$\ket{S}$表示单激发的那些项, $\ket{D}$表示双激发的那些项等等. 用这个记号表示的full CI矩阵写在\ref{fig.4.1}中. 下面是一些重要的性质
+式中$\ket{S}$表示单激发的那些项, $\ket{D}$表示双激发的那些项等等. 用这个记号表示的full CI矩阵写在\ref{f4.1}中. 下面是一些重要的性质
 \begin{enumerate}[1.]
 	\item HF基态和单激发组态之间没有耦合, 即$\braket{\Psi_0|\hs|S}=0$. 这是Brillouin定理的结论（见\ref{sec3.3.2}, 定理指出, 所有形如$\braket{\Psi_0|\hs|\Psi_a^r}$的矩阵元都为0）.
 	\item
@@ -60,7 +61,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 	\item
 	计算时所需的所有的矩阵元都可以按\ref{chap2}中给出的规则得到. 如前所述, 计算时要用自旋匹配组态. 在\ref{sec2.5}中对单激发和双激发讨论过这一点. \ref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者也许会想用这些矩阵元规则测试一下自己的才能, 或者通过演算表中的项来测试自己的耐力、
 \end{enumerate}
-		\begin{figure}[H]
+\begin{figure}[H]
 	\[
 	\begin{blockarray}{*{7}{c}}
 	                 &                            & \ket{\Psi_a^r}   & \ket{\Psi_{ab}^{rs}} &\ket{\Psi_{abc}^{rst}} & \ket{\Psi_{abcd}^{rstu}} &\cdots\\
@@ -82,6 +83,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 	\end{align*}
 	\vspace{-30pt}
 	\caption{Full CI矩阵的结构. 该矩阵是hermitian的, 这里只写出了上三角部分.}
+	\label{f4.1}
 \end{figure}
 
 \begin{table}[H]
@@ -89,7 +91,7 @@ c_{ba}^{sr}\ket{\Psi_{ba}^{sr}}
 		\hrule
 		\vspace{5pt}
         单激发\par
-        $\braket{\Psi_0|\hs|\Psi_{ab}^{rs}} = 0$\\
+        $\braket{\Psi_0|\hs|\Psi_{a}^{r}} = 0$\\
         $\braket{^1\Psi_a^r|\hs-\es|^1\Psi_b^s} = (\epsilon_r-\epsilon_a)\delta_{rs}\delta_{ab}-(rs|ba)+2(ra|bs)$
         \par
         \mbox{}\par
@@ -210,8 +212,11 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 
 
 \section{双激发CI}\mbox{}
+\label{sec4.2}
 \section{计算示例}\mbox{}
+\label{sec4.3}
 \section{自然轨道与单粒子约化密度矩阵}
+\label{sec4.4}
 目前为止我们所涉及的行列式和组态都由一组正则\hft 轨道构成。由此得到的CI展开收敛很慢。但很清楚的一点是，任意单电子基构成的$N$-电子组态都可以用来做CI计算。因此，我们可以问，能否找到一组单电子基，由该基组得到的CI展开比\hft 基下的CI展开收敛更快？若是如此，我们就能用更少的组态得到相同的结果。由P.-O L\"owdin引入的\emph{自然轨道}就构成这样一组基。
 
 为定义自然轨道，先来考虑$N$电子系统的一阶密度矩阵。给定一归一化波函数$\Phi$, 则$\Phi(\mathbf{x}_1,\ldots,\mathbf{x}_N)\Phi^*(\mathbf{x}_1,\ldots,\mathbf{x}_N)\ddx_1\cdots\ddx_N$就是电子在$\mathbf{x}_1$附近的\underline{\underline{空间-自旋}体积元}$\ddx_1$内，与此同时另外一个电子在$\mathbf{x}_2$附近的体积元$\ddx_2$内（直到N个电子为止）的概率。若仅对$\mathbf{x}_1$附近的$\ddx_1$内由一个电子的概率感兴趣，不关心其他电子在何处，则须对所有其他电子的\underline{空间-自旋}坐标作平均，也即，对$\mathbf{x}_2,\mathbf{x}_3,\ldots,\mathbf{x}_N$积分：
@@ -386,6 +391,7 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 K. H. Thunemann, J. Romelt, S. D. Peyerimhoff, and R. J. Buenker, A study of the convergence in iterative natural orbital procedures, \textit{Int. J. Quantum Chem}. \textbf{11}: 743 (1977).
 }。
 \section{多组态自洽场与广义价键法}
+\label{sec4.5}
 我们已经知道, 正则\hft 轨道并非CI计算中的最佳选择. 我们现在考虑一个多行列式波函数, 它包含较少的组态. 我们改用什么轨道来构建这些组态, 以得到最优的结果呢? 由变分原理可知, 我们应该令轨道变化, 使能量达到最低. 这个胡言事故多组态自洽场(multiconfiguration self-sonsistent field, MCSCF)方法的中心思想. MCSCF波函数是一种截断的CI展开:
 \begin{align}
 \ket{\Psi_\mathrm{MCSCF}} = \sum_I c_I\ket{\Psi_I}
@@ -429,5 +435,5 @@ c_A^2 + c_B^2 = 1
 
 
 \section{截断CI与尺寸一致性问题}
-
+\label{sec4.6}
 \theendnotes
