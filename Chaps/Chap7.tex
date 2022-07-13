@@ -1,13 +1,62 @@
 \chapter{单粒子多体Green函数}
-格林函数技术是多体理论中最强大的工具之一. 本章就来讨论单粒子多体格林函数(many body Green`s function, MBGF), 它包含了$N$-电子体系的电子亲合度(electron affinity, EA's)和离子化势(ionization potential, IP's)的信息. 在本章中我们会看见, 由MBGF理论, 我们能将在Hatree-Fock近似下通过Koopman's定理得出的EA和IP进行系统地改进提升. 之前讨论微扰论时甚至可以不借助图形技巧和二次量子化, 但格林函数与之前所讨论过的所有方法都不同(它更加繁难). 因此, 想对格林函数作一简介, 就必须把要介绍的内容限制在更加基本的范围内. 我们不讨论格林函数理论的含时部分, 因此也就无法提及格林含时的物理解释——传播子, 这是相当可惜的. 此外, 我们也不讨论双粒子MBGF, 它可以描述$N$-电子体系的激发谱. 此后所有的MBGF都代表单粒子MBGF. 最后一个, 我们也不会讨论MBGF除了描述电离和电子捕获之外的能力, MBGF除了这两个外还包含$N$-电子系统的单粒子密度矩阵和基态能量的信息. 即便如此, 我们仍希望本章对格林函数的介绍能使读者对格林函数由一个初步认识, 以为之后更加高级的处理打好基础.
+格林函数技术是多体理论中最强大的工具之一. 
+本章就来讨论单粒子多体格林函数(many body Green`s function, 
+MBGF), 
+它包含了$N$-电子体系的电子亲合度(electron affinity, 
+EA's)和离子化势(ionization potential, 
+IP's)的信息. 
+在本章中我们会看见, 
+由MBGF理论, 
+我们能将在Hatree-Fock近似下通过Koopman's定理得出的EA和IP进行系统地改进提升. 
+之前讨论微扰论时甚至可以不借助图形技巧和二次量子化, 
+但格林函数与之前所讨论过的所有方法都不同(它更加繁难). 
+因此, 
+想对格林函数作一简介, 
+就必须把要介绍的内容限制在更加基本的范围内. 
+我们不讨论格林函数理论的含时部分, 
+因此也就无法提及格林含时的物理解释——传播子, 
+这是相当可惜的. 
+此外, 
+我们也不讨论双粒子MBGF, 
+它可以描述$N$-电子体系的激发谱. 
+此后所有的MBGF都代表单粒子MBGF. 
+最后一个, 
+我们也不会讨论MBGF除了描述电离和电子捕获之外的能力, 
+MBGF除了这两个外还包含$N$-电子系统的单粒子密度矩阵和基态能量的信息. 
+即便如此, 
+我们仍希望本章对格林函数的介绍能使读者对格林函数由一个初步认识, 
+以为之后更加高级的处理打好基础.
 
-本章开始的第一节会介绍格林函数的源起：它很自然地出现在求解非齐次微分方程的步骤中. 接下来讨论格林函数的性质及在单粒子体系量子力学中的应用. 7.2节中讨论Hartree-Fock近似下的多粒子系统, 并介绍Hartree-Fock格林函数(Hartree-Fock Green's function, HFGF). 7.2.1节讨论如何不借助Hartree-Fock近似而仍保留单粒子的物理图像. 我们会引入一个依赖于能量的势能——自能(self-energy), 并介绍改进Koopmans定理所得的电离势(IP)和电子亲和能(EA)的办法. 7.3节将这个办法运用到极小基$\mathrm{H}_2$和$\mathrm{HeH}^+$上. 7.4节将之前所得的一些东西推广一下, 并研究微扰论和格林函数在计算多电子体系的EA和IP时的异同. 7.5节是一些示例性的计算.
+
+本章开始的第一节会介绍格林函数的源起：它很自然地出现在求解非齐次微分方程的步骤中. 
+接下来讨论格林函数的性质及在单粒子体系量子力学中的应用. 
+7.
+2节中讨论Hartree-Fock近似下的多粒子系统, 
+并介绍Hartree-Fock格林函数(Hartree-Fock Green's function, 
+HFGF). 
+7.
+2.
+1节讨论如何不借助Hartree-Fock近似而仍保留单粒子的物理图像. 
+我们会引入一个依赖于能量的势能——自能(self-energy), 
+并介绍改进Koopmans定理所得的电离势(IP)和电子亲和能(EA)的办法. 
+7.
+3节将这个办法运用到极小基$\mathrm{H}_2$和$\mathrm{HeH}^+$上. 
+7.
+4节将之前所得的一些东西推广一下, 
+并研究微扰论和格林函数在计算多电子体系的EA和IP时的异同. 
+7.
+5节是一些示例性的计算.
+
 \section{单粒子体系的Green函数}
 假设我们想求解如下矩阵方程中的$\mathbf{a}$
 \begin{align}
 (E\mathbf{1} - \mathbf{H}_0)\mathbf{a} = \mathbf{b}
 \end{align}
-其中$E$是一参数, $\mathbf{H}_0$是$N\times N$厄米矩阵, $\mathbf{a,b}$都是列矩阵. 最直接的办法就是求$E\mathbf{1} - \mathbf{H}_0$的逆矩阵(记为$\mathbf{G}_0(E)$),
+其中$E$是一参数, 
+$\mathbf{H}_0$是$N\times N$厄米矩阵, 
+$\mathbf{a,b}$都是列矩阵. 
+最直接的办法就是求$E\mathbf{1} - \mathbf{H}_0$的逆矩阵(记为$\mathbf{G}_0(E)$),
+
 \begin{align}
 \mathbf{G}_0(E) = (E\mathbf{1} - \mathbf{H}_0)^{-1}
 \end{align}
@@ -20,8 +69,15 @@
 \begin{align}
 a_i = \sum_j (\mathbf{G}_0(E))_{ij}b_j\tag{7.3b}
 \end{align}
-只要求得了逆矩阵$\mathbf{G}_0(E)$, 就可按照(7.3)式的矩阵乘法来求解(7.1), 不论$\mathbf{b}$是什么.
-回忆练习1.12c, 那里我们证明过$\mathbf{G}_0(E)$可用$\mathbf{H}_0$的本征矢和本征值：
+只要求得了逆矩阵$\mathbf{G}_0(E)$, 
+就可按照(7.
+3)式的矩阵乘法来求解(7.
+1), 
+不论$\mathbf{b}$是什么.
+
+回忆练习1.
+12c, 
+那里我们证明过$\mathbf{G}_0(E)$可用$\mathbf{H}_0$的本征矢和本征值：
 \begin{align}
 \mathbf{H}_0\mathbf{c}^\alpha = E_\alpha^{(0)} \mathbf{c}^\alpha \quad \alpha = 1,2,\ldots,N 
 \end{align}
@@ -29,7 +85,14 @@ a_i = \sum_j (\mathbf{G}_0(E))_{ij}b_j\tag{7.3b}
 \begin{align}
 (\mathbf{G}_0(E))_{ij} = \sum_\alpha \frac{c_i^\alpha c_j^{\alpha*}}{E - E_{\alpha}^{(0)}}
 \end{align}
-注意当参数$E$等于$\mathbf{H}_0$的本征值时, $\mathbf{G}_0(E)$的每个元素都会“爆炸”, 或者用更技术一点的称呼, $\mathbf{H}_0$的本征值是它们的\emph{极点}. 我们管$\mathbf{G}_0(E)$叫$\mathbf{H}_0$的格林矩阵. 我们马上就会知道, 微分方程的格林函数就是这个矩阵的连续版本.
+注意当参数$E$等于$\mathbf{H}_0$的本征值时, 
+$\mathbf{G}_0(E)$的每个元素都会“爆炸”, 
+或者用更技术一点的称呼, 
+$\mathbf{H}_0$的本征值是它们的\emph{极点}. 
+我们管$\mathbf{G}_0(E)$叫$\mathbf{H}_0$的格林矩阵. 
+我们马上就会知道, 
+微分方程的格林函数就是这个矩阵的连续版本.
+
 \exercise{
 考虑如下矩阵
 \begin{align*}
@@ -58,23 +121,39 @@ $E$是参数, $\mathscr{H}_0$是微分算子, 且是厄米的. 注意这个方�
 a(x) & = \sum_\alpha a_\alpha \psi_\alpha(x)\\
 b(x) & = \sum_\alpha b_\alpha \psi_\alpha(x)\\
 \end{align}
-系数$\{ a_\alpha \}$待定. 由于$b(x)$在原式中已给出, 而且集合$\{ \psi_\alpha(x)\}$是正交归一的, 我们可以方便地得到$b_\alpha$: 用$\psi_\alpha^*$遍乘式(7.9)后对$x$积分：
+系数$\{ a_\alpha \}$待定. 
+由于$b(x)$在原式中已给出, 
+而且集合$\{ \psi_\alpha(x)\}$是正交归一的, 
+我们可以方便地得到$b_\alpha$: 用$\psi_\alpha^*$遍乘式(7.
+9)后对$x$积分：
 \begin{align}
 b_\alpha = \int\dd x'\psi_\alpha^*(x')b(x')
 \end{align}
-将(7.8)(7.9)中的展开带入式(7.7), 可得
+将(7.
+8)(7.
+9)中的展开带入式(7.
+7), 
+可得
 \begin{align*}
 \sum_\alpha (E - \mathscr{H}_0)\psi_\alpha(x) = \sum_\alpha a_\alpha (E - E_\alpha^{(0)}) \psi_\alpha(x) = \sum b_\alpha\psi_\alpha(x)
 \end{align*}
-将上式两边乘以$\psi_\alpha^*$并积分, 得到
+将上式两边乘以$\psi_\alpha^*$并积分, 
+得到
 \begin{align*}
 a_\alpha (E - E_\alpha^{(0)}) = b_{\alpha}
 \end{align*}
-最后, 将上式带入式(7.8), 可得
+最后, 
+将上式带入式(7.
+8), 
+可得
 \begin{align}
 a(x) = \sum_\alpha \frac{b_{\alpha}}{E - E_\alpha^{(0)}} \psi_\alpha(x)
 \end{align}
-到此我们就解决了这个问题. 将这个解重新写一下: 将式(7.10)中$b_\alpha$的表达式带入, 改换求和与积分的次序, 有
+到此我们就解决了这个问题. 
+将这个解重新写一下: 将式(7.
+10)中$b_\alpha$的表达式带入, 
+改换求和与积分的次序, 
+有
 \begin{align}
 a(x) = \int\dd x'\left[ \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x)}{E - E_\alpha^{(0)}} \right] b(x')
 \end{align}
@@ -82,21 +161,40 @@ a(x) = \int\dd x'\left[ \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x)}{E - E_
 \begin{align}
 G_0 (x,x',E) = \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x)}{E - E_\alpha^{(0)}}
 \end{align}
-式(7.12)就能写成：
+式(7.
+12)就能写成：
 \begin{align}
 a(x) = \int\dd x' G_0'(x,x',E)b(x')
 \end{align}
-那么, 如果可以求出$G_0(x,x',E)$, 则求解非齐次微分方程(式(7.6))的问题(包含一个任意的函数$b(x)$)就约化为一个积分问题(式(7.14)). 注意, 这与本节开始所讨论的矩阵问题很相像(比较式(7.14)与式(7.3b), 以及式(7.13)与式(7.5)). 与前面一样, $G_0(x,x',E)$在$E$等于$\mathscr{H}_0$的本征值处有极点.
+那么, 
+如果可以求出$G_0(x,x',E)$, 
+则求解非齐次微分方程(式(7.
+6))的问题(包含一个任意的函数$b(x)$)就约化为一个积分问题(式(7.
+14)). 
+注意, 
+这与本节开始所讨论的矩阵问题很相像(比较式(7.
+14)与式(7.
+3b), 
+以及式(7.
+13)与式(7.
+5)). 
+与前面一样, 
+$G_0(x,x',E)$在$E$等于$\mathscr{H}_0$的本征值处有极点.
 
-接下来寻找$G_0(x,x',E)$所遵守的微分方程. 注意到, 若令$b(x)$为Dirac $\delta$函数：
+
+接下来寻找$G_0(x,x',E)$所遵守的微分方程. 
+注意到, 
+若令$b(x)$为Dirac $\delta$函数：
 \begin{align*}
 b(x) = \delta(x-x')
 \end{align*}
-则式(7.14)给出
+则式(7.
+14)给出
 \begin{align*}
 a(x) = \int\dd x'' G_(x,x',E)\delta(x-x'') = G_0(x,x',E)
 \end{align*}
-也就是说, 所找寻的微分方程为
+也就是说, 
+所找寻的微分方程为
 \begin{align}
 (E - \mathscr{H}_0) G_0(x,x',E) = \delta(x-x')
 \end{align}
@@ -111,6 +209,7 @@ a(x) = \int\dd x'' G_(x,x',E)\delta(x-x'') = G_0(x,x',E)
 \end{align*}
 用恰当的格林函数求出$a(x)$.
 
+
 a. 请用图形的办法使自己确信, $\dd^2/\dd x^2 |x|$(|x|为$x$的绝对值), 正比与Dirac $\delta$函数, 也就是说, 证明$\dd^2/\dd x^2 |x|$在$x=0$时为无穷, 除此外都为$0$.
 
 b. 两边对$x$积分, 求出比例常数, 证明
@@ -122,26 +221,35 @@ c. 由上一条可以知道
 \begin{align*}
 \frac{\dd^2}{\dd x^2} (\frac{1}{2}|x-x'|) = \delta(x-x')
 \end{align*}
-那么算子$\dd^2/\dd x^2$对应的格林函数就是$\frac{1}{2}|x-x'|$. 由式(7.14)有
+那么算子$\dd^2/\dd x^2$对应的格林函数就是$\frac{1}{2}|x-x'|$. 
+由式(7.
+14)有
 \begin{align*}
 a(x) = \frac{1}{2} \int_\alpha^\beta \dd x'|x-x'|b(x')
 \end{align*}
-请验证(只需进行微分就行), 不看(b)中的结果, 上式就是待求的非齐次微分方程的解.
+请验证(只需进行微分就行), 
+不看(b)中的结果, 
+上式就是待求的非齐次微分方程的解.
+
 }
 
 设想有这样一算子：
 \begin{align*}
 \mathscr{H = H}_0 + \mathscr{V}(x)
 \end{align*}
-而且知道$\mathscr{H}_0$对应的格林函数. 为求出$\mathscr{H}$对应的格林函数：
+而且知道$\mathscr{H}_0$对应的格林函数. 
+为求出$\mathscr{H}$对应的格林函数：
 \begin{align}
 (E - \mathscr{H}_0 - \mathscr{V}(x))G(x,x',E) = \delta(x-x')
 \end{align}
-将上式写为与式(7.6)相同的形式：
+将上式写为与式(7.
+6)相同的形式：
 \begin{align*}
 (E - \mathscr{H}_0) G(x,x',E) = \delta(x-x') + \mathscr{V}(x)G(x,x',E)
 \end{align*}
-那么, 上式的解可立即由式(7.14)给出：
+那么, 
+上式的解可立即由式(7.
+14)给出：
 \begin{align*}
 G(x,x',E) = \int\dd x'' G_0(x,x'',E) [ \delta(x''-x') + \mathscr{V}(x)G(x,x',E) ]
 \end{align*}
@@ -150,13 +258,28 @@ G(x,x',E) = \int\dd x'' G_0(x,x'',E) [ \delta(x''-x') + \mathscr{V}(x)G(x,x',E) 
 G(x,x',E) = G_0(x,x',E) + \int\dd x'' [G_0(x,x'',E) \mathscr{V}(x)G(x,x',E) ]\tag{7.17a}
 \end{align}
 \addtocounter{equation}{1}
-由于积分号下的$G(x,x',E)$未知, 上式就叫做关于$G$的积分方程. 注意这就是练习7.1中所得关于矩阵的结果
+由于积分号下的$G(x,x',E)$未知, 
+上式就叫做关于$G$的积分方程. 
+注意这就是练习7.
+1中所得关于矩阵的结果
 \begin{align}
 \mathbf{G}(E) = \mathbf{G}_0(E) + \mathbf{G}_0(E)\mathbf{VG}(E)\tag{7.17b}
 \end{align}
-的连续版本. 实际上, 式(7.17b)就是式(7.17a)在某个完备的正交归一集下的矩阵表示. 如果能求出积分方程(7.17a)得到$G$, 则可以得到$\mathscr{H}_0 + \mathscr{V}$的本征值：只要求出$G$爆炸时所对应的$E$即可.
+的连续版本. 
+实际上, 
+式(7.
+17b)就是式(7.
+17a)在某个完备的正交归一集下的矩阵表示. 
+如果能求出积分方程(7.
+17a)得到$G$, 
+则可以得到$\mathscr{H}_0 + \mathscr{V}$的本征值：只要求出$G$爆炸时所对应的$E$即可.
 
-最后, 用抽象的算符记号重新推导一下式(7.17a)(7.17b). 令
+
+最后, 
+用抽象的算符记号重新推导一下式(7.
+17a)(7.
+17b). 
+令
 \begin{align*}
 \mathscr{g}_0(E) & = (E-\mathscr{H}_0)^{-1}\\
 \mathscr{g}(E)   & = (E-\mathscr{H}_0 - \mathscr{V})^{-1}\\
@@ -165,63 +288,112 @@ G(x,x',E) = G_0(x,x',E) + \int\dd x'' [G_0(x,x'',E) \mathscr{V}(x)G(x,x',E) ]\ta
 \begin{align}
 ( \mathscr{g}(E) )^{-1} = E - \mathscr{H}_0 - \mathscr{V} = (\mathscr{g}(E))^{-1} - \mathscr{V} 
 \end{align}
-左边乘以$\mathscr{g}_0(E)$右边乘以$\mathscr{g}(E)$并整理, 就得到
+左边乘以$\mathscr{g}_0(E)$右边乘以$\mathscr{g}(E)$并整理, 
+就得到
 \begin{align}
 \mathscr{g}(E) = \mathscr{g}_0(E) + \mathscr{g}_0(E)\mathscr{V}\mathscr{g}(E) 
 \end{align}
 
-现在对上面所介绍的框架作一个简单的应用. 考虑一个一维运动的粒子, 所受外势为处在零点的吸引的Dirac $\delta$势：
+现在对上面所介绍的框架作一个简单的应用. 
+考虑一个一维运动的粒子, 
+所受外势为处在零点的吸引的Dirac $\delta$势：
 \begin{align}
 \mathscr{V} = -\delta(x)
 \end{align}
-现计算自由粒子的格林函数$G_0(x,x',E)$并求解积分方程(7.17a)求出$G(x,x',E)$, 然后求出$G(x,x',E)$爆炸时的$E$, 如此得到得束缚态的本征值. 由于$\mathscr{H}_0 = -\frac{1}{2}\dd^2/\dd x^2$, 式(7.15)成为
+现计算自由粒子的格林函数$G_0(x,x',E)$并求解积分方程(7.
+17a)求出$G(x,x',E)$, 
+然后求出$G(x,x',E)$爆炸时的$E$, 
+如此得到得束缚态的本征值. 
+由于$\mathscr{H}_0 = -\frac{1}{2}\dd^2/\dd x^2$, 
+式(7.
+15)成为
 \begin{align}
 \left( E + \frac{1}{2}\frac{\dd^2}{\dd x^2} \right) G_0(x,x',E) = \delta(x-x')
 \end{align}
-上式可以如此求解：现进对该式进行Fourier变换, 然后通过围道积分求出反变换
+上式可以如此求解：现进对该式进行Fourier变换, 
+然后通过围道积分求出反变换
 \endnote{
-可以参考的一本书是, D. Rapp. \text{Quantum Mechanics}, Holt-Reinhart-Winston, New York, 1971, p. 463.
+可以参考的一本书是, 
+D. 
+Rapp. 
+\text{Quantum Mechanics}, 
+Holt-Reinhart-Winston, 
+New York, 
+1971, 
+p. 
+463.
+
 }. 结果是
 \begin{align}
 G_0(x,x',E) = \frac{1}{i(2E)^{1/2}}\exp(i(2E)^{1/2}|x-x'|)
 \end{align}
 其中$|x|$是$x$的绝对值.
+
 \exercise{
-证明式(7.22)给出的结果确实满足式(7.21). 为此读者可能要用到练习(7.2b)中所得的关系式以及需验证$(\dd/\dd x|x|)^2=1,\forall x$.
+证明式(7.
+22)给出的结果确实满足式(7.
+21). 
+为此读者可能要用到练习(7.
+2b)中所得的关系式以及需验证$(\dd/\dd x|x|)^2=1,\forall x$.
+
 }
 
-将式(7.20)带入式(7.17a), 可得
+将式(7.
+20)带入式(7.
+17a), 
+可得
 \begin{align}
 G(x,x',E) & = G_0(x,x',E) - \int\dd x''G_0(x,x',E)\delta(x'')G(x'',x',E)\notag\\
           & = G_0(x,x',E) - G_0(x,0,E)G(0,x',E)
 \end{align}
-注意这个积分方程变成了一个代数方程. 为求得该方程需要知道式右边的$G(0,x',E)$. 那么就令$x=0$, 得到
+注意这个积分方程变成了一个代数方程. 
+为求得该方程需要知道式右边的$G(0,x',E)$. 
+那么就令$x=0$, 
+得到
 \begin{align}
 G(0,x',E) = G_0(0,x',E) - G_0(0,0,E)G(0,x',E)
 \end{align}
-从中求出$G(0,x',E)$, 将结果带回式(7.23), 可得
+从中求出$G(0,x',E)$, 
+将结果带回式(7.
+23), 
+可得
 \begin{align}
 G(x,x',E) = G_0(x,x',E) - \frac{G_0(x,0,E) G_0(0,x',E)}{1 + G_0(0,0,E)}
 \end{align}
-利用式(7.22)中求得的$G_0$, 可得
+利用式(7.
+22)中求得的$G_0$, 
+可得
 \begin{align}
 G(x,x',E) = \frac{1}{i(2E)^{1/2}} \left( \exp(i(2E)^{1/2}|x-x'|) - \frac{\exp(i(2E)^{1/2}|x|+|x;|)}{1+i(2E)^{1/2}} \right)
 \end{align}
-最后需要指明, 上式中非零的$E$想使$G$爆炸, 只有当$i(2E)^{1/2}=-1$时才能实现, 那么$E=-1/2$就是唯一的一个束缚态的能量. 这个结果实际上式一个一般定理的特例：一维下, 任何吸引势能只有一个束缚态.
+最后需要指明, 
+上式中非零的$E$想使$G$爆炸, 
+只有当$i(2E)^{1/2}=-1$时才能实现, 
+那么$E=-1/2$就是唯一的一个束缚态的能量. 
+这个结果实际上式一个一般定理的特例：一维下, 
+任何吸引势能只有一个束缚态.
+
 \exercise{
-将式(7.13)用于$G(x,x',E)$可得
+将式(7.
+13)用于$G(x,x',E)$可得
 \begin{align*}
 \phi_n(x)\phi_n^*(x) = \lim\limits_{E\to E_n} (E-E_n)G(x,x',E)
 \end{align*}
-此处$\phi_n(x)$是$\mathscr{H}$的归一化本征函数, 对应能量为$E_n$. 在$\delta$势阱下, 证明$\phi(x) = \exp(-|x|)$.
+此处$\phi_n(x)$是$\mathscr{H}$的归一化本征函数, 
+对应能量为$E_n$. 
+在$\delta$势阱下, 
+证明$\phi(x) = \exp(-|x|)$.
+
 \Next
 验证$\phi(x) = \exp(-|x|)$确实式如下哈密顿量的本征函数:
 \begin{align}
 \mathscr{H} = -\frac{1}{2}\frac{\dd^2}{\dd x^2} - \delta(x)
 \end{align}
 计算$\mathscr{H}\phi$可只知其本征值为$-\frac{1}{2}$.
+
 \Next
-考虑将格林函数应用到含时量子力学中. 含时\sch 方程是
+考虑将格林函数应用到含时量子力学中. 
+含时\sch 方程是
 \begin{align*}
 i\frac{\partial \phi(x,t)}{\partial t}  = \mathscr{H}\phi(x,t)
 \end{align*}
@@ -230,15 +402,25 @@ i\frac{\partial \phi(x,t)}{\partial t}  = \mathscr{H}\phi(x,t)
 \begin{align*}
 i\frac{\partial G(x,x',t)}{\partial t} = \mathscr{H} G(x,x',t)
 \end{align*} 
-此处$\mathscr{H}$只对$x$进行操作. $t=0$时的初始条件为
+此处$\mathscr{H}$只对$x$进行操作. 
+$t=0$时的初始条件为
 \begin{align*}
 G(x,x',0) = \delta(x-x')
 \end{align*}
-请证明, 对于任意$\psi(x)$, 下式
+请证明, 
+对于任意$\psi(x)$, 
+下式
 \begin{align*}
 \phi(x) = \int\dd x' G(x,x',t)\psi(x')
 \end{align*}
-满足含时\sch 方程, 而且$\phi(x,0)=\psi(x)$. 那么给定任意初始波函数$\psi(x)$, 就可以用此方程求出之后时间的波函数. 按这种办法, $G(x,x',t)$的作用就是将初始波函数沿着时间“传播”到了之后的时刻, 所以又把它叫作传播子.
+满足含时\sch 方程, 
+而且$\phi(x,0)=\psi(x)$. 
+那么给定任意初始波函数$\psi(x)$, 
+就可以用此方程求出之后时间的波函数. 
+按这种办法, 
+$G(x,x',t)$的作用就是将初始波函数沿着时间“传播”到了之后的时刻, 
+所以又把它叫作传播子.
+
 
 \noindent b. 为了和本章所讨论的理论产生联系, 请你证明
 \begin{align*}
@@ -249,7 +431,11 @@ G(x,x',E) & = \lim_{\epsilon\to0}(-i) \int_0^\infty\dd t e^{iEt}e^{-\epsilon t} 
 \begin{align*}
 (E-\mathscr{H})G(x,x',t) = \delta(x - x')
 \end{align*}
-参数$\epsilon(\epsilon>0)$是一个收敛因子, 在计算的最后会设为$0$. \textit{提示：}首先将$G(x,x',t)$的微分方程两边乘以$-ie^{iE-\epsilon}t$, 对$t$积分, 得到
+参数$\epsilon(\epsilon>0)$是一个收敛因子, 
+在计算的最后会设为$0$. 
+\textit{提示：}首先将$G(x,x',t)$的微分方程两边乘以$-ie^{iE-\epsilon}t$, 
+对$t$积分, 
+得到
 \begin{align*}
 \lim\limits_{\epsilon\to 0} \int_0^\infty\dd t e^{iE-\epsilon}t \frac{\partial G(x,x',t}{\partial t} = \mathscr{H} G(x,x',E)
 \end{align*}
@@ -269,23 +455,35 @@ i\frac{\partial}{\partial t}\mathscr{g}(t) = \mathscr{Hg}(t)
 }
 
 \section{单粒子多体Green函数}
-我们以及看到, 在单粒子量子力学中, 格林函数的极点就是哈密顿量的本征值. 为将格林函数推广到多粒子系统中, 先考虑独立粒子图像, 比如Hartree-Fock：
+我们以及看到, 
+在单粒子量子力学中, 
+格林函数的极点就是哈密顿量的本征值. 
+为将格林函数推广到多粒子系统中, 
+先考虑独立粒子图像, 
+比如Hartree-Fock：
 \begin{align*}
 \mathscr{H}_0 = \sum_i f(i)
 \end{align*} 
-在$N$-粒子体系的Hartree-Fock近似下, 可以得到一组自旋轨道和对应轨道能量, 方式就是解如下的本征值问题
+在$N$-粒子体系的Hartree-Fock近似下, 
+可以得到一组自旋轨道和对应轨道能量, 
+方式就是解如下的本征值问题
 \begin{align}
 f\chi_i(\mathbf{x}) = \epsilon_i\chi_i(\mathbf{x})
 \end{align}
-由于$\chi_i$和$\epsilon_i$都是单粒子量, 那么与式(7.13)的办法类似, 可以很自然地定义Hartree-Fock格林函数：
+由于$\chi_i$和$\epsilon_i$都是单粒子量, 
+那么与式(7.
+13)的办法类似, 
+可以很自然地定义Hartree-Fock格林函数：
 \begin{align}
 G_0(\mathbf{x,x'},E) = \sum_i \frac{\chi_i(\mathbf{x})\chi_i^*(\mathbf{x})}{E-\epsilon_i}
 \end{align}
 此处求和遍及所有占据和未占的自旋轨道,
+
 \begin{align}
 G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\epsilon_a} + G_0(\mathbf{x,x'},E) = \sum_r \frac{\chi_r(\mathbf{x})\chi_r^*(\mathbf{x})}{E-\epsilon_r}
 \end{align}
-以HF自旋轨道作基, HFGF的矩阵表示写作：
+以HF自旋轨道作基, 
+HFGF的矩阵表示写作：
 \begin{align}
 (\mathbf{G}_0(E))_{ij} = \int\dd{x}\dd{x'}\chi_i^*(\mathbf{x})G_0(\mathbf{x,x'},E)\chi_j(\mathbf{x'}) = \frac{\delta_{ij}}{E - \epsilon_i}
 \end{align}
@@ -293,31 +491,63 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \begin{align}
 \mathbf{G}_0(E) = (E\mathbf{1} - \bm{\epsilon})^{-1}
 \end{align}
-其中$\bm{\epsilon}$是一对角矩阵, 其矩阵元就是HF轨道的能量. 从现在其当我们说道MBGF时, 特指以$N$-粒子体系的HF轨道为基时MBGF的矩阵表示.  当$(E\bm{1-\epsilon})$不存在(即值为无穷)时, $\mathbf{G}_0(E)$在$E$的值处有极点. 只有当行列式为零时一个矩阵的逆才不存在, 因而当
+其中$\bm{\epsilon}$是一对角矩阵, 
+其矩阵元就是HF轨道的能量. 
+从现在其当我们说道MBGF时, 
+特指以$N$-粒子体系的HF轨道为基时MBGF的矩阵表示. 
+ 当$(E\bm{1-\epsilon})$不存在(即值为无穷)时, 
+$\mathbf{G}_0(E)$在$E$的值处有极点. 
+只有当行列式为零时一个矩阵的逆才不存在, 
+因而当
 \begin{align*}
 \det(E\bm{1-\epsilon})=0
 \end{align*}
-时, $\mathbf{G}_0(E)$在$E$处有极点.
+时, 
+$\mathbf{G}_0(E)$在$E$处有极点.
 
-由于$\bm{\epsilon}$时对角矩阵, 我们有
+
+由于$\bm{\epsilon}$时对角矩阵, 
+我们有
 \begin{align}
 \det(E\bm{1-\epsilon}) = \pod_i (E-\epsilon_i) = 0
 \end{align}
-那么HFGF在\hft 轨道能量处有极点. 这个结果在式(7.30)中很明显.
+那么HFGF在\hft 轨道能量处有极点. 
+这个结果在式(7.
+30)中很明显.
 
-回忆Koopmans定理, 该定理称，轨道能量与$N$-粒子系统的电离势和电子亲和势有关. 特别地, 若$\ket{{}^N\Psi_0}$是$N$-粒子系统的\hft 波函数, 且${}^{N-1}\Psi_0$是直接从自旋轨道$c$中挪去一个电子所得的波函数，也就是$N-1$-电子体系的近似波函数。那么
+
+回忆Koopmans定理, 
+该定理称，
+轨道能量与$N$-粒子系统的电离势和电子亲和势有关. 
+特别地, 
+若$\ket{{}^N\Psi_0}$是$N$-粒子系统的\hft 波函数, 
+且${}^{N-1}\Psi_0$是直接从自旋轨道$c$中挪去一个电子所得的波函数，
+也就是$N-1$-电子体系的近似波函数。
+那么
 \begin{align}
 -\mathrm{IP} = \epsilon_c = \braket{{}^N\Psi_0|\hs|{}^{N-1}\Psi_0} - \braket{{}^{N-1}\Psi_c|\hs|{}^{N-1}\Psi_c}
 \end{align}
 类似地,
+
 \begin{align}
 -\mathrm{EA} = \epsilon_r = \braket{^{N+1}\Psi^r|\hs| ^{N+1}\Psi^r} - \braket{^{N}\Psi_0|\hs|^{N}\Psi_0}
 \end{align}
-其中$\ket{^{N+1}\Psi^r}$就是将一个电子放入$r$自旋轨道中所得的$(N+1)$-粒子系统近似波函数. 如我们在第三章讨论的, 轨道能量并不对应精确的IP和EA, 原因有两个. 第一,$\ket{^{N-1}\Psi_c},\ket{^{N+1}\Psi_c}$不是(N-1)、(N+1)-粒子系统的精确HF波函数, 因为它们包含$N$-粒子系统的自旋轨道. 一般而言, $N-1,N,N+1$系统的HF轨道互不相同. 因此$(N-1)$-粒子系统(从$N$-粒子系统的$c$自旋轨道中挪去一个电子所得)的HF能量是：
+其中$\ket{^{N+1}\Psi^r}$就是将一个电子放入$r$自旋轨道中所得的$(N+1)$-粒子系统近似波函数. 
+如我们在第三章讨论的, 
+轨道能量并不对应精确的IP和EA, 
+原因有两个. 
+第一,
+$\ket{^{N-1}\Psi_c},\ket{^{N+1}\Psi_c}$不是(N-1)、(N+1)-粒子系统的精确HF波函数, 
+因为它们包含$N$-粒子系统的自旋轨道. 
+一般而言, 
+$N-1,N,N+1$系统的HF轨道互不相同. 
+因此$(N-1)$-粒子系统(从$N$-粒子系统的$c$自旋轨道中挪去一个电子所得)的HF能量是：
 \begin{align}
 {}^{N-1}E_0(c) = \braket{{}^{N-1}\Psi_c|\hs|{}^{N-1}\Psi_c} + {}^{N-1}E_R(c)
 \end{align}
-式中${}^{N-1}E_R(c)$这项叫作\emph{弛豫能(relaxation energy)}. 第二, 必须考虑$N$和$N\pm1$系统的相关能：
+式中${}^{N-1}E_R(c)$这项叫作\emph{弛豫能(relaxation energy)}. 
+第二, 
+必须考虑$N$和$N\pm1$系统的相关能：
 \begin{align}
 {}^N\scr{E}_0 = {}^NE_0 + {}^NE_\mathrm{corr}\tag{7.34a}
 \end{align}
@@ -326,41 +556,115 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \begin{align}
 {}^{N-1}\scr{E}_0(c) = {}^{N-1}E_0(c) + {}^{N-1}E_\mathrm{corr}(c)\tag{7.34b}
 \end{align}
-因此, 精确的电离势可以写作：
+因此, 
+精确的电离势可以写作：
 \begin{align}
 -\mathrm{IP} & = {}^N\scr{E}_0 - {}^{N-1}\scr{E}_0(c)\notag\\
              & = \epsilon_c - {}^{N-1}E_R(c) + ({}^NE_\mathrm{corr} - {}^{N-1}\scr{E}_0(c))
 \end{align}
-其中我们使用了式(7.32a)(7.33)(7.34a,b). 因此欲得到精确的IP, 则Koopmans定理的结果必须用$(N-1)$-粒子系统的弛豫能以及$N$和$(N-1)$粒子系统之间的相关能之差来修正. 电子亲和能也如此. 
+其中我们使用了式(7.
+32a)(7.
+33)(7.
+34a,
+b). 
+因此欲得到精确的IP, 
+则Koopmans定理的结果必须用$(N-1)$-粒子系统的弛豫能以及$N$和$(N-1)$粒子系统之间的相关能之差来修正. 
+电子亲和能也如此. 
+
 \subsection{自能}
-我们已经知道HFGF($\mathbf{G}_0(E)$)的极点就是$E$的值, 对应$N$和$(N\pm1)$-粒子系统的近似能量差(即按轨道能量). 不难猜测, HFGF是\emph{精确}MBGF $\mathbf{G}(E)$的近似, 后者的极点对应$N$和$(N\pm1)$-粒子系统间的精确能量差. 注意7.1节中的“单体”格林函数的极点对应\ha 的本征值, 而“多体”格林函数的极点对应本征值间的差值. 若已得到$\mathbf{G}(E)$, 或退一步讲, 得到了比$\mathbf{G}_0(E)$更好的一个近似, 接下来就能得出比Koopmans定理中的IP和EA更准确的值, 与此同时保留HF理论的单粒子图像. 初看读者可能会觉得无法构建这样的\emph{精确}单粒子理论, 因为\ha 中包含双粒子作用. F. Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势, 称作\emph{自能}. 进一步, 他证明精确的$\mathbf{G}(E)$满足如下积分方程(称作\emph{Dyson方程}):
+我们已经知道HFGF($\mathbf{G}_0(E)$)的极点就是$E$的值, 
+对应$N$和$(N\pm1)$-粒子系统的近似能量差(即按轨道能量). 
+不难猜测, 
+HFGF是\emph{精确}MBGF $\mathbf{G}(E)$的近似, 
+后者的极点对应$N$和$(N\pm1)$-粒子系统间的精确能量差. 
+注意7.
+1节中的“单体”格林函数的极点对应\ha 的本征值, 
+而“多体”格林函数的极点对应本征值间的差值. 
+若已得到$\mathbf{G}(E)$, 
+或退一步讲, 
+得到了比$\mathbf{G}_0(E)$更好的一个近似, 
+接下来就能得出比Koopmans定理中的IP和EA更准确的值, 
+与此同时保留HF理论的单粒子图像. 
+初看读者可能会觉得无法构建这样的\emph{精确}单粒子理论, 
+因为\ha 中包含双粒子作用. 
+F. 
+Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势, 
+称作\emph{自能}. 
+进一步, 
+他证明精确的$\mathbf{G}(E)$满足如下积分方程(称作\emph{Dyson方程}):
 \begin{align}
 \mathbf{G}(E) = \mathbf{G}_0(E) + \mathbf{G}_0(E)\mathbf{\Sigma}(E)\mathbf{G}(E) 
 \end{align}
-其中$\mathbf{\Sigma}(E)$是HF自旋轨道基下精确自能的矩阵表示. 最后, 将$\mathbf{\Sigma}(E)$进行逐项微扰展开
+其中$\mathbf{\Sigma}(E)$是HF自旋轨道基下精确自能的矩阵表示. 
+最后, 
+将$\mathbf{\Sigma}(E)$进行逐项微扰展开
 \begin{align}
 \mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2}(E) + \mathbf{\Sigma}^{(3)}(E) + \cdots
 \end{align}
-特别地, 二阶自能$\mathbf{\Sigma}^{(2)}(E)$的矩阵元为
+特别地, 
+二阶自能$\mathbf{\Sigma}^{(2)}(E)$的矩阵元为
 \begin{align}
 \Sigma_{ij}^{(2)} = \frac{1}{2}\sum_{ars}\frac{\braket{rs||ia}\braket{ja||rs}}{E+\epsilon_a-\epsilon_r-\epsilon_s} + 
 \frac{1}{2}\sum_{abr}\frac{\braket{ab||ir}\braket{jr||ab}}{E+\epsilon_r-\epsilon_a-\epsilon_b}
 \end{align}
-本章余下部分力图令读者对这个不寻常的形式有一些感觉. 将Dyson方程(7.36)同式(7.17)(7.19)比较, 就能知道为什么$\mathbf{\Sigma}(E)$叫作依赖能量的势. 应当强调, 以上的形式是精确的, 也即, 若用精确的$\mathbf{Sigma}(E)$来求解Dyson方程得到$\mathbf{G}(E)$, 那么$\mathbf{G}(E)$的极点就是$N$-粒子系统的\emph{精确}IP和EA. 当然, 我们肯定要作近似, 在GF理论中, 需对自能作近似. 若$\mathbf{\Sigma}(E)=0$, 那么$\mathbf{G}(E)=\mathbf{G}_0(E)$. 如式(7.37)所示, $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰. 这在多体微扰论中我们也曾见过: HF能量的第一个修正也是二阶的. 事实上, 比较$E^{(0)}$(式(6.72))和$\Sigma_{ij}^{(2)}$(式(7.38))的表达式, 可以看到一些共同点: 分子上都有两个反对称矩阵元; 分母只有一个因子, 其中含有某些轨道的能量. 7.5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. \mci{MBGF表述}最吸引人的特点是, 所涉及的所有的矩阵大小全都等于HF自旋轨道的数目. 因此这种表述在单粒子图像的意义上推广了HF理论. 这种推广的代价就是引入了依赖能量的势能. 在更仔细地考虑MBGF表述之前, 我们给出$\sum_{ij}^{(2)}(E)$按\mci{空间轨道求和}写出的表达式:
+本章余下部分力图令读者对这个不寻常的形式有一些感觉. 
+将Dyson方程(7.
+36)同式(7.
+17)(7.
+19)比较, 
+就能知道为什么$\mathbf{\Sigma}(E)$叫作依赖能量的势. 
+应当强调, 
+以上的形式是精确的, 
+也即, 
+若用精确的$\mathbf{Sigma}(E)$来求解Dyson方程得到$\mathbf{G}(E)$, 
+那么$\mathbf{G}(E)$的极点就是$N$-粒子系统的\emph{精确}IP和EA. 
+当然, 
+我们肯定要作近似, 
+在GF理论中, 
+需对自能作近似. 
+若$\mathbf{\Sigma}(E)=0$, 
+那么$\mathbf{G}(E)=\mathbf{G}_0(E)$. 
+如式(7.
+37)所示, 
+$\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰. 
+这在多体微扰论中我们也曾见过: HF能量的第一个修正也是二阶的. 
+事实上, 
+比较$E^{(0)}$(式(6.
+72))和$\Sigma_{ij}^{(2)}$(式(7.
+38))的表达式, 
+可以看到一些共同点: 分子上都有两个反对称矩阵元; 
+分母只有一个因子, 
+其中含有某些轨道的能量. 
+7.
+5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. 
+\mci{MBGF表述}最吸引人的特点是, 
+所涉及的所有的矩阵大小全都等于HF自旋轨道的数目. 
+因此这种表述在单粒子图像的意义上推广了HF理论. 
+这种推广的代价就是引入了依赖能量的势能. 
+在更仔细地考虑MBGF表述之前, 
+我们给出$\sum_{ij}^{(2)}(E)$按\mci{空间轨道求和}写出的表达式:
 \begin{align}
 \sum_{ij}^{(2)}(E) = & \sum_{ars}^{N/2} \frac{\braket{rs|ia}(2\braket{ja|rs}-\braket{aj|rs})}{E+\epsilon_a-\epsilon_r-\epsilon_s}\notag\\
                      & + \sum_{abr}^{N/2}\frac{\braket{ab||ir}(2\braket{jr|ib}-\braket{rj|ab})}{E+\epsilon_r-\epsilon_a-\epsilon_b}
 \end{align}
 这种形式在计算闭壳层$N$粒子体系的电离能很方便.
+
 \exercise{
 由\eqref{7.38}导出\eqref{7.39}.
+
 \Next
 $N$粒子系统的精确MBGF定义如下
 \begin{align*}
 (\mathbf{G}(E))_{ij} = & \sum_{m} \frac{\braket{^N\Phi_0|\cs_i|^{N-1}\Phi_m}\braket{^{N-1}\Phi_m|a_j|^{N}\Phi_0}}{E-(^N\es_0 - ^{N-1}\es_m)}\\
                        & \sum_p \frac{\braket{^N\Phi_0|a_j|^{N+1}\Phi_p}\braket{^{N+1}\Phi_p|\cs_i|^{N}\Phi_0}}{E-(^{N+1}\es_p - ^{N}\es_0)}
 \end{align*}
-式中的求和指标$m$和$p$分别遍及$N-1$和$N+1$系统的所有态. $\ket{^M\Phi_k}$, $M=N,N\pm1$是$M$粒子系统的精确full CI波函数, 对应的能量为$^M\es_k=\braket{^M\Phi_k|\hs|^M\Phi_k}$, 但其中的HF自旋轨道属于$N$粒子系统. 产生算符($\cs_i$)和湮灭算符($a_i$)分别增加和移除一个HF自旋轨道.
+式中的求和指标$m$和$p$分别遍及$N-1$和$N+1$系统的所有态. 
+$\ket{^M\Phi_k}$, 
+$M=N,N\pm1$是$M$粒子系统的精确full CI波函数, 
+对应的能量为$^M\es_k=\braket{^M\Phi_k|\hs|^M\Phi_k}$, 
+但其中的HF自旋轨道属于$N$粒子系统. 
+产生算符($\cs_i$)和湮灭算符($a_i$)分别增加和移除一个HF自旋轨道.
+
 
 请证明以上格林函数在如下给定条件下可约化为式\eqref{7.30}中的HFGF:
 \begin{enumerate}[1.]
@@ -370,39 +674,67 @@ $N$粒子系统的精确MBGF定义如下
 \end{enumerate}
 }
 \subsection{Dyson方程的解}
-要求得$N$粒子系统的IP和EA, 必须求解Dyson方程(式\eqref{7.36}), 得到$\mathbf{G}(E)$, 然后找出使$\mathbf{G}(E)$为无穷的$E$值. 在Dyson方程左右分别乘以$(\mathbf{G}_0(E))^{-1}$和用$(\mathbf{G}(E))^{-1}$, 就有
+要求得$N$粒子系统的IP和EA, 
+必须求解Dyson方程(式\eqref{7.36}), 
+得到$\mathbf{G}(E)$, 
+然后找出使$\mathbf{G}(E)$为无穷的$E$值. 
+在Dyson方程左右分别乘以$(\mathbf{G}_0(E))^{-1}$和用$(\mathbf{G}(E))^{-1}$, 
+就有
 \begin{align}
 (\mathbf{G}_0(E))^{-1} = (\mathbf{G}(E))^{-1} + \bm{\Sigma}(E)
 \end{align}
-求解上式得出$G(E)$, 我们发现
+求解上式得出$G(E)$, 
+我们发现
 \begin{align}
 \mathbf{G}(E) = ((\mathbf{G}_0(E))^{-1} - \bm{\Sigma}(E))^{-1} = (E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma(E)})^{-1}
 \end{align}
-式中用到了$\mathbf{G}_0(E)$的定义(式\eqref{7.31}). 由于矩阵的逆在行列式为零时不存在, 我们必须确定如下方程的根:
+式中用到了$\mathbf{G}_0(E)$的定义(式\eqref{7.31}). 
+由于矩阵的逆在行列式为零时不存在, 
+我们必须确定如下方程的根:
 \begin{align}
 \mathrm{det}(E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma}(E)) = 0
 \end{align}
-当$\bm{\Sigma}(E)=\mathbf{0}$时, 根就是$\epsilon_i$. 为找到Koopmans定理给出的结果的最低阶修正, 我们忽略$\bm{\Sigma}(E)$的非对角项. 如此式\eqref{7.42}就化简为
+当$\bm{\Sigma}(E)=\mathbf{0}$时, 
+根就是$\epsilon_i$. 
+为找到Koopmans定理给出的结果的最低阶修正, 
+我们忽略$\bm{\Sigma}(E)$的非对角项. 
+如此式\eqref{7.42}就化简为
 \begin{align}
 \prod_i (E-\epsilon_i - \Sigma_{ii}(E)) = 0
 \end{align}
-要求出$\epsilon_i$的修正, 须求解下式得到$E$
+要求出$\epsilon_i$的修正, 
+须求解下式得到$E$
 \begin{align}
 E=\epsilon_i+\Sigma_{ii}(E)
 \end{align}
-可以通过迭代的方式解出, 迭代第一步可使用$\Sigma_{ii}(E)$在$E=\epsilon_i$的值. 如此得到
+可以通过迭代的方式解出, 
+迭代第一步可使用$\Sigma_{ii}(E)$在$E=\epsilon_i$的值. 
+如此得到
 \begin{align}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}(\epsilon_i)
 \end{align}
-然后将$\Sigma_{ii}(E)$在$E=\epsilon_i'$的值放入第二次迭代以求出$\epsilon_i''$. 如此进行直到收敛. $\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
+然后将$\Sigma_{ii}(E)$在$E=\epsilon_i'$的值放入第二次迭代以求出$\epsilon_i''$. 
+如此进行直到收敛. 
+$\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
 \begin{align}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}^{(2)}(\epsilon_i)
 \end{align}
 之后我们会详细分析这个方程给出的结果.
-\section{将GF理论应用于H$_2$和HeH$^+$}
-上面所述的GF理论利用$\bm{\Sigma}^{(2)}(E)$来改进Koopmans定理给出的IP和EA值，要对这种办法由直观感受，最好的办法是将其用到一些已知其精确解的简单体系中。所以本节就将这套办法应用于\mci{极小基  $\hd$}和$\heh$. 本节所得的一些体悟，我们会在下一节将其推广。这里我们只关注IP，对EA的分析留作习题。
 
-回忆\mci{极小基 $\hd$}的做法，有一个占据分子轨道（标为1）一个非占轨道（标为2），轨道能量分别为
+\section{将GF理论应用于H$_2$和HeH$^+$}
+上面所述的GF理论利用$\bm{\Sigma}^{(2)}(E)$来改进Koopmans定理给出的IP和EA值，
+要对这种办法由直观感受，
+最好的办法是将其用到一些已知其精确解的简单体系中。
+所以本节就将这套办法应用于\mci{极小基  $\hd$}和$\heh$. 
+本节所得的一些体悟，
+我们会在下一节将其推广。
+这里我们只关注IP，
+对EA的分析留作习题。
+
+
+回忆\mci{极小基 $\hd$}的做法，
+有一个占据分子轨道（标为1）一个非占轨道（标为2），
+轨道能量分别为
 \begin{subequations}
 	\begin{align}
 	\epsilon_1 & = h_{11} + J_{11}\\
@@ -421,7 +753,18 @@ E=\epsilon_i+\Sigma_{ii}(E)
 \begin{align}
 \Delta = (\epsilon_1 - \epsilon_2) + \frac{1}{2}(J_{11} + J_{22}) - 2J_{12} + K_{12}
 \end{align}
-那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$. 而$(N-1)$体系（即$\hd^+$）的精确本征态可以很容易就得到，这不仅是由于在这个分子中不存在关联能，而且还因为在极小基下，$\hd$的HF轨道也是$\hd^+$的最优轨道（换句话说，在这个模型下，$N$和$(N-1)$体系的HF轨道相同，弛豫能为零）。这可以从下面这个事实看欻里：$\hd$的两个HF轨道对称性不同，因此$h_{12}=0$。所以，$\hd^+$的基态能量就是
+那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$. 
+而$(N-1)$体系（即$\hd^+$）的精确本征态可以很容易就得到，
+这不仅是由于在这个分子中不存在关联能，
+而且还因为在极小基下，
+$\hd$的HF轨道也是$\hd^+$的最优轨道（换句话说，
+在这个模型下，
+$N$和$(N-1)$体系的HF轨道相同，
+弛豫能为零）。
+这可以从下面这个事实看欻里：$\hd$的两个HF轨道对称性不同，
+因此$h_{12}=0$。
+所以，
+$\hd^+$的基态能量就是
 \begin{align}
 ^{N-1}\scr{E}_0 = h_{11}
 \end{align}
@@ -429,18 +772,34 @@ E=\epsilon_i+\Sigma_{ii}(E)
 \begin{align}
 ^{N-1}\scr{E}_1 = h_{22}
 \end{align}
-因此，极小基$\hd$的精确电离能为
+因此，
+极小基$\hd$的精确电离能为
 \begin{align}
 -\mathrm{IP} = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_0 = 2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{11} = \epsilon_1 + ^NE_\mathrm{corr}
 \end{align}
-注意这个电离能和用Koompan定理所得的$\hd$电离能并不相同，它们之间相差一个$^NE_\mathrm{corr}$。须指出，相差$^NE_\mathrm{corr}$这个结论一般情况下并不成立，它在这里成立仅仅是由于我们所用的模型很简单。另外需要说明，这里计算的IP是\emph{垂直}IP，因为我们一直假设$\hd$和$\hd^+$的核间距相同。最后要指出，移去$\hd$中的一个电子后，也有可能得到一个激发态的$\hd^+$。这个过程对应的电离势为
+注意这个电离能和用Koompan定理所得的$\hd$电离能并不相同，
+它们之间相差一个$^NE_\mathrm{corr}$。
+须指出，
+相差$^NE_\mathrm{corr}$这个结论一般情况下并不成立，
+它在这里成立仅仅是由于我们所用的模型很简单。
+另外需要说明，
+这里计算的IP是\emph{垂直}IP，
+因为我们一直假设$\hd$和$\hd^+$的核间距相同。
+最后要指出，
+移去$\hd$中的一个电子后，
+也有可能得到一个激发态的$\hd^+$。
+这个过程对应的电离势为
 \begin{align}
 -\mathrm{IP}' = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_1 &=  2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{22} \notag \\
 & = 2\epsilon_1 -\epsilon_2 + (2J_{12} - J_{11} - K_{12}) + ^NE_\mathrm{corr} 
 \label{7.52b}
 \end{align}
 
-现在我们用GF两类研究这个系统，并比较所得的结果和精确结果。这个模型的二阶自能可以轻松用\eqref{7.39}求得，只要将全部空穴和粒子指标分别设为1和2（即$a=b=1$, $r=s=2$）
+现在我们用GF两类研究这个系统，
+并比较所得的结果和精确结果。
+这个模型的二阶自能可以轻松用\eqref{7.39}求得，
+只要将全部空穴和粒子指标分别设为1和2（即$a=b=1$, 
+$r=s=2$）
 \begin{subequations}
     \begin{align}\begin{array}{l}
     \Sigma_{11}^{(2)}(E)=\frac{K_{12}^{2}}{E+\varepsilon_{1}-2 \varepsilon_{2}}=\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \label{7.53a}\\
@@ -448,7 +807,12 @@ E=\epsilon_i+\Sigma_{ii}(E)
     \Sigma_{12}^{(2)}(E)=\Sigma_{21}^{(2)}(E)=0
     \end{array}\end{align}
 \end{subequations}
-式中我们已经利用了这样一个事实：所有双电子积分，若不包含偶数个$1$和$2$，则由于对称性，其值为零。由于$\mathbf{\Sigma}^{(2)}(E)$是对角矩阵，所以$\mathbf{G})(E)$的矩阵元（由式\eqref{7.41}算得）为
+式中我们已经利用了这样一个事实：所有双电子积分，
+若不包含偶数个$1$和$2$，
+则由于对称性，
+其值为零。
+由于$\mathbf{\Sigma}^{(2)}(E)$是对角矩阵，
+所以$\mathbf{G})(E)$的矩阵元（由式\eqref{7.41}算得）为
 \begin{subequations}
 \begin{align}\begin{array}{l}
 G_{11}(E)=\left(E-\varepsilon_{1}-\Sigma_{11}^{(2)}(E)\right)^{-1} \\
@@ -456,25 +820,55 @@ G_{22}(E)=\left(E-\varepsilon_{2}-\Sigma_{22}^{(2)}(E)\right)^{-1} \\
 G_{12}(E)=G_{21}(E)=0
 \end{array}\end{align}
 \end{subequations}
-要求出$IP$和$EA$，需求得$G_{11}(E)$和$G_{22}(E)$的极点。$G_{11}(E)$的极点满足
+要求出$IP$和$EA$，
+需求得$G_{11}(E)$和$G_{22}(E)$的极点。
+$G_{11}(E)$的极点满足
 \begin{align}
 E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 \end{align}
-将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，就有
+将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，
+就有
 \begin{align}
     E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0
 \end{align}
-在求解这个二次方程以得到两个根之前，我们先求一下$\epsilon_1$的最低阶修正。利用式\eqref{7.46}，即令$\Sigma_{11}^{(2)}(E)$中的$E$等于$\epsilon_{1}$，我们有
+在求解这个二次方程以得到两个根之前，
+我们先求一下$\epsilon_1$的最低阶修正。
+利用式\eqref{7.46}，
+即令$\Sigma_{11}^{(2)}(E)$中的$E$等于$\epsilon_{1}$，
+我们有
 \begin{align}
 \varepsilon_{1}^{\prime}=\varepsilon_{1}+\Sigma_{11}^{(2)}\left(\varepsilon_{1}\right)=\varepsilon_{1}+\frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=\varepsilon_{1}+ ^NE_{0}^{(2)}
 \end{align}
-式中出现的${K_{12}^{2}}/{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}$就是$\hd$关联能的二阶微扰结果（于\ref{chap6}中求得，见式\eqref{6.77}）。这个结果让人高兴。与\eqref{7.52a}中给出的这个模型的精确结果左比较，可发现，使用GF方法，利用$\Sigma_{11}^{(2)}(E)$，仅考虑到最低阶，就给Koopman定理的结果$(\epsilon_1)$增添二阶多体微扰论能量这样一个修正项。若求得\eqref{7.55}的精确解，我们会得到什么呢？该二次方程的两个根为
+式中出现的${K_{12}^{2}}/{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}$就是$\hd$关联能的二阶微扰结果（于\ref{chap6}中求得，
+见式\eqref{6.77}）。
+这个结果让人高兴。
+与\eqref{7.52a}中给出的这个模型的精确结果左比较，
+可发现，
+使用GF方法，
+利用$\Sigma_{11}^{(2)}(E)$，
+仅考虑到最低阶，
+就给Koopman定理的结果$(\epsilon_1)$增添二阶多体微扰论能量这样一个修正项。
+若求得\eqref{7.55}的精确解，
+我们会得到什么呢？该二次方程的两个根为
 \begin{align}
 \varepsilon_{11}^{\pm} &=\varepsilon_{1}+\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \pm\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right) \notag\\
 &=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp \frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \notag\\
 &=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right)
 \end{align}
-可见，$\epsilon_{11}^-$为$\hd$电离能的负值。可以看到，这里的GF方法中隐含着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），气形式和\eqref{7.49}中的精确结果类似。，区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（式\eqref{7.50}）。这个关联能的微扰展开在二阶上是精确的，同时也纳入了近似的高阶项。那么，另外一个根$\epsilon_{11}^+$的意义式说明？练习7.9会要求读者证明，该根对应$\hd$捕获一个电子后成为一个激发态的$\hd^-$所需的能量。
+可见，
+$\epsilon_{11}^-$为$\hd$电离能的负值。
+可以看到，
+这里的GF方法中隐含着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），
+气形式和\eqref{7.49}中的精确结果类似。
+，
+区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（式\eqref{7.50}）。
+这个关联能的微扰展开在二阶上是精确的，
+同时也纳入了近似的高阶项。
+那么，
+另外一个根$\epsilon_{11}^+$的意义式说明？练习7.
+9会要求读者证明，
+该根对应$\hd$捕获一个电子后成为一个激发态的$\hd^-$所需的能量。
+
 \exercise{
 考虑$(N+1)-$粒子系统：$\hd^-$
 \begin{enumerate}[a.]
@@ -502,22 +896,42 @@ E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
     &+\frac{K_{12}^{2}\left(J_{22}+K_{12}-2 J_{12}\right)}{4\left(\varepsilon_{1}-\varepsilon_{2}\right)^{2}} \\
     \Sigma_{12}^{(3)}(E)=& \Sigma_{21}^{(3)}(E)=0
 \end{align*}
-注意到该三阶自能包含\emph{依赖能量}的部分。现考虑第一IP（如\eqref{7.45}）的最低阶近似，利用$\mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2)}(E)+\mathbf{\Sigma}^{(3)}(E)$
+注意到该三阶自能包含\emph{依赖能量}的项。
+现考虑第一IP（如\eqref{7.45}）的最低阶近似，
+利用$\mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2)}(E)+\mathbf{\Sigma}^{(3)}(E)$
     \begin{align*}
     \varepsilon_{1}'=\varepsilon_{1}+\Sigma_{11}^{(2)}\left(\varepsilon_{1}\right)+\Sigma_{11}^{(3)}\left(\varepsilon_{1}\right)
     \end{align*}
-请证明，该方程右边等于$\varepsilon_{1}+{}^{N}E_{0}^{(2)}+{}^{N} E_{0}^{(3)}$，此处${}^{N}E_{0}^{(3)}$为$\hd$关联能的三阶多体微扰论结果（见\eqref{6.78}）。类似地，请证明，对$EA$的最低阶修正
+请证明，
+该方程右边等于$\varepsilon_{1}+{}^{N}E_{0}^{(2)}+{}^{N} E_{0}^{(3)}$，
+此处${}^{N}E_{0}^{(3)}$为$\hd$关联能的三阶多体微扰论结果（见\eqref{6.78}）。
+类似地，
+请证明，
+对$EA$的最低阶修正
     \begin{align*}
     \varepsilon_{2}^{\prime}=\varepsilon_{2}+\Sigma_{22}^{(2)}\left(\varepsilon_{2}\right)+\Sigma_{22}^{(3)}\left(\varepsilon_{2}\right)
     \end{align*}
-等于$\varepsilon_{2}-({}^{N} E_{0}^{(2)}+{}^{N} E_{0}^{(3)})$。可见对于这个模型而言，用到三阶自能并用最简单的近似来求根之后，GF方法中隐含的关联能就是三阶多体微扰论的结果。
+等于$\varepsilon_{2}-({}^{N} E_{0}^{(2)}+{}^{N} E_{0}^{(3)})$。
+可见对于这个模型而言，
+用到三阶自能并用最简单的近似来求根之后，
+GF方法中隐含的关联能就是三阶多体微扰论的结果。
+
 }
 
-下面我们把GF理论运用到极小基$\heh$上。这个体系稍复杂一些，但因此也更有趣，因为$\heh$的HF轨道不是$\mathrm{HeH}^{2+}$（即对应的$(N-1)$系统）的最优轨道。$\heh$的HF轨道无法分类成偶（gerade）轨道和奇（ungerade）轨道，因此$h_{12}$不会因对称性而为零。实际上
+下面我们把GF理论运用到极小基$\heh$上。
+这个体系稍复杂一些，
+但因此也更有趣，
+因为$\heh$的HF轨道不是$\mathrm{HeH}^{2+}$（即对应的$(N-1)$系统）的最优轨道。
+$\heh$的HF轨道无法分类成偶（gerade）轨道和奇（ungerade）轨道，
+因此$h_{12}$不会因对称性而为零。
+实际上
 \begin{align}
 h_{12} = -\braket{11|12}
 \end{align}
-这是因为$f_{12} = h_{12} + \braket{11|12}$值为零。可以看到，$\mathrm{HeH}^{2+}$的基态能量并非$h_{11}$，而要写成
+这是因为$f_{12} = h_{12} + \braket{11|12}$值为零。
+可以看到，
+$\mathrm{HeH}^{2+}$的基态能量并非$h_{11}$，
+而要写成
 \begin{align}
 {}^{N-1}\scr{E}_0 = h_{11} + {}^{N-1}E_R
 \end{align}

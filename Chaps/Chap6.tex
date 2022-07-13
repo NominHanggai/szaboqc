@@ -2,7 +2,10 @@
 
 \section{Reyleigh-\sch 微扰理论}
 \label{sec6.1}
-本节推导标准的Reyleigh-\sch 微扰论的表达式. 这些式子都是一般性的，既能用于单粒子系统也能用于N-粒子系统. 现设想要求解如下本征值问题：
+本节推导标准的Reyleigh-\sch 微扰论的表达式. 
+这些式子都是一般性的，
+既能用于单粒子系统也能用于N-粒子系统. 
+现设想要求解如下本征值问题：
 \begin{align}
 \label{6.1}
 \hs \ket{\Phi_i}=(\hs_0+\vs)\ket{\Phi_i}=\mathscr{E}_i\ket{\Phi_i}
@@ -11,34 +14,60 @@
 \begin{align}
 \hs_0\ket{\Psi_i^{(0)}}=E_i^{(0)}\ket{\Psi_i^{(0)}}\qquad\text{或}\qquad \hs_0\ket{i}=E_i^{(0)}\ket{i}
 \end{align}
-其中为简洁用$\ket{i}$代表$\ket{\Psi_i}$. 若微扰$\vs$在某种程度上很小，那么可以期望的是，$\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$. 现在想找出一种方法，能使$\hs_0$的本征函数和本征值系统地逼近总哈密顿量$\hs$的本征函数和本征值。为此，我们引入一个阶参数$\lambda$，之后再令其等于1，有:
+其中为简洁用$\ket{i}$代表$\ket{\Psi_i}$. 
+若微扰$\vs$在某种程度上很小，
+那么可以期望的是，
+$\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$. 
+现在想找出一种方法，
+能使$\hs_0$的本征函数和本征值系统地逼近总哈密顿量$\hs$的本征函数和本征值。
+为此，
+我们引入一个阶参数$\lambda$，
+之后再令其等于1，
+有:
 \begin{align}
 \hs=\hs_0+\lambda\vs
 \end{align}
 现将精确的本征函数与本征值展开成$\lambda$的Taylor级数,
+
 \begin{subequations}
 	\begin{align}
 	\es &= E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)} + \cdots\\
 	\ket{\Phi_i} &= \ket{i} + \lambda \ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} + \cdots
 	\end{align}
 \end{subequations}
-称$E_i^{(n)}$为$n$阶能量.现在的问题是如何将精确量用零阶能量以及微扰算符$\vs$在未微扰波函数间的矩阵元$\braket{i|\vs|j}$表达出来.
+称$E_i^{(n)}$为$n$阶能量.
+现在的问题是如何将精确量用零阶能量以及微扰算符$\vs$在未微扰波函数间的矩阵元$\braket{i|\vs|j}$表达出来.
 
-现在设$\hs_0$的波函数已归一化:$\braket{i|i}=1$, 且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 这种处理叫作``中间归一化", 并且, 除非$\ket{i}$与$\ket{\Phi_i}$正交, 否则总可以进行中间归一化. 将(6.4b)左乘$\bra{i}$, 得到
+
+现在设$\hs_0$的波函数已归一化:$\braket{i|i}=1$, 
+且在$\ket{\Phi_i}$上乘上一个因子以使其满足等式$\braket{i|\Phi_i}=1$. 
+这种处理叫作``中间归一化", 
+并且, 
+除非$\ket{i}$与$\ket{\Phi_i}$正交, 
+否则总可以进行中间归一化. 
+将(6.
+4b)左乘$\bra{i}$, 
+得到
 \begin{align}
 \braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Psi_i^{(1)}}+\lambda^2\braket{i|\Psi_i^{(2)}} + \cdots = 1
 \end{align}
-上面的方程对于所有的$\lambda$都成立($\lambda$不等于1时也成立), 那么就有
+上面的方程对于所有的$\lambda$都成立($\lambda$不等于1时也成立), 
+那么就有
 \begin{align}
 \braket{i|\Psi_i^{(n)}} = 0\, \hfill n=1,2,3,\cdots
 \label{6.6}
 \end{align}
-将(6.4a,6.4b)带入\ref{6.1}, 得到:
+将(6.
+4a,
+6.
+4b)带入\ref{6.1}, 
+得到:
 \begin{align*}
 (\hs_0&+\lambda\vs)(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots )\\
 &=(E_i^{(0)} + \lambda E_i^{(1)} + \lambda^2 E_i^{(2)}  + \cdots )(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots)
 \end{align*}
-因为$\lambda^n$的系数对应相等，我们有
+因为$\lambda^n$的系数对应相等，
+我们有
 \begin{subequations}
 	\begin{align}
 \hs_0\ket{i}&=E_i^{(0)}\ket{i}\, \hfill n=0\\
@@ -47,7 +76,9 @@
 \hs_0\ket{\Psi_i^{(3)}}+\vs\ket{\Psi_i^{(2)}} & = E_i^{(0)}\ket{\Psi_i^{(3)}} + E_i^{(1)}\ket{\Psi_i^{(2)}} + E_I^{(2)}\ket{\Psi_i^{(1)}} +E_i^{(3)}\ket{i}\,\hfill  n=3
 	\end{align}
 \end{subequations}
-等等. 每个式子左乘$\ket{i}$, 由正交关系\ref{6.6}可得如下各阶能量:
+等等. 
+每个式子左乘$\ket{i}$, 
+由正交关系\ref{6.6}可得如下各阶能量:
 \begin{subequations}
 \begin{align}
 E_i^{(0)} &= \braket{i|\hs|i} \\
@@ -56,53 +87,87 @@ E_i^{(2)} &= \braket{i|\vs|\Psi_i^{(1)}} \\
 E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \end{align}
 \end{subequations}
-剩下的事情就是从(6.7)解出$\ket{\Psi_i^{(n)}}$, 然后用(6.8)确定$n$阶能量.
+剩下的事情就是从(6.
+7)解出$\ket{\Psi_i^{(n)}}$, 
+然后用(6.
+8)确定$n$阶能量.
 
-先来看(6.7b), 由它来解出一阶波函数$\ket{\Psi_i^{(1)}}$. 此式可重写为
+
+先来看(6.
+7b), 
+由它来解出一阶波函数$\ket{\Psi_i^{(1)}}$. 
+此式可重写为
 \begin{align}
 (E_i^{(0)} - \hs_0 )\ket{\Psi_i^{(1)}} = (\vs - \braket{i|\vs|i})\ket{i}
 \end{align}
-上式不再是一个本征方程, 而成为了一个非齐次微分方程(更广义地, 成为了积分微分方程). 解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs_0$的本征函数展开(因为$\hs_0$的本征函数是完备的):
+上式不再是一个本征方程, 
+而成为了一个非齐次微分方程(更广义地, 
+成为了积分微分方程). 
+解该方程的一种办法是将$\ket{\Psi_i^{(1)}}$用$\hs_0$的本征函数展开(因为$\hs_0$的本征函数是完备的):
 \begin{align*}
 \ket{\Psi_i^{(1)}} = \sum_n c_n^{(1)}\ket{n}
 \end{align*}
-又因$\hs_0$的本征函数是正交的, 将上式左乘$\bra{n}$ 得到
+又因$\hs_0$的本征函数是正交的, 
+将上式左乘$\bra{n}$ 得到
 \begin{align*}
 \braket{n|\Psi_i^{(1)}} = c_n^{(1)}
 \end{align*}
-由(6.6)可知, $c_i^{(1)}=0$, 所以有
+由(6.
+6)可知, 
+$c_i^{(1)}=0$, 
+所以有
 \begin{align}
 \ket{\Psi_i^{(1)}} = \sideset{}{'}\sum_n\ket{n}\braket{n|\Psi_i^{(1)}}
 \end{align}
-求和号上的一撇代表不包括$n=i$的项. (6.9)左乘$\bra{n}$, 并注意到零阶波函数的正交性, 就可以得到:
+求和号上的一撇代表不包括$n=i$的项. 
+(6.
+9)左乘$\bra{n}$, 
+并注意到零阶波函数的正交性, 
+就可以得到:
 \begin{align}
 (E_i^{(0)} - E_n^{0} )\braket{n|\Psi_i^{(1)}} = \braket{n|\vs|i}
 \end{align}
-为得到二阶能量, 将(6.10)带入(6.8c)可以得到:
+为得到二阶能量, 
+将(6.
+10)带入(6.
+8c)可以得到:
 \begin{align*}
 E_i^{(2)} = \braket{i|\vs|\Psi_i^{(1)}} = \sideset{}{'}\sum_n\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}
 \end{align*}
-使用(6.11)可以求出$\braket{n|\Psi_i^{(1)}}$, 所以最终有
+使用(6.
+11)可以求出$\braket{n|\Psi_i^{(1)}}$, 
+所以最终有
 \begin{align}
 E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)} - E_n^{(0)}}
 \end{align}
 这就是二阶能量的表达式.
 
-若想到三阶能量$E_i^{(3)}$, 可以使用相同的手续. 首先将二阶波函数展开为
+
+若想到三阶能量$E_i^{(3)}$, 
+可以使用相同的手续. 
+首先将二阶波函数展开为
 \begin{align}
 \ket{\Psi_i^{(2)}} = \sideset{}{'}{\sum_n}\ket{n}\braket{n|\Psi_i^{(2)}}
 \end{align}
-然后用$\bra{n}$去乘(6.7c), 得到
+然后用$\bra{n}$去乘(6.
+7c), 
+得到
 \begin{align}
 (E_i^{(0)} -E_n^{(0)} )\braket{n|\Psi_i^{(2)}} = \braket{n|\vs|\Psi_i^{(1)}} - E_i^{(1)}\braket{n|\Psi_i^{(1)}}
 \end{align}
-将(6.8d)(6.13)(6.14)组合可得
+将(6.
+8d)(6.
+13)(6.
+14)组合可得
 \begin{align*}
 E_i^{(3)} & = \braket{i|\vs|\Psi_i^{(2)}}\\
 		  & = \sideset{}{'}{\sum_n}\braket{i|\vs|n}\braket{n|\Psi_i^{(2)}}\\
 		  & =\sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\vs|\Psi_I^{(1)}}}{E_i^{(0)} - E_N^{(0)}} - E_i^{(1)} \sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}}{E_i^{(0)} - E_n^{(0)} }
 \end{align*}
-最后再将(6.10)(6.11)插入, 就得到
+最后再将(6.
+10)(6.
+11)插入, 
+就得到
 \begin{align}
 E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\braket{m|\vs|i} }{(E_i^{(0)} -E_n^{(0)})(E_i^{(0)} - E_m^{(0)} )  } - E_i^{(1)} \sideset{}{'}{\sum_n} \frac{\left| \braket{i|\vs|n} \right|^2}{(E_i^{(0)} -E_n^{(0)} )^2}\notag\\
 & = A_i^{(3)} + B_i^{(3)}
@@ -110,7 +175,11 @@ E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\brak
 \end{align}
 这就是三阶能量.
 
-此处给出这种办法的一个应用. 考虑一个体系, 该体系仅右边两个状态$\ket{I},\ket{II}$, 都是哈密顿量$\hs$的本征函数:
+
+此处给出这种办法的一个应用. 
+考虑一个体系, 
+该体系仅右边两个状态$\ket{I},\ket{II}$, 
+都是哈密顿量$\hs$的本征函数:
 \begin{align*}
 \hs\ket{I} = \es_1\ket{I} \qquad \hs\ket{II} = \es_2\ket{II}
 \end{align*}
@@ -122,7 +191,13 @@ E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\brak
 \begin{align*}
 \hs_0\ket{1} = E_1^{(0)}\ket{1}\qquad \hs_0\ket{2} = E_2^{(0)}\ket{2}
 \end{align*}
-现在想得到精确的基态能量$\es_1$. 假设零阶态非简并, 而且$E_1^{(0)}$是较低的能量(即$E_1^{(0)} < E_2^{(0)}$). 我们先用精确的办法得出解, 然后再用微扰理论求解, 最后比较这两个结果. 为求解方程
+现在想得到精确的基态能量$\es_1$. 
+假设零阶态非简并, 
+而且$E_1^{(0)}$是较低的能量(即$E_1^{(0)} < E_2^{(0)}$). 
+我们先用精确的办法得出解, 
+然后再用微扰理论求解, 
+最后比较这两个结果. 
+为求解方程
 \begin{align}
 \hs\ket{\Phi}=\es\ket{\Phi}
 \end{align}
@@ -144,17 +219,22 @@ c_1\\c_2
 c_1\\c_2
 \end{bmatrix}
 \end{align}
-为简化记号, 令$\braket{1|\vs|1}=V_{11},\braket{1|\vs|2}=V_{12},\braket{2|\vs|1}=V_{21},\braket{2|\vs|2}=V_{22}$. 此矩阵较小的那个本征值为:
+为简化记号, 
+令$\braket{1|\vs|1}=V_{11},\braket{1|\vs|2}=V_{12},\braket{2|\vs|1}=V_{21},\braket{2|\vs|2}=V_{22}$. 
+此矩阵较小的那个本征值为:
 \begin{align}
 \es_1 = \frac{1}{2} \left\{  E_1^{(0)} + V_{11} + E_2^{(0)} + V_{22} - \left[ (E_1^{(0)} -E_{2}^{(0)} + V_{11} - V_{22})^2 +4V_{12}V_{21} \right]^{1/2}      \right\}\tag{6.19a}
 \addtocounter{equation}{1}
 \end{align}
 
-现将$\es_1$按微扰矩阵元展成Taylor级数.  为此, 将每个微扰矩阵元都乘以系数$\lambda$:
+现将$\es_1$按微扰矩阵元展成Taylor级数. 
+ 为此, 
+将每个微扰矩阵元都乘以系数$\lambda$:
 \begin{align}
 \es_1 = \frac{1}{2} \left\{  E_1^{(0)} + \lambda V_{11} + E_2^{(0)} + \lambda V_{22} - \left[ (E_1^{(0)} -E_{2}^{(0)} + \lambda(V_{11} - V_{22}))^2 +4\lambda^2 V_{12}V_{21} \right]^{1/2}      \right\}\tag{6.19b}
 \end{align}
 然后将$\es_1$展成$\lambda$的Taylor级数.
+
 
 此处需要两个等式:
 \begin{align}
@@ -167,9 +247,15 @@ c_1\\c_2
 \times & \left[1 + \frac{4\lambda^2V_{11}V_{22}}{(E_1^{(0)}  - E_2^{(0)} + \lambda(V_{11}-V_{22}) )^2} \right]^{1/2}
      \Bigg\}
 \end{align*}
-请注意, 我们从平方根中提出了因子$(E_1^{(0)}) - E_2^{(2)} +\lambda(V_{11}-V_{22}) $, 此处假设它是负的, 因为$E_1^{(0)}<E_2^{(0)}$, 而且扰动(即$\vs$)是小的.
+请注意, 
+我们从平方根中提出了因子$(E_1^{(0)}) - E_2^{(2)} +\lambda(V_{11}-V_{22}) $, 
+此处假设它是负的, 
+因为$E_1^{(0)}<E_2^{(0)}$, 
+而且扰动(即$\vs$)是小的.
 
-首先展开平方根(略), 然后展开$(E_1^{(0)}-E_2^{(0)} + \lambda(V_{11}-V_{22}))^{-1}$如下:
+
+首先展开平方根(略), 
+然后展开$(E_1^{(0)}-E_2^{(0)} + \lambda(V_{11}-V_{22}))^{-1}$如下:
 \begin{align*}
 	\frac{1}{(E_1^{(0)}-E_2^{(0)} + \lambda(V_{11}-V_{22})} & =\frac{1}{E_1^{(0)} - E_2^{(0) }}\cdot \frac{1}{1+\frac{\lambda(V_{11}-V_{22}) }{E_1^{0} -E_2^{(0)} }}\\
 		& = \frac{1}{E_1^{(0)} - E_2^{(0)}} - \frac{\lambda(V_{11}-V_{22}) }{E_1^{0} -E_2^{(0)} }+\cdots
@@ -188,21 +274,65 @@ c_1\\c_2
 	\end{align}
 \end{subequations}
 
-最终我们能看到,由RS微扰理论出发所得的一、二、三阶能量的公式[(6.8b)(6.12)(6.15)]与以上式中的$E_1^{(n)}\,(n=1,2,3)$相等. 为理解这一点，只需注意到两态问题中中仅有一个中间态$\ket{n} = \ket{2}$. 由于微扰理论的公式是由Taylor展开所得，出现这样的对应也是可期的。
+最终我们能看到,
+由RS微扰理论出发所得的一、二、三阶能量的公式[(6.
+8b)(6.
+12)(6.
+15)]与以上式中的$E_1^{(n)}\,(n=1,2,3)$相等. 
+为理解这一点，
+只需注意到两态问题中中仅有一个中间态$\ket{n} = \ket{2}$. 
+由于微扰理论的公式是由Taylor展开所得，
+出现这样的对应也是可期的。
+
 
 \section{RS微扰论的图表示}
 \label{sec6.2}
-上节末尾我们已经看到, 即使是最简单的两态问题，其高阶能量公式也相当复杂。本章的主要目标就是将Hartree-Fock基态作为零阶态来得到相关能的微扰展开公式. 在这种情况下, 高阶能量的表达式愈将复杂. 因此若能找到某种相对简单的方法, 将高阶展开中的各项归类并表示出来, 那将再好不过. 本节来介绍一种图形化方法, 用图形表示微扰展开. 我们并不会严格地推导图形微扰论, 而是从一个简单的例子开始, 推测出微扰展开和一组含义明确的图形之间的对应关系. 然后我们再``猜出"将图形转化为数学式子的规则, 并展示其正确性.接下来会推广之前的图形及规则, 并在每一步都检查有图形所得的式子和直接推导所得式子之间的一致性. 用这种办法是望读者能习惯并认可这些图形.
+上节末尾我们已经看到, 
+即使是最简单的两态问题，
+其高阶能量公式也相当复杂。
+本章的主要目标就是将Hartree-Fock基态作为零阶态来得到相关能的微扰展开公式. 
+在这种情况下, 
+高阶能量的表达式愈将复杂. 
+因此若能找到某种相对简单的方法, 
+将高阶展开中的各项归类并表示出来, 
+那将再好不过. 
+本节来介绍一种图形化方法, 
+用图形表示微扰展开. 
+我们并不会严格地推导图形微扰论, 
+而是从一个简单的例子开始, 
+推测出微扰展开和一组含义明确的图形之间的对应关系. 
+然后我们再``猜出"将图形转化为数学式子的规则, 
+并展示其正确性.
+接下来会推广之前的图形及规则, 
+并在每一步都检查有图形所得的式子和直接推导所得式子之间的一致性. 
+用这种办法是望读者能习惯并认可这些图形.
 
-微扰展开的图形表示首先出现在量子电动力学中. Feynman首创了这种办法, 并在他的Nobel讲座上介绍了其想法的演变发展. 此处引用他的几句话``我其余的工作就是发展了计算技巧, 用图形来帮助人们更快地分析微扰论. 这个工具最初基本上是猜出来的.."``即使是从物理学家的层面来讲, 我也并未证明这些规则和方程可以通过传统的电动力学得到, 但是从平时的`胡搞'中我已经知道, 所有这些东西和传统的电动力学毫无二致."
+
+微扰展开的图形表示首先出现在量子电动力学中. 
+Feynman首创了这种办法, 
+并在他的Nobel讲座上介绍了其想法的演变发展. 
+此处引用他的几句话``我其余的工作就是发展了计算技巧, 
+用图形来帮助人们更快地分析微扰论. 
+这个工具最初基本上是猜出来的.
+.
+"``即使是从物理学家的层面来讲, 
+我也并未证明这些规则和方程可以通过传统的电动力学得到, 
+但是从平时的`胡搞'中我已经知道, 
+所有这些东西和传统的电动力学毫无二致.
+"
 
 \subsection{两态系统的图微扰论}
-上节考察了两态问题, 并得到了基态本征值表达式, 此处介绍该表达式中各项所对应的图形表示. 首先, 用一个点来表示微扰$\vs$ :
+上节考察了两态问题, 
+并得到了基态本征值表达式, 
+此处介绍该表达式中各项所对应的图形表示. 
+首先, 
+用一个点来表示微扰$\vs$ :
 \[\begin{tikzpicture}
 \draw (0,0)[<->] node[left]{$\vs$} -- (1,0)node[right]{$\bullet$};
 \end{tikzpicture}
 \]
-两个零阶态$\ket{1}$, $\ket{2}$由向上和向下的箭头表示:
+两个零阶态$\ket{1}$, 
+$\ket{2}$由向上和向下的箭头表示:
 \begin{align*}
 \ket{1}\longleftrightarrow\quad \begin{tikzpicture}[scale=.5,baseline=(current bounding box.center)]
 \path[draw=blue,postaction={on each segment={mid arrow}}] (0,0)--(0,-1);
@@ -212,7 +342,12 @@ c_1\\c_2
 	\path[draw=blue,postaction={on each segment={mid arrow}}] (0,-1)--(0,0);
 	\end{tikzpicture}
 \end{align*}
-箭头向下的线叫作``空穴"线, 箭头向上的线叫粒子线. 这些术语暂时不重要, 此处只是提早介绍一下. 由这些定义, 可以画出一些简单的图形来代表$\vs$的矩阵元:
+箭头向下的线叫作``空穴"线, 
+箭头向上的线叫粒子线. 
+这些术语暂时不重要, 
+此处只是提早介绍一下. 
+由这些定义, 
+可以画出一些简单的图形来代表$\vs$的矩阵元:
 
 
 \[
@@ -226,9 +361,17 @@ c_1\\c_2
 \braket{1|\vs|1}&=V_{11}\longleftrightarrow &
 \end{array}
 \]
-总之, 每个点上都有一线段进入, 有一线段穿出. 对应的矩阵元就是$\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
+总之, 
+每个点上都有一线段进入, 
+有一线段穿出. 
+对应的矩阵元就是$\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 
-回忆$n$阶能量表达式中的各项: $n=1,2,3,4$分子都是$n$个$\vs$矩阵元的乘积. 每个矩阵元都可由一个点一级传入和穿出的线来表示, 也许将$n$个点用某种方式相互连接起来组成的图, 可以用来表示矩阵元的乘积. 现在给出这种图的结构的严格描述:
+
+回忆$n$阶能量表达式中的各项: $n=1,2,3,4$分子都是$n$个$\vs$矩阵元的乘积. 
+每个矩阵元都可由一个点一级传入和穿出的线来表示, 
+也许将$n$个点用某种方式相互连接起来组成的图, 
+可以用来表示矩阵元的乘积. 
+现在给出这种图的结构的严格描述:
 \begin{enumerate}
 	\item \textit{按如下顺序画出$n$个点}
 	\[\begin{tikzpicture}[draw=white]	\draw (0,0) node{$\bullet$}-- ++(0,0.5) node{}-- ++(0,0.5) node{$\bullet$}-- ++(0,0.5) node{$\bullet$}-- ++(0,0.5) node{$\bullet$}; 
@@ -238,7 +381,11 @@ c_1\\c_2
 	\item \textit{列出所有不同的连接方式, 如果在两个图中, 对应的点与其周围的点的连接方式都相同, 那么这两个图等价.}
 \end{enumerate}
 
-第二个规则强制我们的图只能是完全连接的, 或者叫\emph{连通}的(linked), 也就是说, 它们连成一个整体. 如下的不连通图:
+第二个规则强制我们的图只能是完全连接的, 
+或者叫\emph{连通}的(linked), 
+也就是说, 
+它们连成一个整体. 
+如下的不连通图:
 \begin{equation*}
 \begin{tikzpicture}[scale=.667]
 \filldraw (0,0) circle(1pt) (2,0)circle (1pt) (4,0) circle(1pt)
@@ -259,7 +406,9 @@ c_1\\c_2
 		  ;
 \end{tikzpicture}
 \end{equation*}
-是不允许出现的. 第三个规则是说, 如果几个图(如下例)
+是不允许出现的. 
+第三个规则是说, 
+如果几个图(如下例)
 \begin{equation*}
 \begin{tikzpicture}[scale=.667,blue]
 \filldraw (0,0) circle(1pt) (2,0)circle (1pt) (4,0) circle(1pt)
@@ -287,7 +436,18 @@ c_1\\c_2
 ;
 \end{tikzpicture}
 \end{equation*}
-以同一种方式连接,那么它们就等价: 1和3、4相连, 2和3、4相连， 3与1和2相连， 4与1和2相连. 为快速判断图之间是否等价, 可以将连线想象成粘在点上的橡皮筋, 我们可以任意拉扯伸缩这些皮筋. 如果两个图不等价 , 那么无论怎么对橡皮筋进行拉扯, 都不可能使两个图看起来一样. 因此:
+以同一种方式连接,
+那么它们就等价: 1和3、4相连, 
+2和3、4相连， 
+3与1和2相连， 
+4与1和2相连. 
+为快速判断图之间是否等价, 
+可以将连线想象成粘在点上的橡皮筋, 
+我们可以任意拉扯伸缩这些皮筋. 
+如果两个图不等价 , 
+那么无论怎么对橡皮筋进行拉扯, 
+都不可能使两个图看起来一样. 
+因此:
 \begin{equation*}
 \begin{tikzpicture}[scale=.667,blue]
 \filldraw (0,0) circle(1pt) (2,0)circle (1pt) (4,0) circle(1pt) (6,0) circle(1pt)
@@ -316,7 +476,8 @@ c_1\\c_2
 \draw     (1,1.5)node{$\equiv$} (3,1.5)node{$\not\equiv$} (5,1.5)node{$\equiv$};
 \end{tikzpicture}
 \end{equation*}
-利用这些规则, 可以画出如下的图(至四阶):
+利用这些规则, 
+可以画出如下的图(至四阶):
 \begin{equation*}
 \begin{tikzpicture}[scale=.667]
 \filldraw (0,0)circle(1pt) (0,1)circle(1pt) (0,2)circle(1pt) (0,3)circle(1pt)
@@ -352,7 +513,13 @@ c_1\\c_2
 \draw     (6,1.5)node{$n=4$} (6,5)node{$n=3$} (6,7.75)node{$n=2$} (6,9.5)node{$n=1$};
 \end{tikzpicture}
 \end{equation*}
-读者通过尝试应当可以使自己确信, 以上就是所有可能的相异图(直到四阶). 现在给连线加上箭头, 注意要保证每个点都有线穿入和穿出. 若以1来标记向下的线, 2来标记向上的线, 则有两种标法:
+读者通过尝试应当可以使自己确信, 
+以上就是所有可能的相异图(直到四阶). 
+现在给连线加上箭头, 
+注意要保证每个点都有线穿入和穿出. 
+若以1来标记向下的线, 
+2来标记向上的线, 
+则有两种标法:
 \begin{equation*}
 \begin{tikzpicture}
 \filldraw (0,0)circle(1pt) (0,-.75)circle(1pt) (0,.75)circle(1pt);
@@ -372,7 +539,10 @@ c_1\\c_2
 \end{scope}
 \end{tikzpicture}
 \end{equation*}
-当$n=1$时, 会有一个小问题, 图上的箭头在某部分是向上的, 在另一部分是向下的
+当$n=1$时, 
+会有一个小问题, 
+图上的箭头在某部分是向上的, 
+在另一部分是向下的
 \begin{equation*}
 \begin{tikzpicture}[scale=1]
 \begin{scope}[decoration = {markings, mark= {between positions 0 and 1 step .35 with {
@@ -382,7 +552,9 @@ c_1\\c_2
 \end{scope}
 \end{tikzpicture}
 \end{equation*}
-我们可以将圆圈定义为空穴线来规避这个问题. 按照以上的办法, 我们总共可以画出如下这么多的图:
+我们可以将圆圈定义为空穴线来规避这个问题. 
+按照以上的办法, 
+我们总共可以画出如下这么多的图:
 \begin{equation*}
 \diagsize
 \begin{tikzpicture}[scale=.667]
@@ -435,14 +607,18 @@ c_1\\c_2
 \end{tikzpicture}
 \end{equation*}
 
-现\emph{假设}所有$n$个点的图和所有$n$阶能量项之间存在一一映射, 此处我们给出由图到能量项的表达式的转换规则. 存在这种对应关系是很奇妙的一件事. 转换规则如下:
+现\emph{假设}所有$n$个点的图和所有$n$阶能量项之间存在一一映射, 
+此处我们给出由图到能量项的表达式的转换规则. 
+存在这种对应关系是很奇妙的一件事. 
+转换规则如下:
 \begin{enumerate}
 	\item 每个点为分母贡献一个因子$\braket{\textit{穿入线的标号}|\vs|\textit{穿出线的标号}}$.
 	\item 每一对相邻点贡献一个分母上的因子\[ \sum E_\mathrm{空穴}-\sum E^{(0)}_\mathrm{粒子}\]
 	其中求和遍及所有与两个点之间的一条水平线相交的空穴线和粒子线.
 	\item 表达式的正负号为$(-)^{h+l}$, $h$是空穴线的数目, $l$是闭合圈图的数目. 本节的图中$l$总是1, 这里给出更一般的规则以利后用.
 \end{enumerate}
-这个规则很容易运用. 考虑四阶图
+这个规则很容易运用. 
+考虑四阶图
 \begin{equation*}
 \begin{tikzpicture}
 \diagsize
@@ -460,7 +636,14 @@ c_1\\c_2
 \end{scope}
 \end{tikzpicture}
 \end{equation*}
-最上面的两个点每个为分母贡献一个因子$\braket{2|\vs|1}=V_{21}$, 剩余的点每个贡献$\braket{1|\vs|2}=V_{12}$. 虚线$A,C$每个都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 虚线$B$贡献一个因子$(2E_1^{(0)} - 2E_2^{(0)})$. 此外, 该图有2个空穴线($h=2$)1个闭合圈图($l=1$), 所以要将式子乘以$(-1)^3$. 所以最终有
+最上面的两个点每个为分母贡献一个因子$\braket{2|\vs|1}=V_{21}$, 
+剩余的点每个贡献$\braket{1|\vs|2}=V_{12}$. 
+虚线$A,C$每个都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 
+虚线$B$贡献一个因子$(2E_1^{(0)} - 2E_2^{(0)})$. 
+此外, 
+该图有2个空穴线($h=2$)1个闭合圈图($l=1$), 
+所以要将式子乘以$(-1)^3$. 
+所以最终有
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)}, scale=1]
 \diagsize
@@ -476,7 +659,9 @@ c_1\\c_2
 \end{tikzpicture} = (-)^3\frac{(V_{12}V_{21})^2}{\left(E_1^{(0)} - E_2^{(0)}\right)\left(2E_1^{(0)} - 2E_2^{(0)}\right)} = \frac{(V_{12}V_{21})^2}{2\left(E_1^{(0)} - E_2^{(0)}\right)^2} 
 \end{equation*}
 
-值得注意, 在我们的在转化规则下, 如下的每一对图都给出相同结果
+值得注意, 
+在我们的在转化规则下, 
+如下的每一对图都给出相同结果
 \begin{align*}
 %\tikzset{scale=.67}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
@@ -522,9 +707,16 @@ c_1\\c_2
 (6,0)arc(290:365:1.58cm)node[right,midway]{2}node{\dian} arc (90:160:1) node[above,pos=.5]{1}node{\dian} arc(-15:45:1.58)node[right,pos=.6]{2}node{\dian} to [bend right] node[left,midway]{1}node[pos=1]{\dian}(6,0) ;
 \end{tikzpicture}
 \end{align*}
-这事实告诉我们, 画图时不必将各点严格按照竖线排列. 实际上, \emph{在不改变各点竖直顺序的前提下, 我们可以对图进行任意扭动}.
+这事实告诉我们, 
+画图时不必将各点严格按照竖线排列. 
+实际上, 
+\emph{在不改变各点竖直顺序的前提下, 我们可以对图进行任意扭动}.
 
-表6.1中按照之前的规则计算出了所有的二、三、四阶图对应的代数式. 按习惯, 一阶泡泡图定为
+
+表6.
+1中按照之前的规则计算出了所有的二、三、四阶图对应的代数式. 
+按习惯, 
+一阶泡泡图定为
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=1]
 \begin{scope}[blue, decoration = {markings, mark= {between positions 0 and 1 step .35 with {
@@ -534,7 +726,13 @@ c_1\\c_2
 \end{scope}
 \end{tikzpicture} = V_{11}
 \end{equation*}
-检视表6.1可以发现, 按照我们的规则把图换成算式, 然后将各阶图对应的算式加起来, 就得到该阶的能量修正, 其结果和上一节所得的完全相同. 
+检视表6.
+1可以发现, 
+按照我们的规则把图换成算式, 
+然后将各阶图对应的算式加起来, 
+就得到该阶的能量修正, 
+其结果和上一节所得的完全相同. 
+
 \exercise{写出虚线仅会穿过一条空穴线和一条粒子线的五阶图, 求出对应的算式并证明这些图之和对应着
 \[
 \frac{V_{12}V_{21}(V_{22}-V_{11})^3}{(E_1^{(0)}-E_2^{(0)})^4}
@@ -630,7 +828,14 @@ c_1\\c_2
 \end{table}
 
 \subsection{$N$个态的图微扰论}
-本节将之前所发展的RS微扰论的图表示应用到$N$-态系统上. 考虑如何找到这样一个系统最低本征值的微扰展开. 现下我们仍然只有一个空穴态$\ket{1}$, 但有$N-1$个粒子态$\ket{n}, n=2,3,\cdots,N$. 我们仍然按照之前的办法来画图, 但要注意现在粒子线的标签可以式任意的$n$. 举个例子, 下图
+本节将之前所发展的RS微扰论的图表示应用到$N$-态系统上. 
+考虑如何找到这样一个系统最低本征值的微扰展开. 
+现下我们仍然只有一个空穴态$\ket{1}$, 
+但有$N-1$个粒子态$\ket{n}, n=2,3,\cdots,N$. 
+我们仍然按照之前的办法来画图, 
+但要注意现在粒子线的标签可以式任意的$n$. 
+举个例子, 
+下图
 \begin{equation*}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -678,7 +883,8 @@ arc (180:135:2.12cm) node[left,midway]{2}  node{\dian}
 arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
-等等. 一般地我们可以写出
+等等. 
+一般地我们可以写出
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -688,7 +894,8 @@ arc (180:135:2.12cm) node[left,midway]{$n$}  node{\dian}
 arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
-其中的标号$m,n$可以独立地取$2$到$N$的任何值. 其中一类图如下
+其中的标号$m,n$可以独立地取$2$到$N$的任何值. 
+其中一类图如下
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -698,12 +905,15 @@ arc (180:135:2.12cm) node[left,midway]{$n$}  node{\dian}
 arc (45:-45:2.12cm)  node[right,midway]{1} node{\dian} ;
 \end{tikzpicture}
 \end{equation*}
-我们称这样的图为\emph{对角的}. 为得到这些推广了的图的数学表达式, 我们需要在之前的规则上增加一条：
+我们称这样的图为\emph{对角的}. 
+为得到这些推广了的图的数学表达式, 
+我们需要在之前的规则上增加一条：
 \begin{itemize}\itshape
 	\item[4] 求和时要对所有粒子标签求和. 
 \end{itemize}
 
-这里来看一个示例. 计算二阶和三阶能量
+这里来看一个示例. 
+计算二阶和三阶能量
 \begin{subequations}
 \begin{align}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
@@ -730,9 +940,23 @@ arc (180:225:2.12cm)node[left,midway]{1}  node{\dian};
 & = \sum_{n\neq 1}\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}} = \sum_n'\frac{V_{1n}V_{n1}}{E_1^{(0)} - E_n^{(0)}}
 \end{align}
 \end{subequations}
-这两个表达式与之前所得到的二阶、三阶能量的表达式(6.12)(6.15)在$i=1$的情况完全相同. 如果现在要得到某个态$i$的微扰表达式, 而且$i$不一定是最低能态, 我们要如何处理? 图的形状怎么样呢？ 我们很容易能够验证, 如果将空穴线标为$i$, 粒子线标为$m,n,k$, 其取值为$1,2,\ldots,i-1$和$i+1,\ldots,N$, 那么答案就与之前的相同. 那么现在我们对RS微扰论就有了一个完整的图表示框架, 可以将其应该用于任意的微扰和任意的零阶态上.
+这两个表达式与之前所得到的二阶、三阶能量的表达式(6.
+12)(6.
+15)在$i=1$的情况完全相同. 
+如果现在要得到某个态$i$的微扰表达式, 
+而且$i$不一定是最低能态, 
+我们要如何处理? 图的形状怎么样呢？ 我们很容易能够验证, 
+如果将空穴线标为$i$, 
+粒子线标为$m,n,k$, 
+其取值为$1,2,\ldots,i-1$和$i+1,\ldots,N$, 
+那么答案就与之前的相同. 
+那么现在我们对RS微扰论就有了一个完整的图表示框架, 
+可以将其应该用于任意的微扰和任意的零阶态上.
+
 \exercise{
-使用图技术得到一个$N$-态系统中特定态的四阶微扰能(比如态$i$). 也就是, 计算如下图的表达式：
+使用图技术得到一个$N$-态系统中特定态的四阶微扰能(比如态$i$). 
+也就是, 
+计算如下图的表达式：
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -785,11 +1009,16 @@ arc (-15:-45:2.12cm) node[right,midway]{$i$} node{\dian};
 (6,0);
 \end{tikzpicture}
 \end{equation*}
-其中指标$m,n,k$的值不取$i$. 用6.1节介绍的方法得出四阶能量的代数表达式并与图形方法所得的结果比较.
+其中指标$m,n,k$的值不取$i$. 
+用6.
+1节介绍的方法得出四阶能量的代数表达式并与图形方法所得的结果比较.
+
 } 
 \subsection{对图求和}
 \label{sec6.2.3}
-图微扰论中的一个重要技术就是对某些特定类的图进行无穷阶求和. 为说明这个技术我们考虑两态系统. 对二阶有贡献的唯一图就是
+图微扰论中的一个重要技术就是对某些特定类的图进行无穷阶求和. 
+为说明这个技术我们考虑两态系统. 
+对二阶有贡献的唯一图就是
 \begin{equation*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6] 
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
@@ -798,7 +1027,8 @@ arc (-45:45:2.12cm) node[left,midway]{$2$} node{\dian}
 arc (135:225:2.12cm) node[left,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \end{equation*}
-在此图上加点可以生成一系列的图, 现在考虑这些图的求和：
+在此图上加点可以生成一系列的图, 
+现在考虑这些图的求和：
 \begin{align}
 \Delta = 
 \left[
@@ -865,22 +1095,32 @@ arc (-15:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \right]+\cdots
 \end{align}  
-利用\ref{t6.1}和练习6.1中的五阶图表达式, 我们可以得到
+利用\ref{t6.1}和练习6.
+1中的五阶图表达式, 
+我们可以得到
 \begin{align}
 \Delta = & \left[ \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\right] + \left[ \frac{V_{12}V_{21}(V_{22}-V_{11})}{(E^{(0)}_1 - E_2^{(0)})^2}\right] + \left[ \frac{V_{12}V_{21}(V_{22}-V_{11})^2}{(E^{(0)}_1 - E_2^{(0)})^3}\right]\notag\\
          & + \left[ \frac{V_{12}V_{21}(V_{22}-V_{11})^3}{(E^{(0)}_1 - E_2^{(0)})^4}\right] + \cdots\notag\\
 \Delta = &  \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\Bigg[ 1 + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}\right) + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}\right)^2 \notag\\
          & + \left(\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}\right) +\cdots \Bigg]
 \end{align}
-注意到方括号中的式子是一几何级数. 使用公式
+注意到方括号中的式子是一几何级数. 
+使用公式
 \begin{align*}
 (1-x)^{-1} = 1+x+x^2+x^3+\cdots
 \end{align*}
-则级数(6.26)求和后就成为
+则级数(6.
+26)求和后就成为
 \begin{align}
 \Delta = &  \frac{V_{12}V_{21}}{E^{(0)}_1 - E_2^{(0)}}\left[ \frac{1}{1-\frac{V_{22}-V_{11}}{E_1^{(0)} - E_2{(0)}}} \right] = \frac{V_{12}V_{21}}{(E_1^{(0)} + V_{11}) - (E_2^{(0)} + V_{22})}
 \end{align}
-对这组图求和到无穷阶得到的表达式类似于二阶微扰的结果, 但不同指出在于它有\emph{能量移动分母(shifted energy denominator)}. 这个结果可以重述如下：对一个呈几何级数的图求和至无穷阶, 所得的结果是某个微扰论的有限阶结果, 这个微扰论的哈密顿量的微扰和未受扰部分的划分方式与图所对应的划分方式不同. 特别地在两态问题中, 我们原始的哈密顿量划分方式为
+对这组图求和到无穷阶得到的表达式类似于二阶微扰的结果, 
+但不同指出在于它有\emph{能量移动分母(shifted energy denominator)}. 
+这个结果可以重述如下：对一个呈几何级数的图求和至无穷阶, 
+所得的结果是某个微扰论的有限阶结果, 
+这个微扰论的哈密顿量的微扰和未受扰部分的划分方式与图所对应的划分方式不同. 
+特别地在两态问题中, 
+我们原始的哈密顿量划分方式为
 \begin{align*}
 \mathbf{H}_0 & = \begin{pmatrix}
 E_1^{(0)} & 0 \\
@@ -904,7 +1144,9 @@ V_{21} & 0
 \end{align*} 
 则原始划分下图的集合级数求和结果就是第二种划分下的二阶微扰能.
 
-下面将此结果推广到$N$-态系统中. 在二阶图上加点可以禅城如下的图：
+
+下面将此结果推广到$N$-态系统中. 
+在二阶图上加点可以禅城如下的图：
 \begin{align}
 \Delta = 
 \left[
@@ -933,23 +1175,37 @@ arc (45:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \end{tikzpicture}
 \right]+\cdots
 \end{align}
-注意以这种方式生成的这类图全部是对角的. 对这类图求和给出
+注意以这种方式生成的这类图全部是对角的. 
+对这类图求和给出
 \begin{align}
 \Delta = \sideset{}{'}\sum_n \frac{V_{1n}V_{n1}}{(E_1^{(0)} + V_{11}) - (E_n^{(0)} + V_{nn})}
 \end{align}
-其中求和号上的一撇意思是求和时去掉$n=1$这项. 再次注意到上面所得的结果就是具有能量移动分母的二阶(微扰能量)表达式. 我们之后会知道, 几何级数求和技术可用以获得\hft 能量的微扰修正.
+其中求和号上的一撇意思是求和时去掉$n=1$这项. 
+再次注意到上面所得的结果就是具有能量移动分母的二阶(微扰能量)表达式. 
+我们之后会知道, 
+几何级数求和技术可用以获得\hft 能量的微扰修正.
+
 \section{轨道微扰论: 单粒子微扰}
-目前为止所介绍的理论可以用于任意量子力学体系. 本节我们考虑一个重要的具体例子——其中未受扰哈密顿量是一组单粒子哈密顿量之和：
+目前为止所介绍的理论可以用于任意量子力学体系. 
+本节我们考虑一个重要的具体例子——其中未受扰哈密顿量是一组单粒子哈密顿量之和：
 \begin{align}
 \hs_0 = \sum_i h_0(i)
 \end{align}
-实际上\hft 哈密顿量的形式就是如此.我们希望用微扰理论来改进这种对多电子体系的单粒子处理方式. 为简明计, 一开始我们仅考虑微扰部分为单粒子作用之和的情形：
+实际上\hft 哈密顿量的形式就是如此.
+我们希望用微扰理论来改进这种对多电子体系的单粒子处理方式. 
+为简明计, 
+一开始我们仅考虑微扰部分为单粒子作用之和的情形：
 \begin{align}
 \vs = \sum_i v(i)
 \end{align}
-下节再将所得结果推广到包含双粒子相互作用的情形. 微扰是一组单粒子相互作用之和的实际粒子就是处在外电场$\vec{F}$中的分子. 在这种情况下微扰为$\vec{F}\cdot\sum_i\mathbf{r}(i)$, 其中$\mathbf{r}(i)$是第$i$个电子的位置矢量. 
+下节再将所得结果推广到包含双粒子相互作用的情形. 
+微扰是一组单粒子相互作用之和的实际粒子就是处在外电场$\vec{F}$中的分子. 
+在这种情况下微扰为$\vec{F}\cdot\sum_i\mathbf{r}(i)$, 
+其中$\mathbf{r}(i)$是第$i$个电子的位置矢量. 
+
 
 设想已经得到一组自旋轨道和轨道能量作为$h_0$的本征函数和本征值,
+
 \begin{align}
 h_0\chi_i^{(0)} = \epsilon_i^{(0)} \chi_i^{(0)}
 \end{align}
@@ -957,20 +1213,29 @@ h_0\chi_i^{(0)} = \epsilon_i^{(0)} \chi_i^{(0)}
 \begin{align}
 \ket{\Psi_0} = \ket{\chi_1^P(0)\cdots\chi_a^{(0)}\cdots\chi_n^{(0)}}
 \end{align}
-我们用指标$a,b,c,\ldots$来记占据(空穴hole)自旋轨道, 用$r,s,t,\ldots$来记未占(粒子particle)自旋轨道. 波函数(6.33)是$\hs_0$的本征函数, 本征值就是占据自旋轨道能量之和：
+我们用指标$a,b,c,\ldots$来记占据(空穴hole)自旋轨道, 
+用$r,s,t,\ldots$来记未占(粒子particle)自旋轨道. 
+波函数(6.
+33)是$\hs_0$的本征函数, 
+本征值就是占据自旋轨道能量之和：
 \begin{align*}
 \hs_0\ket{\Psi_0} = \left( \sum_a\epsilon_a^{(0)} \right)\ket{\Psi_0}
 \end{align*}
-若存在微扰$\vs$, 那么$\ket{\Psi_0}$就是精确波函数$\ket{\Phi_0}$的一个近似. 在这种近似下, 受微扰的$N$-电子体系的基态就是：
+若存在微扰$\vs$, 
+那么$\ket{\Psi_0}$就是精确波函数$\ket{\Phi_0}$的一个近似. 
+在这种近似下, 
+受微扰的$N$-电子体系的基态就是：
 \begin{align}
 E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \braket{\Psi_0|\hs_0+\vs|\Psi_0}\notag\\
     & = \sum_a\epsilon_a^{(0)} + \sum_a\braket{a|v|a} = \sum_a\epsilon_a^{(0)} + \sum_av_{aa}
 \end{align}
-在这种微扰是单粒子作用之和的特殊情形下, 系统的总\ha 为
+在这种微扰是单粒子作用之和的特殊情形下, 
+系统的总\ha 为
 \begin{align}
 \hs = \hs_0 + \vs = \sum_i(h_0(i)+v(i)) = \sum_ih(i) 
 \end{align}
-也是一些单粒子作用之和. 因此可以找到一组精确的自旋轨道及其能量：
+也是一些单粒子作用之和. 
+因此可以找到一组精确的自旋轨道及其能量：
 \begin{align}
 h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 \end{align}
@@ -978,7 +1243,8 @@ h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 \begin{align}
 \ket{\Phi_0} = \ket{\chi_1\cdots\chi_a\cdots\chi_N}
 \end{align}
-该波函数即$\hs$的本征函数, 对应本征值等于占据轨道能量之和:
+该波函数即$\hs$的本征函数, 
+对应本征值等于占据轨道能量之和:
 \begin{align*}
 \hs\ket{\Phi_0} = \left(\sum_a\epsilon_a \right)\ket{\Phi_0} = \scr{E}_0\ket{\Phi_0}
 \end{align*}
@@ -991,16 +1257,26 @@ h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 \begin{align*}
 \scr{E}_0 = E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + \cdots
 \end{align*}
-由于精确能量可写为占据轨道能量$\epsilon_a$之和,  我们简单地将每个$\epsilon_a$进行微扰展开, 然后将结果对所有占据自旋轨道求和. 由于6.1节中的一般性理论可以用于单粒子零阶\ha (即$h_0$)和单粒子微扰, 我们立马得到：
+由于精确能量可写为占据轨道能量$\epsilon_a$之和, 
+ 我们简单地将每个$\epsilon_a$进行微扰展开, 
+然后将结果对所有占据自旋轨道求和. 
+由于6.
+1节中的一般性理论可以用于单粒子零阶\ha (即$h_0$)和单粒子微扰, 
+我们立马得到：
 \begin{align}
 \epsilon_a & = \epsilon_a^{(0)} + \braket{a|v|a} + \sum_i'\frac{\braket{a|v|i\braket{i|v|a}}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots\notag\\
 	       & = \epsilon_a^{(0)} + v_{aa} + \sum_i'\frac{v_{ai}v_{ia}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots
 \end{align}
-对$i$的求和可分为两部分, 一部分是对所有粒子轨道求和, 零一部分对除$a$外的所有空穴轨道求和：
+对$i$的求和可分为两部分, 
+一部分是对所有粒子轨道求和, 
+零一部分对除$a$外的所有空穴轨道求和：
 \begin{align}
 \epsilon_a = \epsilon_a^{(0)} + v_{aa} + \sum_r\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}} + v_{aa} + \sum_{b\neq a}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}-\epsilon_b^{(0)}} + \cdots
 \end{align}
-当下我们要得到精确能量的微扰展开, 那么将(6.40)带入(6.38)可得
+当下我们要得到精确能量的微扰展开, 
+那么将(6.
+40)带入(6.
+38)可得
 \begin{align}
 \scr{E}_0 = \sum_a\epsilon_a = \sum_av_{aa} + \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_{r}^{(0)}} + \sum_{\substack{ab\\a\neq b}}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}- \epsilon_{b}^{(0)}} + \cdots
 \end{align}
@@ -1008,11 +1284,15 @@ h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 \begin{align*}
 X = \sum_{\substack{ab\\a\neq b}}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}- \epsilon_{b}^{(0)}} 
 \end{align*}
-值为零. 为说明这点, 我们交换傀标$a,b$, 得到
+值为零. 
+为说明这点, 
+我们交换傀标$a,b$, 
+得到
 \begin{align*}
 X = \sum_{\substack{ab\\a\neq b}}\frac{v_{ba}v_{ab}}{\epsilon_b^{(0)}- \epsilon_{a}^{(0)}}  = - \sum_{\substack{ab\\a\neq b}}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}- \epsilon_{b}^{(0)}} = -X 
 \end{align*}
-因此$X=0$. 那么可以写出直到第二阶的式子：
+因此$X=0$. 
+那么可以写出直到第二阶的式子：
 \begin{align}
 \scr{E}_0 = \sum_a\epsilon_a^{(0)} + \sum_av_{aa} + \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_{r}^{(0)}}
 \end{align}
@@ -1025,9 +1305,14 @@ E_0^{(2)} & = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 \label{6.43c}
 \end{align}
 \end{subequations}
-可以看见$\ket{\Psi_0}$的能量(见(6.34))等于零阶与一阶能量之和(即$E_0 = E_0^{(0)}+E_0^{(1)}$).
+可以看见$\ket{\Psi_0}$的能量(见(6.
+34))等于零阶与一阶能量之和(即$E_0 = E_0^{(0)}+E_0^{(1)}$).
 
-式(6.43)中的求和遍及所有占据(空穴)和非占据(粒子)自旋轨道. 由于矩阵元$v_{ij} = \braket{i|v|j}$仅当自旋轨道$i,j$自旋相同时非零, 所以对于闭壳层体系我们可以将该式重新写为对空间轨道的求和再乘以$2$:
+
+式(6.
+43)中的求和遍及所有占据(空穴)和非占据(粒子)自旋轨道. 
+由于矩阵元$v_{ij} = \braket{i|v|j}$仅当自旋轨道$i,j$自旋相同时非零, 
+所以对于闭壳层体系我们可以将该式重新写为对空间轨道的求和再乘以$2$:
 \begin{subequations}
 	\begin{align}
 	E_0^{(0)} & = 2\sum_a^{N/2}\epsilon_a^{(0)}\\
@@ -1035,24 +1320,30 @@ E_0^{(2)} & = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 	E_0^{(2)} & = 2\sum_{ar}^{N/2}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 	\end{align}
 \end{subequations}
-求和上限$N/2$是一个简写记号, 代表求和对于空间轨道进行而对非自旋轨道.
+求和上限$N/2$是一个简写记号, 
+代表求和对于空间轨道进行而对非自旋轨道.
+
 \exercise{
 请导出
 \begin{align*}
 E_0^{(2)} = \sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)} - \epsilon_r^{(0)}}
 \end{align*}
-你可以从二阶能量的一般表达式(式(6.12))开始, 将其用在$N$-电子体系中：
+你可以从二阶能量的一般表达式(式(6.
+12))开始, 
+将其用在$N$-电子体系中：
 \begin{align*}
 E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\right|^2}{E_0^{(0)} - E_n^{(0)}}
 \end{align*}
 此处求和遍及除基态外的所有态.
+
 
 \textit{提示:} 态$\ket{n}$肯定是如下类型的单激发：
 \begin{align*}
 \ket{\Psi_a^r} = \ket{\chi_a^{(0)}\cdots\chi_{a-1}^{(0)}\chi_{r}^{(0)}\chi_{a+1}^{(0)}\chi_{N}^{(0)}}.
 \end{align*}
 \Next
-用式(6.15)中的一般表达式计算三阶能量$E_3^{(0)}.$
+用式(6.
+15)中的一般表达式计算三阶能量$E_3^{(0)}.$
 \begin{enumerate}[a.]
 	\item 证明
 		\begin{align*}
@@ -1081,7 +1372,15 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 \end{enumerate}
 }
 
-在5.3.2节, 我们已用不同的多体方法在H\"uckel理论的框架下计算了$N$个碳原子组成的环多烯的共振能($N=2n=4\nu +2,\nu=1,2,\ldots$). 为说明给出介绍的方法我们用微扰论重新处理这个问题. 回忆共振能的定义——精确总能量(对角化H\"uckel矩阵并将所有占据轨道能量加和即得)与$N/2=n$个局域烯烃单元的能量之差. 第$i$个单元的占据(空穴)和非占据(粒子)轨道分别记为$\ket{i},\ket{i^*}$(见式(5.137)). 总的\ha 可划分为：
+在5.
+3.
+2节, 
+我们已用不同的多体方法在H\"uckel理论的框架下计算了$N$个碳原子组成的环多烯的共振能($N=2n=4\nu +2,\nu=1,2,\ldots$). 
+为说明给出介绍的方法我们用微扰论重新处理这个问题. 
+回忆共振能的定义——精确总能量(对角化H\"uckel矩阵并将所有占据轨道能量加和即得)与$N/2=n$个局域烯烃单元的能量之差. 
+第$i$个单元的占据(空穴)和非占据(粒子)轨道分别记为$\ket{i},\ket{i^*}$(见式(5.
+137)). 
+总的\ha 可划分为：
 \begin{align}
 \hs = \hs_0 + \vs = \sum_ih_0(i) + \sum_iv(i)
 \end{align}
@@ -1092,7 +1391,8 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 	h_0\ket{i^*} &= (\alpha-\beta)\ket{i^*} = \epsilon_{i^*}^{(0)}\ket{i^*}
 	\end{align}
 \end{subequations}
-为之后参考我们先指出$\epsilon_i^{(0)} - \epsilon^{(0)}_{j^*}=2\beta$无论$i,j$如何都成立. 微扰项的非零矩阵元为
+为之后参考我们先指出$\epsilon_i^{(0)} - \epsilon^{(0)}_{j^*}=2\beta$无论$i,j$如何都成立. 
+微扰项的非零矩阵元为
 \begin{subequations}
 	\begin{align}
 	\braket{i|v|(i\pm 1)^*} & = \pm\beta/2\\
@@ -1100,27 +1400,63 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 	\braket{i^*|v|(i\pm 1)^*} & = -\beta/2\\
 	\end{align}
 \end{subequations}
-由于此处多烯是环状的, 第零个烯烃单元就与第$n$个单元一样, 第$(n+1)$个实际就是第一个. 在该模型中, 本分子的精确共振能为$2\beta$, 此外有如下精确共振能的渐近公式：
+由于此处多烯是环状的, 
+第零个烯烃单元就与第$n$个单元一样, 
+第$(n+1)$个实际就是第一个. 
+在该模型中, 
+本分子的精确共振能为$2\beta$, 
+此外有如下精确共振能的渐近公式：
 \begin{align}
 \lim\limits_{N\to\infty}E_R = (4/\pi-1)N\beta=0.2732N\beta
 \end{align}
 
-有了微扰项$v$的矩阵元(6.47)和零阶轨道能量(6.46)我们就能计算微扰能量. 先从二阶能量开始. 我们处理的为闭壳层体系, 相应的式子就是(6.44c):
+有了微扰项$v$的矩阵元(6.
+47)和零阶轨道能量(6.
+46)我们就能计算微扰能量. 
+先从二阶能量开始. 
+我们处理的为闭壳层体系, 
+相应的式子就是(6.
+44c):
 \begin{align}
 E_0^{(0)} = 2\sum_{ar}^{N/2}\frac{v_{ar}v_{ra}}{\epsilon^{(0)}_a - \epsilon^{(0)}_r} = 2 \sum_{ar}^{N/2}\frac{\braket{a|v|r}\braket{r|v|a}}{\epsilon^{(0)}_a - \epsilon^{(0)}_r}
 \end{align}
-指标$a$取遍全部$n$个占据烯烃轨道$\ket{i}$, 指标$r$取遍总共$n$个未占轨道$\ket{j^*}$, 因此我们有
+指标$a$取遍全部$n$个占据烯烃轨道$\ket{i}$, 
+指标$r$取遍总共$n$个未占轨道$\ket{j^*}$, 
+因此我们有
 \begin{align}
 E_0^{(2)} = 2\sum_{i=1}^{n}\sum_{j=1}^{n}\frac{\braket{i|v|j^*}\braket{j^*|v|i}}{\epsilon^{(0)}-\epsilon^{(0)}_{j^*}} = \frac{1}{\beta}\sum_{i=1}^{n}\sum_{j=1}^{N}\braket{i|v|j^*}\braket{j^*|v|i}
 \end{align}
-式中我们用到了轨道能之间的差为$2\beta$. 将$i$固定, 很容易计算对$j$的求和, 因为只有当$j=i\pm1$时矩阵元才不为零(见式(6.47a)). 因此
+式中我们用到了轨道能之间的差为$2\beta$. 
+将$i$固定, 
+很容易计算对$j$的求和, 
+因为只有当$j=i\pm1$时矩阵元才不为零(见式(6.
+47a)). 
+因此
 \begin{align}
 E_0^{(2)} & = \frac{1}{\beta}\sum_{i=1}^{n}\braket{i|v|(i+1)^*}\braket{(i+1)^*|v|i} + \braket{i|v|(i-1)^*}\braket{(i-1)^*|v|i}\notag\\
 & = \frac{1}{\beta}\sum_{i=1}^{n}[(\beta/2)^2 + (-\beta/2)^2] = \frac{n\beta}{2} = \frac{N\beta}{4} = 0.25N\beta
 \end{align}
-对于苯来说, 共振能就是$1.5\beta$,  是精确值的0.75倍(即75\%). 对于越大的体系, 这个结果的质量就越好. 比较(6.48)和(6.51)可以看见, $N$很大的时候, 二阶能量接近精确结果的91.5\%.
+对于苯来说, 
+共振能就是$1.5\beta$, 
+ 是精确值的0.
+75倍(即75\%). 
+对于越大的体系, 
+这个结果的质量就越好. 
+比较(6.
+48)和(6.
+51)可以看见, 
+$N$很大的时候, 
+二阶能量接近精确结果的91.
+5\%.
 
-现在用一种略微不同的角度来考虑以上的推导, 这能帮助我们组织更高阶的计算. 在(6.50)中固定$i$, 计算对$j$的求和, 注意到轨道$i$仅与$(i\pm1)^*$相互作用. 可用图形表示这一点：
+
+现在用一种略微不同的角度来考虑以上的推导, 
+这能帮助我们组织更高阶的计算. 
+在(6.
+50)中固定$i$, 
+计算对$j$的求和, 
+注意到轨道$i$仅与$(i\pm1)^*$相互作用. 
+可用图形表示这一点：
 \begin{equation*}
 i\to j^* \to i\leftrightarrow
 \begin{tikzpicture}[baseline={(0,-.1)},scale=1.2]
@@ -1128,17 +1464,32 @@ i\to j^* \to i\leftrightarrow
 \draw (a)--node[above]{$+$}(b)--node[above]{$+$}(c)--node[below]{$-$}(d)--node[below]{$-$}(a);
 \end{tikzpicture}\leftrightarrow \sum_j\braket{i|v|j^*}\braket{j^*|v|i}
 \end{equation*}
-图中正负号代表两轨道之间的矩阵元$\pm\beta/2$的正负. 对$j$的求和计算如下. 从左侧的$i$走到右侧的$i$中所有路径都配上一个数字, 该数字就是经过路径所遇到的所有矩阵元之乘积, 然后将所有路径的数字都加起来就完成了. 下面具体说明, 路径$i\to (i+1)^*\to i$对应的值为$(+\beta/2)(+\beta/2)=\beta^2/4$, 而路径$i\to (i-1)^*\to i$对应的值为$(-\beta/2)(-\beta/2)=\beta^2/4$, 那么对每一个$i$来说, 对$j$的求和就是$\beta^2/2$, 这与之前的结果相同.
+图中正负号代表两轨道之间的矩阵元$\pm\beta/2$的正负. 
+对$j$的求和计算如下. 
+从左侧的$i$走到右侧的$i$中所有路径都配上一个数字, 
+该数字就是经过路径所遇到的所有矩阵元之乘积, 
+然后将所有路径的数字都加起来就完成了. 
+下面具体说明, 
+路径$i\to (i+1)^*\to i$对应的值为$(+\beta/2)(+\beta/2)=\beta^2/4$, 
+而路径$i\to (i-1)^*\to i$对应的值为$(-\beta/2)(-\beta/2)=\beta^2/4$, 
+那么对每一个$i$来说, 
+对$j$的求和就是$\beta^2/2$, 
+这与之前的结果相同.
 
-现在来计算三阶能量. 适用于闭壳层体系的表达式在练习6.4(e)中给出：
+
+现在来计算三阶能量. 
+适用于闭壳层体系的表达式在练习6.
+4(e)中给出：
 \begin{align}
 E_0^{(3)} = 2\sum_{ars}^{N/2}\frac{v_{ar}v_{rs}v_{sa}}{(\epsilon^{(0)}_a-\epsilon^{(0)}_r)(\epsilon^{(0)}_a-\epsilon^{(0)}_s)} - 2\sum_{abr}^{N/2}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon^{(0)}_a-\epsilon^{(0)}_r)(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}
 \end{align}
-按照计算$E_0^{(0)}$时的办法, 该表达式的第一项成为
+按照计算$E_0^{(0)}$时的办法, 
+该表达式的第一项成为
 \begin{align}
 \frac{2}{(2\beta)^2}\sum_{i=1}^{n}\sum_{j=1}^{n}\sum_{k=1}^{n}\braket{i|v|j^*}\braket{j^*|v|k^*}\braket{k^*|v|i}
 \end{align}
-为计算对$j,k$的求和, 我们使用上面介绍的图形表示：
+为计算对$j,k$的求和, 
+我们使用上面介绍的图形表示：
 \begin{align*}
 i\to j^* \to k^* \to i \longleftrightarrow 
 \begin{tikzpicture}[baseline={(0,0)}]
@@ -1150,9 +1501,21 @@ i\to j^* \to k^* \to i \longleftrightarrow
 \draw[dashed] (im2)--(ie);
 \end{tikzpicture}
 \end{align*}
-此处要注意, 由于$i$不与$i^*,(i+2)^*,(i-2)^*$相互作用, 这些求和的值必须为零. 类似的说法对(6.52)中第二项也成立, 所以我们可以知道三阶共振能为零.
+此处要注意, 
+由于$i$不与$i^*,(i+2)^*,(i-2)^*$相互作用, 
+这些求和的值必须为零. 
+类似的说法对(6.
+52)中第二项也成立, 
+所以我们可以知道三阶共振能为零.
 
-我们走得可能有些急. 实际上, 以上的结果对苯之外的所有情况都成立. 由于研究对象是周环的, 此时$(i\pm 2)^*$与$(i\mp1)^*$是一样的. 因此在某个$i$下(比如设为$=1i$), $j,k$求和的图表示为
+
+我们走得可能有些急. 
+实际上, 
+以上的结果对苯之外的所有情况都成立. 
+由于研究对象是周环的, 
+此时$(i\pm 2)^*$与$(i\mp1)^*$是一样的. 
+因此在某个$i$下(比如设为$=1i$), 
+$j,k$求和的图表示为
 \begin{align*}
 \begin{tikzpicture}[baseline={(0,0)}]
 \node(i)at(0,0){$1$};\node(ip1)at(1,1){$2^*$};\node(ip2)at(2,2){$3^*$};\node(is)at(2,0){$1^*$};\node(im1)at(1,-1){$3^*$};\node(im2)at(2,-2){$2^*$};\node(ie)at(4,0){$1$};
@@ -1163,7 +1526,13 @@ i\to j^* \to k^* \to i \longleftrightarrow
 \draw[dashed] (im2)--(ie);
 \end{tikzpicture}
 \end{align*}
-那么就有两条路径：1) $1\to2^*\to3^*\to1$, 对应值为$(\beta/2)(-\beta/2)(-\beta/2)=\beta^3/8$, 2) $1\to3^*\to2^*\to1$, 对应值为$(-\beta/2)(-\beta/2)(\beta/2)=\beta^3/8$. 用(6.53)中的结果, 我们可知对$E_3^{(0)}$中第一项有
+那么就有两条路径：1) $1\to2^*\to3^*\to1$, 
+对应值为$(\beta/2)(-\beta/2)(-\beta/2)=\beta^3/8$, 
+2) $1\to3^*\to2^*\to1$, 
+对应值为$(-\beta/2)(-\beta/2)(\beta/2)=\beta^3/8$. 
+用(6.
+53)中的结果, 
+我们可知对$E_3^{(0)}$中第一项有
 \begin{align*}
 \frac{2}{(2\beta)^2} \sum_{i=1}^{3}[(\beta^3/8)+(\beta^3/8)] = \frac{3\beta}{8}
 \end{align*}
@@ -1171,15 +1540,38 @@ i\to j^* \to k^* \to i \longleftrightarrow
 \begin{align}
 E_0^{(3)}(\text{苯}) = \frac{3\beta}{4}
 \end{align}
-因此苯的共振能算到三阶就是$2.25\beta$(即确切值的113\%). 练习6.7中用图技术给出了四阶能量
+因此苯的共振能算到三阶就是$2.25\beta$(即确切值的113\%). 
+练习6.
+7中用图技术给出了四阶能量
 \begin{align}
 E_0^{(4)} = \frac{N\beta}{64}
 \end{align}
-那么苯共振能算到四阶就是$2.34\beta$(确切值的117\%). 这里的微扰展开看起来不收敛. 事实上它确实会收敛. 不过过程很慢而且是振荡式的. 练习6.6进一步研究了这一点. 这里指出一个有趣的事实, 微扰展开在大体系下表现更佳. $N$很大时, 至四阶的共振能为$0.2656\beta((\frac{1}{4}+\frac{1}{64})N\beta)$, 确切的渐近值为$0.2732N\beta$(前者占确切值的97\%).
+那么苯共振能算到四阶就是$2.34\beta$(确切值的117\%). 
+这里的微扰展开看起来不收敛. 
+事实上它确实会收敛. 
+不过过程很慢而且是振荡式的. 
+练习6.
+6进一步研究了这一点. 
+这里指出一个有趣的事实, 
+微扰展开在大体系下表现更佳. 
+$N$很大时, 
+至四阶的共振能为$0.2656\beta((\frac{1}{4}+\frac{1}{64})N\beta)$, 
+确切的渐近值为$0.2732N\beta$(前者占确切值的97\%).
+
 \exercise{
-证明(6.52)中第二项在苯中等于$\frac{3}{8}\beta$. 
+证明(6.
+52)中第二项在苯中等于$\frac{3}{8}\beta$. 
+
 \Next
-考虑一个环状多烯, 有$N=4\nu+2,\nu=1,2,\ldots$个碳. 这里并不假设所有的键都等同, 它们的长度不一. 在H\"uckel理论的范畴内, 这意味着这邻接的两个碳之间共振积分并不都等于$\beta$, 而是可以取$\beta_1,\beta_2$. 举个例子, 对于苯我们有
+考虑一个环状多烯, 
+有$N=4\nu+2,\nu=1,2,\ldots$个碳. 
+这里并不假设所有的键都等同, 
+它们的长度不一. 
+在H\"uckel理论的范畴内, 
+这意味着这邻接的两个碳之间共振积分并不都等于$\beta$, 
+而是可以取$\beta_1,\beta_2$. 
+举个例子, 
+对于苯我们有
 \begin{equation*}
 \begin{tikzpicture}[scale=.45]
 %\draw[dashed] (0,0)--++(90:3)--++(30:2)--++(-30:3)--++(-90:2)--++(210:3)--++(150:2);
@@ -1199,11 +1591,17 @@ E_0^{(4)} = \frac{N\beta}{64}
 \begin{align*}
 \scr{E}_0 = N\alpha + 4\beta\sum_{j=-\nu}^{\nu}\cos\frac{j\pi}{2\nu+1}
 \end{align*}
-这就是5.3.2节中的结果. 又注意到$\beta_1=\beta$但$\beta_2=0$时, 我们有
+这就是5.
+3.
+2节中的结果. 
+又注意到$\beta_1=\beta$但$\beta_2=0$时, 
+我们有
 \begin{align*}
 E_0 = N\alpha+N\beta
 \end{align*}
-这就是定域烯烃描述下的多烯总能量. 此练习的目的是将确切能量用$\beta_2/\beta_1$的幂展开来得到共振能的微扰展开.
+这就是定域烯烃描述下的多烯总能量. 
+此练习的目的是将确切能量用$\beta_2/\beta_1$的幂展开来得到共振能的微扰展开.
+
 \begin{enumerate}[a.]
 	\item 证明苯($\nu=1$)的确切基态能量在这种长短键交替的模型中为
 	\begin{align*}
@@ -1324,12 +1722,14 @@ width=\textwidth,
 	\draw (12,-5.5)node{\normalsize $n=4$};
 	\end{tikzpicture}
 \end{center}
-计算这些图的规则和之前的一样(把$E_i^{(0)}$换成$\epsilon_i^{(0)}$), 但第四条规则需要改成
+计算这些图的规则和之前的一样(把$E_i^{(0)}$换成$\epsilon_i^{(0)}$), 
+但第四条规则需要改成
 \begin{enumerate}[$4'.$]
 	\item \textit{对所有的粒子和空穴指标求和.}
 \end{enumerate}
 
-利用以上规则，有
+利用以上规则，
+有
 \begin{subequations}
 	\begin{gather}
 	E_0^{(1)} = \begin{tikzpicture}[baseline={([yshift=-5pt]current bounding box.center)},scale=.6]
@@ -1342,7 +1742,9 @@ width=\textwidth,
 	=\sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}}
 	\end{gather}
 \end{subequations}
-可以发现这些结果和\eqref{6.43b}\eqref{6.43c}中的一样。 $E_0^{(3)}$算出后， 为
+可以发现这些结果和\eqref{6.43b}\eqref{6.43c}中的一样。 
+$E_0^{(3)}$算出后， 
+为
 %\addtocounter{equation}{1}
 \begin{align}
 E_0^{(0)} & = 
@@ -1358,11 +1760,23 @@ arc (225:180:2.12cm)node[left,midway]{s} node{\dian} arc (180:135:2.12cm)node[le
 arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[left,midway]{a} node{\dian} arc(180:225:2.12cm)node[left,midway]{b};\end{tikzpicture} \notag\\
 & = \sum_{ars}\frac{v_{as}v_{sr}v_{ra}}{(\epsilon_a^{(0)}-\epsilon_s^{(0)})(\epsilon^{(0)}_a-\epsilon^{(0)}_r)} - \sum_{abr}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon_a^{(0)}-\epsilon_r^{(0)})(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}\tag{6.56c}
 \end{align}
-这与练习6.4中所得的结果一样。 最后，对于闭壳层体系，由于矩阵元$v_{ij}$只有当$i,j$有相同自旋时才不为零， 所以可将对自旋轨道的求和改为对空间轨道求和，并在每个图的值上乘以$2$, 也即
+这与练习6.
+4中所得的结果一样。 
+最后，
+对于闭壳层体系，
+由于矩阵元$v_{ij}$只有当$i,j$有相同自旋时才不为零， 
+所以可将对自旋轨道的求和改为对空间轨道求和，
+并在每个图的值上乘以$2$, 
+也即
 \begin{align}
 \sum^N = 2\sum^{N/2}
 \end{align}
-在\ref{sec6.7}中我们将看到，更一般的情形下，做这种转换时，要把每个图的值乘以$2^l$, $l$是闭合圈图的数目。
+在\ref{sec6.7}中我们将看到，
+更一般的情形下，
+做这种转换时，
+要把每个图的值乘以$2^l$, 
+$l$是闭合圈图的数目。
+
 \exercise{
 求出闭壳层闭壳层环多烯的四阶能量：
 \begin{enumerate}[a.]
@@ -1422,7 +1836,10 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[lef
 
 
 \section{相关能的微扰展开}
-本节来讨论如何利用微扰论改进$N$电子系统的\hft 能量, 也即, 得到相关能的微扰展开. 将\ha 分成如下部分:
+本节来讨论如何利用微扰论改进$N$电子系统的\hft 能量, 
+也即, 
+得到相关能的微扰展开. 
+将\ha 分成如下部分:
 \begin{align}
 \hs=\hs_0+\vs
 \end{align} 
@@ -1434,9 +1851,18 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[lef
 \begin{align}
 \vs = \sum_{i<j}r_{ij}^{-1} - \vs^\mathrm{HF} =  \sum_{i<j}r_{ij}^{-1} - \sum_{i}v^\mathrm{HF}(i)
 \end{align}
-以上划分\ha 的方法, 配上一般的RS微扰论的表达式, 就是有时所称的{M{\o}ller-Plesset}微扰论.
+以上划分\ha 的方法, 
+配上一般的RS微扰论的表达式, 
+就是有时所称的{M{\o}ller-Plesset}微扰论.
 
-这一节中, 我们使用物理学家记号(而非第三章中大量使用过的化学家记号)表示双电子积分. 这不是出于保守或者懒惰, 而是此领域内几乎所有文献都使用这种记法, 而且我们也相信, 读者应该平等地培养使用这两种记号的能力. 回忆在物理学家记号中
+
+这一节中, 
+我们使用物理学家记号(而非第三章中大量使用过的化学家记号)表示双电子积分. 
+这不是出于保守或者懒惰, 
+而是此领域内几乎所有文献都使用这种记法, 
+而且我们也相信, 
+读者应该平等地培养使用这两种记号的能力. 
+回忆在物理学家记号中
 \begin{equation}
 \int\dd{x}_1\dd{x}_2 \chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_2)r_{12}^{-1}\chi_k(\mathbf{x}_1)\chi_l(\mathbf{x}_2) = \braket{ij|kl}
 \end{equation}
@@ -1448,7 +1874,8 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[lef
 \begin{equation}
 \braket{ij||kl}=\braket{ij|kl}-\braket{ij|lk}
 \end{equation}
-使用这种记法, 我们有
+使用这种记法, 
+我们有
 \begin{align}
 \braket{\Psi_0|\sum_{i<j}r_{ij}^{-1}|\Psi_{ab}^{rs}} = \braket{ab||rs}
 \end{align}
@@ -1469,7 +1896,8 @@ v^\mathrm{HF}\chi_j(\mathbf{x}_1)=\sum_b\braket{b|\twoe|b}\chi_j(\bo{x}_1) - \su
 \begin{equation}
 E_0^{(0)} = \sum_a\epsilon_a
 \end{equation}
-这就是我们的零阶微扰能量. 一阶微扰能是
+这就是我们的零阶微扰能量. 
+一阶微扰能是
 \begin{align}
 E_0^{(1)} & = \braket{\Psi_0|\vs|\Psi_0} \notag\\
           & = \braket{\Psi_0|\sum_{i<j}r_{ij}^{-1}|\Psi_0} - \braket{\Psi_0|\sum_i v^\mathrm{HF}(i)|\Psi_0} \notag \\
@@ -1480,26 +1908,42 @@ E_0^{(1)} & = \braket{\Psi_0|\vs|\Psi_0} \notag\\
 \begin{align}
 E_0 = E_0^{(0)} + E_0^{(1)} = \sum_a\epsilon_a - \frac{1}{2}\sum_{ab}\braket{ab||ab}
 \end{align}
-因此, 对\hft 能量的第一个修正项出现在二阶微扰上.
+因此, 
+对\hft 能量的第一个修正项出现在二阶微扰上.
 
-二阶能量的一般表达式在\ref{sec6.1}节已经推导过, 为
+
+二阶能量的一般表达式在\ref{sec6.1}节已经推导过, 
+为
 \begin{align}
 E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(0)} - E_n^{(0)}}
 \end{align}
-其中求和遍及系统除了基态外的所有态. $\ket{0} = \ket{\Psi_0}$是很清楚的, 但是$\ket{n}$等于什么? $\ket{n}$不可能是单重激发, 因为
+其中求和遍及系统除了基态外的所有态. 
+$\ket{0} = \ket{\Psi_0}$是很清楚的, 
+但是$\ket{n}$等于什么? $\ket{n}$不可能是单重激发, 
+因为
 \begin{align*}
 \braket{\Psi_0|\vs|\Psi_a^r} & = \braket{\Psi_0|\hs-\hs_0|\Psi_a^r} \\
                              & = \braket{\Psi_0|\hs|\Psi_a^r} - f_{ar} = 0
 \end{align*}
-第一项等于零是因为Brillouin定理, 第二项等于零是因为自旋轨道是Fock算符的本征函数. 此外, 三重激发态不与$\ket{\Psi_0}$混合, 因为这里的微扰项的特性是双粒子的. 因此, 我们只剩下二重激发$\ket{\Psi_{ab}^{rs}}$. 由于
+第一项等于零是因为Brillouin定理, 
+第二项等于零是因为自旋轨道是Fock算符的本征函数. 
+此外, 
+三重激发态不与$\ket{\Psi_0}$混合, 
+因为这里的微扰项的特性是双粒子的. 
+因此, 
+我们只剩下二重激发$\ket{\Psi_{ab}^{rs}}$. 
+由于
 \begin{align*}
 \hs_0\ket{\Psi_{ab}^{rs}} = (E_0^{(0)} - (\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s))\ket{\Psi_{ab}^{rs}}
 \end{align*}
-然后对所有二重激发态求和: 将所有$a$和大于$a$的$b$求和, 对所有$r$和大于$r$的$s$求和, 二阶能量就成为
+然后对所有二重激发态求和: 将所有$a$和大于$a$的$b$求和, 
+对所有$r$和大于$r$的$s$求和, 
+二阶能量就成为
 \begin{align}
 E_0^{(2)} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{\Psi_0|\sum_{i<j} r_{ij}^{-1}|\Psi_{ab}^{rs}}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s} = \sum_{\substack{a<b\\r<s}} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \end{align}
-注意到, 二阶能量可以表示为所有占据轨道上的每对电子贡献之和:
+注意到, 
+二阶能量可以表示为所有占据轨道上的每对电子贡献之和:
 \begin{align*}
 E_0^{(2)} = \sum_{a<b}e_{ab}^\mathrm{FO}
 \end{align*}
@@ -1507,27 +1951,40 @@ E_0^{(2)} = \sum_{a<b}e_{ab}^\mathrm{FO}
 \begin{align*}
 e_{ab}^{\mathrm{FO}} =  \sum_{r<s} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \end{align*}
-第五章中我们已经知道$e_{a<b}^\mathrm{FO}$是一阶对能. 因此在一阶对的水平上, 对理论给出的相关能和二阶微扰论是一样的.
+第五章中我们已经知道$e_{a<b}^\mathrm{FO}$是一阶对能. 
+因此在一阶对的水平上, 
+对理论给出的相关能和二阶微扰论是一样的.
 
-二阶能量的表达式可以变换为一些其他有用的形式. 由于求和的量对指标$a,b, r,s$是对称的, 而且当$a=b$或$r=s$时为零, 所以可以有
+
+二阶能量的表达式可以变换为一些其他有用的形式. 
+由于求和的量对指标$a,b, r,s$是对称的, 
+而且当$a=b$或$r=s$时为零, 
+所以可以有
 \begin{align}
 E_0^{(2)} = \frac{1}{4} \sum_{abrs}\frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \label{6.72}
 \end{align}
-进一步, 可以用通常的双电子积分表达二阶能量:
+进一步, 
+可以用通常的双电子积分表达二阶能量:
 \begin{align}
 E_0^{(2)} = \frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-\frac{1}{2}\sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \label{6.73}
 \end{align}
-最后, 对于闭壳层体系, 二阶能量可以写成空间轨道的求和:
+最后, 
+对于闭壳层体系, 
+二阶能量可以写成空间轨道的求和:
 \begin{align}
 E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}-2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
 \label{6.74}
 \end{align}
 \exercise{
-推导式\eqref{6.73}和\eqref{6.74}, 从式\eqref{6.72}出发.
+推导式\eqref{6.73}和\eqref{6.74}, 
+从式\eqref{6.72}出发.
+
 }
-按照同样的方式, 但更加繁琐一些, 我们从\eqref{6.15}式出发可以证明三阶能量为
+按照同样的方式, 
+但更加繁琐一些, 
+我们从\eqref{6.15}式出发可以证明三阶能量为
 \begin{align}
 E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_r-\epsilon_s}} \notag\\
           & + \frac{1}{8}\sum_{abrstu}\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_t-\epsilon_u}} \notag\\
@@ -1535,7 +1992,10 @@ E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\bra
           \label{6.75}
 \end{align}
 
-作为以上方法的一个示例, 我们计算\underline{极小基$\hd$}的三阶微扰能. 在第四章中已证明过, \underline{极小基$\hd$}的精确相关能为
+作为以上方法的一个示例, 
+我们计算\underline{极小基$\hd$}的三阶微扰能. 
+在第四章中已证明过, 
+\underline{极小基$\hd$}的精确相关能为
 \begin{align}
 E_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
 \label{6.76}
@@ -1545,7 +2005,9 @@ E_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
 2\Delta & = 2(\epsilon_2-\epsilon_1) + J_{11} + J_{22} - 4J_{12} + 2K_{12}\\
         & = 2(\epsilon_2-\epsilon_1) + \braket{11|11} + \braket{22|22} - 4\braket{12|12} + 2\braket{11|22}
 \end{align*}
-若将上面的关联能表达式按双电子积分的Taylor级数展开, 展开到第三阶, 可以发现
+若将上面的关联能表达式按双电子积分的Taylor级数展开, 
+展开到第三阶, 
+可以发现
 \begin{align*}
 E_\mathrm{corr}  = E_0^{(2)} + E_0^{(3)} + \cdots
 \end{align*}
@@ -1559,7 +2021,11 @@ E_0^{(2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 E_0^{(3)} = \frac{K_{12}^2(J_{11}+J_{22}-4J_{12}+2K_{12})}{4(\epsilon_1-\epsilon_2)^2}
 \label{6.78}
 \end{equation}
-现在来证明\eqref{6.77}中的二阶能就是一般性的表达式\eqref{6.74}的特例. 由于只有一个空穴轨道$a=b=1$,  同样的, $r=s=2$, 所以\eqref{6.74}变为
+现在来证明\eqref{6.77}中的二阶能就是一般性的表达式\eqref{6.74}的特例. 
+由于只有一个空穴轨道$a=b=1$, 
+ 同样的, 
+$r=s=2$, 
+所以\eqref{6.74}变为
 \begin{align*}
 E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} \\
           & = \frac{|\braket{11|22}|^2}{2(\epsilon_1-\epsilon_2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
@@ -1568,7 +2034,22 @@ E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \
 \exercise{从\eqref{6.76}出发推导\eqref{6.77}\eqref{6.78}.}
 
 \section{RS微扰展开的$N$依赖性}
-本章的引言中曾提过， Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性。通过仔细检验每个阶的代数表达式，他证明了，对$n=0,1,\ldots,6$, $E_0^{(n)}$确实正比于粒子数。但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 这里我们简要叙述一下Brueckner的分析过程。\ref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，该定理用RS微扰论的图表示证明了Brueckne的猜想适用于所有阶的微扰。我们来考虑一个由$N$个无相互作用的\underline{极小基$\hd$}组成的超分子。我们会证明，利用\ref{sec6.2}中所推导的一般表达式，这个超分子的一、二、三、阶能量等于$N$乘单个单个分子的对应能量。此模型就是我们在第四章证明DCI给出的关联能量正比于$N^{1/2}$时(在大$N$极限下)所用过的。之前我们曾如此标记超分子的轨道：
+本章的引言中曾提过， 
+Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性。
+通过仔细检验每个阶的代数表达式，
+他证明了，
+对$n=0,1,\ldots,6$, 
+$E_0^{(n)}$确实正比于粒子数。
+但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 
+这里我们简要叙述一下Brueckner的分析过程。
+\ref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，
+该定理用RS微扰论的图表示证明了Brueckne的猜想适用于所有阶的微扰。
+我们来考虑一个由$N$个无相互作用的\underline{极小基$\hd$}组成的超分子。
+我们会证明，
+利用\ref{sec6.2}中所推导的一般表达式，
+这个超分子的一、二、三、阶能量等于$N$乘单个单个分子的对应能量。
+此模型就是我们在第四章证明DCI给出的关联能量正比于$N^{1/2}$时(在大$N$极限下)所用过的。
+之前我们曾如此标记超分子的轨道：
 \begin{equation*}
 \begin{tikzpicture}
 \draw (0,0)--node[below]{$1_1$}++(0.7,0) ++(0.3,0)--node[below]{$1_2$}++(0.7,0) ++(0.3,0)--node[below]{$1_3$}++(0.7,0) ++(0.5,0.2) node{$\cdots$} +(.5,0) ++(0.3,-.2)--node[below]{$1_N$}++(0.7,0);
@@ -1576,11 +2057,14 @@ E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \
 \draw (0,.4)--node[above]{$2_1$}++(0.7,0) ++(0.3,0)--node[above]{$2_2$}++(0.7,0) ++(0.3,0)--node[above]{$2_3$}++(0.7,0) ++(0.65,0.2)  +(.35,0) ++(0.3,-.2)--node[above]{$2_N$}++(0.7,0);
 \end{tikzpicture}
 \end{equation*}
-而且假若双电子积分包含了不同单位上的轨道，那么积分为零。此体系的\hft 波函数为
+而且假若双电子积分包含了不同单位上的轨道，
+那么积分为零。
+此体系的\hft 波函数为
 \begin{equation}
 \ket{\Psi_0} = \ket{1_1\bar{1}_1 1_2\bar{1}_2 \cdots 1_N\bar{1}_N}
 \end{equation}
-若$\hs$是对应的\hft{} \ha(前节提过), 那么零阶及一阶能量就是
+若$\hs$是对应的\hft{} \ha(前节提过), 
+那么零阶及一阶能量就是
 \begin{subequations}
 \begin{gather}
 E_0^{(0)} = \braket{\Psi_0|\hs_0|\Psi_0}=2\sum_{i=1}^{N}\braket{1_i|f|1_i}=2N\epsilon_1\\
@@ -1592,11 +2076,15 @@ E_0^{(1)} = \braket{\Psi_0|\vs|\Psi_0}=-\sum_{i=1}^{N}\braket{1+i1_i|1_i1_i}=-NJ
 \begin{equation}
 E_0=\braket{\Psi_0|\hs_0+\vs|\Psi_0} = E_0^{(0)} + E_0^{(0)} = N(2\epsilon_1-J_{11})
 \end{equation}
-这确实是$N$乘以单个分子的\hft 能量。一般的二阶能量表达式为
+这确实是$N$乘以单个分子的\hft 能量。
+一般的二阶能量表达式为
 \begin{align}
 E_0^{(2)} = \sideset{}{'}\sum_n \frac{|\braket{0|\vs|n}|^2}{E_0^{(0)}-E_n^{(0)}}
 \end{align}
-很清楚，$\ket{0}=\ket{\Psi_0}$,而且而且态$\ket{n}$肯定是双激发$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$. 对这些这些态
+很清楚，
+$\ket{0}=\ket{\Psi_0}$,
+而且而且态$\ket{n}$肯定是双激发$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$. 
+对这些这些态
 \begin{subequations}
 	\begin{gather}
 	E_0^{(0)} - E_n{(0)} = 2(\epsilon_1 - \epsilon_2)
@@ -1605,11 +2093,14 @@ E_0^{(2)} = \sideset{}{'}\sum_n \frac{|\braket{0|\vs|n}|^2}{E_0^{(0)}-E_n^{(0)}}
 	\label{6.83b}
 \end{gather}
 \end{subequations}
-而且对$n$的求和可以换成对$i$的求和，那么就有
+而且对$n$的求和可以换成对$i$的求和，
+那么就有
 \begin{align}
 E_0^{(2)} = \sum_{i=1}^{N} \frac{\left|\braket{\Psi_0|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}\right|^2}{2(\epsilon_1-\epsilon_2)} = \frac{NK_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \end{align}
-再一次，我们证明了这就是每个单元的二阶能量乘以$N$.
+再一次，
+我们证明了这就是每个单元的二阶能量乘以$N$.
+
 
 三阶能量的一般表达式(\eqref{6.15})为
 \begin{align}
@@ -1620,15 +2111,26 @@ E_0^{(3)} = A_0^{(3)} + B_{0}^{(3)}
 A_0^{(3)} = \sideset{}{'}\sum_n \sideset{}{'}\sum_m \frac{\braket{0|\vs|n}\braket{n|\vs|m}\braket{m|\vs|0}}{(E_0^{(0)} - E_n^{(0)}) (E_0^{(0)} - E_0^{(m)}) }\\
 B_0^{(3)} = -E_0^{(1)}\sideset{}{'}{\sum}_n\frac{|\braket{0|\vs|n}|^2}{(E_0^{(0)} - E_n^{(0)})^2}
 \end{gather}
-初看，三阶能量好像没有正确的$N$依赖性，因为$B_0^{(3)}$正比于$N^2$:
+初看，
+三阶能量好像没有正确的$N$依赖性，
+因为$B_0^{(3)}$正比于$N^2$:
 \begin{align}
 B_0^{(3)} = -(-NJ_{11}) \sum_{i=1}^{N} \frac{K_{12}^2}{(2\epsilon_1 - 2\epsilon_2)^2} = \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1-\epsilon_2)^2}
 \end{align}
-其中用到了\eqref{6.80b}\eqref{6.83a}\eqref{6.83b}. 若想三阶能量正比于$N$, 那么这一项肯定要被$A_0^{(3)}$中的某部分消掉。这正是本节开头所提的Brueckner曾发现的那种抵消。现在更仔细地分析$A_0^{(3)}$。 很清楚，$\ket{n}$和$\ket{m}$需是$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$这样的态，因此
+其中用到了\eqref{6.80b}\eqref{6.83a}\eqref{6.83b}. 
+若想三阶能量正比于$N$, 
+那么这一项肯定要被$A_0^{(3)}$中的某部分消掉。
+这正是本节开头所提的Brueckner曾发现的那种抵消。
+现在更仔细地分析$A_0^{(3)}$。 
+很清楚，
+$\ket{n}$和$\ket{m}$需是$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$这样的态，
+因此
 \begin{align}
 A_0^{(3)} = \sum_{i=1}^{N} \frac{\braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}K_{12}^2}{4(\epsilon_1 - \epsilon_2)^2}
 \end{align}
-式中只写出了对角元，因涉及涉及不同单位上轨道的双电子积全为零。可以证明
+式中只写出了对角元，
+因涉及涉及不同单位上轨道的双电子积全为零。
+可以证明
 \begin{align}\braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\vs|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}} = \braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\hs-\hs_0|\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}=-NJ_{11} + J_{11} + J_{22} - 4J_{12} + 2K_{12}
 \label{6.90}
 \end{align}
@@ -1636,17 +2138,52 @@ A_0^{(3)} = \sum_{i=1}^{N} \frac{\braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\vs|
 \begin{align}
 A_0^{(3)} = - \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1 - \epsilon_2)^2} + \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 2K_{12})}{4(\epsilon_1 - \epsilon_2)^2}
 \end{align}
-如此，包含$N^2$的项的确被消掉了，余下的就是
+如此，
+包含$N^2$的项的确被消掉了，
+余下的就是
 \begin{align}
 E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 2K_{12})}{4(\epsilon_1 - \epsilon_2)^2}
 \label{eq:6.92}
 \end{align}
-与$E_0^{(1)}$及$E_0^{(2)}$类似，上式就是$N$乘每个$\hd$的三阶能量(\eqref{6.78}). 注意到\eqref{6.78}是在基组内按照Taloy展开得到的，这两种办法给出的结果相同，那么自洽性就得到了检验。虽然这个例子算不上证明，但我们仍希望它能令读者乐于相信：RS微扰论下所得的近似相关能(相较于DCI)，是尺寸一致的（也即，有正确的$N$依赖性）。
+与$E_0^{(1)}$及$E_0^{(2)}$类似，
+上式就是$N$乘每个$\hd$的三阶能量(\eqref{6.78}). 
+注意到\eqref{6.78}是在基组内按照Taloy展开得到的，
+这两种办法给出的结果相同，
+那么自洽性就得到了检验。
+虽然这个例子算不上证明，
+但我们仍希望它能令读者乐于相信：RS微扰论下所得的近似相关能(相较于DCI)，
+是尺寸一致的（也即，
+有正确的$N$依赖性）。
+
 \exercise{推导式\eqref{6.80b}和\eqref{6.90}。}
 \section{相关能微扰展开的图表示}
-现在来介绍$n$阶微扰能的图表示。我们将零阶波函数取为\hft 波函数。其实以任一个单行列式出发，都可以推导出相应的微扰展开，但\hft 波函数是最方便的，原因就是Brillouin定理：单激发不会混入\hft 基态，这大大简化了微扰展开式的结构. 之后给出的构建图的规则仅对\hft 微扰论成立。虽然我们并不会严格推导构建图和计算图的规则，但仍希望能令它们尽可能看起来像之前结果的自然推广。
+现在来介绍$n$阶微扰能的图表示。
+我们将零阶波函数取为\hft 波函数。
+其实以任一个单行列式出发，
+都可以推导出相应的微扰展开，
+但\hft 波函数是最方便的，
+原因就是Brillouin定理：单激发不会混入\hft 基态，
+这大大简化了微扰展开式的结构. 
+之后给出的构建图的规则仅对\hft 微扰论成立。
+虽然我们并不会严格推导构建图和计算图的规则，
+但仍希望能令它们尽可能看起来像之前结果的自然推广。
+
 \subsection{Hugenholtz图}
-如同前面，我们将相互作用以点来标记，将空穴和粒子用向下和向上的线标记。回看\eqref{6.72},可以发现, 二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。直接原因就是此时的微扰具有双粒子性质。因此一个合理的想法是，在表示\hft 微扰论的图中，点中应当有\emph{两}条线出，\emph{两}条线入。实际上也是如此。要得到对$n$阶能量有贡献的所有图，我们要将$n$个竖直排列的点按照如下要求，以所有可能的方式连接起来：
+如同前面，
+我们将相互作用以点来标记，
+将空穴和粒子用向下和向上的线标记。
+回看\eqref{6.72},
+可以发现, 
+二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。
+直接原因就是此时的微扰具有双粒子性质。
+因此一个合理的想法是，
+在表示\hft 微扰论的图中，
+点中应当有\emph{两}条线出，
+\emph{两}条线入。
+实际上也是如此。
+要得到对$n$阶能量有贡献的所有图，
+我们要将$n$个竖直排列的点按照如下要求，
+以所有可能的方式连接起来：
 \begin{enumerate}[1.]
 	\item 每个点都有四条线经过。
 	\item 每个图都连通。
@@ -1666,7 +2203,13 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 			\end{tikzpicture}
 		\end{center}
 \end{enumerate}
-要求(2)和(3)与\ref{sec6.2}中的完全相同，要求(4)是Brillouin定理的一个“不明显”结论。就和\ref{sec6.2}中一样，图可以任意扭动，只要点的竖直顺序不变即可。使用这些规则，我们可以找到：
+要求(2)和(3)与\ref{sec6.2}中的完全相同，
+要求(4)是Brillouin定理的一个“不明显”结论。
+就和\ref{sec6.2}中一样，
+图可以任意扭动，
+只要点的竖直顺序不变即可。
+使用这些规则，
+我们可以找到：
 	\begin{center}
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue,%postaction={on each segment={mid arrow}}
@@ -1690,7 +2233,10 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	\draw (2.5,-1.75) node{$n=3$};
 	\end{tikzpicture}
 \end{center}
-但在四个点的情况下， 不等价图的数目达到十二个，如\ref{f6.1}所示。
+但在四个点的情况下， 
+不等价图的数目达到十二个，
+如\ref{f6.1}所示。
+
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
@@ -1809,7 +2355,15 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	\label{f6.1}
 \end{figure}
 
-如同之前，我们将在线上画上下箭头，将所有可能的方式都列出来，而且每个点都要有两条线穿入，两条线穿出。如此，就得到一个二阶图，三个三阶图。
+如同之前，
+我们将在线上画上下箭头，
+将所有可能的方式都列出来，
+而且每个点都要有两条线穿入，
+两条线穿出。
+如此，
+就得到一个二阶图，
+三个三阶图。
+
 \begin{center}
 \begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 \path [draw=blue, mid arrow]
@@ -1870,7 +2424,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \end{center}
 这些图叫作\emph{Hugenholtz}图。
 
-可喜的是，将这些图转换为代数表达式的规则几乎与之前的规则相同：
+
+可喜的是，
+将这些图转换为代数表达式的规则几乎与之前的规则相同：
 \begin{enumerate}[H1.]
 	\kaiti
 	\item 每个点在分母上贡献一个反对称的矩阵元$\braket{\text{穿入标签1，穿入标签2}||\text{穿出标签1，穿出标签2}}$.
@@ -1887,7 +2443,11 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	将表达式对所有粒子和空穴指标求和。
 	\item 将式子乘以权重因子$2^{-k}$，$k$代表图中有$k$对等价线。等价线的意思是，两条线的出发点和结束点都一样，方向也一样。
 \end{enumerate}
-可以看见仅有第五条(H5)和之前的规则明显不同. 具体运用这些规则时, 唯一比较难办的是确定闭合圈的数目. 具体的做法请看下例. 考虑这个二阶图:
+可以看见仅有第五条(H5)和之前的规则明显不同. 
+具体运用这些规则时, 
+唯一比较难办的是确定闭合圈的数目. 
+具体的做法请看下例. 
+考虑这个二阶图:
 \begin{center}
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\path [draw=blue, mid arrow]
@@ -1902,17 +2462,31 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 	\draw[densely dashed] (-2,2.25)--(2,2.25);
 	\end{tikzpicture}
 \end{center}
-很清楚, 这个图有两条空穴线, 而且有两对等价线$(r,s)$和$(a,b)$. 所有可以立即写出
+很清楚, 
+这个图有两条空穴线, 
+而且有两对等价线$(r,s)$和$(a,b)$. 
+所有可以立即写出
 \begin{flalign*}
 &\text{\textbf{情形A}}&  &\left(\frac{1}{2}\right)^2 (-)^{2+l_A}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}&
 % \text{CA}  &&f &= m  \frac{d^2y}{dt^2};
 \end{flalign*}
-之前我们说过, 反对称矩阵元中, 两个穿入和两个穿出标号的顺序不重要, 所有上式可以等价地写为
+之前我们说过, 
+反对称矩阵元中, 
+两个穿入和两个穿出标号的顺序不重要, 
+所有上式可以等价地写为
 \begin{flalign*}
 &\text{\textbf{情形B}}&  &\left(\frac{1}{2}\right)^2 (-)^{2+l_B}\sum_{abrs}\frac{\braket{ab||rs}\braket{sr||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}&
 % \text{CA}  &&f &= m  \frac{d^2y}{dt^2};
 \end{flalign*}
-很清楚, 如果我们的规则是正确的, 则这两个式子应当相等. 那么就要看$l$这个因子如何起作用. 闭合圈的数目只有写出矩阵元的表达式之后才能确定. 为确定$l$, 先选一个特定的指标, 然后从这个指标出发, 按照如下规``走过"矩阵元:
+很清楚, 
+如果我们的规则是正确的, 
+则这两个式子应当相等. 
+那么就要看$l$这个因子如何起作用. 
+闭合圈的数目只有写出矩阵元的表达式之后才能确定. 
+为确定$l$, 
+先选一个特定的指标, 
+然后从这个指标出发, 
+按照如下规``走过"矩阵元:
 \tikzexternaldisable
 \begin{align*}
 \braket{i\tikzmark{i}j||k\tikzmark{k}l},\quad
@@ -1922,7 +2496,11 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
     \draw[->,above arrow,] (j.north) to (l.north);
 }
 \end{align*}
-直到最后到达一个与选定指标相同的指标. 所有指标都被走过一次后, 总的路径数就是$l$. 考虑情形A.
+直到最后到达一个与选定指标相同的指标. 
+所有指标都被走过一次后, 
+总的路径数就是$l$. 
+考虑情形A.
+
 \begin{align*}
 \braket{a\tikzmark{a}b||r\tikzmark{r}s}\braket{r\tikzmark{r2}s||a\tikzmark{a2}b}\quad : \quad a\overset{1}{\to}r\overset{2}{\to}a\\
 \braket{ab\tikzmark{b}||rs\tikzmark{s}}\braket{rs\tikzmark{s2}||ab\tikzmark{b2}}\quad : \quad b\overset{1}{\to}s\overset{2}{\to}b
@@ -1933,7 +2511,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
     \draw[->,above arrow,] (s2.north) to node[above,]{$2$} (b2.north);
 }
 \end{align*}
-那么$l_A=2$. 对于情形B, 我们有
+那么$l_A=2$. 
+对于情形B, 
+我们有
 \begin{align*}
 \braket{a\tikzmark{a}b\tikzmark{b}||r\tikzmark{r}s\tikzmark{s}}\braket{s\tikzmark{s2}r\tikzmark{r2}||a\tikzmark{a2}b\tikzmark{b2}}
 \quad : \quad a\overset{1}{\to} r \overset{2}{\to} b \overset{3}{\to} s \overset{4}{\to} a
@@ -1945,15 +2525,21 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 }
 \end{align*}
 \tikzexternalenable
-由于一条路就走遍了所有指标, 所以$l_B=1$. 又因为
+由于一条路就走遍了所有指标, 
+所以$l_B=1$. 
+又因为
 \begin{align*}
 \braket{rs||ab} = - \braket{sr||ab}
 \end{align*}
-所以情形A和B给出的式子是相同的, 也即
+所以情形A和B给出的式子是相同的, 
+也即
 \begin{align*}
 E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}
 \end{align*}
-该式与\eqref{6.72}的结果相同, 后者是用算式推得的. 现在来计算剩余的三个三阶图, 主要关注如何确定$l$:
+该式与\eqref{6.72}的结果相同, 
+后者是用算式推得的. 
+现在来计算剩余的三个三阶图, 
+主要关注如何确定$l$:
 \begin{align*}
 \begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
 % 下面第一个图的结点
@@ -1978,7 +2564,9 @@ E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon
 \left(\frac{1}{2}\right)^3 (-)^{4+l}\sum_{abcdrs}
 \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a  + \epsilon_b - \epsilon_r - \epsilon_s)(\epsilon_c+\epsilon_d-\epsilon_r-\epsilon_s)}
 \end{align*}
-有两条路径$a\to r\to c\to a$和$b\to s\to d\to b$, 因此$l$为$2$.
+有两条路径$a\to r\to c\to a$和$b\to s\to d\to b$, 
+因此$l$为$2$.
+
 \begin{align*}
 \begin{tikzpicture}[baseline={(current bounding box.east)},scale=.6]
 % 下面第一个图的结点
@@ -2026,7 +2614,11 @@ E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon
 (-)^{4+l}\sum_{abcrst}
 \frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b - \epsilon_s - \epsilon_r)(\epsilon_a+\epsilon_c-\epsilon_r-\epsilon_t)}
 \end{align*}
-此处$l=3$, 因为全部路径有三条: $a\to r\to a $, $b\to s\to b$, $c\to t\to c$.
+此处$l=3$, 
+因为全部路径有三条: $a\to r\to a $, 
+$b\to s\to b$, 
+$c\to t\to c$.
+
 那么三阶能量就是:
 \begin{align*}
 E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
@@ -2037,6 +2629,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b - \epsilon_s - \epsilon_r)(\epsilon_a+\epsilon_c-\epsilon_r-\epsilon_t)}
 \end{align*}
 与式\eqref{6.75}中所引的结果相同.
+
 \exercise{
 证明如下的四阶图
 \begin{center}
@@ -2075,7 +2668,17 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 }
 
 \subsection{Goldstone图}
-本节介绍多提微扰论的另外一种图表示：Goldstone所引入的Goldston图。Goldstone图直接对应着平常的双电子积分，而且只需观察就能确定闭合圈的数目。不过在给定的微扰阶上， Goldstone图比Hugenholtz图的数目多。Goldstone图中我们用虚线表示双粒子相互作用（而非用点）。粒子和空穴态仍然用箭头表示，但每个相互作用（虚线）的端点会有一条线进入，一条线穿出。举个例子，Hugenholtz图中的如下单位
+本节介绍多提微扰论的另外一种图表示：Goldstone所引入的Goldston图。
+Goldstone图直接对应着平常的双电子积分，
+而且只需观察就能确定闭合圈的数目。
+不过在给定的微扰阶上， 
+Goldstone图比Hugenholtz图的数目多。
+Goldstone图中我们用虚线表示双粒子相互作用（而非用点）。
+粒子和空穴态仍然用箭头表示，
+但每个相互作用（虚线）的端点会有一条线进入，
+一条线穿出。
+举个例子，
+Hugenholtz图中的如下单位
 \begin{center}
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\coordinate (a) at (0,0);
@@ -2124,7 +2727,12 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	(a)--(b);
 	\end{tikzpicture}
 \end{center}
-这种方式下反对称的矩阵元不再出现。读者可以如此想象上面两种图的对应: 将点切开并拉向两边，然后用两种不同的方式标记箭头。把对应阶数的Hugenholtz图``拉开”，就得到该阶数下的Goldstone图。比如
+这种方式下反对称的矩阵元不再出现。
+读者可以如此想象上面两种图的对应: 将点切开并拉向两边，
+然后用两种不同的方式标记箭头。
+把对应阶数的Hugenholtz图``拉开”，
+就得到该阶数下的Goldstone图。
+比如
 \begin{center}
 \begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 \path [draw=blue, mid arrow]
@@ -2166,6 +2774,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 \end{tikzpicture}
 \end{center}
 这两个Goldstone图分别叫作直接图和交换图.
+
 
 \ref{t6.2}中列出了\hft 微扰论中所有的二阶和三阶Golstone图. 计算这些图的规则是:
 \begin{enumerate}[G1.]
@@ -2536,7 +3145,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 		& $\displaystyle(-)^{3+2}\sum_{abcrst}\frac{\braket{bc|rt}\braket{at|sc}\braket{rs|ab}}{(\epsilon_{b}+\epsilon_{c}-\epsilon_{t}-\epsilon_{r})(\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s})}$\\\hline
 	\end{tabular}
 \end{table}
-这里我们实际地运用一下这些规则, 试着用图计算二阶能量. 将二阶能量中的\emph{直接图}按垂直于纸面的镜面进行反射,
+这里我们实际地运用一下这些规则, 
+试着用图计算二阶能量. 
+将二阶能量中的\emph{直接图}按垂直于纸面的镜面进行反射,
+
 \begin{center}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 		\coordinate (a) at (0,0);
@@ -2592,7 +3204,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	(c)--(d);
 	\end{tikzpicture}
 \end{center}
-可见镜面反射下这个图不变, 所以权重因子就是$1/2$. 又因为图中有两条空穴线和一个闭合圈, 所以这个图对应的值为
+可见镜面反射下这个图不变, 
+所以权重因子就是$1/2$. 
+又因为图中有两条空穴线和一个闭合圈, 
+所以这个图对应的值为
 \begin{align*}
 \tikz[baseline={(current bounding box.center)},scale=.6]{
 	\coordinate (a) at (0,0);
@@ -2611,7 +3226,9 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 =
 \frac{1}{2}(-)^4\sum_{abrs} \frac{\braket{ab|rs}\braket{rs|ab}}{\epsilon_a + \epsilon_b - \epsilon_r - \epsilon_s}
 \end{align*}
-同样地, \emph{交换}图也有一个镜面, 如图:
+同样地, 
+\emph{交换}图也有一个镜面, 
+如图:
 \begin{center}
 	\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 	\coordinate (a) at (0,0);
@@ -2661,7 +3278,10 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	(c)--(d);
 	\end{tikzpicture}
 \end{center}
-所以权重因子同样是$1/2$. 图中有两条空穴线, 一个闭合圈$(r\to b\to s\to a\to r)$, 这个图的值为
+所以权重因子同样是$1/2$. 
+图中有两条空穴线, 
+一个闭合圈$(r\to b\to s\to a\to r)$, 
+这个图的值为
 \begin{align*}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 \coordinate (a) at (0,0);
@@ -2685,7 +3305,17 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 =
 \frac{1}{2}(-)^{2+1} \sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a+\epsilon_b-\epsilon_r\-\epsilon_s}
 \end{align*}
-可以看出以上两式加和就是\eqref{6.73}中的结果. 更进一步, 对于闭壳层体系我们利用规则(G6), 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 在交换图前面乘以$2^1$, 这样就得到了式\eqref{6.74}中的结果. \ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 读者若想检验自己对上面所介绍的规则的理解, 可以试着计算这些图, 并与表中给出的结果对照.
+可以看出以上两式加和就是\eqref{6.73}中的结果. 
+更进一步, 
+对于闭壳层体系我们利用规则(G6), 
+将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 
+在交换图前面乘以$2^1$, 
+这样就得到了式\eqref{6.74}中的结果. 
+\ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 
+读者若想检验自己对上面所介绍的规则的理解, 
+可以试着计算这些图, 
+并与表中给出的结果对照.
+
 \exercise{把二阶/三阶Hugenholtz图拉开, 就能得到\ref{t6.2}中所列的这些Goldstone图. 这个过程可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
 	\begin{align*}
 	\tikz[baseline={(current bounding box.center)},scale=.6]{
@@ -2731,15 +3361,31 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	(a) node{\dian} arc(240:120:1.732)  node[midway,left]{$a$};
 	\end{tikzpicture} 
 	\end{align*}
-同样地, 把\ref{t6.2}中的三阶Hugenholtz图压在一起, 就能得到对应的Goldstone图. 请你验证, 上面所得的Hugenholtz图的值确实与其对应的全部Goldstone图的值之和相同.
+同样地, 
+把\ref{t6.2}中的三阶Hugenholtz图压在一起, 
+就能得到对应的Goldstone图. 
+请你验证, 
+上面所得的Hugenholtz图的值确实与其对应的全部Goldstone图的值之和相同.
+
 }
 
-下面我们举个例子, 在极小基$\hd$ 模型下计算\ref{t6.2}中二阶和三阶图的值, 我们会看见所得值与之前的结果完全一样(\ref{6.77}\ref{6.78}). 我们首先转换到对空间轨道的求和, 这一步要乘以$2^l$, $l$是闭合圈的数目. 然后把所有空穴指标都标为$1$, 把所有粒子指标标为$2$. 对于两个二阶图来说, 我们可以写出
+下面我们举个例子, 
+在极小基$\hd$ 模型下计算\ref{t6.2}中二阶和三阶图的值, 
+我们会看见所得值与之前的结果完全一样(\ref{6.77}\ref{6.78}). 
+我们首先转换到对空间轨道的求和, 
+这一步要乘以$2^l$, 
+$l$是闭合圈的数目. 
+然后把所有空穴指标都标为$1$, 
+把所有粒子指标标为$2$. 
+对于两个二阶图来说, 
+我们可以写出
 \begin{align*}
 1\leftrightarrow (2)^2(1/2)\frac{\braket{11|22}^2}{(2\epsilon_1-2\epsilon_2)} & = \frac{K_{12}^2}{(\epsilon_1-\epsilon_2)}\\
 2\leftrightarrow -(2)(1/2)\frac{\braket{11|22}^2}{(2\epsilon_1-2\epsilon_2)} & = -\frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \end{align*}
-二者加和就得到二阶能量, 结果与\ref{6.77}相同. 对三阶图我们可以写出:
+二者加和就得到二阶能量, 
+结果与\ref{6.77}相同. 
+对三阶图我们可以写出:
 \begin{align*}
 1&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{22}}{2(\epsilon_1 - \epsilon_2)^2}\\
 2&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{11|11}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{11}}{2(\epsilon_1 - \epsilon_2)^2}\\
@@ -2755,6 +3401,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 12&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{12|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}
 \end{align*}
 读者可以自行验证以上十二个式子之和确实等于\ref{6.78}中给出的三阶能量.
+
 \subsection{对图求和}
 \ref{sec6.2.3}节中已经看到，某些特定类别的图可以求和至无穷阶，因为这些图构成了几何级数。Goldstone图也可以做类似的求和。之前在$N$态问题中，我们仅求和了对角图，对角图的意思是，它们是在二阶图上加点得来的，而且每个点上的出线和入线的标签要相同。对Goldstone图也可以进行类似的操作。首先由二阶的直接图和交换图出发，在上面加入相互作用线，同时保证，与相互作用线相交的空穴线或粒子线上的标签在交点上下完全一样。举个例子，考虑如下的一组图：
 \begin{equation*}
@@ -2823,18 +3470,33 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	\path[use as bounding box] ($(c)-(.5,.5)$) rectangle ($(b)+(.5,.5)$);
 } + \cdots
 \end{equation*}
-式中所有图都带一个$1/2$的权重因子. 而且由于这些图\phrase{空穴线}和\phrase{粒子线}数目都相同，闭合圈的数目也一样，所以它们的正负号也一样。把图翻译成式子后就有
+式中所有图都带一个$1/2$的权重因子. 
+而且由于这些图\phrase{空穴线}和\phrase{粒子线}数目都相同，
+闭合圈的数目也一样，
+所以它们的正负号也一样。
+把图翻译成式子后就有
 \begin{align*}
 \Delta =& \frac{1}{2}\frac{|\braket{rs|ab}|^2}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}\left[ 1+ \frac{\braket{rs|rs}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}+ \left( \frac{\braket{rs|rs}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}\right)^2 + \cdots \right]\\
 =& \frac{1}{2}\frac{|\braket{rs|ab}|^2}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s} - \braket{rs|rs}}
 \end{align*}
-可见求和式是一个几何级数, 如前所述, 几何级数给出一个能量移动了的的分母. 若按照上面所述的规则画出所有允许的图, 然后求和, 就可以得到
+可见求和式是一个几何级数, 
+如前所述, 
+几何级数给出一个能量移动了的的分母. 
+若按照上面所述的规则画出所有允许的图, 
+然后求和, 
+就可以得到
 \begin{align}
 E_\mathrm{corr}(\mathrm{EN}) = -\frac{1}{4}\sum_{abrs}\frac{|\braket{ab||rs}|}{\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{ab}^{rs}}}
 \end{align}
 这个结果和前一章中用pstein-Nesbet对能(pair energies)给出的结果一样(\ref{5.15}\ref{5.16}).
 
-最后我们再提一个例子, 如果把所有\emph{双激发}图(这些图中的虚线仅穿过两个空穴线和两个粒子线)加和起来, 我们就得到了Bartlett与其合作者提出的\mci{双激发多体微扰论(D-MBPT($\infty$))}. 这个近似相当于\ref{secec5.2.3}中讨论过的线性CCA(线性耦合簇近似). 按照那里的讨论, 正确的关联能就是
+
+最后我们再提一个例子, 
+如果把所有\emph{双激发}图(这些图中的虚线仅穿过两个空穴线和两个粒子线)加和起来, 
+我们就得到了Bartlett与其合作者提出的\mci{双激发多体微扰论(D-MBPT($\infty$))}. 
+这个近似相当于\ref{secec5.2.3}中讨论过的线性CCA(线性耦合簇近似). 
+按照那里的讨论, 
+正确的关联能就是
 \begin{align}
 E_\mathrm{corr}(\mathrm{D-MBPT}(\infty)) = -\mathbf{B^\dagger(D)}^{-1}\mathbf{B}
 \end{align}
@@ -2845,10 +3507,24 @@ E_\mathrm{corr}(\mathrm{D-MBPT}(\infty)) = -\mathbf{B^\dagger(D)}^{-1}\mathbf{B}
 (\mathbf{D}^\dagger)_{rasb,tcud} &= \braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{cd}^{tu}}
 \end{align}
 \end{subequations}
-注意, 如果仅取$\mathbf{D}$的对角部分来近似$\mathbf{D}$, 我们就回到了Epstein-Nesbet二阶能量. 与$E_\mathrm{corr}(\mathrm{EN})$不同, $E_\mathrm{corr}(\mathrm{D-MBPT}(\infty))$精确到了三阶微扰. 在第四阶上, 它缺失了来自三重, 三重和四重激发的贡献.
+注意, 
+如果仅取$\mathbf{D}$的对角部分来近似$\mathbf{D}$, 
+我们就回到了Epstein-Nesbet二阶能量. 
+与$E_\mathrm{corr}(\mathrm{EN})$不同, 
+$E_\mathrm{corr}(\mathrm{D-MBPT}(\infty))$精确到了三阶微扰. 
+在第四阶上, 
+它缺失了来自三重, 
+三重和四重激发的贡献.
+
 \subsection{什么是Linked-Cluster定理?}
 Goldstone在他的\mci{连接簇}(linked-cluster)定理中用图形技术证明, 在更一般的情况下，Brueckner猜想依然成立， 也即，RS微扰论的每一阶都是尺寸一致(size-consistent)的。正比于$N^2$的项所对应的图由分离的几部分（即\emph{未连接}图）构成， Goldstone用含时技巧证明了这类图不会出现在$n$阶能量的最终表达式中。因此他把$n$阶能量纯粹用\emph{连接}图表示了出来。本章所用的图全部是连接图。之前我们已经多次对比了图方法和代数方法所得的两种结果，它们完全一致，读者可以相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能单纯用连接图表示出来（或者至少相信这个说法的合理性）。这里要说明以下尺寸一致这个词的含义，当我们说某个理论尺寸一致时，意思是，该理论给出的多体系统能量随系统大小线性增长。仅当系统是$N$个独立的闭壳层分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
 \exercise{
-某个超分子由$N$个无相互作用的极小基$\hd$分子组成，请通过计算\ref{t6.2}中的Goldstone图，得到该系统的$E_0^{(3)}$。将你的结果与\eqref{eq:6.92}相比，后者是从代数上直接消掉正比于$N^2$的项后得到的。\emph{提示:} 直接证明这个超分子的每个Goldtone图的值都等于$N$乘以单个分子的对应值。
+某个超分子由$N$个无相互作用的极小基$\hd$分子组成，
+请通过计算\ref{t6.2}中的Goldstone图，
+得到该系统的$E_0^{(3)}$。
+将你的结果与\eqref{eq:6.92}相比，
+后者是从代数上直接消掉正比于$N^2$的项后得到的。
+\emph{提示:} 直接证明这个超分子的每个Goldtone图的值都等于$N$乘以单个分子的对应值。
+
 }
 \section{一些算例}
