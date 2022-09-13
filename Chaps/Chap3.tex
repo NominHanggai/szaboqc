@@ -847,7 +847,7 @@ E = \sum_i^\mathrm{occ} \braket{i|h|i} + \frac{1}{2}\sum^\mathrm{occ}_i\sum^\mat
 \begin{align}
 \mathrm{IP} & = ^{N-1}E_c - ^NE_0\notag\\
             & = -\braket{c|h|c} - \frac{1}{2}\sum_{a[b\equiv c]}\braket{ab||ab}- \frac{1}{2}\sum_{b[a\equiv c]}\braket{ab||ab}\notag\\
-            & = -\braket{c|h|c} - \frac{1}{2}\sum_{a}\braket{ab||ab}- \frac{1}{2}\sum_{b}\braket{ab||ab}\notag\\
+            & = -\braket{c|h|c} - \frac{1}{2}\sum_{a}\braket{ac||ac}- \frac{1}{2}\sum_{b}\braket{cb||cb}\notag\\
             & = -\braket{c|h|c} - \frac{1}{2}\sum_{b}\braket{cb||cb}
 \end{align}
 将此结果与\eqref{3.75}中占据自旋轨道能量的定义做比较可以发现, 
@@ -905,17 +905,30 @@ E = \sum_i^\mathrm{occ} \braket{i|h|i} + \frac{1}{2}\sum^\mathrm{occ}_i\sum^\mat
 则电子亲和能为正.
 
 
-以上结果首先有Koopman导出. 
+以上结果首先有Koopmans导出. 
 现在是时候给出Koopmans定理的具体陈述了.
 
 
-\textbf{Koopmans定理}\ 给定一个$N$-电子\hft 单行列式$\ket{^N\Psi_0}$, 其中占据和虚自旋轨道能量分别为$\epsilon_a,\epsilon_r$, 则从$\chi_a$中挪去一个电子, 保持其余轨道不变, 会产生一个$(N-1)$-电子单行列式$\ket{^{N-1}\Psi_a}$, 这个过程对应的电离能是$-\epsilon_a$. 在虚轨道$\chi_r$上增加一个电子, 保持自旋轨道不变, 生成一个$(N+1)$电子单行列式$\ket{^{N+1}\Psi^r}$, 此过程的电子亲和能为$-\epsilon_r$.
+\textbf{Koopmans定理}\ 给定一个$N$-电子\hft 单行列式$\ket{^N\Psi_0}$, 其中占据和虚自旋轨道能量分别为$\epsilon_a,\epsilon_r$, 则从$\chi_a$中挪去一个电子, 保持其余轨道不变, 会产生一个$(N-1)$-电子单行列式$\ket{^{N-1}\Psi_a}$, 这个过程对应的电离能是$-\epsilon_a$. 
+在虚轨道$\chi_r$上增加一个电子, 保持自旋轨道不变, 生成一个$(N+1)$电子单行列式$\ket{^{N+1}\Psi^r}$, 此过程的电子亲和能为$-\epsilon_r$.
 
-Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. 这种“冻结轨道”近似是假设$(N\pm1)$-电子态(就是正/负离子, 如果$\ket{^N\Psi_0}$为中性物种)中的自旋轨道与$N$-电子态中的一样. 这个近似忽略了$(N\pm1)$-电子态中自旋轨道的弛豫, 就是说, $\ket{^N\Psi_0}$中的自旋轨道并非$\ket{^{N-1}\Psi_a}$/$\ket{^{N+1}\Psi^r}$的最优自旋轨道. 如果分别再用另外的\hft 计算优化这两个态, 则$^{N-1}E_a,^{N+1}E^r$的能量要减少. 因此Koopmans定理忽略了弛豫会使算出的电离能和电子亲和能过正. 当然除此之外, 对波函数作单行列式金色也会产生误差, 即\emph{相关效应}, 通过\hft 之外的办法可以计算, 可对Koopmans定理的结果作进一步修正. 实际上, 当系统内电子数目越大时, 相关能也会越大. 因此相关效应会抹掉电离能的一部分弛豫误差, 而在电子亲和能的弛豫误差上再增加误差. 一般来说, Koopmans点滴能是实验电离能值合理的一阶近似, 本章后面会讨论大量的此类计算. 可惜Koopmans电子亲和能会较差. 很多中性分子增加一个电子可形成稳定的负离子. 单中性分子的\hft 计算常给出正的虚轨道能量. 电子亲和能是非常难以计算的量, 要比电离能难算得多, 除此处外, 本书中我们不会再提到电子亲和能.
+Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. 这种“冻结轨道”近似是假设$(N\pm1)$-电子态(就是正/负离子, 如果$\ket{^N\Psi_0}$为中性物种)中的自旋轨道与$N$-电子态中的一样. 
+这个近似忽略了$(N\pm1)$-电子态中自旋轨道的弛豫, 就是说, $\ket{^N\Psi_0}$中的自旋轨道并非$\ket{^{N-1}\Psi_a}$/$\ket{^{N+1}\Psi^r}$的最优自旋轨道. 
+如果分别再用另外的\hft 计算优化这两个态, 则$^{N-1}E_a,^{N+1}E^r$的能量要减少. 因此Koopmans定理忽略了弛豫会使算出的电离能和电子亲和能过正. 
+当然除此之外, 对波函数作单行列式近似也会产生误差, 即\emph{相关效应}, 通过\hft 之外的办法可以计算, 可对Koopmans定理的结果作进一步修正. 
+实际上, 当系统内电子数目越大时, 相关能也会越大. 
+因此相关效应会抹掉电离能的一部分弛豫误差, 而在电子亲和能的弛豫误差上再增加误差. 
+一般来说, Koopmans电离能是实验电离能值合理的一阶近似, 本章后面会讨论大量的此类计算. 
+可惜Koopmans电子亲和能会较差. 很多中性分子增加一个电子可形成稳定的负离子. 
+但中性分子的\hft 计算常给出正的虚轨道能量. 
+电子亲和能是非常难以计算的量, 要比电离能难算得多, 除此处外, 本书中我们不会再提到电子亲和能.
 
 \subsection{Brillouin定理}
 \label{sec3.3.2}
-\hft 方程\eqref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 由其中能量最低的$N$个自旋轨道构成的单行列式$\ket{\Psi_0}$就是基态的\hft 近似. 正如上一章讨论的, 由集合$\{\chi_i\}$可以构造相当多的行列式. 知道了Fock算符的形式, 现在是恰好可来证明一个关于这些行列式的子集的定理. 该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\ref{f2.7}). 在精确基态的多行列式表示中, 我们可能会预想, 这些单行列式将给出领头阶修正：
+\hft 方程\eqref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 由其中能量最低的$N$个自旋轨道构成的单行列式$\ket{\Psi_0}$就是基态的\hft 近似. 
+正如上一章讨论的, 由集合$\{\chi_i\}$可以构造相当多的行列式. 知道了Fock算符的形式, 现在是恰好可来证明一个关于这些行列式的子集的定理. 
+该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\ref{f2.7}). 
+在精确基态的多行列式表示中, 我们可能会预想, 这些单行列式将给出领头阶修正：
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0} + \sum_{ra}c_a^r\ket{\Psi_a^r}
 \end{align}
@@ -927,6 +940,10 @@ Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. �
 \begin{pmatrix}
 	\braket{\Psi_0|\hs|\Psi_0}   & \braket{\Psi_0|\hs|\Psi_a^r}   \\
 	\braket{\Psi_a^r|\hs|\Psi_0} & \braket{\Psi_a^r|\hs|\Psi_a^r}
+\end{pmatrix}
+\begin{pmatrix}
+	c_0\\
+	c_a^r
 \end{pmatrix}
 	=\scr{E}_0
 \begin{pmatrix}
@@ -1165,7 +1182,7 @@ f(1) = h(1) + \sum_a^{N/2} 2J_a(1) - K_a(1)
 其中闭壳层的考虑和交换算符定义如下
 \begin{align}
 J_a(1) & = \int\dd{r}_2\,\psi_a^*(2)\twoe\psi_a(2)\\
-K_a(1) & = \left[ \int\dd{r}_1\,\psi_a^*(2)\twoe\psi_i(2) \right]\psi_a(1)
+K_a(1) \psi_i(1) & = \left[ \int\dd{r}_1\,\psi_a^*(2)\twoe\psi_i(2) \right]\psi_a(1)
 \end{align}
 这些分量与自旋轨道版本的非常类似, 
 除了库伦算符中多一个因子$2$. 
