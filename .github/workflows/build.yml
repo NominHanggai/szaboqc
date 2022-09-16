@@ -12,7 +12,7 @@ on:
 
 env:
   CTAN_URL: https://mirrors.rit.edu/CTAN
-  TL_PACKAGES: amsmath amssymb amsthm anyfontsize blkarray bm booktabs braket calc caption ctex endnotes enumerate fancyhdr float graphicx hyperref indentfirst latexmk mathalfa mathpazo mathptmx mathtools needspace scalerel siunitx stackengine tabularx threeparttable tikz pgfplots ulem wasysym xeCJKfntef xcolor xparse
+  TL_PACKAGES: amsmath anyfontsize blkarray booktabs braket caption ctex endnotes fancyhdr float hyperref latexmk mathpazo mathtools needspace scalerel siunitx stackengine threeparttable pgfplots ulem wasysym xcolor
 
 jobs:
   build-on-ubuntu:
