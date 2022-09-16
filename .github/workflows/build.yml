@@ -43,4 +43,4 @@ jobs:
         with:
           name: generated-pdf
           path:
-            *.pdf
+            /*.pdf
