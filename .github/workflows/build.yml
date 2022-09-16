@@ -37,7 +37,7 @@ jobs:
         run: |
           ${{ env.SET_PATH }}
           #cd test
-          latexmk -xelatex  -halt-on-error test-xetex-undergraduate
+          latexmk -xelatex  -halt-on-error -shell-escape main
       - name: Upload PDF
         uses: actions/upload-artifact@v2
         with:
