@@ -12,7 +12,7 @@ on:
 
 env:
   CTAN_URL: https://mirrors.rit.edu/CTAN
-  TL_PACKAGES: amsmath anyfontsize blkarray booktabs boondox braket caption ctex endnotes fancyhdr fandol float hyperref latexmk libertinus-fonts luatex85 mathalpha mathpazo mathtools metafont needspace newfloat psnfss scalerel siunitx stackengine symbol tex-gyre tex-gyre-math threeparttable times pgfplots ulem wasy wasy-type1 wasysym xcolor xecjk
+  TL_PACKAGES: amscls amsmath anyfontsize blkarray booktabs boondox braket caption ctex endnotes fancyhdr fandol float graphics hyperref latexmk libertinus-fonts luatex85 l3packages mathalpha mathpazo mathtools metafont needspace newfloat pgfplots psnfss scalerel siunitx stackengine symbol tex-gyre tex-gyre-math threeparttable times tools ulem wasy wasy-type1 wasysym xcolor xecjk
 
 jobs:
   build-on-ubuntu:
@@ -33,9 +33,6 @@ jobs:
           cd install-tl-20* && ./install-tl --profile ../.github/workflows/texlive.profile
           tlmgr install ${{ env.TL_PACKAGES }}
           tlmgr update --self --all --no-auto-install --repository=${{ env.CTAN_URL }}/systems/texlive/tlnet/
-          #      - name: Install Fonts
-          #run: |
-          #apt-get install texlive-fonts-recommended
       - name: Compile test file
         run: |
           ${{ env.SET_PATH }}
