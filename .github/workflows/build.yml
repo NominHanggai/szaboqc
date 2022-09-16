@@ -13,7 +13,6 @@ on:
 env:
   CTAN_URL: https://mirrors.rit.edu/CTAN
   TL_PACKAGES: amsmath amssymb amsthm anyfontsize blkarray bm booktabs braket calc caption ctex endnotes enumerate fancyhdr float graphicx hyperref indentfirst latexmk mathalfa mathpazo mathptmx mathtools needspace scalerel siunitx stackengine tabularx threeparttable tikz pgfplots ulem wasysym xeCJKfntef xcolor xparse
-  #alphalph auxhook biber biblatex biblatex-gb7714-2015 bigfoot blindtext cleveref cm-unicode csquotes dashundergaps emptypage enumitem fancyvrb fandol footmisc grfext hologo hycolor hypdoc l3build libertinus-fonts listings lua-ul lualatex-math luatex85 makecell makeindex newcomputermodern ninecolors ntheorem pict2e preview psnfss setspace standalone symbol tabularray tex-gyre tex-gyre-math translator underscore unicode-math xits xstring zref
 
 jobs:
   build-on-ubuntu:
