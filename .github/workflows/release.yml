@@ -41,7 +41,7 @@ jobs:
           latexmk -xelatex  -halt-on-error -shell-escape main
           mv main.pdf szabo_zh-$VERSION.pdf
       - name: Create release
-        ses: "marvinpinto/action-automatic-releases@latest"
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: true
