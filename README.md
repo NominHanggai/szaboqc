@@ -6,6 +6,6 @@ pdf请到Release下载，最新版本：[0.1.1](https://github.com/Mulliken/szab
 ## 手动编译
 Tex Live 2020 下 XeLaTeX编译成功。CTeX需更新至v2.5.1。
 
-Tikz插图用 tikz/external 库导出到了 ./tikz 中。修改或添加图片后，编译时需用 xelatex -shell-escape 以便使用 external 库的 system call。不妨一直带着 -shell-escape (本文档没有危险)。
+Tikz插图用 tikz/external 库导出到了 ./tikz 中。修改或添加图片后，编译时需用 xelatex --shell-escape 以便使用 external 库的 system call。不妨一直带着 --shell-escape (本文档没有危险)。
 
 如果编译后引用失效则可能需要使用xelatex再编译一次。
