@@ -4132,7 +4132,7 @@ SCF手续要么给那个较紧的函数更多权重，要么给那个较松的�
 \phi_{2 s}^{\prime \prime}(\mathbf{r}) & = g_{1 s}\left(\alpha_{2 s p}^{\prime \prime}, \mathbf{r}\right) \\
 \phi_{2 p}^{\prime}(\mathbf{r}) & = \sum_{i=1}^3 d_{i, 2 p}^{\prime} g_{2 p}\left(\alpha_{i, 2 s p}^{\prime}, \mathbf{r}\right) \\
 \phi_{2 p}^{\prime \prime}(\mathbf{r}) & = g_{2 p}\left(\alpha_{2 s p}^{\prime \prime}, \mathbf{r}\right)
-\label{eq:3.300}
+\label{eq:3.304}
 \end{align}
 
 正如在STO-3G基组中那样，$2s$和$2p$函数共享了指数（exponents），这是为了计算起来高效。给定了如上的函数形式后，我们不断改变收缩系数$d_{1s}$、 $d'_{2s}$、 $d''_{2s}$、 $d'_{2p}$、 $d''_{2p}$以及收缩指数$\alpha_{1s}$、 $\alpha'_{2s}$、 $\alpha''_{2s}$、 $\alpha'_{2p}$、 $\alpha''_{2p}$，直至相应的原子能量达到极小。STO-3G中，我们已知函数做最小二乘拟合，一般的收缩方案中，我们用一组预先指定的未收缩函数对原子做计算，然后得到一个收缩方式；而在4-31G中，我们先确定了函数形式[\eqref{eq:3.300}-\eqref{eq:3.304}]，然后优化所有的收缩参数。换句话说，这个基组是经过先收缩、再优化得到的。如果用我们的一般记号，4-31G这种收缩方案可以写成$(8s4p/4s)[3s2p/2s]$。4-31G基组由三类函数构成：内壳层函数、靠内的价层函数、靠外的价层函数。它们分别由4、3、1个原初函数收缩而来。
