@@ -4,7 +4,7 @@
 % Version 0.1 (5/4/20)
 %
 \RequirePackage{luatex85,shellesc}
-\usepackage[top=1.39cm,bottom=1.8cm,left=1.7cm,right=1.27cm,headsep=10pt,papersize={13.8cm ,21.6cm}
+\usepackage[top=1.39cm,bottom=1.8cm,left=1.7cm,right=1.7cm,headsep=10pt,papersize={13.8cm ,21.6cm}
 ]{geometry}
 \usepackage{indentfirst} 
 \usepackage{graphicx} % Required for including pictures
@@ -38,7 +38,8 @@
 \usepackage{mathtools} % For *rcases* environment
 \usepackage[scr=boondoxo, scrscaled=1]{mathalfa}
 %\usepackage{mathrsfs}
-\usepackage{mathptmx,mathpazo}
+%\usepackage{mathptmx}
+\usepackage{mathpazo}
 %\usepackage{old-arrows} % 
 %\usepackage[T1]{fontenc}
 %\usepackage{newpxtext,newpxmath}
@@ -119,10 +120,11 @@
 \newtheoremstyle{nx}{}{}{\normalfont}{}{\bfseries}{}{1em}{}
 \theoremstyle{nx}
 \newtheorem{Xercise}{$\quad$练习}[chapter]
-\newenvironment{xercise}{\Needspace{2\baselineskip}\par\vspace{\baselineskip}\noindent\hrule\vspace{.5\baselineskip}\Xercise}
-{\vspace{\baselineskip}\hrule\par\endXercise}
+\newenvironment{xercise}{\Needspace{2\baselineskip}\par\vspace{\baselineskip}\noindent\hrule\vspace{.5\baselineskip}\Xercise\label{ex:\theXercise}
+}
+{\vspace{\baselineskip}\noindent\hrule\par\endXercise}
 
-\newcommand\Next{\endXercise\hrule\Xercise}
+\newcommand\Next{\endXercise\hrule\Xercise\label{ex:\theXercise}}
 \newcommand{\exercise}[1]{\begin{xercise}#1\end{xercise}}
 %========================================================
 
@@ -218,6 +220,30 @@
 \newcommand{\hjt}{\ket{\Psi_0}}
 \newcommand{\jtn}{\Phi_0}
 \newcommand{\hjtn}{\Psi_0}
+
+%Convenience commands defined by Hao
+\newcommand{\mrm}{\mathrm}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\mcr}{\mathscr}
+\newcommand{\op}{\mathscr}
+\newcommand{\bs}[2]{\ensuremath\left\{ \vec{#1}_{#2} \right\}}
+\newcommand{\kbs}[1]{\ensuremath\left\{ \ket{#1} \right\}}
+\newcommand{\bbs}[1]{\ensuremath\left\{ \bra{#1} \right\}}
+\newcommand{\madj}[1]{\ensuremath{\mbf #1}^\dagger}
+\newcommand{\oadj}[1]{\ensuremath{\op #1}^\dagger}
+\newcommand{\tr}[1]{\ensuremath{\mrm{tr}}\,#1}
+%\newcommand{\ket}[1]{\ensuremath\left\vert #1\right\rangle}
+%\newcommand{\bra}[1]{\ensuremath\left\langle #1\right\vert}
+\newcommand{\Langle}{\ensuremath\Big\langle}
+\newcommand{\Rangle}{\ensuremath\Big\rangle}
+\newcommand{\Lvert}{\ensuremath\Big\vert}
+\newcommand{\olp}[2]{\ensuremath\langle #1 \vert #2 \rangle}
+\newcommand{\Olp}[2]{\ensuremath\left\langle #1 \middle\vert #2 \right\rangle}
+\newcommand{\oup}[2]{\ensuremath\left\vert #1 \right\rangle \left\langle #2 \right\vert}
+\newcommand{\mele}[3]{\ensuremath\langle #1\vert \op{#2} \vert #3\rangle}
+\newcommand{\Mele}[3]{\ensuremath\left\langle #1\middle\vert \op{#2} \middle\vert #3\right\rangle}
+\newcommand\bigzero{\makebox(0,0){\text{\huge0}}}
+%=============END===================
 
 \usepackage{wasysym}
 %For the symbol \CheckedBox
