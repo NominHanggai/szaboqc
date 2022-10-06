@@ -4,7 +4,7 @@
 % Version 0.1 (5/4/20)
 %
 \RequirePackage{luatex85,shellesc}
-\usepackage[top=1.39cm,bottom=1.8cm,left=1.7cm,right=1.7cm,headsep=10pt,papersize={13.8cm ,21.6cm}
+\usepackage[top=1.4cm,bottom=1.8cm,left=1.7cm,right=1.7cm,headsep=18pt,papersize={13.8cm ,21.6cm}
 ]{geometry}
 \usepackage{indentfirst} 
 \usepackage{graphicx} % Required for including pictures
@@ -49,23 +49,31 @@
 \renewcommand{\braket}[1]{\Braket{#1}}
 \renewcommand{\ket}[1]{\Ket{#1}}
 \renewcommand{\bra}[1]{\Bra{#1}}
-\usepackage[UTF8,scheme=plain]{ctex}
-\usepackage{hyperref}
+\usepackage[UTF8,scheme=chinese,heading,punct=kaiming]{ctex}
+\ctexset{
+  chapter={
+  	name = {第,章},
+  	format = \Large\bfseries\raggedright,
+  	aftername = \par\bigskip},
+  section/format = \fontsize{8.5pt}{\baselineskip}\selectfont\bfseries\raggedright,
+  subsection/format = \fontsize{8pt}{\baselineskip}\selectfont\bfseries\raggedright
+}
+
 %\usepackage{fontspec}
 %\usepackage{luatexja-fontspec}
 %\setmainjfont{FandolSong}
 %\setsansjfont{FandolKai}
-\newcommand*{\refcs}[2]{
-\hyperref[label]{text}
-}
+%\newcommand*{\refcs}[2]{
+%\hyperref[label]{text}
+%}
 
 %-----------------------------------------------------------------
 %	Page Headers
 %-----------------------------------------------------------------
 
 \usepackage{fancyhdr} % Required for header and footer configuration
-\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\chaptername\ \thechapter.\ #1}{}} % Chapter text font settings
-\renewcommand{\sectionmark}[1]{\markright{\normalfont\normalsize\thesection\hspace{5pt}#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\CTEXthechapter\ #1}{}} % Chapter text font settings
+\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\CTEXthesection\hspace{5pt}#1}{}}
 
 %----------------------------------------------------------------------------------------
 \let\bar\undifined
@@ -196,6 +204,17 @@
 \usepackage{float}
 \renewcommand{\thefootnote}{\roman{footnote}} % Change the marks of footnotes to numbers
 \usepackage{blkarray} %分块矩阵
+\usepackage[bookmarksnumbered=true]{hyperref}
+
+
+\usepackage{wasysym}
+%For the symbol \CheckedBox
+\usepackage{stackengine,scalerel}
+\newcommand\DSquare{\ThisStyle{\ensurestackMath{%
+			\stackinset{c}{}{c}{}{\scalebox{.5}{$\SavedStyle\blacksquare$}}
+			{\SavedStyle\square}}}}
+%For a filled box.
+%CR: https://tex.stackexchange.com/questions/553834/is-there-a-intermediate-checkedbox-symbol-in-latex
 
 %-----------------------------------------------------------------
 %	Convinent abbreviations
@@ -245,11 +264,3 @@
 \newcommand\bigzero{\makebox(0,0){\text{\huge0}}}
 %=============END===================
 
-\usepackage{wasysym}
-%For the symbol \CheckedBox
-\usepackage{stackengine,scalerel}
-\newcommand\DSquare{\ThisStyle{\ensurestackMath{%
-            \stackinset{c}{}{c}{}{\scalebox{.5}{$\SavedStyle\blacksquare$}}
-            {\SavedStyle\square}}}}
-%For a filled box.
-%CR: https://tex.stackexchange.com/questions/553834/is-there-a-intermediate-checkedbox-symbol-in-latex

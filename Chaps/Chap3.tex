@@ -2437,7 +2437,7 @@ STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数
 	\begin{alignedat}[t]{1}&0.444635\phi_{1s}^\mathrm{GF}(0.109818) + 0.535328\phi_{1s}^\mathrm{GF}(0.405771)\\& + 0.154329\phi_{1s}^\mathrm{GF}(2.22766)\end{alignedat}
 \end{alignat}
 
-\begin{figure}[h]、
+\begin{figure}[h]
 	\def\Sf(x){e^(-x)/sqrt(3.1415926)}
 	\def\CgfA(x){0.267656*e^(-0.27095*x^2)}
 	\def\CgfB(x){0.271812*e^(-0.851819*x^2) + 0.117571*e^(-0.151623*x^2)}
@@ -2499,8 +2499,8 @@ STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数
 				\addplot [domain=0:8, samples=500, thick, mark=none, thick, blue] {4*3.1415926*(x^2)*\Sf(x)};
 				\addplot [domain=0:8, samples=500, dashed, mark=none, thick, blue] {4*3.1415926*(x^2)*\CgfA(x)};
 				\draw (axis cs:6,2.5)node{(b)};
-				\draw (axis cs:4.1,4)--(5.3,4)node[right]{SLATER};
-				\draw[dashed] (axis cs:4.1,3.544)--(axis cs:5.3,3.544)node[right]{STO-1G};
+				\draw (axis cs:4.1,4.1)--(axis cs:5.3,4.1)node[right]{SLATER};
+				\draw[dashed] (axis cs:4.1,3.644)--(axis cs:5.3,3.644)node[right]{STO-1G};
 			\end{axis}
 	\end{tikzpicture}\end{minipage}
 	\caption{Slater函数和高斯函数的比较：a) $1s$ Slater函数($\zeta=1.0$)用单个STO-1G的高斯函数按最小二乘拟合($\alpha=0.270950$); b) 对应径向分布函数$(4\pi r^2|\phi_{1s}(r)|^2)$的比较.}
@@ -2600,7 +2600,7 @@ STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数
 2.2.5解中曾介绍了\underline{极小基$\hd$}模型, 它只有一个占据分子轨道一个虚分子轨道. 
 有了上一小节对STO-3G基组的描述, 现在就可以来介绍$\hd$的\emph{从头}\hft 计算. 
 这个模型很简单, 但是由此出发可以直接扩展到更大的基组, 此处我们要介绍的\hft 理论基本上与基组实际大小无关. 
-但白璧微瑕：这个模型过于简单, 无法体现SCF手续的特性. 
+但白璧微瑕：当前用的极小基(STO-3G)模型过于简单, 无法体现SCF手续的特性. 
 下一小节当进行$\heh$的极小基计算时, 可以一窥这方面(SCF手续)的\hft 理论.
 
 本小节我们进行基态$\hd$的限制性闭壳层计算. 
@@ -2736,7 +2736,7 @@ $\mathbf{T}$和$\mathbf{V}^\mathrm{nucl}$的非对角元没有对应的简单经
 		\begin{tikzpicture}
 			%	\filldraw (elec)circle(.1);
 			\coordinate(B) at(3,0);
-			\shade[left color=black,right color=white] (0,0)circle (1);
+			\shade[draw, very thin, left color=gray, right color=white] (0,0)circle (1);
 			\node[inner sep=.07,draw=blue,circle,fill=blue] (elec)at(.55,.55){};
 			\filldraw[->](0,0)node[below]{A}--node[above,left]{$\mathbf{r}_{1A}$} (elec);
 			\draw[->] (0,0)--node[below]{$\mathbf{R}_{AB}$}(B)node[right]{B};
@@ -2750,8 +2750,7 @@ $\mathbf{T}$和$\mathbf{V}^\mathrm{nucl}$的非对角元没有对应的简单经
 		\label{f3.4}
 	\end{minipage}
 \end{figure}
-这就是单个电子在核势场中的\ha 矩阵, 
-在$\mathrm{H}_2^+$的情形下. 
+\noindent 这就是单个电子在核势场中的\ha 矩阵, 即$\mathrm{H}_2^+$的\ha 矩阵. 
 解矩阵本征值方程
 \begin{align}
 	\label{3.234}
@@ -2782,7 +2781,7 @@ $\mathbf{T}$和$\mathbf{V}^\mathrm{nucl}$的非对角元没有对应的简单经
 其他两个积分没有经典诠释. 
 在大键长下这两个积分趋于零因为$S_{12}$趋于零. 
 得到所有的基本积分后, 
-下一步既可以求解Roothaan方程：按之前所述的手续, 
+下一步就能求解Roothaan方程：按之前所述的手续, 
 就是初猜密度矩阵, 
 构建Fock矩阵, 
 将Fock矩阵变换到正交轨道基下, 
@@ -2792,7 +2791,7 @@ $\mathbf{T}$和$\mathbf{V}^\mathrm{nucl}$的非对角元没有对应的简单经
 正则分子轨道构成分子点群的一个表示. 
 也就是说, 
 对于同核双原子分子, 
-轨道可以标为$\sigma_g.\sigma_\mu,\pi_g,\pi_\mu$等等. 
+轨道可以标为$\sigma_g$、$\sigma_\mu$、$\pi_g$、$\pi_\mu$等等. 
 在极小基下只有两个分子轨道. 
 能量低的那个就是占据分子轨道, 
 是具有$\sigma_g$对称的成键轨道
@@ -2963,6 +2962,8 @@ $f_{ij}=(\psi_i|f|\psi_j)$根据定义是对角阵,
 				/pgf/number format/precision=1
 			},
 			xtick={1.0,2,3,4,5,6},
+			xticklabel style={anchor=south},
+			xticklabel shift={-3pt},
 			ytick={-.2,-.1,0,.1,.2,.3,.4,.5,.6},
 			ymin=-.2,
 			ymax=0.6,
@@ -2970,22 +2971,18 @@ $f_{ij}=(\psi_i|f|\psi_j)$根据定义是对角阵,
 			xmax=6,
 			height=.8\textwidth,
 			width=.7\textwidth,
-			every axis x label/.style={at={(axis description cs:1.1,.2)}},
-			xlabel={$R$(a.u.)},
+			every axis x label/.style={at={(axis cs:6.85,.034)}}, xlabel={$R$(a.u.)},
 			every axis y label/.style={rotate=90,at={(axis description cs:-.15,.5)}},
 			ylabel={$E(\hd)-2E(\mathrm{H})\,(\au)$},
 			]
 			\addplot [domain=.26:6, thick, mark=none, blue] table{./Pictures/h2.dat};
-			\addplot [domain=.26:6, thick,dashed, mark=none,, blue] table{./Pictures/wolniewicz.dat};
+			\addplot [domain=.26:6, thick,dashed, mark=none, blue] table{./Pictures/wolniewicz.dat};
 			\draw[<-] (axis cs:2.7,-.08578740)--(axis cs:3.2,-.08578740)node[right]{精确};
-			\draw     (axis cs:3.6,-.12)node{(Kolos-Wolniewicz)};
+			\draw     (axis cs:3.8,-.12)node{(Kolos-Wolniewicz)};
 			\draw[<-] (axis cs:4.05,.17)--(axis cs:4.4,.17)node[right]{STO-3G};
 			\draw (axis cs:2.4,.38)circle(7pt);
 			\draw (axis cs:3.6,.38)circle(7pt);
 			\draw[<->](axis cs:2.4,.38)--node[above]{$R$}(axis cs:3.6,.38); 
-			%	\draw[dashdotted] (1.7,0.387)--(2.5,0.387)node[right]{STO-2G};
-			%	\draw[dotted] (1.7,0.444)--(2.5,0.444)node[right]{STO-1G};
-			%	\draw (1.7,0.5)--(2.5,0.5)node[right]{SLATER};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{$\hd$的STO-3G限制性\hft 势能曲线与Kolos和Wolniewicz的精确结果对比.}
@@ -3009,7 +3006,7 @@ $f_{ij}=(\psi_i|f|\psi_j)$根据定义是对角阵,
 两个电子都确实被同一个空间波函数描述, 
 在三维空间中的概率分布也相同. 
 这种描述对两个隔开的氢原子是不合适的. 
-限制性闭壳层\hft 计算强制电子成对占据分子轨道, 
+限制性闭壳层\hft 计算中，电子被强制成对放在分子轨道上, 
 因此无法正确描述解离, 
 除非解离产物都是闭壳层的.
 
