@@ -572,25 +572,26 @@ Shavitt及其合作者做过一项有意思的研究,
 首先, 
 他们做了包含4120个\mci{自旋匹配}和\mci
 {对称匹配}的单、双激发组态的CI计算, 这些组态都由正则\hft 基生成. 利生成的波函数, 他们得出单粒子密度矩阵并对角化之, 以求得\mci{SDCI近似}下的自然轨道. 接下来, 他们分别用\mci{正则轨道}和\mci{自然轨道}做SDCI计算, 以回答这样一个问题: 为得到某特定百分比的\mci{SDCI关联能}, 至少需要多少个组态? 答案可从\ref{t4.12}中找到。很明显，使用自然轨道构建的\mci{CI展开式}收敛最快。要得到60\%的\mci{SDCI关联能}，若用自然轨道构建组态，则只需50个组态，若用正则轨道，则需140个。但是从表中也可以看到，仅当展开项较少的时候，自然轨道相对于正则轨道才有明显优势。需要强调，不同基组下，表中的结果也会不同。可以预见，大基组下，自然轨道和正则轨道之间的差别将更大。
-
-\begin{threeparttable}[H]
-	\caption{重现一部分\mci{SDCI关联能}所需的自旋、对称匹配组态的数目。体系为$\mathrm{H_2O}$, 基组为39-STO. 表中分别列出了使用正则轨道和自然轨道时的情况\tnote{a}。}
-	\centering
-	\begin{tabular}{ccc}
-		\hline
-		                           & \multicolumn{2}{c}{组态数目} \\ \cline{2-3}
-		占$E_\mathrm{corr}$的百分比 & MO(分子轨道) &   NO(自然轨道) \\ \hline
-		          20               &    14        &       6       \\
-		          40               &    52        &      18       \\
-		          60               &   140        &      50       \\
-		          80               &   351        &      147      \\
-		          90               &   617        &      362      \\
-		          99               &   1760       &     1652      \\ \hline
-	\end{tabular}
-	\begin{tablenotes}
-		\item[a] I. Shavitt, B. J. Rosenberg, and S. Palalikit, \textit{Int. J. Quantum Chem.} \textbf{S10}: 33 (1976).
-	\end{tablenotes}
-\end{threeparttable}
+\begin{table}[H]
+	\begin{threeparttable}
+		\caption{重现一部分\mci{SDCI关联能}所需的自旋、对称匹配组态的数目。体系为$\mathrm{H_2O}$, 基组为39-STO. 表中分别列出了使用正则轨道和自然轨道时的情况\tnote{a}。}
+		\centering
+		\begin{tabular}{ccc}
+			\hline
+			& \multicolumn{2}{c}{组态数目} \\ \cline{2-3}
+			占$E_\mathrm{corr}$的百分比 & MO(分子轨道) &   NO(自然轨道) \\ \hline
+			20               &    14        &       6       \\
+			40               &    52        &      18       \\
+			60               &   140        &      50       \\
+			80               &   351        &      147      \\
+			90               &   617        &      362      \\
+			99               &   1760       &     1652      \\ \hline
+		\end{tabular}
+		\begin{tablenotes}
+			\item[a] I. Shavitt, B. J. Rosenberg, and S. Palalikit, \textit{Int. J. Quantum Chem.} \textbf{S10}: 33 (1976).
+		\end{tablenotes}
+	\end{threeparttable}
+\end{table}
 \exercise{
 在双电子系统这种下，
 使用自然轨道能够显著减少Full CI展开的长度。

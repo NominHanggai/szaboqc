@@ -3218,9 +3218,9 @@ I. N. Levine, Quantum Chemistry, Allyn and Bacon, Boston, 1974, p. 190 .
 		\shade[ball color=black!30] (R1)circle(.477897252*0.8);
 		\shade[ball color=black!30] (R2)circle(.806451613*0.8);
 		%orbital exponent \xi for Z=+2 is 2.0925 and 1.24 for Z=+1. The maximum of radial relectron density is 1/\xi, namely 0.477897252 for Z=+2 and 0.806451613 for Z=+1.
-		\draw(0,2)--(0,0)--(3.2,0) (0,0)--(-.6,-.6);
-		\draw[->] (0,0)--(R1);
-		\draw[->] (0,0)--(R2);
+		\draw(0,2.5)--(0,0)--(3.2,0) (0,0)--(-.8,-.8);
+		\draw[->] (0,0)--node[below right,pos=.5]{$R_1$}(R1);
+		\draw[->] (0,0)--node[below right]{$R_2$}(R2);
 		\draw[->] (R1)node[above]{$Z=+2$}--node[above,pos=.45]{$\mathbf{R}_1-\mathbf{R}_2$}(R2)node[above]{$Z=+1$};
 		\draw (R1)+(0,0.5)node[above]{$\zeta_1=2.0925$} (R2)+(0,0.82)node[above]{$\zeta_2=1.24$};
 	\end{tikzpicture}
@@ -3599,19 +3599,24 @@ $\text{He}$的能量值相对于$\heh$的值而言,
 过于高了.
 
 \begin{table}[h]
-	\centering\caption{$\text{H}$和$\text{He}$物种的能量（STO-3G基组： $\zeta_1=2.0925,\zeta_2=1.24$）}
+\begin{threeparttable}
 	\begin{tabular}{lc}
 		\hline
 		\multicolumn{1}{c}{物种} & 能量(a.u.)  \\ \hline
 		$\text{H}^+$             &    0.0    \\
 		$\text{H}$               & -0.466582 \\
 		$\text{He}^+$            & -1.975514 \\
-		$\text{He}$              & -2.643876 \\
-		$\heh$ ($R=1.4632$ a.u.) & -2.860662 \\ \hline
+		$\text{He}$              & -2.643876\tnote{a} \\
+		$\heh$ ($R=1.4632$ a.u.) & -2.860662\tnote{b} \\ \hline
 	\end{tabular}
+	\begin{tablenotes}
+		\item[a] C. L. Pekeris, \textit{Phys. Rev.} 115: 1217 (1959).
+		\item[b] L. Wolniewicz, \textit{J. Cherm. Phys.} 43: 1807 (1965).
+	\end{tablenotes}
+\end{threeparttable}
+	\centering\caption{$\text{H}$和$\text{He}$物种的能量（STO-3G基组： $\zeta_1=2.0925,\zeta_2=1.24$）}
 	\label{t3.6}
 \end{table}
-
 \ref{f3.8}中绘出了用标准指数计算得到的势能曲线， 同时也绘出了Wolniewicz所得的精确结果结果。 STO-3G计算所得的平衡键长是$1.3782\,\,\text{a.u.}$, 和精确结相当接近，但是势阱深度却被高估了。这里没有遇到$\hd$情形（\ref{f3.5}）下的问题： 解离行为正确，因为解离产物是闭壳层的。
 \begin{figure}[htbp]\centering
 	\newlength{\twoc}

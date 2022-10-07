@@ -4,11 +4,12 @@
 % Version 0.1 (5/4/20)
 %
 \RequirePackage{luatex85,shellesc}
-\usepackage[top=1.4cm,bottom=1.8cm,left=1.7cm,right=1.7cm,headsep=18pt,papersize={13.8cm ,21.6cm}
+\usepackage[top=1.8cm,bottom=1.8cm,left=1.7cm,right=1.7cm,headsep=18pt,papersize={13.8cm ,21.6cm}
 ]{geometry}
 \usepackage{indentfirst} 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{Pictures/}}
+\usepackage{multirow}
 \usepackage{tikz,pgfplots} % Required for drawing custom shapes
 %\pgfplotsset{compat=newest}
 \usepackage{booktabs,enumerate,threeparttable
@@ -59,21 +60,13 @@
   subsection/format = \fontsize{8pt}{\baselineskip}\selectfont\bfseries\raggedright
 }
 
-%\usepackage{fontspec}
-%\usepackage{luatexja-fontspec}
-%\setmainjfont{FandolSong}
-%\setsansjfont{FandolKai}
-%\newcommand*{\refcs}[2]{
-%\hyperref[label]{text}
-%}
-
 %-----------------------------------------------------------------
 %	Page Headers
 %-----------------------------------------------------------------
 
 \usepackage{fancyhdr} % Required for header and footer configuration
 \renewcommand{\chaptermark}[1]{\markboth{\sffamily\normalsize\CTEXthechapter\ #1}{}} % Chapter text font settings
-\renewcommand{\sectionmark}[1]{\markright{\sffamily\normalsize\CTEXthesection\hspace{5pt}#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\normalfont\kaishu\normalsize\CTEXthesection\hspace{5pt}#1}{}}
 
 %----------------------------------------------------------------------------------------
 \let\bar\undifined
@@ -103,9 +96,6 @@
 \newcommand{\hs}{\mathscr{H}}
 \newcommand{\vs}{\mathscr{V}}
 \newcommand{\es}{\mathscr{E}}
-
-\newcommand{\kaiti}{%\kaishu
-}
 \renewcommand{\emph}[1]{\textbf{#1}}
 
 
@@ -118,7 +108,6 @@
 \makeatletter
 \@addtoreset{endnote}{chapter}
 \makeatother
-%\let\footnote\endnote
 
 %-----------------------------------------------------------------
 % the command to generate two lines between which are excerise content, using amsthm to number the exercise.
@@ -128,9 +117,9 @@
 \newtheoremstyle{nx}{}{}{\normalfont}{}{\bfseries}{}{1em}{}
 \theoremstyle{nx}
 \newtheorem{Xercise}{$\quad$练习}[chapter]
-\newenvironment{xercise}{\Needspace{2\baselineskip}\par\vspace{\baselineskip}\noindent\hrule\vspace{.5\baselineskip}\Xercise\label{ex:\theXercise}
+\newenvironment{xercise}{\Needspace{2\baselineskip}\par\vspace{\baselineskip}\noindent\hrule\vspace{0\baselineskip}\Xercise\label{ex:\theXercise}
 }
-{\vspace{\baselineskip}\noindent\hrule\par\endXercise}
+{\vspace{.5\baselineskip}\noindent\hrule\par\endXercise}
 
 \newcommand\Next{\endXercise\hrule\Xercise\label{ex:\theXercise}}
 \newcommand{\exercise}[1]{\begin{xercise}#1\end{xercise}}
