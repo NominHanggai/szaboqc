@@ -1963,7 +1963,7 @@ e_{ab}^{\mathrm{FO}} =  \sum_{r<s} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsi
 所以可以有
 \begin{align}
 E_0^{(2)} = \frac{1}{4} \sum_{abrs}\frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
-\label{6.72}
+\label{eq:6.72}
 \end{align}
 进一步, 
 可以用通常的双电子积分表达二阶能量:
@@ -1990,7 +1990,7 @@ E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \
 E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_r-\epsilon_s}} \notag\\
           & + \frac{1}{8}\sum_{abrstu}\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_t-\epsilon_u}} \notag\\
           & + \sum_{abcrst}\frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_a + \epsilon_c -\epsilon_r-\epsilon_t}}
-          \label{6.75}
+          \label{eq:6.75}
 \end{align}
 
 作为以上方法的一个示例, 
@@ -2015,7 +2015,7 @@ E_\mathrm{corr}  = E_0^{(2)} + E_0^{(3)} + \cdots
 其中
 \begin{equation}
 E_0^{(2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
-\label{6.77}
+\label{eq:6.77}
 \end{equation}
 及
 \begin{equation}
@@ -3531,14 +3531,14 @@ Goldstone在他的\mci{链接簇}(linked-cluster)定理中用图形技术证明,
 \section{一些算例}
 在这一节中，
 我们使用微扰理论来计算各种小分子的相关能、势能面、平衡几何形状和偶极矩。
-表\ref{tab:6.3}比较了二阶、三阶微扰理论计算得到的$\hd$的相关能和用一系列质量不断提高的基组得到的full CI相关能。
+\ref{tab:6.3}比较了二阶、三阶微扰理论计算得到的$\hd$的相关能和用一系列质量不断提高的基组得到的full CI相关能。
 值得注意的是，
 二阶理论给出的相关能占full CI相关能的比例随着基的大小而显著增加。
 这似乎是一个普遍现象，并不限于双电子系统。
 因此，想要靠小基组计算来说明微扰论的效用如何，是危险的。
 可以看出，对于较大的基组，微扰展开收敛很快；
 三阶理论给出的相关能与该基组下的精确值非常吻合。
-\begin{table}
+\begin{table}[H]
 	\centering
 	\caption{$R=1.4$时$\hd$的关联能(a.u.)}
 	\begin{threeparttable}

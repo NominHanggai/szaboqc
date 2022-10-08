@@ -3,6 +3,8 @@
 *.log
 *.toc
 *.ent
+*.fls
+*.xdv
 
 # PDF output - usually a bad idea to keep this in Git
 *.pdf
