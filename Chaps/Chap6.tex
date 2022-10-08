@@ -3538,7 +3538,7 @@ Goldstone在他的\mci{链接簇}(linked-cluster)定理中用图形技术证明,
 因此，想要靠小基组计算来说明微扰论的效用如何，是危险的。
 可以看出，对于较大的基组，微扰展开收敛很快；
 三阶理论给出的相关能与该基组下的精确值非常吻合。
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{$R=1.4$时$\hd$的关联能(a.u.)}
 	\begin{threeparttable}
@@ -3586,7 +3586,7 @@ SCF 结果与该基组下的精确结果仅相差 0.011\,a.u.；
 二阶能量在正确的方向上\footnote{这里的方向就是指键长修正值的正负。}
 修正了 SCF 键长，但幅度很小。
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{十电子化合物的平衡键长（a.u.）}
 	\begin{tabular}{cccccc}
@@ -3623,7 +3623,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 我们把SCF 和 MP2 水平下计算所得的$\mathrm{NH}_3$和$\mathrm{H_2O}$的平衡键角与实验值进行了比较。 
 对于较大的基组，
 二阶能量将 SCF 误差减少了大约一半。
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{$\mathrm{NH_3}$和$\mathrm{H_2O}$平衡状态时的键角}
 	\begin{threeparttable}
@@ -3641,24 +3641,23 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	\label{tab:6.6}
 \end{table}
 
-尽管微扰理论给出的二阶能量极好地预测了包含氢的化学键的长度，但对于多重键来说并非如此。 表 \ref{tab:6.7} 给簇了 SCF 和微扰理论算得的 $\mathrm{N_2}$ 和 $\mathrm{CO}$ 键长，并与实验做了比较。 对于最大的基组，SCF 低估了实验结果约 0.03 a.u.； 二阶微扰理论预测的键长增大了，但它显著高估了校正。 三阶校正部分抵消了二阶校正的效果,但与实验的一致性仍不能完全令人满意。
-
-\begin{table}[H]
+尽管微扰理论给出的二阶能量极好地预测了包含氢的单键的长度，但对于多重键来说并非如此。 表 \ref{tab:6.7} 给出了 SCF 和微扰理论算得的 $\mathrm{N_2}$ 和 $\mathrm{CO}$ 键长，并与实验做了比较。 对于最大的基组，SCF 低估了实验结果约 0.03 a.u.； 二阶微扰理论预测的键长增大了，但它显著高估了校正。 三阶校正部分抵消了二阶校正的效果,但与实验的一致性仍不能完全令人满意。
+\begin{table}
 	\caption{$\mathrm{N}_2$和$\mathrm{CO}$ 的平衡键长（a.u.）}
-	\begin{tabular}{lccccccc}
+	\begin{tabular}{lcccccc}
 		\hline 
-		& \multicolumn{3}{c}{$\mathrm{N}_2$} & & \multicolumn{3}{c}{$\mathrm{CO}$} \\
-		\cline { 2 - 4 } \cline { 5 - 8 } 基组 & SCF & $E_0^{(2)}$ & $E_0^{(2)}+E_0^{(3)}$ & & $\mathrm{SCF}$ & $E_0^{(2)}$ & $E_0^{(2)}+E_0^{(3)}$ \\
-		\hline STO-3G & $2.143$ & $2.322$ & $2.222$ & & $2.166$ & $2.264$ & $2.216$ \\
-		$4-31 \mathrm{G}$ & $2.050$ & $2.171$ & $2.098$ & & $2.132$ & $2.216$ & $2.169$ \\
-		6-31G* & $2.039$ & $2.133$ & $2.109$ & & $2.105$ & $2.175$ & $2.145$ \\
-		实验 & & $2.074$ & & & $2.132$ & \\
+		& \multicolumn{3}{c}{$\mathrm{N}_2$} &  \multicolumn{3}{c}{$\mathrm{CO}$} \\
+		\cline { 2 - 4 } \cline { 5 - 7 } 基组 & SCF & $E_0^{(2)}$ & $E_0^{(2)}+E_0^{(3)}$ &  $\mathrm{SCF}$ & $E_0^{(2)}$ & $E_0^{(2)}+E_0^{(3)}$ \\
+		\hline STO-3G & $2.143$ & $2.322$ & $2.222$ &  $2.166$ & $2.264$ & $2.216$ \\
+		$4-31 \mathrm{G}$ & $2.050$ & $2.171$ & $2.098$  & $2.132$ & $2.216$ & $2.169$ \\
+		6-31G* & $2.039$ & $2.133$ & $2.109$ &  $2.105$ & $2.175$ & $2.145$ \\
+		实验 & \multicolumn{3}{c}{$2.074$}& \multicolumn{3}{c}{$2.132$}  \\
 		\hline
 	\end{tabular}
-	\label{tab:6.7}
+\label{tab:6.7}
 \end{table}
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{$\mathrm{H_2O}$在实验测量的几何形状下的关联能；基组为第四章中介绍的39-STO\tnote{a}}
 	\begin{threeparttable}
@@ -3685,7 +3684,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 在离开对平衡几何的讨论之前，我们考虑使用接近 HF 极限的单电子基组（第 4 章中讲过的39-STO 基）计算$\mathrm{H_2O}$在其平衡几何附近的势能。 我们在第 4 章和第 5 章都使用了这个例子来说明\underline{对理论}和\underline{\underline{耦合对}理论}。 在 \ref{tab:6.8} 中，我们将四阶微扰论给出的相关能与前面章节中讨论的各种多电子方法给出的相关能进行了比较。 这里只提一下，二阶能量给出了基组相关能的相当大比例，并且优于 SDCI。表\ref{tab:6.9}中对这些
 多电子理论的进行了更有意思的比较，该表列出了不同方法计算得到的$\mathrm{H_2O}$的平衡几何和两个力常数。 在考虑这些结果之前，应该指出的是，各种理论的预测应该与所用基组下的精确结果（即full CI 结果）进行比较，而不是与实验做比较。 不幸的是，我们没有这些基组下精确的结果，因此最好的办法是使用实验结果作为基准。 该表最引人注目的方面是，虽然 SDCI 显著改善了 SCF 结果，但对于该分子，所有多体方法都优于 SDCI。 二阶微扰结果与实验结果非常接近。 然而，微扰展开的收敛行为似乎是振荡的；三阶结果相对较差。
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{$\mathrm{H_2O}$的平衡几何以及一些力常数；基组为第四章中介绍的39-STO\tnote{a}}
 	\begin{threeparttable}
@@ -3719,7 +3718,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	E_0^{(2)}  = \frac{K_{12}^2}{2(\varepsilon_1 - \varepsilon_2)}
 \end{align}
 在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，十一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\eqref{eq:6.72}和\eqref{eq:6.75}。 以这种方式获得的极小基$\hd$的势能曲线如\ref{fig:6.2}所示。
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\tikzset{
 		long dashed/.style={thick,dash pattern=on 10pt off 4pt},
@@ -3782,7 +3781,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \footnotetext{
 	注意在$R\approx 2.173 \,\mathrm{a.u.}$的时候，MP2和MP3势能曲线的导数不连续，这个$R$的特殊位置称为Coulson-Fischer点（Coulson-Fischer point）。 在这个点上，UHF波函数的性质发生了根本上的转变。MP2、MP3用UHF的波函数作为出发点，因此才出现了导数不连续现象。
 }
-图中画出了 Kolos 和 Wolniewicz 的精确结果以供比较。请注意之前提到过，STO-3G下的UHF 和full CI计算预测的解离能比精确结果更大，因为 STO-3G 基组对于氢原子来说非常差。 从图中可以看到，微扰展开的收敛性对于解离能非常好。 三阶微扰论的结果与该基组下的精确的值仅相差约 1\%。 令人失望的方面是，虽然非限制性的二阶和三阶能量在大$R$下表现良好（即正确描述了解离），然而在$R$较大但仍未到无穷时，以UHF为参考出发的微扰论给出很小相关能。因此，使用微扰理论计算的势能曲线在远距离上并不令人满意。 如果有一个好的出发点做为参考，微扰理论会很快收敛。 尽管 UHF 波函数在 $R\to\infty$ 处给出了正确的能量，但它的波函数形式不正确，即，
+图中画出了 Kolos 和 Wolniewicz 的精确结果以供比较。请注意之前提到过，STO-3G下的UHF 和full CI计算预测的解离能比精确结果更大，因为 STO-3G 基组对于氢原子来说非常差。 从图中可以看到，微扰展开的收敛性对于解离能非常好。 三阶微扰论的结果与该基组下的精确的值仅相差约 1\%。 令人失望的方面是，虽然非限制性的二阶和三阶能量在大$R$下表现良好（即正确描述了解离），然而在$R$较大但仍未到无穷时，以UHF为参考出发的微扰论给出非常少的相关能。因此，使用微扰理论计算的势能曲线在远距离上并不令人满意。 如果有一个好的出发点做为参考，微扰理论会很快收敛。 尽管 UHF 波函数在 $R\to\infty$ 处给出了正确的能量，但它的波函数形式不正确，即，
 \begin{align}
 	\lim_{R\to\infty} \ket{\Psi_0^\mathrm{UHF}} = \ket{\phi_1\bar{\phi}_2}
 \end{align}
@@ -3790,7 +3789,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \begin{align}
 	\lim_{R\to\infty}\ket{\Phi_0} = 2^{-1/2}(\ket{\phi_1\bar{\phi}_2}+\ket{\phi_2\bar{\phi}_1})
 \end{align}
-\begin{figure}[H]
+\begin{figure}
 	\centering
 	\tikzset{
 		long dashed/.style={thick,dash pattern=on 10pt off 4pt},
@@ -3867,7 +3866,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 
 下面给出的偶极矩是这样计算得到的：首先在存在场的情况下执行HF计算，然后使用含场的HF轨道和轨道能量计算二阶能量，最后对二阶微扰论给出的总能量进行数值微分。 我们首先考虑十电子系列化合物$\mathrm{NH_3}$ 、$\mathrm{H_2O}$ 和$\mathrm{FH}$ 的偶极矩。 之前我们在第 3 章中已经看到，即使在6-31G** 水平，与接近HF极限的更大基组SCF计算相比，HF偶极矩也很不准确。 用标准基组的二阶总能量计算得到的偶极矩如\ref{tab:6.10}所示。 请注意，对于较大的基组，电子相关会在正确的方向上改变偶极矩，但除了 FH 的 6-31G** 结果外，其他结果与实验的一致性仍然很差。 这说明了一个事实：基组的缺陷不能通过包括相关效应来纠正。
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\caption{十电子化合物的偶极矩（a.u.）}
 	\begin{tabular}{lcccccccc}
@@ -3883,7 +3882,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	\label{tab:6.10}
 \end{table}
 
-\begin{table}[H]
+\begin{table}
 	\centering
 	\begin{threeparttable}
 		\caption{CO 的偶极矩（a.u.）\tnote{a}}
