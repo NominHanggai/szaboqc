@@ -49,8 +49,7 @@
 \renewcommand{\braket}[1]{\Braket{#1}}
 \renewcommand{\ket}[1]{\Ket{#1}}
 \renewcommand{\bra}[1]{\Bra{#1}}
-\usepackage[UTF8,scheme=plain]{ctex}
-\usepackage{hyperref}
+\usepackage[UTF8,scheme=chinese]{ctex}
 %\usepackage{fontspec}
 %\usepackage{luatexja-fontspec}
 %\setmainjfont{FandolSong}
@@ -196,6 +195,17 @@
 \usepackage{float}
 \renewcommand{\thefootnote}{\roman{footnote}} % Change the marks of footnotes to numbers
 \usepackage{blkarray} %分块矩阵
+\usepackage[bookmarksnumbered=true]{hyperref}
+
+
+\usepackage{wasysym}
+%For the symbol \CheckedBox
+\usepackage{stackengine,scalerel}
+\newcommand\DSquare{\ThisStyle{\ensurestackMath{%
+			\stackinset{c}{}{c}{}{\scalebox{.5}{$\SavedStyle\blacksquare$}}
+			{\SavedStyle\square}}}}
+%For a filled box.
+%CR: https://tex.stackexchange.com/questions/553834/is-there-a-intermediate-checkedbox-symbol-in-latex
 
 %-----------------------------------------------------------------
 %	Convinent abbreviations
@@ -245,11 +255,3 @@
 \newcommand\bigzero{\makebox(0,0){\text{\huge0}}}
 %=============END===================
 
-\usepackage{wasysym}
-%For the symbol \CheckedBox
-\usepackage{stackengine,scalerel}
-\newcommand\DSquare{\ThisStyle{\ensurestackMath{%
-            \stackinset{c}{}{c}{}{\scalebox{.5}{$\SavedStyle\blacksquare$}}
-            {\SavedStyle\square}}}}
-%For a filled box.
-%CR: https://tex.stackexchange.com/questions/553834/is-there-a-intermediate-checkedbox-symbol-in-latex

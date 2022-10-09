@@ -60,7 +60,7 @@
 \end{equation} 
 给定一组基，
 一个矢量可以通过指定它在该组基内的三个分量完全确定。
-如，利用基组 $\{\vec{e}_i\}$，
+如，利用基 $\{\vec{e}_i\}$，
 我们可以将矢量 $\vec{a}$ 写作一个\emph{列矩阵}的形式：
 \begin{subequations}
  \begin{equation}
@@ -69,7 +69,7 @@
      \right)
      \label{eq:1.3a}
  \end{equation}
-或者利用基组 $\{\vec{\varepsilon}_i\}$ 写成 
+或者利用基 $\{\vec{\varepsilon}_i\}$ 写成 
  \begin{equation}
      {\mbf a}^\prime = \left(
      \begin{array}{c}a_1^\prime \\ a_2^\prime \\ a_3^\prime\end{array}
@@ -129,7 +129,7 @@
 为单位\emph{并矢}。
 当一个并矢与一个矢量进行点乘操作时，
 会得到一个新的矢量。
-而单位并矢与矢量点乘则会得到原来的矢量。公式\eqref{eq:1.10}被称作基组 $\{\vec{e}_i\}$ 的\emph{完备性关系}。
+而单位并矢与矢量点乘则会得到原来的矢量。公式\eqref{eq:1.10}被称作基$\{\vec{e}_i\}$ 的\emph{完备性关系}。
 它其实是公式\eqref{eq:1.1}的变形，
 说明了任意矢量 $\vec{a}$ 都可以写作基矢
 $\{\vec{e}_i\}$ 的线性组合这一事实。
@@ -148,7 +148,7 @@ $\{\vec{e}_i\}$ 的线性组合这一事实。
 \end{equation}
 则$\op{O}$为\emph{线性}算符。
 我们可以通过检查线性算符作用在每个可能矢量上的结果来确定这个算符本身。
-由于任意矢量都可以写成基组 $\{\vec{e}_i\}$ 的线性组合，
+由于任意矢量都可以写成基 $\{\vec{e}_i\}$ 的线性组合，
 只需要知道 $\op{O}$ 作用在基矢上的效果就足以确定该算符。
 我们知道 $\op{O}\vec{e}_i$ 是一个矢量，
 它可以写作基矢 $\bs{e}{i}$ 的线性组合：
@@ -168,7 +168,7 @@ $O_{ji}$是一个数，它是矢量$\op{O}\vec{e}_i$沿基矢$\vec{e}_j$的分�
  \right)
  \label{eq:1.14}
 \end{equation}
-这里，$\mbf{O}$被称作算符$\op{O}$在基组$\bs{e}{i}$的\emph{矩阵表示}。
+这里，$\mbf{O}$被称作算符$\op{O}$在基$\bs{e}{i}$的\emph{矩阵表示}。
 矩阵$\mbf{O}$完全确定了算符$\op{O}$的效果，
 这是因为：
 任一矢量都可以写成基矢$\bs{e}{i}$的线性组合的形式，
@@ -539,7 +539,7 @@ c_2 \begin{vmatrix}
 我们将开始使用 Dirac 符号，
 这是一套强有力的符号体系，
 可以简洁地表述我们得到的结论。
-与三维空间的基组$\bs{e}{i}$类似，
+与三维空间的基$\bs{e}{i}$类似，
 在$N$维空间中，
 我们把$N$个基矢量标记为 $\ket{i},\; i = 1, 2, \dots, N$。
 这些基矢被称为\emph{右矢量}或\emph{右矢}。我
@@ -551,7 +551,7 @@ c_2 \begin{vmatrix}
 \end{equation}
 上式是方程\eqref{eq:1.1}的简单推广，
 不过这里我们用到了新引入的 Dirac 符号。
-指定基组以后，
+指定基以后，
 我们可以通过给出矢量沿$N$个基矢$\left\{\ket{i}\right\}$的组份$a_i$来完全描述这个矢量，
 其中$i = 1, 2, \dots, N$。
 同样，我们还可以将这些分量写到列矩阵里面：
@@ -561,7 +561,7 @@ c_2 \begin{vmatrix}
  \end{pmatrix}
  \label{eq:1.42}
 \end{equation}
-这里 $\mbf a$是抽象的矢量 $\ket{a}$在基组 $\left\{\ket{i}\right\}$ 中的矩阵表示。
+这里 $\mbf a$是抽象的矢量 $\ket{a}$在基 $\left\{\ket{i}\right\}$ 中的矩阵表示。
 方程\eqref{eq:1.27}提到，
 一个列矩阵$\mbf a$的伴随矩阵$\madj{a}$是一个行矩阵：
 \begin{equation}
@@ -591,7 +591,7 @@ c_2 \begin{vmatrix}
 \end{equation}
 只能取正实数值，是三维矢量的长度平方的一个推广。
 类似于方程\eqref{eq:1.41}，
-我们还可以引入一套完备的左基组$\bbs{i}$，
+我们还可以引入一套完备的左基矢$\bbs{i}$，
 这样可以将任意的左矢 $\bra{a}$写为左基矢的线性组合：
 \begin{equation}
  \bra{a} = \sum_i a_i^\ast \bra{i}
@@ -613,7 +613,7 @@ c_2 \begin{vmatrix}
 它们的标量积则可以写成各自矩阵表示的矩阵乘积。
 
 现在想一下，给定一个右矢 $\ket{a}$或一个左矢$\bra{a}$，
-怎样才能得到它在基组$\kbs{i}$或$\bbs{i}$中的各个分量呢？
+怎样才能得到它在基$\kbs{i}$或$\bbs{i}$中的各个分量呢？
 下面我们将完全参照三维情形[式\eqref{eq:1.8}]来完成这一步：
 把方程\eqref{eq:1.41}从左边乘$\bra{j}$，
 方程\eqref{eq:1.46}从右边乘$\ket{j}$，
@@ -635,7 +635,7 @@ c_2 \begin{vmatrix}
  \olp{j}{a} = \left(\olp{a}{j}\right)^\ast = \olp{a}{j}^\ast
  \label{eq:1.49}
 \end{equation}
-利用这个结果可以讲方程\eqref{eq:1.41}和\eqref{eq:1.46}写成如下形式：
+利用这个结果可以将方程\eqref{eq:1.41}和\eqref{eq:1.46}写成如下形式：
 \begin{subequations}
  \begin{equation}
      \ket{a} = \sum_i \ket{i}a_i = \sum_i \ket{i}\olp{i}{a}
@@ -652,7 +652,7 @@ c_2 \begin{vmatrix}
  \mbf{a} = \sum_i \ket{i}\bra{i}
  \label{eq:1.51}
 \end{equation}
-即为$N$维空间基组的完备性关系，
+即为$N$维空间基的完备性关系，
 是方程\eqref{eq:1.10}的推广。
 我们将会发现，
 在很多公式推导中插入完备性关系是一个非常有用的方法。
@@ -666,13 +666,13 @@ c_2 \begin{vmatrix}
  \label{eq:1.52}
 \end{equation}
 与三维情形相同，
-一旦能够确定算符作用在基组上的效果，
+一旦能够确定算符作用在基上的效果，
 这个算符就完全确定了，
 \begin{equation}
  \op{O}\ket{i} = \sum_j\ket{j}O_{ji} = \sum_j\ket{j}\left(\mbf{O}\right)_{ji}
  \label{eq:1.53}
 \end{equation}
-这里$\mbf O$是算符$\op{O}$在基组$\kbs{i}$内的矩阵表示。
+这里$\mbf O$是算符$\op{O}$在基$\kbs{i}$内的矩阵表示。
 将\eqref{eq:1.53}式从左边乘$\bra{k}$，我们得到：
 \begin{equation}
  \Mele{k}{O}{i} = \sum_j\olp{k}{j}\left(\mbf O\right)_{ji} = \sum_j\delta_{kj} \left(\mbf O\right)_{ji} = \left(\mbf O\right)_{ki}
@@ -740,14 +740,14 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 \end{equation}
 
 
-\subsection{基组变换}
+\subsection{基底变换}
 \label{sec:1.1.5}
 在本节第一小节\ref{sec:1.1.1}中，
-我们知道了基组的选择不是唯一的。
-给定两个完备的正交归一基组$\kbs{i}$和$\kbs{\alpha}$，
+我们知道了基底的选择不是唯一的。
+给定两个完备的正交归一基$\kbs{i}$和$\kbs{\alpha}$，
 本小节中我们将找出他们之间的关系。
-我们把第一个基组下左矢和右矢用拉丁字母$i, j, k, \dots$标记；
-第二个基组下的矢量用希腊字母$\alpha, \beta, \gamma, \dots$标记。
+我们把第一个基下左矢和右矢用拉丁字母$i, j, k, \dots$标记；
+第二个基下的矢量用希腊字母$\alpha, \beta, \gamma, \dots$标记。
 这样，我们有：
 \begin{subequations}
  \begin{equation}
@@ -760,8 +760,8 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
  \label{eq:1.62b}
 \end{equation}
 \end{subequations}
-由于基组$\kbs{i}$是完备的，
-我们可以将基组$\kbs{\alpha}$中的任一基矢$\ket{\alpha}$展开为基组$\kbs{i}$中基矢的线性组合，
+由于基底$\kbs{i}$是完备的，
+我们可以将基$\kbs{\alpha}$中的任一基矢$\ket{\alpha}$展开为基底$\kbs{i}$中基矢的线性组合，
 反之亦然。即：
 \begin{equation}
  \ket{\alpha} = 1\ket{\alpha} = \sum_i\ket{i}\olp{i}{\alpha} = \sum_i \ket{i}U_{i\alpha} = \sum_i \ket{i}\left(\mbf U\right)_{i\alpha}
@@ -787,7 +787,7 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 由于我们用式\eqref{eq:1.64}定义了变换矩阵$\mbf U$，则$\olp{\alpha}{i} \neq U_{\alpha i}$，
 而要用式\eqref{eq:1.66}计算。
 下面我们证明$\mbf U$是一个幺正矩阵，
-这是基组的正交归一性导致的：
+这是基的正交归一性导致的：
 \[
 \begin{split}
 \delta_{ij} &= \olp{i}{j} \\
@@ -810,18 +810,18 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 \end{subequations}
 由此我们证明了$\mbf U$是一个幺正矩阵。
 这样，我们得到了一个重要结论：
-两个正交归一基组之间通过一个幺正矩阵相关，
-可以通过该矩阵由一个基组变换至另一基组，
+两个正交归一基之间通过一个幺正矩阵相关，
+可以通过该矩阵由一个基底变换至另一基底，
 如式\eqref{eq:1.63}，
-或者通过式\eqref{eq:1.65}变换回至原基组；
-这个幺正变换矩阵的矩阵元即为两个基组中基矢的标量积，
+或者通过式\eqref{eq:1.65}变换回至原基底；
+这个幺正变换矩阵的矩阵元即为两个基底中基矢的标量积，
 可通过式\eqref{eq:1.64}计算。
 
-下面我们考虑在不同的基组下，
+下面我们考虑在不同的基底下，
 算符 $\op{O}$ 的矩阵表示具有什么样的联系。
 下一步我们得到的结果将在下一小节关于本征值问题的讨论中占据着中心地位。
-假设$\mbf O$是算符$\op{O}$在基组$\kbs{i}$中的矩阵表示，
-而$\boldsymbol{\Omega}$是该算符在基组$\kbs{\alpha}$中的矩阵表示，
+假设$\mbf O$是算符$\op{O}$在基$\kbs{i}$中的矩阵表示，
+而$\boldsymbol{\Omega}$是该算符在基$\kbs{\alpha}$中的矩阵表示，
 则有：
 \begin{subequations}
  \begin{equation}
@@ -859,9 +859,9 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 上述方程说明，
 矩阵$\mbf{O}$和$\boldsymbol\Omega$可以通过一个\emph{幺正变换}联系起来。
 幺正变换的重要性在于：对于任意的Hermitian算符，
-若它在基组$\kbs{i}$中的矩阵表示不是对角的，
-则总能找到一个基组$\kbs{\alpha}$，
-使得在新基组中其矩阵表示为对角阵。即：
+若它在基$\kbs{i}$中的矩阵表示不是对角的，
+则总能找到一个基底$\kbs{\alpha}$，
+使得在新基底中其矩阵表示为对角阵。即：
 \begin{equation}
  \Omega_{\alpha\beta} = \omega_{\alpha}\delta_{\alpha\beta}
  \label{eq:1.71}
@@ -963,8 +963,8 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 \end{enumerate}
 
 通常情况下，
-Hermitian算符在一个任意基组$\kbs{i}$下的矩阵表示并不是对角化的，
-但它在其本征矢构成的基组内的矩阵表示是对角的。
+Hermitian算符在一个任意基$\kbs{i}$下的矩阵表示并不是对角化的，
+但它在其本征矢构成的基底内的矩阵表示是对角的。
 这可以通过将方程\eqref{eq:1.72}两边左乘$\bra{\beta}$，
 并应用正交归一性关系\eqref{eq:1.81}来得到：
 \begin{equation}
@@ -973,9 +973,9 @@ Hermitian算符在一个任意基组$\kbs{i}$下的矩阵表示并不是对角�
 \end{equation}
 
 关于本征值问题，我们可以这样理解：
-给定一个 Hermitian算符$\op{O}$在一个正交归一基组$\left\{\ket{i},\; i = 1, 2, \dots, N\right\}$ 的矩阵表示$\mbf O$，
-我们需要找到一个新的基组 $\left\{\ket{\alpha},\; \alpha = 1, 2, \dots, N\right\}$，
-并要求在此基组下，
+给定一个 Hermitian算符$\op{O}$在一个正交归一基$\left\{\ket{i},\; i = 1, 2, \dots, N\right\}$ 的矩阵表示$\mbf O$，
+我们需要找到一个新的基底 $\left\{\ket{\alpha},\; \alpha = 1, 2, \dots, N\right\}$，
+并要求在此基底中，
 算符$\op{O}$的矩阵表示 $\boldsymbol\Omega$为对角阵，
 即$\Omega_{\alpha\beta} = \omega_\alpha\delta_{\alpha\beta}$。
 简单地说，
@@ -996,7 +996,7 @@ Hermitian算符在一个任意基组$\kbs{i}$下的矩阵表示并不是对角�
 从上式中看出，
 一个$N\times N$的 Hermitian矩阵具有$N$个本征值。
 
-对角化 Hermitian矩阵有种类繁多的高效算法\footnote{
+对角化 Hermitian矩阵有种类繁多的高效算法\endnote{
 如 J. H. Wilkinson. 
 \textit{The Algebraic Eigenvalue Problem.} Oxford University Press. 
 New York, 1965. 这是本领域的一本经典参考书。
@@ -1536,7 +1536,7 @@ $\det(\mbf A)$即为零，
  a(x) = \sum_i \psi_i(x)a_i
  \label{eq:1.117}
 \end{equation}
-也就是说，基组$\left\{\psi_i(x)\right\}$ 是完备的。
+也就是说，基$\left\{\psi_i(x)\right\}$ 是完备的。
 给定函数$a(x)$后，
 我们可以这样确定它相对于基函数$\left\{\psi_i\right\}$的组合系数$a_j$：
 在方程\eqref{eq:1.117}两边同乘以$\psi_j^\ast(x)$，
@@ -1748,7 +1748,7 @@ Dirac 符号的优美之处在于，它允许我们用完全相同的形式来�
 
 \exercise{
  为了进一步展示我们所采用的符号体系的自洽性，
- 考虑算符$\op{O}$在基组$\left\{\psi_i(x)\right\}$中的矩阵表示：
+ 考虑算符$\op{O}$在基$\left\{\psi_i(x)\right\}$中的矩阵表示：
  已知
  \[\op{O}\psi_i(x) = \sum_j\psi_j(x)O_{ji}\]
  证明
@@ -1759,7 +1759,7 @@ Dirac 符号的优美之处在于，它允许我们用完全相同的形式来�
 \Next
  考虑如下本征值问题：
  \[\op{O}\phi(x) = \omega\phi(x)\]
- 通过将$\phi$在完备基组$\left\{\psi_i(x),\, i = 1, 2, \dots\right\}$ 中展开：
+ 通过将$\phi$在完备基$\left\{\psi_i(x),\, i = 1, 2, \dots\right\}$ 中展开：
  \[\phi(x) = \sum_i^\infty c_i \psi_i(x)\]
  证明等价于矩阵的本征值问题：
  \[\mbf{O}\mbf{c} = \omega\mbf{c}\]
@@ -1768,13 +1768,14 @@ Dirac 符号的优美之处在于，它允许我们用完全相同的形式来�
  需要注意的是，此处$\mbf{O}$是一个无穷矩阵，
  而实际操作中，我们无法处理无穷矩阵。
  为了使问题可操作，
- 我们可以选取无穷基组的一个子集$\left\{\psi_i(x),\, i = 1, 2, \dots, N\right\}$。
+ 我们可以选取集合$\{\psi_i(x)\}$的一个子集$\left\{\psi_i(x),\, i = 1, 2, \dots, N\right\}$。
  如果在这个子空间中重复以上分析，
  我们会得到一个$N\times N$维的本征值问题。
  我们将在第~\ref{sec:1.3} 节中看到，
  此处得到的$N$个本征值是真实本征值的近似。
  重要的是，
  我们需要证明这个截断的本征值问题的最低本征值不低于真实的最低本征值。
+ 
 \Next
 
  本小节中我们使用了Dirac符号体系的简化版本，
@@ -1783,15 +1784,15 @@ Dirac 符号的优美之处在于，它允许我们用完全相同的形式来�
  在这个练习中，我们将初步感受一下 Dirac 符号体系的强大之处。
  考虑一个由完备正交归一基矢构成的可数无限集，即：
 \[
-     \sum_i^\infty \ket{i}\bra{a} = 1
+     \sum_i^\infty \ket{i}\bra{i} = 1
      \tag{1a}\label{eq:e1.17.1a}
 \]
 \[
      \olp{i}{j} = \delta_{ij}
      \tag{1b}\label{eq:e1.17.1b}
 \]
-引入连续变量的无限完备基组，
-其基组为$\ket{x}$。与式\eqref{eq:e1.17.1a}类似：
+引入连续变量的无穷个基矢的完全集，
+其基矢记为$\ket{x}$。与式\eqref{eq:e1.17.1a}类似：
 \[
 \int\mrm{d}x\,\ket{x}\bra{x} = 1
 \tag{2a}\label{eq:e1.17.2a}
@@ -2005,7 +2006,7 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \label{eq:1.154}
 \end{equation}
 非正交归一的复函数的情形我们将在第~\ref{ch:3}~章中讨论。
-Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示$\mbf{H}$是一个$N\times N$的矩阵，
+Hamiltonian 算符在基$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示$\mbf{H}$是一个$N\times N$的矩阵，
 其矩阵元为：
 \begin{equation}
  \left(\mbf{H}\right)_{ij} = H_{ij} = \Mele{\Psi_i}{H}{\Psi_j}
@@ -2164,7 +2165,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \label{eq:1.172}
 \end{equation}
 寻找最优近似解的一种方法。
-该方法需要在有限基组$\left\{\ket{\Psi_i}\right\}$内构建算符$\op{H}$的矩阵表示，
+该方法需要在有限基$\left\{\ket{\Psi_i}\right\}$内构建算符$\op{H}$的矩阵表示，
 即$(\mbf{H})_{ij} = \mele{\Psi_i}{H}{\Psi_j}$，
 并求解矩阵本征值问题：
 \begin{equation}
@@ -2196,7 +2197,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \label{eq:1.176}
 \end{equation}
 上式的矩阵式与方程\eqref{eq:1.174}等同。
-如果使用\emph{完备}的正交归一基组 $\left\{\ket{\Psi_i},
+如果使用\emph{完备}的正交归一基 $\left\{\ket{\Psi_i},
 \right. \, i = 1, 2,\allowbreak \dots, N, N+1, \left.\dots \right\}$，
 我们则会得到一个与方程\eqref{eq:1.173}等同，
 但其中的$\mbf{H}$为一个无限矩阵。
@@ -2227,12 +2228,16 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \]
  其中$\alpha$为体系近似的偶极极化率，验证其值为 2.96。其精确结果为 4.5。
 }
- 
+
+
+\theendnotes
+\addcontentsline{toc}{section}{注释}
+
 \addcontentsline{toc}{section}{\protect\numberline{}{扩展阅读}}
- 
+
 \begin{description}
  \item{Acton, F. S., \textit{Numerical Methods that Work}, Harper \& Row, New York, 1970.} 该书第13章有关于矩阵本征值问题的各种高效算法的非常好的讨论。
  \item{Cushing, J. T. \textit{Applied Analytical Mathematics for Physical Scientists}, Wiley, New York, 1975.} 该书的前四章对本章中的数学进行了一个严格但易接受的讲述。
  \item{Merzbacher, E., \textit{Quantum Mechanics}, 2nd ed., Wiley, New York, 1970.} 多数研究生用的量子力学教材都完整讲授了 Dirac 符号。该书的第 14 章包含这部分内容的一个导论。
- \item{Press, W. H., Flannery, B. P., Teukolsky, S. A. and Vetterling, W. T. \textit{Numerical Recipes}, Cambridge University Press, Cambridge, 1986.} 在这部科学计算的圣经中，第11章讨论了寻找矩阵本征值和本征矢的多种算法，并提供了 FORTRAN 源码。
+ \item{Press, W. H., Flannery, B. P., Teukolsky, S. A. and Vetterling, W. T. \textit{Numerical Recipes}, Cambridge University Press, Cambridge, 1986.} 在这部科学计算的圣经中，第11章讨论了求解矩阵本征值和本征矢的多种算法，并提供了 FORTRAN 源码。
 \end{description}
