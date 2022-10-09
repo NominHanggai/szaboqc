@@ -1064,7 +1064,7 @@ Fock算符的矩阵元就是
 \end{equation}
 
 若
-\begin{align}
+\begin{align}\label{3.107}
 	\hs = \hs_0 + \vs
 \end{align}
 那么微扰$\vs$就是
@@ -1076,7 +1076,7 @@ Fock算符的矩阵元就是
 \end{align}
 即精确的电子-电子相互作用和Hartree-Fock库伦、交换势之间的差. 
 现在就能按下式计算\hft 能量
-\begin{align}
+\begin{align}\label{3.109}
 	E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \braket{\Psi_0|\hs_0|\Psi_0} + \braket{\Psi_0|\vs|\Psi_0} \notag\\
 	& = \sum_a\epsilon_a + \braket{\Psi_0|\vs|\Psi_0} = E_0^{(0)} + E_0^{(1)}
 \end{align}
@@ -1111,9 +1111,9 @@ Fock算符的矩阵元就是
 非限制开壳层形式要比限制性闭壳层或非限制性开壳层更为繁琐. 
 本书也不打算讨论限制性开壳层\hft 计算. 
 Hurley的书中对此类计算有非常精彩的介绍, 此书列入了章末的深入阅读列表内.
-\subsection{闭壳层H-F：限制性自旋轨道}
+\subsection{闭壳层H-F：限制性自旋轨道}\label{sec3.4.1}
 限制性自旋轨道形式如下
-\begin{align}
+\begin{align}\label{3.110}
 	\chi_i(\mathbf{x}) =
 	\begin{cases*}
 		\psi_j(\mathbf{r})\alpha(\omega)\\
@@ -1121,7 +1121,7 @@ Hurley的书中对此类计算有非常精彩的介绍, 此书列入了章末的
 	\end{cases*}
 \end{align}
 闭壳层限制性基态就是
-\begin{align}
+\begin{align}\label{3.111}
 	\ket{\Psi_0} = \ket{\chi_1\chi_2\cdots\chi_n\chi_{N-1}\chi_N} = \ket{\psi_1\bar{\psi}_1\cdots\psi_a\bar{\psi}_a\cdots\psi_{N/2}\bar{\psi}_{N/2}}
 \end{align}
 现在要将一般的自旋轨道\hft 方程$f(1)\chi_i(1)=\epsilon_i\chi_i(1)$转为空间本征值方程, 
@@ -1130,14 +1130,14 @@ Hurley的书中对此类计算有非常精彩的介绍, 此书列入了章末的
 3.
 5节讲过：需将自旋函数积分掉. 
 先将这个技术用于\hft 方程
-\begin{align}
+\begin{align}\label{3.112}
 	f(\mathbf{x}_1)\chi_i(\mathbf{x}_1) = \epsilon_i\chi_i(\mathbf{x}_1)
 \end{align}
 自旋轨道$\chi_i(\mathbf{x}_1)$的自旋部分为$\alpha$或$\beta$. 
 这里假设为$\alpha$, 
 $\beta$的结果也一样,
 
-\begin{align}
+\begin{align}\label{3.113}
 	f(\mathbf{x}_1)\psi_j(\mathbf{r}_1)\alpha(\omega_1) = \epsilon_i\psi_j(\mathbf{r}_1)\alpha(\omega_1)
 \end{align}
 式中$\epsilon_j$为空间轨道$\psi_j$的能量, 
@@ -1149,7 +1149,7 @@ $\beta$的结果也一样,
 \end{align}
 下一步需算出\eqref{3.114}左侧的式子. 
 将自旋轨道的Fock算符写为
-\begin{align}
+\begin{align}\label{3.115}
 	f(\mathbf{x}_1) = h(\mathbf{r}_1) + \sum_c^N\int\dd{x}_1\,\chi_c^*(\mathbf{x}_2)\twoe(1-\scr{P}_{12})\chi_c(\mathbf{x}_2)
 \end{align}
 那么\eqref{3.114}成为
@@ -1208,8 +1208,8 @@ $\beta$的结果也一样,
 \end{align}
 其中闭壳层的考虑和交换算符定义如下
 \begin{align}
-	J_a(1) & = \int\dd{r}_2\,\psi_a^*(2)\twoe\psi_a(2)\\
-	K_a(1) \psi_i(1) & = \left[ \int\dd{r}_1\,\psi_a^*(2)\twoe\psi_i(2) \right]\psi_a(1)
+	J_a(1) & = \int\dd{r}_2\,\psi_a^*(2)\twoe\psi_a(2) \label{3.124}\\
+	K_a(1) \psi_i(1) & = \left[ \int\dd{r}_1\,\psi_a^*(2)\twoe\psi_i(2) \right]\psi_a(1) \label{3.125}
 \end{align}
 这些分量与自旋轨道版本的非常类似, 
 除了库伦算符中多一个因子$2$. 
@@ -4209,7 +4209,7 @@ S. Huzinaga, Gaussian-type functions for polyatomic systems. 1, 、\textit{J. Ch
 \subsection{开壳层H-F: 非限制性自旋轨道}
 广义\hft 本征值问题, 
 用自旋轨道写出来就是
-\begin{align}
+\begin{align}\label{3.308}
 	f(1)\chi_i(1) = \epsilon_i \chi_i(1)
 \end{align}
 现在要做的是引入一组非限制性的自旋轨道$\chi_i$, 
@@ -4221,7 +4221,7 @@ S. Huzinaga, Gaussian-type functions for polyatomic systems. 1, 、\textit{J. Ch
 
 与限制性自旋轨道所用的式\eqref{3.110}类似，
 一组非限制性自旋轨道的形式如下：
-\begin{align}
+\begin{align}\label{3.309}
 	\chi_i(\mathbf{x}) =
 	\begin{cases*}
 		\psi_j^\alpha(\mathbf{r})\alpha(\omega)\\
@@ -4236,15 +4236,15 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 现在我们允许用不同的空间函数来描述$\alpha$和$\beta$电子。
 
 
-要导出决定$\{\psi_k^\alpha \}$和$\{\psi_k^\alpha \}$的空间非常，
+要导出决定$\{\psi_k^\alpha \}$和$\{\psi_k^\alpha \}$的空间方程，
 需将式\eqref{3.309}中的自旋轨道$\{\chi_i\}$带入一般的\hft 方程\eqref{3.308}中，
 然后对自旋变量$\omega$积分。
 为简单计，
-我们先堪$\psi_j^\alpha$的方程，
+我们先看$\psi_j^\alpha$的方程，
 然后用$\alpha$和$\beta$自旋间的对称性写出$\psi_j^\beta$的对应方程。
 将\eqref{3.309}带入式\eqref{3.308}, 
 得到
-\begin{align}
+\begin{align}\label{3.310}
 	f(1)\psi_j^\alpha(\mathbf{r}_i) \alpha(\omega_1) = \epsilon_j \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
 \end{align}
 那么$\epsilon_i$就是自旋轨道$\chi\equiv\psi_j^\alpha\alpha$的能量。
@@ -4253,20 +4253,20 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 上面的情形中$\epsilon_i\equiv\epsilon^\alpha_i$. 
 那么也会有相应的另外一组轨道能量$\{\epsilon_j^\beta | j=1,2,\ldots,K\}$. 
 因此
-\begin{align}
+\begin{align}\label{3.311}
 	f(1)\psi_j^\alpha(\mathbf{r}_i) \alpha(\omega_1) = \epsilon_j^\alpha \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
 \end{align}
 将这个方程乘以$\alpha^*(\omega_1)$并对自旋积分，
 就得到
 \begin{align}
-	f^\alpha(1)\psi_j^\alpha(1) & = \epsilon_j^\alpha \psi_j^\alpha(1)\\
-	f^\beta (1)\psi_j^\beta(1)  & = \epsilon_j^\beta \psi_j^\beta(1)
+	f^\alpha(1)\psi_j^\alpha(1) & = \epsilon_j^\alpha \psi_j^\alpha(1) \label{3.312}\\
+	f^\beta (1)\psi_j^\beta(1)  & = \epsilon_j^\beta \psi_j^\beta(1)\label{3.313}
 \end{align}
 这就是决定空间轨道$\psi_j^\alpha$和$\psi_j^\beta$的\mci{空间方程}. 
 空间Fock算符$f^\alpha(1)$和 $f^\beta (1)$定义如下
 \begin{align}
-	f^\alpha(\mathbf{r}_1) = \int\dd\omega_1 \alpha^*(\omega_1) f(\mathbf{r}_1,\omega_1)\alpha(\omega_1)\\
-	f^\beta(\mathbf{r}_1) = \int\dd\omega_1 \beta^*(\omega_1) f(\mathbf{r}_1,\omega_1)\beta(\omega_1)
+	f^\alpha(\mathbf{r}_1) = \int\dd\omega_1 \alpha^*(\omega_1) f(\mathbf{r}_1,\omega_1)\alpha(\omega_1) \label{3.314}\\
+	f^\beta(\mathbf{r}_1) = \int\dd\omega_1 \beta^*(\omega_1) f(\mathbf{r}_1,\omega_1)\beta(\omega_1) \label{3.315}
 \end{align}
 
 我们能利用用\eqref{3.115}中$f(\bfr_1,\omega_1)$在自旋轨道下的定义，
@@ -4301,7 +4301,7 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 与其他所有$\alpha$电子的库伦和交换作用，
 以及与所有$\beta$电子的库伦作用。
 那么就有
-\begin{align}
+\begin{align}\label{3.316}
 	f^\alpha(1) = h(1) + \sum_{a}^{N^\alpha}[J_a^\alpha(1) - K_a^\alpha(1)] + \sum_{a}^{N^\beta}[J_a^\beta(1)]
 \end{align}
 式中第一个求和号遍及$N_\alpha$个由$\alpha$自旋电子占据的$\psi_a^\alpha$轨道，
@@ -4315,20 +4315,21 @@ $\alpha$自旋的电子可以感受到库伦势$J_a^\alpha$和交换势$-K_a^\al
 这部分来自$N_\beta=N-N_\alpha$个在$\psi_a^\beta$轨道上的$\beta$自旋电子。
 上式中对$N_\alpha$个$\psi_a^\alpha$的求和包含了$\alpha$电子与她自身的相互作用。
 但只要注意到
-\begin{align}
+\begin{align}\label{3.317}
 	[J_a^\alpha(1) - K_a^\alpha(1)]\psi_a^\alpha = 0
 \end{align}
 所以这个自相互作用被消除了。
 $\beta$自旋电子对应的Fock算符为
-\begin{align}
+\begin{align}\label{3.318}
 	f^\beta(1) = h(1) + \sum_{a}^{N^\beta}[J_a^\beta(1) - K_a^\beta(1) ] + \sum_{a}^{N^\alpha}[J_a^\alpha(1)].
 \end{align}
 上面两式中的库伦与交换算符的定义与之前的定义\eqref{3.124}\eqref{3.125}类似。
 写出来就是
 \begin{align}
-	J_a^\alpha(1) & = \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \psi_a^\alpha(2)\\
-	K_a^\alpha(1)\psi_i^\alpha(1) &= \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \psi_a^\alpha(2)\right] \psi_a^\alpha(1) \\
-	& = \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \mathscr{P}_{12}\psi_a^\alpha(2)\right] \psi_i^\alpha(1) \notag
+	J_a^\alpha(1) & = \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \psi_a^\alpha(2) \label{3.319}\\
+	K_a^\alpha(1)\psi_i^\alpha(1) 
+	    &= \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \psi_a^\alpha(2)\right] \psi_a^\alpha(1) \notag\\
+	    &= \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \mathscr{P}_{12}\psi_a^\alpha(2)\right] \psi_i^\alpha(1) \label{3.320}
 \end{align}
 $J_a^\beta,K_a^\beta$的定义也完全类似。
 
@@ -4357,27 +4358,27 @@ $f^\alpha$依赖于$\beta$占据轨道$\psi_a^\beta$，
 非限制性\hft 方程已经推导完毕，
 我们已经能够写出非限制性轨道的能、总的非限制性能量等等。
 首先定义一些项：非限制性轨道$\psi_i^\alpha$或$\psi_i^\beta$上的电子的动能与核吸引势能的期望值为
-\begin{align}
+\begin{align}\label{3.321}
 	h_{ii}^\alpha = (\psi_i^\alpha|h|)
 \end{align}
 $\psi_i^\alpha$上一个电子与$\psi_i^\alpha$上一个电子之间的库伦相互作用为
-\begin{align}
+\begin{align}\label{3.322}
 	J_{ij}^{\alpha\beta} = J_{ji}^{\beta\alpha} = (\psi_i^\alpha|J_{i}^\beta|\psi_i^\alpha) = (\psi_j^\beta|J_{i}^\alpha|\psi_j^\beta) = (\psi_i^\alpha\psi_i^\alpha|\psi_j^\beta\psi_j^\beta)
 \end{align}
 而同自旋的两个电子间的库伦相互作用为
-\begin{align}
+\begin{align}\label{3.323}
 	J_{i j}^{\alpha \alpha}=(\psi_{i}^{\alpha}|J_{j}^{\alpha}| \psi_{i}^{\alpha})=(\psi_{j}^{\alpha}|J_{i}^{\alpha}| \psi_{j}^{\alpha})=(\psi_{i}^{\alpha} \psi_{i}^{\alpha} | \psi_{j}^{\alpha} \psi_{j}^{\alpha})
 \end{align}
 以及
-\begin{align}
+\begin{align}\label{3.324}
 	J_{i j}^{\beta \beta}=(\psi_{i}^{\beta}|J_{j}^{\beta}| \psi_{i}^{\beta})=(\psi_{j}^{\beta}|J_{i}^{\beta}| \psi_{j}^{\beta})=(\psi_{i}^{\beta} \psi_{i}^{\beta} | \psi_{j}^{\beta} \psi_{j}^{\beta})
 \end{align}
 自旋平行的两个电子间的交换作用为
-\begin{align}
+\begin{align}\label{3.325}
 	K_{i j}^{\alpha\alpha}=(\psi_{i}^{\alpha}|K_{j}^{\alpha}| \psi_{i}^{\alpha})=(\psi_{j}^{\alpha}|K_{i}^{\alpha}| \psi_{j}^{\alpha})=(\psi_{i}^{\alpha} \psi_{j}^{\alpha} | \psi_{j}^{\alpha} \psi_{i}^{\alpha})
 \end{align}
 以及
-\begin{align}
+\begin{align}\label{3.326}
 	K_{i j}^{\beta\beta}=(\psi_{i}^{\beta}|K_{j}^{\beta}| \psi_{i}^{\beta})=(\psi_{j}^{\beta}|K_{i}^{\beta}| \psi_{j}^{\beta})=(\psi_{i}^{\beta} \psi_{j}^{\beta} | \psi_{j}^{\beta} \psi_{i}^{\beta})
 \end{align}
 当然，
