@@ -578,6 +578,7 @@ Shavitt及其合作者做过一项有意思的研究,
 他们做了包含4120个\mci{自旋匹配}和\mci
 {对称匹配}的单、双激发组态的CI计算, 这些组态都由正则\hft 基生成. 利生成的波函数, 他们得出单粒子密度矩阵并对角化之, 以求得\mci{SDCI近似}下的自然轨道. 接下来, 他们分别用\mci{正则轨道}和\mci{自然轨道}做SDCI计算, 以回答这样一个问题: 为得到某特定百分比的\mci{SDCI关联能}, 至少需要多少个组态? 答案可从\ref{t4.12}中找到。很明显，使用自然轨道构建的\mci{CI展开式}收敛最快。要得到60\%的\mci{SDCI关联能}，若用自然轨道构建组态，则只需50个组态，若用正则轨道，则需140个。但是从表中也可以看到，仅当展开项较少的时候，自然轨道相对于正则轨道才有明显优势。需要强调，不同基组下，表中的结果也会不同。可以预见，大基组下，自然轨道和正则轨道之间的差别将更大。
 \begin{table}[H]
+	\label{t4.12}
 	\begin{threeparttable}
 		\caption{重现一部分\mci{SDCI关联能}所需的自旋、对称匹配组态的数目。体系为$\mathrm{H_2O}$, 基组为39-STO. 表中分别列出了使用正则轨道和自然轨道时的情况\tnote{a}。}
 		\centering
@@ -673,7 +674,7 @@ Methods of Electronic Structure Theory,
 我们考虑基态$\hd$的例子. 
 对于氢气分子, 
 最简单的MCSCF波函数由两个闭壳层组态组合而成:
-\begin{align}
+\begin{align}\label{4.48}
 \ket{\Psi_\mathrm{MCSCF}} = c_A\ket{\psi_A\bar{\psi}_A} + c_B\ket{\psi_B\bar{\psi}_B} 
 \end{align}
 而正交归一轨道$\psi_A$和$\psi_B$可用一组原子轨道展开:
@@ -697,9 +698,7 @@ c_A^2 + c_B^2 = 1
 而比用\hft 正则轨道构成的双组态CI展开所得的能量低.
 
 
-本节最后我们来考察W. 
-A. 
-Goddard III及其合作者提出的广义价键波(generalized valence bond, 
+本节最后我们来考察W. A. Goddard III及其合作者提出的广义价键波(generalized valence bond, 
 GVB)函数, 
 它可以视作MCSCF波函数的特殊形式. 
 GVB的要点可以用$\hd$来说明. 
@@ -709,20 +708,19 @@ Heitler-London价键波函数写作:
 \end{align}
 式中的$\phi_1,\phi_2$分别是以原子核1和2为中心的非正交\emph{原子}轨道($\braket{\phi_1|\phi_2}=S_{12}$). 
 GVB波函数的形式与VB的形式一样:
-\begin{align}
+\begin{align}\label{4.52}
 	\ket{\Psi_\mathrm{VB}} = (2(1+S^2))^{-1/2} [u(1)v(2) + u(2)v(1)]2^{-1/2}(\alpha(1)\beta(2)-\alpha(2)\beta(1))
 \end{align}
 但是非正交的GVB轨道$u,v$($\braket{u|v}=S$)要以变分的方式来确定. 
 这就是说, 
-这两个非正交的轨道$u,v$要线用一个基组展开, 
+这两个非正交的轨道$u,v$要用一个基组展开, 
 展开系数要通过最小化$\ket{\Psi_\mathrm{GVB}}$能量的方式来确定. 
 因此GVB波函数就是VB波函数的推广, 
 只是前者要用自洽的方式来得到. 
 GVB方法有许多很好的特点, 
-其中之一就是它可以正切地描述分子解离为开壳层碎片的过程. 
+其中之一就是它可以正确地描述分子解离为开壳层碎片的过程. 
 如果使用相同的基组来展开正交的MCSCF轨道($\psi_A,\psi_B$)和非正交的GVB轨道($u,v$), 
-可以证明(见习题4.
-9), 
+可以证明(见习题4.9), 
 最简单的两组态MCSCF波函数(式\eqref{4.48})等价于GVB波函数(式\eqref{4.52}).
 
 
