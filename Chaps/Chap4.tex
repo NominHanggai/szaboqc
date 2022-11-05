@@ -212,7 +212,10 @@ $\ket{D}$表示双激发的那些项等等.
 	\item 
 	由于双激发与$\ket{\Psi_0}$直接混合, 可以预见双激发对关联能, 尤其是小分子的关联能, 有决定性的作用. 进一步, 人们发现, 如果只看关心基态能量, 四重激发比三激发和单激发还要重要.
 	\item
-	计算时所需的所有的矩阵元都可以按\ref{chap2}中给出的规则得到. 如前所述, 计算时要用自旋匹配组态. 在\ref{sec2.5}中对单激发和双激发讨论过这一点. \ref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者可以试试验算表中的项，以此验证对这些矩阵元规则的掌握程度以及耐心。
+	计算时所需的所有的矩阵元都可以按\ref{chap2}中给出的规则得到. 
+如前所述, 计算时要用自旋匹配组态. 
+在\ref{sec2.5}中对单激发和双激发讨论过这一点. 
+表\ref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者可以试试验算表中的项，以此验证对这些矩阵元规则的掌握程度以及耐心。
 \end{enumerate}
 \begin{figure}[H]
 	\[
@@ -241,6 +244,7 @@ $\ket{D}$表示双激发的那些项等等.
 
 \begin{table}[H]
 		\caption{{实轨道构成的\phrase{单重对称匹配组态(singlet symmetry adapted configuration)}}所夹的一些矩阵元.}
+		\label{table4.1}
 		\hrule
 		\vspace{5pt}
         单激发\par
@@ -328,6 +332,7 @@ $c'$选成满足$\braket{\jt'|\jt}=1$的数）.
 式中$E_\mathrm{corr}$就是关联能. 
 若在上式两边乘以$\bra{\Psi_0}$则有
 \begin{align}
+\label{4.8}
 \braket{\hjtn|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\hjtn\jtn} = E_\mathrm{corr}
 \end{align}
 式中我们已经利用了$\jt$是半归一化的这一事实. 
@@ -336,7 +341,7 @@ $c'$选成满足$\braket{\jt'|\jt}=1$的数）.
 得到
 \begin{align}
 \braket{\hjtn|\hs-E_0|\jtn} & = \bra{\hjtn}|\hs-E_0|\left( \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}} \right)\notag \\
-&=\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}}
+	&=\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}} \label{4.9}
 \end{align}
 式中已经使用过Brillouin定理 ($ \braket{\hjtn|\hs|\Psi_c^t }=0$) 以及三重和更高的激发不与$\hjt$混合的事实 （因为它们之间相差多于两个自旋轨道）. 
 同时使用\eqref{4.8}\eqref{4.9}就将\phrase{关联能}清楚地写出
@@ -491,7 +496,7 @@ $\rho(\mathbf{x}_1)$就称作\phrase{N-电子系统}内单个电子的\emph{约�
 若$\Phi$是\hft 基态波函数，
 那么可以从\phrase{一矩阵}的定义（式\eqref{4.35}）证明:
 \begin{align}
-\gamma^\mathrm{HF}(\mathbf{x}_1,\mathbf{x}_1') = \sum_a \chi_a(\mathbf{x}_1)\chi_a^*(\mathbf{x}_1')
+	\gamma^\mathrm{HF}(\mathbf{x}_1,\mathbf{x}_1') = \sum_a \chi_a(\mathbf{x}_1)\chi_a^*(\mathbf{x}_1') \label{4.39}
 \end{align}
 其中的求和仅遍及$\Psi_0$中的自旋轨道。
 如此，
@@ -501,7 +506,7 @@ HF\phrase{一矩阵}的离散表示非常简单——$\gamma^\mathrm{HF}$是对�
 对应非占轨道的元素为零：
 \begin{equation}
 \begin{aligned}
-\gamma_{ij} & =\delta_{ij}&i,j\in\text{占据轨道}\\
+\gamma_{ij} & =\delta_{ij}&i,j\in\text{占据轨道} \notag\\
             & = 0 &其他\label{4.40} 
 \end{aligned}
 \end{equation}
@@ -522,8 +527,8 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 }
 一般情形下，当$\Phi$不是$\Psi_0$时，\phrase{一矩阵}在\hft 自旋轨道下的离散表示\emph{不}是对角的。但是，由于$\gamma$是Hermitian的，所以能够定义一组正交归一基$\{\eta_i\}$(与$\{\chi_i\}$通过酉变换相连)，在它的表示下，\phrase{一矩阵}是对角的。这个使$\gamma$对角化的基组中的元素就是\emph{自然轨道}。为使以上过程更加具体，我们从两组正交归一基$\{\eta_i\}$ $\chi_i$的关系开始(见式\eqref{1.63}\eqref{1.65})：
 \begin{align}
-\chi_i & = \sum_k \eta_k (\mathbf{U^\dagger}_{ki}) = \sum_k \eta_k U^*_{ik}\\
-\eta_i & = \sum_k\chi_k U_{ki} \label{4.41}
+	\chi_i & = \sum_k \eta_k (\mathbf{U^\dagger}_{ki}) = \sum_k \eta_k U^*_{ik} \label{4.41}\\
+\eta_i & = \sum_k\chi_k U_{ki} \label{4.42}
 \end{align}
 式中$\mathbf{U}$是酉矩阵。
 将式\eqref{4.41}带入\eqref{4.37}就得到:
@@ -531,7 +536,7 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 \gamma(\mathbf{x}_1,\mathbf{x}_1') & = \sum_{ijkl} \eta_k(\mathbf{x}_1) U^*_{ik} \gamma_{ij} U_{jl} \eta_l^*(\mathbf{x}_1')\notag\\
                                    & = \sum_{kl} \eta_k(\mathbf{x}_1) \left( \sum_{ij} (\mathbf{U}^\dagger)_{ki} \gamma_{ij} U_{jl}  \right) \eta_l^*(\mathbf{x}_1)\notag\\
                                    & = \sum_{kl} \eta_k(\mathbf{x}_1) (\mathbf{U}^\dagger \bm{\gamma}\mathbf{U})_{kl} \eta_l^*(\mathbf{x}_1')\notag\\
-                                   & = \sum_{kl} \eta_k(\mathbf{x}_1) \lambda_{kl} \eta_l^*(\mathbf{x}_1')
+				   & = \sum_{kl} \eta_k(\mathbf{x}_1) \lambda_{kl} \eta_l^*(\mathbf{x}_1') \label{4.43}
 \end{align}
 式中我们定义了矩阵
 \begin{align}
@@ -573,6 +578,7 @@ Shavitt及其合作者做过一项有意思的研究,
 他们做了包含4120个\mci{自旋匹配}和\mci
 {对称匹配}的单、双激发组态的CI计算, 这些组态都由正则\hft 基生成. 利生成的波函数, 他们得出单粒子密度矩阵并对角化之, 以求得\mci{SDCI近似}下的自然轨道. 接下来, 他们分别用\mci{正则轨道}和\mci{自然轨道}做SDCI计算, 以回答这样一个问题: 为得到某特定百分比的\mci{SDCI关联能}, 至少需要多少个组态? 答案可从\ref{t4.12}中找到。很明显，使用自然轨道构建的\mci{CI展开式}收敛最快。要得到60\%的\mci{SDCI关联能}，若用自然轨道构建组态，则只需50个组态，若用正则轨道，则需140个。但是从表中也可以看到，仅当展开项较少的时候，自然轨道相对于正则轨道才有明显优势。需要强调，不同基组下，表中的结果也会不同。可以预见，大基组下，自然轨道和正则轨道之间的差别将更大。
 \begin{table}[H]
+	~\label{t4.12}
 	\begin{threeparttable}
 		\caption{重现一部分\mci{SDCI关联能}所需的自旋、对称匹配组态的数目。体系为$\mathrm{H_2O}$, 基组为39-STO. 表中分别列出了使用正则轨道和自然轨道时的情况\tnote{a}。}
 		\centering
@@ -668,7 +674,7 @@ Methods of Electronic Structure Theory,
 我们考虑基态$\hd$的例子. 
 对于氢气分子, 
 最简单的MCSCF波函数由两个闭壳层组态组合而成:
-\begin{align}
+\begin{align}\label{4.48}
 \ket{\Psi_\mathrm{MCSCF}} = c_A\ket{\psi_A\bar{\psi}_A} + c_B\ket{\psi_B\bar{\psi}_B} 
 \end{align}
 而正交归一轨道$\psi_A$和$\psi_B$可用一组原子轨道展开:
@@ -692,9 +698,7 @@ c_A^2 + c_B^2 = 1
 而比用\hft 正则轨道构成的双组态CI展开所得的能量低.
 
 
-本节最后我们来考察W. 
-A. 
-Goddard III及其合作者提出的广义价键波(generalized valence bond, 
+本节最后我们来考察W. A. Goddard III及其合作者提出的广义价键波(generalized valence bond, 
 GVB)函数, 
 它可以视作MCSCF波函数的特殊形式. 
 GVB的要点可以用$\hd$来说明. 
@@ -704,26 +708,44 @@ Heitler-London价键波函数写作:
 \end{align}
 式中的$\phi_1,\phi_2$分别是以原子核1和2为中心的非正交\emph{原子}轨道($\braket{\phi_1|\phi_2}=S_{12}$). 
 GVB波函数的形式与VB的形式一样:
-\begin{align}
+\begin{align}\label{4.52}
 	\ket{\Psi_\mathrm{VB}} = (2(1+S^2))^{-1/2} [u(1)v(2) + u(2)v(1)]2^{-1/2}(\alpha(1)\beta(2)-\alpha(2)\beta(1))
 \end{align}
 但是非正交的GVB轨道$u,v$($\braket{u|v}=S$)要以变分的方式来确定. 
 这就是说, 
-这两个非正交的轨道$u,v$要线用一个基组展开, 
+这两个非正交的轨道$u,v$要用一个基组展开, 
 展开系数要通过最小化$\ket{\Psi_\mathrm{GVB}}$能量的方式来确定. 
 因此GVB波函数就是VB波函数的推广, 
 只是前者要用自洽的方式来得到. 
 GVB方法有许多很好的特点, 
-其中之一就是它可以正切地描述分子解离为开壳层碎片的过程. 
+其中之一就是它可以正确地描述分子解离为开壳层碎片的过程. 
 如果使用相同的基组来展开正交的MCSCF轨道($\psi_A,\psi_B$)和非正交的GVB轨道($u,v$), 
-可以证明(见习题4.
-9), 
+可以证明(见习题4.9), 
 最简单的两组态MCSCF波函数(式\eqref{4.48})等价于GVB波函数(式\eqref{4.52}).
 
 
+\exercise{}
 
 
+作为一个GVB方法(或者，等价地，两组态MCSCF方法)的应用，我们展示一些对\ch{H2}使用6-31G**基组的数值计算结果.
+在$R=1.4\text{a.u.}$处，
+$E_{\text{corr}}(\text{GVB})= -0.0183\text{a.u.}$,
+而FCI是$ -0.0339\text{a.u.}$,即GVB给出了54\%的相关能.
+图\ref{fig:4.4}比较了GVB,RHF,UHF,FCI的势能曲线.
+GVB可以正确描述\ch{H2}的解离.
+并且，随着原子间距的增加，GVB(相对于HF)的改进也增大；$R>3\text{a.u.}$时，GVB和FCI的结果几乎没有区别.
+这可以和基于UHF波函数的二阶微扰(第六章)的势能曲线结果(\ref{fig:6.3})比较.
+二阶微扰方法在平衡键长区域给出了比GVB更多的相关能，但当$R$增大时，微扰方法的势能曲线逐渐变差，趋近于UHF的结果.
+
+\begin{figure}[H]
+	\caption{\ch{H2}的6-31G**势能曲线}
+\label{fig:4.4}
+\end{figure}
 
 \section{截断CI与尺寸一致性问题}
 \label{sec4.6}
+
+
+
+
 \theendnotes

@@ -1960,7 +1960,7 @@ e_{ab}^{\mathrm{FO}} =  \sum_{r<s} \frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsi
 所以可以有
 \begin{align}
 E_0^{(2)} = \frac{1}{4} \sum_{abrs}\frac{|\braket{ab||rs}|^2}{\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s}
-\label{eq:6.72}
+\label{6.72}
 \end{align}
 进一步, 
 可以用通常的双电子积分表达二阶能量:
@@ -1987,7 +1987,7 @@ E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \
 E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_r-\epsilon_s}} \notag\\
           & + \frac{1}{8}\sum_{abrstu}\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_t-\epsilon_u}} \notag\\
           & + \sum_{abcrst}\frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_a + \epsilon_c -\epsilon_r-\epsilon_t}}
-          \label{eq:6.75}
+          \label{6.75}
 \end{align}
 
 作为以上方法的一个示例, 
@@ -2012,7 +2012,7 @@ E_\mathrm{corr}  = E_0^{(2)} + E_0^{(3)} + \cdots
 其中
 \begin{equation}
 E_0^{(2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
-\label{eq:6.77}
+\label{6.77}
 \end{equation}
 及
 \begin{equation}
@@ -2154,7 +2154,8 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 有正确的$N$依赖性）。
 
 \exercise{推导式\eqref{6.80b}和\eqref{6.90}。}
-\section{相关能微扰展开的图表示}
+
+\section{相关能微扰展开的图表示}\label{sec6.7}
 现在来介绍$n$阶微扰能的图表示。
 我们将零阶波函数取为\hft 波函数。
 其实以任一个单行列式出发，
@@ -2662,7 +2663,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 	\end{align*}
 }
 
-\subsection{Goldstone图}
+\subsection{Goldstone图}\label{sec6.7.2}
 本节介绍多提微扰论的另外一种图表示：Goldstone所引入的Goldston图。
 Goldstone图直接对应着平常的双电子积分，
 而且只需观察就能确定闭合圈的数目。
@@ -3711,11 +3712,11 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \begin{align}
 	\lim_{R\to\infty} E_0(R) = 2E(\mathrm{H}) + \frac{1}{2}(\phi\phi|\phi\phi)
 \end{align}
-我们已经知道，CI能纠正这种状况；不幸的是，使用限制性HF轨道的微扰理论把事情弄得更糟了。事实上，$R\to\infty$极限下的二阶能量是发散的。 回想一下，对于极小基$\mathrm{H_2}$，二阶能量（见式\eqref{eq:6.77}）为
+我们已经知道，CI能纠正这种状况；不幸的是，使用限制性HF轨道的微扰理论把事情弄得更糟了。事实上，$R\to\infty$极限下的二阶能量是发散的。 回想一下，对于极小基$\mathrm{H_2}$，二阶能量（见式\eqref{6.77}）为
 \begin{align}
 	E_0^{(2)}  = \frac{K_{12}^2}{2(\varepsilon_1 - \varepsilon_2)}
 \end{align}
-在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，十一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\eqref{eq:6.72}和\eqref{eq:6.75}。 以这种方式获得的极小基$\hd$的势能曲线如图~\ref{fig:6.2}所示。
+在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，十一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\eqref{6.72}和\eqref{6.75}。 以这种方式获得的极小基$\hd$的势能曲线如图~\ref{fig:6.2}所示。
 \begin{figure}
 	\centering
 	\tikzset{
