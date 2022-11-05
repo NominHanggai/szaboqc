@@ -12,8 +12,10 @@
 \usepackage{multirow}
 \usepackage{tikz,pgfplots} % Required for drawing custom shapes
 %\pgfplotsset{compat=newest}
-\usepackage{booktabs,enumerate,threeparttable
+\usepackage{booktabs,threeparttable
 } % Booktabs required for nicer horizontal rules in tables
+\usepackage[shortlabels]{enumitem}
+\setenumerate{leftmargin=*}
 \usepackage{xcolor} % Required for specifying colors by name
 %\definecolor{ocre}{RGB}{0,0,0} % Define the favorite color used for highlighting throughout the book
 \bibliographystyle{alpha}
@@ -221,8 +223,8 @@
 \newcommand{\au}{\,\mathrm{a.u.}}
 \newcommand{\ts}{\mathscr{S}} %总自旋算符
 \usepackage{xeCJKfntef} % the package containing the command \CJKuderline*{} for the \mci command
-\newcommand{\mci}[1]{\CJKunderline*{#1}}
-\newcommand{\phrase}[1]{\CJKunderline*{#1}}
+\newcommand{\mci}[1]{\CJKunderline{#1}}
+\newcommand{\phrase}[1]{\CJKunderline{#1}}
 %%为方便而定义的简单代替, 最后要全部换回来.
 \newcommand{\jt}{\ket{\Phi_0}}
 \newcommand{\hjt}{\ket{\Psi_0}}
