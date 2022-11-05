@@ -727,9 +727,25 @@ GVB方法有许多很好的特点,
 \exercise{}
 
 
-作为一个GVB方法(或者，等价地，两组态MCSCF方法)的应用，我们展示一些对\ch{H2}使用6-31G**基组的数值计算结果。
+作为一个GVB方法(或者，等价地，两组态MCSCF方法)的应用，我们展示一些对\ch{H2}使用6-31G**基组的数值计算结果.
+在$R=1.4\text{a.u.}$处，
+$E_{\text{corr}}(\text{GVB})= -0.0183\text{a.u.}$,
+而FCI是$ -0.0339\text{a.u.}$,即GVB给出了54\%的相关能.
+图\ref{fig:4.4}比较了GVB,RHF,UHF,FCI的势能曲线.
+GVB可以正确描述\ch{H2}的解离.
+并且，随着原子间距的增加，GVB(相对于HF)的改进也增大；$R>3\text{a.u.}$时，GVB和FCI的结果几乎没有区别.
+这可以和基于UHF波函数的二阶微扰(第六章)的势能曲线结果(\ref{fig:6.3})比较.
+二阶微扰方法在平衡键长区域给出了比GVB更多的相关能，但当$R$增大时，微扰方法的势能曲线逐渐变差，趋近于UHF的结果.
 
+\begin{figure}[H]
+	\caption{\ch{H2}的6-31G**势能曲线}
+\label{fig:4.4}
+\end{figure}
 
 \section{截断CI与尺寸一致性问题}
 \label{sec4.6}
+
+
+
+
 \theendnotes
