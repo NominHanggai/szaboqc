@@ -363,9 +363,9 @@ G(x,x',E) = G_0(x,x',E) - \frac{G_0(x,0,E) G_0(0,x',E)}{1 + G_0(0,0,E)}
 利用式(7.
 22)中求得的$G_0$, 
 可得
-\begin{align}
+\begin{align*}
 G(x,x',E) = \frac{1}{i(2E)^{1/2}} \left( \exp(i(2E)^{1/2}|x-x'|) - \frac{\exp(i(2E)^{1/2}|x|+|x;|)}{1+i(2E)^{1/2}} \right)
-\end{align}
+\end{align*}
 最后需要指明, 
 上式中非零的$E$想使$G$爆炸, 
 只有当$i(2E)^{1/2}=-1$时才能实现, 
@@ -386,9 +386,9 @@ G(x,x',E) = \frac{1}{i(2E)^{1/2}} \left( \exp(i(2E)^{1/2}|x-x'|) - \frac{\exp(i(
 
 \Next
 验证$\phi(x) = \exp(-|x|)$确实式如下哈密顿量的本征函数:
-\begin{align}
+\begin{align*}
 \mathscr{H} = -\frac{1}{2}\frac{\dd^2}{\dd x^2} - \delta(x)
-\end{align}
+\end{align*}
 计算$\mathscr{H}\phi$可只知其本征值为$-\frac{1}{2}$.
 
 \Next
@@ -461,9 +461,9 @@ i\frac{\partial}{\partial t}\mathscr{g}(t) = \mathscr{Hg}(t)
 为将格林函数推广到多粒子系统中, 
 先考虑独立粒子图像, 
 比如Hartree-Fock：
-\begin{align*}
+\begin{align}
 \mathscr{H}_0 = \sum_i f(i)
-\end{align*} 
+\end{align} 
 在$N$-粒子体系的Hartree-Fock近似下, 
 可以得到一组自旋轨道和对应轨道能量, 
 方式就是解如下的本征值问题
@@ -484,11 +484,11 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \end{align}
 以HF自旋轨道作基, 
 HFGF的矩阵表示写作：
-\begin{align}
+\begin{align}\label{7.30}
 (\mathbf{G}_0(E))_{ij} = \int\dd{x}\dd{x'}\chi_i^*(\mathbf{x})G_0(\mathbf{x,x'},E)\chi_j(\mathbf{x'}) = \frac{\delta_{ij}}{E - \epsilon_i}
 \end{align}
 因此有
-\begin{align}
+\begin{align}\label{7.31}
 \mathbf{G}_0(E) = (E\mathbf{1} - \bm{\epsilon})^{-1}
 \end{align}
 其中$\bm{\epsilon}$是一对角矩阵, 
@@ -508,12 +508,11 @@ $\mathbf{G}_0(E)$在$E$处有极点.
 
 由于$\bm{\epsilon}$时对角矩阵, 
 我们有
-\begin{align}
+\begin{align*}
 \det(E\bm{1-\epsilon}) = \pod_i (E-\epsilon_i) = 0
-\end{align}
+\end{align*}
 那么HFGF在\hft 轨道能量处有极点. 
-这个结果在式(7.
-30)中很明显.
+这个结果在式(7.30)中很明显.
 
 
 回忆Koopmans定理, 
@@ -562,11 +561,7 @@ $N-1,N,N+1$系统的HF轨道互不相同.
 -\mathrm{IP} & = {}^N\scr{E}_0 - {}^{N-1}\scr{E}_0(c)\notag\\
              & = \epsilon_c - {}^{N-1}E_R(c) + ({}^NE_\mathrm{corr} - {}^{N-1}\scr{E}_0(c))
 \end{align}
-其中我们使用了式(7.
-32a)(7.
-33)(7.
-34a,
-b). 
+其中我们使用了式(7.32a)(7.33)(7.34a,b). 
 因此欲得到精确的IP, 
 则Koopmans定理的结果必须用$(N-1)$-粒子系统的弛豫能以及$N$和$(N-1)$粒子系统之间的相关能之差来修正. 
 电子亲和能也如此. 
@@ -587,12 +582,11 @@ HFGF是\emph{精确}MBGF $\mathbf{G}(E)$的近似,
 与此同时保留HF理论的单粒子图像. 
 初看读者可能会觉得无法构建这样的\emph{精确}单粒子理论, 
 因为\ha 中包含双粒子作用. 
-F. 
-Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势, 
+F. Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势, 
 称作\emph{自能}. 
 进一步, 
 他证明精确的$\mathbf{G}(E)$满足如下积分方程(称作\emph{Dyson方程}):
-\begin{align}
+\begin{align}\label{7.36}
 \mathbf{G}(E) = \mathbf{G}_0(E) + \mathbf{G}_0(E)\mathbf{\Sigma}(E)\mathbf{G}(E) 
 \end{align}
 其中$\mathbf{\Sigma}(E)$是HF自旋轨道基下精确自能的矩阵表示. 
@@ -603,15 +597,12 @@ Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势
 \end{align}
 特别地, 
 二阶自能$\mathbf{\Sigma}^{(2)}(E)$的矩阵元为
-\begin{align}
+\begin{align}\label{7.38}
 \Sigma_{ij}^{(2)} = \frac{1}{2}\sum_{ars}\frac{\braket{rs||ia}\braket{ja||rs}}{E+\epsilon_a-\epsilon_r-\epsilon_s} + 
 \frac{1}{2}\sum_{abr}\frac{\braket{ab||ir}\braket{jr||ab}}{E+\epsilon_r-\epsilon_a-\epsilon_b}
 \end{align}
 本章余下部分力图令读者对这个不寻常的形式有一些感觉. 
-将Dyson方程(7.
-36)同式(7.
-17)(7.
-19)比较, 
+将Dyson方程(7.36)同式(7.17)(7.19)比较, 
 就能知道为什么$\mathbf{\Sigma}(E)$叫作依赖能量的势. 
 应当强调, 
 以上的形式是精确的, 
@@ -624,19 +615,15 @@ Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势
 需对自能作近似. 
 若$\mathbf{\Sigma}(E)=0$, 
 那么$\mathbf{G}(E)=\mathbf{G}_0(E)$. 
-如式(7.
-37)所示, 
+如式(7.37)所示, 
 $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰. 
 这在多体微扰论中我们也曾见过: HF能量的第一个修正也是二阶的. 
 事实上, 
-比较$E^{(0)}$(式(6.
-72))和$\Sigma_{ij}^{(2)}$(式(7.
-38))的表达式, 
+比较$E^{(0)}$(式(6.72))和$\Sigma_{ij}^{(2)}$(式(7.38))的表达式, 
 可以看到一些共同点: 分子上都有两个反对称矩阵元; 
 分母只有一个因子, 
 其中含有某些轨道的能量. 
-7.
-5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. 
+7.5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. 
 \mci{MBGF表述}最吸引人的特点是, 
 所涉及的所有的矩阵大小全都等于HF自旋轨道的数目. 
 因此这种表述在单粒子图像的意义上推广了HF理论. 
@@ -646,6 +633,7 @@ $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰.
 \begin{align}
 \sum_{ij}^{(2)}(E) = & \sum_{ars}^{N/2} \frac{\braket{rs|ia}(2\braket{ja|rs}-\braket{aj|rs})}{E+\epsilon_a-\epsilon_r-\epsilon_s}\notag\\
                      & + \sum_{abr}^{N/2}\frac{\braket{ab||ir}(2\braket{jr|ib}-\braket{rj|ab})}{E+\epsilon_r-\epsilon_a-\epsilon_b}
+		     \label{7.39}
 \end{align}
 这种形式在计算闭壳层$N$粒子体系的电离能很方便.
 
@@ -685,13 +673,13 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 \end{align}
 求解上式得出$G(E)$, 
 我们发现
-\begin{align}
+\begin{align}\label{7.41}
 \mathbf{G}(E) = ((\mathbf{G}_0(E))^{-1} - \bm{\Sigma}(E))^{-1} = (E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma(E)})^{-1}
 \end{align}
 式中用到了$\mathbf{G}_0(E)$的定义(式\eqref{7.31}). 
 由于矩阵的逆在行列式为零时不存在, 
 我们必须确定如下方程的根:
-\begin{align}
+\begin{align}\label{7.42}
 \mathrm{det}(E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma}(E)) = 0
 \end{align}
 当$\bm{\Sigma}(E)=\mathbf{0}$时, 
@@ -710,13 +698,13 @@ E=\epsilon_i+\Sigma_{ii}(E)
 可以通过迭代的方式解出, 
 迭代第一步可使用$\Sigma_{ii}(E)$在$E=\epsilon_i$的值. 
 如此得到
-\begin{align}
+\begin{align}\label{7.45}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}(\epsilon_i)
 \end{align}
 然后将$\Sigma_{ii}(E)$在$E=\epsilon_i'$的值放入第二次迭代以求出$\epsilon_i''$. 
 如此进行直到收敛. 
 $\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
-\begin{align}
+\begin{align}\label{7.46}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}^{(2)}(\epsilon_i)
 \end{align}
 之后我们会详细分析这个方程给出的结果.
@@ -746,11 +734,11 @@ $\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
 ^NE_0 = 2h_{11} + J_{11} = 2\epsilon_1 - J_{11}
 \end{align}
 而\mci{关联能}为
-\begin{align}
+\begin{align}\label{7.49}
 ^NE_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
 \end{align}
 其中
-\begin{align}
+\begin{align}\label{7.50}
 \Delta = (\epsilon_1 - \epsilon_2) + \frac{1}{2}(J_{11} + J_{22}) - 2J_{12} + K_{12}
 \end{align}
 那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$. 
@@ -774,7 +762,7 @@ $\hd^+$的基态能量就是
 \end{align}
 因此，
 极小基$\hd$的精确电离能为
-\begin{align}
+\begin{align}\label{7.52a}
 -\mathrm{IP} = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_0 = 2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{11} = \epsilon_1 + ^NE_\mathrm{corr}
 \end{align}
 注意这个电离能和用Koompan定理所得的$\hd$电离能并不相同，
@@ -823,12 +811,12 @@ G_{12}(E)=G_{21}(E)=0
 要求出$IP$和$EA$，
 需求得$G_{11}(E)$和$G_{22}(E)$的极点。
 $G_{11}(E)$的极点满足
-\begin{align}
+\begin{align}\label{7.55a}
 E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 \end{align}
 将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，
 就有
-\begin{align}
+\begin{align}\label{7.55b}
     E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0
 \end{align}
 在求解这个二次方程以得到两个根之前，
@@ -848,12 +836,12 @@ E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 利用$\Sigma_{11}^{(2)}(E)$，
 仅考虑到最低阶，
 就给Koopman定理的结果$(\epsilon_1)$增添二阶多体微扰论能量这样一个修正项。
-若求得\eqref{7.55}的精确解，
+若求得式(7.55)的精确解，
 我们会得到什么呢？该二次方程的两个根为
 \begin{align}
 \varepsilon_{11}^{\pm} &=\varepsilon_{1}+\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \pm\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right) \notag\\
 &=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp \frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \notag\\
-&=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right)
+	&=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \label{7.57}
 \end{align}
 可见，
 $\epsilon_{11}^-$为$\hd$电离能的负值。
