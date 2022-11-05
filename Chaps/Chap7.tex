@@ -363,9 +363,9 @@ G(x,x',E) = G_0(x,x',E) - \frac{G_0(x,0,E) G_0(0,x',E)}{1 + G_0(0,0,E)}
 利用式(7.
 22)中求得的$G_0$, 
 可得
-\begin{align}
+\begin{align*}
 G(x,x',E) = \frac{1}{i(2E)^{1/2}} \left( \exp(i(2E)^{1/2}|x-x'|) - \frac{\exp(i(2E)^{1/2}|x|+|x;|)}{1+i(2E)^{1/2}} \right)
-\end{align}
+\end{align*}
 最后需要指明, 
 上式中非零的$E$想使$G$爆炸, 
 只有当$i(2E)^{1/2}=-1$时才能实现, 
@@ -386,9 +386,9 @@ G(x,x',E) = \frac{1}{i(2E)^{1/2}} \left( \exp(i(2E)^{1/2}|x-x'|) - \frac{\exp(i(
 
 \Next
 验证$\phi(x) = \exp(-|x|)$确实式如下哈密顿量的本征函数:
-\begin{align}
+\begin{align*}
 \mathscr{H} = -\frac{1}{2}\frac{\dd^2}{\dd x^2} - \delta(x)
-\end{align}
+\end{align*}
 计算$\mathscr{H}\phi$可只知其本征值为$-\frac{1}{2}$.
 
 \Next
@@ -461,9 +461,9 @@ i\frac{\partial}{\partial t}\mathscr{g}(t) = \mathscr{Hg}(t)
 为将格林函数推广到多粒子系统中, 
 先考虑独立粒子图像, 
 比如Hartree-Fock：
-\begin{align*}
+\begin{align}
 \mathscr{H}_0 = \sum_i f(i)
-\end{align*} 
+\end{align} 
 在$N$-粒子体系的Hartree-Fock近似下, 
 可以得到一组自旋轨道和对应轨道能量, 
 方式就是解如下的本征值问题
@@ -484,11 +484,11 @@ G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\e
 \end{align}
 以HF自旋轨道作基, 
 HFGF的矩阵表示写作：
-\begin{align}
+\begin{align}\label{7.30}
 (\mathbf{G}_0(E))_{ij} = \int\dd{x}\dd{x'}\chi_i^*(\mathbf{x})G_0(\mathbf{x,x'},E)\chi_j(\mathbf{x'}) = \frac{\delta_{ij}}{E - \epsilon_i}
 \end{align}
 因此有
-\begin{align}
+\begin{align}\label{7.31}
 \mathbf{G}_0(E) = (E\mathbf{1} - \bm{\epsilon})^{-1}
 \end{align}
 其中$\bm{\epsilon}$是一对角矩阵, 
@@ -508,12 +508,11 @@ $\mathbf{G}_0(E)$在$E$处有极点.
 
 由于$\bm{\epsilon}$时对角矩阵, 
 我们有
-\begin{align}
+\begin{align*}
 \det(E\bm{1-\epsilon}) = \pod_i (E-\epsilon_i) = 0
-\end{align}
+\end{align*}
 那么HFGF在\hft 轨道能量处有极点. 
-这个结果在式(7.
-30)中很明显.
+这个结果在式(7.30)中很明显.
 
 
 回忆Koopmans定理, 
@@ -587,7 +586,7 @@ F. Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效
 称作\emph{自能}. 
 进一步, 
 他证明精确的$\mathbf{G}(E)$满足如下积分方程(称作\emph{Dyson方程}):
-\begin{align}
+\begin{align}\label{7.36}
 \mathbf{G}(E) = \mathbf{G}_0(E) + \mathbf{G}_0(E)\mathbf{\Sigma}(E)\mathbf{G}(E) 
 \end{align}
 其中$\mathbf{\Sigma}(E)$是HF自旋轨道基下精确自能的矩阵表示. 
@@ -674,13 +673,13 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 \end{align}
 求解上式得出$G(E)$, 
 我们发现
-\begin{align}
+\begin{align}\label{7.41}
 \mathbf{G}(E) = ((\mathbf{G}_0(E))^{-1} - \bm{\Sigma}(E))^{-1} = (E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma(E)})^{-1}
 \end{align}
 式中用到了$\mathbf{G}_0(E)$的定义(式\eqref{7.31}). 
 由于矩阵的逆在行列式为零时不存在, 
 我们必须确定如下方程的根:
-\begin{align}
+\begin{align}\label{7.42}
 \mathrm{det}(E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma}(E)) = 0
 \end{align}
 当$\bm{\Sigma}(E)=\mathbf{0}$时, 
@@ -812,12 +811,12 @@ G_{12}(E)=G_{21}(E)=0
 要求出$IP$和$EA$，
 需求得$G_{11}(E)$和$G_{22}(E)$的极点。
 $G_{11}(E)$的极点满足
-\begin{align}
+\begin{align}\label{7.55a}
 E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 \end{align}
 将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，
 就有
-\begin{align}
+\begin{align}\label{7.55b}
     E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0
 \end{align}
 在求解这个二次方程以得到两个根之前，
@@ -837,7 +836,7 @@ E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 利用$\Sigma_{11}^{(2)}(E)$，
 仅考虑到最低阶，
 就给Koopman定理的结果$(\epsilon_1)$增添二阶多体微扰论能量这样一个修正项。
-若求得\eqref{7.55}的精确解，
+若求得式(7.55)的精确解，
 我们会得到什么呢？该二次方程的两个根为
 \begin{align}
 \varepsilon_{11}^{\pm} &=\varepsilon_{1}+\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \pm\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right) \notag\\
