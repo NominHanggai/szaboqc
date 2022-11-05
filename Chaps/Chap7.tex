@@ -562,11 +562,7 @@ $N-1,N,N+1$系统的HF轨道互不相同.
 -\mathrm{IP} & = {}^N\scr{E}_0 - {}^{N-1}\scr{E}_0(c)\notag\\
              & = \epsilon_c - {}^{N-1}E_R(c) + ({}^NE_\mathrm{corr} - {}^{N-1}\scr{E}_0(c))
 \end{align}
-其中我们使用了式(7.
-32a)(7.
-33)(7.
-34a,
-b). 
+其中我们使用了式(7.32a)(7.33)(7.34a,b). 
 因此欲得到精确的IP, 
 则Koopmans定理的结果必须用$(N-1)$-粒子系统的弛豫能以及$N$和$(N-1)$粒子系统之间的相关能之差来修正. 
 电子亲和能也如此. 
@@ -587,8 +583,7 @@ HFGF是\emph{精确}MBGF $\mathbf{G}(E)$的近似,
 与此同时保留HF理论的单粒子图像. 
 初看读者可能会觉得无法构建这样的\emph{精确}单粒子理论, 
 因为\ha 中包含双粒子作用. 
-F. 
-Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势, 
+F. Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势, 
 称作\emph{自能}. 
 进一步, 
 他证明精确的$\mathbf{G}(E)$满足如下积分方程(称作\emph{Dyson方程}):
@@ -603,15 +598,12 @@ Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势
 \end{align}
 特别地, 
 二阶自能$\mathbf{\Sigma}^{(2)}(E)$的矩阵元为
-\begin{align}
+\begin{align}\label{7.38}
 \Sigma_{ij}^{(2)} = \frac{1}{2}\sum_{ars}\frac{\braket{rs||ia}\braket{ja||rs}}{E+\epsilon_a-\epsilon_r-\epsilon_s} + 
 \frac{1}{2}\sum_{abr}\frac{\braket{ab||ir}\braket{jr||ab}}{E+\epsilon_r-\epsilon_a-\epsilon_b}
 \end{align}
 本章余下部分力图令读者对这个不寻常的形式有一些感觉. 
-将Dyson方程(7.
-36)同式(7.
-17)(7.
-19)比较, 
+将Dyson方程(7.36)同式(7.17)(7.19)比较, 
 就能知道为什么$\mathbf{\Sigma}(E)$叫作依赖能量的势. 
 应当强调, 
 以上的形式是精确的, 
@@ -624,19 +616,15 @@ Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效势
 需对自能作近似. 
 若$\mathbf{\Sigma}(E)=0$, 
 那么$\mathbf{G}(E)=\mathbf{G}_0(E)$. 
-如式(7.
-37)所示, 
+如式(7.37)所示, 
 $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰. 
 这在多体微扰论中我们也曾见过: HF能量的第一个修正也是二阶的. 
 事实上, 
-比较$E^{(0)}$(式(6.
-72))和$\Sigma_{ij}^{(2)}$(式(7.
-38))的表达式, 
+比较$E^{(0)}$(式(6.72))和$\Sigma_{ij}^{(2)}$(式(7.38))的表达式, 
 可以看到一些共同点: 分子上都有两个反对称矩阵元; 
 分母只有一个因子, 
 其中含有某些轨道的能量. 
-7.
-5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. 
+7.5节我们会研究GF理论(使用$\mathbf{\Sigma}^{(2)}(E)$)和二阶微扰论在电离能计算中的关系. 
 \mci{MBGF表述}最吸引人的特点是, 
 所涉及的所有的矩阵大小全都等于HF自旋轨道的数目. 
 因此这种表述在单粒子图像的意义上推广了HF理论. 
@@ -646,6 +634,7 @@ $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰.
 \begin{align}
 \sum_{ij}^{(2)}(E) = & \sum_{ars}^{N/2} \frac{\braket{rs|ia}(2\braket{ja|rs}-\braket{aj|rs})}{E+\epsilon_a-\epsilon_r-\epsilon_s}\notag\\
                      & + \sum_{abr}^{N/2}\frac{\braket{ab||ir}(2\braket{jr|ib}-\braket{rj|ab})}{E+\epsilon_r-\epsilon_a-\epsilon_b}
+		     \label{7.39}
 \end{align}
 这种形式在计算闭壳层$N$粒子体系的电离能很方便.
 
@@ -710,13 +699,13 @@ E=\epsilon_i+\Sigma_{ii}(E)
 可以通过迭代的方式解出, 
 迭代第一步可使用$\Sigma_{ii}(E)$在$E=\epsilon_i$的值. 
 如此得到
-\begin{align}
+\begin{align}\label{7.45}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}(\epsilon_i)
 \end{align}
 然后将$\Sigma_{ii}(E)$在$E=\epsilon_i'$的值放入第二次迭代以求出$\epsilon_i''$. 
 如此进行直到收敛. 
 $\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
-\begin{align}
+\begin{align}\label{7.46}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}^{(2)}(\epsilon_i)
 \end{align}
 之后我们会详细分析这个方程给出的结果.
@@ -746,11 +735,11 @@ $\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
 ^NE_0 = 2h_{11} + J_{11} = 2\epsilon_1 - J_{11}
 \end{align}
 而\mci{关联能}为
-\begin{align}
+\begin{align}\label{7.49}
 ^NE_\mathrm{corr} = \Delta - (\Delta^2 + K_{12}^2)^{1/2}
 \end{align}
 其中
-\begin{align}
+\begin{align}\label{7.50}
 \Delta = (\epsilon_1 - \epsilon_2) + \frac{1}{2}(J_{11} + J_{22}) - 2J_{12} + K_{12}
 \end{align}
 那么这个体系的精确能量是$^N\es_0 = ^NE_0 + ^NE_\mathrm{corr}$. 
@@ -774,7 +763,7 @@ $\hd^+$的基态能量就是
 \end{align}
 因此，
 极小基$\hd$的精确电离能为
-\begin{align}
+\begin{align}\label{7.52a}
 -\mathrm{IP} = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_0 = 2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{11} = \epsilon_1 + ^NE_\mathrm{corr}
 \end{align}
 注意这个电离能和用Koompan定理所得的$\hd$电离能并不相同，
@@ -853,7 +842,7 @@ E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
 \begin{align}
 \varepsilon_{11}^{\pm} &=\varepsilon_{1}+\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \pm\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right) \notag\\
 &=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp \frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \notag\\
-&=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right)
+	&=\varepsilon_{1}+\left((1 \pm 1)\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp^{N} E_{0}^{(2)} \pm \frac{K_{12}^{4}}{8\left(\varepsilon_{1}-\varepsilon_{2}\right)^{3}}+\cdots\right) \label{7.57}
 \end{align}
 可见，
 $\epsilon_{11}^-$为$\hd$电离能的负值。
