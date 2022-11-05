@@ -753,18 +753,19 @@ $N$和$(N-1)$体系的HF轨道相同，
 因此$h_{12}=0$。
 所以，
 $\hd^+$的基态能量就是
-\begin{align}
-^{N-1}\scr{E}_0 = h_{11}
-\end{align}
-第一激发态的能量为
-\begin{align}
-^{N-1}\scr{E}_1 = h_{22}
-\end{align}
+\begin{subequations}
+	\begin{align}
+		^{N-1}\scr{E}_0 = h_{11}
+\intertext{第一激发态的能量为}
+		^{N-1}\scr{E}_1 = h_{22}
+	\end{align}
+\end{subequations}
 因此，
 极小基$\hd$的精确电离能为
-\begin{align}\label{7.52a}
--\mathrm{IP} = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_0 = 2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{11} = \epsilon_1 + ^NE_\mathrm{corr}
-\end{align}
+\begin{subequations}
+\begin{align}
+	-\mathrm{IP} = ^{N}\scr{E}_0 - {^{N-1}\scr{E}_0} & = 2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{11} = \epsilon_1 + ^NE_\mathrm{corr} \label{7.52a}
+\intertext{
 注意这个电离能和用Koompan定理所得的$\hd$电离能并不相同，
 它们之间相差一个$^NE_\mathrm{corr}$。
 须指出，
@@ -777,23 +778,23 @@ $\hd^+$的基态能量就是
 移去$\hd$中的一个电子后，
 也有可能得到一个激发态的$\hd^+$。
 这个过程对应的电离势为
-\begin{align}
--\mathrm{IP}' = ^{N}\scr{E}_0 - ^{N-1}\scr{E}_1 &=  2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{22} \notag \\
-& = 2\epsilon_1 -\epsilon_2 + (2J_{12} - J_{11} - K_{12}) + ^NE_\mathrm{corr} 
-\label{7.52b}
-\end{align}
-
+}
+	-\mathrm{IP}' = {^{N}\scr{E}_0} - ^{N-1}\scr{E}_1 & =  2h_{11} + J_{11} + ^NE_\mathrm{corr} - h_{22} \notag \\
+	& = 2\epsilon_1 -\epsilon_2 + (2J_{12} - J_{11} - K_{12}) + ^NE_\mathrm{corr} 
+	\label{7.52b}
+	\end{align}
+\end{subequations}
 现在我们用GF两类研究这个系统，
 并比较所得的结果和精确结果。
 这个模型的二阶自能可以轻松用\eqref{7.39}求得，
 只要将全部空穴和粒子指标分别设为1和2（即$a=b=1$, 
 $r=s=2$）
 \begin{subequations}
-    \begin{align}\begin{array}{l}
-    \Sigma_{11}^{(2)}(E)=\frac{K_{12}^{2}}{E+\varepsilon_{1}-2 \varepsilon_{2}}=\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \label{7.53a}\\
-    \Sigma_{22}^{(2)}(E)=\frac{K_{12}^{2}}{E+\varepsilon_{2}-2 \varepsilon_{1}}=\frac{K_{12}^{2}}{E-\varepsilon_{2}-2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \\
-    \Sigma_{12}^{(2)}(E)=\Sigma_{21}^{(2)}(E)=0
-    \end{array}\end{align}
+    \begin{align}
+    \Sigma_{11}^{(2)}(E) & =\frac{K_{12}^{2}}{E+\varepsilon_{1}-2 \varepsilon_{2}}=\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \label{7.53a}\\
+    \Sigma_{22}^{(2)}(E) & =\frac{K_{12}^{2}}{E+\varepsilon_{2}-2 \varepsilon_{1}}=\frac{K_{12}^{2}}{E-\varepsilon_{2}-2\left(\varepsilon_{1}-\varepsilon_{2}\right)} \\
+    \Sigma_{12}^{(2)}(E) & =\Sigma_{21}^{(2)}(E)=0
+    \end{align}
 \end{subequations}
 式中我们已经利用了这样一个事实：所有双电子积分，
 若不包含偶数个$1$和$2$，
@@ -802,23 +803,23 @@ $r=s=2$）
 由于$\mathbf{\Sigma}^{(2)}(E)$是对角矩阵，
 所以$\mathbf{G})(E)$的矩阵元（由式\eqref{7.41}算得）为
 \begin{subequations}
-\begin{align}\begin{array}{l}
-G_{11}(E)=\left(E-\varepsilon_{1}-\Sigma_{11}^{(2)}(E)\right)^{-1} \\
-G_{22}(E)=\left(E-\varepsilon_{2}-\Sigma_{22}^{(2)}(E)\right)^{-1} \\
-G_{12}(E)=G_{21}(E)=0
-\end{array}\end{align}
+\begin{align}
+G_{11}(E) & =\left(E-\varepsilon_{1}-\Sigma_{11}^{(2)}(E)\right)^{-1} \\
+G_{22}(E) & =\left(E-\varepsilon_{2}-\Sigma_{22}^{(2)}(E)\right)^{-1} \\
+G_{12}(E) & =G_{21}(E)=0
+\end{align}
 \end{subequations}
 要求出$IP$和$EA$，
 需求得$G_{11}(E)$和$G_{22}(E)$的极点。
 $G_{11}(E)$的极点满足
+\begin{subequations}
 \begin{align}\label{7.55a}
-E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
+	E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
+\intertext{将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，
+就有}
+    E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0 \label{7.55b}
 \end{align}
-将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，
-就有
-\begin{align}\label{7.55b}
-    E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0
-\end{align}
+\end{subequations}
 在求解这个二次方程以得到两个根之前，
 我们先求一下$\epsilon_1$的最低阶修正。
 利用式\eqref{7.46}，
