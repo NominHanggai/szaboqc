@@ -10,8 +10,8 @@ on:
 
 env:
   CTAN_URL: https://mirrors.rit.edu/CTAN
-  TL_PACKAGES: amscls amsmath anyfontsize blkarray booktabs boondox braket caption chemformula ctex endnotes enumitem fancyhdr fandol float graphics hyperref latexmk luatex85 l3packages mathalpha mathtools metafont multirow needspace newfloat pgfplots scalerel siunitx stackengine threeparttable times tools ulem xcolor xecjk
-  TL_FONT_PCK: libertinus-fonts psnfss wasysym collection-fontsrecommended collection-fontsextra
+  TL_PACKAGES: amscls amsmath anyfontsize blkarray booktabs boondox braket caption chemformula ctex endnotes enumitem fancyhdr float graphics hyperref latexmk luatex85 l3packages mathtools metafont multirow needspace newfloat pgfplots scalerel siunitx stackengine threeparttable tools ulem xcolor xecjk
+  TL_FONT_PCK: fandol mathalpha psnfss collection-fontsrecommended collection-fontsextra
 
 jobs:
   release:
