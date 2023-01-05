@@ -45,8 +45,7 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 并且, 
 除非$\ket{i}$与$\ket{\Phi_i}$正交, 
 否则总可以进行中间归一化. 
-将(6.
-4b)左乘$\bra{i}$, 
+将(6.4b)左乘$\bra{i}$, 
 得到
 \begin{align}
 \braket{i|\Phi_i}=\braket{i|i}+\lambda\braket{i|\Psi_i^{(1)}}+\lambda^2\braket{i|\Psi_i^{(2)}} + \cdots = 1
@@ -57,10 +56,8 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 \braket{i|\Psi_i^{(n)}} = 0\, \hfill n=1,2,3,\cdots
 \label{6.6}
 \end{align}
-将(6.
-4a,
-6.
-4b)带入\ref{6.1}, 
+将(6.4a,
+6.4b)带入\ref{6.1}, 
 得到:
 \begin{align*}
 (\hs_0&+\lambda\vs)(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots )\\
@@ -88,14 +85,11 @@ E_i^{(2)} &= \braket{i|\vs|\Psi_i^{(1)}} \\
 E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \end{align}
 \end{subequations}
-剩下的事情就是从(6.
-7)解出$\ket{\Psi_i^{(n)}}$, 
-然后用(6.
-8)确定$n$阶能量.
+剩下的事情就是从(6.7)解出$\ket{\Psi_i^{(n)}}$, 
+然后用(6.8)确定$n$阶能量.
 
 
-先来看(6.
-7b), 
+先来看(6.7b), 
 由它来解出一阶波函数$\ket{\Psi_i^{(1)}}$. 
 此式可重写为
 \begin{align}
@@ -113,30 +107,25 @@ E_i^{(3)} &= \braket{i|\vs|\Psi_i^{(2)}}
 \begin{align*}
 \braket{n|\Psi_i^{(1)}} = c_n^{(1)}
 \end{align*}
-由(6.
-6)可知, 
+由(6.6)可知, 
 $c_i^{(1)}=0$, 
 所以有
 \begin{align}
 \ket{\Psi_i^{(1)}} = \sideset{}{'}\sum_n\ket{n}\braket{n|\Psi_i^{(1)}}
 \end{align}
 求和号上的一撇代表不包括$n=i$的项. 
-(6.
-9)左乘$\bra{n}$, 
+(6.9)左乘$\bra{n}$, 
 并注意到零阶波函数的正交性, 
 就可以得到:
 \begin{align}
 (E_i^{(0)} - E_n^{0} )\braket{n|\Psi_i^{(1)}} = \braket{n|\vs|i}
 \end{align}
 为得到二阶能量, 
-将(6.
-10)带入(6.
-8c)可以得到:
+将(6.10)带入(6.8c)可以得到:
 \begin{align*}
 E_i^{(2)} = \braket{i|\vs|\Psi_i^{(1)}} = \sideset{}{'}\sum_n\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}
 \end{align*}
-使用(6.
-11)可以求出$\braket{n|\Psi_i^{(1)}}$, 
+使用(6.11)可以求出$\braket{n|\Psi_i^{(1)}}$, 
 所以最终有
 \begin{align}
 E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)} - E_n^{(0)}}
@@ -156,18 +145,13 @@ E_i^{(2)} = \sideset{}{'}\sum_n\frac{\braket{i|\vs|n}\braket{n|\vs|i}}{E_i^{(0)}
 \begin{align}
 (E_i^{(0)} -E_n^{(0)} )\braket{n|\Psi_i^{(2)}} = \braket{n|\vs|\Psi_i^{(1)}} - E_i^{(1)}\braket{n|\Psi_i^{(1)}}
 \end{align}
-将(6.
-8d)(6.
-13)(6.
-14)组合可得
+将(6.8d)(6.13)(6.14)组合可得
 \begin{align*}
 E_i^{(3)} & = \braket{i|\vs|\Psi_i^{(2)}}\\
 		  & = \sideset{}{'}{\sum_n}\braket{i|\vs|n}\braket{n|\Psi_i^{(2)}}\\
 		  & =\sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\vs|\Psi_I^{(1)}}}{E_i^{(0)} - E_N^{(0)}} - E_i^{(1)} \sideset{}{'}{\sum_n}\frac{\braket{i|\vs|n}\braket{n|\Psi_i^{(1)}}}{E_i^{(0)} - E_n^{(0)} }
 \end{align*}
-最后再将(6.
-10)(6.
-11)插入, 
+最后再将(6.10)(6.11)插入, 
 就得到
 \begin{align}
 E_i^{(3)} & =\sideset{}{'}{\sum_{mn}}\frac{\braket{i|\vs|n}\braket{n|\vs|m}\braket{m|\vs|i} }{(E_i^{(0)} -E_n^{(0)})(E_i^{(0)} - E_m^{(0)} )  } - E_i^{(1)} \sideset{}{'}{\sum_n} \frac{\left| \braket{i|\vs|n} \right|^2}{(E_i^{(0)} -E_n^{(0)} )^2}\notag\\
@@ -276,10 +260,7 @@ c_1\\c_2
 \end{subequations}
 
 最终我们能看到,
-由RS微扰理论出发所得的一、二、三阶能量的公式[(6.
-8b)(6.
-12)(6.
-15)]与以上式中的$E_1^{(n)}\,(n=1,2,3)$相等. 
+由RS微扰理论出发所得的一、二、三阶能量的公式[(6.8b)(6.12)(6.15)]与以上式中的$E_1^{(n)}\,(n=1,2,3)$相等. 
 为理解这一点，
 只需注意到两态问题中中仅有一个中间态$\ket{n} = \ket{2}$. 
 由于微扰理论的公式是由Taylor展开所得，
@@ -316,7 +297,6 @@ Feynman首创了这种办法,
 此处引用他的话``我其余的工作就是发展了计算技巧, 
 用图形来帮助人们更快地分析微扰论. 
 这个工具最初基本上是猜出来的.
-.
 "``即使是从物理学家的层面来讲, 
 我也并未证明这些规则和方程可以通过传统的电动力学得到, 
 但是从平时的`胡搞'中我已经知道, 
@@ -365,8 +345,10 @@ $\ket{2}$由向上和向下的箭头表示:
 \]
 总之, 
 每个点上都有一线段进入, 
-有一线段穿出. 
-对应的矩阵元就是$\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
+有一线段穿出.
+
+对应的矩阵元就是
+$\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 
 
 回忆$n$阶能量表达式中的各项: $n=1,2,3,4$分子都是$n$个$\vs$矩阵元的乘积. 
