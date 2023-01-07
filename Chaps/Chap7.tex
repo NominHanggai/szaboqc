@@ -632,7 +632,7 @@ $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰.
 这种形式在计算闭壳层$N$粒子体系的电离能很方便.
 
 \exercise{
-由\eqref{7.38}导出\eqref{7.39}.
+由\autoref{7.38}导出\autoref{7.39}.
 
 \Next
 $N$粒子系统的精确MBGF定义如下
@@ -648,7 +648,7 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 产生算符($\cs_i$)和湮灭算符($a_i$)分别增加和移除一个HF自旋轨道.
 
 
-请证明以上格林函数在如下给定条件下可约化为式\eqref{7.30}中的HFGF:
+请证明以上格林函数在如下给定条件下可约化为式\autoref{7.30}中的HFGF:
 \begin{enumerate}[1.]
 	\item 用HF波函数$\ket{^N\Psi_0}$代替$\ket{^N\Phi_0}$.
 	\item $(N-1)$粒子系统的态用$a_a\ket{^N\Psi_0}$来近似.
@@ -657,7 +657,7 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 }
 \subsection{Dyson方程的解}
 要求得$N$粒子系统的IP和EA, 
-必须求解Dyson方程(式\eqref{7.36}), 
+必须求解Dyson方程(\autoref{7.36}), 
 得到$\mathbf{G}(E)$, 
 然后找出使$\mathbf{G}(E)$为无穷的$E$值. 
 在Dyson方程左右分别乘以$(\mathbf{G}_0(E))^{-1}$和用$(\mathbf{G}(E))^{-1}$, 
@@ -670,7 +670,7 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 \begin{align}\label{7.41}
 \mathbf{G}(E) = ((\mathbf{G}_0(E))^{-1} - \bm{\Sigma}(E))^{-1} = (E\mathbf{1} - \bm{\epsilon} - \bm{\Sigma(E)})^{-1}
 \end{align}
-式中用到了$\mathbf{G}_0(E)$的定义(式\eqref{7.31}). 
+式中用到了$\mathbf{G}_0(E)$的定义(\autoref{7.31}). 
 由于矩阵的逆在行列式为零时不存在, 
 我们必须确定如下方程的根:
 \begin{align}\label{7.42}
@@ -680,7 +680,7 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 根就是$\epsilon_i$. 
 为找到Koopmans定理给出的结果的最低阶修正, 
 我们忽略$\bm{\Sigma}(E)$的非对角项. 
-如此式\eqref{7.42}就化简为
+如此\autoref{7.42}就化简为
 \begin{align}
 \prod_i (E-\epsilon_i - \Sigma_{ii}(E)) = 0
 \end{align}
@@ -697,7 +697,7 @@ E=\epsilon_i+\Sigma_{ii}(E)
 \end{align}
 然后将$\Sigma_{ii}(E)$在$E=\epsilon_i'$的值放入第二次迭代以求出$\epsilon_i''$. 
 如此进行直到收敛. 
-$\epsilon_i$的最低阶修正按二阶自能下的式\eqref{7.45}给出:
+$\epsilon_i$的最低阶修正按二阶自能下的\autoref{7.45}给出:
 \begin{align}\label{7.46}
 \epsilon_i' = \epsilon_i + \Sigma_{ii}^{(2)}(\epsilon_i)
 \end{align}
@@ -780,7 +780,7 @@ $\hd^+$的基态能量就是
 \end{subequations}
 现在我们用GF两类研究这个系统，
 并比较所得的结果和精确结果。
-这个模型的二阶自能可以轻松用\eqref{7.39}求得，
+这个模型的二阶自能可以轻松用\autoref{7.39}求得，
 只要将全部空穴和粒子指标分别设为1和2（即$a=b=1$, 
 $r=s=2$）
 \begin{subequations}
@@ -795,7 +795,7 @@ $r=s=2$）
 则由于对称性，
 其值为零。
 由于$\mathbf{\Sigma}^{(2)}(E)$是对角矩阵，
-所以$\mathbf{G})(E)$的矩阵元（由式\eqref{7.41}算得）为
+所以$\mathbf{G})(E)$的矩阵元（由\autoref{7.41}算得）为
 \begin{subequations}
 \begin{align}
 G_{11}(E) & =\left(E-\varepsilon_{1}-\Sigma_{11}^{(2)}(E)\right)^{-1} \\
@@ -809,23 +809,23 @@ $G_{11}(E)$的极点满足
 \begin{subequations}
 \begin{align}\label{7.55a}
 	E - \epsilon_1 - \Sigma_{11}^{(2)}(E) = 0
-\intertext{将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（式\eqref{7.53a}）带入，
+\intertext{将$\mathbf{\Sigma}_{11}^{(2)}(E)$的表达式（\autoref{7.53a}）带入，
 就有}
     E-\varepsilon_{1}-\frac{K_{12}^{2}}{E-\varepsilon_{1}+2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=0 \label{7.55b}
 \end{align}
 \end{subequations}
 在求解这个二次方程以得到两个根之前，
 我们先求一下$\epsilon_1$的最低阶修正。
-利用式\eqref{7.46}，
+利用\autoref{7.46}，
 即令$\Sigma_{11}^{(2)}(E)$中的$E$等于$\epsilon_{1}$，
 我们有
 \begin{align}
 \varepsilon_{1}^{\prime}=\varepsilon_{1}+\Sigma_{11}^{(2)}\left(\varepsilon_{1}\right)=\varepsilon_{1}+\frac{K_{12}^{2}}{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}=\varepsilon_{1}+ ^NE_{0}^{(2)}
 \end{align}
 式中出现的${K_{12}^{2}}/{2\left(\varepsilon_{1}-\varepsilon_{2}\right)}$就是$\hd$关联能的二阶微扰结果（于第六章中求得，
-见式\eqref{6.77}）。
+见\autoref{6.77}）。
 这个结果让人高兴。
-与\eqref{7.52a}中给出的这个模型的精确结果左比较，
+与\autoref{7.52a}中给出的这个模型的精确结果左比较，
 可发现，
 使用GF方法，
 利用$\Sigma_{11}^{(2)}(E)$，
@@ -842,9 +842,9 @@ $G_{11}(E)$的极点满足
 $\epsilon_{11}^-$为$\hd$电离能的负值。
 可以看到，
 这里的GF方法中隐含着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），
-气形式和\eqref{7.49}中的精确结果类似。
+气形式和\autoref{7.49}中的精确结果类似。
 ，
-区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（式\eqref{7.50}）。
+区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（\autoref{7.50}）。
 这个关联能的微扰展开在二阶上是精确的，
 同时也纳入了近似的高阶项。
 那么，
@@ -861,14 +861,14 @@ $\epsilon_{11}^-$为$\hd$电离能的负值。
     ^{N+1} \mathscr{E}_{1}-^{N} \mathscr{B}_{0}=2 \varepsilon_{2}-\varepsilon_{1}+\left(J_{22}+K_{12}-2 J_{12}\right)-^{N} E_{\mathrm{corr}}.
     \end{align*}
     \item 
-    证明$\epsilon_{11}^+$（见\eqref{7.57}）为$^{N+1} \mathscr{E}_{1}-^{N} \mathscr{E}_{0}$的近似值。
+    证明$\epsilon_{11}^+$（见\autoref{7.57}）为$^{N+1} \mathscr{E}_{1}-^{N} \mathscr{E}_{0}$的近似值。
     \item
     证明$G_{22}(E)$位于极点时满足下式
     \begin{align*}
     \varepsilon_{22}^{\pm}=\varepsilon_{2}-\left(\left(\varepsilon_{2}-\varepsilon_{1}\right) \mp\left(\left(\varepsilon_{2}-\varepsilon_{1}\right)^{2}+K_{12}^{2}\right)^{1 / 2}\right)
     \end{align*}
     \item 
-    证明$\epsilon_{22}^+$为${}^{N+1} \mathscr{E}_{0}-{}^{N} \mathscr{E}_{0}$的近似值，$\epsilon_{22}^-$为$^{N} \mathscr{E}_{0}- {}^{N-1} \mathscr{E}_{1}$的近似值（见\eqref{7.52b}）
+    证明$\epsilon_{22}^+$为${}^{N+1} \mathscr{E}_{0}-{}^{N} \mathscr{E}_{0}$的近似值，$\epsilon_{22}^-$为$^{N} \mathscr{E}_{0}- {}^{N-1} \mathscr{E}_{1}$的近似值（见\autoref{7.52b}）
 \end{enumerate}
 \Next
 极小基$\hd$的三阶自能$\mathbf{\Sigma}^{(3)}(E)$的矩阵元为
@@ -880,14 +880,14 @@ $\epsilon_{11}^-$为$\hd$电离能的负值。
     \Sigma_{12}^{(3)}(E)=& \Sigma_{21}^{(3)}(E)=0
 \end{align*}
 注意到该三阶自能包含\emph{依赖能量}的项。
-现考虑第一IP（如\eqref{7.45}）的最低阶近似，
+现考虑第一IP（如\autoref{7.45}）的最低阶近似，
 利用$\mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2)}(E)+\mathbf{\Sigma}^{(3)}(E)$
     \begin{align*}
     \varepsilon_{1}'=\varepsilon_{1}+\Sigma_{11}^{(2)}\left(\varepsilon_{1}\right)+\Sigma_{11}^{(3)}\left(\varepsilon_{1}\right)
     \end{align*}
 请证明，
 该方程右边等于$\varepsilon_{1}+{}^{N}E_{0}^{(2)}+{}^{N} E_{0}^{(3)}$，
-此处${}^{N}E_{0}^{(3)}$为$\hd$关联能的三阶多体微扰论结果（见\eqref{6.78}）。
+此处${}^{N}E_{0}^{(3)}$为$\hd$关联能的三阶多体微扰论结果（见\autoref{6.78}）。
 类似地，
 请证明，
 对$EA$的最低阶修正

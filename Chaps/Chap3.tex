@@ -189,7 +189,7 @@ Hartree-Fock理论等价于单行列式理论\endnote{
 
 
 \subsection{库伦算符和交换算符}
-式\eqref{3.4}中的两项涉及对$b$指标的求和，
+\autoref{3.4}中的两项涉及对$b$指标的求和，
 在单行列式理论中，
 这两项代表电子-电子相互作用。
 若去掉这两项：
@@ -197,7 +197,7 @@ Hartree-Fock理论等价于单行列式理论\endnote{
 	h(1)\chi_a(1) = \epsilon_a\chi_a(1)
 \end{align}
 上式就是单个电子在核势场中的自旋态所对应的单电子\sch 方程。 
-式\eqref{3.4}中的第一个双电子项叫作\emph{库伦}项, 
+\autoref{3.4}中的第一个双电子项叫作\emph{库伦}项, 
 这一项在单纯的Hartree理论中也存在, 
 所谓Hartree理论是指使用Hartree积波函数而非反对称Hartree积波函数(即Slater行列式)的理论. 
 第二个双电子项叫作\emph{交换}项, 
@@ -207,7 +207,7 @@ Hartree-Fock理论等价于单行列式理论\endnote{
 库伦项有一个非常简单的解释. 
 在精确的理论中库伦作用由双电子算符$r_{12}^{-1}$表示. 
 在Hartree或Hartree-Fock理论中, 
-正如式\eqref{3.4}所示, 
+正如\autoref{3.4}所示, 
 $\chi_a$中的电子1会感受到单电子库伦势：
 \begin{align}
 	v_a^\mathrm{coul}(1) = \sum_{b\neq a} \int\dd{x}_2\,|\chi_b(2)|^2 r_{12}^{-1}
@@ -248,7 +248,7 @@ Hartree-Fock理论中,
 与(3.11)相比, (3.10)中$r_{12}^{-1}$右边的电子1和2的坐标交换了顺序. 
 不同于\emph{定域}的库伦算符, 人们一般说交换算符是\emph{非定域}算符, 
 因为在空间中任一点$\mathbf{x}_1$上, 并不存在一个简单的势能$\mathscr{K}_b(\mathbf{x}_1)$。 $\mathscr{K}_b(\mathbf{x}_1)$作用于$\chi_a(\mathbf{x}_1)$上所产生的结果依赖于$\chi$在全空间的值\footnote{
-	注意到式\eqref{3.10}中的积分也涉及$\chi_a$即可理解这一点.
+	注意到\autoref{3.10}中的积分也涉及$\chi_a$即可理解这一点.
 }, 
 并非只依赖于$\chi_a$在$\mathbf{x}_1$一点的值, 这点在(3.10)的表达式中很明显. 
 如此的后果就是, 举个例子, 我们无法画出交换势的等高线图, 但库伦势就可以. 
@@ -267,12 +267,12 @@ Hartree-Fock理论中,
 它有本征值方程的形式, 
 但是方括号中的算符作用到不同的自旋轨道$\chi_a$上时, 
 算符本身也会改变(因为求和指标限制$b\neq a$). 
-然而通过考察式\eqref{3.10}\eqref{3.11}, 
+然而通过考察\autoref{3.10}\autoref{3.11}, 
 很明显有下式：
 \begin{align}
 	\left[ \mathscr{J}_a(1) - \mathscr{K}_a(1)  \right]\chi_a(1) = 0
 \end{align}
-因而可以将这一项加到式\eqref{3.14}中, 
+因而可以将这一项加到\autoref{3.14}中, 
 同时移去求和指标的限制, 
 如此可以定义一个算符——Fock算符：
 \begin{align}
@@ -340,7 +340,7 @@ Hartree-Fock方程
 \section{H-F方程的推导}
 本节来推导Hartree-Fock方程的一般自旋轨道形式, 
 也即, 
-将单Slater行列式的能量极小化以得到式\eqref{3.17}. 
+将单Slater行列式的能量极小化以得到\autoref{3.17}. 
 推导并未对自旋轨道作任何预设. 
 以后我们再专门研究限制性和非限制性自旋轨道并引入基组, 
 以得到可用计算机方便求解的代数方程(矩阵方程). 
@@ -468,7 +468,7 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 	\epsilon_{ab} = \epsilon_{ab}^*
 \end{align}
 \exercise{
-	证明式\eqref{3.40}.
+	证明\autoref{3.40}.
 	
 }
 在以上约束下, 
@@ -508,7 +508,7 @@ $\delta\braket{\tp|\hs|\tp} = \braket{\delta\tp|\hs|\tp} + \braket{\tp|\hs|\delt
 	& = \sum_{ab}\epsilon_{ba}[\delta\chi_a|\chi_b] + \text{复共轭}
 	\label{3.45}
 \end{align}
-由上面的练习及式\eqref{3.45}可知, 
+由上面的练习及\autoref{3.45}可知, 
 $\scr{L}$的一阶变分(3.42)成为
 \begin{align}
 	\delta\scr{L} =& \sum_{a=1}^N [\delta\chi_a|h|\chi_a] + \sum_{a=1}^{N}\sum_{b=1}^{N} [\delta\chi_a\chi_a|\chi_b\chi_b] - [\delta\chi_a\chi_b|\chi_b\chi_a]\notag\\
@@ -534,7 +534,7 @@ $\scr{L}$的一阶变分(3.42)成为
 \end{align}
 
 这个结果第一眼看来可能有些奇怪, 
-因为它不是如式\eqref{3.17}那样标准的本征值形式. 
+因为它不是如\autoref{3.17}那样标准的本征值形式. 
 原因就是任意一个由自旋轨道$\{\chi_a \}$构成的单行列式波函数$\ket{\Psi_0}$在自旋轨道本身上仍然留有一定的任意性：
 可以混合这些自旋轨道而不改变期望值$E_0 = \braket{\Psi_0|\hs|\Psi_0}$. 
 在导出Hartree-Fock方程的正则形式前, 
@@ -676,7 +676,7 @@ Fock算符中依赖于自旋轨道的部分是库伦和交换算符.
 \begin{align}
 	\bm{\epsilon}' = \mathbf{U}^\dagger \bm{\epsilon}\mathbf{U}
 \end{align}
-由式\eqref{3.40}可知$\bm{\epsilon}$是一厄米矩阵. 
+由\autoref{3.40}可知$\bm{\epsilon}$是一厄米矩阵. 
 因此总能找到一个合适的酉矩阵$\mathbf{U}$使得变换(3.67)将$\bm{\epsilon}$对角化. 
 此处我们不关心如何找到这个矩阵, 
 只需要知道它存在且唯一. 
@@ -726,14 +726,14 @@ Fock算符对这些被占轨道有泛函的依赖,
 	由此证明Fock算符是一个厄米算符.
 	
 }
-\eqref{3.70}的每个解$\ket{\chi_j}$都有一个自旋轨道能量$\epsilon_j$. $N$个能量最低的自旋轨道就是$\ket{\Psi_0}$中的占据自旋轨道, 我们用指标$a,b,\ldots$来标记它们. 余下的无穷个自旋轨道的能量更高, 我们称其为\emph{虚}轨道或未占轨道, 并用指标$r,s,\ldots$来记. 这里的主要目的是得到轨道能量$\epsilon_a,\epsilon_b$等等的能量, 并看看能为这些轨道能量赋予什么物理意义.
+\autoref{3.70}的每个解$\ket{\chi_j}$都有一个自旋轨道能量$\epsilon_j$. $N$个能量最低的自旋轨道就是$\ket{\Psi_0}$中的占据自旋轨道, 我们用指标$a,b,\ldots$来标记它们. 余下的无穷个自旋轨道的能量更高, 我们称其为\emph{虚}轨道或未占轨道, 并用指标$r,s,\ldots$来记. 这里的主要目的是得到轨道能量$\epsilon_a,\epsilon_b$等等的能量, 并看看能为这些轨道能量赋予什么物理意义.
 
-用$\bra{\chi_i}$左乘\eqref{3.70}就可证明Fock算符在这组自旋轨道下的的矩阵表示是对角的, 
+用$\bra{\chi_i}$左乘\autoref{3.70}就可证明Fock算符在这组自旋轨道下的的矩阵表示是对角的, 
 其对角元就是轨道能量：
 \begin{align}
 	\braket{\chi_i|f|\chi_j} = \epsilon_j\braket{\chi_i|\chi_j} = \epsilon_j\delta_{ij}
 \end{align}
-用式\eqref{3.16}的Fock算符表达式可知, 
+用\autoref{3.16}的Fock算符表达式可知, 
 轨道能量可以写作：
 \begin{align}
 	\epsilon_i & = \braket{\chi_i|h|\chi_i} = \braket{\chi_i|h+\sum_b(\scr{J}_b-\scr{K}_b)|\chi_i}\notag\\
@@ -770,7 +770,7 @@ Fock算符对这些被占轨道有泛函的依赖,
 \end{align}
 现在来看这两个式子. 
 轨道能量$\epsilon_a$代表自旋轨道$\ket{\chi_a}$上电子的能量. 
-由\eqref{3.78}可知这个能量是动能加核吸引势能($\braket{a|h|a}$)再加上与余下的$N-1$个自旋轨道$\ket{\chi_b}$上的$N-1$个电子之间的的库伦($\braket{ab|ab}$)和交换($-\braket{ab|ba}$)作用, 
+由\autoref{3.78}可知这个能量是动能加核吸引势能($\braket{a|h|a}$)再加上与余下的$N-1$个自旋轨道$\ket{\chi_b}$上的$N-1$个电子之间的的库伦($\braket{ab|ab}$)和交换($-\braket{ab|ba}$)作用, 
 此处$b \neq a$. 
 正如之前所看到的, 
 只有当$\ket{\chi_a},\ket{\chi_b}$上的两个电子自旋平行时积分$\braket{ab|ba}$才不为零, 
@@ -780,7 +780,7 @@ Fock算符对这些被占轨道有泛函的依赖,
 虽然其中有一些会为零.
 
 
-$\epsilon_a$的结果也许是可预料的. 但式\eqref{3.79}中的自旋轨道能量比较特殊. 
+$\epsilon_a$的结果也许是可预料的. 但\autoref{3.79}中的自旋轨道能量比较特殊. 
 它包括$\ket{\chi_r}$中电子的动能和核吸引势能$\braket{r|h|r}$, 这我们是知道的, 
 它它还包括与\hft 基态中全部$N$个电子的库伦和交换作用$\braket{rb|rb},-\braket{rb|br}$, 也就是与自旋轨道$\{\chi_b|b=1,2,\ldots,N\}$中电子的作用. 
 这就好象将一个电子额外加到$\ket{\Psi_0}$得到一个$(N+1)$-电子态, $\epsilon_r$表示这个额外电子的能量. 
@@ -805,7 +805,7 @@ $\epsilon_a$的结果也许是可预料的. 但式\eqref{3.79}中的自旋轨道
 $\ket{\Psi_0}$的总能不是所有轨道能量之和，原因如下. 
 能量$\epsilon_a$中包括$\chi_a$上的电子与其余占据轨道(例如$\chi_b$)上的电子之间的库伦和交换作用. 
 但$\epsilon_b$也包括$\chi_b$电子与其余自旋轨道(如$\chi_a$)上的电子之间的库伦和交换作用. 
-因此当对$\epsilon_a,\epsilon_b$作加法时, $\chi_a,\chi_b$上的两个电子之间的相互作用被计入了两次. 这就是总能$E_0$的正确表达式\eqref{3.81}想对与轨道能量之和$(3.80)$多出因子$\frac{1}{2}$的原因.
+因此当对$\epsilon_a,\epsilon_b$作加法时, $\chi_a,\chi_b$上的两个电子之间的相互作用被计入了两次. 这就是总能$E_0$的正确表达\autoref{3.81}想对与轨道能量之和$(3.80)$多出因子$\frac{1}{2}$的原因.
 
 若总能并非轨道能量之和, 
 那么我们可以为轨道能量赋予何种物理意义？
@@ -858,7 +858,7 @@ $\ket{^{N-1}\Psi_c}$可能是或不是被电离物质的基态.
 	& = -\braket{c|h|c} - \frac{1}{2}\sum_{a}\braket{ac||ac}- \frac{1}{2}\sum_{b}\braket{cb||cb}\notag\\
 	& = -\braket{c|h|c} - \frac{1}{2}\sum_{b}\braket{cb||cb}
 \end{align}
-将此结果与\eqref{3.75}中占据自旋轨道能量的定义做比较可以发现, 
+将此结果与\autoref{3.75}中占据自旋轨道能量的定义做比较可以发现, 
 从$\chi_c$上挪去一个电子的电离能就是轨道能量$\epsilon_c$的负值
 \begin{align}
 	\mathrm{IP} = ^{N-1}E_c - ^NE_0 = -\epsilon_c
@@ -895,14 +895,14 @@ $\ket{^{N-1}\Psi_c}$可能是或不是被电离物质的基态.
 我们可以方便地计算电子亲和能.
 
 \exercise{
-	使用\eqref{3.87}导出$^{N+1}E^r$的表达式, 
-	与$^NE_0$(\eqref{3.88})相减以证明
+	使用\autoref{3.87}导出$^{N+1}E^r$的表达式, 
+	与$^NE_0$(\autoref{3.88})相减以证明
 	\begin{align*}
 		^NE_0 - ^{N+1}E^r = -\braket{r|h|r} - \sum_b\braket{rb||rb}.
 	\end{align*}
 }
 
-有了上面练习题中的结果及式\eqref{3.76}, 
+有了上面练习题中的结果及\autoref{3.76}, 
 我们可以看到在虚自旋轨道$\chi_r$上加一个电子的电子亲和能就是该自旋轨道对应能量的负值
 \begin{align}
 	\mathrm{EA} = ^{N}E_0 - ^{N+1}E^r = -\epsilon_r
@@ -933,11 +933,11 @@ Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. �
 
 \subsection{Brillouin定理}
 \label{sec3.3.2}
-\hft 方程\eqref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 
+\hft 方程\autoref{3.70}会生成一组自旋轨道$\{\chi_i\}$. 
 由其中能量最低的$N$个自旋轨道构成的单行列式$\ket{\Psi_0}$就是基态的\hft 近似. 
 正如上一章讨论的, 由集合$\{\chi_i\}$可以构造相当多的行列式. 
 知道了Fock算符的形式, 现在正好可以证明一个关于这些行列式的子集的定理. 
-该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\ref{f2.7}). 
+该子集就是所有单激发行列式$\ket{\Psi_a^r}$——将$\ket{\Psi_0}$中$\chi_a$换为$\chi_r$即得(\autoref{f2.7}). 
 在精确基态的多行列式表示中, 我们可能会预想, 这些单行列式将给出领头阶修正：
 
 \begin{align}
@@ -964,7 +964,7 @@ Koopmans定理给出一种计算近似的电离能和电子亲和能的办法. �
 \end{align}
 两个态的混合体现在非对角元$\braket{\Psi_0|\hs|\Psi_a^r}$上. 
 这个矩阵元可以用我们介绍过的行列式间矩阵元计算规则求出, 
-结果可以从\ref{t2.5}\ref{t2.6}中直接读出：
+结果可以从\autoref{t2.5}\autoref{t2.6}中直接读出：
 \begin{align}
 	\braket{\Psi_0|\hs|\Psi_a^r} = \braket{a|h|r} + \sum_b\braket{ab||rb}
 \end{align}
@@ -981,7 +981,7 @@ Fock算符的矩阵元就是
 根据定义, 
 求解\hft 本征值问题时要求非对角元$\braket{\chi_i|f|\chi_j}=0(i\neq j)$. 
 那么就能说求解\hft 本征值方程等价于确保$\ket{\Psi_0}$不和任何单激发行列式发生混合. 
-\eqref{3.97}中(能量)最低的解为
+\autoref{3.97}中(能量)最低的解为
 \begin{align}
 	\begin{pmatrix}
 		E_0 & 0\\
@@ -1077,11 +1077,11 @@ Fock算符的矩阵元就是
 	E_0 & = \braket{\Psi_0|\hs|\Psi_0} = \braket{\Psi_0|\hs_0|\Psi_0} + \braket{\Psi_0|\vs|\Psi_0} \notag\\
 	& = \sum_a\epsilon_a + \braket{\Psi_0|\vs|\Psi_0} = E_0^{(0)} + E_0^{(1)}
 \end{align}
-其中$\braket{\Psi_0|\vs|\Psi_0}$我们成为精确能量展开式\eqref{3.104}中的一阶能量. 
+其中$\braket{\Psi_0|\vs|\Psi_0}$我们成为精确能量展开\autoref{3.104}中的一阶能量. 
 第六章的重心是计算$E_0^{(2)}$及更高阶能量.
 
 \exercise{
-	使用式\eqref{3.108}中$\vs$的表达式、\hft 势$v^\mathrm{HF}(i)$的表达式\eqref{3.18}及矩阵元计算规则, 
+	使用\autoref{3.108}中$\vs$的表达式、\hft 势$v^\mathrm{HF}(i)$的表达\autoref{3.18}及矩阵元计算规则, 
 	直接证明$\braket{\Psi_0|\vs|\Psi_0}=-\frac{1}{2}\sum_a\sum_b\braket{ab||ab}$. 
 	这意味着$E_0^{(0)}$减去了$E_0^{(0)}=\sum_a\epsilon_{a}$中被计入两次的电子-电子排斥, 
 	因而给出正确的\hft 能量$E_0$.
@@ -1142,12 +1142,12 @@ $\beta$的结果也一样,
 	\label{3.114}
 	\left[ \int\dd\omega_1\alpha^*(\omega_1)f(\mathbf{x}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) = \epsilon_i\psi_j(\mathbb{r}_1)
 \end{align}
-下一步需算出\eqref{3.114}左侧的式子. 
+下一步需算出\autoref{3.114}左侧的式子. 
 将自旋轨道的Fock算符写为
 \begin{align}\label{3.115}
 	f(\mathbf{x}_1) = h(\mathbf{r}_1) + \sum_c^N\int\dd{x}_1\,\chi_c^*(\mathbf{x}_2)\twoe(1-\scr{P}_{12})\chi_c(\mathbf{x}_2)
 \end{align}
-那么\eqref{3.114}成为
+那么\autoref{3.114}成为
 \begin{align}
 	\left[ \int\dd\omega_1\alpha^*(\omega_1)f(\mathbf{x}_1)\omega_1 \right]\psi_j(\mathbf{r}_1) &= \left[ \int\dd\omega_1\alpha^*(\omega_1)h(\mathbf{r}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) \notag\\
 	+\Bigg[ \sum_c\int\dd\omega_1\dd{x}_2\,\alpha^*(\omega_1)\chi_c^*(&\mathbf{x}_2)\twoe(1-\scr{P}_{12})\chi_c(\mathbf{x}_2)\alpha(\omega_1) \Bigg]\psi_j(\mathbf{r}_1)  \notag\\
@@ -1182,7 +1182,7 @@ $\beta$的结果也一样,
 	\label{3.120}
 \end{align}
 现在可以进行对$\dd\omega_1$和$\dd\omega_2$的积分. 
-\eqref{3.120}中最后一项根据自旋正交性为零. 
+\autoref{3.120}中最后一项根据自旋正交性为零. 
 这反映自旋平行电子之间没有交换作用的事实. 
 两个库伦项是相等的, 
 那么可得
@@ -1208,7 +1208,7 @@ $\beta$的结果也一样,
 \end{align}
 这些分量与自旋轨道版本的非常类似, 
 除了库伦算符中多一个因子$2$. 
-\eqref{3.122}中的求和当然对$N/2$个占据轨道$\{\psi_a\}$进行. 
+\autoref{3.122}中的求和当然对$N/2$个占据轨道$\{\psi_a\}$进行. 
 闭壳层空间\hft 方程就是
 \begin{align}
 	f(1)\psi_j(1) = \epsilon_j\psi_j(1)
@@ -1223,7 +1223,7 @@ $\beta$的结果也一样,
 	E_0 & = \braket{\Psi_0|\hs|\Psi_0} = 2\sum_a(a|h|a) + \sum_a\sum_b2(aa|bb) - (ab|ba) \notag\\
 	& = 2\sum_ah_{aa} + \sum_a\sum_b 2J_{ab} -K_{ab}
 \end{align}
-还未完成的就是将式\eqref{3.72}中的轨道能量表达式转换为闭壳层空间轨道形式.
+还未完成的就是将\autoref{3.72}中的轨道能量表达式转换为闭壳层空间轨道形式.
 
 \exercise{
 	将轨道能量的自旋轨道表达式
@@ -1254,7 +1254,7 @@ $\beta$的结果也一样,
 \begin{align}
 	E_0 = 2h_{11} + J_{11}
 \end{align}
-这与\eqref{3.127}相符, 
+这与\autoref{3.127}相符, 
 因为$J_{ii}=K_{ii}$.
 
 
@@ -1329,16 +1329,16 @@ Roothaan\endnote{
 就我们当下的目的来看, 
 只需预设$\{\phi_\mu\}$是一组已知的函数就行. 
 当基组越来越完备时, 
-展开式\eqref{3.133}就可以越来越准确地表示“精确”的分子轨道, 
-也就是(近似)的分子轨道 收敛到了式\eqref{3.132}中的(精确)分子轨道——Fock算符的真实本征函数. 
+展开\autoref{3.133}就可以越来越准确地表示“精确”的分子轨道, 
+也就是(近似)的分子轨道 收敛到了\autoref{3.132}中的(精确)分子轨道——Fock算符的真实本征函数. 
 对任意的有限基组. 
-我们所得的分子轨道都是截断的展开\eqref{3.133}, 
+我们所得的分子轨道都是截断的展开\autoref{3.133}, 
 它仅仅精确到由$\{\phi_\mu\}$所张的空间(即在仅这个子空间内是精确的).
 
 
-由\eqref{3.133}可知, 
+由\autoref{3.133}可知, 
 计算\hft 分子轨道的问题约化为计算一组展开系数$\{C_{\mu i} \}$的问题. 
-我们可将线性展开\eqref{3.133}带入\hft 方程\eqref{3.132}得到一个矩阵方程. 
+我们可将线性展开\autoref{3.133}带入\hft 方程\autoref{3.132}得到一个矩阵方程. 
 若使用指标$\nu$, 
 则方程为
 \begin{align}
@@ -1388,7 +1388,7 @@ Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩�
 
 
 有了$\mathbf{F,S}$的定义, 
-就可将积分形式的\hft 方程\eqref{3.135}写为
+就可将积分形式的\hft 方程\autoref{3.135}写为
 \begin{align}
 	\sum_\nu F_{\mu\nu} C_{\nu i} = \epsilon_i\sum_{\nu}S_{\mu\nu}C_{\nu i}\quad i=1,2,\ldots,K
 \end{align}
@@ -1418,7 +1418,7 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 		&            &        & \epsilon_K
 	\end{pmatrix}
 \end{align}
-需注意\eqref{3.133}到\eqref{3.140}中, 
+需注意\autoref{3.133}到\autoref{3.140}中, 
 由$\mathbf{C}$的列来描述分子轨道, 
 也即描述$\psi_1$的系数是$\mathbf{C}$的第一列, 
 描述$\psi_2$的系数是$\mathbf{C}$的第二列, 
@@ -1458,11 +1458,11 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 \exercise{
 	使用密度算符$\hat{\rho}(\bfr)=\sum_{i=1}^{N}\delta(\bfr_i-\bfr)$、第二章中求矩阵元的规则, 
 	以及自旋轨道到空间轨道的转换规则, 
-	由$\rho(\bfr)=\braket{\Psi_0|\hat{\rho}(\bfr)|\Psi_0}$推得\eqref{3.142}.
+	由$\rho(\bfr)=\braket{\Psi_0|\hat{\rho}(\bfr)|\Psi_0}$推得\autoref{3.142}.
 	
 }
 
-现在把分子轨道展开式\eqref{3.133}插入\eqref{3.142}得到电荷密度：
+现在把分子轨道展开\autoref{3.133}插入\autoref{3.142}得到电荷密度：
 \begin{align}
 	\rho(\bfr) & = 2\sum_{a}^{N/2}\psi_a^*(\bfr)\psi_a(\bfr) \notag\\
 	& = 2\sum_{a}^{N/2}\sum_{v} C_{\nu a}^*\phi_\nu^*(\bfr)\sum_{\mu}C_{\mu a}\phi_\mu(\bfr) \notag\\
@@ -1478,10 +1478,10 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 	P_{\mu\nu} = 2\sum_{a}^{N/2}C_{\mu a}C_{\nu a}^*
 	\label{3.145}
 \end{align}
-由\eqref{3.144}知，
+由\autoref{3.144}知，
 给定一组已知的基函数$\{\phi_\mu\}$, 
 矩阵$\mathbf{P}$就完全确定了电荷密度$\rho(\bfr)$. 
-它通过\eqref{3.145}和展开系数$\mathbf{C}$直接联系起来，
+它通过\autoref{3.145}和展开系数$\mathbf{C}$直接联系起来，
 那么我们就能用$C_{\mu i}$或$P_{\mu\nu}$来表示闭壳层\hft 的计算结果。
 
 
@@ -1495,7 +1495,7 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 	证明$\frac{1}{2}\mathbf{P}$在正交归一基下是等幂的。
 	
 	\Next
-	用式\eqref{3.122}的闭壳层Fock算符表达式证明
+	用\autoref{3.122}的闭壳层Fock算符表达式证明
 	\begin{align}
 		\label{3.146}
 		f(\bfr_1) & = h(\bfr_1) + v^\mathrm{HF}(\bfr_1)\notag\\
@@ -1507,13 +1507,13 @@ $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 我们先猜一个密度矩阵$\mathbf{P}$, 
 也即猜一个描述电子位置的电荷密度$\rho(\bfr)$. 
 之后会有一些内容介绍如何猜. 
-然后使用猜测的电荷密度根据\eqref{3.146}计算电子的有效单电子势$v^\mathrm{HF}(\bfr_1)$. 
+然后使用猜测的电荷密度根据\autoref{3.146}计算电子的有效单电子势$v^\mathrm{HF}(\bfr_1)$. 
 由此就得到有效单电子\ha (Fock算符), 
 然后就可求解单电子的类\sch 方程以确定有效势中的单电子态$\{\psi_i\}$. 
-由\eqref{3.142}可用新的单电子态(即分子轨道$\{\psi_i\}$)确定对密度的更优近似. 
+由\autoref{3.142}可用新的单电子态(即分子轨道$\{\psi_i\}$)确定对密度的更优近似. 
 有了新的电荷密度就能计算新的\hft 势，然后重复以上手续直到\hft 势不再改变(有效静电场也随之不再改变), 
 也即, 
-直到(通过求解类\sch 方程)产生电荷密度的场与前一次的场(及\hft 本征值方程)相洽(相同)(使用\eqref{3.146}). 
+直到(通过求解类\sch 方程)产生电荷密度的场与前一次的场(及\hft 本征值方程)相洽(相同)(使用\autoref{3.146}). 
 这就是\hft 方程常叫作\emph{自洽场}方程的缘故. 
 这也是看待求解Roothaan方程所涉及物理的一种视角. 
 回到真实的代数手续中, 
@@ -1562,8 +1562,8 @@ $\mathbf{T,V^\mathrm{nucl}}$中的积分会具体地计算出来,
 动能核核吸引积分的计算会在附录A讲述.
 
 
-回到\eqref{3.148}的Fock矩阵表达式, 
-现要将分子轨道展开\eqref{3.133}插入到双电子项中, 
+回到\autoref{3.148}的Fock矩阵表达式, 
+现要将分子轨道展开\autoref{3.133}插入到双电子项中, 
 得到
 \begin{align}
 	\label{3.154}
@@ -1639,7 +1639,7 @@ Roothaan方程就成为通常本征值方程的形式,
 	\int\dd{r}\phi_\mu^{\prime*}(\bfr)\phi_\nu'(\bfr) = \delta_{\mu\nu}
 \end{align}
 为得到$\mathbf{X}$的具体性质, 
-我们将变换\eqref{3.162}带入\eqref{3.163}得到
+我们将变换\autoref{3.162}带入\autoref{3.163}得到
 \begin{align}
 	\int\dd{r}\phi_\mu^{\prime *}(\bfr)\phi_\nu^{\prime}(\bfr) & = \int\dd{r}\left[ \sum_{\lambda}X_{\lambda\mu}^*\phi_{\lambda}^*(\bfr)\right]\left[ \sum_\sigma X_{\sigma\nu}\phi_\sigma(\bfr) \right]\notag\\
 	& = \sum_\lambda\sum_\sigma X_{\lambda\sigma}^*\int\dd{r}\phi_\lambda^*(\bfr)X_{\sigma\nu}\notag\\
@@ -1678,19 +1678,19 @@ $\mathbf{X}$必须是非奇异的,
 我们可以如此构建$\mathbf{S}^{-1/2}$：将$\mathbf{S}$对角化为$\mathbf{s}$, 
 取每个本征值的负平方根, 
 构成一个对角阵$\mathbf{s}^{-1/2}$, 
-然后用\eqref{3.167}中的变换``逆对角化”. 
+然后用\autoref{3.167}中的变换``逆对角化”. 
 若$\mathbf{S}$厄米, 
 则$\mathbf{S}^{-1/2}$也厄米. 
-将\eqref{3.167}带入\eqref{3.165}
+将\autoref{3.167}带入\autoref{3.165}
 \begin{align}
 	\mathbf{S}^{-1/2}\mathbf{SS}^{-1/2} = \mathbf{S}^{-1/2}\mathbf{S}^{1/2} = \mathbf{S}^0 = \mathbf{1}
 \end{align} 
 可以看到$\mathbf{X=S}^{-1/2}$确实为一个正交化变换矩阵. 
 由于$\mathbf{S}$的本征值都为正(练习3.5), 
-所以\eqref{3.167}中开平方的操作没有问题. 
+所以\autoref{3.167}中开平方的操作没有问题. 
 但是若基组中出现线性相关或这近线性相关, 
 则某些本征值将接近零, 
-\eqref{3.167}中某些除数会接近零. 
+\autoref{3.167}中某些除数会接近零. 
 因此对称正交化会因近线性相关发生数值精度上的问题.
 
 
@@ -1704,7 +1704,7 @@ $\mathbf{X}$必须是非奇异的,
 \begin{align}
 	X_{ij} = U_{ij}/s_{ij}^{1/2}
 \end{align}
-将$\mathbf{X}$的定义\eqref{3.165}带入, 
+将$\mathbf{X}$的定义\autoref{3.165}带入, 
 可得
 \begin{align}
 	\mathbf{X^\dagger SX} = (\mathbf{Us}^{-1/2})^\dagger\mathbf{SUs}^{-1/2} = \mathbf{s}^{-1/2}\mathbf{U^\dagger SUs}^{-1/2} = \mathbf{s}^{-1/2}\mathbf{ss}^{-1/2}=\mathbf{1}
@@ -2103,7 +2103,7 @@ $\mathbf{P}'$的对角元一般用于\emph{L\"owdin 布居分析}：
 	q_A = Z_A - \sum_{\mu\in A}(\mathbf{S}^{1/2}\mathbf{PS}^{1/2})_{\mu\mu}
 \end{align}
 \exercise{
-	导出式\eqref{3.198}的右边, 
+	导出\autoref{3.198}的右边, 
 	也即, 
 	证明$\alpha=1/2$等价于按$\mathbf{P}'$的对角元做布居分析.
 	
@@ -2229,7 +2229,7 @@ Slater函数在描述分子轨道$\psi_i$的定性行为时要比高斯函数更
 	\mathbf{R}_P = (\alpha\mathbf{R}_A+\beta\mathbf{R}_B)/(\alpha+\beta)
 \end{align}
 \exercise{
-	推导式\eqref{3.207}.
+	推导\autoref{3.207}.
 	
 }
 按(3.207)的结果, 
@@ -2294,7 +2294,7 @@ $d_{p\mu}$称作收缩系数.
 能那么$\phi_\mu^\mathrm{CGF}$只能有s-对称性. 
 虽然我们不研究这种情况, 
 但若原初高斯函数的中心可以不相同, 
-那么展开式\eqref{3.122}原则上可以描述任意形式的基函数. 
+那么展开\autoref{3.122}原则上可以描述任意形式的基函数. 
 收缩高斯函数背后的想法就是, 
 预先选好收缩长度、收缩形式和收缩指数
 以令(3.212)右边构成一组比较合适的基函数$\phi_\mu^\mathrm{CGF}$, 
@@ -2302,7 +2302,7 @@ $d_{p\mu}$称作收缩系数.
 也就是, 
 收缩系数等等在SCF计算过程中不发生变化. 
 双电子积分$(\mu\nu|\lambda\sigma)$在收缩函数基组$\{\phi_\mu^\mathrm{CGF}\}$下, 
-按照\eqref{3.212}, 
+按照\autoref{3.212}, 
 成为一组可快速计算的由原初高斯函数构成的双电子积分之和. 
 
 
@@ -2318,7 +2318,7 @@ $d_{p\mu}$称作收缩系数.
 多原子计算中常用STO-3G基组, 
 而非用Slater函数来计算积分. 
 我们会用STO-3G基组来计算模型体系$\hd,\heh$. 
-现在需要考虑收缩式\eqref{3.212}的具体形式以令其可以近似Slater型函数.
+现在需要考虑收缩\autoref{3.212}的具体形式以令其可以近似Slater型函数.
 
 
 首先考虑拟合Slater指数$\zeta=1.0$的这种Slater函数. 
@@ -2366,10 +2366,10 @@ STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数
 	\end{tabular}
 	\label{t3.1}
 \end{table}
-重叠列于\ref{t3.1}中. 
+重叠列于\autoref{t3.1}中. 
 最佳的拟合是$\alpha=0.270950$, 
-如\ref{f3.2}a所示. 
-对应的径向分布函数$(4\pi r^2)|\phi_{1s}(r)|^2$绘在\ref{f3.2}b中以便比较. 
+如\autoref{f3.2}a所示. 
+对应的径向分布函数$(4\pi r^2)|\phi_{1s}(r)|^2$绘在\autoref{f3.2}b中以便比较. 
 注意靠近原点时这两个函数的行为差异, 
 且高斯函数在大$r$处衰减更快. 
 (3.217)中的重叠$S$在STO-G、STO-3G下可也可最大化, 
@@ -2495,14 +2495,14 @@ STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数
 	}
 	\label{f3.3}
 \end{figure}
-\ref{f3.3} 展示了拟合到$1s$ Slater函数($\zeta=1.0$)时, 增加收缩式中的高斯型, 拟合质量会提升(即由STO-1G到STO-2G到STO-3G质量的提升.)
+\autoref{f3.3} 展示了拟合到$1s$ Slater函数($\zeta=1.0$)时, 增加收缩式中的高斯型, 拟合质量会提升(即由STO-1G到STO-2G到STO-3G质量的提升.)
 \exercise{
 	计算以上三个STO-LG收缩函数$\phi(\bfr)$的在原点处的值, 
 	并与Slater函数($\zeta=1.0$)的$(\pi)^{-1/2}$比较.
 	
 }
 
-式\eqref{3.219}到(3.221)中将STO-LG拟合到Slater函数时Slater指数为$\zeta=1.0$. 
+\autoref{3.219}到(3.221)中将STO-LG拟合到Slater函数时Slater指数为$\zeta=1.0$. 
 那么其他轨道指数下该如何得到对Slater函数的拟合？轨道指数是一个比例因子, 
 它在$r$方向上缩放函数, 
 即它压缩或使函数膨胀, 
@@ -2557,13 +2557,13 @@ STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数
 
 根据3.4.6节所列的SCF计算步骤, 
 首先要确定核标架的几何构型. 
-这里使用\ref{f2.5}中所绘的坐标系, 
+这里使用\autoref{f2.5}中所绘的坐标系, 
 核间距$R=|\mathbf{R}_{12}|$定位实验值1.4原子单位(Bohr). 
 基组是标准的STO-3G基, 
 包含两个函数$\phi_1,\phi_2$, 
 每个都由三个原初高斯型收缩而成, 
 并已用最小平方法按Slater函数($\zeta=1.24$)拟合, 
-式\eqref{3.225}已说过. 
+\autoref{3.225}已说过. 
 那么就是
 \begin{equation}
 	\begin{split}
@@ -2585,7 +2585,7 @@ SCF流程的下一步要计算基组$\{\phi_\mu\}$形成的积分,
 \begin{align}
 	S_{\mu\nu} = \int\dd{r}\phi_\mu^\mathrm{CGF}(\mathbf{r-R}_A)\phi_\nu^\mathrm{CGF}(\mathbf{r-R}_B)
 \end{align}
-将一般的收缩式\eqref{3.212}带入, 
+将一般的收缩\autoref{3.212}带入, 
 该积分就化为对原初高斯型重叠积分的求和. 
 就是
 \begin{align}
@@ -2609,7 +2609,7 @@ SCF流程的下一步要计算基组$\{\phi_\mu\}$形成的积分,
 $\mathbf{R}=0$时$S_{12}$当然是$1.0$.
 
 \exercise{
-	用STO-1G的定义式\eqref{3.219}和比例关系(3.224)证明, 
+	用STO-1G的定义\autoref{3.219}和比例关系(3.224)证明, 
 	当轨道指数$\zeta=1.24$ 距离$R=1.4\au$时, 
 	与(3.229)的结果相对, 
 	STO-1G下的重叠积分值为$S_{12}=0.6648$. 
@@ -2651,7 +2651,7 @@ $V_{11}^1=V_{22}^2$值为$-1.0$,
 相较之下精确值为$-0.5\,\mathrm{a.u,}$. 
 若$\phi_1$中的电子用某种方式局域在了核1的位置上, 
 那么核2对它的吸引是$-1/1.4=-0.7143$. 
-这种吸引的实际值如图\ref{f3.4}所示, 
+这种吸引的实际值如\autoref{f3.4}所示, 
 是$V_{11}^2=-0.6538$(在$R=1.4\au$下). 
 当核间距$R$增大, 
 $V_{11}^2$会渐近地收敛于$-R^{_1}$. 
@@ -2767,7 +2767,7 @@ $\mathbf{T}$和$\mathbf{V}^\mathrm{nucl}$的非对角元没有对应的简单经
 \exercise{对$\psi_1,\psi_2$进行归一化, 由此导出$\psi_1,\psi_2$的基函数展开中的系数$[2(1+S_{12})]^{-1/2}$及$[2(1-S_{12})]^{-1/2}$.
 	\Next
 	\phrase{极小基 $\hd^+$}的系数同样可由对称性决定, 办法与\phrase{极小基 $\hd$}一样. 
-	用以上所得系数求解式\eqref{3.234}, 得到\phrase{极小基 $\hd^+$}在$R=1.4\au$的轨道能量, 验证它们是
+	用以上所得系数求解\autoref{3.234}, 得到\phrase{极小基 $\hd^+$}在$R=1.4\au$的轨道能量, 验证它们是
 	\begin{align*}
 		\epsilon_1 = (H_{11}^\mathrm{core} + H_{12}^\mathrm{core})(1+S_{12}) = -1.2528\,\mathrm{a.u}\\
 		\epsilon_2 = (H_{11}^\mathrm{core} - H_{12}^\mathrm{core})(1--S_{12}) = -0.4756\,\mathrm{a.u}.
@@ -2796,7 +2796,7 @@ $\mathbf{T}$和$\mathbf{V}^\mathrm{nucl}$的非对角元没有对应的简单经
 		\epsilon_2 = (F_{11}-F_{12})/(1+S_{12}) = +0.6703\au
 	\end{align*}
 	\Next
-	用总电子能量的一般式\eqref{3.184}证明\phrase{极小基 $\hd$}的电子能量为
+	用总电子能量的一般\autoref{3.184}证明\phrase{极小基 $\hd$}的电子能量为
 	\begin{align*}
 		E_0 = (F_{11}+H^\mathrm{core}_{11}+F_{12}+H^\mathrm{core}_{12})/(1+S_{12}) = -1.8310\au
 	\end{align*}
@@ -2881,7 +2881,7 @@ $f_{ij}=(\psi_i|f|\psi_j)$根据定义是对角阵,
 
 
 上面得到的解离能与实验符合得很好, 但要完整地回答解离问题, 还需要研究整个势能面. 
-在不同核间距下重复以上计算就得到\ref{f3.5}中所绘的势能面, 
+在不同核间距下重复以上计算就得到\autoref{f3.5}中所绘的势能面, 
 图中也绘出了由Kolos和Wolniewicz\endnote{
 	W. Kolos and Wolniewics, Improved theoretical ground-state energy of the hydrogen molecule, \textit{J. Chem. Phys.} \textbf{49:} 404 (1968).
 }得到的十分精确的结果. 
@@ -2948,7 +2948,7 @@ $f_{ij}=(\psi_i|f|\psi_j)$根据定义是对角阵,
 
 我们可用练习3.25和练习3.27中的结果分析地研究解离行为. 
 当$R\to\infty$时, 
-\ref{f3.4}中的双中心核吸引趋于零, 
+\autoref{f3.4}中的双中心核吸引趋于零, 
 $H_{11}^\mathrm{core}\to T_{11}+V_{11}^1$, 
 这就是当前基下氢原子的能量($-0.4666$). 
 除单中心电子电子排斥积分$(\phi_1\phi_1|\phi_1\phi_1)$外, 
@@ -2978,7 +2978,7 @@ $\mathrm{H}^-$的能量中含有电子-电子排斥积分$(\phi_1\phi_1|\phi_1\p
 限制性闭壳层\hft 计算表现很差, 
 但这无损于其在平衡点附近的用处. 
 计算所得的平衡构型就是$E_\mathrm{tot}$关于的核坐标最小时的构型. 
-\ref{t3.2}列出了实验核间距$1.4\au$领域内的总能量值. 
+\autoref{t3.2}列出了实验核间距$1.4\au$领域内的总能量值. 
 计算得到最小能量是在$1.346\au$处. 
 误差为$4\%$, 
 我们可以预估, 
@@ -3028,7 +3028,7 @@ $\mathrm{H}^-$的能量中含有电子-电子排斥积分$(\phi_1\phi_1|\phi_1\p
 可以增加基组的尺寸. 
 然而有时也需要或想要对指数进行优化, 
 如果没有其他合适理由来确定``合理''值到底是多少. 
-\ref{t3.3}列出了不同$1s$ Slater轨道指数$\zeta$下的\phrase{极小基 $\hd$}($R=1.4$)总能量. 
+\autoref{t3.3}列出了不同$1s$ Slater轨道指数$\zeta$下的\phrase{极小基 $\hd$}($R=1.4$)总能量. 
 $R=1.4\au$时最优指数为$1.14$. 
 最优值会随键长改变, 
 而且对其他分子中的氢原子其值也会不同. 
@@ -3077,7 +3077,7 @@ L. Wolniewics, Variational treatment of the $\heh$ ion and the $\beta$-{decay} i
 因为$\mathrm{He}$的电离能(24.6eV)比质子的电子亲和能(13.6eV)大. 
 或者说, 
 $\mathrm{He}^+$的电子亲和能比$\mathrm{H}^+$的电子亲和能大. 
-所涉不同物种的精确能量列在表\ref{t3.4}中. 
+所涉不同物种的精确能量列在\autoref{t3.4}中. 
 由于解离产物是闭壳层的, 
 我们可以预期, 
 限制性\hft 计算在大键长下的行为应当正确, 
@@ -3132,7 +3132,7 @@ I. N. Levine, Quantum Chemistry, Allyn and Bacon, Boston, 1974, p. 190 .
 这个值和氢的值一样, 
 都比最优原子值大$1.24$倍. 
 如前所述, 
-\ref{f3.6}或(3.249)(3.250)中每个STO-3G函数都是三个原初高斯型之和.
+\autoref{f3.6}或(3.249)(3.250)中每个STO-3G函数都是三个原初高斯型之和.
 
 
 计算的下一步, 
@@ -3313,7 +3313,7 @@ $\mathbf{G}$加$\mathbf{H}^\mathrm{core}$就得到$\mathbf{F}$.
 		0.5871&0.9541\\0.5871&-0.9541
 	\end{pmatrix}
 \end{align}
-这三种正交化方案的对比绘在图~\ref{f3.7}中. 
+这三种正交化方案的对比绘在图~\autoref{f3.7}中. 
 原基函数之间的角度按$\cos\theta=S_{12}$定义. 
 Schmidt正交化保持第一个基函数不动, 
 令第二个与其正交. 
@@ -3376,7 +3376,7 @@ Schmidt正交化保持第一个基函数不动,
 	\end{pmatrix}
 	\label{3.270}
 \end{align}
-式\eqref{3.270}\eqref{3.269}给出了$\mathrm{HeH}^{++}$的轨道和轨道能量, 
+\autoref{3.270}\autoref{3.269}给出了$\mathrm{HeH}^{++}$的轨道和轨道能量, 
 我们将其作为$\heh$的轨道和轨道能的初猜. 
 注意最低分子轨道$\psi_1$主要由$\phi_1$组成(系数为0.9291), 
 而仅混入了一点点$\phi_2$(系数0.1398). 
@@ -3423,7 +3423,7 @@ $\mathbf{P}$的对角元说明大部分电子密度聚集在在$\mathrm{He}$附�
 岳父输出文件时应配以接下来的描述.
 
 
-表\ref{t3.5}中列出了不同迭代次数下密度矩阵的元素及对应电子能量. 
+\autoref{t3.5}中列出了不同迭代次数下密度矩阵的元素及对应电子能量. 
 随着迭代进行, 
 电荷在$\mathrm{H}$附近积累, 
 在$\mathrm{He}$附近减少. 
@@ -3438,7 +3438,7 @@ $\mathbf{P}$的对角元说明大部分电子密度聚集在在$\mathrm{He}$附�
 就能立马算出能量, 
 而无需等到构建下一个新的$\mathbf{P}$. 
 
-\ref{t3.5}中能量从高至低单调收敛. 由于能量是个变分量, 所以能量的相对误差要小于波函数和密度矩阵的. 
+\autoref{t3.5}中能量从高至低单调收敛. 由于能量是个变分量, 所以能量的相对误差要小于波函数和密度矩阵的. 
 
 最终的波函数和能量为
 \begin{align}
@@ -3505,9 +3505,9 @@ $\heh$的总能为电子能量加上核排斥势$2/R$, 数值为$-2.860662\au$.
 单电子原子$\mathrm{He}^+$在此基下的能量也类似$T_{11}+V_{11}^1=-1.9755\au$. 
 $\mathrm{He}$原子在$\phi_1$上由两个电子, 它的总能除了包含动能、核吸引势外, 还有两个电子之间的排斥. 
 因此$\mathrm{He}$的能量为$2(T_{11}+V_{11}^1)+(\phi_1\phi_1|\phi_1\phi_1)$. 
-这些能量列在\ref{t3.6}中以便与\ref{t3.4}中的精确结果比较.
+这些能量列在\autoref{t3.6}中以便与\autoref{t3.4}中的精确结果比较.
 
-由表\ref{t3.6}中的结果可以算得如下过程的解离能：
+由\autoref{t3.6}中的结果可以算得如下过程的解离能：
 \begin{align}
 	\heh & \to \text{He} + \text{H}^+ \quad \Delta E = 0.2168\,\, \text{a.u.}\\
 	\heh & \to \text{He}^+ + \text{H} \quad \Delta E = 0.4168\,\, \text{a.u.}
@@ -3541,7 +3541,7 @@ $\text{He}$的能量值相对于$\heh$的值而言,
 	\centering\caption{$\text{H}$和$\text{He}$物种的能量（STO-3G基组： $\zeta_1=2.0925,\zeta_2=1.24$）}
 	\label{t3.6}
 \end{table}
-\ref{f3.8}中绘出了用标准指数计算得到的势能曲线， 同时也绘出了Wolniewicz所得的精确结果结果。 STO-3G计算所得的平衡键长是$1.3782\,\,\text{a.u.}$, 和精确结相当接近，但是势阱深度却被高估了。这里没有遇到$\hd$情形（\ref{f3.5}）下的问题： 解离行为正确，因为解离产物是闭壳层的。
+\autoref{f3.8}中绘出了用标准指数计算得到的势能曲线， 同时也绘出了Wolniewicz所得的精确结果结果。 STO-3G计算所得的平衡键长是$1.3782\,\,\text{a.u.}$, 和精确结相当接近，但是势阱深度却被高估了。这里没有遇到$\hd$情形（\autoref{f3.5}）下的问题： 解离行为正确，因为解离产物是闭壳层的。
 \begin{figure}[htbp]\centering
 	\newlength{\twoc}
 	\settowidth{\twoc}{精确}
@@ -3621,7 +3621,7 @@ $V_{11}^1$,
 $V_{22}^2$, 
 $(\phi_1\phi_1)$和$(\phi_2\phi_2|\phi_2\phi_2)$.
 
-\exercise{利用电子能量表达式\eqref{3.184}，Fock矩阵表达式\eqref{3.154}以及以及渐近矩阵\eqref{3.281}证明
+\exercise{利用电子能量表达\autoref{3.184}，Fock矩阵表达\autoref{3.154}以及以及渐近矩阵\autoref{3.281}证明
 	\begin{equation*}
 		E_0(R\to\infty)=2T_{11}+2V_{11}^1+(\phi_2\phi_2|\phi_2\phi_2)
 	\end{equation*}
@@ -3703,7 +3703,7 @@ $\text{H}$所附带的基函数在大$R$时要参与贡献，
 我们先来介绍收缩(contraction)的概念。
 
 \subsection{收缩型高斯函数}
-\ref{sec3.5.1}中定义了模型计算中用到的$1s$ STO-3G基组，那里我们已经给出一些关于收缩的想法。
+\autoref{sec3.5.1}中定义了模型计算中用到的$1s$ STO-3G基组，那里我们已经给出一些关于收缩的想法。
 这里再简要回顾一下。选择基的时候有两个主要因素要考虑。一、我们希望尽可能使用最高效、最精确的函数，就是说如下展开
 \begin{equation}
 	\psi_i=\sum_{\mu=1}^{K}C_{\mu i}\phi_\mu
@@ -3754,7 +3754,7 @@ $3d$,
 
 使用以上这些函数时，计算积分比较方便\footnote{因为是高斯函数。}，不过对于$2s$, $3p$...这些形式的高斯型原初函数，却没有这样的便利性。
 因此，任何具有$s$对称性的函数（如$2s,3s$ Slater函数），都要用$1s$高斯函数来展开，涉及其他对称性时办法也一样\footnote{例如$3p$用$2p$来展开，$4d$用$3d$展开等等。}。
-\eqref{3.283}中的原初函数的原点$\mathbf{R}_P$一般来说都与$\mathbf{R}_A$重合. 
+\autoref{3.283}中的原初函数的原点$\mathbf{R}_P$一般来说都与$\mathbf{R}_A$重合. 
 收缩式中的原初函数的原点和高斯函数的原点不同的情况也有, 不过只在高斯波瓣基组(Gaussian lobe)中才会这么用。
 这种基组中, 各种函数（如$s,p,d$等等）都只用球形的$1s$高斯函数的组合来近似：做法是将$1s$高斯函数根据被近似函数的性质放在空间中合适的位置。
 拿$2p$高斯轨道来说, 将两个符号相反的$1s$高斯波瓣(即$1s$高斯函数)的原点无限靠近, 即可以任意精度逼近$2p$型高斯函数.\footnote{
@@ -3908,7 +3908,7 @@ $\mathrm{Sc}$到$\mathrm{Kr}$包括18个函数等等。
 这些程序可以使用收缩的高斯函数来重现使用Slater轨道的极小基的计算结果。
 STO-LG方法中每个基函数由L个基础的高斯函数收缩而来，
 其中的收缩系数和收缩指数要选得让基函数尽可能地近似Slater函数。
-我们在\ref{sec3.5.1}中已经讨论过$1s$的STO-3G基组。
+我们在\autoref{sec3.5.1}中已经讨论过$1s$的STO-3G基组。
 
 
 这本书的计算局限于一些只包含第一第二周期（不超过氟）元素的分子。
@@ -3943,7 +3943,7 @@ STO-LG方法及其拟合过程的一个独特之处是$2sp$,$3sp$等每个壳层
 收缩的长度更长会导致更多的时间消耗在于积分运算中。
 经验上认为收缩长度为3的时候计算出来的性质就足够复现Slater函数计算出来的价键性质，
 因此STO-3G也变成极小基计算的实际标准。
-表\ref{t3.7}给出了STO-3G的收缩指数和式(3.295)(3.297)。
+\autoref{t3.7}给出了STO-3G的收缩指数和式(3.295)(3.297)。
 按照一般的标记方法，
 STO-3G收缩是(6s3p/3s)/[2s1p/1s]。
 \begin{table}[h]
@@ -3958,7 +3958,7 @@ STO-3G收缩是(6s3p/3s)/[2s1p/1s]。
 	\end{tabular}
 	\label{t3.7}
 \end{table}
-当轨道指数$\zeta = 1.0$的Slater函数的最小二乘拟合系数（即表\ref{t3.7}）得到之后，
+当轨道指数$\zeta = 1.0$的Slater函数的最小二乘拟合系数（即\autoref{t3.7}）得到之后，
 对其他轨道指数的Slater函数就可以通过将(3.295)和(3.297)中的$\alpha$乘以$\zeta^2$得到。
 我们还需要确定在电子结构计算中要用的Slater轨道指数$\zeta$。
 有两种可能的选择，
@@ -3970,7 +3970,7 @@ STO-3G收缩是(6s3p/3s)/[2s1p/1s]。
 因为搜索空间的维度太大了。
 一个折中的选择是使用一组标准指数，
 这一组指数是为一组小分子优化之后所得的指数的平均值。
-推荐的STO-3G的指数见表\ref{t3.8}。
+推荐的STO-3G的指数见\autoref{t3.8}。
 
 \begin{table}[h]
 	\centering\caption{标准STO-3G指数}
@@ -4088,7 +4088,7 @@ STO-3G中，我们对一个已知函数(Slater函数)做最小二乘拟合，
 我们用一组预先指定的未收缩函数对原子做计算，
 然后得到一个收缩方式；
 而在4-31G中，
-我们先确定了函数形式[\eqref{eq:3.300}-\eqref{eq:3.304}]，
+我们先确定了函数形式[\autoref{eq:3.300}-\autoref{eq:3.304}]，
 然后优化所有的收缩参数。
 换句话说，这个基组是经过先收缩、再优化得到的。
 如果用我们的一般记号，
@@ -4104,7 +4104,7 @@ STO-3G中，我们对一个已知函数(Slater函数)做最小二乘拟合，
 我们定义靠内价层缩放因子$\zeta'$和靠外价层缩放因子 $\zeta''$，
 并将它们的平方分别乘在靠内、靠外$\alpha$上面。 
 注意只有价层做这样的缩放。
-\ref{tab:3.9}列出了标准的4-31G缩放因子，
+\autoref{tab:3.9}列出了标准的4-31G缩放因子，
 只有H的因子明显偏离1，
 虽然碳的靠外函数与原子情形下相比也略微紧缩一些。
 
@@ -4128,7 +4128,7 @@ S. Huzinaga, Gaussian-type functions for polyatomic systems. 1,
     \bottomrule
 \end{tabular}
 \end{center}
-请用附录~\ref{appendix:a}中的重叠积分表达式导出He 4-31G的收缩参数。
+请用附录~\autoref{appendix:a}中的重叠积分表达式导出He 4-31G的收缩参数。
 }
 
 \subsection{极化基组：6-31G*与6-31G**}
@@ -4243,12 +4243,12 @@ and p-type functions added to hydrogen (**).}
 
 我们之后要计算的分子有$\mathrm{H}_2$、与其等电子的$\mathrm{N}_2$和$\mathrm{CO}$，
 以及十电子系列化合物$\mathrm{CH}_4$ 、$\mathrm{NH_3}$ 、$\mathrm{H_2O}$和$\mathrm{FH}$。 
-除非另有说明，否则计算时用的分子的的标准几何构型都列在表~\ref{tab:3.10}中。 
+除非另有说明，否则计算时用的分子的的标准几何构型都列在表~\autoref{tab:3.10}中。 
 表中这些“实验测定”的值接近但并不总是与“最佳”或最新的结构测定实验中获得的值相同。 
 我们选择的这一小组分子显然不能完全覆盖\phrase{从头算}法能计算的丰富的化学。 
 然而，它们确实展示了SCF计算能得到的一些有意思的量。 
 下一节讨论开壳层计算时，会介绍一些其他分子。
-然而，这本书中的示例性计算涉及的多数分子基本上就是表\ref{tab:3.10}中的那些。
+然而，这本书中的示例性计算涉及的多数分子基本上就是\autoref{tab:3.10}中的那些。
 
 \subsection{总能量}
 总能量大概是任何一个\phrase{从头计算}所能给出的最主要的量。 
@@ -4265,8 +4265,8 @@ and p-type functions added to hydrogen (**).}
 并且“精确”结果也可以说等同于实验结果。
 
 
-表\ref{tab:3.11} 至 \ref{tab:3.13}展示了使用四个基组
-STO-3G、4-31G、6-31G* 和 6-31G** 算出的表\ref{tab:3.10}中分子的总能量。
+\autoref{tab:3.11} 至 \autoref{tab:3.13}展示了使用四个基组
+STO-3G、4-31G、6-31G* 和 6-31G** 算出的\autoref{tab:3.10}中分子的总能量。
  $\hd$没有内壳层，也不是重原子，
 因此无需添加重原子那样的$d$-型极化函数，
 所以对于$\hd$来说，6-31G*基组相当于4-31G基组。
@@ -4331,7 +4331,7 @@ STO-3G、4-31G、6-31G* 和 6-31G** 算出的表\ref{tab:3.10}中分子的总能
 \end{table}
 
 \exercise{
-利用表 \ref{tab:3.11} 到\ref{tab:3.13}的结果，计算每个基组下，下面两个反应的能量差，再计算Hartree-Fock极限下的能量差：
+利用表 \autoref{tab:3.11} 到\autoref{tab:3.13}的结果，计算每个基组下，下面两个反应的能量差，再计算Hartree-Fock极限下的能量差：
 \begin{align*}
 		\mathrm{N}_2+3 \mathrm{H}_2 \rightarrow 2 \mathrm{NH}_3 & &\Delta E=? \\
 		\mathrm{CO}+3 \mathrm{H}_2 \rightarrow \mathrm{CH}_4+\mathrm{H}_2 \mathrm{O} & &\Delta E=?
@@ -4394,9 +4394,9 @@ Hartree-Fock对电子亲和势几乎总是描述得很差，
 除了有趣的$\mathrm{N_2}$外，
 我们的一系列分子的Koopmans电离势与实验的一致性还尚可接受。
 
-分子$\hd$只有一个占据轨道。在各种基组下，该占据轨道的能量负值如表\ref{tab:3.14}所示，所有$\hd$轨道如图\ref{fig:3.9}所示。超过极小基的那些基组下，占据轨道能量有微小变化，但对所有超过极小基的那些基组，轨道能量都保持固定在 -0.595 Hartrees。 预测出的电离势（+0.595 Hartrees）误差仅有2\%。在表\ref{tab:3.14}以及随后的表格中，所有电离势都是垂直电离势而不是绝热电离势。垂直跃迁种，最终状态具与初始状态核几何结构相同；绝热跃迁种，跃迁前后核都在平衡几何结构上。Koopmans电离势的值与实验值之间的出色一致性是由于电离势中的关联效应和弛豫效应恰好相互抵消了，而两种效应在Koopmans近似里实际上被忽略了。电子关联对终态的单电子物种$\hd^+$没有影响，但它降低了初态的$\hd$的能量。弛豫效应则是降低了终态的$\hd^+$的能量。这两种效应在$\hd$这个例子种几乎相互抵消了。
+分子$\hd$只有一个占据轨道。在各种基组下，该占据轨道的能量负值如表\autoref{tab:3.14}所示，所有$\hd$轨道如图\autoref{fig:3.9}所示。超过极小基的那些基组下，占据轨道能量有微小变化，但对所有超过极小基的那些基组，轨道能量都保持固定在 -0.595 Hartrees。 预测出的电离势（+0.595 Hartrees）误差仅有2\%。在表\autoref{tab:3.14}以及随后的表格中，所有电离势都是垂直电离势而不是绝热电离势。垂直跃迁种，最终状态具与初始状态核几何结构相同；绝热跃迁种，跃迁前后核都在平衡几何结构上。Koopmans电离势的值与实验值之间的出色一致性是由于电离势中的关联效应和弛豫效应恰好相互抵消了，而两种效应在Koopmans近似里实际上被忽略了。电子关联对终态的单电子物种$\hd^+$没有影响，但它降低了初态的$\hd$的能量。弛豫效应则是降低了终态的$\hd^+$的能量。这两种效应在$\hd$这个例子种几乎相互抵消了。
 
-表\ref{tab:3.15}列出了$\mathrm{CO}$的两个Koopmans电离势。$\mathrm{CO}$的最好占据分子轨道是成键轨道$5\sigma$和$1\pi$。这两个轨道主要
+表\autoref{tab:3.15}列出了$\mathrm{CO}$的两个Koopmans电离势。$\mathrm{CO}$的最好占据分子轨道是成键轨道$5\sigma$和$1\pi$。这两个轨道主要
 
 
 \subsection{平衡几何构型}
@@ -4419,7 +4419,7 @@ Hartree-Fock对电子亲和势几乎总是描述得很差，
 \begin{align}
 	\ket{\Psi_\mathrm{RHF}} = \ket{\psi_1^\alpha\bar{\psi}_1^\beta\cdots}
 \end{align}
-上一章我们已简单介绍过开壳层行列式(\ref{sec2.5}), 
+上一章我们已简单介绍过开壳层行列式(\autoref{sec2.5}), 
 现在来推导非限制性计算所需的SCF方程.
 
 
@@ -4469,12 +4469,12 @@ Hartree-Fock对电子亲和势几乎总是描述得很差，
 \end{align}
 现在要做的是引入一组非限制性的自旋轨道$\chi_i$, 
 用上面广义\hft 方程导出决定非限制性空间轨道的空间方程. 
-我们这里所用的手续和\ref{sec3.4.1}非常类似，
+我们这里所用的手续和\autoref{sec3.4.1}非常类似，
 在那里我们曾推导过决定限制性空间轨道的空间方程。
 这里不再重复某些推导细节。
 
 
-与限制性自旋轨道所用的式\eqref{3.110}类似，
+与限制性自旋轨道所用的\autoref{3.110}类似，
 一组非限制性自旋轨道的形式如下：
 \begin{align}\label{3.309}
 	\chi_i(\mathbf{x}) =
@@ -4492,12 +4492,12 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 
 
 要导出决定$\{\psi_k^\alpha \}$和$\{\psi_k^\alpha \}$的空间方程，
-需将式\eqref{3.309}中的自旋轨道$\{\chi_i\}$带入一般的\hft 方程\eqref{3.308}中，
+需将\autoref{3.309}中的自旋轨道$\{\chi_i\}$带入一般的\hft 方程\autoref{3.308}中，
 然后对自旋变量$\omega$积分。
 为简单计，
 我们先看$\psi_j^\alpha$的方程，
 然后用$\alpha$和$\beta$自旋间的对称性写出$\psi_j^\beta$的对应方程。
-将\eqref{3.309}带入式\eqref{3.308}, 
+将\autoref{3.309}带入\autoref{3.308}, 
 得到
 \begin{align}\label{3.310}
 	f(1)\psi_j^\alpha(\mathbf{r}_i) \alpha(\omega_1) = \epsilon_j \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
@@ -4524,7 +4524,7 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 	f^\beta(\mathbf{r}_1) = \int\dd\omega_1 \beta^*(\omega_1) f(\mathbf{r}_1,\omega_1)\beta(\omega_1) \label{3.315}
 \end{align}
 
-我们能利用用\eqref{3.115}中$f(\bfr_1,\omega_1)$在自旋轨道下的定义，
+我们能利用用\autoref{3.115}中$f(\bfr_1,\omega_1)$在自旋轨道下的定义，
 将自旋变量积出去，
 得到$f^\alpha,f_\beta$的显式定义。
 另外一种办法是，
@@ -4578,7 +4578,7 @@ $\alpha$自旋的电子可以感受到库伦势$J_a^\alpha$和交换势$-K_a^\al
 \begin{align}\label{3.318}
 	f^\beta(1) = h(1) + \sum_{a}^{N^\beta}[J_a^\beta(1) - K_a^\beta(1) ] + \sum_{a}^{N^\alpha}[J_a^\alpha(1)].
 \end{align}
-上面两式中的库伦与交换算符的定义与之前的定义\eqref{3.124}\eqref{3.125}类似。
+上面两式中的库伦与交换算符的定义与之前的定义\autoref{3.124}\autoref{3.125}类似。
 写出来就是
 \begin{align}
 	J_a^\alpha(1) & = \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \psi_a^\alpha(2) \label{3.319}\\
@@ -4588,8 +4588,8 @@ $\alpha$自旋的电子可以感受到库伦势$J_a^\alpha$和交换势$-K_a^\al
 \end{align}
 $J_a^\beta,K_a^\beta$的定义也完全类似。
 
-由两个Fock算符的$f^\alpha,f^\beta$的定义式\eqref{3.316}\eqref{3.318}可见，
-它们对应的两个\phrase{积分-微分-本征值方程}\eqref{3.312}\eqref{3.313}无法相互独立地求解。
+由两个Fock算符的$f^\alpha,f^\beta$的定义\autoref{3.316}\autoref{3.318}可见，
+它们对应的两个\phrase{积分-微分-本征值方程}\autoref{3.312}\autoref{3.313}无法相互独立地求解。
 也即，
 $f^\alpha$依赖于$\beta$占据轨道$\psi_a^\beta$，
 因为$f^\alpha$中包含$J_a^\beta$。
@@ -4599,8 +4599,8 @@ $f^\alpha$依赖于$\beta$占据轨道$\psi_a^\beta$，
 
 \exercise{
 	假如不用上面这种观察的办法写出$f^\alpha(1)$，
-	请仿照\ref{sec3.4.1}小节中的做法，
-	利用\eqref{3.314}，
+	请仿照\autoref{sec3.4.1}小节中的做法，
+	利用\autoref{3.314}，
 	将自旋变量积掉，
 	然后做一些代数运算，
 	推出
@@ -4651,7 +4651,7 @@ $\beta$自旋电子的规定也相同。
 为消除自由求和中的双重计数。
 自相互作用会消失，
 因为$J_{a a}^{a \alpha}-K_{a a}^{\alpha \alpha}=J_{a a}^{\beta \beta}-K_{a a}^{\beta \beta}=0$，
-正如\eqref{3.323}\eqref{3.326}中我们验证的那样。
+正如\autoref{3.323}\autoref{3.326}中我们验证的那样。
 
 \exercise{
 	Li 原子的非限制性双重态基态为$\ket{\Psi_0} = \ket{ \psi_1^\alpha(1)\bra{\psi}_1^\beta(2 \psi_2^\alpha(3)) }$。
@@ -4669,7 +4669,7 @@ $\beta$自旋电子的规定也相同。
 	
 }
 \subsection{引入基: Pople-Nesbet方程}
-要求解非限制性\hft 方程\eqref{3.312}\eqref{3.313}，
+要求解非限制性\hft 方程\autoref{3.312}\autoref{3.313}，
 我们需引入一个基组（basis set），以便将这两个\phrase{积分-微分方程}转化为矩阵方程\endnote{
 	J. A. Pople and R. K. Nebet, Self-consistent orbitals for radicals, \textit{J. Chem. Phys.} \textbf{22:} 571 (1954).
 }，
@@ -4679,7 +4679,7 @@ $\beta$自旋电子的规定也相同。
 	\psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \\
 	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K\\
 \end{align}
-\eqref{3.312}\eqref{3.313}这两个本征值方程。
+\autoref{3.312}\autoref{3.313}这两个本征值方程。
 \subsection{非限制性密度矩阵}
 \subsection{Fock矩阵的表达式}
 \subsection{非限制SCF方程的解}
@@ -4776,7 +4776,7 @@ $\theta=0\text{°}$对应限制性解$\psi_a^\alpha=\psi_1^\beta=\psi_1$，
 	
 }
 
-将基组展开式\eqref{3.356}\eqref{3.357}带入上面的四个式子中，
+将基组展开\autoref{3.356}\autoref{3.357}带入上面的四个式子中，
 就可得到非限制性分子轨道的基组展开式。
 我们从现在起只考虑占据分子轨道，
 它们由下式给出
@@ -4790,9 +4790,9 @@ $\theta=0\text{°}$对应限制性解$\psi_a^\alpha=\psi_1^\beta=\psi_1$，
 	c_1 = [2(1+S_{12} )]^{-1/2}\cos\theta - [2(1 - S_{12} )]^{-1/2}\sin\theta
 \end{align}
 
-通过这种把$\psi_1$和$\psi_2$混合起来的做法（即式\eqref{3.358}\eqref{3.359}），
+通过这种把$\psi_1$和$\psi_2$混合起来的做法（即\autoref{3.358}\autoref{3.359}），
 $\phi_1,\phi_2$在$\psi_1^\alpha,\psi_1^\beta$的基组展开式中的权重就可以变化，
-正如\eqref{3.362}\eqref{3.363}所示。
+正如\autoref{3.362}\autoref{3.363}所示。
 若$\theta=0$，
 这个波函数就是限制性波函数（$c_1=c_2=[2(1+S_{12} )]^{-1/2}$）。
 而当$\theta$从零开始增加，

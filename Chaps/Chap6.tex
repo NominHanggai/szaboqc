@@ -57,7 +57,7 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 \label{6.6}
 \end{align}
 将(6.4a,
-6.4b)带入\ref{6.1}, 
+6.4b)带入\autoref{6.1}, 
 得到:
 \begin{align*}
 (\hs_0&+\lambda\vs)(\ket{i}+\lambda\ket{\Psi_i^{(1)}} + \lambda^2 \ket{\Psi_i^{(2)}} +\cdots )\\
@@ -76,7 +76,7 @@ $\ket{\Phi_i},\mathscr{E}$会很接近$\ket{i},E_i^{(0)}$.
 \end{subequations}
 等等. 
 每个式子左乘$\ket{i}$, 
-由正交关系\ref{6.6}可得如下各阶能量:
+由正交关系\autoref{6.6}可得如下各阶能量:
 \begin{subequations}
 \begin{align}
 E_i^{(0)} &= \braket{i|\hs|i} \\
@@ -1080,7 +1080,7 @@ arc (-15:-45:2.12cm) node[right,midway]{$1$} node{\dian};
 \right]
 +\cdots
 \end{align}  
-利用表~\ref{t6.1}和练习6.
+利用表~\autoref{t6.1}和练习6.
 1中的五阶图表达式, 
 我们可以得到
 \begin{align}
@@ -1657,7 +1657,7 @@ width=\textwidth,
 }
 
 \section{轨道微扰论的图表示}
-\ref{sec6.2}中为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示空穴和粒子的自旋轨道, 用点来对应单粒子微扰$v$. 然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
+\autoref{sec6.2}中为RS微扰论引入了一种完全普适的图表示. 为了利用它来处理轨道微扰, 我们用上线和下线来分别表示空穴和粒子的自旋轨道, 用点来对应单粒子微扰$v$. 然后画出和之前同样的一组图, 用指标$a$, $b$, ...来标记空穴, 用$r$, $s$, ...来标记粒子. 所以就有
 \begin{center}	
 	\begin{tikzpicture}[baseline={(current bounding box.south)},scale=.6]
 	\tiny
@@ -1727,7 +1727,7 @@ width=\textwidth,
 	=\sum_{ar}\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}}
 	\end{gather}
 \end{subequations}
-可以发现这些结果和\eqref{6.43b}\eqref{6.43c}中的一样。 
+可以发现这些结果和\autoref{6.43b}\autoref{6.43c}中的一样。 
 $E_0^{(3)}$算出后， 
 为
 %\addtocounter{equation}{1}
@@ -1756,7 +1756,7 @@ arc (-45:45:2.12cm)node[right,midway]{r} node{\dian} arc(135:180:2.12cm)node[lef
 \begin{align}
 \sum^N = 2\sum^{N/2}
 \end{align}
-在\ref{sec6.7}中我们将看到，
+在\autoref{sec6.7}中我们将看到，
 更一般的情形下，
 做这种转换时，
 要把每个图的值乘以$2^l$, 
@@ -1897,7 +1897,7 @@ E_0 = E_0^{(0)} + E_0^{(1)} = \sum_a\epsilon_a - \frac{1}{2}\sum_{ab}\braket{ab|
 对\hft 能量的第一个修正项出现在二阶微扰上.
 
 
-二阶能量的一般表达式在\ref{sec6.1}节已经推导过, 
+二阶能量的一般表达式在\autoref{sec6.1}节已经推导过, 
 为
 \begin{align}
 E_0^{(2)} = \sideset{}{'}\sum_n\frac{|\braket{0|\vs|n}|^2}{E_0^{(0)} - E_n^{(0)}}
@@ -1963,13 +1963,12 @@ E_0^{(2)} = 2\sum_{abrs}^{N/2}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a + \
 \label{6.74}
 \end{align}
 \exercise{
-推导式\eqref{6.73}和\eqref{6.74}, 
-从式\eqref{6.72}出发.
-
+从\autoref{6.72}出发, 推导\autoref{6.73}和\autoref{6.74}, 
+.
 }
 按照同样的方式, 
 但更加繁琐一些, 
-我们从\eqref{6.15}式出发可以证明三阶能量为
+我们从\autoref{6.15}式出发可以证明三阶能量为
 \begin{align}
 E_0^{(3)} = & \frac{1}{8} \sum_{abcdrs} \frac{\braket{ab||rs}\braket{cd||ab}\braket{rs||cd}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_r-\epsilon_s}} \notag\\
           & + \frac{1}{8}\sum_{abrstu}\frac{\braket{ab||rs}\braket{rs||tu}\braket{tu||ab}}{(\epsilon_a + \epsilon_b -\epsilon_r-\epsilon_s){\epsilon_c + \epsilon_d -\epsilon_t-\epsilon_u}} \notag\\
@@ -2006,17 +2005,17 @@ E_0^{(2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 E_0^{(3)} = \frac{K_{12}^2(J_{11}+J_{22}-4J_{12}+2K_{12})}{4(\epsilon_1-\epsilon_2)^2}
 \label{6.78}
 \end{equation}
-现在来证明\eqref{6.77}中的二阶能就是一般性的表达式\eqref{6.74}的特例. 
+现在来证明\autoref{6.77}中的二阶能就是一般性的表达式~\eqref{6.74}的特例. 
 由于只有一个空穴轨道$a=b=1$, 
  同样的, 
 $r=s=2$, 
-所以\eqref{6.74}变为
+所以\autoref{6.74}变为
 \begin{align*}
 E_0^{(2)} & = 2\frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} - \frac{\braket{11|22}\braket{22|11}}{2(\epsilon_1-\epsilon_2)} \\
           & = \frac{|\braket{11|22}|^2}{2(\epsilon_1-\epsilon_2)} = \frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \end{align*}
-\ref{sec6.7.2}将证明\eqref{6.75}中的三阶能量表达式可以给出\eqref{6.78}中的结果.
-\exercise{从\eqref{6.76}出发推导\eqref{6.77}\eqref{6.78}.}
+\autoref{sec6.7.2}将证明\autoref{6.75}中的三阶能量表达式可以给出\autoref{6.78}中的结果.
+\exercise{从\autoref{6.76}出发推导\autoref{6.77}\autoref{6.78}.}
 
 \section{RS微扰展开的$N$依赖性}
 本章的引言中曾提过， 
@@ -2027,11 +2026,11 @@ Brueckner首先考察了RS微扰论在在无穷大(宏观)体系中的适用性�
 $E_0^{(n)}$确实正比于粒子数。
 但他未能给出一般性的证明(即对$n=7,8,\ldots,\infty$)。 
 这里我们简要叙述一下Brueckner的分析过程。
-\ref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，
+\autoref{sec6.7.2}中会讨论Goldston的的Linked-Cluster定理，
 该定理用RS微扰论的图表示证明了Brueckne的猜想适用于所有阶的微扰。
 我们来考虑一个由$N$个无相互作用的\phrase{极小基 $\hd$}组成的超分子。
 我们会证明，
-利用\ref{sec6.2}中所推导的一般表达式，
+利用\autoref{sec6.2}中所推导的一般表达式，
 这个超分子的一、二、三、阶能量等于$N$乘单个单个分子的对应能量。
 此模型就是我们在第四章证明DCI给出的关联能量正比于$N^{1/2}$时(在大$N$极限下)所用过的。
 之前我们曾如此标记超分子的轨道：
@@ -2087,7 +2086,7 @@ E_0^{(2)} = \sum_{i=1}^{N} \frac{\left|\braket{\Psi_0|\vs|\Psi_{1_i\bar{1}_i}^{2
 我们证明了这就是每个单元的二阶能量乘以$N$.
 
 
-三阶能量的一般表达式(\eqref{6.15})为
+三阶能量的一般表达式(\autoref{6.15})为
 \begin{align}
 E_0^{(3)} = A_0^{(3)} + B_{0}^{(3)}
 \end{align}
@@ -2102,7 +2101,7 @@ B_0^{(3)} = -E_0^{(1)}\sideset{}{'}{\sum}_n\frac{|\braket{0|\vs|n}|^2}{(E_0^{(0)
 \begin{align}
 B_0^{(3)} = -(-NJ_{11}) \sum_{i=1}^{N} \frac{K_{12}^2}{(2\epsilon_1 - 2\epsilon_2)^2} = \frac{N^2J_{11}K_{12}^2}{4(\epsilon_1-\epsilon_2)^2}
 \end{align}
-其中用到了\eqref{6.80b}\eqref{6.83a}\eqref{6.83b}. 
+其中用到了\autoref{6.80b}\autoref{6.83a}\autoref{6.83b}. 
 若想三阶能量正比于$N$, 
 那么这一项肯定要被$A_0^{(3)}$中的某部分消掉。
 这正是本节开头所提的Brueckner曾发现的那种抵消。
@@ -2131,8 +2130,8 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \label{eq:6.92}
 \end{align}
 与$E_0^{(1)}$及$E_0^{(2)}$类似，
-上式就是$N$乘每个$\hd$的三阶能量(\eqref{6.78}). 
-注意到\eqref{6.78}是在基组内按照Taloy展开得到的，
+上式就是$N$乘每个$\hd$的三阶能量(\autoref{6.78}). 
+注意到\autoref{6.78}是在基组内按照Taloy展开得到的，
 这两种办法给出的结果相同，
 那么自洽性就得到了检验。
 虽然这个例子算不上证明，
@@ -2140,7 +2139,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 是尺寸一致的（也即，
 有正确的$N$依赖性）。
 
-\exercise{推导式\eqref{6.80b}和\eqref{6.90}。}
+\exercise{推导\autoref{6.80b}和\autoref{6.90}。}
 
 \section{相关能微扰展开的图表示}\label{sec6.7}
 现在来介绍$n$阶微扰能的图表示。
@@ -2158,7 +2157,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 如同前面，
 我们将相互作用以点来标记，
 将空穴和粒子用向下和向上的线标记。
-回看\eqref{6.72},
+回看\autoref{6.72},
 可以发现, 
 二阶能量表达式的分子上的矩阵元有四个指标（而非两个）。
 直接原因就是此时的微扰具有双粒子性质。
@@ -2189,9 +2188,9 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 			\end{tikzpicture}
 		\end{center}
 \end{enumerate}
-要求(2)和(3)与\ref{sec6.2}中的完全相同，
+要求(2)和(3)与\autoref{sec6.2}中的完全相同，
 要求(4)是Brillouin定理的一个“不明显”结论。
-就和\ref{sec6.2}中一样，
+就和\autoref{sec6.2}中一样，
 图可以任意扭动，
 只要点的竖直顺序不变即可。
 使用这些规则，
@@ -2221,7 +2220,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \end{center}
 但在四个点的情况下， 
 不等价图的数目达到十二个，
-如图~\ref{f6.1}所示。
+如图~\autoref{f6.1}所示。
 
 \begin{figure}[H]
 	\centering
@@ -2519,7 +2518,7 @@ E_0^{(3)} = A_0^{(3)} + B_0^{(3)} = \frac{NK_{12}^2(J_{11} + J_{22} - 4J_{12} + 
 \begin{align*}
 E_0^{(2)} = \frac{1}{4}\sum_{abrs}\frac{\braket{ab||rs}\braket{rs||ab}}{\epsilon_{a}+\epsilon_{b}-\epsilon_{r}-\epsilon_{s}}
 \end{align*}
-该式与\eqref{6.72}的结果相同, 
+该式与\autoref{6.72}的结果相同, 
 后者是用算式推得的. 
 现在来计算剩余的三个三阶图, 
 主要关注如何确定$l$:
@@ -2611,7 +2610,7 @@ E_0^{(3)} =& \frac{1}{8}\sum_{abcdrs}
 &+ \sum_{abcrst}
 \frac{\braket{ab||rs}\braket{cs||tb}\braket{rt||ac}}{(\epsilon_a + \epsilon_b - \epsilon_s - \epsilon_r)(\epsilon_a+\epsilon_c-\epsilon_r-\epsilon_t)}
 \end{align*}
-与式\eqref{6.75}中所引的结果相同.
+与\autoref{6.75}中所引的结果相同.
 
 \exercise{
 证明如下的四阶图
@@ -2759,7 +2758,7 @@ Hugenholtz图中的如下单位
 这两个Goldstone图分别叫作直接图和交换图.
 
 
-表~\ref{t6.2}中列出了\hft 微扰论中所有的二阶和三阶Golstone图. 计算这些图的规则是:
+表~\autoref{t6.2}中列出了\hft 微扰论中所有的二阶和三阶Golstone图. 计算这些图的规则是:
 \begin{enumerate}[G1.]
 	\item 每条相互作用线:
 	\begin{center}
@@ -3289,18 +3288,18 @@ Hugenholtz图中的如下单位
 =
 \frac{1}{2}(-)^{2+1} \sum_{abrs}\frac{\braket{ab|rs}\braket{rs|ba}}{\epsilon_a+\epsilon_b-\epsilon_r\-\epsilon_s}
 \end{align*}
-可以看出以上两式加和就是\eqref{6.73}中的结果. 
+可以看出以上两式加和就是\autoref{6.73}中的结果. 
 更进一步, 
 对于闭壳层体系我们利用规则(G6), 
 将对自旋轨道的求和改写为对可见轨道求和只需在直接图的值前面乘以$2^2$, 
 在交换图前面乘以$2^1$, 
-这样就得到了式\eqref{6.74}中的结果. 
-表~\ref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 
+这样就得到了式\autoref{6.74}中的结果. 
+\autoref{t6.2}中列出了全部十二个三阶Goldstone图对应的代数式. 
 读者若想检验自己对上面所介绍的规则的理解, 
 可以试着计算这些图, 
 并与表中给出的结果对照.
 
-\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到表~\ref{t6.2}中所列的这些Goldstone图. 这个过程可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
+\exercise{把二阶/三阶Hugenholtz图拉开, 就能得到表~\autoref{t6.2}中所列的这些Goldstone图. 这个过程可能不那么容易看出来, 但是逆过程很容易理解. 比如, 把如下的图挤压成一个图:
 	\begin{align*}
 	\tikz[baseline={(current bounding box.center)},scale=.6]{
 		\coordinate (a) at (4,-2.5+2);
@@ -3346,7 +3345,7 @@ Hugenholtz图中的如下单位
 	\end{tikzpicture} 
 	\end{align*}
 同样地, 
-把表~\ref{t6.2}中的三阶Hugenholtz图压在一起, 
+把表~\autoref{t6.2}中的三阶Hugenholtz图压在一起, 
 就能得到对应的Goldstone图. 
 请你验证, 
 上面所得的Hugenholtz图的值确实与其对应的全部Goldstone图的值之和相同.
@@ -3354,8 +3353,8 @@ Hugenholtz图中的如下单位
 }
 
 下面我们举个例子, 
-在极小基$\hd$ 模型下计算表~\ref{t6.2}中二阶和三阶图的值, 
-我们会看见所得值与之前的结果完全一样(\ref{6.77}\ref{6.78}). 
+在极小基$\hd$ 模型下计算表~\autoref{t6.2}中二阶和三阶图的值, 
+我们会看见所得值与之前的结果完全一样(\autoref{6.77}\autoref{6.78}). 
 我们首先转换到对空间轨道的求和, 
 这一步要乘以$2^l$, 
 $l$是闭合圈的数目. 
@@ -3368,7 +3367,7 @@ $l$是闭合圈的数目.
 2\leftrightarrow -(2)(1/2)\frac{\braket{11|22}^2}{(2\epsilon_1-2\epsilon_2)} & = -\frac{K_{12}^2}{2(\epsilon_1-\epsilon_2)}
 \end{align*}
 二者加和就得到二阶能量, 
-结果与\ref{6.77}相同. 
+结果与\autoref{6.77}相同. 
 对三阶图我们可以写出:
 \begin{align*}
 1&\leftrightarrow (2)^2\left( \frac{1}{2} \right) \frac{\braket{11|22}\braket{22|22}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = \frac{K_{12}^2J_{22}}{2(\epsilon_1 - \epsilon_2)^2}\\
@@ -3384,10 +3383,10 @@ $l$是闭合圈的数目.
 11&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{21|12}\braket{11|22}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}\\
 12&\leftrightarrow -(2)^2 \frac{\braket{11|22}\braket{12|21}\braket{22|11}}{4(\epsilon_1 - \epsilon_2)^2}  = -\frac{K_{12}^2K_{12}}{(\epsilon_1 - \epsilon_2)^2}
 \end{align*}
-读者可以自行验证以上十二个式子之和确实等于\ref{6.78}中给出的三阶能量.
+读者可以自行验证以上十二个式子之和确实等于\autoref{6.78}中给出的三阶能量.
 
 \subsection{对图求和}
-\ref{sec6.2.3}节中已经看到，某些特定类别的图可以求和至无穷阶，因为这些图构成了几何级数。Goldstone图也可以做类似的求和。之前在$N$态问题中，我们仅求和了对角图，对角图的意思是，它们是在二阶图上加点得来的，而且每个点上的出线和入线的标签要相同。对Goldstone图也可以进行类似的操作。首先由二阶的直接图和交换图出发，在上面加入相互作用线，同时保证，与相互作用线相交的空穴线或粒子线上的标签在交点上下完全一样。举个例子，考虑如下的一组图：
+\autoref{sec6.2.3}节中已经看到，某些特定类别的图可以求和至无穷阶，因为这些图构成了几何级数。Goldstone图也可以做类似的求和。之前在$N$态问题中，我们仅求和了对角图，对角图的意思是，它们是在二阶图上加点得来的，而且每个点上的出线和入线的标签要相同。对Goldstone图也可以进行类似的操作。首先由二阶的直接图和交换图出发，在上面加入相互作用线，同时保证，与相互作用线相交的空穴线或粒子线上的标签在交点上下完全一样。举个例子，考虑如下的一组图：
 \begin{equation*}
 \Delta = 
 \tikz[baseline={(current bounding box.center)},scale=.5]{
@@ -3472,7 +3471,7 @@ $l$是闭合圈的数目.
 \begin{align}
 E_\mathrm{corr}(\mathrm{EN}) = -\frac{1}{4}\sum_{abrs}\frac{|\braket{ab||rs}|}{\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{ab}^{rs}}}
 \end{align}
-这个结果和前一章中用pstein-Nesbet对能(pair energies)给出的结果一样(\ref{5.15}\ref{5.16}).
+这个结果和前一章中用pstein-Nesbet对能(pair energies)给出的结果一样(\autoref{5.15}\autoref{5.16}).
 
 
 最后我们再提一个例子, 
@@ -3481,7 +3480,7 @@ E_\mathrm{corr}(\mathrm{EN}) = -\frac{1}{4}\sum_{abrs}\frac{|\braket{ab||rs}|}{\
 R. J. Bartlett, I. Shavitt, and G. D. Purvis, The quartic force field of H 2 0 determined bymany-body methods that include quadruple excitation effects, \textit{J. Chem. Phys.} \textbf{71}:281 (1979), 以及其中的参考文献。
 }
 与其合作者提出的\mci{双激发多体微扰论(D-MBPT($\infty$))}. 
-这个近似相当于\ref{sec5.2.3}中讨论过的线性CCA(线性耦合簇近似). 
+这个近似相当于\autoref{sec5.2.3}中讨论过的线性CCA(线性耦合簇近似). 
 按照那里的讨论, 
 正确的关联能就是
 \begin{align}
@@ -3507,16 +3506,16 @@ $E_\mathrm{corr}(\mathrm{D-MBPT}(\infty))$精确到了三阶微扰.
 Goldstone在他的\mci{链通簇}(linked-cluster)定理中用图形技术证明, 在更一般的情况下，Brueckner猜想依然成立， 也即，RS微扰论的每一阶都是尺寸一致(size-consistent)的。正比于$N^2$的项所对应的图由分离的几部分构成（即一个\emph{不链通}图）， Goldstone用含时技巧证明了这类图不会出现在$n$阶能量的最终表达式中。因此他把$n$阶能量纯粹用\phrase{\emph{链通}}图表示了出来。本章所用的图全部是\phrase{链通图}。之前我们已经多次对比了图方法和代数方法所得的两种结果，它们完全一致，读者可以相信RS微扰论的所有形式(即$N$-态微扰论、轨道微扰论等等形式)都能单纯用\phrase{链通图}表示出来（或者至少相信这个说法的合理性）。这里要说明以下尺寸一致这个词的含义，当我们说某个理论尺寸一致时，意思是，该理论给出的多体系统能量随系统大小线性增长。仅当系统是$N$个独立的闭壳层分子组成的超分子，而且所用的方法在简并轨道的酉变换下不变时，尺寸一致这个词才意味着系统的能量是$N$倍的单体能量。
 \exercise{
 某个超分子由$N$个无相互作用的极小基$\hd$分子组成，
-请通过计算表~\ref{t6.2}中的Goldstone图，
+请通过计算表~\autoref{t6.2}中的Goldstone图，
 得到该系统的$E_0^{(3)}$。
-将你的结果与\eqref{eq:6.92}相比，
+将你的结果与\autoref{eq:6.92}相比，
 后者是从代数上直接消掉正比于$N^2$的项后得到的。
 \textbf{提示:} 直接证明这个超分子的每个Goldtone图的值都等于$N$乘以单个分子的对应值。
 }
 \section{一些算例}
 在这一节中，
 我们使用微扰理论来计算各种小分子的相关能、势能面、平衡几何形状和偶极矩。
-表~\ref{tab:6.3}比较了二阶、三阶微扰理论计算得到的$\hd$的相关能和用一系列质量不断提高的基组得到的full CI相关能。
+表~\autoref{tab:6.3}比较了二阶、三阶微扰理论计算得到的$\hd$的相关能和用一系列质量不断提高的基组得到的full CI相关能。
 值得注意的是，
 二阶理论给出的相关能占full CI相关能的比例随着基的大小而显著增加。
 这似乎是一个普遍现象，并不限于双电子系统。
@@ -3563,7 +3562,7 @@ Goldstone在他的\mci{链通簇}(linked-cluster)定理中用图形技术证明,
 	\end{threeparttable}
 \label{tab:6.4}
 \end{table}
-在表~\ref{tab:6.4}中，
+在表~\autoref{tab:6.4}中，
 我们给出在三个基组下使用 SCF、$E_0^{(2)}$ 和full CI 算出的 $\hd$ 平衡键长；
 并和精确结果做了对比。 
 对于 6-31G** 基组，
@@ -3593,7 +3592,7 @@ SCF 结果与该基组下的精确结果仅相差 0.011\,a.u.；
 	\label{tab:6.5}
 \end{table}
 
-在表~\ref{tab:6.5} 中，
+在表~\autoref{tab:6.5} 中，
 我们给出SCF 和二阶微扰论算出的十电子系列化合物
 $\mathrm{CH}_4$、$\mathrm{NH}_3$、$\mathrm{H_2O}$、$\mathrm{FH}$的平衡键长，
 并与实验值作比较。
@@ -3604,7 +3603,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 请注意，在迄今为止讨论的所有体系中，
 大基组SCF计算均低估了平衡键长。
 相关效应倾向于延长那些在拉伸时生产开壳层分子片段的键。 
-表~\ref{tab:6.6}中，
+表~\autoref{tab:6.6}中，
 我们把SCF 和 MP2 水平下计算所得的$\mathrm{NH}_3$和$\mathrm{H_2O}$的平衡键角与实验值进行了比较。 
 对于较大的基组，
 二阶能量将 SCF 误差减少了大约一半。
@@ -3626,7 +3625,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	\label{tab:6.6}
 \end{table}
 
-尽管微扰理论给出的二阶能量极好地预测了包含氢的单键的长度，但对于多重键来说并非如此。 表 ~\ref{tab:6.7} 给出了 SCF 和微扰理论算得的 $\mathrm{N_2}$ 和 $\mathrm{CO}$ 键长，并与实验做了比较。 对于最大的基组，SCF 低估了实验结果约 0.03 a.u.； 二阶微扰理论预测的键长增大了，但它显著高估了校正。 三阶校正部分抵消了二阶校正的效果,但与实验的一致性仍不能完全令人满意。
+尽管微扰理论给出的二阶能量极好地预测了包含氢的单键的长度，但对于多重键来说并非如此。 表 ~\autoref{tab:6.7} 给出了 SCF 和微扰理论算得的 $\mathrm{N_2}$ 和 $\mathrm{CO}$ 键长，并与实验做了比较。 对于最大的基组，SCF 低估了实验结果约 0.03 a.u.； 二阶微扰理论预测的键长增大了，但它显著高估了校正。 三阶校正部分抵消了二阶校正的效果,但与实验的一致性仍不能完全令人满意。
 \begin{table}\centering
 	\caption{$\mathrm{N}_2$和$\mathrm{CO}$ 的平衡键长（a.u.）}
 	\begin{tabular}{lcccccc}
@@ -3666,7 +3665,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	\label{tab:6.8}
 \end{table}
 
-在离开对平衡几何的讨论之前，我们考虑使用接近 HF 极限的单电子基组（第 4 章中讲过的39-STO 基）计算$\mathrm{H_2O}$在其平衡几何附近的势能。 我们在第 4 章和第 5 章都使用了这个例子来说明\phrase{对理论}和\phrase{\phrase{耦合对}理论}。 在表~\ref{tab:6.8} 中，我们将四阶微扰论给出的相关能与前面章节中讨论的各种多电子方法给出的相关能进行了比较。 这里只提一下，二阶能量给出了基组相关能的相当大比例，并且优于 SDCI。表~\ref{tab:6.9}中对这些
+在离开对平衡几何的讨论之前，我们考虑使用接近 HF 极限的单电子基组（第 4 章中讲过的39-STO 基）计算$\mathrm{H_2O}$在其平衡几何附近的势能。 我们在第 4 章和第 5 章都使用了这个例子来说明\phrase{对理论}和\phrase{\phrase{耦合对}理论}。 在表~\autoref{tab:6.8} 中，我们将四阶微扰论给出的相关能与前面章节中讨论的各种多电子方法给出的相关能进行了比较。 这里只提一下，二阶能量给出了基组相关能的相当大比例，并且优于 SDCI。表~\autoref{tab:6.9}中对这些
 多电子理论的进行了更有意思的比较，该表列出了不同方法计算得到的$\mathrm{H_2O}$的平衡几何和两个力常数。 在考虑这些结果之前，应该指出的是，各种理论的预测应该与所用基组下的精确结果（即full CI 结果）进行比较，而不是与实验做比较。 不幸的是，我们没有这些基组下精确的结果，因此最好的办法是使用实验结果作为基准。 该表最引人注目的方面是，虽然 SDCI 显著改善了 SCF 结果，但对于该分子，所有多体方法都优于 SDCI。 二阶微扰结果与实验结果非常接近。 然而，微扰展开的收敛行为似乎是振荡的；三阶结果相对较差。
 
 \begin{table}
@@ -3693,17 +3692,17 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \label{tab:6.9}
 \end{table}
 
-这与相关能的情况（表~\ref{tab:6.8}）相反，相关能的收敛似乎是单调的。这样看来，为了获得高精度的势能面，即使在平衡点附近，也需要在微扰理论中取更高的阶数。这个情况与两种耦合簇方法（CCA和L-CCA）能给出的更好的结果是一致的。CCA和L-CCA在微扰理论中精确到三阶，并且还纳入了四阶、五阶、...、无限阶能量的一些重要部分。
+这与相关能的情况（表~\autoref{tab:6.8}）相反，相关能的收敛似乎是单调的。这样看来，为了获得高精度的势能面，即使在平衡点附近，也需要在微扰理论中取更高的阶数。这个情况与两种耦合簇方法（CCA和L-CCA）能给出的更好的结果是一致的。CCA和L-CCA在微扰理论中精确到三阶，并且还纳入了四阶、五阶、...、无限阶能量的一些重要部分。
 
 量子化学的一个核心问题是计算远离平衡构型的势能面，以便描述化学反应。一个简单例子是$\mathrm{H_2}$的势能曲线。我们在第三章中看到，限制性Hartree-Fock不是一个令人满意的方法，因为它不能预测$\mathrm{H_2}$会解离成两个氢原子。回顾一下，在极小基中，当取$R\to\infty$的极限时，$h_{11}$和$h_{22}$都变成氢原子在该基组下的能量，而所有的双电子积分都等于$\frac{1}{2}(\phi\phi|\phi\phi)$，其中$\phi$是氢原子的轨道。因此，HF能量$E_0(E_0=2h_{11}+J_{11})$的极限行为是
 \begin{align}
 	\lim_{R\to\infty} E_0(R) = 2E(\mathrm{H}) + \frac{1}{2}(\phi\phi|\phi\phi)
 \end{align}
-我们已经知道，CI能纠正这种状况；不幸的是，使用限制性HF轨道的微扰理论把事情弄得更糟了。事实上，$R\to\infty$极限下的二阶能量是发散的。 回想一下，对于极小基$\mathrm{H_2}$，二阶能量（见式\eqref{6.77}）为
+我们已经知道，CI能纠正这种状况；不幸的是，使用限制性HF轨道的微扰理论把事情弄得更糟了。事实上，$R\to\infty$极限下的二阶能量是发散的。 回想一下，对于极小基$\mathrm{H_2}$，二阶能量（见\autoref{6.77}）为
 \begin{align}
 	E_0^{(2)}  = \frac{K_{12}^2}{2(\varepsilon_1 - \varepsilon_2)}
 \end{align}
-在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，十一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\eqref{6.72}和\eqref{6.75}。 以这种方式获得的极小基$\hd$的势能曲线如图~\ref{fig:6.2}所示。
+在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，十一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\autoref{6.72}和\autoref{6.75}。 以这种方式获得的极小基$\hd$的势能曲线如图~\autoref{fig:6.2}所示。
 \begin{figure}
 	\centering
 	\tikzset{
@@ -3832,7 +3831,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	\caption{6-31G**基下的$\mathrm{H}_2$势能曲线。}
 	\label{fig:6.3}
 \end{figure}
-请注意，大$R$下的精确波函数不能由单独一个行列式来描述。本章所讲的微扰理论是假设零阶波函数是一个单行列式而得到的。这样看来，要用微扰理论来描述势能曲线的长程部分，必须从多组态的零阶波函数开始。在图~\ref{fig:6.3}中，我们给出了6-31G**水平的势能曲线，以表明上述观察结论与基组的大小无关。
+请注意，大$R$下的精确波函数不能由单独一个行列式来描述。本章所讲的微扰理论是假设零阶波函数是一个单行列式而得到的。这样看来，要用微扰理论来描述势能曲线的长程部分，必须从多组态的零阶波函数开始。在图~\autoref{fig:6.3}中，我们给出了6-31G**水平的势能曲线，以表明上述观察结论与基组的大小无关。
 
 作为最后一个例子，我们考虑在微扰论的框架下使用有限微扰方法计算偶极矩。 这种方法背后的想法是，计算分子在存在小但有限电场的情况下的相关能量，然后对能量相对于场进行数值微分以获得偶极矩。 应该注意的是，这是一种通用的方法，可以与对相关能的任一种近似结合使用。 该方法的一个主要优点是它只需对现存的计算\phrase{相关能}的程序做很小的改动，就能程序上实现有限微扰法。 这是因为，电场存在时，哈密顿量中要添加的项仅包含单粒子相互作用，因此可以通过对核心哈密顿量的简单修改将其纳入 HF 程序。
 
@@ -3850,7 +3849,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \end{align}
 式中选择减号是为了使偶极矩矢量从分子的负极指向正极。类似地，在零场上算得的$E(\vec{F})$的二阶导数定义了分子的极化张量。因此有限微理论可以用来获得分子的极化和偶极矩。
 
-下面给出的偶极矩是这样计算得到的：首先在存在场的情况下执行HF计算，然后使用含场的HF轨道和轨道能量计算二阶能量，最后对二阶微扰论给出的总能量进行数值微分。 我们首先考虑十电子系列化合物$\mathrm{NH_3}$ 、$\mathrm{H_2O}$ 和$\mathrm{FH}$ 的偶极矩。 之前我们在第 3 章中已经看到，即使在6-31G** 水平，与接近HF极限的更大基组SCF计算相比，HF偶极矩也很不准确。 用标准基组的二阶总能量计算得到的偶极矩如表~\ref{tab:6.10}所示。 请注意，对于较大的基组，电子相关会在正确的方向上改变偶极矩，但除了 FH 的 6-31G** 结果外，其他结果与实验的一致性仍然很差。 这说明了一个事实：基组的缺陷不能通过包括相关效应来纠正。
+下面给出的偶极矩是这样计算得到的：首先在存在场的情况下执行HF计算，然后使用含场的HF轨道和轨道能量计算二阶能量，最后对二阶微扰论给出的总能量进行数值微分。 我们首先考虑十电子系列化合物$\mathrm{NH_3}$ 、$\mathrm{H_2O}$ 和$\mathrm{FH}$ 的偶极矩。 之前我们在第 3 章中已经看到，即使在6-31G** 水平，与接近HF极限的更大基组SCF计算相比，HF偶极矩也很不准确。 用标准基组的二阶总能量计算得到的偶极矩如表~\autoref{tab:6.10}所示。 请注意，对于较大的基组，电子相关会在正确的方向上改变偶极矩，但除了 FH 的 6-31G** 结果外，其他结果与实验的一致性仍然很差。 这说明了一个事实：基组的缺陷不能通过包括相关效应来纠正。
 
 \begin{table}
 	\centering
@@ -3887,7 +3886,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 	\label{tab:6.11}
 \end{table}
 
-对于任何计算偶极矩的理论来说，特别具有挑战性的分子是CO。在第 3 章中，我们看到在非常大的基组极限下的 SCF手续算出了不正确的偶极矩符号。二阶能量水平上的微扰论能克服这一点吗？表~\ref{tab:6.11} 表明，较大的基组可以定性地回答这个问题（即，该基组下，SCF偶极矩给出和\phrase{近HF极限}结果一致的错误符号）。二阶能量确实预测了偶极矩的正确符号。然而，基组仍不够大，无法得出任何定量结论。乍一看，二阶微扰理论的成功似乎很意外。因为在第 4 章中我们已经看到，使用 CI时，只有当我们包含单个激发时才能获得正确的符号；但由于布里渊定理，只有双激发对二阶能量有贡献。这个明显的悖论的解释在于计算偶极矩时所用的数值微分的性质。虽然这绝不是显而易见的，但答案是，虽然二阶能量确实只包含双激发，但用于计算 $E_2^{(0)}$ 的 HF 轨道是依赖于场的；数值微分有效地引入了零场下分子HF轨道的单激发(single excitations involing the HF orbitals of the molecule in the absence of the field)。
+对于任何计算偶极矩的理论来说，特别具有挑战性的分子是CO。在第 3 章中，我们看到在非常大的基组极限下的 SCF手续算出了不正确的偶极矩符号。二阶能量水平上的微扰论能克服这一点吗？表~\autoref{tab:6.11} 表明，较大的基组可以定性地回答这个问题（即，该基组下，SCF偶极矩给出和\phrase{近HF极限}结果一致的错误符号）。二阶能量确实预测了偶极矩的正确符号。然而，基组仍不够大，无法得出任何定量结论。乍一看，二阶微扰理论的成功似乎很意外。因为在第 4 章中我们已经看到，使用 CI时，只有当我们包含单个激发时才能获得正确的符号；但由于布里渊定理，只有双激发对二阶能量有贡献。这个明显的悖论的解释在于计算偶极矩时所用的数值微分的性质。虽然这绝不是显而易见的，但答案是，虽然二阶能量确实只包含双激发，但用于计算 $E_2^{(0)}$ 的 HF 轨道是依赖于场的；数值微分有效地引入了零场下分子HF轨道的单激发(single excitations involing the HF orbitals of the molecule in the absence of the field)。
 
 \theendnotes
 \addcontentsline{toc}{section}{注释}

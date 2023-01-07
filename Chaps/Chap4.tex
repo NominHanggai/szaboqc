@@ -40,7 +40,7 @@ CI能给出多电子问题的精确解。
 因而，
 CI只能给出精确能量的上界。
 那么，
-如何获得一组合适的$N$-电子试探函数呢？如\ref{chap2}中那样，
+如何获得一组合适的$N$-电子试探函数呢？如\autoref{chap2}中那样，
 给定任意一组$2K$个单电子自旋轨道，
 就能构造$\binom{2K}{N}$个$N$电子Slater行列式。
 但是，
@@ -71,14 +71,14 @@ CI只能给出精确能量的上界。
 . 
 $N$个自旋轨道换为其他(未占据)轨道而生产的一组行列式函数. 
 接下来, 
-在\ref{sec4.2}中我们研究对full CI矩阵的几个近似方案, 
+在\autoref{sec4.2}中我们研究对full CI矩阵的几个近似方案, 
 即如何把多电子尝试函数截至到一个特定的激发水平. 
 我们要特别详细地讨论一种近似, 
 即只包含到有两个自旋轨道不同(与$\Psi_0$相比)的那些行列式. 
 这种特定的计算称作\phrase{单加双激发CI}(SDCI).
 
 
-\ref{sec4.3}中我们用一些数值计算结果来说明这个理论的一些特点. \ref{sec4.5}中引入自然轨道, 它的重要性质是, 使用自然轨道可以令\phrase{CI展开}收敛得最快. \ref{sec4.5}简要叙述另一种缩小CI展开长度的方法——多组态自洽场(multiconfiguration self-consistent field, MCSCF) 方法. 它的基本思路是用变分原理来确定CI展开中所用的轨道. 这种方法所用的尝试函数包含更少的行列式, 但优化时不仅优化行列式前的展开系数, 而且也优化轨道本身. 最后在\ref{sec4.6}中我们研究一个所有截断CI都有的缺点, 这个缺点导致所有截断CI都没办法用在大体系的计算中, 并引出下一章所介绍的替代方案.
+\autoref{sec4.3}中我们用一些数值计算结果来说明这个理论的一些特点. \autoref{sec4.5}中引入自然轨道, 它的重要性质是, 使用自然轨道可以令\phrase{CI展开}收敛得最快. \autoref{sec4.5}简要叙述另一种缩小CI展开长度的方法——多组态自洽场(multiconfiguration self-consistent field, MCSCF) 方法. 它的基本思路是用变分原理来确定CI展开中所用的轨道. 这种方法所用的尝试函数包含更少的行列式, 但优化时不仅优化行列式前的展开系数, 而且也优化轨道本身. 最后在\autoref{sec4.6}中我们研究一个所有截断CI都有的缺点, 这个缺点导致所有截断CI都没办法用在大体系的计算中, 并引出下一章所介绍的替代方案.
 \section{多组态波函数及Full CI矩阵的结构}
 \label{sec4.1}
 为简单计, 
@@ -111,7 +111,7 @@ $N$个自旋轨道换为其他(未占据)轨道而生产的一组行列式函数
 有时为了方便, 
 当进行数学形式上的操作时, 
 会把这些限制去掉, 
-把\eqref{4.2a}重新写为
+把\autoref{4.2a}重新写为
 \begin{align}
 \label{4.2}
 \ket{\Phi_0} =& c_0\ket{\Psi_0}+ \left( \frac{1}{1!} \right)^2\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \left( \frac{1}{2!} \right)^2\sum_{\substack{abrs}}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}\notag \\
@@ -155,7 +155,7 @@ $n$重激发行列式总共有$\binom{N}{n}\binom{2K-N}{n}$种.
 那么可以从尝试函数中把那些$\alpha,\beta$电子数不同的行列式去掉, 
 也即只留下$\ts_z$本征值为0的那些行列式. 
 进一步, 
-我们在\ref{sec2.5}中已经知道, 
+我们在\autoref{sec2.5}中已经知道, 
 对这些余下的行列式进行恰当的线性组合, 
 可以构造出\emph{自旋匹配组态}, 
 也即$\ts^2$的本征函数. 
@@ -167,10 +167,10 @@ $n$重激发行列式总共有$\binom{N}{n}\binom{2K-N}{n}$种.
 因为表达式会更简单.
 
 
-有了\eqref{4.2}中的尝试函数, 
+有了\autoref{4.2}中的尝试函数, 
 现在用线性变分法求对应的能量. 
-在\ref{ch:1}中已经提过, 
-这个过程中要先将\ha 在N电子函数（即\eqref{4.2}中的那些函数）构成的基下的矩阵写出来, 
+在\autoref{ch:1}中已经提过, 
+这个过程中要先将\ha 在N电子函数（即\autoref{4.2}中的那些函数）构成的基下的矩阵写出来, 
 然后求出其本征值. 
 这个矩阵叫做full CI矩阵, 
 这种方法就叫full CI. 
@@ -190,16 +190,16 @@ full CI就是我们能做到的最精确的方法了.
 
 
 为了研究full CI矩阵的结构, 
-我们把\eqref{4.2}的展开重新简写作
+我们把\autoref{4.2}的展开重新简写作
 \begin{align}
 \ket{\Phi_0} = c_0\ket{\Psi_0} + c_S\ket{S}+c_D\ket{D} + c_T\ket{T} + c_Q\ket{Q} + \cdots
 \end{align}
 式中$\ket{S}$表示单激发的那些项, 
 $\ket{D}$表示双激发的那些项等等. 
-用这个记号表示的full CI矩阵写在\ref{f4.1}中. 
+用这个记号表示的full CI矩阵写在\autoref{f4.1}中. 
 下面是一些重要的性质
 \begin{enumerate}[1.]
-	\item HF基态和单激发组态之间没有耦合, 即$\braket{\Psi_0|\hs|S}=0$. 这是Brillouin定理的结论（见\ref{sec3.3.2}, 定理指出, 所有形如$\braket{\Psi_0|\hs|\Psi_a^r}$的矩阵元都为0）.
+	\item HF基态和单激发组态之间没有耦合, 即$\braket{\Psi_0|\hs|S}=0$. 这是Brillouin定理的结论（见\autoref{sec3.3.2}, 定理指出, 所有形如$\braket{\Psi_0|\hs|\Psi_a^r}$的矩阵元都为0）.
 	\item
 	$\ket{\Psi_0}$和三激发, 四激发之间没有耦合. 类似, 单激发和四激发之间也没有耦合. 这是由于, 如果两个行列式中有两个以上 自旋轨道不同, 那么这两个行列式之间的\ha 矩阵元就为0. 由此有一个结论, 矩阵中非零的区块是很稀疏的. 比如, 这个符号$\braket{D|\hs|Q}$所代表的矩阵元为
 	\begin{align*}
@@ -212,10 +212,10 @@ $\ket{D}$表示双激发的那些项等等.
 	\item 
 	由于双激发与$\ket{\Psi_0}$直接混合, 可以预见双激发对关联能, 尤其是小分子的关联能, 有决定性的作用. 进一步, 人们发现, 如果只看关心基态能量, 四重激发比三激发和单激发还要重要.
 	\item
-	计算时所需的所有的矩阵元都可以按\ref{chap2}中给出的规则得到. 
+	计算时所需的所有的矩阵元都可以按\autoref{chap2}中给出的规则得到. 
 如前所述, 计算时要用自旋匹配组态. 
-在\ref{sec2.5}中对单激发和双激发讨论过这一点. 
-表\ref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者可以试试验算表中的项，以此验证对这些矩阵元规则的掌握程度以及耐心。
+在\autoref{sec2.5}中对单激发和双激发讨论过这一点. 
+\autoref{table4.1}给出了涉及单双激发的矩阵元. 这些矩阵元在之后要多次用到. 读者可以试试验算表中的项，以此验证对这些矩阵元规则的掌握程度以及耐心。
 \end{enumerate}
 \begin{figure}[H]
 	\[
@@ -300,31 +300,26 @@ $\ket{D}$表示双激发的那些项等等.
 所以波函数其实并未归一化, 
 但它却满足
 \begin{align}
-\braket{\hjtn|\jtn} =1
+\braket{\hjtn|\jtn} = 1
 \end{align}
 给定一个半归一化的$\jt$, 
 只要愿意, 
 总可以令其归一化, 
-只要把展开式中每一项都乘以一个常数就行 （即$\ket{\jt'}=c'\ket{\jt}$, 
-$c'$选成满足$\braket{\jt'|\jt}=1$的数）.
+只要把展开式中每一项都乘以一个常数就行 （即$\ket{\Phi_0'}=c'\ket{\Phi_0'}$, 
+$c'$选成满足$\braket{\Phi_0'|\Phi_0}=1$的数）.
 
 
-\makeatletter
-\HyRef@currentHtag
-\makeatother
-
-
-\autoref*{ch:1}中已经讨论过, 线性变分法实际上等价如下过程： 写出
+\autoref{ch:1}中已经讨论过, 线性变分法实际上等价如下过程： 写出
 \begin{align}
 \hs\jt = \es_0\jt
 \label{4.6}
 \end{align}
-其中$ \jt $由\eqref{4.4}给出， 
+其中$ \jt $由\autoref{4.4}给出， 
 然后将此方程顺次乘以$ \bra{\Psi_0},\bra{\Psi_a^r} ,\bra{\Psi_{ab}^{rs}}$即完毕. 
 在完成该过程之前, 
 我们为方便, 
-先在\eqref{4.6}的两边减去$ E_0\jt $, 
-如此\eqref{4.6}就改写成
+先在\autoref{4.6}的两边减去$ E_0\jt $, 
+如此\autoref{4.6}就改写成
 \begin{align}
 (\hs -E_0)\jt = (\es_0-E_0)\jt = E_\mathrm{corr} \jt
 \label{4.7}
@@ -337,14 +332,14 @@ $c'$选成满足$\braket{\jt'|\jt}=1$的数）.
 \end{align}
 式中我们已经利用了$\jt$是半归一化的这一事实. 
 现在考虑该方程的左半边. 
-利用展开式 \eqref{4.4}, 
+利用展开式 \autoref{4.4}, 
 得到
 \begin{align}
 \braket{\hjtn|\hs-E_0|\jtn} & = \bra{\hjtn}|\hs-E_0|\left( \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}} \right)\notag \\
 	&=\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}} \label{4.9}
 \end{align}
 式中已经使用过Brillouin定理 ($ \braket{\hjtn|\hs|\Psi_c^t }=0$) 以及三重和更高的激发不与$\hjt$混合的事实 （因为它们之间相差多于两个自旋轨道）. 
-同时使用\eqref{4.8}\eqref{4.9}就将\phrase{关联能}清楚地写出
+同时使用\autoref{4.8}\autoref{4.9}就将\phrase{关联能}清楚地写出
 \begin{align}
 E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}}
 \end{align}
@@ -354,7 +349,7 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 这不是说在CI的基态精确解中只需包含双激发, 
 要注意系数$ \{c_{ab}^{rs}\} $会受其他激发的影响. 
 为了明确这点, 
-我们在\eqref{4.7}上左乘$ \bra{\Psi_a^r} $, 
+我们在\autoref{4.7}上左乘$ \bra{\Psi_a^r} $, 
 得到
 \begin{align}
 \braket{\Psi_a^r|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\Psi_a^r|\jtn}
@@ -368,7 +363,7 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 \label{4.11}
 \end{align}
 该式可稍加简化：注意到单激发和三激发之间的矩阵元仅当$a=c,d,e$或$r=t,u,v$时才非零，
-就可将\eqref{4.11}重写为
+就可将\autoref{4.11}重写为
 \begin{align}
 &\sum_{c t} c_{c}^{r}\left\langle\Psi_{a}^{r}\left|\mathscr{H}-E_{0}\right| \Psi_{c}^{r}\right\rangle+\sum_{\substack{c<d \\ t<u}} c_{cd}^{tu}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{c d}^{tu}\right\rangle+\sum_{\substack{c<d\\ t<u}} c_{acd}^{rtu}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{acd}^{rtu}\right\rangle \notag \\
 &=E_{\mathrm{corr}} c_{a}^{r}
@@ -376,9 +371,9 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 \end{align}
 这个方程的重点在于，
 它包含着单激发
-、双激发和三激发的系数，因而也将这三者耦合起来。若继续以上的手续，依次在\eqref{4.7}上左乘$\bra{\Psi_{ab}^{rs}},\bra{\Psi_{abc}^{rst}}$等，就能得到一组从低到高的方程，必须同时求解这组方程才可得到关联能。假若要把所有可能的激发都纳入，那这组耦合方程数目会非常多。这就是full CI矩阵本身很大的另外一种说法。解释完我们目前所推出的形式理论之后，我们接下来把它运用到极小基$\hd$上，如此就回到如何把CI矩阵截断到可运算的大小上面。
+、双激发和三激发的系数，因而也将这三者耦合起来。若继续以上的手续，依次在\autoref{4.7}上左乘$\bra{\Psi_{ab}^{rs}},\bra{\Psi_{abc}^{rst}}$等，就能得到一组从低到高的方程，必须同时求解这组方程才可得到关联能。假若要把所有可能的激发都纳入，那这组耦合方程数目会非常多。这就是full CI矩阵本身很大的另外一种说法。解释完我们目前所推出的形式理论之后，我们接下来把它运用到极小基$\hd$上，如此就回到如何把CI矩阵截断到可运算的大小上面。
 \exercise{
-从\eqref{4.11}推出\eqref{4.12}。
+从\autoref{4.11}推出\autoref{4.12}。
 运用非限制求和会比较方便。
 
 }
@@ -494,7 +489,7 @@ $\rho(\mathbf{x}_1)$就称作\phrase{N-电子系统}内单个电子的\emph{约�
 }
 
 若$\Phi$是\hft 基态波函数，
-那么可以从\phrase{一矩阵}的定义（式\eqref{4.35}）证明:
+那么可以从\phrase{一矩阵}的定义（\autoref{4.35}）证明:
 \begin{align}
 	\gamma^\mathrm{HF}(\mathbf{x}_1,\mathbf{x}_1') = \sum_a \chi_a(\mathbf{x}_1)\chi_a^*(\mathbf{x}_1') \label{4.39}
 \end{align}
@@ -522,16 +517,16 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 	\begin{align*}
 	\gamma_{ij} = \braket{\Phi|\cs_j a_i|\Phi}
 	\end{align*}
-	\item 证明$\gamma^\mathrm{HF}$的矩阵元由式\eqref{4.40}给出。
+	\item 证明$\gamma^\mathrm{HF}$的矩阵元由\autoref{4.40}给出。
 \end{enumerate}
 }
-一般情形下，当$\Phi$不是$\Psi_0$时，\phrase{一矩阵}在\hft 自旋轨道下的离散表示\emph{不}是对角的。但是，由于$\gamma$是Hermitian的，所以能够定义一组正交归一基$\{\eta_i\}$(与$\{\chi_i\}$通过酉变换相连)，在它的表示下，\phrase{一矩阵}是对角的。这个使$\gamma$对角化的基组中的元素就是\emph{自然轨道}。为使以上过程更加具体，我们从两组正交归一基$\{\eta_i\}$ $\chi_i$的关系开始(见式\eqref{eq:1.63}\eqref{eq:1.65})：
+一般情形下，当$\Phi$不是$\Psi_0$时，\phrase{一矩阵}在\hft 自旋轨道下的离散表示\emph{不}是对角的。但是，由于$\gamma$是Hermitian的，所以能够定义一组正交归一基$\{\eta_i\}$(与$\{\chi_i\}$通过酉变换相连)，在它的表示下，\phrase{一矩阵}是对角的。这个使$\gamma$对角化的基组中的元素就是\emph{自然轨道}。为使以上过程更加具体，我们从两组正交归一基$\{\eta_i\}$ $\chi_i$的关系开始(见\autoref{eq:1.63}\autoref{eq:1.65})：
 \begin{align}
 	\chi_i & = \sum_k \eta_k (\mathbf{U^\dagger}_{ki}) = \sum_k \eta_k U^*_{ik} \label{4.41}\\
 \eta_i & = \sum_k\chi_k U_{ki} \label{4.42}
 \end{align}
 式中$\mathbf{U}$是酉矩阵。
-将式\eqref{4.41}带入\eqref{4.37}就得到:
+将\autoref{4.41}带入\autoref{4.37}就得到:
 \begin{align}
 \gamma(\mathbf{x}_1,\mathbf{x}_1') & = \sum_{ijkl} \eta_k(\mathbf{x}_1) U^*_{ik} \gamma_{ij} U_{jl} \eta_l^*(\mathbf{x}_1')\notag\\
                                    & = \sum_{kl} \eta_k(\mathbf{x}_1) \left( \sum_{ij} (\mathbf{U}^\dagger)_{ki} \gamma_{ij} U_{jl}  \right) \eta_l^*(\mathbf{x}_1)\notag\\
@@ -548,12 +543,12 @@ $\gamma^\mathrm{HF}$的对角元可以看作占据数：被占自旋轨道的占
 \begin{align}
 \lambda_{ij} = \delta_{ij}\lambda_i
 \end{align}
-对应的自旋轨道 $\{\eta_i\}$ (由式\eqref{4.42}给出)就是自然自旋轨道。
-用自然自旋轨道可将式\eqref{4.43}写为：
+对应的自旋轨道 $\{\eta_i\}$ (由\autoref{4.42}给出)就是自然自旋轨道。
+用自然自旋轨道可将\autoref{4.43}写为：
 \begin{align}
 \gamma(\mathbf{x}_1,\mathbf{x}_1') = \sum_i \lambda_i \eta_i(\mathbf{x}_1) \eta_i^*(\mathbf{x}_1)
 \end{align}
-与式\eqref{4.39}中的HF结果类似，
+与\autoref{4.39}中的HF结果类似，
 $\lambda_i$也叫作\phrase{\phrase{波函数 $\Phi$}中的\phrase{自然自旋轨道}}的占据数.
 
 
@@ -573,10 +568,10 @@ $\lambda_i$也叫作\phrase{\phrase{波函数 $\Phi$}中的\phrase{自然自旋�
 我们不从数学上证明\mci{自然轨道}就是令CI展开收敛最快的那组基, 
 而是用一些数值的例子来说明这一点. 
 Shavitt及其合作者做过一项有意思的研究, 
-用39-STO基(\ref{sec4.3}中提过)计算$\mathrm{H_2O}$. 
+用39-STO基(\autoref{sec4.3}中提过)计算$\mathrm{H_2O}$. 
 首先, 
 他们做了包含4120个\mci{自旋匹配}和\mci
-{对称匹配}的单、双激发组态的CI计算, 这些组态都由正则\hft 基生成. 利生成的波函数, 他们得出单粒子密度矩阵并对角化之, 以求得\mci{SDCI近似}下的自然轨道. 接下来, 他们分别用\mci{正则轨道}和\mci{自然轨道}做SDCI计算, 以回答这样一个问题: 为得到某特定百分比的\mci{SDCI关联能}, 至少需要多少个组态? 答案可从\ref{t4.12}中找到。很明显，使用自然轨道构建的\mci{CI展开式}收敛最快。要得到60\%的\mci{SDCI关联能}，若用自然轨道构建组态，则只需50个组态，若用正则轨道，则需140个。但是从表中也可以看到，仅当展开项较少的时候，自然轨道相对于正则轨道才有明显优势。需要强调，不同基组下，表中的结果也会不同。可以预见，大基组下，自然轨道和正则轨道之间的差别将更大。
+{对称匹配}的单、双激发组态的CI计算, 这些组态都由正则\hft 基生成. 利生成的波函数, 他们得出单粒子密度矩阵并对角化之, 以求得\mci{SDCI近似}下的自然轨道. 接下来, 他们分别用\mci{正则轨道}和\mci{自然轨道}做SDCI计算, 以回答这样一个问题: 为得到某特定百分比的\mci{SDCI关联能}, 至少需要多少个组态? 答案可从\autoref{t4.12}中找到。很明显，使用自然轨道构建的\mci{CI展开式}收敛最快。要得到60\%的\mci{SDCI关联能}，若用自然轨道构建组态，则只需50个组态，若用正则轨道，则需140个。但是从表中也可以看到，仅当展开项较少的时候，自然轨道相对于正则轨道才有明显优势。需要强调，不同基组下，表中的结果也会不同。可以预见，大基组下，自然轨道和正则轨道之间的差别将更大。
 \begin{table}[H]
 	~\label{t4.12}
 	\begin{threeparttable}
@@ -608,7 +603,7 @@ $r=2,3,\ldots,K$时虚空间轨道，
 \begin{align*}
 \ket{^1\Phi_0} = c_0\ket{1\bar{1}} + \sum_{r=2}^{K}c_1^r \ket{^1\Psi_1^r} + \frac{1}{2}\sum_{r=2}^{K}\sum_{s=2}^{K}c_{11}^{rs}\ket{^1\Psi_{11}^{rs}}
 \end{align*}
-式中的单、双激发自旋匹配组态已在\ref{sec2.5.2}中定义过。
+式中的单、双激发自旋匹配组态已在\autoref{sec2.5.2}中定义过。
 
 \begin{enumerate}[a.]
 	\item 证明$\ket{^1\Phi_0}$可以重新整理为如下形式
@@ -664,7 +659,7 @@ MCSCF波函数是一种截断的CI展开:
 \ket{\Psi_\mathrm{MCSCF}} = \sum_I c_I\ket{\Psi_I}
 \label{4.47}
 \end{align}
-其中的展开系数$(c_I)$和$\ket{\Psi_I}$中的正交归一轨道同时进行优化. 对于闭壳层体系, 如果展开式\eqref{4.47}中只有一个行列式, 此时MCSCF就等价于\hft. 要得到MCSCF波函数需求解一组方程, 这组方程比限制性\hft 中的Roothaan方程更复杂. Wahl和Das的综述中讨论了MCSCF问题的几种求解方法\endnote{
+其中的展开系数$(c_I)$和$\ket{\Psi_I}$中的正交归一轨道同时进行优化. 对于闭壳层体系, 如果展开\autoref{4.47}中只有一个行列式, 此时MCSCF就等价于\hft. 要得到MCSCF波函数需求解一组方程, 这组方程比限制性\hft 中的Roothaan方程更复杂. Wahl和Das的综述中讨论了MCSCF问题的几种求解方法\endnote{
 A. C. Wahl and G. Das, The multiconfiguration self-consistent field method, in \textit{
 Methods of Electronic Structure Theory,
 } H. F. Schaefer III (Ed.), Plenum, New York, 1977, p. 51. 除了形式理论的讨论之外, 此文章还给出了一些数值结果.
@@ -721,7 +716,7 @@ GVB方法有许多很好的特点,
 其中之一就是它可以正确地描述分子解离为开壳层碎片的过程. 
 如果使用相同的基组来展开正交的MCSCF轨道($\psi_A,\psi_B$)和非正交的GVB轨道($u,v$), 
 可以证明(见习题4.9), 
-最简单的两组态MCSCF波函数(式\eqref{4.48})等价于GVB波函数(式\eqref{4.52}).
+最简单的两组态MCSCF波函数(\autoref{4.48})等价于GVB波函数(\autoref{4.52}).
 
 
 \exercise{}
@@ -731,10 +726,10 @@ GVB方法有许多很好的特点,
 在$R=1.4\text{a.u.}$处，
 $E_{\text{corr}}(\text{GVB})= -0.0183\text{a.u.}$,
 而FCI是$ -0.0339\text{a.u.}$,即GVB给出了54\%的相关能.
-图\ref{fig:4.4}比较了GVB,RHF,UHF,FCI的势能曲线.
+\autoref{fig:4.4}比较了GVB,RHF,UHF,FCI的势能曲线.
 GVB可以正确描述\ch{H2}的解离.
 并且，随着原子间距的增加，GVB(相对于HF)的改进也增大；$R>3\text{a.u.}$时，GVB和FCI的结果几乎没有区别.
-这可以和基于UHF波函数的二阶微扰(第六章)的势能曲线结果(\ref{fig:6.3})比较.
+这可以和基于UHF波函数的二阶微扰(第六章)的势能曲线结果(\autoref{fig:6.3})比较.
 二阶微扰方法在平衡键长区域给出了比GVB更多的相关能，但当$R$增大时，微扰方法的势能曲线逐渐变差，趋近于UHF的结果.
 
 \begin{figure}[H]
