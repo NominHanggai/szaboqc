@@ -1,1 +1,3 @@
-latexmk -xelatex  -halt-on-error -shell-escape main
+
+main:
+	latexmk -xelatex  -halt-on-error -shell-escape main
