@@ -102,7 +102,7 @@
  \end{cases}
  \label{eq:1.7}
 \end{equation}
-其中 $\delta_ij$ 为 Kronecker delta 函数。
+其中 $\delta_{ij}$ 为 Kronecker delta 函数。
 上式是基矢\emph{正交归一}性质的数学描述：
 基矢之间互相垂直（正交），
 并且具有单位长度（归一）。 
@@ -336,7 +336,7 @@ $M$个数的集合$\left\{a_i\right\}, i = 1, 2, \dots, M$可以类似地看做�
 我们注意到，如果$\mbf a$和$\mbf b$均为实矩阵且$M$值为3时，
 上式即为两个三维矢量的标量积。
 对\autoref{eq:1.24}两边分别取其伴随矩阵，
-并引用练习~\autoref{ex:1.3} 的结论，
+并引用\autoref{ex:1.3} 的结论，
 我们得到如下关系：
 \begin{equation}
  {\mbf b}^\dagger = {\mbf a}^\dagger {\mbf A}^\dagger
@@ -480,7 +480,7 @@ $p_i$为由标准排列 $1, 2, 3, \dots, N$ 到一个给定的排列 $i_1, i_2, 
  \end{enumerate}
 \Next
  对照\autoref{eq:1.39}，
- 我们发现在练习 \autoref{ex:1.4}f 中得到的$2\times 2$矩阵 $\mbf A$的逆可以写作：
+ 我们发现在\autoref{ex:1.4}f 中得到的$2\times 2$矩阵 $\mbf A$的逆可以写作：
  \[{\mbf A}^{-1} = \frac{1}{\vert\mbf{A}\vert}
  \begin{vmatrix*}[r]
      A_{22} & -A_{12} \\ -A_{21} & A_{11}
@@ -647,7 +647,7 @@ c_2 \begin{vmatrix}
 \end{subequations}
 从上面两式可以得到：
 \begin{equation}
- \mbf{a} = \sum_i \ket{i}\bra{i}
+ \mbf{1} = \sum_i \ket{i}\bra{i}
  \label{eq:1.51}
 \end{equation}
 即为$N$维空间基组的完备性关系，
@@ -749,12 +749,12 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 这样，我们有：
 \begin{subequations}
  \begin{equation}
-     \olp{i}{j} = \delta_{ij}, \qquad\sum_i \oup{i}{i} = 1
+     \olp{i}{j} = \delta_{ij}, \qquad\sum_i \oup{i}{i} = \mbf{1}
      \label{eq:1.62a}
  \end{equation}
 以及
 \begin{equation}
- \olp{\alpha}{\beta} = \delta_{\alpha\beta}, \qquad \sum_{\alpha}\oup{\alpha}{\alpha} = 1
+ \olp{\alpha}{\beta} = \delta_{\alpha\beta}, \qquad \sum_{\alpha}\oup{\alpha}{\alpha} = \mbf{1}
  \label{eq:1.62b}
 \end{equation}
 \end{subequations}
@@ -762,7 +762,7 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 我们可以将基组$\kbs{\alpha}$中的任一基矢$\ket{\alpha}$展开为基组$\kbs{i}$中基矢的线性组合，
 反之亦然。即：
 \begin{equation}
- \ket{\alpha} = 1\ket{\alpha} = \sum_i\ket{i}\olp{i}{\alpha} = \sum_i \ket{i}U_{i\alpha} = \sum_i \ket{i}\left(\mbf U\right)_{i\alpha}
+ \ket{\alpha} = \mbf{1}\ket{\alpha} = \sum_i\ket{i}\olp{i}{\alpha} = \sum_i \ket{i}U_{i\alpha} = \sum_i \ket{i}\left(\mbf U\right)_{i\alpha}
  \label{eq:1.63}
 \end{equation}
 其中，变换矩阵$\mbf U$的矩阵元定义为：
@@ -772,7 +772,7 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 \end{equation}
 对于反向的变换，我们有：
 \begin{equation}
- \ket{i} = 1\ket{i} = \sum_{\alpha}\ket{\alpha}\olp{\alpha}{i} = \sum_{\alpha} \ket{\alpha}U_{i\alpha}^\ast = \sum_{\alpha} \ket{\alpha}\left(\madj{U}\right)_{\alpha i}
+ \ket{i} = \mbf{1}\ket{i} = \sum_{\alpha}\ket{\alpha}\olp{\alpha}{i} = \sum_{\alpha} \ket{\alpha}U_{i\alpha}^\ast = \sum_{\alpha} \ket{\alpha}\left(\madj{U}\right)_{\alpha i}
  \label{eq:1.65}
 \end{equation}
 上式中我们用到了\autoref{eq:1.49}和伴随矩阵的定义，
@@ -1021,7 +1021,7 @@ New York, 1965. 这是本领域的一本经典参考书。
  \end{equation}
  \label{eq:1.84}
 \end{subequations}
-在练习~\autoref{ex:1.7} 中我们看到，\autoref{eq:1.84b}只有在满足
+在\autoref{ex:1.7} 中我们看到，\autoref{eq:1.84b}只有在满足
 \begin{equation}
  \left\vert\mbf{O}-\omega\mbf{1}\right\vert = 0
  \label{eq:1.85}
@@ -1031,7 +1031,7 @@ New York, 1965. 这是本领域的一本经典参考书。
 是一个关于未知数$\omega$的$N$次多项式。
 一个$N$次多项式具有$N$个根$\omega_\alpha,\; \alpha = 1, 2, \dots, N$，
 即为矩阵$\mbf O$的$N$个本征值。
-将每一个本征值$\omega_\alpha$代入\autoref{eq:1.84}，
+将每一个本征值$\omega_\alpha$代入\autoref{eq:1.84a}，
 求解关于$\mbf c$的线性方程组，
 所得结果$\mbf{c}^\alpha$就是本征值$\omega_\alpha$对应的本征矢。
 这样除一个常数因子之外，
@@ -1042,7 +1042,7 @@ New York, 1965. 这是本领域的一本经典参考书。
  \label{eq:1.86}
 \end{equation}
 通过这种方法，
-我们可以求得\autoref{eq:1.84}的$N$个解：
+我们可以求得\autoref{eq:1.84a}的$N$个解：
 \begin{equation}
  \mbf{O}\mbf{c}^\alpha = \omega_\alpha \mbf{c}^\alpha, \qquad \alpha = 1, 2, \dots, N
  \label{eq:1.87}
@@ -1068,7 +1068,7 @@ New York, 1965. 这是本领域的一本经典参考书。
  \end{pmatrix}
  \label{eq:1.89}
 \end{equation}
-可以看到，矩阵$\mbf U$的第$\alpha$列就是列矩阵$\mbf{c^\alpha}$。
+可以看到，矩阵$\mbf U$的第$\alpha$列就是列矩阵$\mbf{c}^\alpha$。
 结合\autoref{eq:1.87}，我们得到：
 \begin{equation}
  \mbf{OU} = \mbf{U} \begin{pmatrix}
@@ -1376,7 +1376,7 @@ $N\times N$矩阵对角化的 Jacobi 方法就是这个计算步骤的一个推�
 所以：
 \begin{equation}
  \begin{split}
-     f\left(\mbf{A}\right) = \sum_0^{\infty} &= \begin{pmatrix}
+     f\left(\mbf{A}\right) = \sum_0^{\infty}c_n \mbf{A}^n &= \begin{pmatrix}
       \sum_n c_n a_1^n &               &      & \\
                      &\sum_n c_n a_2^n &\mathbf{0} & \\
                &\mathbf{0} &\ddots & \\
@@ -1417,7 +1417,9 @@ $N\times N$矩阵对角化的 Jacobi 方法就是这个计算步骤的一个推�
  \label{eq:1.113}
 \end{subequations}
 我们注意到
-\[\mbf{A}^2 = \mbf{Ua}\madj{U}\mbf{Ua}\madj{U}\]
+\[
+    \mbf{A}^2 = \mbf{Ua}\madj{U}\mbf{Ua}\madj{U} = \mbf{U} \mbf{a}^2 \madj{U}
+\]
 或者更普遍的，有：
 \begin{equation}
  \mbf{A}^n = \mbf{U}\mbf{a}^n \madj{U}
@@ -1453,11 +1455,11 @@ $N\times N$矩阵对角化的 Jacobi 方法就是这个计算步骤的一个推�
 比如，矩阵$\mbf A$有一个本征值为零（$a_i = 0$），
 则 $f(a_i) = 1/a_i = \infty$，
 此时$\mbf{A}^{-1}$不存在。
-练习~\autoref{ex:1.12}a 证明了一个矩阵$\mbf A$的行列式等于其所有本征值的乘积。
+\autoref{ex:1.12}a 证明了一个矩阵$\mbf A$的行列式等于其所有本征值的乘积。
 因此，只要$\mbf A$的本征值中含有零，
 $\det(\mbf A)$即为零，
 从而导致$\mbf{A}^{-1}$不存在。
-练习~\autoref{ex:1.7} 通过另一种方法也得到了同样的结果。
+\autoref{ex:1.7} 通过另一种方法也得到了同样的结果。
 
 \exercise{
  已知：
@@ -1475,11 +1477,11 @@ $\det(\mbf A)$即为零，
      \item $\mrm{tr}\,\mbf{A}^n = \sum_{\alpha=1}^N a_{\alpha}^n$. 
      \item 如果 $\mbf{G}\left(\omega\right) = \left(\omega\mbf{1}-\mbf{A}\right)^{-1}$，则有
      \[
-     \left(\mbf{G}\left(\omega\right)\right)_{ij} = \sum_{\alpha=1}^N \frac{U_{i\alpha}U_{j\alpha}^\ast}{\omega - \omega_\alpha} = \sum_{\alpha=1}^N \frac{c_i^\alpha c_j^{\alpha\ast}}{\omega-\omega_\alpha}
+     \left(\mbf{G}\left(\omega\right)\right)_{ij} = \sum_{\alpha=1}^N \frac{U_{i\alpha}U_{j\alpha}^\ast}{\omega - a_\alpha} = \sum_{\alpha=1}^N \frac{c_i^\alpha c_j^{\alpha\ast}}{\omega-a_\alpha}
      \]
      用 Dirac 符号将上式重写成如下形式：
      \[
-     \left(\mbf{G}\left(\omega\right)\right)_{ij} \equiv \left\langle i\middle\vert \op{G}\left(\omega\right)\middle\vert j\right\rangle = \sum_\alpha \frac{\olp{i}{\alpha}\olp{\alpha}{j}}{\omega-\omega_\alpha}
+     \left(\mbf{G}\left(\omega\right)\right)_{ij} \equiv \left\langle i\middle\vert \op{G}\left(\omega\right)\middle\vert j\right\rangle = \sum_\alpha \frac{\olp{i}{\alpha}\olp{\alpha}{j}}{\omega-a_\alpha}
      \]
      作为上式的一个有趣的应用，我们考虑一个非齐次线性方程的求解问题：
      \[
@@ -1493,7 +1495,7 @@ $\det(\mbf A)$即为零，
      则需要对\emph{每个} $\omega$都进行一次矩阵求逆。
      然而，如果我们将$\mbf A$对角化，则可以写成：
      \[
-     x_i = \sum_j \left(\mbf{G}\left(\omega\right)\right)_{ij} c_j = \sum_{j\alpha}\frac{U_{i\alpha}U_{j\alpha}^\ast c_j}{\omega-\omega_\alpha}
+     x_i = \sum_j \left(\mbf{G}\left(\omega\right)\right)_{ij} c_j = \sum_{j\alpha}\frac{U_{i\alpha}U_{j\alpha}^\ast c_j}{\omega-a_\alpha}
      \]
      这样将大大简化关于$\omega$的函数$\mbf{x}$的求算。
  \end{enumerate}
@@ -1545,7 +1547,7 @@ $\det(\mbf A)$即为零，
 \end{equation}
 将上式带入初始的展开\autoref{eq:1.117}，则有：
 \begin{equation}
- a(x) = \int \mrm{d}x^\prime\left[\sum_i\psi_i(x)\psi_j^\ast(x^\prime)\right]a\left(x^\prime\right)
+ a(x) = \int \mrm{d}x^\prime\left[\sum_i\psi_i(x)\psi_i^\ast(x^\prime)\right]a\left(x^\prime\right)
  \label{eq:1.119}
 \end{equation}
 上式方括号中的量是$x$和$x^\prime$的函数，
@@ -1761,7 +1763,7 @@ Dirac 符号的优美之处在于，它允许我们用完全相同的形式来�
  \[\phi(x) = \sum_i^\infty c_i \psi_i(x)\]
  证明等价于矩阵的本征值问题：
  \[\mbf{O}\mbf{c} = \omega\mbf{c}\]
- 此处，$(\mbf{c}_i) = c_i$，$(\mbf{O})_{ij} = \int\mrm{d}x\,psi_i^\ast(x)\psi_j(x)$。
+ 此处，$(\mbf{c}_i) = c_i$，$(\mbf{O})_{ij} = \int\mrm{d}x \psi_i^\ast(x) \op{O} \psi_j(x)$。
  分别用普通形式和 Dirac 符号完成以上证明。
  需要注意的是，此处$\mbf{O}$是一个无穷矩阵，
  而实际操作中，我们无法处理无穷矩阵。
@@ -1806,12 +1808,12 @@ $\olp{a}{x}$即$a^\ast(x)$，$\olp{x}{b}$即$b(x)$。
 因此，
 我们可以将函数$b(x)$看做是抽象矢量$\ket{b}$在一个具有连续变量的无限多坐标轴的坐标系中沿$x$的分量。
 \begin{enumerate}[a.]
- \item 将\autoref{eq:e1.17.2a}两边左乘$\bra{i}$，右乘$\ket{j}$，应用\autoref{eq:e1.17.1b}，若有如下关系成立：
+ \item 将\autoref{eq:e1.17.2a}两边左乘$\bra{i}$，右乘$\ket{j}$，应用\autoref{eq:e1.17.1b}，证明若有如下关系成立：
  \[
  \psi^\ast_i(x) = \olp{i}{x} \qquad \psi_j(x) = \olp{x}{j}
  \]
  则所得结果与\autoref{eq:1.116}等同。
- \item 将\autoref{eq:e1.17.1a}两边左乘$\bra{x}$，右乘$\ket{x^\prime}$。若有如下关系成立
+ \item 将\autoref{eq:e1.17.1a}两边左乘$\bra{x}$，右乘$\ket{x^\prime}$。证明若有如下关系成立
  \[
  \olp{x}{x^\prime} = \delta(x - x^\prime)
  \tag{2b} \label{eq:e1.17.2b}
@@ -2132,7 +2134,7 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
  \label{eq:1.171}
 \end{equation}
 那么其他本征值$E$有什么物理意义呢？
-可以证明（见练习~\autoref{ex:1.21}）
+可以证明（见\autoref{ex:1.21}）
 $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一激发态能量的上限，以此类推。
 
 \exercise{
