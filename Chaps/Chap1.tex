@@ -1823,7 +1823,7 @@ $\olp{a}{x}$即$a^\ast(x)$，$\olp{x}{b}$即$b(x)$。
  \item 一个算符$\op{O}$在连续基$\ket{x}$中的矩阵表示为
  \[\Mele{x}{O}{x^\prime} = O(x, x^\prime)\]
  由式$\op{O}\ket{a} = \ket{b}$出发并插入完备性关系，我们有
- \[\op{O}\ket{a} = \op{O}\mbf{1}\ket{a} \int\mrm{d}x\,\op{O}\ket{x}\bra{x}\ket{a} = \ket{b}\]
+ \[\op{O}\ket{a} = \op{O}\mbf{1}\ket{a} = \int\mrm{d}x\,\op{O}\ket{x}\bra{x}\ket{a} = \ket{b}\]
  将上式左乘$\bra{x^\prime}$，验证结果与\autoref{eq:1.133}等同。
  \item 若有$O_{ij} = \Mele{i}{O}{j}$，验证：
  \[O(x,x^\prime) = \sum_{ij}\psi_i(x)O_{ij}\psi_j^\ast(x)\]
@@ -1901,23 +1901,21 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
 \end{equation}
 此定理的证明比较简单。首先我们考虑
 \begin{equation}
- \begin{split}
-     \Olp{\tilde\Phi}{\tilde\Phi} &= 1 = \sum_{\alpha\beta}\Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\Phi_\beta\Big\rangle\Big\langle\Phi_\beta\Big\vert\tilde\Phi\Big\rangle = \sum_{\alpha\beta} \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\delta_{\alpha\beta}\Big\langle\Phi_\beta\Big\vert\tilde\Phi\Big\rangle \\
-     &= \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2
- \end{split}
+    \Langle\tilde\Phi\Lvert\tilde\Phi\Rangle = \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2 = 1
  \label{eq:1.150}
 \end{equation}
-其中，我们用到了\autoref{eq:1.144}、\autoref{eq:1.146}和\autoref{eq:1.147}。然后，
+其中，我们用到了\autoref{eq:1.146}。然后，
 \begin{equation}
- \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_{\alpha\beta}\Langle\tilde\Phi\Lvert\Phi_\alpha\Rangle\Langle\Phi_\alpha\Lvert\op{H}\Lvert\Phi_\beta\Rangle\Langle\Phi_\beta\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
+ \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_{\alpha}\Langle\tilde\Phi\Lvert\op{H}\Lvert\Phi_\alpha\Rangle\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
  \label{eq:1.151}
 \end{equation}
-上式用到了\autoref{eq:1.145}。最后，由于对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
+上式用到了\autoref{eq:1.143}。最后，由于对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
 \begin{equation}
  \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
  \label{eq:1.152}
 \end{equation}
 此处我们用到了正交化条件\autoref{eq:1.150}。
+% 英文原书中对变分原理的证明非常冗余，其实根本不需要另一套基底\beta，这里我进行了一些简化，应该会更容易阅读与理解
 
 关于基态的变分原理告诉我们，
 近似波函数的能量总是过高。
@@ -2015,7 +2013,7 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
 基函数为实函数，$\mbf H$为对称矩阵，
 即$H_{ij} = H_{ji}$。试探函数满足归一化条件
 \begin{equation}
- \Olp{\tilde\Phi}{\tilde\Phi} = \sum_{ij}\Langle\Psi_i\Lvert\Psi_j\Rangle = \sum_i c_i^2 = 1
+ \Olp{\tilde\Phi}{\tilde\Phi} = \sum_{ij} c_i c_j \Langle\Psi_i\Lvert\Psi_j\Rangle = \sum_i c_i^2 = 1
  \label{eq:1.156}
 \end{equation}
 其期望值
@@ -2063,10 +2061,10 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
 \end{equation}
 因此，
 \begin{equation}
- \frac{\partial \mcr{L}}{\partial c_k} = 0 = \sum_j c_j H_{kj} + \sum_i c_i H_{ik} - 2 Ec_k
+ \frac{\partial \mcr{L}}{\partial c_k} = 0 = \sum_j c_j H_{kj} + \sum_i c_i H_{ik} - 2 E c_k
  \label{eq:1.162}
 \end{equation}
-又因为 $H_{ij = H_{ji}}$，我们有：
+又因为 $H_{ij} = H_{ji}$，我们有：
 \begin{equation}
  \sum_j H_{ij}c_j - Ec_i = 0
  \label{eq:1.163}
@@ -2153,7 +2151,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
      则可由 (a) 得出$\mele{\tilde\Phi^\prime}{H}{\tilde\Phi^\prime} \geq \mcr{E}_1$。
      验证如下关系：
      \[\Mele{\tilde\Phi^\prime}{H}{\tilde\Phi^\prime} = E_1 - \vert x\vert^2 (E_1 - E_0) \]
-     由于$E_1 \geq \mcr{E}_0$，我们可以得到结论$E_1 \geq \mcr{E}_1$。推广以上论证，证明$E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 2, 3, \dots .$
+     由于$E_1 \geq E_0$，我们可以得到结论$E_1 \geq \Mele{\tilde\Phi^\prime}{H}{\tilde\Phi^\prime} \geq \mcr{E}_1$。推广以上论证，证明$E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 2, 3, \dots .$
  \end{enumerate}
 }
 
@@ -2195,7 +2193,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \sum_j H_{ij}c_j = E c_i
  \label{eq:1.176}
 \end{equation}
-上式的矩阵式与\autoref{eq:1.174}等同。
+上式的矩阵式与\autoref{eq:1.173}等同。
 如果使用\emph{完备}的正交归一基组 $\left\{\ket{\Psi_i},
 \right. \, i = 1, 2,\allowbreak \dots, N, N+1, \left.\dots \right\}$，
 我们则会得到一个与\autoref{eq:1.173}等同，
@@ -2227,6 +2225,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \]
  其中$\alpha$为体系近似的偶极极化率，验证其值为 2.96。其精确结果为 4.5。
 }
+%Todo 这一道题有些奇怪，很容易验证$<1s|1s> = 1/2, <2pz|2pz> = 1/32$并不归一，但是由于英文原版如此，我也没有做修改。之后有时间可以重新算一下这道题，把这道题的系数改正确。
  
 \addcontentsline{toc}{section}{\protect\numberline{}{扩展阅读}}
  
