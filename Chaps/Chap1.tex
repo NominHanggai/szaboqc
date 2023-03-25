@@ -1899,23 +1899,41 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \Big\langle\tilde\Phi\Big\vert\op{H}\Big\vert\tilde\Phi\Big\rangle \geq \mcr{E}_0
  \label{eq:1.149}
 \end{equation}
-此定理的证明比较简单。首先我们考虑
+此定理的证明比较简单
+\footnote{
+译注：此处原书的证明有些冗余，实际上证明变分定理无需第二套基底$\Ket{\Phi_\beta}$。考虑
+\[
+    \Olp{\tilde\Phi}{\tilde\Phi} = \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2 = 1
+\]
+上式用到了\autoref{eq:1.146}。然后，
+\[
+    \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle =  \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
+\]
+上式用到了\autoref{eq:1.143}。最后，对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
+\[
+    \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
+\]
+即可证明\autoref{eq:1.149}，即变分原理。
+}
+。首先我们考虑
 \begin{equation}
-    \Langle\tilde\Phi\Lvert\tilde\Phi\Rangle = \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2 = 1
+ \begin{split}
+     \Olp{\tilde\Phi}{\tilde\Phi} &= 1 = \sum_{\alpha\beta}\Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\Phi_\beta\Big\rangle\Big\langle\Phi_\beta\Big\vert\tilde\Phi\Big\rangle = \sum_{\alpha\beta} \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\delta_{\alpha\beta}\Big\langle\Phi_\beta\Big\vert\tilde\Phi\Big\rangle \\
+     &= \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2
+ \end{split}
  \label{eq:1.150}
 \end{equation}
-其中，我们用到了\autoref{eq:1.146}。然后，
+其中，我们用到了\autoref{eq:1.144}、\autoref{eq:1.146}和\autoref{eq:1.147}。然后，
 \begin{equation}
- \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_{\alpha}\Langle\tilde\Phi\Lvert\op{H}\Lvert\Phi_\alpha\Rangle\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
+ \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_{\alpha\beta}\Langle\tilde\Phi\Lvert\Phi_\alpha\Rangle\Langle\Phi_\alpha\Lvert\op{H}\Lvert\Phi_\beta\Rangle\Langle\Phi_\beta\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
  \label{eq:1.151}
 \end{equation}
-上式用到了\autoref{eq:1.143}。最后，由于对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
+上式用到了\autoref{eq:1.145}。最后，由于对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
 \begin{equation}
  \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
  \label{eq:1.152}
 \end{equation}
 此处我们用到了正交化条件\autoref{eq:1.150}。
-% 英文原书中对变分原理的证明非常冗余，其实根本不需要另一套基底\beta，这里我进行了一些简化，应该会更容易阅读与理解
 
 关于基态的变分原理告诉我们，
 近似波函数的能量总是过高。
@@ -2225,7 +2243,6 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \]
  其中$\alpha$为体系近似的偶极极化率，验证其值为 2.96。其精确结果为 4.5。
 }
-%Todo 这一道题有些奇怪，很容易验证$<1s|1s> = 1/2, <2pz|2pz> = 1/32$并不归一，但是由于英文原版如此，我也没有做修改。之后有时间可以重新算一下这道题，把这道题的系数改正确。
  
 \addcontentsline{toc}{section}{\protect\numberline{}{扩展阅读}}
  
