@@ -1523,8 +1523,8 @@ e^{-[\zeta r]} \leftrightarrow e^{-[\sqrt{\alpha}r]^2}
 根据3.4.6节所列的SCF计算步骤, 首先要确定核标架的几何构型. 这里使用\ref{f2.5}中所绘的坐标系, 核间距$R=|\mathbf{R}_{12}|$定位实验值1.4原子单位(Bohr). 基组是标准的STO-3G基, 包含两个函数$\phi_1,\phi_2$, 每个都由三个原初高斯型收缩而成, 并已用最小平方法按Slater函数($\zeta=1.24$)拟合, 式\eqref{3.225}已说过. 那么就是
 \begin{equation}
 \begin{split}
-\phi_1(\bfr) & (\zeta^3/\pi)^{1/2}e^{-\zeta|\mathbf{r-R}_1|}\\
-\phi_2(\bfr) & (\zeta^3/\pi)^{1/2}e^{-\zeta|\mathbf{r-R}_2|}\\
+\phi_1(\bfr) & \simeq (\zeta^3/\pi)^{1/2}e^{-\zeta|\mathbf{r-R}_1|}\\
+\phi_2(\bfr) & \simeq (\zeta^3/\pi)^{1/2}e^{-\zeta|\mathbf{r-R}_2|}\\
 \zeta & = 1.24
 \end{split}
 \end{equation}
