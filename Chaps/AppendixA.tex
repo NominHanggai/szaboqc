@@ -1,2 +1,38 @@
 \chapter{$1s$原初高斯函数的积分计算方法}
 \label{appendix:a}
+
+
+大多数分子计算使用固定的分子坐标系，使得基函数以该坐标系中的位置矢量
+$\bo{R}_A$为中心，如\autoref{figA.1}所示。一个以$\bo{R}_A$为中心的
+位置矢量$\bo{r}$的值将会依赖于$\bo{r}-\bo{R}_A$，因此我们可以写一个一般化的基函数
+$\phi_\mu(\bo{r}-\bo{R}_A)$来代表它是以$\bo{R}_A$为中心的。在一个分子计算的过程中
+我们需要计算数量庞大的包含不同中心$\phi_\mu(\bo{r}-\bo{R}_A)$的单电子和双电子积分。
+如果我们使用的基函数包括四个或者更多的中心，那么我们的双电子积分将会包含$1-$、$2-$、$3-$和
+$4-$中心积分。核吸引势积分最多只能处理到三中心。这些多中心（超过$2$）的积分对于Slater型函数
+来说非常难以处理，但是对于Gaussian型函数来说处理起来相对简单。因此许多多原子计算使用Gaussian函数。
+\begin{figure}[h]
+	\begin{tikzpicture}[scale=2,inner sep=0,arrows=-latex]
+		\draw (0,0)--(0,2);
+		\draw (0,0)--(-1.2,-1.2);
+		\draw (0,0)--(2,0);
+		\node[shape=circle,draw,minimum size=.4cm] (j) at (2,1) {\bf j};
+		\node[shape=circle,draw,minimum size=.4cm] (B) at (-1.2,0.4) {\bf B};
+		\node[shape=circle,draw,minimum size=.4cm,] (i) at (.7,1.8) {\bf i};
+		\node[shape=circle,draw,minimum size=.4cm] (A) at (-.9,1) {\bf A};
+		\draw (0,0)--node[right=13pt]{$\mathbf{r_j}$}(j);
+		\draw (0,0)--node[right=5pt]{$\mathbf{r_i}$}(i);
+		\draw (0,0)--node[right=2pt,above=7pt]{$\mathbf{R_A}$}(A);
+		\draw (0,0)--node[left=3pt,below=2pt]{$\mathbf{R_B}$}(B);
+		\draw (B)--node[left=.2cm,]{$\mathbf{R_{AB}}=\mathbf{R_A-R_B}$}(A);
+		\draw (A)--node[left=.2cm]{$\mathbf{r_{iA}}=\mathbf{r_i-R_A}$}(i);
+		\draw (A)--node[pos=.7,above]{$\mathbf{r_{jA}}=\mathbf{r_j-R_A}$}(j);
+		\draw (j)--node[right=.2cm]{$\mathbf{r_{ij}}=\mathbf{r_i-r_j}$}(i);
+		\draw[draw=none] (.52,-.5)node{$i,j \equiv \text{电子}$};
+		\draw[draw=none] (.4,-.7)node{$A,B\equiv\text{核}$};
+	\end{tikzpicture}
+	\caption{分子坐标系}
+	\label{figA.1}
+\end{figure}
+
+% \newpage
+在高斯函数的计算中，收缩型的高斯函数
