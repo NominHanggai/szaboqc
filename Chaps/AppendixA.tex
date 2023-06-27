@@ -56,7 +56,7 @@ $\bo{R}_B$、$\bo{R}_C$、$\bo{R}_D$的轨道指数。高斯函数能够简化�
 其中，比例系数$\tilde{K}$为
 \begin{align}
 	\label{A.3}
-    \tilde{K}=\exp[-\alpha\beta/(\alpha+\beta)\lvert \bo{r}-\bo{R}_A \rvert ^2]
+    \tilde{K}=\exp[-\alpha\beta/(\alpha+\beta)\lvert \bo{R}_A-\bo{R}_B \rvert ^2]
 \end{align}
 第三个中心$P$落在中心$A$和$B$的连线上，
 \begin{align}
@@ -155,7 +155,7 @@ $F(\bo{k})$和$f(\bo{r})$被称为一个傅里叶变换对。所有的我们将�
 	\label{A.16}
 	(A|-Z_C/r_{1C}|B)=&\int\emph{d}\bo{r}_1\,\tilde{g}_{1s}(\bo{r}_1-\bo{R}_A)
 	[-Z_C/|\bo{r}_1-\bo{R}_C|^{-1}]\tilde{g}_{1s}(\bo{r}_1-\bo{R}_B) \nonumber\\
-	=&-Z_C\int\emph{d}\bo{r}_1\,e^{-\alpha\lvert \bo{r}-\bo{R}_A \rvert ^2}|\bo{r}_1-\bo{R}_C|
+	=&-Z_C\int\emph{d}\bo{r}_1\,e^{-\alpha\lvert \bo{r}-\bo{R}_A \rvert ^2}|\bo{r}_1-\bo{R}_C|^{-1}
 	e^{-\beta\lvert \bo{r}-\bo{R}_B \rvert ^2}
 \end{align}
 我们首先把两个高斯函数结合，得到一个中心在$\bo{R}_P$的高斯函数，
