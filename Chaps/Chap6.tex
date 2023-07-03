@@ -594,8 +594,8 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 存在这种对应关系是很奇妙的一件事. 
 转换规则如下:
 \begin{enumerate}
-	\item 每个点为分母贡献一个因子$\braket{\textit{穿入线的标号}|\vs|\textit{穿出线的标号}}$.
-	\item 每一对相邻点贡献一个分母上的因子\[ \sum E_\mathrm{空穴}-\sum E^{(0)}_\mathrm{粒子}\]
+	\item 每个点为分子贡献一个因子$\braket{\textit{穿入线的标号}|\vs|\textit{穿出线的标号}}$.
+	\item 每一对相邻点贡献一个分母上的因子\[ \sum E^{(0)}_\mathrm{空穴}-\sum E^{(0)}_\mathrm{粒子}\]
 	其中求和遍及所有与两个点之间的一条水平线相交的空穴线和粒子线.
 	\item 表达式的正负号为$(-)^{h+l}$, $h$是空穴线的数目, $l$是闭合圈图的数目. 本节的图中$l$总是1, 这里给出更一般的规则以利后用.
 \end{enumerate}
@@ -618,7 +618,7 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 \end{scope}
 \end{tikzpicture}
 \end{equation*}
-最上面的两个点每个为分母贡献一个因子$\braket{2|\vs|1}=V_{21}$, 
+最上面的两个点每个为分子贡献一个因子$\braket{2|\vs|1}=V_{21}$, 
 剩余的点每个贡献$\braket{1|\vs|2}=V_{12}$. 
 虚线$A,C$每个都为分母贡献一因子$E_1^{(0)} - E_2^{(0)}$, 
 虚线$B$贡献一个因子$(2E_1^{(0)} - 2E_2^{(0)})$. 
@@ -1196,7 +1196,7 @@ h_0\chi_i^{(0)} = \epsilon_i^{(0)} \chi_i^{(0)}
 \end{align}
 哈密顿量为$\hs_0$的$N$-电子系统的基态波函数$\ket{\Psi_0}$是由其中能量最低的$N$个自旋轨道组成的行列式：
 \begin{align}
-\ket{\Psi_0} = \ket{\chi_1^P(0)\cdots\chi_a^{(0)}\cdots\chi_n^{(0)}}
+\ket{\Psi_0} = \ket{\chi_1^{(0)}\cdots\chi_a^{(0)}\cdots\chi_n^{(0)}}
 \end{align}
 我们用指标$a,b,c,\ldots$来记占据(空穴hole)自旋轨道, 
 用$r,s,t,\ldots$来记未占(粒子particle)自旋轨道. 
@@ -1249,14 +1249,14 @@ h\chi_i = (h_0+v)\chi_i = \epsilon_i\chi_i
 1节中的一般性理论可以用于单粒子零阶\ha (即$h_0$)和单粒子微扰, 
 我们立马得到：
 \begin{align}
-\epsilon_a & = \epsilon_a^{(0)} + \braket{a|v|a} + \sum_i'\frac{\braket{a|v|i\braket{i|v|a}}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots\notag\\
+\epsilon_a & = \epsilon_a^{(0)} + \braket{a|v|a} + \sum_i'\frac{\braket{a|v|i}\braket{i|v|a}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots\notag\\
 	       & = \epsilon_a^{(0)} + v_{aa} + \sum_i'\frac{v_{ai}v_{ia}}{\epsilon_a^{(0)}-\epsilon_i^{(0)}} + \cdots
 \end{align}
 对$i$的求和可分为两部分, 
 一部分是对所有粒子轨道求和, 
-零一部分对除$a$外的所有空穴轨道求和：
+另一部分对除$a$外的所有空穴轨道求和：
 \begin{align}
-\epsilon_a = \epsilon_a^{(0)} + v_{aa} + \sum_r\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}} + v_{aa} + \sum_{b\neq a}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}-\epsilon_b^{(0)}} + \cdots
+\epsilon_a = \epsilon_a^{(0)} + v_{aa} + \sum_r\frac{v_{ar}v_{ra}}{\epsilon_a^{(0)}-\epsilon_r^{(0)}} + \sum_{b\neq a}\frac{v_{ab}v_{ba}}{\epsilon_a^{(0)}-\epsilon_b^{(0)}} + \cdots
 \end{align}
 当下我们要得到精确能量的微扰展开, 
 那么将(6.
@@ -1332,7 +1332,7 @@ E_0^{(2)} = \sideset{}{'}\sum_n\frac{\left| \braket{\Psi_0|\sum_iv(i)\ket{n}}\ri
 \begin{enumerate}[a.]
 	\item 证明
 		\begin{align*}
-		B_0^{(3)} = -E_0^{(1)}\sideset{}{'}\sum_n\frac{ \braket{\Psi_0|\vs|^2}}{(E_0^{(0)} - E_n^{(0)})^2} = - \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )}
+		B_0^{(3)} = -E_0^{(1)}\sideset{}{'}\sum_n\frac{|\braket{\Psi_0|\vs|n}|^2}{(E_0^{(0)} - E_n^{(0)})^2} = - \sum_{abr}\frac{v_{aa}v_{rb}v_{br}}{(\epsilon_b^{(0)} - \epsilon_r^{(0)} )}
 		\end{align*}
 	\item 证明
 		\begin{align*}
@@ -1445,7 +1445,7 @@ $N$很大的时候,
 \begin{equation*}
 i\to j^* \to i\leftrightarrow
 \begin{tikzpicture}[baseline={(0,-.1)},scale=1.2]
-\node(a)at (0,0){$i$};\node(b)at(1,1){$i+1$};\node(c)at(2,0){$i$};\node(d)at(1,-1){$i-1$};
+\node(a)at (0,0){$i$};\node(b)at(1,1){$(i+1)^*$};\node(c)at(2,0){$i$};\node(d)at(1,-1){$(i-1)^*$};
 \draw (a)--node[above]{$+$}(b)--node[above]{$+$}(c)--node[below]{$-$}(d)--node[below]{$-$}(a);
 \end{tikzpicture}\leftrightarrow \sum_j\braket{i|v|j^*}\braket{j^*|v|i}
 \end{equation*}
@@ -1468,7 +1468,7 @@ i\to j^* \to i\leftrightarrow
 \begin{align}
 E_0^{(3)} = 2\sum_{ars}^{N/2}\frac{v_{ar}v_{rs}v_{sa}}{(\epsilon^{(0)}_a-\epsilon^{(0)}_r)(\epsilon^{(0)}_a-\epsilon^{(0)}_s)} - 2\sum_{abr}^{N/2}\frac{v_{ra}v_{ab}v_{br}}{(\epsilon^{(0)}_a-\epsilon^{(0)}_r)(\epsilon^{(0)}_b-\epsilon^{(0)}_r)}
 \end{align}
-按照计算$E_0^{(0)}$时的办法, 
+按照计算$E_0^{(2)}$时的办法, 
 该表达式的第一项成为
 \begin{align}
 \frac{2}{(2\beta)^2}\sum_{i=1}^{n}\sum_{j=1}^{n}\sum_{k=1}^{n}\braket{i|v|j^*}\braket{j^*|v|k^*}\braket{k^*|v|i}
@@ -1732,7 +1732,7 @@ $E_0^{(3)}$算出后，
 为
 %\addtocounter{equation}{1}
 \begin{align}
-E_0^{(0)} & = 
+E_0^{(3)} & = 
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.6]
 \path [draw=blue,postaction={on each segment={mid arrow}}] 
 (0,-3.5) node{\dian}
@@ -2047,12 +2047,12 @@ $E_0^{(n)}$确实正比于粒子数。
 \begin{equation}
 \ket{\Psi_0} = \ket{1_1\bar{1}_1 1_2\bar{1}_2 \cdots 1_N\bar{1}_N}
 \end{equation}
-若$\hs$是对应的\hft{} \ha(前节提过), 
+若$\hs_0$是对应的\hft{} \ha(前节提过), 
 那么零阶及一阶能量就是
 \begin{subequations}
 \begin{gather}
 E_0^{(0)} = \braket{\Psi_0|\hs_0|\Psi_0}=2\sum_{i=1}^{N}\braket{1_i|f|1_i}=2N\epsilon_1\\
-E_0^{(1)} = \braket{\Psi_0|\vs|\Psi_0}=-\sum_{i=1}^{N}\braket{1+i1_i|1_i1_i}=-NJ_{11}
+E_0^{(1)} = \braket{\Psi_0|\vs|\Psi_0}=-\sum_{i=1}^{N}\braket{1_i1_i|1_i1_i}=-NJ_{11}
 \label{6.80b}
 \end{gather}
 \end{subequations}
@@ -2805,8 +2805,8 @@ Hugenholtz图中的如下单位
     \path[mid arrow seg,draw=blue]
     (c) arc(225:135:1.414) node[midway,left]{$r$}  
     (a) arc( 45:-45:1.414) node[midway,right]{$a$}  
-    (d) arc(225:135:1.414) node[midway,left]{$b$}  
-    (b) arc( 45:-45:1.414) node[midway,right] {$s$}; 
+    (d) arc(225:135:1.414) node[midway,left]{$s$}  
+    (b) arc( 45:-45:1.414) node[midway,right] {$b$}; 
     \draw[draw=blue,densely dotted]
     (a)--(b)
     (c)--(d);
@@ -3702,7 +3702,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \begin{align}
 	E_0^{(2)}  = \frac{K_{12}^2}{2(\varepsilon_1 - \varepsilon_2)}
 \end{align}
-在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，十一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\autoref{6.72}和\autoref{6.75}。 以这种方式获得的极小基$\hd$的势能曲线如图~\autoref{fig:6.2}所示。
+在$R\to\infty$极限下，$K_{12}$变成$\frac{1}{2}(\phi\phi|\phi\phi)$，是一个有限量；但是$\varepsilon_1$ （$\varepsilon_1=h_{11}+J_{11}$）和$\varepsilon_1$ （$\varepsilon_2=h_{22}+2J_{12}-K_{12}$）的极限值相同（即$E(\mathrm{H})+\frac{1}{2}(\phi\phi|\phi\phi)$）。这就令$\varepsilon_1-\varepsilon_2$趋近零，$E_0^{(2)}$因此变成无穷了。解决这个困难最简单的方法是通过微扰理论改进非限制性的 HF 描述。 在计算上，只要在二阶和更高阶能量的公式里使用非限制性自旋轨道和轨道能量就行，即把求和写成对自旋求和而不是对空间轨道求和（例如，方程\autoref{6.72}和\autoref{6.75}。 以这种方式获得的极小基$\hd$的势能曲线如图~\autoref{fig:6.2}所示。
 \begin{figure}
 	\centering
 	\tikzset{
@@ -3847,7 +3847,7 @@ SCF 与实验结果的最大差异为 0.03\,a.u。
 \begin{align}
 	\mu_i = -\left(\frac{\partial E(\vec{F})}{\partial F_i}\right)_0
 \end{align}
-式中选择减号是为了使偶极矩矢量从分子的负极指向正极。类似地，在零场上算得的$E(\vec{F})$的二阶导数定义了分子的极化张量。因此有限微理论可以用来获得分子的极化和偶极矩。
+式中选择减号是为了使偶极矩矢量从分子的负极指向正极。类似地，在零场上算得的$E(\vec{F})$的二阶导数定义了分子的极化张量。因此有限微扰论可以用来获得分子的极化和偶极矩。
 
 下面给出的偶极矩是这样计算得到的：首先在存在场的情况下执行HF计算，然后使用含场的HF轨道和轨道能量计算二阶能量，最后对二阶微扰论给出的总能量进行数值微分。 我们首先考虑十电子系列化合物$\mathrm{NH_3}$ 、$\mathrm{H_2O}$ 和$\mathrm{FH}$ 的偶极矩。 之前我们在第 3 章中已经看到，即使在6-31G** 水平，与接近HF极限的更大基组SCF计算相比，HF偶极矩也很不准确。 用标准基组的二阶总能量计算得到的偶极矩如表~\autoref{tab:6.10}所示。 请注意，对于较大的基组，电子相关会在正确的方向上改变偶极矩，但除了 FH 的 6-31G** 结果外，其他结果与实验的一致性仍然很差。 这说明了一个事实：基组的缺陷不能通过包括相关效应来纠正。
 
