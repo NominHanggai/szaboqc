@@ -1355,6 +1355,7 @@ Roothaan\endnote{
 
 1. \emph{重叠矩阵$\mathbf{S}$}的矩阵元为
 \begin{align}
+	\label{3.136}
 	S_{\mu\nu}=\int\dd{r}_1\,\phi_\mu^*(1)\phi_\nu(1)
 \end{align}
 该矩阵为$K\times K$厄米矩阵(虽然通常是实对称阵). 
@@ -1395,6 +1396,7 @@ Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩�
 这组方程就是\emph{Roothaan方程}, 
 可以写成更紧凑的单个矩阵方程：
 \begin{align}
+	\label{3.139}
 	\mathbf{FC=SC}\bm{\epsilon}
 \end{align}
 式中$\mathbf{C}$是展开系数$C_{\mu i}$构成的$K\times K$方阵：
@@ -1410,6 +1412,7 @@ Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩�
 \end{align} 
 $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 \begin{align}
+	\label{3.141}
 	\bm{\epsilon} = 
 	\begin{pmatrix}
 		\epsilon_1 &            &        &            \\
@@ -4429,7 +4432,9 @@ $\mathrm{CO}$能量最高的占据分子轨道是成键轨道$5\sigma$和$1\pi$�
 
 \subsection{平衡几何构型}
 \subsection{布居分析与偶极矩}
-
+\begin{align}
+	\rho(\bfr)=\sum_\mu\sum_\nu \mathbf{P}_{\mu\nu}\phi_\mu(\bfr)\phi^*_\nu(\bfr)
+\end{align}
 \section{非限制性开壳层H-F：Pople-Nesbet方程}
 本章开头曾推导并讨论了\hft 方程的形式性质, 
 并没有特别指定自旋轨道的形式。 
@@ -4704,10 +4709,37 @@ $\beta$自旋电子的规定也相同。
 这个办法和之前推导Roothan方程时所用办法的一样。
 为此，我们引入一组基$\{\phi_\mu|\mu = 1,2,\ldots,K\}$，并用这组基展开非限制性分子轨道：
 \begin{align}
-	\psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \\
-	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K\\
+	\psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \label{3.328} \\
+	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K
 \end{align}
-\autoref{3.312}\autoref{3.313}这两个本征值方程。
+\autoref{3.312}\autoref{3.313}这两个本征值方程保证了本征函数$\{\psi_i^\alpha\}$和$\{\psi_i^\beta\}$分别构成正交归一集，
+但是$\psi_i^\alpha$和$\psi_i^\beta$不一定正交。
+但即使这两组空间轨道之间有重叠，$2K$个自旋轨道的集合$\{\chi_i\}$依然正交归一：
+要么来自空间正交（$\alpha\alpha$和$\beta\beta$的情况），
+要么来自自旋正交（$\alpha\beta$的情况）. 
+
+将轨道$\psi^\alpha_j$按\autoref{3.328}展开，代入$\alpha$自旋的\hft 方程\autoref{3.312}，得到
+\begin{align}
+	\sum_\nu C^\alpha_{\nu j}f^\alpha(1)\phi_\nu(1)=\epsilon^\alpha_j\sum_\nu C^\alpha_{\nu j}\phi_\nu(1)
+\end{align}
+两边左乘$\phi_\mu^*(1)$并对电子1的空间坐标积分，得到
+\begin{align}
+	\sum_\nu F^\alpha_{\mu\nu}C^\alpha_{\nu j} = \epsilon^\alpha_j\sum_\nu S_{\mu\nu}C^\alpha_{\nu j} \quad j=1,2,\ldots,K
+\end{align}
+其中$\mathbf{S}$是重叠矩矩阵（\autoref{3.136}），$\mathbf{F}^\alpha$是$f^\alpha$在基组$\{\phi_\mu\}$下的矩阵表示：
+\begin{align}
+	F^\alpha_{\mu\nu}=\int{\dd\bfr_1}\phi^*_\mu(1)f^\alpha(1)\phi_\nu(1)
+\end{align}
+对$\beta$轨道也可以得到相同的结果。\autoref{3.331}和$\beta$轨道对应的方程可以写成矩阵形式：
+\begin{align}
+	\mathbf{F}^\alpha\mathbf{C}^\alpha = \mathbf{S}\mathbf{C}^\alpha\bm{\epsilon}^\alpha\\
+	\mathbf{F}^\beta\mathbf{C}^\beta = \mathbf{S}\mathbf{C}^\beta\bm{\epsilon}^\beta
+\end{align}
+这两个方程是限制性Roothaan方程\autoref{3.139}的非限制性推广，由Pople和Nesbet首先给出。
+$\bm{\epsilon}^\alpha$和$\bm{\epsilon}^\beta$是对角矩阵，对角元为轨道能量\autoref{3.141}. 
+$K\times K$方阵$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$的列是轨道$\psi_i^\alpha$和$\psi_i^\beta$的展开系数。
+这两个方程可以用类似于求解Roothaan方程的方式求解，但因为$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$都同时依赖$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$，
+所以必须同时求解这两个矩阵本征值问题。我们将在给出非限制性密度矩阵和$F^\alpha_{\mu\nu}$、$F^\beta_{\mu\nu}$的表达式后再回来求解这两个方程。
 \subsection{非限制性密度矩阵}
 \subsection{Fock矩阵的表达式}
 \subsection{非限制SCF方程的解}
