@@ -4676,6 +4676,7 @@ $\psi_i^\alpha$上一个电子与$\psi_i^\beta$上一个电子之间的库伦相
 现在可以写出非限制性总电子能量，
 只要写出所有的贡献项
 \begin{align}
+	\label{3.327}
 	E_{0}=\sum_{a}^{N^{\alpha}} h_{a a}^{\alpha}+\sum_{a}^{N^{\beta}} h_{a a}^{\beta}+\frac{1}{2} \sum_{a}^{N^{\alpha}} \sum_{b}^{N^{\alpha}}\left(J_{a b}^{\alpha \alpha}-K_{a b}^{\alpha \alpha}\right)+\frac{1}{2} \sum_{a}^{N^{\beta}} \sum_{b}^{N^{\beta}}\left(J_{a b}^{\beta \beta}-K_{a b}^{\beta \beta}\right)+\sum_{a}^{N^{\alpha}} \sum_{b}^{N^{\beta}} J_{a b}^{a \beta}
 \end{align}
 上限为$N_\alpha$的求和遍及所有的占据轨道$\psi_a^\alpha$或$\psi_b^\alpha$. 
@@ -4710,7 +4711,7 @@ $\beta$自旋电子的规定也相同。
 为此，我们引入一组基$\{\phi_\mu|\mu = 1,2,\ldots,K\}$，并用这组基展开非限制性分子轨道：
 \begin{align}
 	\psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \label{3.328} \\
-	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K
+	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K \label{3.329}
 \end{align}
 \autoref{3.312}\autoref{3.313}这两个本征值方程保证了本征函数$\{\psi_i^\alpha\}$和$\{\psi_i^\beta\}$分别构成正交归一集，
 但是$\psi_i^\alpha$和$\psi_i^\beta$不一定正交。
@@ -4741,8 +4742,132 @@ $K\times K$方阵$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$的列是轨道$\psi_i^
 这两个方程可以用类似于求解Roothaan方程的方式求解，但因为$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$都同时依赖$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$，
 所以必须同时求解这两个矩阵本征值问题。我们将在给出非限制性密度矩阵和$F^\alpha_{\mu\nu}$、$F^\beta_{\mu\nu}$的表达式后再回来求解这两个方程。
 \subsection{非限制性密度矩阵}
+我们从限制性闭壳层波函数的结果出发。
+如果一个电子占据分子轨道$\psi_a^\alpha(\bfr)$，则在$\bfr$处的体积元$\dd\bfr$内找到该电子的概率是$|\psi^\alpha_a(\bfr)|^2\dd\bfr$，
+概率分布函数（电荷密度）是$|\psi^\alpha_a(\bfr)|^2$。如果有$N^\alpha$个$\alpha$自旋的电子，则它们对总电荷密度的贡献为
+\begin{align}
+	\label{3.335}
+	\rho^\alpha(\bfr)=\sum^{N^\alpha}_a|\psi_a^\alpha(\bfr)|^2
+\end{align}
+相应地，$\beta$自旋的电子贡献的电荷密度为
+\begin{align}
+	\label{3.336}
+	\rho^\beta(\bfr)=\sum^{N^\beta}_a|\psi_a^\beta(\bfr)|^2
+\end{align}
+这些电子的总电荷密度是二者之和：
+\begin{align}
+	\rho^T(\bfr)=\rho^\alpha(\bfr)+\rho^\beta(\bfr)
+\end{align}
+对这个方程积分，正如预期，得到电子数：
+\begin{align}
+	\int{\dd\bfr}\rho^T(\bfr)=N=N^\alpha+N^\beta
+\end{align}
+在非限制性波函数中，$\alpha$和$\beta$自旋的电子有不同的空间分布（$\rho^\alpha\neq\rho^\beta$）。
+方便起见，定义\phrase{自旋密度}$\rho^S(\bfr)$
+\begin{align}
+	\rho^S(\bfr)=\rho^\alpha(\bfr)-\rho^\beta(\bfr)
+\end{align}
+根据上述定义，在找到$\alpha$自旋电子比找到$\beta$自旋电子概率更高的区域自旋密度为正，反之为负。
+当然$\rho^\alpha$和$\rho^\beta$总是正的。 
+自旋密度便于在开壳层体系中描述自旋分布。
+\exercise{
+	利用定义\autoref{3.335}，\autoref{3.336}和\autoref{2.254}，证明自旋密度在全空间的积分是$2\braket{\ts_z}$。
+}
+将$\alpha$和$\beta$分子轨道的基组展开\autoref{3.328}和\autoref{3.329}代入\autoref{3.335}和\autoref{3.336}，得到$\alpha$和$\beta$电荷密度的矩阵表象（密度矩阵）：
+\begin{align}
+	\rho^\alpha(\bfr)=\sum^{N^\alpha}_a|\psi^\alpha_a(\bfr)|^2=\sum_\mu\sum_\nu P^\alpha_{\mu\nu}\phi_\mu(\bfr)\phi_\nu^*(\bfr) \label{3.340}\\
+	\rho^\beta(\bfr)=\sum^{N^\beta}_a|\psi^\beta_a(\bfr)|^2=\sum_\mu\sum_\nu P^\beta_{\mu\nu}\phi_\mu(\bfr)\phi_\nu^*(\bfr)
+\end{align}
+其中$\alpha$和$\beta$电子的密度矩阵$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$定义为
+\begin{align}
+	P^\alpha_{\mu\nu}=\sum^{N^\alpha}_aC^\alpha_{\mu a}C^{\alpha*}_{\nu a} \\
+	P^\beta_{\mu\nu}=\sum^{N^\beta}_aC^\beta_{\mu a}C^{\beta*}_{\nu a} \label{3.343}
+\end{align}
+除这两个密度矩阵外，还可以类似地定义\phrase{总密度矩阵}和\phrase{自旋密度矩阵}：
+\begin{align}
+	\mathbf{P}^T=\mathbf{P}^\alpha+\mathbf{P}^\beta \\
+	\mathbf{P}^S=\mathbf{P}^\alpha-\mathbf{P}^\beta
+\end{align}
+\exercise{
+	补全推导出\autoref{3.340}至\autoref{3.343}的步骤。
+	\Next
+	证明：自旋无关的单电子算符之和$\sum^N_{i=1}h(i)$的期待值为：
+	\begin{align*}
+		\braket{\mathscr{O}_1}=\sum_\mu\sum_\nu P^T_{\mu\nu}(\nu|h|\mu)
+	\end{align*}
+	\Next
+	考虑下面的自旋相关算符，它是单电子算符之和：
+	\begin{align*}
+		\hat{\rho}^S=2\sum^N_{i=1}\delta(\bfr_i-\mathbf{R})s_z(i)
+	\end{align*}
+	利用第二章的矩阵元规则，证明$\hat{\rho}^S$对任意非限制性单行列式的期待值是
+	\begin{align*}
+		\braket{\hat{\rho}^S}=\rho^S(\mathbf{R})=\tr(\mathbf{P}^S\mathbf{A})
+	\end{align*}
+	其中
+	\begin{align*}
+		A_{\mu\nu}=\phi^*_\mu(\mathbf{R})\phi_\nu(\mathbf{R})
+	\end{align*}
+	这个矩阵元在ESR和NMR耦合常数的费米接触贡献理论中非常重要。
+}
+定义了非限制性密度矩阵$\mathbf{P}^\alpha$, $\mathbf{P}^\beta$, $\mathbf{P}^T$和$\mathbf{P}^S$后，
+我们将用这些定义给出非限制性Fock矩阵$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$的表达式。
 \subsection{Fock矩阵的表达式}
+为得到$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$矩阵元的表达式，我们考虑两个Fock算符$f^\alpha$（\autoref{3.316}）和$f^\beta$（\autoref{3.318}）在基组$\{\phi_\mu\}$下的矩阵元，
+并利用库伦和交换算符矩阵元\autoref{3.322}至\autoref{3.326}：
+\begin{align}
+	F^\alpha_{\mu\nu} &= \int{\dd\bfr_1}\phi^*_\mu(1)f^\alpha(1)\phi_\nu(1) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum^{N^\alpha}_a[(\phi_\mu\phi_\nu|\psi^\alpha_a\psi^\alpha_a)-(\phi_\mu\psi^\alpha_a|\psi^\alpha_a\psi_\nu)]+\sum^{N^\beta}_a(\phi_\mu\phi_\nu|\psi^\beta_a\psi^\beta_a) \label{3.346} \\
+	F^\beta_{\mu\nu} &= \int{\dd\bfr_1}\phi^*_\mu(1)f^\beta(1)\phi_\nu(1) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum^{N^\beta}_a[(\phi_\mu\phi_\nu|\psi^\beta_a\psi^\beta_a)-(\phi_\mu\psi^\beta_a|\psi^\beta_a\psi_\nu)]+\sum^{N^\alpha}_a(\phi_\mu\phi_\nu|\psi^\alpha_a\psi^\alpha_a) \label{3.347}
+\end{align}
+然后代入$\psi^\alpha_a$和$\psi^\beta_a$的基组展开，得到
+\begin{align}
+	F^\alpha_{\mu\nu} &=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma\sum^{N^\alpha}_a C^\alpha_{\lambda a}(C^\alpha_{\sigma a})^*[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma\sum^{N^\beta}_a C^{\beta}_{\lambda a}(C^\beta_{\sigma a})^* (\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma P^\alpha_{\lambda\sigma}[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma P^\beta_{\lambda\sigma}(\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma [P^T_{\lambda\sigma}(\mu\nu|\sigma\lambda)- P^\alpha_{\lambda\sigma}(\mu\lambda|\sigma\nu)] \label{3.348} \\
+	F^\beta_{\mu\nu} &=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma\sum^{N^\beta}_a  C^\beta_{\lambda a}(C^\beta_{\sigma a})^*[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma\sum^{N^\alpha}_a C^{\alpha}_{\lambda a}(C^\alpha_{\sigma a})^* (\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma P^\beta_{\lambda\sigma}[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma P^\alpha_{\lambda\sigma}(\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma [P^T_{\lambda\sigma}(\mu\nu|\sigma\lambda)- P^\beta_{\lambda\sigma}(\mu\lambda|\sigma\nu)] \label{3.349}
+\end{align}
+若将上面的表达式和相应的闭壳层表达式\autoref{3.154}比较，可以看到库伦项相等并依赖于总密度矩阵，区别只是这里$\alpha$和$\beta$有各自的表达式，而不像闭壳层那样有
+\begin{align}
+	P^\alpha_{\mu\nu}=P^\beta_{\mu\nu}=\frac{1}{2}P^T_{\mu\nu}
+\end{align}
+上述表达式体现了两组方程的耦合：$\mathbf{F}^\alpha$依赖$\mathbf{P}^\beta$（通过总密度矩阵$\mathbf{P}^T$），类似地，$\mathbf{F}^\beta$依赖$\mathbf{P}^\alpha$。
 \subsection{非限制SCF方程的解}
+求解非限制性SCF方程的流程和前述的求解Roothaan方程的流程本质上是相同的。
+我们需要初猜两个密度矩阵$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$（也就有了$\mathbf{P}^T$）。
+一个显然的选择是令这些密度矩阵为零，使用$\mathbf{H}^\text{core}$作为$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$初猜。
+如果这样做，第一步迭代对$\alpha$和$\beta$自旋会得到相同的轨道，也就一个限制性的解。
+但若$N^\alpha\neq N^\beta$，后续迭代中会有$\mathbf{P}^\alpha\neq\mathbf{P}^\beta$，最终会得出非限制性的解。
+
+在每步迭代中，给定$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$的近似，我们可以构建$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$，然后求解两个广义矩阵本征值问题
+\begin{align}
+	\mathbf{F}^\alpha\mathbf{C}^\alpha = \mathbf{S}\mathbf{C}^\alpha\bm{\epsilon}^\alpha \label{3.351}\\
+	\mathbf{F}^\beta\mathbf{C}^\beta = \mathbf{S}\mathbf{C}^\beta\bm{\epsilon}^\beta \label{3.352}
+\end{align}
+解得$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$，然后构建新的近似密度矩阵$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$。
+因为两个方程之间的耦合，我们必须同时其自洽求解$\alpha$和$\beta$自旋的方程，即使在任意一步迭代中这两个矩阵本征值问题\autoref{3.351}和\autoref{3.352}可以独立求解。耦合出现在构造Fock矩阵的过程中。
+求解矩阵本征值问题的流程和限制性闭壳层的情况一样，包括解出正交化变换矩阵$\mathbf{X}$、构造${\mathbf{F}^\alpha}'=\mathbf{X}^\dagger \mathbf{F}^\alpha\mathbf{X}$、
+对角化${\mathbf{F}^\alpha}'$得到${\mathbf{C}^\alpha}'$以及$\mathbf{C}^\alpha=\mathbf{X}{\mathbf{C}^\alpha}'$。
+\exercise{
+	在电子能量$E_0$的表达式\autoref{3.327}中代入非限制性分子轨道的基组展开，以证明：
+	\begin{align*}
+		E_0=\frac{1}{2}\sum_\mu\sum_\nu[P^T_{\nu\mu}H^\text{core}_{\mu\nu}+P^\alpha_{\nu\mu}F^\alpha_{\mu\nu}+P^\beta_{\nu\mu}F^\beta_{\mu\nu}]
+	\end{align*}
+}
+在继续讨论非限制性计算的例子之前，关于Pople-Nesbet方程的解有一个值得注意的点：在$N^\alpha=N^\beta$即闭壳层波函数可以正常描述的分子中，Pople-Nesbet方程可能有两个独立的解。
+一个是限制性的解：如果$\mathbf{P}^\alpha=\mathbf{P}^\beta=\frac{1}{2}\mathbf{P}$，则$\mathbf{F}^\alpha=\mathbf{F}^\beta=\mathbf{F}$，Pople-Nesbet方程退化为Roothaan方程。
+\mci{当$N^\alpha=N^\beta$时，Roothaan方程的限制性解是非限制性Pople-Nesbet方程的一个解。}这个限制性解总是存在，并且是当用$\mathbf{P}^\alpha=\mathbf{P}^\beta$作初猜时的必然结果。
+对$N^\alpha=N^\beta$，除这个限制性解外还存在一个具有更低能量的非限制性解。限制性解限定了$\alpha$电子的密度等于$\beta$电子的密度，
+但在特定条件下（将在本章最后一节讨论）放宽这个约束会给出一个具有更低能量的非限制性解，其中$\mathbf{P}^\alpha$不等于$\mathbf{P}^\beta$。
+\mci{当$N^\alpha=N^\beta$时，Pople-Nesbet方程在特定条件下存在第二个解：非限制性解}。
+要找到这第二个解，使用$\mathbf{P}^\alpha\neq\mathbf{P}^\beta$的初猜很重要，否则必然会得到限制性解。
+即使用了非限制性的初猜，迭代过程仍有可能收敛到限制性解。当存在两个解时，初猜很大程度上决定了迭代会收敛到哪个解。
+
+一般用非限制性波函数来描述$N^\alpha\neq N^\beta$的开壳层分子态，不涉及上述问题。
+但若采用非限制性波函数作为解离问题的解，就像随后将要讨论的那样，两个解的可能性至关重要。
 \subsection{一些非限制性的算例}
 
 
