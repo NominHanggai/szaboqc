@@ -12,3 +12,6 @@ Tex Live >=2021 下 XeLaTeX 编译。
 
 或者使用`make`.
 
+## 关于贡献
+
+See [Contributing guide and tips](https://github.com/Mulliken/szaboqc/issues/11).
