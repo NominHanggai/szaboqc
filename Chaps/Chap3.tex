@@ -231,7 +231,7 @@ Hartree-Fock理论中,
 (3.4)中的交换项来自单行列式的反对称性质, 它的形式比较特殊, 而且没有如库伦项那样简单的经典解释. 
 但仍可将Hartree-Fock方程(3.4)写成本征值方程的形式：
 \begin{align}
-	\left[ h(1) + \sum_{b\neq a}\mathscr{J}_b(1) - \sum_{b\neq a}\mathscr{K}_b(1)   \right]\chi_b(1) = \epsilon_a\chi_a(1)
+	\left[ h(1) + \sum_{b\neq a}\mathscr{J}_b(1) - \sum_{b\neq a}\mathscr{K}_b(1)   \right]\chi_a(1) = \epsilon_a\chi_a(1)
 \end{align}
 其中引入了\emph{交换算符}$\mathscr{K}_b(1)$, 
 它作用在一自旋轨道$\chi_a(1)$上时的效果定义如下：
@@ -252,7 +252,7 @@ Hartree-Fock理论中,
 }, 
 并非只依赖于$\chi_a$在$\mathbf{x}_1$一点的值, 这点在(3.10)的表达式中很明显. 
 如此的后果就是, 举个例子, 我们无法画出交换势的等高线图, 但库伦势就可以. 
-对易在$\chi_a$上的电子而言, 库伦算符和交换算符$\mathscr{J}_b,\mathscr{K}_b$的期望值就是前一章提过的库伦和交换积分：
+对于在$\chi_a$上的电子而言, 库伦算符和交换算符$\mathscr{J}_b,\mathscr{K}_b$的期望值就是前一章提过的库伦和交换积分：
 \begin{align}
 	\braket{\chi_a(1)|\mathscr{J}_b(1)|\chi_a(1)} & = \int\dd{x}_2\,\chi_a^*(1)\chi_a(1)r_{12}^{-1}\chi_b^*(2)\chi_b(2) = [aa|bb]\\
 	\braket{\chi_a(1)|\mathscr{K}_b(1)|\chi_a(1)} & = \int\dd{x}_2\,\chi_a^*(1)\chi_b(1)r_{12}^{-1}\chi_b^*(2)\chi_a(2) = [ab|ba]
@@ -669,7 +669,7 @@ Fock算符中依赖于自旋轨道的部分是库伦和交换算符.
 因此我们有
 \begin{align}
 	\epsilon_{ab}' & = \int\dd{x}_1\,\chi_a^{\prime *}(1)f(1)\chi_b'(1)\notag\\
-	& = \sum_{cd}U_{ca}^* U_{db}\int\dd{x}_1\,\chi_x^*(1)f(1)\chi_d(1)\notag\\
+	& = \sum_{cd}U_{ca}^* U_{db}\int\dd{x}_1\,\chi_c^*(1)f(1)\chi_d(1)\notag\\
 	& = \sum_{cd}U_{ca}^* \epsilon_{cd} U_{db}
 \end{align}
 或者写成矩阵形式：
@@ -680,7 +680,7 @@ Fock算符中依赖于自旋轨道的部分是库伦和交换算符.
 因此总能找到一个合适的酉矩阵$\mathbf{U}$使得变换(3.67)将$\bm{\epsilon}$对角化. 
 此处我们不关心如何找到这个矩阵, 
 只需要知道它存在且唯一. 
-那么一定由一组自旋轨道$\{\chi_a'\}$使得Lagrange乘子矩阵为对角化的：
+那么一定有一组自旋轨道$\{\chi_a'\}$使得Lagrange乘子矩阵为对角化的：
 \begin{align}
 	f\ket{\chi_a'} = \epsilon_a'\ket{\chi_a'}
 \end{align}
@@ -746,7 +746,7 @@ Fock算符对这些被占轨道有泛函的依赖,
 使用了如下等式：
 \begin{align}
 	\braket{\chi_i|\scr{J}_k|\chi_j} & = \braket{ik|jk} = [ij|kk]\\
-	\braket{\chi_i|\scr{K}_k|\chi_j} & = \braket{ik|kj} = [ij|kj]
+	\braket{\chi_i|\scr{K}_k|\chi_j} & = \braket{ik|kj} = [ik|kj]
 \end{align}
 具体地, 
 根据以上式子我们有
@@ -782,7 +782,7 @@ Fock算符对这些被占轨道有泛函的依赖,
 
 $\epsilon_a$的结果也许是可预料的. 但\autoref{3.79}中的自旋轨道能量比较特殊. 
 它包括$\ket{\chi_r}$中电子的动能和核吸引势能$\braket{r|h|r}$, 这我们是知道的, 
-它它还包括与\hft 基态中全部$N$个电子的库伦和交换作用$\braket{rb|rb},-\braket{rb|br}$, 也就是与自旋轨道$\{\chi_b|b=1,2,\ldots,N\}$中电子的作用. 
+它还包括与\hft 基态中全部$N$个电子的库伦和交换作用$\braket{rb|rb},-\braket{rb|br}$, 也就是与自旋轨道$\{\chi_b|b=1,2,\ldots,N\}$中电子的作用. 
 这就好象将一个电子额外加到$\ket{\Psi_0}$得到一个$(N+1)$-电子态, $\epsilon_r$表示这个额外电子的能量. 
 事实正是如此. 之后讨论Koopmans定理的时候会在回到这里. 
 现下我们来讨论占据轨道能量$\epsilon_a$与总能量$E_0$的关系.
@@ -805,7 +805,7 @@ $\epsilon_a$的结果也许是可预料的. 但\autoref{3.79}中的自旋轨道�
 $\ket{\Psi_0}$的总能不是所有轨道能量之和，原因如下. 
 能量$\epsilon_a$中包括$\chi_a$上的电子与其余占据轨道(例如$\chi_b$)上的电子之间的库伦和交换作用. 
 但$\epsilon_b$也包括$\chi_b$电子与其余自旋轨道(如$\chi_a$)上的电子之间的库伦和交换作用. 
-因此当对$\epsilon_a,\epsilon_b$作加法时, $\chi_a,\chi_b$上的两个电子之间的相互作用被计入了两次. 这就是总能$E_0$的正确表达\autoref{3.81}想对与轨道能量之和$(3.80)$多出因子$\frac{1}{2}$的原因.
+因此当对$\epsilon_a,\epsilon_b$作加法时, $\chi_a,\chi_b$上的两个电子之间的相互作用被计入了两次. 这就是总能$E_0$的正确表达\autoref{3.81}相对于轨道能量之和$(3.80)$多出因子$\frac{1}{2}$的原因.
 
 若总能并非轨道能量之和, 
 那么我们可以为轨道能量赋予何种物理意义？
@@ -821,7 +821,7 @@ $\ket{\Psi_0}$的总能不是所有轨道能量之和，原因如下.
 \end{align}
 这个过程中$\ket{^N\Psi_0}$的电离能为
 \begin{align}
-	\mathrm{IP} = ^{N-1}E_c - ^{N-1}E_c
+	\mathrm{IP} = ^{N-1}E_c - ^{N}E_0
 \end{align}
 式中$^{N-1}E_c,^{N}E_0$分别是两个对应的单行列式的能量期望：
 \begin{align}
@@ -1149,7 +1149,7 @@ $\beta$的结果也一样,
 \end{align}
 那么\autoref{3.114}成为
 \begin{align}
-	\left[ \int\dd\omega_1\alpha^*(\omega_1)f(\mathbf{x}_1)\omega_1 \right]\psi_j(\mathbf{r}_1) &= \left[ \int\dd\omega_1\alpha^*(\omega_1)h(\mathbf{r}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) \notag\\
+	\left[ \int\dd\omega_1\alpha^*(\omega_1)f(\mathbf{x}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) &= \left[ \int\dd\omega_1\alpha^*(\omega_1)h(\mathbf{r}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) \notag\\
 	+\Bigg[ \sum_c\int\dd\omega_1\dd{x}_2\,\alpha^*(\omega_1)\chi_c^*(&\mathbf{x}_2)\twoe(1-\scr{P}_{12})\chi_c(\mathbf{x}_2)\alpha(\omega_1) \Bigg]\psi_j(\mathbf{r}_1)  \notag\\
 	& = \epsilon_j\psi_j(\mathbf{r}_1)
 \end{align}
@@ -1246,7 +1246,7 @@ $\beta$的结果也一样,
 	\end{tikzpicture}
 \end{figure}
 可以通过观察直接写出总能. 
-两个电子中每个都对应动能加上核吸引势能$h_{11}=(\psi_1|h|\psi_)$, 
+两个电子中每个都对应动能加上核吸引势能$h_{11}=(\psi_1|h|\psi_1)$, 
 此外还有两电子间的库伦排斥$J_{11}=(\psi_1\psi_1|\psi_1\psi_1)$. 
 这里没有交换作用, 
 因为两电子的自旋反平行. 
@@ -1288,7 +1288,7 @@ $\beta$的结果也一样,
 		\draw (0,.5)node[left]{$\epsilon_2$}--node[inner sep=1,shape=circle,draw,pos=.5]{\Large$\uparrow$}node[pos=.7]{}+(1.5,0)node[right]{$\psi_2$};
 	\end{tikzpicture}
 \end{align}
-圈内电子有动能加核吸引势能$h_{11}$, 
+圈内电子有动能加核吸引势能$h_{22}$, 
 并与其他两个电子分别有库伦作用$J_{12}$, 
 再加上与同自旋电子的一个交换作用$-K_{12}$. 
 因此
@@ -1348,13 +1348,14 @@ Roothaan\endnote{
 就将这个积分微分方程转化为矩阵方程
 \begin{align}
 	\label{3.135}
-	\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\nu^*(1)f(1)\phi_\nu(1) = \epsilon_i\sum_\nu C_{\nu i}\phi_\nu^*(1)\phi_\nu(1)
+	\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\nu^*(1)f(1)\phi_\nu(1) = \epsilon_i\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\nu^*(1)\phi_\nu(1)
 \end{align}
 
 现在定义两个矩阵：
 
 1. \emph{重叠矩阵$\mathbf{S}$}的矩阵元为
 \begin{align}
+	\label{3.136}
 	S_{\mu\nu}=\int\dd{r}_1\,\phi_\mu^*(1)\phi_\nu(1)
 \end{align}
 该矩阵为$K\times K$厄米矩阵(虽然通常是实对称阵). 
@@ -1395,6 +1396,7 @@ Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩�
 这组方程就是\emph{Roothaan方程}, 
 可以写成更紧凑的单个矩阵方程：
 \begin{align}
+	\label{3.139}
 	\mathbf{FC=SC}\bm{\epsilon}
 \end{align}
 式中$\mathbf{C}$是展开系数$C_{\mu i}$构成的$K\times K$方阵：
@@ -1410,6 +1412,7 @@ Fock矩阵$\mathbf{F}$就是Fock算符在一组基函数$\{\phi_\mu\}$下的矩�
 \end{align} 
 $\bm{\epsilon}$是轨道能量$\epsilon_i$构成的对角阵：
 \begin{align}
+	\label{3.141}
 	\bm{\epsilon} = 
 	\begin{pmatrix}
 		\epsilon_1 &            &        &            \\
@@ -1572,7 +1575,7 @@ $\mathbf{T,V^\mathrm{nucl}}$中的积分会具体地计算出来,
 	& = H_{\mu\nu}^\mathrm{core} + G_{\mu\nu}
 \end{align}
 式中$G_{\mu\nu}$是Fock矩阵的双电子部分. 
-这就是FOck矩阵的最终表达式. 
+这就是Fock矩阵的最终表达式. 
 它包含单电子部分$\mathbf{H}^\mathrm{core}$, 
 这部分在给定基组下保持不变, 
 还包括双电子部分$\mathbf{G}$, 
@@ -1642,7 +1645,7 @@ Roothaan方程就成为通常本征值方程的形式,
 我们将变换\autoref{3.162}带入\autoref{3.163}得到
 \begin{align}
 	\int\dd{r}\phi_\mu^{\prime *}(\bfr)\phi_\nu^{\prime}(\bfr) & = \int\dd{r}\left[ \sum_{\lambda}X_{\lambda\mu}^*\phi_{\lambda}^*(\bfr)\right]\left[ \sum_\sigma X_{\sigma\nu}\phi_\sigma(\bfr) \right]\notag\\
-	& = \sum_\lambda\sum_\sigma X_{\lambda\sigma}^*\int\dd{r}\phi_\lambda^*(\bfr)X_{\sigma\nu}\notag\\
+	& = \sum_\lambda\sum_\sigma X_{\lambda\sigma}^*\int\dd{r}\phi_\lambda^*(\bfr)\phi_\sigma(\bfr)X_{\sigma\nu}\notag\\
 	& = \sum_\lambda\sum_\sigma X_{\lambda\mu}^*S_{\lambda\sigma}X_{\sigma\nu} = \delta_{\mu\nu}
 \end{align}
 最后的等式可写为矩阵方程
@@ -1702,7 +1705,7 @@ $\mathbf{X}$必须是非奇异的,
 这就是说, 
 酉矩阵$\mathbf{U}$中的行要除以对应本征值的平方根：
 \begin{align}
-	X_{ij} = U_{ij}/s_{ij}^{1/2}
+	X_{ij} = U_{ij}/s_{j}^{1/2}
 \end{align}
 将$\mathbf{X}$的定义\autoref{3.165}带入, 
 可得
@@ -1751,7 +1754,7 @@ $\mathbf{X}$必须是非奇异的,
 后面求解时只需对角化Fock矩阵. 
 但这意味着必须用新轨道计算所有的双电子积分, 
 或者将旧双电子积分$(\mu\nu|\lambda\sigma)$变换为新的$(\mu'\nu'|\lambda'\sigma')$. 
-实际是哪个这非常耗时. 
+实际上这非常耗时. 
 我们可用更高效的办法处理该问题. 
 考虑新的系数矩阵$\mathbf{C}'$, 
 它与旧系数矩阵的关系为
@@ -1782,7 +1785,7 @@ $\mathbf{X}$必须是非奇异的,
 有了$\mathbf{C'}$, 
 $\mathbf{C}$就能从(3.174)得到. 
 因此给定$\mathbf{F}$, 
-可用(3.177)(3.178)(174)求解Roothaan方程$\mathbf{FC=SC}\bm{\epsilon}$. 
+可用(3.177)(3.178)(3.174)求解Roothaan方程$\mathbf{FC=SC}\bm{\epsilon}$. 
 中间的带撇矩阵就是正交基下的Fock矩阵和展开系数：
 \begin{align}
 	\psi_i & = \sum_{\mu=1}^{K}C_{\mu i}'\phi_\mu'\\
@@ -2343,7 +2346,7 @@ $d_{p\mu}$称作收缩系数.
 就是要使两函数间重叠积分最大, 
 即要令下式最大
 \begin{align}
-	S = \int\dd{r}\phi_{1s}^\mathrm{SF}(\zeta=1.0,\bfr)\phi_{1s}^\mathrm{CGF}(\zeta=, \mathrm{STO-LG},\bfr)
+	S = \int\dd{r}\phi_{1s}^\mathrm{SF}(\zeta=1.0,\bfr)\phi_{1s}^\mathrm{CGF}(\zeta=1.0, \mathrm{STO-LG},\bfr)
 \end{align}
 
 STO-1G的情况中没有收缩系数, 因此只需找到一个原初高斯指数$\alpha$以令重叠
@@ -3282,23 +3285,23 @@ $\mathbf{G}$加$\mathbf{H}^\mathrm{core}$就得到$\mathbf{F}$.
 	\begin{minipage}[b]{.6\textwidth}
 		(a) Schmidt \qquad\begin{tikzpicture}[baseline=(current bounding box.center),scale=.7]
 			\draw[->](0,0)--(3,0)node[below]{$\phi_1'$};
-			\draw[->,dotted](0,0.1)--+(3,0)node[above]{$\phi_1'$};
-			\draw[->](0,0)--(45:3)node[below,right]{$\phi_2$};
-			\draw[->](0,0)--(0,3)node[below,right]{$\phi_1'$};;
+			\draw[->,dotted](0,0.1)--+(3,0)node[above]{$\phi_1$};
+			\draw[->,dotted](0,0)--(45:3)node[below,right]{$\phi_2$};
+			\draw[->](0,0)--(0,3)node[below,right]{$\phi_2'$};;
 		\end{tikzpicture}
 		
 		(b) 对称 \qquad\begin{tikzpicture}[baseline=(current bounding box.center),scale=.7]
 			\draw[->](0,0)--(-20:3)node[below]{$\phi_1'$};
-			\draw[->,dotted](0,0)--(0:3)node[above]{$\phi_1'$};
-			\draw[->](0,0)--(50:3)node[below,right]{$\phi_2$};
-			\draw[->](0,0)--(70:3)node[below,right]{$\phi_1'$};;
+			\draw[->,dotted](0,0)--(0:3)node[above]{$\phi_1$};
+			\draw[->,dotted](0,0)--(50:3)node[below,right]{$\phi_2$};
+			\draw[->](0,0)--(70:3)node[below,right]{$\phi_2'$};;
 		\end{tikzpicture}
 		
 		(c) 正则 \qquad\begin{tikzpicture}[baseline=(current bounding box.center),scale=.7]
 			\draw[->,dotted](0,0.1)--+(3,0)node[below,right]{$\phi_1$};
 			\draw[->](0,0)--(20:3)node[below,right]{$\phi_1'$};
-			\draw[->](0,0)--(40:3)node[below,right]{$\phi_2$};
-			\draw[->](0,0)--(110:3)node[below,right]{$\phi_1'$};;
+			\draw[->,dotted](0,0)--(40:3)node[below,right]{$\phi_2$};
+			\draw[->](0,0)--(110:3)node[below,right]{$\phi_2'$};;
 		\end{tikzpicture}
 	\end{minipage}
 	\begin{minipage}[t]{.4\textwidth}
@@ -3357,7 +3360,7 @@ Schmidt正交化保持第一个基函数不动,
 \begin{align}
 	\mathbf{C'}=
 	\begin{pmatrix}
-		0.9104&0.4136\\0.4136-0.9104
+		0.9104&0.4136\\0.4136&-0.9104
 	\end{pmatrix}
 \end{align}
 以及两个本征值
@@ -3398,7 +3401,7 @@ Schmidt正交化保持第一个基函数不动,
 \end{align}
 $\mathbf{P}$的对角元说明大部分电子密度聚集在在$\mathrm{He}$附近而非$\mathbf{H}$附近. 
 对此更恰当的理解可通过布居分析得到. 
-(3.271)中的密度矩阵斌非$\mathrm{HeH}^{++}$的(差一个因子2), 而是核势场中\emph{两个}无相互作用电子的密度矩阵.
+(3.271)中的密度矩阵并非$\mathrm{HeH}^{++}$的(差一个因子2), 而是核势场中\emph{两个}无相互作用电子的密度矩阵.
 
 由$\mathbf{P}$可构建对$\mathbf{G}$的猜测：
 \begin{align}
@@ -3420,7 +3423,7 @@ $\mathbf{P}$的对角元说明大部分电子密度聚集在在$\mathrm{He}$附�
 然后就能得到对$\mathbf{C,P}$的新猜测并重复以上整个过程直到自洽. 
 附录B中有一个实现该过程的程序, 
 还有当前例子——STO-3G $\heh$的程序输出. 
-岳父输出文件时应配以接下来的描述.
+阅读输出文件时应配以接下来的描述.
 
 
 \autoref{t3.5}中列出了不同迭代次数下密度矩阵的元素及对应电子能量. 
@@ -3631,7 +3634,7 @@ $(\phi_1\phi_1)$和$(\phi_2\phi_2|\phi_2\phi_2)$.
 }
 
 本节介绍的$\heh$计算使用了一组标准指数。
-更好的办法是在每个核间距下都对指数机型优化。
+更好的办法是在每个核间距下都对指数进行优化。
 若如此做，
 那当$R$增大时，
 $\text{He}$的指数$\zeta_1$就逐渐减少至最原子值$1.6875$. 
@@ -3647,13 +3650,13 @@ $\text{H}$所附带的基函数在大$R$时要参与贡献，
 轨道指数有多个，
 想要找到极小点相当于高位高维曲面上进行搜索，
 而且这个曲面可能有很多局域极小点。
-因此我们一半不在大一些的问题中优化指数。
+因此我们一般不在大一些的问题中优化指数。
 
 
 至此，
 已经讨论过闭壳层限制性\hft 方法以及模型系统$\heh$、$\hd$, 
 现在想展示一些更实际的多原子分子的计算。
-我们这么做不实为了罗列已有的计算结果，
+我们这么做不是为了罗列已有的计算结果，
 而是想展示所有闭壳层\hft 型计算背后的主要想法，
 并提供计算结果与实验相比之优劣的直观感受。
 
@@ -4429,7 +4432,9 @@ $\mathrm{CO}$能量最高的占据分子轨道是成键轨道$5\sigma$和$1\pi$�
 
 \subsection{平衡几何构型}
 \subsection{布居分析与偶极矩}
-
+\begin{align}
+	\rho(\bfr)=\sum_\mu\sum_\nu \mathbf{P}_{\mu\nu}\phi_\mu(\bfr)\phi^*_\nu(\bfr)
+\end{align}
 \section{非限制性开壳层H-F：Pople-Nesbet方程}
 本章开头曾推导并讨论了\hft 方程的形式性质, 
 并没有特别指定自旋轨道的形式。 
@@ -4528,7 +4533,7 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 将\autoref{3.309}带入\autoref{3.308}, 
 得到
 \begin{align}\label{3.310}
-	f(1)\psi_j^\alpha(\mathbf{r}_i) \alpha(\omega_1) = \epsilon_j \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
+	f(1)\psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1) = \epsilon_i \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
 \end{align}
 那么$\epsilon_i$就是自旋轨道$\chi\equiv\psi_j^\alpha\alpha$的能量。
 由于$\alpha$和$\beta$电子的自旋轨道分别由不同的空间部分，
@@ -4537,7 +4542,7 @@ $\psi_j^\alpha \equiv \psi_j^\beta \equiv \psi_j$.
 那么也会有相应的另外一组轨道能量$\{\epsilon_j^\beta | j=1,2,\ldots,K\}$. 
 因此
 \begin{align}\label{3.311}
-	f(1)\psi_j^\alpha(\mathbf{r}_i) \alpha(\omega_1) = \epsilon_j^\alpha \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
+	f(1)\psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1) = \epsilon_j^\alpha \psi_j^\alpha(\mathbf{r}_1) \alpha(\omega_1)
 \end{align}
 将这个方程乘以$\alpha^*(\omega_1)$并对自旋积分，
 就得到
@@ -4596,7 +4601,7 @@ $\alpha$自旋的电子可以感受到库伦势$J_a^\alpha$和交换势$-K_a^\al
 与此同时，
 还有库伦势$J_a^\beta$，
 这部分来自$N_\beta=N-N_\alpha$个在$\psi_a^\beta$轨道上的$\beta$自旋电子。
-上式中对$N_\alpha$个$\psi_a^\alpha$的求和包含了$\alpha$电子与她自身的相互作用。
+上式中对$N_\alpha$个$\psi_a^\alpha$的求和包含了$\alpha$电子与它自身的相互作用。
 但只要注意到
 \begin{align}\label{3.317}
 	[J_a^\alpha(1) - K_a^\alpha(1)]\psi_a^\alpha = 0
@@ -4611,8 +4616,8 @@ $\alpha$自旋的电子可以感受到库伦势$J_a^\alpha$和交换势$-K_a^\al
 \begin{align}
 	J_a^\alpha(1) & = \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \psi_a^\alpha(2) \label{3.319}\\
 	K_a^\alpha(1)\psi_i^\alpha(1) 
-	    &= \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \psi_a^\alpha(2)\right] \psi_a^\alpha(1) \notag\\
-	    &= \left[ \int \dd\bfr_2 \psi_i^{\alpha*}(2) \twoe \mathscr{P}_{12}\psi_a^\alpha(2)\right] \psi_i^\alpha(1) \label{3.320}
+	    &= \left[ \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \psi_i^\alpha(2)\right] \psi_a^\alpha(1) \notag\\
+	    &= \left[ \int \dd\bfr_2 \psi_a^{\alpha*}(2) \twoe \mathscr{P}_{12}\psi_a^\alpha(2)\right] \psi_i^\alpha(1) \label{3.320}
 \end{align}
 $J_a^\beta,K_a^\beta$的定义也完全类似。
 
@@ -4642,9 +4647,9 @@ $f^\alpha$依赖于$\beta$占据轨道$\psi_a^\beta$，
 我们已经能够写出非限制性轨道的能、总的非限制性能量等等。
 首先定义一些项：非限制性轨道$\psi_i^\alpha$或$\psi_i^\beta$上的电子的动能与核吸引势能的期望值为
 \begin{align}\label{3.321}
-	h_{ii}^\alpha = (\psi_i^\alpha|h|)
+	h_{ii}^\alpha = (\psi_i^\alpha|h|\psi_i^\alpha)\, \text{或}\, h_{ii}^\beta = (\psi_i^\beta|h|\psi_i^\beta)
 \end{align}
-$\psi_i^\alpha$上一个电子与$\psi_i^\alpha$上一个电子之间的库伦相互作用为
+$\psi_i^\alpha$上一个电子与$\psi_i^\beta$上一个电子之间的库伦相互作用为
 \begin{align}\label{3.322}
 	J_{ij}^{\alpha\beta} = J_{ji}^{\beta\alpha} = (\psi_i^\alpha|J_{i}^\beta|\psi_i^\alpha) = (\psi_j^\beta|J_{i}^\alpha|\psi_j^\beta) = (\psi_i^\alpha\psi_i^\alpha|\psi_j^\beta\psi_j^\beta)
 \end{align}
@@ -4671,6 +4676,7 @@ $\psi_i^\alpha$上一个电子与$\psi_i^\alpha$上一个电子之间的库伦�
 现在可以写出非限制性总电子能量，
 只要写出所有的贡献项
 \begin{align}
+	\label{3.327}
 	E_{0}=\sum_{a}^{N^{\alpha}} h_{a a}^{\alpha}+\sum_{a}^{N^{\beta}} h_{a a}^{\beta}+\frac{1}{2} \sum_{a}^{N^{\alpha}} \sum_{b}^{N^{\alpha}}\left(J_{a b}^{\alpha \alpha}-K_{a b}^{\alpha \alpha}\right)+\frac{1}{2} \sum_{a}^{N^{\beta}} \sum_{b}^{N^{\beta}}\left(J_{a b}^{\beta \beta}-K_{a b}^{\beta \beta}\right)+\sum_{a}^{N^{\alpha}} \sum_{b}^{N^{\beta}} J_{a b}^{a \beta}
 \end{align}
 上限为$N_\alpha$的求和遍及所有的占据轨道$\psi_a^\alpha$或$\psi_b^\alpha$. 
@@ -4704,13 +4710,164 @@ $\beta$自旋电子的规定也相同。
 这个办法和之前推导Roothan方程时所用办法的一样。
 为此，我们引入一组基$\{\phi_\mu|\mu = 1,2,\ldots,K\}$，并用这组基展开非限制性分子轨道：
 \begin{align}
-	\psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \\
-	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K\\
+	\psi_i^\alpha = \sum_{\mu=1}^K C_{\mu i}^\alpha \phi_\mu \quad i =1,2,\ldots,K \label{3.328} \\
+	\psi_i^\beta = \sum_{\mu=1}^K C_{\mu i}^\beta \phi_\mu \quad i =1,2,\ldots,K \label{3.329}
 \end{align}
-\autoref{3.312}\autoref{3.313}这两个本征值方程。
+\autoref{3.312}\autoref{3.313}这两个本征值方程保证了本征函数$\{\psi_i^\alpha\}$和$\{\psi_i^\beta\}$分别构成正交归一集，
+但是$\psi_i^\alpha$和$\psi_i^\beta$不一定正交。
+但即使这两组空间轨道之间有重叠，$2K$个自旋轨道的集合$\{\chi_i\}$依然正交归一：
+要么来自空间正交（$\alpha\alpha$和$\beta\beta$的情况），
+要么来自自旋正交（$\alpha\beta$的情况）. 
+
+将轨道$\psi^\alpha_j$按\autoref{3.328}展开，代入$\alpha$自旋的\hft 方程\autoref{3.312}，得到
+\begin{align}
+	\sum_\nu C^\alpha_{\nu j}f^\alpha(1)\phi_\nu(1)=\epsilon^\alpha_j\sum_\nu C^\alpha_{\nu j}\phi_\nu(1)
+\end{align}
+两边左乘$\phi_\mu^*(1)$并对电子1的空间坐标积分，得到
+\begin{align}
+	\sum_\nu F^\alpha_{\mu\nu}C^\alpha_{\nu j} = \epsilon^\alpha_j\sum_\nu S_{\mu\nu}C^\alpha_{\nu j} \quad j=1,2,\ldots,K
+\end{align}
+其中$\mathbf{S}$是重叠矩矩阵（\autoref{3.136}），$\mathbf{F}^\alpha$是$f^\alpha$在基组$\{\phi_\mu\}$下的矩阵表示：
+\begin{align}
+	F^\alpha_{\mu\nu}=\int{\dd\bfr_1}\phi^*_\mu(1)f^\alpha(1)\phi_\nu(1)
+\end{align}
+对$\beta$轨道也可以得到相同的结果。\autoref{3.331}和$\beta$轨道对应的方程可以写成矩阵形式：
+\begin{align}
+	\mathbf{F}^\alpha\mathbf{C}^\alpha = \mathbf{S}\mathbf{C}^\alpha\bm{\epsilon}^\alpha\\
+	\mathbf{F}^\beta\mathbf{C}^\beta = \mathbf{S}\mathbf{C}^\beta\bm{\epsilon}^\beta
+\end{align}
+这两个方程是限制性Roothaan方程\autoref{3.139}的非限制性推广，由Pople和Nesbet首先给出。
+$\bm{\epsilon}^\alpha$和$\bm{\epsilon}^\beta$是对角矩阵，对角元为轨道能量\autoref{3.141}. 
+$K\times K$方阵$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$的列是轨道$\psi_i^\alpha$和$\psi_i^\beta$的展开系数。
+这两个方程可以用类似于求解Roothaan方程的方式求解，但因为$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$都同时依赖$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$，
+所以必须同时求解这两个矩阵本征值问题。我们将在给出非限制性密度矩阵和$F^\alpha_{\mu\nu}$、$F^\beta_{\mu\nu}$的表达式后再回来求解这两个方程。
 \subsection{非限制性密度矩阵}
+我们从限制性闭壳层波函数的结果出发。
+如果一个电子占据分子轨道$\psi_a^\alpha(\bfr)$，则在$\bfr$处的体积元$\dd\bfr$内找到该电子的概率是$|\psi^\alpha_a(\bfr)|^2\dd\bfr$，
+概率分布函数（电荷密度）是$|\psi^\alpha_a(\bfr)|^2$。如果有$N^\alpha$个$\alpha$自旋的电子，则它们对总电荷密度的贡献为
+\begin{align}
+	\label{3.335}
+	\rho^\alpha(\bfr)=\sum^{N^\alpha}_a|\psi_a^\alpha(\bfr)|^2
+\end{align}
+相应地，$\beta$自旋的电子贡献的电荷密度为
+\begin{align}
+	\label{3.336}
+	\rho^\beta(\bfr)=\sum^{N^\beta}_a|\psi_a^\beta(\bfr)|^2
+\end{align}
+这些电子的总电荷密度是二者之和：
+\begin{align}
+	\rho^T(\bfr)=\rho^\alpha(\bfr)+\rho^\beta(\bfr)
+\end{align}
+对这个方程积分，正如预期，得到电子数：
+\begin{align}
+	\int{\dd\bfr}\rho^T(\bfr)=N=N^\alpha+N^\beta
+\end{align}
+在非限制性波函数中，$\alpha$和$\beta$自旋的电子有不同的空间分布（$\rho^\alpha\neq\rho^\beta$）。
+方便起见，定义\phrase{自旋密度}$\rho^S(\bfr)$
+\begin{align}
+	\rho^S(\bfr)=\rho^\alpha(\bfr)-\rho^\beta(\bfr)
+\end{align}
+根据上述定义，在找到$\alpha$自旋电子比找到$\beta$自旋电子概率更高的区域自旋密度为正，反之为负。
+当然$\rho^\alpha$和$\rho^\beta$总是正的。 
+自旋密度便于在开壳层体系中描述自旋分布。
+\exercise{
+	利用定义\autoref{3.335}，\autoref{3.336}和\autoref{2.254}，证明自旋密度在全空间的积分是$2\braket{\ts_z}$。
+}
+将$\alpha$和$\beta$分子轨道的基组展开\autoref{3.328}和\autoref{3.329}代入\autoref{3.335}和\autoref{3.336}，得到$\alpha$和$\beta$电荷密度的矩阵表象（密度矩阵）：
+\begin{align}
+	\rho^\alpha(\bfr)=\sum^{N^\alpha}_a|\psi^\alpha_a(\bfr)|^2=\sum_\mu\sum_\nu P^\alpha_{\mu\nu}\phi_\mu(\bfr)\phi_\nu^*(\bfr) \label{3.340}\\
+	\rho^\beta(\bfr)=\sum^{N^\beta}_a|\psi^\beta_a(\bfr)|^2=\sum_\mu\sum_\nu P^\beta_{\mu\nu}\phi_\mu(\bfr)\phi_\nu^*(\bfr)
+\end{align}
+其中$\alpha$和$\beta$电子的密度矩阵$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$定义为
+\begin{align}
+	P^\alpha_{\mu\nu}=\sum^{N^\alpha}_aC^\alpha_{\mu a}C^{\alpha*}_{\nu a} \\
+	P^\beta_{\mu\nu}=\sum^{N^\beta}_aC^\beta_{\mu a}C^{\beta*}_{\nu a} \label{3.343}
+\end{align}
+除这两个密度矩阵外，还可以类似地定义\phrase{总密度矩阵}和\phrase{自旋密度矩阵}：
+\begin{align}
+	\mathbf{P}^T=\mathbf{P}^\alpha+\mathbf{P}^\beta \\
+	\mathbf{P}^S=\mathbf{P}^\alpha-\mathbf{P}^\beta
+\end{align}
+\exercise{
+	补全推导出\autoref{3.340}至\autoref{3.343}的步骤。
+	\Next
+	证明：自旋无关的单电子算符之和$\sum^N_{i=1}h(i)$的期待值为：
+	\begin{align*}
+		\braket{\mathscr{O}_1}=\sum_\mu\sum_\nu P^T_{\mu\nu}(\nu|h|\mu)
+	\end{align*}
+	\Next
+	考虑下面的自旋相关算符，它是单电子算符之和：
+	\begin{align*}
+		\hat{\rho}^S=2\sum^N_{i=1}\delta(\bfr_i-\mathbf{R})s_z(i)
+	\end{align*}
+	利用第二章的矩阵元规则，证明$\hat{\rho}^S$对任意非限制性单行列式的期待值是
+	\begin{align*}
+		\braket{\hat{\rho}^S}=\rho^S(\mathbf{R})=\tr(\mathbf{P}^S\mathbf{A})
+	\end{align*}
+	其中
+	\begin{align*}
+		A_{\mu\nu}=\phi^*_\mu(\mathbf{R})\phi_\nu(\mathbf{R})
+	\end{align*}
+	这个矩阵元在ESR和NMR耦合常数的费米接触贡献理论中非常重要。
+}
+定义了非限制性密度矩阵$\mathbf{P}^\alpha$, $\mathbf{P}^\beta$, $\mathbf{P}^T$和$\mathbf{P}^S$后，
+我们将用这些定义给出非限制性Fock矩阵$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$的表达式。
 \subsection{Fock矩阵的表达式}
+为得到$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$矩阵元的表达式，我们考虑两个Fock算符$f^\alpha$（\autoref{3.316}）和$f^\beta$（\autoref{3.318}）在基组$\{\phi_\mu\}$下的矩阵元，
+并利用库伦和交换算符矩阵元\autoref{3.322}至\autoref{3.326}：
+\begin{align}
+	F^\alpha_{\mu\nu} &= \int{\dd\bfr_1}\phi^*_\mu(1)f^\alpha(1)\phi_\nu(1) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum^{N^\alpha}_a[(\phi_\mu\phi_\nu|\psi^\alpha_a\psi^\alpha_a)-(\phi_\mu\psi^\alpha_a|\psi^\alpha_a\psi_\nu)]+\sum^{N^\beta}_a(\phi_\mu\phi_\nu|\psi^\beta_a\psi^\beta_a) \label{3.346} \\
+	F^\beta_{\mu\nu} &= \int{\dd\bfr_1}\phi^*_\mu(1)f^\beta(1)\phi_\nu(1) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum^{N^\beta}_a[(\phi_\mu\phi_\nu|\psi^\beta_a\psi^\beta_a)-(\phi_\mu\psi^\beta_a|\psi^\beta_a\psi_\nu)]+\sum^{N^\alpha}_a(\phi_\mu\phi_\nu|\psi^\alpha_a\psi^\alpha_a) \label{3.347}
+\end{align}
+然后代入$\psi^\alpha_a$和$\psi^\beta_a$的基组展开，得到
+\begin{align}
+	F^\alpha_{\mu\nu} &=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma\sum^{N^\alpha}_a C^\alpha_{\lambda a}(C^\alpha_{\sigma a})^*[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma\sum^{N^\beta}_a C^{\beta}_{\lambda a}(C^\beta_{\sigma a})^* (\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma P^\alpha_{\lambda\sigma}[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma P^\beta_{\lambda\sigma}(\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma [P^T_{\lambda\sigma}(\mu\nu|\sigma\lambda)- P^\alpha_{\lambda\sigma}(\mu\lambda|\sigma\nu)] \label{3.348} \\
+	F^\beta_{\mu\nu} &=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma\sum^{N^\beta}_a  C^\beta_{\lambda a}(C^\beta_{\sigma a})^*[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma\sum^{N^\alpha}_a C^{\alpha}_{\lambda a}(C^\alpha_{\sigma a})^* (\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma P^\beta_{\lambda\sigma}[(\mu\nu|\sigma\lambda)-(\mu\lambda|\sigma\nu)]+\sum_\lambda\sum_\sigma P^\alpha_{\lambda\sigma}(\mu\nu|\sigma\lambda) \notag \\
+	&=H^{\text{core}}_{\mu\nu}+\sum_\lambda\sum_\sigma [P^T_{\lambda\sigma}(\mu\nu|\sigma\lambda)- P^\beta_{\lambda\sigma}(\mu\lambda|\sigma\nu)] \label{3.349}
+\end{align}
+若将上面的表达式和相应的闭壳层表达式\autoref{3.154}比较，可以看到库伦项相等并依赖于总密度矩阵，区别只是这里$\alpha$和$\beta$有各自的表达式，而不像闭壳层那样有
+\begin{align}
+	P^\alpha_{\mu\nu}=P^\beta_{\mu\nu}=\frac{1}{2}P^T_{\mu\nu}
+\end{align}
+上述表达式体现了两组方程的耦合：$\mathbf{F}^\alpha$依赖$\mathbf{P}^\beta$（通过总密度矩阵$\mathbf{P}^T$），类似地，$\mathbf{F}^\beta$依赖$\mathbf{P}^\alpha$。
 \subsection{非限制SCF方程的解}
+求解非限制性SCF方程的流程和前述的求解Roothaan方程的流程本质上是相同的。
+我们需要初猜两个密度矩阵$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$（也就有了$\mathbf{P}^T$）。
+一个显然的选择是令这些密度矩阵为零，使用$\mathbf{H}^\text{core}$作为$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$初猜。
+如果这样做，第一步迭代对$\alpha$和$\beta$自旋会得到相同的轨道，也就一个限制性的解。
+但若$N^\alpha\neq N^\beta$，后续迭代中会有$\mathbf{P}^\alpha\neq\mathbf{P}^\beta$，最终会得出非限制性的解。
+
+在每步迭代中，给定$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$的近似，我们可以构建$\mathbf{F}^\alpha$和$\mathbf{F}^\beta$，然后求解两个广义矩阵本征值问题
+\begin{align}
+	\mathbf{F}^\alpha\mathbf{C}^\alpha = \mathbf{S}\mathbf{C}^\alpha\bm{\epsilon}^\alpha \label{3.351}\\
+	\mathbf{F}^\beta\mathbf{C}^\beta = \mathbf{S}\mathbf{C}^\beta\bm{\epsilon}^\beta \label{3.352}
+\end{align}
+解得$\mathbf{C}^\alpha$和$\mathbf{C}^\beta$，然后构建新的近似密度矩阵$\mathbf{P}^\alpha$和$\mathbf{P}^\beta$。
+因为两个方程之间的耦合，我们必须同时其自洽求解$\alpha$和$\beta$自旋的方程，即使在任意一步迭代中这两个矩阵本征值问题\autoref{3.351}和\autoref{3.352}可以独立求解。耦合出现在构造Fock矩阵的过程中。
+求解矩阵本征值问题的流程和限制性闭壳层的情况一样，包括解出正交化变换矩阵$\mathbf{X}$、构造${\mathbf{F}^\alpha}'=\mathbf{X}^\dagger \mathbf{F}^\alpha\mathbf{X}$、
+对角化${\mathbf{F}^\alpha}'$得到${\mathbf{C}^\alpha}'$以及$\mathbf{C}^\alpha=\mathbf{X}{\mathbf{C}^\alpha}'$。
+\exercise{
+	在电子能量$E_0$的表达式\autoref{3.327}中代入非限制性分子轨道的基组展开，以证明：
+	\begin{align*}
+		E_0=\frac{1}{2}\sum_\mu\sum_\nu[P^T_{\nu\mu}H^\text{core}_{\mu\nu}+P^\alpha_{\nu\mu}F^\alpha_{\mu\nu}+P^\beta_{\nu\mu}F^\beta_{\mu\nu}]
+	\end{align*}
+}
+在继续讨论非限制性计算的例子之前，关于Pople-Nesbet方程的解有一个值得注意的点：在$N^\alpha=N^\beta$即闭壳层波函数可以正常描述的分子中，Pople-Nesbet方程可能有两个独立的解。
+一个是限制性的解：如果$\mathbf{P}^\alpha=\mathbf{P}^\beta=\frac{1}{2}\mathbf{P}$，则$\mathbf{F}^\alpha=\mathbf{F}^\beta=\mathbf{F}$，Pople-Nesbet方程退化为Roothaan方程。
+\mci{当$N^\alpha=N^\beta$时，Roothaan方程的限制性解是非限制性Pople-Nesbet方程的一个解。}这个限制性解总是存在，并且是当用$\mathbf{P}^\alpha=\mathbf{P}^\beta$作初猜时的必然结果。
+对$N^\alpha=N^\beta$，除这个限制性解外还存在一个具有更低能量的非限制性解。限制性解限定了$\alpha$电子的密度等于$\beta$电子的密度，
+但在特定条件下（将在本章最后一节讨论）放宽这个约束会给出一个具有更低能量的非限制性解，其中$\mathbf{P}^\alpha$不等于$\mathbf{P}^\beta$。
+\mci{当$N^\alpha=N^\beta$时，Pople-Nesbet方程在特定条件下存在第二个解：非限制性解}。
+要找到这第二个解，使用$\mathbf{P}^\alpha\neq\mathbf{P}^\beta$的初猜很重要，否则必然会得到限制性解。
+即使用了非限制性的初猜，迭代过程仍有可能收敛到限制性解。当存在两个解时，初猜很大程度上决定了迭代会收敛到哪个解。
+
+一般用非限制性波函数来描述$N^\alpha\neq N^\beta$的开壳层分子态，不涉及上述问题。
+但若采用非限制性波函数作为解离问题的解，就像随后将要讨论的那样，两个解的可能性至关重要。
 \subsection{一些非限制性的算例}
 
 
