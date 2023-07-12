@@ -90,10 +90,10 @@ $N$个自旋轨道换为其他(未占据)轨道而生产的一组行列式函数
 第二章中介绍过, 
 由这$2K$个 自旋轨道可以构造出很多其他的$N$电子行列式. 
 将N电子函数和\hft 波函数$\Psi_0$作比较, 
-指出那里不同, 
+指出哪里不同, 
 用这种指出不同的方式来描述$N$电子波函数会很方便. 
 那么可能的行列式就包含$\ket{\Psi_0}$, 
-单激发行列式$\ket{\Psi_a^r}$(与$\ket{\Psi_0}$, 
+单激发行列式$\ket{\Psi_a^r}$(与$\ket{\Psi_0}$的区别是
 一个自旋轨道$\chi_a$被换成$\chi_r$), 
 双激发行列式$\ket{\Psi_{ab}^{rs}}$等等, 
 直到$N$重激发行列式. 
@@ -103,7 +103,7 @@ $N$个自旋轨道换为其他(未占据)轨道而生产的一组行列式函数
 那么从变分原理可以知, 
 我们能构造一个更好的近似如下(当基组完备时就是精确解):
 \begin{align}
-\ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}c_{ab}^{rs}}\ket{\Psi_{ab}^{rs}} + \sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}} + \cdots \tag{4.2a}
+\ket{\Phi_0} = c_0\ket{\Psi_0}+\sum_{ar}c_a^r\ket{\Psi_{a}^r} + \sum_{\substack{a<b\\r<s}}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}} + \sum_{\substack{a<b<c\\r<s<t}}c_{abc}^{rst}\ket{\Psi_{abc}^{rst}}+ \sum_{\substack{a<b<c<d\\r<s<t<u}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}} + \cdots \tag{4.2a}
 \label{4.2a}
 \end{align}
 这就是full CI波函数的形式. 
@@ -150,7 +150,7 @@ $n$重激发行列式总共有$\binom{N}{n}\binom{2K-N}{n}$种.
 在这么多的行列式中, 
 很多是可以去掉的 （虽然去掉之后仍有很多）,
 这是由于具有不同自旋的波函数不发生混合 （即$\braket{\Psi_i|\hs|\Psi_j}=0$, 
-若$\ket{\Psi_j}$有不一样的自旋）. 
+若$\ket{\Psi_i}$和$\ket{\Psi_j}$有不一样的自旋）. 
 设想我们只关心单重态, 
 那么可以从尝试函数中把那些$\alpha,\beta$电子数不同的行列式去掉, 
 也即只留下$\ts_z$本征值为0的那些行列式. 
@@ -328,14 +328,14 @@ $c'$选成满足$\braket{\Phi_0'|\Phi_0}=1$的数）.
 若在上式两边乘以$\bra{\Psi_0}$则有
 \begin{align}
 \label{4.8}
-\braket{\hjtn|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\hjtn\jtn} = E_\mathrm{corr}
+\braket{\hjtn|\hs-E_0|\jtn} = E_\mathrm{corr} \braket{\hjtn|\jtn} = E_\mathrm{corr}
 \end{align}
 式中我们已经利用了$\jt$是半归一化的这一事实. 
 现在考虑该方程的左半边. 
 利用展开式 \autoref{4.4}, 
 得到
 \begin{align}
-\braket{\hjtn|\hs-E_0|\jtn} & = \bra{\hjtn}|\hs-E_0|\left( \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}} \right)\notag \\
+\braket{\hjtn|\hs-E_0|\jtn} & = \bra{\hjtn}\hs-E_0\left( \hjt + \sum_{ct}c_c^t\ket{\Psi_c^t} + \sum_{\substack{c<d\\t<u}} c_{cd}^{tu}\ket{\Psi_{cd}^{tu}} \right)\notag \\
 	&=\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{cd}^{tu}} \label{4.9}
 \end{align}
 式中已经使用过Brillouin定理 ($ \braket{\hjtn|\hs|\Psi_c^t }=0$) 以及三重和更高的激发不与$\hjt$混合的事实 （因为它们之间相差多于两个自旋轨道）. 
@@ -362,7 +362,7 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 &=E_{\mathrm{corr}} c_{a}^{r}
 \label{4.11}
 \end{align}
-该式可稍加简化：注意到单激发和三激发之间的矩阵元仅当$a=c,d,e$或$r=t,u,v$时才非零，
+该式可稍加简化：注意到单激发和三激发之间的矩阵元仅当$a=c,d,$或$e$且$r=t,u,$或$v$时才非零，
 就可将\autoref{4.11}重写为
 \begin{align}
 &\sum_{c t} c_{c}^{r}\left\langle\Psi_{a}^{r}\left|\mathscr{H}-E_{0}\right| \Psi_{c}^{r}\right\rangle+\sum_{\substack{c<d \\ t<u}} c_{cd}^{tu}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{c d}^{tu}\right\rangle+\sum_{\substack{c<d\\ t<u}} c_{acd}^{rtu}\left\langle\Psi_{a}^{r}|\mathscr{H}| \Psi_{acd}^{rtu}\right\rangle \notag \\
@@ -451,7 +451,7 @@ $\rho(\mathbf{x}_1)$就称作\phrase{N-电子系统}内单个电子的\emph{约�
 由于$\gamma(\mathbf{x}_1,\mathbf{x}_1')$是两个变量的函数，
 我们可以将它用正交归一的\hft 自旋轨道$\{\chi_i\}$展开为
 \begin{align}
-\gamma(\mathbf{x}_1,\mathbf{x}_1') = \sum_{ij} \chi_i(\mathbf{x}_1) \gamma_{ij} \chi_j^*(\mathbf{x}_1)'
+\gamma(\mathbf{x}_1,\mathbf{x}_1') = \sum_{ij} \chi_i(\mathbf{x}_1) \gamma_{ij} \chi_j^*(\mathbf{x}_1')
 \label{4.37}
 \end{align}
 其中
@@ -652,7 +652,7 @@ K. H. Thunemann, J. Romelt, S. D. Peyerimhoff, and R. J. Buenker, A study of the
 以得到最优的结果呢? 由变分原理可知, 
 我们应该令轨道变化, 
 使能量达到最低. 
-这个胡言事故多组态自洽场(multiconfiguration self-sonsistent field, 
+这就是多组态自洽场(multiconfiguration self-sonsistent field, 
 MCSCF)方法的中心思想. 
 MCSCF波函数是一种截断的CI展开:
 \begin{align}
