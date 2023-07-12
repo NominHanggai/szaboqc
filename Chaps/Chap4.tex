@@ -400,6 +400,108 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 
 \section{双激发CI}\mbox{}
 \label{sec4.2}
+对于除最小分子以外的情况，即使用极小基，full CI依然是方法依然有着不切实际的计算量。
+对中等大小的单电子基组，存在许多可能的自旋匹配组态，以至于full CI矩阵特别大（维数大于$10^9\times 10^9$）。
+为了得到可计算的方法，必须对CI矩阵（或等价地，波函数的CI展开）进行截断。
+一种系统性的截断方案是只考虑那些和\hft 基态波函数有不多于$m$个不同自旋轨道的组态。
+例如$m=4$，则在试探波函数中只考虑单、双、三重和四重激发。
+这种方案的最简单版本是只考虑$\ket{\Psi_0}$的单、双激发。
+这种单、双激发CI（SDCI）的（变分）计算得到的基态能量，对小分子它会给出关联能的主要成分。
+正如我们将在\autoref{sec4.6}看到的，SDCI，实际上任何形式的截断CI，随电子数增加都会变差。
+即使有这样的缺陷，SDCI仍然是一种普遍使用的计算关联能的方法。
+关联能（而非电荷分布）的单激发效应通常可忽略，但其数量比双激发小得多，所以一般也不会增加计算复杂度。
+不过这里为了尽可能简化公式，我们忽略了单激发。
+
+我们用自旋轨道基讨论双激发CI（DCI），但需要记住的是，实际计算中采用的是自旋匹配组态。
+半归一化的DCI试探函数：
+\begin{align}
+	\ket{\Phi_{DCI}}=\ket{\Psi_0}+\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\ket{\Psi_{cd}^{tu}}
+\end{align}
+
+为获得相应的关联能，将该式代入\autoref{4.7}：
+\begin{align}
+	(\hs - E_0)\left(\ket{\Psi_0}+\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\ket{\Psi_{cd}^{tu}}\right)
+	=E_{\text{corr}}\left(\ket{\Psi_0}+\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\ket{\Psi_{cd}^{tu}}\right)
+\end{align}
+分别左乘$\bra{\Psi_0},\bra{\Psi_{ab}^{rs}}$，得到：
+\begin{align}
+	\sum_{\substack{c<d\\t<u}}c_{cd}^{tu} \braket{\Psi_0|\hs|\Psi^{tu}_{cd}}&=E_{\text{corr}} \\
+	\braket{\Psi^{rs}_{ab}|\hs|\Psi_0} + \sum_{\substack{c<d\\t<u}}c_{cd}^{tu} \braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{tu}_{cd}}&=c_{ab}^{rs}E_{\text{corr}}
+\end{align}
+这两个方程决定了关联能，是\autoref{4.19a}和\autoref{4.19b}的推广。通过定义矩阵
+\begin{align}
+	(\mathbf{B})_{rasb}&=\braket{\Psi^{rs}_{ab}|\hs|\Psi_0}\\
+	(\mathbf{D})_{rasb, tucd}&=\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{tu}_{cd}}\\
+	(\mathbf{c})_{rsab}&=c_{ab}^{rs}
+\end{align}
+\autoref{4.26a}和\autoref{4.26b}可以重写为：
+\begin{align}
+	\mathbf{B}^\dagger\mathbf{c}&=E_{\text{corr}}\\
+	\mathbf{B}+\mathbf{Dc}&=\mathbf{c}E_{\text{corr}}
+\end{align}
+等价于
+\begin{align}
+	\begin{pmatrix}
+		0&\mathbf{B}^\dagger\\
+		\mathbf{B}&\mathbf{D}
+	\end{pmatrix}
+	\begin{pmatrix}
+		1\\
+		\mathbf{c}
+	\end{pmatrix}
+	=E_{\text{corr}}
+	\begin{pmatrix}
+		1\\
+		\mathbf{c}
+	\end{pmatrix}
+\end{align}
+这是DCI方程的矩阵形式。关联能是CI矩阵
+\begin{align}
+	\begin{pmatrix}
+		0&\mathbf{B}^\dagger\\
+		\mathbf{B}&\mathbf{D}
+	\end{pmatrix}
+\end{align}
+的最低本征值。从定义\autoref{4.27a}和\autoref{4.27b}可以看出，它是哈密顿量所有对角元减去\hft 能量$E_0$后，
+在基组$\{\ket{\Psi_0}, \ket{\Psi_{ab}^{rs}}\}$下的表示。
+
+通常即使是DCI也不能包含$\ket{\Psi_0}$所有可能的双激发，所以需要设计方法来优先选择最重要的组态。
+考察不同双激发组态的重要性的一种简单方法是用微扰方法处理这个CI本征值问题。若从\autoref{4.28b}解出$\mathbf{c}$:
+\begin{align}
+	\mathbf{c}=-(\mathbf{D}-\mathbf{1}E_{\text{corr}})^{-1}\mathbf{B}
+\end{align}
+将结果代入\autoref{4.28a}，得到
+\begin{align}
+	E_{\text{corr}}=-\mathbf{B}^\dagger(\mathbf{D}-\mathbf{1}E_{\text{corr}})^{-1}\mathbf{B}
+\end{align}
+从这个矩阵方程解出$E_{\text{corr}}$，等价于寻找CI矩阵的最低本征值。
+因为$E_{\text{corr}}$同时出现在方程两边，需要用迭代方法求解。
+因为关联能和双激发组态的能量减去$E_0$的差（即$\mathbf{D}$的对角元）相比很小，可以令方程右边的$E_{\text{corr}}=0$，得到近似：
+\begin{align}
+	E_{\text{corr}}'=-\mathbf{B}^\dagger\mathbf{D}^{-1}\mathbf{B}
+\end{align}
+这个结果可以代入\autoref{4.30a}中，得到$E_{\text{corr}}''$，然后继续迭代直至收敛。
+有趣的是，注意到第一次迭代结果$E_{\text{corr}}'$是DCI关联能的近似，实际上不再是一个上界，
+正如我们之后将讨论的，它不会随着体系大小的增加而变差，在这一点上它比准确的DCI结果更好。
+
+当$\mathbf{D}$很大时，它的逆$\mathbf{D}^{-1}$很难计算，\autoref{4.30b}需要进一步简化。
+大多数情况下，$\mathbf{D}$的最大元素在对角线上。如果假设$\mathbf{D}$是对角的，则它的逆可以简单地写成
+\begin{align}
+	(\mathbf{D}^{-1})_{rasb, tcud}=\frac{\delta_{ac}\delta_{bd}\delta_{rt}\delta_{su}}{\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{rs}_{ab}}}
+\end{align}
+于是关联能可以写成
+\begin{align}
+	E_{\text{corr}}\simeq -\sum_{\substack{a<b\\r<s}}\frac{\braket{\Psi_0|\hs|\Psi^{rs}_{ab}}\braket{\Psi^{rs}_{ab}|\hs|\Psi_0}}{\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{rs}_{ab}}}
+	=\sum_{\substack{a<b\\r<s}}E_{\text{corr}}
+	\begin{pmatrix}
+		rs\\ab
+	\end{pmatrix}
+\end{align}
+其中$E_{\text{corr}}
+\begin{pmatrix}
+	rs\\ab
+\end{pmatrix}$是双激发$\ket{\Psi^{rs}_{ab}}$对这个近似关联能的贡献。
+因为它容易计算，所以可以用它来找出DCI展开中可能最重要的组态。
 \section{计算示例}\mbox{}
 \label{sec4.3}
 \section{自然轨道与单粒子约化密度矩阵}
