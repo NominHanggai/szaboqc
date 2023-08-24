@@ -1943,7 +1943,7 @@ $\ket{L}$如下
 115)中的行列式表达式, 
 我们有
 \begin{align}
-\braket{K|L} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N\\
+\braket{K|L} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
               &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\} \mathscr{P}_j\{\chi_m'(1)\chi_n'(2)\cdots\}
 \end{align}
 设(两组)自旋轨道(一起)构成正交归一集.
@@ -1957,7 +1957,7 @@ $\ket{L}$如下
 即它们其实是相等的两个行列式,
 那么
 \begin{align}
-\braket{K|K} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N\\
+\braket{K|K} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\} \mathscr{P}_j\{\chi_m(1)\chi_n(2)\cdots\}
 \end{align}
 在上面的求和中, 
@@ -2060,7 +2060,7 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \textit{情形3}时, 两个行列式中有两个自旋轨道不相同, 在$\ket{L}$中设为$\chi_p,\chi_q$, $\ket{K}$中设为$\chi_m,\chi_n$:
 \begin{align}
 \ket{K} = & \ket{\chi_m(1)\chi_n(2)\cdots}\\
-\ket{L} = & \ket{\chi_p(1)\chi_q(2)\cdots}\\
+\ket{L} = & \ket{\chi_p(1)\chi_q(2)\cdots}
 \end{align}
 与(2.
 125)类似我们可以写出：
@@ -2324,18 +2324,18 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 带横线的轨道的其他排列方式积分后都为0. 
 因此\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock基态能就是
 \begin{align}
-E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1)\\
+E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1) \notag\\
     & = 1(1|h|1) + (11|11)
 \end{align} 
 \exercise{
 对自旋变量积分, 
 证明\phrase{极小基 $\mathrm{H}_2$}的full CI矩阵可以写成
-\begin{equation}
+\begin{equation*}
 \mathbf{H} = \begin{pmatrix}
 2(1|h|1) + (11|11) & (12|12) \\
 (21||21) & 2(2|h|2) + (22|22)
 \end{pmatrix}
-\end{equation}
+\end{equation*}
 }
 现在将以上结果推广到有偶数电子的$N$电子系统个中, 
 用空间积分表示该系统的Hartree-Fock能量. 
@@ -2346,7 +2346,7 @@ E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1)\\
 类似, 
 可以写出$N$电子系统的\emph{闭壳层}\emph{限制性} Hartree-Fock波函数
 \begin{align}
-\ket{\Psi_0} & = \ket{\chi_1\chi_2\chi_3\chi_4\cdots\chi_{N-1}\chi_N}\\
+\ket{\Psi_0} & = \ket{\chi_1\chi_2\chi_3\chi_4\cdots\chi_{N-1}\chi_N} \notag\\
              & = \ket{\psi_1\bar{\psi}_1\psi_2\bar{\psi}_2\cdots\psi_{N/2}\bar{\psi}_{N/2}}
 \end{align}
 该波函数的图示为图2.
@@ -2448,16 +2448,17 @@ E_0 = 2 \sum_{a}^{N/2}\braket{a|h|a} + \sum_{a}^{N/2}\sum_{b}^{N/2}2\braket{ab|a
 \exercise{
 第六章中我们会研究微扰论, 
 在那里会求得Haree-Fock基态的领头阶修正为
-\[
+\begin{equation*}
 E_0^{(2)} = \frac{1}{4} \sum_{abrs} \frac{|\braket{ab||rs}|^2}{\varepsilon_a + \varepsilon_b - \varepsilon_r - \varepsilon_s}
-\]
+\end{equation*}
 请证明, 
 对闭壳层体系($\epsilon_i = \epsilon_{\bar{i}}$), 
 该式成为
-\[
+\begin{equation*}
 E_0^{(2)} = \sum_{a,b=1}^{N/2}\sum_{r,s=(N/2+1)}^{K}\frac{\braket{ab|rs}(2\braket{rs|ab}) - \braket{rs|ba}}{\varepsilon_a + \varepsilon_b - \varepsilon_r - \varepsilon_s}
-\]
+\end{equation*}
 }
+
 \subsection{库伦积分、交换积分}
 \label{sec2.3.6}
 现在来考虑(2.
@@ -2875,17 +2876,17 @@ a_i\ket{\chi_k\cdots\chi_l} = 0\quad \text{若 } i\not\in\{k,\ldots,l \}
 若自旋轨道$\chi_i$在这个行列式中并未被电子占据, 
 则有
 \begin{align}
-(a_i\cs_i + \cs_ia_i) \ket{\chi_k\cdots\chi_l} & = a_i\cs_i \ket{\chi_k,\cdots,\chi_l} \\
-& = a_i\ket{\chi_i\chi_k\cdots\chi_l} \\
+(a_i\cs_i + \cs_ia_i) \ket{\chi_k\cdots\chi_l} & = a_i\cs_i \ket{\chi_k,\cdots,\chi_l} \notag \\
+& = a_i\ket{\chi_i\chi_k\cdots\chi_l} \notag \\
 & = \ket{\chi_k\cdots\chi_l}
 \end{align}
 另一方面, 
 若$\chi_i$是一个占据轨道, 
 则有
 \begin{align}
-(a_i\cs_i + \cs_ia_i) \ket{\chi_k\cdots\chi_l} & = \cs_i \ket{\chi_k\cdots\chi_i\cdots\chi_l} \\
-& = -\cs_i a_i \ket{\chi_i\cdots\chi_k\cdots\chi_l} \\
-& = -\cs_i \ket{\cdots\chi_k\cdots\chi_l} \\
+(a_i\cs_i + \cs_ia_i) \ket{\chi_k\cdots\chi_l} & = \cs_i \ket{\chi_k\cdots\chi_i\cdots\chi_l} \notag \\
+& = -\cs_i a_i \ket{\chi_i\cdots\chi_k\cdots\chi_l} \notag \\
+& = -\cs_i \ket{\cdots\chi_k\cdots\chi_l} \notag \\
 & = \ket{\chi_k\cdots\chi_i\cdots\chi_l}
 \end{align}
 两种情况下所得的结果一样. 
@@ -2905,9 +2906,9 @@ a_i\ket{\chi_k\cdots\chi_l} = 0\quad \text{若 } i\not\in\{k,\ldots,l \}
 结果也会是零, 
 因为行列式是反对称的：
 \begin{align}
-(a_i\cs_j + \cs_ja_i)\ket{\chi_k\cdots\chi_i\cdots\chi_l} & = -(a_i\cs_j + \cs_ja_i) \ket{\chi_i\cdots\chi_k\cdots\chi_l}\notag\\
-& = -a_i\ket{\chi_j\chi_i\cdots\chi_k\cdots\chi_l} - \cs_j\ket{\cdots\chi_k\cdots\chi_l}\notag\\
-& = a_i\ket{\chi_i\chi_j\cdots\chi_k\cdots\chi_l} - \ket{\chi_j\cdots\chi_k\cdots\chi_l}\notag\\
+(a_i\cs_j + \cs_ja_i)\ket{\chi_k\cdots\chi_i\cdots\chi_l} & = -(a_i\cs_j + \cs_ja_i) \ket{\chi_i\cdots\chi_k\cdots\chi_l} \notag\\
+& = -a_i\ket{\chi_j\chi_i\cdots\chi_k\cdots\chi_l} - \cs_j\ket{\cdots\chi_k\cdots\chi_l} \notag\\
+& = a_i\ket{\chi_i\chi_j\cdots\chi_k\cdots\chi_l} - \ket{\chi_j\cdots\chi_k\cdots\chi_l} \notag\\
 & = 0
 \end{align}
 因此就有
@@ -2924,15 +2925,15 @@ a_i\cs_j + \cs_ja_i = \delta_{ij} = \{ a_i,\cs_j \}
 只要他们关联着的自旋轨道不同, 
 即$i\neq j$, 
 那么交换时只要变号即可：
-\begin{align}
-a_i\cs_j = -\cs_ja_i\quad i\neq j
-\end{align}
-但需注意, 
-若这两个算符所关联的自旋轨道相同$(i=j)$, 
-那么会有如下式子：
-\begin{align}
-a_i\cs_i = 1 -\cs_ia_i
-\end{align}
+\begin{subequations}
+    \begin{align}
+    a_i\cs_j = -\cs_ja_i\quad i\neq j \\
+\intertext{
+但需注意, 若这两个算符所关联的自旋轨道相同$(i=j)$, 那么会有如下式子：}
+    a_i\cs_i = 1 -\cs_ia_i
+    \end{align}
+\end{subequations}
+
 \exercise{
 请利用行列式的性质证明
 \begin{align*}
@@ -3094,7 +3095,7 @@ $\cs_i$作用在左边),
 \end{align}
 利用
 \begin{align}
-\cs_a a_b = \delta_{ab} - a_b\cs_a
+\cs_a a_b = \delta_{ab} - a_b\cs_a \notag
 \end{align}
 把$\cs_a$挪到右边, 
 有
@@ -3217,12 +3218,9 @@ $m_s$有$2s+1$个可能值：$-s,-s+1,-s+2,\ldots,s-1,s$.
 \begin{subequations}
 	\begin{align}
 	s^2\ket{\alpha} & = \frac{3}{4}\ket{\alpha},\quad s^2\ket{\beta} = \frac{3}{4}\ket{\beta}\\
-	s_z\ket{\alpha} & =\frac{1}{2}\ket{\alpha},\quad s_z\ket{\beta} = -\frac{1}{2}\ket{\beta}
-	\end{align}
-\end{subequations}
-但不是$s_x,s_y$的本征态：
-\begin{subequations}
-	\begin{align}
+	s_z\ket{\alpha} & =\frac{1}{2}\ket{\alpha},\quad s_z\ket{\beta} = -\frac{1}{2}\ket{\beta}\\
+\intertext{
+	但不是$s_x,s_y$的本征态：}
 	s_x\ket{\alpha} & = \frac{1}{2}\ket{\beta},\quad s_x\ket{\beta} = \frac{1}{1}\ket{\alpha}\\
 	s_y\ket{\alpha} & =\frac{i}{2}\ket{\beta},\quad s_y\ket{\beta} = -\frac{i}{2}\ket{\alpha}
 	\end{align}
@@ -3367,7 +3365,7 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 可以构造$2K$个自旋轨道$\{\chi_i|i=1,2,\ldots,2K\}$, 
 每个空间轨道乘以$\alpha$或$\beta$即可：
 \begin{align}
-\chi_{2i-1}(\mathbf{x}) & = \psi_i(\mathbf{r})\alpha(\omega)\\
+\chi_{2i-1}(\mathbf{x}) & = \psi_i(\mathbf{r})\alpha(\omega) \notag\\
 \chi_{2i}(\mathbf{x})   & = \psi_i(\mathbf{r})\beta(\omega)
 \end{align}
 这些自旋轨道称为\emph{限制性}自旋轨道, 
@@ -3464,7 +3462,7 @@ $s_+\psi\beta = \psi_\alpha$,
 \begin{align}
 \ket{^1\Psi_1^2} & = 2^{-1/2}(\ket{\Psi_{\bar{1}}^{\bar{2}}} + \ket{\Psi_1^2}) \notag\\
 & =2^{-1/2}(\ket{1\bar{2}} + \ket{2\bar{1}})\notag \\
-& =2^{-1/2}[ \psi_1(1)\psi_2(2) + \psi_1(2)\psi_2(1)] 2^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2))
+	& =2^{-1/2}[ \psi_1(1)\psi_2(2) + \psi_1(2)\psi_2(1)] 2^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2)) \label{eq:2.260}
 \end{align}
 三重的自旋匹配组态构造如下
 \begin{align}
@@ -3533,8 +3531,7 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 \ket{^1\Psi_a^r} = 2^{-1/2}(\ket{\Psi_{\bar{a}}^{\bar{r}}} + \ket{\Psi_a^r})
 \end{align}
 若$a=1,b=2$则上面的式子就退化为\phrase{极小基 $\hd$}的情形, 
-即(2.
-260).
+即\autoref{eq:2.260}.
 
 
 对双激发而言, 
