@@ -2724,7 +2724,7 @@ g. $2h_{11}+ 2h_{22}+ J_{11} + J_{22} + 4J_{12} - 2K_{12}$
 首先我们为每个自旋轨道$\chi_i$配上一个\emph{产生}算符, 
 用它作用于任意行列式$\ket{\chi_k\cdots\chi_l}$上产生的效果来定义这个算符本身, 
 作用效果如下
-\begin{align}
+\begin{align}\label{eq:2.190}
 a_i^\dagger \ket{\chi_k\cdots\chi_l} = \ket{\chi_i\chi_k\cdots\chi_l}
 \end{align}
 因此$\cs_i$的效果就是在自旋轨道$\chi_i$上产生一个电子. 
@@ -2739,11 +2739,8 @@ a_i^\dagger \ket{\chi_k\cdots\chi_l} = \ket{\chi_i\chi_k\cdots\chi_l}
 \cs_j\cs_i\ket{\chi_k\cdots\chi_l} = \cs_j\ket{\chi_i\chi_k\cdots\chi_l} & = \ket{\chi_j\chi_i\chi_k\cdots\chi_l}\notag\\
 & = - \ket{\chi_i\chi_j\chi_k\cdots\chi_l}
 \end{align}
-其中用到了Slater行列式的反对称性质(见式(2.
-40)). 
-将式(2.
-191)(2.
-192)加起来可得
+其中用到了Slater行列式的反对称性质(见式(2.40)). 
+将式(2.191)(2.192)加起来可得
 \begin{align}
 (\cs_i\cs_j + \cs_j\cs_i)\ket{\chi_k\cdots\chi_l} = 0
 \end{align}
@@ -2752,8 +2749,7 @@ a_i^\dagger \ket{\chi_k\cdots\chi_l} = \ket{\chi_i\chi_k\cdots\chi_l}
 \begin{align}
 \cs_i\cs_j + \cs_j\cs_i = 0 = \{ \cs_i, \cs_j \}
 \end{align}
-其中使用了之前引入的两个算符的\emph{反对易子}记号(见式(1.
-19a)). 
+其中使用了之前引入的两个算符的\emph{反对易子}记号(见式(1.19a)). 
 由于
 \begin{align}
 \cs_i\cs_j = - \cs_j\cs_i
@@ -2787,10 +2783,9 @@ a_i^\dagger \ket{\chi_k\cdots\chi_l} = \ket{\chi_i\chi_k\cdots\chi_l}
 }
 现在引进\emph{湮灭算符} $a_i$. 
 它是产生算符$\cs_i$的伴随算符(adjoint operator)(即$(\cs_i)^\dagger = a_i$). 
-和式(2.
-190)的精神类似, 
+和\autoref{eq:2.190}的精神类似, 
 $a_i$按下式定义：
-\begin{align}
+\begin{align}\label{eq:2.199}
 a_i \ket{\chi_i\chi_k\cdots\chi_l} = \ket{\chi_k\cdots\chi_l}
 \end{align}
 那么$a_i$的作用就是在$\chi_i$上挪去或者湮灭一个电子. 
@@ -2814,9 +2809,7 @@ a_i \ket{\chi_k\chi_l\chi_i} = -a_i \ket{\chi_i\chi_l\chi_k} = -\ket{\chi_l\chi_
 \ket{K} = \cs_i \ket{\chi_j} 
 \end{align}
 取上式的伴随, 
-则有(见式(1.
-52)(1.
-57))
+则有(见式(1.52)(1.57))
 \begin{align}
 \braket{K|K} = \braket{\chi_j|a_j|K}
 \end{align}
@@ -2826,27 +2819,22 @@ a_i \ket{\chi_k\chi_l\chi_i} = -a_i \ket{\chi_i\chi_l\chi_k} = -\ket{\chi_l\chi_
 \begin{align}
 a_i\ket{K} = a_i\ket{\chi_i\chi_j} = \ket{\chi_j}
 \end{align} 
-这与式(2.
-199)中湮灭算符的定义相同. 
-由式(2.
-203)可知道, 
+这与\autoref{eq:2.199}中湮灭算符的定义相同. 
+由式(2.203)可知道, 
 $a_i$如果作用再一个放在左边的行列式上, 
 其作用于产生算符相同. 
 类似, 
 $\cs_i$作用在左边的行列式上, 
 效果和湮灭算符相同. 
 举个例子, 
-式(2.
-205)的伴随就是
+式(2.205)的伴随就是
 \begin{align}
 \bra{K}\cs_i = \bra{\chi_j}
 \end{align}
 
 为得到湮灭算子的反对易关系, 
-我们取(2.
-194)的伴随. 
-由于(见练习1.
-3)：
+我们取(2.194)的伴随. 
+由于(见练习1.3)：
 \begin{align}
 \left( \mathscr{AB} \right)^\dagger = \mathscr{B}\dagger\mathscr{A}^\dagger
 \end{align} 
@@ -2915,8 +2903,7 @@ a_i\ket{\chi_k\cdots\chi_l} = 0\quad \text{若 } i\not\in\{k,\ldots,l \}
 \begin{align}
 a_i\cs_j + \cs_ja_i = 0 = \{ a_i, \cs_j \}\quad i\neq j
 \end{align}
-将此式与(2.
-214)合在一起就的到了产生算符和湮灭算符的反对易关系：
+将此式与(2.214)合在一起就的到了产生算符和湮灭算符的反对易关系：
 \begin{align}
 a_i\cs_j + \cs_ja_i = \delta_{ij} = \{ a_i,\cs_j \}
 \end{align}
@@ -2972,8 +2959,7 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 从行列式中导出的一切结论同样能用产生算符和湮灭算符的代数性质导出来. 
 
 
-练习2.
-5中曾计算过两个行列式之间的重叠：
+练习2.5中曾计算过两个行列式之间的重叠：
 \begin{align}
 \ket{K} = \ket{\chi_i\chi_j} = \cs_i\cs_j\ket{\,\,}\\
 \ket{L} = \ket{\chi_k\chi_l} = \cs_k\cs_i\ket{\,\,}
@@ -2982,8 +2968,7 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 再对两个电子的空间坐标和自旋坐标积分, 
 使用自旋轨道之间的正交性. 
 这里用二次量子化的办法计算这个重叠. 
-式(2.
-223)的伴随是：
+式(2.223)的伴随是：
 \begin{align}
 \bra{K} = \bra{\,\,}(\cs_i\cs_j)^\dagger = \bra{\,\,}a_ja_i
 \end{align}
@@ -3016,8 +3001,7 @@ a_i\cs_k = \delta_{ik} - \cs_ka_i
 & = \delta_{jk}\delta_{jl} - \delta_{il}\delta_{jk}
 \end{align}
 第二个等号是由于真空态已预先规定为归一化的. 
-这里所得的结果于练习2.
-5中的相同. 
+这里所得的结果于练习2.5中的相同. 
 
 \exercise{
 用二次量子化的办法证明$\braket{\chi_i|\chi_j} = \delta_{ij}$.
@@ -3110,8 +3094,7 @@ $\cs_i$作用在左边),
 \begin{align}
 \braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{ab} \braket{a|h|b}\delta_{ab} = \sum_a\braket{a|h|a}
 \end{align} 
-与表2.
-5给出的结果完全相同.
+与表2.5给出的结果完全相同.
 
 
 对双电子算符之和, 
@@ -3134,8 +3117,7 @@ $\cs_i$作用在左边),
 \end{align*}
 结果就是两项：第一项中令$c=a,d=b$, 
 第二项令$c=b,d=a$, 
-就得到与表2.
-6相同的结果：
+就得到与表2.6相同的结果：
 \begin{align}
 \braket{\Psi_0|\mathcal{O}_2|\Psi_0} = \frac{1}{2}\sum_{ab}\braket{ab|ab} - \braket{ab|ba}
 \end{align}
@@ -3157,8 +3139,7 @@ $\cs_i$作用在左边),
 \braket{\Psi_0|\cs_a a_r\cs_i\cs_j a_l a_k|\Psi_0} =& \delta_{rj}\delta_{al}\braket{\Psi_0|\cs_i a_k|\Psi_0} - \delta_{rj}\delta_{ak}\braket{\Psi_0|\cs_i a_l|\Psi_0}\\
 & + \delta_{ri}\delta_{ak}\braket{\Psi_0|\cs_j a_l|\Psi_0} - \delta_{ri}\delta_{al}\braket{\Psi_0|\cs_j a_k|\Psi_0}
 \end{align*}
-之后可参考练习2.
-27.
+之后可参考练习2.27.
 
 }
 \section{自旋匹配组态}
@@ -3187,11 +3168,11 @@ $\cs_i$作用在左边),
 \end{align}
 此处$\vec{i},\vec{j},\vec{k}$是沿着$x,y,z$方向的单位向量. 
 $\vec{s}$的平方则是标量算符：
-\begin{align}
+\begin{align}\label{eq:2.241}
 s^2 = \vec{s}\cdot\vec{s} = s^2_x + s^2_y + s^2_z
 \end{align}
 自旋角动量分量满足如下对易关系：
-\begin{align}
+\begin{align}\label{eq:2.242}
 [s_x,s_y] = is_z,\quad [s_y,s_z] = s_x,\quad [s_z,s_x]=is_y
 \end{align}
 描述单个粒子的完全集可以选为$s^2$及其某个分量的共同本征函数, 
@@ -3244,10 +3225,8 @@ $m_s$的值改变$1$：
 	s_-\ket{\alpha} = \ket{\beta},\quad s_-\ket{\beta} = 0\\
 	\end{align}
 \end{subequations}
-用(2.
-242)中的对易关系, 
-可将(2.
-241)中的$s^2$的表达式改写为：
+用\autoref{eq:2.242}中的对易关系, 
+可将\autoref{eq:2.241}中的$s^2$的表达式改写为：
 \begin{subequations}
 	\begin{align}
 	s^2 = s_+s_- - s_z + s_z^2\\
@@ -3258,13 +3237,10 @@ $m_s$的值改变$1$：
 a) 由(2.245)导出(2.247); b)推导式(2.248).
 \Next
 求出$s^2,s_z,s_+,s_-$在$\ket{\alpha},\ket{\beta}$为基时的矩阵表示. 
-验证式(2.
-248a,
-b)的矩阵表示.
+验证式(2.248a,b)的矩阵表示.
 
 \Next
-用(2.
-242)中的反对易关系证明$[s^2,s_z]=0$.
+用\autoref{eq:2.242}中的反对易关系证明$[s^2,s_z]=0$.
 
 }
 
@@ -3311,8 +3287,7 @@ b)的矩阵表示.
 但是将近似波函数限制为单重、双重、三重态等等会比较方便.
 
 
-所有的单行列式都是$\ts_z$的本征函数(见练习2.
-37). 
+所有的单行列式都是$\ts_z$的本征函数(见练习2.37). 
 写出来就是
 \begin{align}
 \label{2.254}
@@ -3349,10 +3324,8 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 哈密顿量在单重、三重态组态(仅举一例)之间的矩阵元为0.
 
 \Next
-证明式(2.
-254). 
-\textit{提示：}使用式(2.
-115)将Slater行列式展开, 
+证明式(2.254). 
+\textit{提示：}使用式(2.115)将Slater行列式展开, 
 并注意到$\ts_z$与$\mathscr{P}_n$对易, 
 因为$\ts_z$在对电子指标的任意置换下都不变.
 
@@ -3410,14 +3383,11 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 双激发态$\ket{\Psi_{1\bar{1}}^{2\bar{2}}}$也是单重态.
 
 \exercise{
-证明式(2.
-256). 
+证明式(2.256). 
 \textit{提示：}1) $\ts^2 = \ts_-\ts_+ + \ts_z + \ts^2_z$, 
-2) 用式(2.
-254)即可证明$\ts_+\ket{\psi_i\bar{\psi}_i}=0$, 
+2) 用式(2.254)即可证明$\ts_+\ket{\psi_i\bar{\psi}_i}=0$, 
 3)
-用式(2.
-115)展开行列式, 
+用式(2.115)展开行列式, 
 注意到$\ts_+$与置换算符对易, 
 4)最后一步, 
 $s_+\psi\beta = \psi_\alpha$, 
@@ -3429,11 +3399,9 @@ $s_+\psi\beta = \psi_\alpha$,
 现来看开壳层限制性行列式. 
 开壳层行列式\emph{不是}$\ts_2$的本征函数, 
 除非所有开壳层电子的自旋都平行, 
-如图2.
-12中那样. 
+如图2.12中那样. 
 举个例子, 
-考虑\phrase{极小基 $\hd$}的四个单激发行列式(见式(2.
-76), 
+考虑\phrase{极小基 $\hd$}的四个单激发行列式(见式(2.76), 
 四个都是开壳层行列式). 
 其中的两个
 \begin{subequations}
@@ -3494,8 +3462,7 @@ $s_+\psi\beta = \psi_\alpha$,
 	\caption{双重和三重限制性行列式.}
 \end{figure}
 真如我们所期望的, 
-$\ket{^1\Psi_1^2}$的自旋部分和闭壳层波函数(2.
-257)相同, 
+$\ket{^1\Psi_1^2}$的自旋部分和闭壳层波函数(2.257)相同, 
 因为二者都是单重态.
 
 \exercise{
@@ -3536,8 +3503,7 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 
 对双激发而言, 
 可能的单重自旋匹配组态很多, 
-结果已列在表2.
-7中. 
+结果已列在表2.7中. 
 若同一空间轨道的两个电子共同激发到另外一个空间轨道上, 
 由这种激发态构成的单重自旋匹配组态记为$\ket{^1\Psi_{aa}^{rr}}$. 
 同一空间轨道上的两个电子激发到了不同的空间轨道上, 
@@ -3599,8 +3565,7 @@ $\mathrm{Li}$原子的限制性Hartree-Fock基态为：
 \begin{align}
 \ket{^2\Psi_\mathrm{RHF}} = \ket{\psi_{1s}\bar{\psi}_{1s}\psi_{2s}}
 \end{align} 
-如图2.
-13所示. 
+如图2.13所示. 
 在这个行列式中, 
 $1s\alpha$电子的空间部分和$1s\beta$电子的空间部分被限制为相同的函数. 
 这个限制是真实的, 
@@ -3631,8 +3596,7 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 \end{figure}
 那么得到的能量应当更低. 
 事实确实如此. 
-波函数(2.
-265)是\emph{非限制性}行列式一例. 
+波函数(2.265)是\emph{非限制性}行列式一例. 
 它就是$\mathrm{Li}$原子的非限制性基态波函数.
 
 
@@ -3659,8 +3623,7 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 \chi_{2i}(\mathbf{x})   &= \psi_i^\beta(\mathbf{r})\beta(\omega) 
 \end{split}
 \end{equation}
-正如练习2.
-1所示, 
+正如练习2.1所示, 
 这$2K$个非限制性轨道构成一个正交归一集, 
 虽然在空间部分, 
 $\alpha$$\beta$轨道并不正交.
@@ -3670,14 +3633,12 @@ $\alpha$$\beta$轨道并不正交.
 此外， 
 它们也无法通过不多(a small number of)的行列式之间线性组合来成为自旋匹配的. 
 因此, 
-Li原子的UHF基态不像RHF(2.
-264)那样是一个纯双重态. 
+Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态. 
 但是, 
 非限制性波函数场用作双重和三重态的初始近似. 
 
 
-图2.
-14代表一个非限制性波函数, 
+图2.14代表一个非限制性波函数, 
 它是近似单重的. 
 注意到$N^\alpha = N^\beta$. 
 图中为强调非限制性, 
@@ -3723,23 +3684,18 @@ Li原子的UHF基态不像RHF(2.
 
 
 若$N^\alpha=N^\beta+1$, 
-那么非限制性行列式近似地为双重态(见图2.
-15). 
+那么非限制性行列式近似地为双重态(见图2.15). 
 非限制性双重态常作为自由基的初级描述, 
 自由基有一个未配对电子, 
 如$\mathrm{CH}_3$. 
 近似的三重态$\alpha$电子比$\beta$电子多两个, 
-如图2.
-16所示.
+如图2.16所示.
 
 
 若$\ket{1},\ket{2},\ket{3}$等是精确的自旋单、双、三…态, 
-那么图2.
-14,
-2.
-15, 
-2.
-16中的非限制性态可以展开为：
+那么图2.14,
+2.15, 
+2.16中的非限制性态可以展开为：
 \begin{subequations}
 	\begin{align}
 	\ket{^1\Psi} = c_1^1\ket{1} + c_3^1\ket{3} + c_5^1\ket{5} + \cdots\\
@@ -3820,8 +3776,7 @@ $\ts^2$的期望值常常过大,
 它由\emph{非正交}的空间轨道构成：$\braket{\psi_1^\alpha|\psi_1^\beta} = S_{11}^{\alpha\beta}$. 
 请证明只有当$\psi_1^\alpha=\psi_1^\beta$时$\ket{K}$才是$\ts^2$的本征函数. 
 另外证明$\braket{K|\ts^2|K} = 1 - |S_{11}^{\alpha\beta}|^2$, 
-与式(2.
-271)相吻合.
+与式(2.271)相吻合.
 
 }
 
