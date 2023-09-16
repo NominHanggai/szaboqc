@@ -424,21 +424,27 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 	=E_{\text{corr}}\left(\ket{\Psi_0}+\sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\ket{\Psi_{cd}^{tu}}\right)
 \end{align}
 分别左乘$\bra{\Psi_0},\bra{\Psi_{ab}^{rs}}$，得到：
-\begin{align}
-	\sum_{\substack{c<d\\t<u}}c_{cd}^{tu} \braket{\Psi_0|\hs|\Psi^{tu}_{cd}}&=E_{\text{corr}} \\
-	\braket{\Psi^{rs}_{ab}|\hs|\Psi_0} + \sum_{\substack{c<d\\t<u}}c_{cd}^{tu} \braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{tu}_{cd}}&=c_{ab}^{rs}E_{\text{corr}}
-\end{align}
+\begin{subequations}
+	\begin{align}
+		\sum_{\substack{c<d\\t<u}}c_{cd}^{tu} \braket{\Psi_0|\hs|\Psi^{tu}_{cd}}&=E_{\text{corr}} \tag{4.26a}\label{4.26a}\\
+		\braket{\Psi^{rs}_{ab}|\hs|\Psi_0} + \sum_{\substack{c<d\\t<u}}c_{cd}^{tu} \braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{tu}_{cd}}&=c_{ab}^{rs}E_{\text{corr}} \tag{4.26b}\label{4.26b}
+	\end{align}
+\end{subequations}
 这两个方程决定了关联能，是\autoref{4.19a}和\autoref{4.19b}的推广。通过定义矩阵
-\begin{align}
-	(\mathbf{B})_{rasb}&=\braket{\Psi^{rs}_{ab}|\hs|\Psi_0}\\
-	(\mathbf{D})_{rasb, tucd}&=\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{tu}_{cd}}\\
-	(\mathbf{c})_{rsab}&=c_{ab}^{rs}
-\end{align}
+\begin{subequations}
+	\begin{align}
+		(\mathbf{B})_{rasb}&=\braket{\Psi^{rs}_{ab}|\hs|\Psi_0}\tag{4.27a}\label{4.27a}\\
+		(\mathbf{D})_{rasb, tucd}&=\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{tu}_{cd}}\tag{4.27b}\label{4.27b}\\
+		(\mathbf{c})_{rsab}&=c_{ab}^{rs}\tag{4.27c}\label{4.27c}
+	\end{align}
+\end{subequations}
 \autoref{4.26a}和\autoref{4.26b}可以重写为：
-\begin{align}
-	\mathbf{B}^\dagger\mathbf{c}&=E_{\text{corr}}\\
-	\mathbf{B}+\mathbf{Dc}&=\mathbf{c}E_{\text{corr}}
-\end{align}
+\begin{subequations}
+	\begin{align}
+		\mathbf{B}^\dagger\mathbf{c}&=E_{\text{corr}}\tag{4.28a}\label{4.28a}\\
+		\mathbf{B}+\mathbf{Dc}&=\mathbf{c}E_{\text{corr}}\tag{4.28b}\label{4.28b}
+	\end{align}
+\end{subequations}
 等价于
 \begin{align}
 	\begin{pmatrix}
@@ -472,13 +478,14 @@ E_\mathrm{corr} = \sum_{\substack{c<d\\t<u}}c_{cd}^{tu}\braket{\hjtn|\hs|\Psi_{c
 \end{align}
 将结果代入\autoref{4.28a}，得到
 \begin{align}
-	E_{\text{corr}}=-\mathbf{B}^\dagger(\mathbf{D}-\mathbf{1}E_{\text{corr}})^{-1}\mathbf{B}
+	E_{\text{corr}}=-\mathbf{B}^\dagger(\mathbf{D}-\mathbf{1}E_{\text{corr}})^{-1}\mathbf{B}\tag{4.30a}\label{4.30a}
 \end{align}
+\addtocounter{equation}{1}
 从这个矩阵方程解出$E_{\text{corr}}$，等价于寻找CI矩阵的最低本征值。
 因为$E_{\text{corr}}$同时出现在方程两边，需要用迭代方法求解。
 因为关联能和双激发组态的能量减去$E_0$的差（即$\mathbf{D}$的对角元）相比很小，可以令方程右边的$E_{\text{corr}}=0$，得到近似：
 \begin{align}
-	E_{\text{corr}}'=-\mathbf{B}^\dagger\mathbf{D}^{-1}\mathbf{B}
+	E_{\text{corr}}'=-\mathbf{B}^\dagger\mathbf{D}^{-1}\mathbf{B}\tag{4.30b}\label{4.30b}
 \end{align}
 这个结果可以代入\autoref{4.30a}中，得到$E_{\text{corr}}''$，然后继续迭代直至收敛。
 有趣的是，注意到第一次迭代结果$E_{\text{corr}}'$是DCI关联能的近似，实际上不再是一个上界，
