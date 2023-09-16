@@ -27,10 +27,10 @@
 但除了full CI外的所有CI方法——前者当然是精确的——都不满足这个性质. 
 本征我们要考虑对理论及对耦合理论, 
 它们有大小一致性, 
-下一张要讨论的一种微扰论形式也具有这个性质. 
+下一章要讨论的一种微扰论形式也具有这个性质. 
 对理论和微扰论具有大小一致性, 
 但代价就是, 
-于DCI不同, 
+与DCI不同, 
 前两个方法不是变分的, 
 因此由它们所得的总能可以比真实能量低. 
 比如, 
@@ -80,15 +80,379 @@ E_\mathrm{corr} = \sum_{a<b}e_{ab}
 e_{ab} = \sum_{r<s} c_{ab}^{rs} \Braket{\Psi_0 | \hs | \Psi_{ab}^{rs}}
 \end{equation}
 $ e_{ab} $是HF近似中占据$ \chi_a,\chi_b $两自旋轨道的电子之间的相互作用导致的相关能。虽然上面的分解是精确的，但这有误导性，因为我们需要full CI波函数来得到系数$ c_{ab}^{rs} $。这样对于一个$ N $-电子体系，我们必须考虑所有的电子来为$ ab $电子对计算精确的$ e_{ab} $。我们能不能设计一个方案来近似计算独立于其他对的电子对能量呢？如果这样，那么我们可以近似地把一个$ N $-电子问题简化为$ N(N-1)/2 $个两电子问题。独立电子对近似(IEPA)就是这样的一个方案。
+量子化学中的IEPA由Sinano\v{g}lu
+\endnote{O. Sinano\v{g}lu, Many-electron theory of atoms, molecules, and their interactions, \textit{Adv. Chem. Phys.} \textbf{6}: 315 (1964)}
+和R. K. Nesbet
+\endnote{R. K. Nesbet, Electronic correlation in atoms and molecules, \textit{Adv. Chem. Phys.} \textbf{9}: 321 (1965)}
+独立提出。他们采用了不同的术语和表达方式，但最终结果本质上是等价的。Sinano\v{g}lu将他的理论称为多电子理论（MET），而Nesbet称其为Bethe-Goldstone理论。
+此外，IEPA有时也被称为“一次一对（pair-at-a-time）” CI，原因稍后揭晓。
+
+如何计算分别在自旋轨道$a$和$b$上的一对电子的关联能（即，对能$e_{ab}$）？
+最简单的方法是不去管其余$N-2$个电子（即，它们仍在自己的HF自旋轨道上），只让自旋轨道$a$和$b$上的电子相关，将它们激发到虚轨道。
+我们用HF波函数和只激发$ab$对的行列式构造了一个$ab$对的相关波函数，记为$\ket{\Psi_{ab}}$。
+若简单起见忽略单激发（在上一章我们看到，它对关联能几乎没有影响），则\phrase{对函数}$\ket{\Psi_{ab}}$为
+\begin{align}
+    \ket{\Psi_{ab}}=\ket{\Psi_0}+\sum_{r<s}c^{rs}_{ab}\ket{\Psi_{ab}^{rs}}
+\end{align}
+其中和往常一样使用了半归一化。这个波函数的能量$E_{ab}$正是HF能量和对关联能之和：
+\begin{align}
+    \label{5.5}
+    E_{ab}=\braket{\Psi_0|\hs|\Psi_0}+e_{ab}=E_0+e_{ab}
+\end{align}
+因此这个波函数的能量低于HF能量（对关联能是负值）。我们可以用线性变分法来确定$e_{ab}$的最佳值：
+构造哈密顿量在$\ket{\Psi_0}$所有包含$\chi_a$和$\chi_b$的双激发行列式张成的子空间中的矩阵表示，然后找到这个矩阵的最低本征值。
+等价地，将$\ket{\Psi_{ab}}$代入
+\begin{align}
+    \hs\ket{\Psi_{ab}}=E_{ab}\ket{\Psi_{ab}}
+\end{align}
+得到
+\begin{align}
+    \hs\left(\ket{\Psi_0}+\sum_{t<u}c^{tu}_{ab}\ket{\Psi_{ab}^{tu}}\right)=E_{ab}\left(\ket{\Psi_0}+\sum_{t<u}c^{tu}_{ab}\ket{\Psi_{ab}^{tu}}\right)
+\end{align}
+然后分别左乘$\bra{\Psi_0}$和$\bra{\Psi^{rs}_{ab}}$，而第二种情况得到
+\begin{align}
+    E_0+\sum_{t<u}c^{tu}_{ab}\braket{\Psi_0|\hs|\Psi_{ab}^{tu}}=E_{ab}\tag{5.8a}
+\end{align}
+\addtocounter{equation}{1}
+以及
+\begin{align}
+    \braket{\Psi_{ab}^{rs}|\hs|\Psi_0}+\sum_{t<u}\braket{\Psi_{ab}^{rs}|\hs|\Psi_{ab}^{tu}}c^{tu}_{ab}=E_{ab}c^{rs}_{ab}\tag{5.8b}
+\end{align}
+利用\autoref{5.5}，上面两个方程变为
+\begin{align}
+    \label{5.9a}
+    \sum_{t<u}c^{tu}_{ab}\braket{\Psi_0|\hs|\Psi_{ab}^{tu}}=e_{ab}\tag{5.9a}
+\end{align}
+\addtocounter{equation}{1}
+以及
+\begin{align}
+    \label{5.9b}
+    \braket{\Psi_{ab}^{rs}|\hs|\Psi_0}+\sum_{t<u}\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{ab}^{tu}}c^{tu}_{ab}=e_{ab}c^{rs}_{ab}\tag{5.9b}
+\end{align}
+最终可以将这两个方程重写为矩阵形式。定义
+\begin{subequations}
+    \begin{align}
+        (\mathbf{D}_{ab})_{rs,tu}=\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{ab}^{tu}}\tag{5.10a}\\
+        (\mathbf{B}_{ab})_{rs}=\braket{\Psi_{ab}^{rs}|\hs|\Psi_0}\tag{5.10b}\\
+        (\mathbf{c}_{ab})_{rs}=c_{ab}^{rs}\tag{5.10c}
+    \end{align}
+\end{subequations}
+于是\autoref{5.9a}和\autoref{5.9b}等价于
+\begin{align}
+    \begin{pmatrix}
+        0 & \mathbf{B}^\dagger_{ab} \\
+        \mathbf{B}_{ab} & \mathbf{D}_{ab}
+    \end{pmatrix}
+    \begin{pmatrix}
+        \mathbf{1} \\
+        \mathbf{c}_{ab}
+    \end{pmatrix}
+    =e_{ab}
+    \begin{pmatrix}
+        \mathbf{1} \\
+        \mathbf{c}_{ab}
+    \end{pmatrix}
+\end{align}
+该矩阵本征值问题可以对$N(N-1)/2$个占据电子对中的每一个进行求解。总关联能时每个对的关联能之和：
+\begin{align}
+    E_\text{corr}(\text{IEPA})=\sum_{a<b}e_{ab}
+\end{align}
+
+虽然每个对的能量$e_{ab}$是通过CI-类型的变分计算所得，对能之和并不一定高于精确的总能。
+每个对的CI矩阵比DCI矩阵小得多，不需要计算像$\braket{\Psi^{rs}_{ab}|\hs|\Psi^{tu}_{cd}}$这种$ab$和$cd$对的耦合矩阵元。
+IEPA在计算上等价于对每个电子对分别做DCI，因此有时被称为“一次一对”的CI。
+这个术语和IEPA比DCI计算更简单的事实，看似意味着IEPA是DCI的一个近似。
+然而在下一节我们将发现不是这样：考虑如何包含不同对之间的耦合，将IEPA视为对full CI的一个不同于DCI的近似更为合适。
+
+之前我们简单展示了对理论，现在我们考虑对方程的近似，来与微扰论建立联系。若在\autoref{5.9b}中忽略激发行列式之间的耦合（即，求和中只留下$t=r$和$u=s$的项），则有
+\begin{align}
+    \braket{\Psi^{rs}_{ab}|\hs|\Psi_0}+\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{rs}_{ab}}c^{rs}_{ab}=e_{ab}c^{rs}_{ab}
+\end{align}
+解这个方程得到$c^{rs}_{ab}$，代入\autoref{5.9a}，得到
+\begin{align}
+    e_{ab}=-\sum_{r<s}\frac{|\braket{\Psi_0|\hs|\Psi^{rs}_{ab}}|^2}{\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{rs}_{ab}}-e_{ab}}
+\end{align}
+因为$e_{ab}$与HF和双激发态能量之差相比很小，可以在分母中忽略它，于是有
+\begin{align}
+    e_{ab}^{\text{EN}}=-\sum_{r<s}\frac{|\braket{\Psi_0|\hs|\Psi^{rs}_{ab}}|^2}{\braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{rs}_{ab}}}
+\end{align}
+因为用这个近似得到的关联能
+\begin{align}
+    E_\text{corr}(\text{EN})=\sum_{a<b}e_{ab}^{\text{EN}}
+\end{align}
+是Epstein和Nesbet推出的，$e_{ab}^{\text{EN}}$被称为Epstein-Nesbet对关联能。因为用Epstein-Nesbet对在大基组下会比对理论更多地高估总关联能，在本书中只作偶尔提及。
+最后，若进一步将$\ket{\Psi_0}$和$\ket{\Psi^{rs}_{ab}}$之间的能量差用HF轨道的能量差来近似：
+\begin{align}
+    \braket{\Psi^{rs}_{ab}|\hs-E_0|\Psi^{rs}_{ab}}\cong \varepsilon_r+\varepsilon_s-\varepsilon_a-\varepsilon_b
+\end{align}
+就会得到
+\begin{align}
+    e_{ab}^{\text{FO}}=\sum_{r<s}\frac{|\braket{\Psi_0|\hs|\Psi^{rs}_{ab}}|^2}{\varepsilon_a+\varepsilon_b-\varepsilon_r-\varepsilon_s}
+\end{align}
+这被称为一阶对能，是对理论可能的近似中最简单的。一阶对得到的关联能为：
+\begin{align}
+    \label{5.19}
+    E_\text{corr}(\text{FO})=\sum_{a<b}\sum_{r<s}\frac{|\braket{\Psi_0|\hs|\Psi^{rs}_{ab}}|^2}{\varepsilon_a+\varepsilon_b-\varepsilon_r-\varepsilon_s}
+    =\sum_{a<b}\sum_{r<s}\frac{|\braket{ab||rs}|^2}{\varepsilon_a+\varepsilon_b-\varepsilon_r-\varepsilon_s}
+\end{align}
+正如将在下一章看到的那样，这个表达式等价于多体微扰论框架下对HF能量的一阶修正（即，这是二阶能量）。因此，微扰论最简单的形式直接通向对理论。
+\exercise{
+    对理论在极小基$H_2$上的应用是平凡的，因为我们处理的是双电子系统，IEPA是精确的，也就是说，它可以给出最后一章得到的full CI的结果：
+    \begin{align*}
+        {}^1E_\text{corr}=\Delta-(\Delta^2+K^2_{12})^{1/2}
+    \end{align*}
+    其中（见\autoref{4.20}）
+    \begin{align*}
+        \Delta=(\varepsilon_2-\varepsilon_1)+\frac{1}{2}(J_{11}+J_{22}-4J_{12}+2K_{12})
+    \end{align*}
+    a. 用一阶对计算关联能。注意\autoref{5.19}中的求和遍历了所有自旋轨道（即，$a=1, \bar{1}$和$r=2, \bar{2}$）。证明
+    \begin{align*}
+        {}^1E_\text{corr}(\text{FO})=\frac{K_{12}^2}{2(\varepsilon_1-\varepsilon_2)}
+    \end{align*}
+    b. 将精确关联能中的$\Delta$近似为$\varepsilon_2-\varepsilon_1$，利用关系$(1+x)^{1/2}\simeq1+x/2$将精确结果展开到一阶，得到一阶对关联能。
+}
+作为对理论的简单展示，我们计算由两个极小基$H_2$分子组成的双分子的关联能。因为$H_2$只含两个电子，对理论与full CI是等同的，对单个$H_2$分子是精确的。
+我们将第i个单分子的占据和非占据轨道分别记为$1_i$和$2_i$，因为单分子之间没有相互作用，含有不同子单元轨道的所有双电子积分为零。
+因为双分子的构型为$(1_1)^2(1_2)^2$，我们需要找到六个对关联能，即，$e_{1_1\bar{1}_1}, e_{1_1,1_2}, e_{1_1\bar{1}_2}, e_{\bar{1}_11_2}, e_{\bar{1}_1\bar{1}_2}$以及$e_{1_2\bar{1}_2}$。
+注意到，考虑一对电子$(1_i,\bar{1}_j)$被激发到虚轨道$2_k$和$\bar{2}_l$的双激发态和HF基态的混合：
+\begin{align}
+    \braket{\Psi_0|\hs|\Psi^{2_k\bar{2}_l}_{1_i\bar{1}_j}}&=\braket{1_i\bar{1}_j||2_k\bar{2}_l}\notag\\
+    &=\begin{cases}
+        \braket{11|22}=K_{12} & \text{if } i=j=k=l\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{align}
+这个矩阵元为零，除非两个电子都处在一个给定的子单元并激发到同一个子单元的虚轨道上，此时$(1_i,\bar{1}_i)$的对函数为
+\begin{align}
+    \ket{\Psi_{1_i\bar{1}_i}}=\ket{\Psi_0}+c_{1_i\bar{1}_i}^{2_i\bar{2}_i}\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}
+\end{align}
+由\autoref{5.9a}和\autoref{5.9b}可以得到响应的耦合对方程：
+\begin{subequations}
+    \begin{align}
+        K_{12}c_{1_i\bar{1}_i}^{2_i\bar{2}_i}=e_{1_i\bar{1}_i}\tag{5.22a}\label{5.22a}\\
+        K_{12}+2\Delta c_{1_i\bar{1}_i}^{2_i\bar{2}_i}=e_{1_i\bar{1}_i} c_{1_i\bar{1}_i}^{2_i\bar{2}_i}\tag{5.22b}\label{5.22b}
+    \end{align}
+\end{subequations}
+其中$2\Delta=2(\varepsilon_2-\varepsilon_1)+J_{11}+J_{22}-4J_{12}+2K_{12}$。这个方程组对于单个极小基$H_2$分子等同于full CI方程组（\autoref{4.19a}和\autoref{4.21}）。
+因此$e_{1_1\bar{1}_1}=e_{1_2\bar{1}_2}={}^1E_\text{corr}$，其中${}^1E_\text{corr}$是单个$H_2$分子的精确关联能。于是双分子的IEPA总关联能为
+\begin{align}
+    {}^2E_\text{corr}(\text{IEPA})=e_{1_1\bar{1}_1}+e_{1_2\bar{1}_2}=2{}^1E_\text{corr}
+\end{align}
+也就是单个分子的精确关联能的两倍。上述讨论可以推广：$N$个独立的$H_2$分子的IEPA关联能是单分子关联能的$N$倍。
+因此我们看到，如前文所述，IEPA是尺寸一致的。对这个DCI失效的模型，IEPA是精确的，所以不能将IEPA视为对DCI的一种近似。
+\exercise{
+    推导\autoref{5.22a}和\autoref{5.22b}。
+    \Next
+    利用\autoref{5.19}计算双分子的一阶对关联能，并证明它是\autoref{ex:5.1}的结果的两倍。
+}
+
 \subsection{酉变换下的不变性：例子}
 \subsection{一些算例}
 
 \section{耦合对理论}
+本节我们将IEPA推广至包含不同对ab与cd之间耦合的情形。
+DCI虽然包含了这样的耦合（因为需要$\braket{\Psi^{rs}_{ab}|\hs|\Psi^{tu}_{cd}}$这样的矩阵元），但它不满足尺寸一致性。
+由于full CI是精确但不可计算的多电子问题解法，寻找满足尺寸一致性的IEPA推广的一个合理思路可能是，从full CI公式出发，看看能否找到好的近似。
+简单起见，我们忽略单激发、三激发等等，于是半归一化full CI波函数就是
+\begin{align}
+\ket{\Phi_0} = \ket{\Psi_0} + \sum_{\substack{a<b\\r<s}a<b}c_{ab}^{rs}\ket{\Psi_{ab}^{rs}}+\sum_{\substack{a<b<c<d\\r<s<t<u}}c_{abcd}^{rstu}\ket{\Psi_{abcd}^{rstu}}+\cdots
+\end{align}
+其中省略号包含了六激发等等。如上一章所述，为计算这个波函数的变分能量，将其代入
+\begin{align}
+(\hs-E_0)\ket{\Phi_0} = E_\text{corr}\ket{\Phi_0}
+\end{align}
+然后分别与$\bra{\Psi_0}$、$\bra{\Psi_{ab}^{rs}}$、$\bra{\Psi_{abcd}^{rstu}}$等等做内积，得到下列耦合方程：
+\begin{subequations}
+    \begin{align}
+        \sum_{\substack{c<d\\t<u}}\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}c_{cd}^{tu}&=E_\text{corr}\tag{5.48a}\label{5.48a}\\
+        \braket{\Psi_{ab}^{rs}|\hs|\Psi_0}+\sum_{\substack{c<d\\t<u}}\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{cd}^{tu}}c_{cd}^{tu}
+        +\sum_{\substack{c<d\\t<u}}\braket{\Psi_{ab}^{rs}|\hs|\Psi_{abcd}^{rstu}}c^{rstu}_{abcd}&=E_\text{corr}c_{ab}^{rs}\tag{5.48b}\label{5.48b}
+        \end{align}
+\end{subequations}
+等等。例如，下一个方程包含四激发和六激发的系数。
+注意在写双激发和四激发之间的矩阵元时我们利用了“相差2个以上自旋轨道的行列式内积为零”的事实。
+上述方程形成了一个层次结构：关联能依赖双激发系数，但这些系数的方程又引入了四激发的系数，等等。
+为了取得进展，我们必须终止或解耦这个层次结构。最简单的方式是令$c_{abcd}^{rstu}$为零，
+得到一个只包含双激发系数的封闭方程组，这个方程等价于DCI方程，可以从只含双激发的CI波函数出发用线性变分法导出。
+是否有其他能解耦这个层级结构但又不那么粗糙的方法呢？
 \subsection{耦合簇近似(The Coupled Cluster Approximation, CCA)}
+如果能将四激发系数表示为双激发系数的某种函数，我们就能得到一个封闭的方程组。
+在第四章我们找到一个这样的提示：两个无相互作用极小基$H_2$分子的full CI波函数是
+\begin{align}
+    \label{5.49}
+    \ket{\Phi_0} = \ket{1_1\bar{1}_11_2\bar{1}_2}+c_{1_1\bar{1}_1}^{2_1\bar{2}_1}\ket{2_1\bar{2}_11_2\bar{1}_2}
+    +c_{1_2\bar{1}_2}^{2_2\bar{2}_2}\ket{1_1\bar{1}_12_2\bar{2}_2}+c_{1_1\bar{1}_11_2\bar{1}_2}^{2_1\bar{2}_12_2\bar{2}_2}\ket{2_1\bar{2}_12_2\bar{2}_2}
+\end{align}
+在\autoref{ex:4.2}中我们发现
+\begin{align}
+    \label{5.50}
+    c_{1_1\bar{1}_11_2\bar{1}_2}^{2_1\bar{2}_12_2\bar{2}_2}=(c_{1_1\bar{1}_1}^{2_1\bar{2}_1})(c_{1_2\bar{1}_2}^{2_2\bar{2}_2})
+\end{align}
+即四激发系数是双激发系数的乘积。这个结果即使没有之前的代数操作也很容易理解。
+将两个$H_2$分子分开至无穷远，以使得总波函数关于不同$H_2$分子之间电子交换反对称的要求可以忽略。
+于是，因为两个$H_2$分子相互独立，双分子的精确波函数可以写成两个单分子精确波函数的乘积：
+\begin{align}
+    \ket{\Phi_0}&=[\ket{1_1\bar{1}_1}+c_{1_1\bar{1}_1}^{2_1\bar{2}_1}\ket{2_1\bar{2}_1}][\ket{1_2\bar{1}_2}+c_{1_2\bar{1}_2}^{2_2\bar{2}_2}\ket{2_2\bar{2}_2}]\notag\\
+    &=\ket{1_1\bar{1}_1}\ket{1_2\bar{1}_2}+c_{1_1\bar{1}_1}^{2_1\bar{2}_1}\ket{2_1\bar{2}_1}\ket{1_2\bar{1}_2} \notag \\
+    &+c_{1_2\bar{1}_2}^{2_2\bar{2}_2}\ket{1_1\bar{1}_1}\ket{2_2\bar{2}_2}+c_{1_1\bar{1}_1}^{2_1\bar{2}_1}c_{1_2\bar{1}_2}^{2_2\bar{2}_2}\ket{2_1\bar{2}_1}\ket{2_2\bar{2}_2}
+\end{align}
+对比上式和\autoref{5.49}，注意到（除了反对称性）要使两个函数相等，双激发和四激发系数必须满足\autoref{5.50}的关系。
+在这个简单的四电子模型系统中，两对电子是独立的，且full CI波函数中四激发组态的系数正好等于双激发系数的乘积。
+
+在真实的多电子系统中，两对电子ab和cd当然不是独立的。但因为IEPA已经表现得相当好，将四激发系数\uline{近似}为双激发系数的乘积是合理的，符号上写作：
+\begin{align}
+    c_{abcd}^{rstu}\cong c_{ab}^{rs}*c_{cd}^{tu}
+\end{align}
+之所以$c_{abcd}^{rstu}$并不简单是$c_{ab}^{rs}$和$c_{cd}^{tu}$的乘积，可以如下理解：
+可以得到一个四激发组态，其中$abcd$自旋轨道中的电子以多种方式被激发到$rstu$：
+不仅可以是$\begin{matrix}a\rightarrow r\\b\rightarrow s\end{matrix}$和$\begin{matrix}d\rightarrow u\\c\rightarrow t\end{matrix}$，还可以是
+$\begin{matrix}a\rightarrow r\\b\rightarrow t \end{matrix}$和$\begin{matrix}d\rightarrow u\\c\rightarrow s\end{matrix}$。
+若$\ket{\Psi_0}$是$\ket{\cdots abcd\cdots}$，第一种情况可以得到四激发$\ket{\cdots rstu\cdots}$，而第二种情况得到$\ket{\cdots rtsu\cdots}$。
+这些行列式代表相同的四激发态，但符号不同（$\ket{\cdots rtsu\cdots}=-\ket{\cdots rstu\cdots}$）。
+因此$c_{abcd}^{rstu}$可以用$c_{ab}^{rs}c_{cd}^{tu}$或$-c_{ab}^{rt}c_{cd}^{su}$表示。
+不幸的是，从独立的双激发得到一个特定的四激发有18种不同的方法，$c_{abcd}^{rstu}$是所有这些双激发系数乘积之和。这个相当可怕的结果是：
+\begin{align}
+    \label{5.53}
+    c_{abcd}^{rstu} \cong c_{ab}^{rs}*c_{cd}^{tu}&=c_{ab}^{rs}c_{cd}^{tu}-\braket{c_{ab}^{rs}*c_{cd}^{tu}}\notag\\
+    &=c_{ab}^{rs}c_{cd}^{tu}-c_{ac}^{rs}c_{bd}^{tu}+c_{ad}^{rs}c_{bc}^{tu}-c_{ab}^{rt}c_{cd}^{su}+c_{ac}^{rt}c_{bd}^{su}-c_{ad}^{rt}c_{bc}^{su}\notag \\
+    &+c_{ab}^{ru}c_{cd}^{st}-c_{ac}^{ru}c_{bd}^{st}+c_{ad}^{ru}c_{bc}^{st}+c_{ab}^{tu}c_{cd}^{rs}-c_{ac}^{tu}c_{bd}^{rs}+c_{ad}^{tu}c_{bc}^{rs}\notag \\
+    &-c_{ab}^{su}c_{cd}^{rt}+c_{ac}^{su}c_{bd}^{rt}-c_{ad}^{su}c_{bc}^{rt}+c_{ab}^{st}c_{cd}^{ru}-c_{ac}^{st}c_{bd}^{ru}+c_{ad}^{st}c_{bc}^{ru}
+\end{align}
+各项前面的符号源于Slater行列式的反对称性，如上所述。将上式代入\autoref{5.48b}，有：
+\begin{align}
+    \label{5.54}
+    \braket{\Psi_{ab}^{rs}|\hs|\Psi_0}&+\sum_{\substack{c<d\\t<u}}\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{cd}^{tu}}c_{cd}^{tu} \notag\\
+    &+\sum_{\substack{c<d\\t<u}}\braket{\Psi_{ab}^{rs}|\hs|\Psi_{abcd}^{rstu}}(c_{ab}^{rs}*c_{cd}^{tu})
+    =\left(\sum_{\substack{c<d\\t<u}}\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}c_{cd}^{tu}\right) c_{ab}^{rs}
+\end{align}
+
+其中用了\autoref{5.48a}的$E_{\text{corr}}$结果。于是当$ab\neq cd$且$rs\neq tu$时有
+\begin{align*}
+    \braket{\Psi_{ab}^{rs}|\hs|\Psi_{abcd}^{rstu}}=\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}
+\end{align*}
+因为$ab=cd$或$rs=tu$时$c_{ab}^{rs}*c_{cd}^{tu}$消失，\autoref{5.54}变为：
+\begin{align*}
+    \braket{\Psi_{ab}^{rs}|\hs|\Psi_0}+\sum_{\substack{c<d\\t<u}}\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{cd}^{tu}}c_{cd}^{tu}
+    -\sum_{\substack{c<d\\t<u}}\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}\braket{c_{ab}^{rs}*c_{cd}^{tu}} \\
+    +\sum_{\substack{c<d\\t<u}}\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}c_{ab}^{rs}c_{cd}^{tu}
+    =\left(\sum_{\substack{c<d\\t<u}}\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}c_{cd}^{tu}\right)c_{ab}^{rs}
+\end{align*}
+其中用到定义$c_{ab}^{rs}*c_{cd}^{tu}=c_{ab}^{rs}c_{cd}^{tu}-\braket{c_{ab}^{rs}*c_{cd}^{tu}}$（\autoref{5.53}）。
+注意到右边的表达式和左边的最后一项抵消，得到
+\begin{align}
+    \label{5.55}
+    \braket{\Psi_{ab}^{rs}|\hs|\Psi_0}+\sum_{\substack{c<d\\t<u}}\braket{\Psi_{ab}^{rs}|\hs-E_0|\Psi_{cd}^{tu}}c_{cd}^{tu}
+    -\sum_{\substack{c<d\\t<u}}\braket{\Psi_0|\hs|\Psi_{cd}^{tu}}\braket{c_{ab}^{rs}*c_{cd}^{tu}} =0
+\end{align}
+这个方程连同\autoref{5.53}中符号$\braket{c_{ab}^{rs}*c_{cd}^{tu}}$的定义，以及关联能表达式\autoref{5.48a}，
+是\phrase{耦合对多电子理论}（Coupled-Pair Many-Electron Theory, CPMET），也叫\phrase{耦合簇近似}（Coupled Cluster Approximation, CCA）的方程。
+我们将在书中使用后面这个名字。在量子化学中与CCA相联系的名字是 J.Cizek 和 J.Paldus
+\endnote{J.\v{C}i\v{z}ek and J. Paldus,
+ Coupled-cluster approach, \textit{Physica Scripta} \textbf{21}: 251 (1980).
+ A non-mathematical review with a historical perspective.}
+ ，他们首次给出这些方程并研究其性质。
+将\autoref{5.55}转化为方便计算的形式需要相当复杂的操作。
+应该记住的是，我们在得到CCA方程时已经忽略了单激发。只包含双激发的CCA被称为CCD（coupled-clusters doubles），
+以区分它和理论中更一般的，包含了单激发的（CCSD）和包含更高激发的版本。这里因为不考虑这些扩展，故继续使用CCA这个缩写。
+
+现在我们简单地讨论CCA的不同方面。这种形式的一个有趣的特点是\autoref{5.55}不显含关联能。
+此外，因为包含双激发系数的乘积，它是\emph{非线性的}。
+因此不像CI，CCA的关联能不能由简单的矩阵对角化得到。
+CCA虽然复杂，有很多吸引人的性质。
+虽然它和DCI一样包含了不同对之间的耦合（即形如$\braket{\Psi_{ab}^{rs}|\hs|\Psi_{cd}^{tu}}$的矩阵元），
+但与DCI不同的是，CCA是尺寸一致的。
+此外，它没有IEPA的不变性问题（即，它在简并轨道的幺正变换下是不变的）。
+但它仍然不是一个变分方法，也就是说，用CCA有可能得到大于100\%的精确关联能。
+
+在应用CCA计算N个独立的极小基$H_2$分子之后，我们将以更基础的视角简要地重新考虑这个形式背后的思想。
+
+考虑一个由N个无相互作用的极小基$H_2$组成的超分子。在这个体系中，有N个形如$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}, i=1, \ldots, N$的双激发。
+因为所有的$H_2$分子都是相同的，这些双激发的系数是相等的，将这些系数记为c，并且因为对所有的$i$有$\braket{\Psi_0|\hs|\Psi_{1_i1_i}^{2_i2_i}}=K_{12}$，
+\autoref{5.48a}变为：
+\begin{align}
+    \label{5.56}
+    {}^N E_{\text{corr}}=NcK_{12}
+\end{align}
+一个给定的双激发$\ket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}}$与$N-1$个形如$\ket{\Psi_{1_i\bar{1}_i1_j\bar{1}_j}^{2_i\bar{2}_i2_j\bar{2}_j}}, j\neq i$的四激发相耦合。
+双激发和四激发之间的矩阵元同样是$K_{12}$：
+\begin{align}
+    \braket{\Psi_{1_i\bar{1}_i}^{2_i\bar{2}_i}|\hs|\Psi_{1_i\bar{1}_i1_j\bar{1}_j}^{2_i\bar{2}_i2_j\bar{2}_j}}=\braket{\Psi_0|\hs|\Psi_{1_j\bar{1}_j}^{2_j\bar{2}_j}}=K_{12} \quad i\neq j
+\end{align}
+若将四激发的系数写成$c_{1_i\bar{1}_i}^{2_i\bar{2}_i}c_{1_j\bar{1}_j}^{2_j\bar{2}_j}=c^2$，则\autoref{5.54}变为：
+\begin{align}
+    K_{12}+2\Delta c+(N-1)K_{12}c^2={}^N E_{\text{corr}}c=(NcK_{12})c
+\end{align}
+$K_{12}c^2$前面的$(N-1)$因子是因为对给定的双激发，有$N-1$个四激发与之耦合。注意$NcK_{12}c^2$消去，\autoref{5.57}可以重写为
+\begin{align}
+    K_{12}+2\Delta c-K_{12}c^2=0
+\end{align}
+从这个方程解出c，得到
+\begin{align}
+    c=\frac{\Delta-(\Delta^2+K^2_{12})^{1/2}}{K_{12}}
+\end{align}
+于是\autoref{5.56}中的关联能为
+\begin{align}
+    {}^NE_{\text{corr}}(CCA)=N(\Delta-(\Delta^2+K^2_{12})^{1/2})
+\end{align}
+这正是单个$H_2$分子精确关联能的$N$倍。因此与DCI不同，CCI在这个模型问题中是精确的。DQCI对$N>2$也不是精确的。
+因此，将四激发系数近似为双激发系数的平方，并不只是对DQCI的近似，实际上还隐含了将六激发系数近似为双激发系数的立方，等等。
+CCA在这个理想模型中给出精确解的原因是，\emph{所有}更高（六、八，等等）激发的系数都是双激发系数的乘积。
+在下一节中将会以一个更基本的视角（也是历史上CCA被提出的方式）清楚地展示CCA的这个特点。
+这一节会用一些二次量子化的记号，可以不失连续性地跳过。
+
 \subsection{波函数的簇展开}
+双激发行列式$\ket{\Psi^{rs}_{ab}}$可以写成二次量子化的形式：
+\begin{align*}
+    \ket{\Psi^{rs}_{ab}}=a^{\dagger}_ra^{\dagger}_sa_ba_a\ket{\Psi_0}
+\end{align*}
+其中$a_a,a_b$从HF行列式中移除了一个占据轨道，取而代之，$a^{\dagger}_r,a^{\dagger}_s$添加了一个非占据的自旋轨道。
+因此双激发CI波函数可以写成：
+\begin{align*}
+    \ket{\Psi_{DCI}}=\left(1+\frac{1}{4}\sum_{abrs}c^{rs}_{ab}a^{\dagger}_ra^{\dagger}_sa_ba_a\ket{\Phi_0}\right)
+\end{align*}
+现引入一个波函数，它包含双激发、四激发、六激发等等，其中2n激发的系数是n个双激发系数的乘积。这样一个波函数$\ket{\Phi_{CCA}}$可以写成：
+\begin{align}
+    \ket{\Phi_{CCA}}=\exp(\mathscr{T}_2)\ket{\Psi_0}\tag{5.61a}
+\end{align}
+\addtocounter{equation}{1}
+其中
+\begin{align}
+    \exp(\mathscr{T}_2)=\frac{1}{4}\sum_{abrs}c^{rs}_{ab}a^{\dagger}_ra^{\dagger}_sa_ba_a\tag{5.61b}
+\end{align}
+这叫做波函数的簇形式。为了找到一些感觉，我们将指数展开为$\exp(x)=1+x+\frac{1}{2}x^2+\cdots$，得到
+\begin{align*}
+    \ket{\Phi_{CCA}}&=\left(1+\frac{1}{4}\sum_{abrs}c^{rs}_{ab}a^{\dagger}_ra^{\dagger}_sa_ba_a +\frac{1}{32}\sum_{\substack{abcd\\rstu}}c^{rs}_{ab}c^{tu}_{cd}a^{\dagger}_ra^{\dagger}_sa_ba_aa^{\dagger}_ta^{\dagger}_ua_da_c+\cdots\right)\ket{\Psi_0}\\
+    &=\ket{\Psi_0}+\frac{1}{4}\sum_{abrs}c^{rs}_{ab}\ket{\Psi^{rs}_{ab}}+\frac{1}{32}\sum_{\substack{abcd\\rstu}}c^{rs}_{ab}c^{tu}_{cd}\ket{\Psi^{rstu}_{abcd}}+\cdots
+\end{align*}
+经过一些冗长的运算，它可以写成：
+\begin{align}
+    \label{5.62}
+    \ket{\Phi_{CCA}}=\ket{\Psi_0}+\sum_{\substack{a<b\\r<s}}c^{rs}_{ab}\ket{\psi^{rs}_{ab}}+\sum_{\substack{a<b<c<d\\r<s<t<u}}c^{rs}_{ab}*c^{tu}_{cd}\ket{\Psi^{rstu}_{abcd}}+\cdots
+\end{align}
+其中$c^{rs}_{ab}*c^{tu}_{cd}$是对\autoref{5.53}中18个双激发系数乘积的求和的简单记号。
+因此这种形式的波函数具有“高阶激发是双激发的乘积”的特点。
+
+CCA的另一种等价推导可以用\autoref{5.62}中的波函数$\ket{\Phi_{CCA}}$给出。通过将$\ket{\Phi_{CCA}}$代入薛定谔方程
+\begin{align*}
+    (\hs-E_0)\ket{\Phi_{CCA}}=E_{\text{corr}}\ket{\Phi_{CCA}}
+\end{align*}
+并依次左乘$\bra{\Psi_0}$和$\bra{\Psi^{rs}_{ab}}$，得到与\autoref{5.48a}和\autoref{5.55}一致的方程，因为$\bra{\Psi^{rs}_{ab}}$和任意六激发之间的矩阵元为零。
+上述理论可以被推广到包含单激发、三激发和更高激发的效应。例如，可以用$\mathscr{T}_1+\mathscr{T}_2$替换\autoref{5.61a}中的$\mathscr{T}_2$来包含单激发，其中
+\begin{align*}
+    \mathscr{T}_1=\sum_{ra}c^r_aa^{\dagger}_ra_a
+\end{align*}
+为了区分不同的扩展，只包含双激发（$\mathscr{T}_2$）的理论一般称为CCD，包含单激发和双激发（即$\mathscr{T}_1+\mathscr{T}_2$）的理论称为CCSD。
+\exercise{
+    证明：两个独立$H_2$分子的波函数\autoref{5.49}\autoref{5.50}可以写成
+    \begin{align*}
+        \ket{\Phi}=\exp(c_{1_1\bar{1}_1}^{2_1\bar{2}_1}a^{\dagger}_{2_1}a^{\dagger}_{\bar{2}_1}a_{\bar{1}_1}a_{1_1}+c_{1_2\bar{1}_2}^{2_2\bar{2}_2}a^{\dagger}_{2_2}a^{\dagger}_{\bar{2}_2}a_{\bar{1}_2}a_{1_2})\ket{1_1\bar{1}_11_2\bar{1}_2}
+    \end{align*}
+}
 \subsection{线性耦合簇近似(L-CCA)与耦合电子对近似(CEPA)}\label{sec5.2.3}
 \subsection{一些算例}
 
 \section{采用单粒子哈密顿量的多电子理论}
 \subsection{CI、IEPA、CCA和CEPA得到的弛豫能}
 \subsection{H\"uckel理论中多烯的共振能}
+
+\theendnotes

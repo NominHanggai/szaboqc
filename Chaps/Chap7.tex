@@ -56,7 +56,7 @@ $\mathbf{a,b}$都是列矩阵.
 \end{align}
 那么马上有
 \begin{align}
-\mathbf{a} = (E\mathbf{1} - \mathbf{H}_0)^{-1}\mathbf{b} = \mathbf{G}_0(E)\mathbb{b}\tag{7.3a}
+\mathbf{a} = (E\mathbf{1} - \mathbf{H}_0)^{-1}\mathbf{b} = \mathbf{G}_0(E)\mathbf{b}\tag{7.3a}
 \end{align}
 \addtocounter{equation}{1}
 或写成分量形式
@@ -113,7 +113,7 @@ $E$是参数, $\mathscr{H}_0$是微分算子, 且是厄米的. 注意这个方�
 则可将$a(x),b(x)$按找本征函数展开
 \begin{align}
 a(x) & = \sum_\alpha a_\alpha \psi_\alpha(x)\\
-b(x) & = \sum_\alpha b_\alpha \psi_\alpha(x)\\
+b(x) & = \sum_\alpha b_\alpha \psi_\alpha(x)
 \end{align}
 系数$\{ a_\alpha \}$待定. 
 由于$b(x)$在原式中已给出, 
@@ -129,7 +129,7 @@ b_\alpha = \int\dd x'\psi_\alpha^*(x')b(x')
 7), 
 可得
 \begin{align*}
-\sum_\alpha (E - \mathscr{H}_0)\psi_\alpha(x) = \sum_\alpha a_\alpha (E - E_\alpha^{(0)}) \psi_\alpha(x) = \sum b_\alpha\psi_\alpha(x)
+\sum_\alpha (E - \mathscr{H}_0)\psi_\alpha(x) = \sum_\alpha a_\alpha (E - E_\alpha^{(0)}) \psi_\alpha(x) = \sum_\alpha b_\alpha\psi_\alpha(x)
 \end{align*}
 将上式两边乘以$\psi_\alpha^*$并积分, 
 得到
@@ -149,11 +149,11 @@ a(x) = \sum_\alpha \frac{b_{\alpha}}{E - E_\alpha^{(0)}} \psi_\alpha(x)
 改换求和与积分的次序, 
 有
 \begin{align}
-a(x) = \int\dd x'\left[ \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x)}{E - E_\alpha^{(0)}} \right] b(x')
+a(x) = \int\dd x'\left[ \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x')}{E - E_\alpha^{(0)}} \right] b(x')
 \end{align}
 将括号中的量定义为格林函数：
 \begin{align}
-G_0 (x,x',E) = \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x)}{E - E_\alpha^{(0)}}
+G_0 (x,x',E) = \sum_\alpha \frac{\psi_\alpha(x)\psi_\alpha^*(x')}{E - E_\alpha^{(0)}}
 \end{align}
 式(7.
 12)就能写成：
@@ -185,7 +185,7 @@ b(x) = \delta(x-x')
 则式(7.
 14)给出
 \begin{align*}
-a(x) = \int\dd x'' G_(x,x',E)\delta(x-x'') = G_0(x,x',E)
+a(x) = \int\dd x'' G_0(x,x'',E)\delta(x-x'') = G_0(x,x',E)
 \end{align*}
 也就是说, 
 所找寻的微分方程为
@@ -280,7 +280,7 @@ G(x,x',E) = G_0(x,x',E) + \int\dd x'' [G_0(x,x'',E) \mathscr{V}(x)G(x,x',E) ]\ta
 \end{align*}
 那么
 \begin{align}
-( \mathscr{g}(E) )^{-1} = E - \mathscr{H}_0 - \mathscr{V} = (\mathscr{g}(E))^{-1} - \mathscr{V} 
+( \mathscr{g}(E) )^{-1} = E - \mathscr{H}_0 - \mathscr{V} = (\mathscr{g}_0(E))^{-1} - \mathscr{V} 
 \end{align}
 左边乘以$\mathscr{g}_0(E)$右边乘以$\mathscr{g}(E)$并整理, 
 就得到
@@ -431,7 +431,7 @@ G(x,x',E) & = \lim_{\epsilon\to0}(-i) \int_0^\infty\dd t e^{iEt}e^{-\epsilon t} 
 对$t$积分, 
 得到
 \begin{align*}
-\lim\limits_{\epsilon\to 0} \int_0^\infty\dd t e^{iE-\epsilon}t \frac{\partial G(x,x',t}{\partial t} = \mathscr{H} G(x,x',E)
+\lim\limits_{\epsilon\to 0} \int_0^\infty\dd t e^{iE-\epsilon}t \frac{\partial G(x,x',t)}{\partial t} = \mathscr{H} G(x,x',E)
 \end{align*}
 然后对左边进行分步积分得到：
 \begin{align*}
@@ -472,9 +472,8 @@ f\chi_i(\mathbf{x}) = \epsilon_i\chi_i(\mathbf{x})
 G_0(\mathbf{x,x'},E) = \sum_i \frac{\chi_i(\mathbf{x})\chi_i^*(\mathbf{x})}{E-\epsilon_i}
 \end{align}
 此处求和遍及所有占据和未占的自旋轨道,
-
 \begin{align}
-G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\epsilon_a} + G_0(\mathbf{x,x'},E) = \sum_r \frac{\chi_r(\mathbf{x})\chi_r^*(\mathbf{x})}{E-\epsilon_r}
+G_0(\mathbf{x,x'},E) = \sum_a \frac{\chi_a(\mathbf{x})\chi_a^*(\mathbf{x})}{E-\epsilon_a} + \sum_r \frac{\chi_r(\mathbf{x})\chi_r^*(\mathbf{x})}{E-\epsilon_r}
 \end{align}
 以HF自旋轨道作基, 
 HFGF的矩阵表示写作：
@@ -489,7 +488,7 @@ HFGF的矩阵表示写作：
 其矩阵元就是HF轨道的能量. 
 从现在其当我们说道MBGF时, 
 特指以$N$-粒子体系的HF轨道为基时MBGF的矩阵表示. 
- 当$(E\bm{1-\epsilon})$不存在(即值为无穷)时, 
+ 当$(E\bm{1-\epsilon})^{-1}$不存在(即值为无穷)时, 
 $\mathbf{G}_0(E)$在$E$的值处有极点. 
 只有当行列式为零时一个矩阵的逆才不存在, 
 因而当
@@ -500,10 +499,10 @@ $\mathbf{G}_0(E)$在$E$的值处有极点.
 $\mathbf{G}_0(E)$在$E$处有极点.
 
 
-由于$\bm{\epsilon}$时对角矩阵, 
+由于$\bm{\epsilon}$是对角矩阵, 
 我们有
 \begin{align*}
-\det(E\bm{1-\epsilon}) = \pod_i (E-\epsilon_i) = 0
+\det(E\bm{1-\epsilon}) = \prod_i (E-\epsilon_i) = 0
 \end{align*}
 那么HFGF在\hft 轨道能量处有极点. 
 这个结果在式(7.30)中很明显.
@@ -514,16 +513,17 @@ $\mathbf{G}_0(E)$在$E$处有极点.
 轨道能量与$N$-粒子系统的电离势和电子亲和势有关. 
 特别地, 
 若$\ket{{}^N\Psi_0}$是$N$-粒子系统的\hft 波函数, 
-且${}^{N-1}\Psi_0$是直接从自旋轨道$c$中挪去一个电子所得的波函数，
+且$\ket{{}^{N-1}\Psi_c}$是直接从自旋轨道$c$中挪去一个电子所得的波函数，
 也就是$N-1$-电子体系的近似波函数。
 那么
 \begin{align}
--\mathrm{IP} = \epsilon_c = \braket{{}^N\Psi_0|\hs|{}^{N-1}\Psi_0} - \braket{{}^{N-1}\Psi_c|\hs|{}^{N-1}\Psi_c}
+-\mathrm{IP} = \epsilon_c = \braket{{}^N\Psi_0|\hs|{}^{N}\Psi_0} - \braket{{}^{N-1}\Psi_c|\hs|{}^{N-1}\Psi_c}\tag{7.32a}
 \end{align}
+\addtocounter{equation}{1}
 类似地,
 
 \begin{align}
--\mathrm{EA} = \epsilon_r = \braket{^{N+1}\Psi^r|\hs| ^{N+1}\Psi^r} - \braket{^{N}\Psi_0|\hs|^{N}\Psi_0}
+-\mathrm{EA} = \epsilon_r = \braket{^{N+1}\Psi^r|\hs| ^{N+1}\Psi^r} - \braket{^{N}\Psi_0|\hs|^{N}\Psi_0}\tag{7.32b}
 \end{align}
 其中$\ket{^{N+1}\Psi^r}$就是将一个电子放入$r$自旋轨道中所得的$(N+1)$-粒子系统近似波函数. 
 如我们在第三章讨论的, 
@@ -544,7 +544,7 @@ $N-1,N,N+1$系统的HF轨道互不相同.
 \begin{align}
 {}^N\scr{E}_0 = {}^NE_0 + {}^NE_\mathrm{corr}\tag{7.34a}
 \end{align}
-\addtocounter{equation}{-1}
+\addtocounter{equation}{1}
 对于$N-1$-粒子系统($c$自旋轨道中的电子被挪去)：
 \begin{align}
 {}^{N-1}\scr{E}_0(c) = {}^{N-1}E_0(c) + {}^{N-1}E_\mathrm{corr}(c)\tag{7.34b}
@@ -587,7 +587,7 @@ F. Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效
 最后, 
 将$\mathbf{\Sigma}(E)$进行逐项微扰展开
 \begin{align}
-\mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2}(E) + \mathbf{\Sigma}^{(3)}(E) + \cdots
+\mathbf{\Sigma}(E) = \mathbf{\Sigma}^{(2)}(E) + \mathbf{\Sigma}^{(3)}(E) + \cdots
 \end{align}
 特别地, 
 二阶自能$\mathbf{\Sigma}^{(2)}(E)$的矩阵元为
@@ -601,7 +601,7 @@ F. Dyson越过了这个难题: 为此他引入一个\emph{依赖能量}的有效
 应当强调, 
 以上的形式是精确的, 
 也即, 
-若用精确的$\mathbf{Sigma}(E)$来求解Dyson方程得到$\mathbf{G}(E)$, 
+若用精确的$\mathbf{\Sigma}(E)$来求解Dyson方程得到$\mathbf{G}(E)$, 
 那么$\mathbf{G}(E)$的极点就是$N$-粒子系统的\emph{精确}IP和EA. 
 当然, 
 我们肯定要作近似, 
@@ -623,9 +623,9 @@ $\mathbf{\Sigma}(E)$的最低阶修正是二阶微扰.
 因此这种表述在单粒子图像的意义上推广了HF理论. 
 这种推广的代价就是引入了依赖能量的势能. 
 在更仔细地考虑MBGF表述之前, 
-我们给出$\sum_{ij}^{(2)}(E)$按\mci{空间轨道求和}写出的表达式:
+我们给出$\sigma_{ij}^{(2)}(E)$按\mci{空间轨道求和}写出的表达式:
 \begin{align}
-\sum_{ij}^{(2)}(E) = & \sum_{ars}^{N/2} \frac{\braket{rs|ia}(2\braket{ja|rs}-\braket{aj|rs})}{E+\epsilon_a-\epsilon_r-\epsilon_s}\notag\\
+\sigma_{ij}^{(2)}(E) = & \sum_{ars}^{N/2} \frac{\braket{rs|ia}(2\braket{ja|rs}-\braket{aj|rs})}{E+\epsilon_a-\epsilon_r-\epsilon_s}\notag\\
                      & + \sum_{abr}^{N/2}\frac{\braket{ab||ir}(2\braket{jr|ib}-\braket{rj|ab})}{E+\epsilon_r-\epsilon_a-\epsilon_b}
 		     \label{7.39}
 \end{align}
@@ -660,7 +660,7 @@ $M=N,N\pm1$是$M$粒子系统的精确full CI波函数,
 必须求解Dyson方程(\autoref{7.36}), 
 得到$\mathbf{G}(E)$, 
 然后找出使$\mathbf{G}(E)$为无穷的$E$值. 
-在Dyson方程左右分别乘以$(\mathbf{G}_0(E))^{-1}$和用$(\mathbf{G}(E))^{-1}$, 
+在Dyson方程左右分别乘以$(\mathbf{G}_0(E))^{-1}$和$(\mathbf{G}(E))^{-1}$, 
 就有
 \begin{align}
 (\mathbf{G}_0(E))^{-1} = (\mathbf{G}(E))^{-1} + \bm{\Sigma}(E)
@@ -743,7 +743,7 @@ $\hd$的HF轨道也是$\hd^+$的最优轨道（换句话说，
 在这个模型下，
 $N$和$(N-1)$体系的HF轨道相同，
 弛豫能为零）。
-这可以从下面这个事实看欻里：$\hd$的两个HF轨道对称性不同，
+这可以从下面这个事实看出：$\hd$的两个HF轨道对称性不同，
 因此$h_{12}=0$。
 所以，
 $\hd^+$的基态能量就是
@@ -795,7 +795,7 @@ $r=s=2$）
 则由于对称性，
 其值为零。
 由于$\mathbf{\Sigma}^{(2)}(E)$是对角矩阵，
-所以$\mathbf{G})(E)$的矩阵元（由\autoref{7.41}算得）为
+所以$\mathbf{G}(E)$的矩阵元（由\autoref{7.41}算得）为
 \begin{subequations}
 \begin{align}
 G_{11}(E) & =\left(E-\varepsilon_{1}-\Sigma_{11}^{(2)}(E)\right)^{-1} \\
@@ -842,13 +842,13 @@ $G_{11}(E)$的极点满足
 $\epsilon_{11}^-$为$\hd$电离能的负值。
 可以看到，
 这里的GF方法中隐含着的关联能（使用$\mathbf{\Sigma}_{11}^{(2)}(E)$），
-气形式和\autoref{7.49}中的精确结果类似。
+其形式和\autoref{7.49}中的精确结果类似。
 ，
 区别在于GF中$\Delta=(\epsilon_{2}-\epsilon_1)$（\autoref{7.50}）。
 这个关联能的微扰展开在二阶上是精确的，
 同时也纳入了近似的高阶项。
 那么，
-另外一个根$\epsilon_{11}^+$的意义式说明？练习7.
+另外一个根$\epsilon_{11}^+$的意义是什么？练习7.
 9会要求读者证明，
 该根对应$\hd$捕获一个电子后成为一个激发态的$\hd^-$所需的能量。
 
