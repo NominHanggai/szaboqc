@@ -2,7 +2,7 @@
 
 Attila Szabo & Neil Ostlund *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* 中文翻译。重新绘制了所有插图。
 
-pdf请到Release下载，最新版本：[0.2.1](https://github.com/Mulliken/szaboqc/releases/download/v0.2.1/szabo_zh-v0.2.1.pdf)。
+pdf请到Release下载，最新版本：[0.2.2](https://github.com/Mulliken/szaboqc/releases/download/v0.2.2/szabo_zh-v0.2.2.pdf)。
 
 ## 手动编译
 
