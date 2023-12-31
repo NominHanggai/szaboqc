@@ -91,7 +91,7 @@ C*********************************************************************
       IF (IOP.EQ.0) GO TO 20
       PRINT 10,N,ZA,ZB
    10 FORMAT(' ',2X,'STO-',I1,'G FOR ATOMIC NUMBERS ',F5.2,' AND ',
-     \$ F5.2//)
+     $ F5.2//)
    20 CONTINUE
 C CALCULATE ALL THE ONE AND TWO ELECTRON INTEGRALS
       CALL INTGRL(IOP,N,R,ZETA1,ZETA2,ZA,ZB)
@@ -109,15 +109,15 @@ C
 C*********************************************************************
       IMPLICIT DOUBLE PRECISION(A-H,O-Z)
       COMMON/INT/S12,T11,T12,T22,V11A,V12A,V22A,V11B,V12B,V22B,
-     \$ V1111,V2111,V2121,V2211,V2221,V2222
+     $ V1111,V2111,V2121,V2211,V2221,V2222
       DIMENSION COEF(3,3),EXPON(3,3),D1(3),A1(3),D2(3),A2(3)
       DATA PI/3.1415926535898D0/
 C THESE ARE THE CONTRACTION COEFFICIENTS AND EXPONENTS FOR
 C A NORMALIZED SLATER ORBITAL WITH EXPONENT 1.0 IN TERMS OF
 C NORMALIZED 1S PRIMITIVE GAUSSIANS
       DATA COEF,EXPON/1.0D0,2*0.0D0,0.678914D0,0.430129D0,0.0D0,
-     \$ 0.444635D0,0.535328D0,0.154329D0,0.270950D0,2*0.0D0,0.151623D0,
-     \$ 0.851819D0,0.0D0,0.109818D0,0.405771D0,2.22766D0/
+     $ 0.444635D0,0.535328D0,0.154329D0,0.270950D0,2*0.0D0,0.151623D0,
+     $ 0.851819D0,0.0D0,0.109818D0,0.405771D0,2.22766D0/
       R2=R*R
 C SCALE THE EXPONENTS (A) OF PRIMITIVE GAUSSIANS
 C INCLUDE NORMALIZATION IN CONTRACTION COEFFICIENTS (D)
@@ -182,17 +182,17 @@ C CALCULATE TWO-ELECTRON INTEGRALS
       RBQ2=RBQ*RBQ
       RPQ2=RPQ*RPQ
       V1111=V1111+TWOE(A1(I),A1(J),A1(K),A1(L),0.0D0,0.0D0,0.0D0)
-     \$ *D1(I)*D1(J)*D1(K)*D1(L)
+     $ *D1(I)*D1(J)*D1(K)*D1(L)
       V2111=V2111+TWOE(A2(I),A1(J),A1(K),A1(L),R2,0.0D0,RAP2)
-     \$ *D2(I)*D1(J)*D1(K)*D1(L)
+     $ *D2(I)*D1(J)*D1(K)*D1(L)
       V2121=V2121+TWOE(A2(I),A1(J),A2(K),A1(L),R2,R2,RPQ2)
-    \$ *D2(I)*D1(J)*D2(K)*D1(L)
+     $ *D2(I)*D1(J)*D2(K)*D1(L)
       V2211=V2211+TWOE(A2(I),A2(J),A1(K),A1(L),0.0D0,0.0D0,R2)
-     \$ *D2(I)*D2(J)*D1(K)*D1(L)
+     $ *D2(I)*D2(J)*D1(K)*D1(L)
       V2221=V2221+TWOE(A2(I),A2(J),A2(K),A1(L),0.0D0,R2,RBQ2)
-     \$ *D2(I)*D2(J)*D2(K)*D1(L)
+     $ *D2(I)*D2(J)*D2(K)*D1(L)
       V2222=V2222+TWOE(A2(I),A2(J),A2(K),A2(L),0.0D0,0.0D0,0.0D0)
-     \$ *D2(I)*D2(J)*D2(K)*D2(L)
+     $ *D2(I)*D2(J)*D2(K)*D2(L)
    30 CONTINUE
       IF (IOP.EQ.0) GO TO 90
       PRINT 40
@@ -242,7 +242,7 @@ C*********************************************************************
       DIMENSION A(5)
       DATA P/0.3275911D0/
       DATA A/0.254829592D0,-0.284496736D0,1.421413741D0,
-     \$ -1.453152027D0,1.061405429D0/
+     $ -1.453152027D0,1.061405429D0/
       T=1.0D0/(1.0D0+P*ARG)
       TN=T
       POLY=A(1)*TN
@@ -273,7 +273,7 @@ C*********************************************************************
       IMPLICIT DOUBLE PRECISION(A-H,O-Z)
       DATA PI/3.1415926535898D0/
       T=A*B/(A+B)*(3.0D0-2.0D0*A*B*RAB2/(A+B))*(PI/(A+B))**1.5D0
-     \$ *DEXP(-A*B*RAB2/(A+B))
+     $ *DEXP(-A*B*RAB2/(A+B))
       RETURN
       END
 C*********************************************************************
@@ -298,8 +298,8 @@ C*********************************************************************
       IMPLICIT DOUBLE PRECISION(A-H,O-Z)
       DATA PI/3.1415926535898D0/
       TWOE=2.0D0*(PI**2.5D0)/((A+B)*(C+D)*DSQRT(A+B+C+D))
-     \$ *F0((A+B)*(C+D)*RPQ2/(A+B+C+D))
-     \$ *DEXP(-A*B*RAB2/(A+B)-C*D*RCD2/(C+D))
+     $ *F0((A+B)*(C+D)*RPQ2/(A+B+C+D))
+     $ *DEXP(-A*B*RAB2/(A+B)-C*D*RCD2/(C+D))
       RETURN
       END
 C*********************************************************************
@@ -311,9 +311,9 @@ C
 C*********************************************************************
       IMPLICIT DOUBLE PRECISION(A-H,O-Z)
       COMMON/MATRIX/S(2,2),X(2,2),XT(2,2),H(2,2),F(2,2),G(2,2),C(2,2),
-     \$ FPRIME(2,2),CPRIME(2,2),P(2,2),OLDP(2,2),TT(2,2,2,2),E(2,2)
+     $ FPRIME(2,2),CPRIME(2,2),P(2,2),OLDP(2,2),TT(2,2,2,2),E(2,2)
       COMMON/INT/S12,T11,T12,T22,V11A,V12A,V22A,V11B,V12B,V22B,
-     \$ V1111,V2111,V2121,V2211,V2221,V2222
+     $ V1111,V2111,V2121,V2211,V2221,V2222
 C FORM CORE HAMILTONIAN
       H(1,1)=T11+V11A+V11B
       H(1,2)=T12+V12A+V12B
@@ -374,7 +374,7 @@ C
 C*********************************************************************
       IMPLICIT DOUBLE PRECISION(A-H,O-Z)
       COMMON/MATRIX/S(2,2),X(2,2),XT(2,2),H(2,2),F(2,2),G(2,2),C(2,2),
-     \$ FPRIME(2,2),CPRIME(2,2),P(2,2),OLDP(2,2),TT(2,2,2,2),E(2,2)
+     $ FPRIME(2,2),CPRIME(2,2),P(2,2),OLDP(2,2),TT(2,2,2,2),E(2,2)
       DATA PI/3.1415926535898D0/
 C CONVERGENCE CRITERION FOR DENSITY MATRIX
       DATA CRIT/1.0D-4/
@@ -449,7 +449,7 @@ C CALCULATE DELTA
       IF (IOP.EQ.0) GO TO 140
       PRINT 130, DELTA
   130 FORMAT(/,4X,39HDELTA(CONVERGENCE OF DENSITY MATRIX) =
-     \$F10.6,/)
+     $F10.6,/)
   140 CONTINUE
 C CHECK FOR CONVERGENCE
       IF (DELTA.LT.CRIT) GO TO 160
@@ -469,8 +469,8 @@ C ADD NUCLEAR REPULSION TO GET TOTAL ENERGY
       IF (IOP.EQ.0) GO TO 180
       PRINT 170, EN, ENT
   170 FORMAT(//,4X,21HCALCULATION CONVERGED,//,
-\$4X,20HELECTRONIC ENERGY = ,D20.12,//,
-     \$4X,20HTOTAL ENERGY =      ,D20.12   )
+     $4X,20HELECTRONIC ENERGY = ,D20.12,//,
+     $4X,20HTOTAL ENERGY =      ,D20.12   )
   180 CONTINUE
       IF (IOP.NE.1) GO TO 190
 C PRINT OUT THE FINAL RESULTS IF
@@ -497,7 +497,7 @@ C
 C*********************************************************************
       IMPLICIT DOUBLE PRECISION(A-H,O-Z)
       COMMON/MATRIX/S(2,2),X(2,2),XT(2,2),H(2,2),F(2,2),G(2,2),C(2,2),
-     \$FPRIME(2,2),CPRIME(2,2),P(2,2),OLDP(2,2),TT(2,2,2,2),E(2,2)
+     $FPRIME(2,2),CPRIME(2,2),P(2,2),OLDP(2,2),TT(2,2,2,2),E(2,2)
       DO 10 I=1,2
       DO 10 J=1,2
       G(I,J)=0.0D0
@@ -530,9 +530,9 @@ C SOLUTION FOR HETERONUCLEAR DIATOMIC
       C(1,2)=DSIN(THETA)
       C(2,2)=-DCOS(THETA)
       E(1,1)=F(1,1)*DCOS(THETA)**2+F(2,2)*DSIN(THETA)**2
-     \$ +F(1,2)*DSIN(2.0D0*THETA)
+     $ +F(1,2)*DSIN(2.0D0*THETA)
       E(2,2)=F(2,2)*DCOS(THETA)**2+F(1,1)*DSIN(THETA)**2
-     \$ -F(1,2)*DSIN(2.0D0*THETA)
+     $ -F(1,2)*DSIN(2.0D0*THETA)
       E(2,1)=0.0D0
       E(1,2)=0.0D0
 C ORDER EIGENVALUES AND EIGENVECTORS
@@ -583,6 +583,7 @@ C*********************************************************************
       IF (N-IHIGH) 50,50,10
    50 RETURN
       END
+         
 \end{verbatim}
 
 \newpage
