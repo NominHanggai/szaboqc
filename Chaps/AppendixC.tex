@@ -1,2 +1,57 @@
-\chapter{几何结构优化与解析导数法}
+\chapter{几何结构优化与解析导数法(作者：M.C.Zerner)}
 \section{简介}
+
+分子构象的再现和预测是分子量子力学的最成功的应用之一。
+许多情况下，对于很多简单的分子轨道模型或者最小基组的从头算方法，键长可以重现到$\pm 0.02$\r A，
+键角可以重现到$5^{\circ}$。
+对于大一点的基组，尤其是那些双$\zeta$加极化的基组；和包含电子相关能的方法，现在生成的几何构型已经
+可以达到晶体学精度了。
+随着构象计算的日益成功，人们甚至可以选择孤立分子的计算结果，而不是在凝聚介质中获得的实验结果，因为前者可能更适合气相。
+
+除了产生关于势能面全局最小点的信息外，量子力学计算还可以产生局域最小点的信息，这些局域最小点可能不会被直接观测到，但是
+很可能会被包哦旱灾反应路径中。类似的，关于过渡态和能垒的信息也可以得到，这些信息一般很难甚至不可能通过其他方式获得。
+
+收集一个势能面上这些所有的信息是很困难的。对于N个原子的体系，它的能量是一个具有$3N-6$(或者$3N-5$)个自由度的函数。
+为了进行详细的统计计算，人们可能不得不面对这个“3N”问题，并访问势能面上所有热力学可得的区域。
+然而，本附录只涉及势能面的一小部分：那些对应于极小值的点，代表稳态或亚稳态的构象，以及对应于过渡态的点。
+%%%%%%%
+\section{总则}
+
+在Born-Oppenheimer近似下得到的分子体系的能量$E$是一个以核坐标为参数的函数，记核坐标为
+$\mathbf{X}^{\dagger}=(X_1,X_2,\dots,X_{3N})$。
+我们希望从$E(\mathbf{X})$进而得到$E(\mathbf{X_1})$，$\mathbf{q=(X_1-X)}$。
+我们将能量对$\mathbf{X}$进行泰勒展开：
+\begin{align}
+	\label{C.1}
+	E(\mathbf{X_1})=E(\mathbf{X})+\mathbf{q}^{\dagger}\mathbf{f(X)}
+                    +\frac{1}{2}\mathbf{q}^{\dagger}\mathbf{H(X)}\mathbf{q}+\dots
+\end{align}
+式中梯度为
+\begin{align}
+	f_i=\frac{\partial E(\mathbf{X})}{\partial X_i}
+    \nonumber
+\end{align}
+Hessian矩阵元为
+\begin{align}
+	H_{ij}=\frac{\partial E(\mathbf{X})}{\partial X_i\partial X_j}
+    \nonumber
+\end{align}
+注意，列矩阵的下标表示不同的矩阵，如$\mathbf{X_1}$、$\mathbf{X_2}$等等；而$X_i$表示矩阵$\mathbf{X}$第i个元素。
+虽然泰勒展开是无穷项的，但是接近极值时，我们希望二次项是足够的；例如，对于$\mathbf{X}=\mathbf{X_e}$，其中$\mathbf{X_e}$
+表示一个驻点，根据定义$\mathbf{f(X_e)=0}$，则
+\begin{align}
+	\nonumber
+	E(\mathbf{X_1})=E(\mathbf{X_e})+\frac{1}{2}\mathbf{q}^{\dagger}\mathbf{H(X_e)}\mathbf{q}
+\end{align}
+类似的，
+\begin{align}
+	\label{C.2}
+	\mathbf{f(X_1)}=\mathbf{f(X)}+\mathbf{H(X)}\mathbf{q}
+\end{align}
+对点$\mathbf{X_1}=\mathbf{X_e}$
+\begin{align}
+	\label{C.3}
+	\mathbf{f(X)}=-\mathbf{H(X)}\mathbf{q}
+\end{align}
+
+\autoref{C.3}的解是不显含$\mathbf{X}$的$E(\mathbf{X})$泛函寻找多变量函数极值的最高效方法的初始点。
