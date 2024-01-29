@@ -1,5 +1,10 @@
 \chapter{几何结构优化与解析导数法(作者：M.C.Zerner)}
-\section{简介}
+Michael C.Zerner
+
+量子理论项目
+
+佛罗里达大学
+\section{引言}
 
 分子构象的再现和预测是分子量子力学的最成功的应用之一。
 许多情况下，对于很多简单的分子轨道模型或者最小基组的从头算方法，键长可以重现到$\pm 0.02$\r A，
@@ -15,7 +20,7 @@
 为了进行详细的统计计算，人们可能不得不面对这个“3N”问题，并访问势能面上所有热力学可得的区域。
 然而，本附录只涉及势能面的一小部分：那些对应于极小值的点，代表稳态或亚稳态的构象，以及对应于过渡态的点。
 %%%%%%%
-\section{总则}
+\section{概论}
 
 在Born-Oppenheimer近似下得到的分子体系的能量$E$是一个以核坐标为参数的函数，记核坐标为
 $\mathbf{X}^{\dagger}=(X_1,X_2,\dots,X_{3N})$。
@@ -37,7 +42,7 @@ Hessian矩阵元为
     \nonumber
 \end{align}
 注意，列矩阵的下标表示不同的矩阵，如$\mathbf{X_1}$、$\mathbf{X_2}$等等；而$X_i$表示矩阵$\mathbf{X}$第i个元素。
-虽然泰勒展开是无穷项的，但是接近极值时，我们希望二次项是足够的；例如，对于$\mathbf{X}=\mathbf{X_e}$，其中$\mathbf{X_e}$
+虽然泰勒展开是无穷项的，但是接近极值时，我们希望二阶展开是足够的；例如，对于$\mathbf{X}=\mathbf{X_e}$，其中$\mathbf{X_e}$
 表示一个驻点，根据定义$\mathbf{f(X_e)=0}$，则
 \begin{align}
 	\nonumber
@@ -55,3 +60,75 @@ Hessian矩阵元为
 \end{align}
 
 \autoref{C.3}的解是不显含$\mathbf{X}$的$E(\mathbf{X})$泛函寻找多变量函数极值的最高效方法的初始点。
+如果$\mathbf{H}$是非奇异的，则有
+\begin{align}
+	\label{C.4}
+	\mathbf{q}=-\mathbf{H^{-1}(X)}\mathbf{f(X)}
+\end{align}
+这能够从任意一点$\mathbf{X}$解得$\mathbf{X_e}$，从而使能量函数接近二阶展开。同样的，一个预测的能量$\mathbf{E(H_e)}$
+\footnote{译者注：原文如此，此处可能是笔误，结合上下文来看，应为$\mathbf{E(X_e)}$}
+可以从下式得到
+\begin{align}
+	\label{C.5}
+	\mathbf{E(X_e)}&=\mathbf{E(X)}-\frac{1}{2}\mathbf{f(X)}^{\dagger}\mathbf{H^{-1}(X)}\mathbf{f(X)}
+	\nonumber\\
+	&=\mathbf{E(X)}-\frac{1}{2}\mathbf{q}^{\dagger}\mathbf{H(X_e)}\mathbf{q}
+\end{align}
+对于特殊的势能面寻找极值的问题，我们必须要指出：除非将代表$\mathbf{H}$的零特征值的旋转和平移移除，
+否则$\mathbf{H^{-1}(X)}$将不存在。这个工作可以通过Wilson和Eliashevich提出的$\mathbf{B}$矩阵实现:
+\endnote{See,for example,E.B.Wilson,J.C.Decius,and P.C.Cross,\textit{Molecular Vibrations},
+McGraw-Hill,New York,1955.}
+\begin{align}
+	\label{C.6}
+	\mathbf{Y}^{\dagger}=\mathbf{X}^{\dagger}\mathbf{B}
+\end{align}
+式中$\mathbf{X}$是$3N$维，$\mathbf{B}$是$3N\times 3(N-6)$维，关联内坐标和原本的笛卡尔坐标$\mathbf{X}$。
+揭示这些新坐标下的Taylor级数结构的最简单的方法是考虑功$w$，因为它与坐标系的选择是独立的。
+功是力和距离的乘积，能够在任何坐标系下表示为
+\begin{align}
+	\nonumber
+	w=\mathbf{f}^{\dagger}\mathbf{q}=\mathbf{f_y}^{\dagger}\mathbf{q_y}=\mathbf{f_y}^{\dagger}\mathbf{B}^{\dagger}\mathbf{q}
+\end{align}
+\begin{align}
+	\nonumber
+	\mathbf{f}^{\dagger}=\mathbf{f_y}^{\dagger}\mathbf{B}^{\dagger}
+\end{align}
+或者
+\begin{align}
+	\label{C.7}
+	\mathbf{f_y}=\mathbf{f}^{\dagger}(\mathbf{B}^{\dagger})^{-1}
+\end{align}
+式中$(\mathbf{B}^{\dagger})^{-1}$满足
+\begin{align}
+	\nonumber
+	\mathbf{B}^{\dagger}(\mathbf{B}^{\dagger})^{-1}=\mathbf{1}
+\end{align}
+下面给出上述方程的一般解为
+\begin{align}
+	\nonumber
+	(\mathbf{B}^{\dagger})^{-1}=\mathbf{mB}(\mathbf{B^{\dagger}mB})^{-1}
+\end{align}
+式中$\mathbf{m}$是一个任意的$3N\times 3N$矩阵，经常选择一个对角矩阵,
+矩阵元素是每一个对应位置上原子的原子质量的倒数的三倍。
+也可以选择一个单位矩阵，其中6（或5）个元素选择为0去阻止平动和转动。
+这种类型一个简单的选择是将原子1放在原点，原子2在z轴上，原子3在xz平面上。
+于是这被移除的6（或5）个坐标为$x_1=y_1=z_1=0$，$x_2=y_2=0$，$y_3=0$。
+如果$y_3=0$对于任意选择的第三个原子来说都意味着$x_3=0$，那么这个分子是线性的并且只有5个自由度被选择。
+实际操作中，求$\mathbf{H}$的逆矩阵被证明有一点困难。
+接下来要讨论的更新的方法直接构建$\mathbf{H}^{-1}$，并且从不更新平动和转动。
+在解析求解$\mathbf{H}$的时候，平动和转动可以像之前讨论的那样被移除，或者，如果通过对角化求逆的话，
+$\mathbf{H}$的6（或5）个为0的特征值会被一个任意的大数替换掉，本质上在求逆中解耦这些状态。
+%%%%%
+\section{解析导数}
+%%%%%
+\section{优化技术}
+%%%%%
+\section{一些优化算法}
+%%%%%
+\section{过渡态}
+%%%%%
+\section{约束变分}
+%%%%%
+\newpage
+\theendnotes
+\addcontentsline{toc}{section}{注释}
