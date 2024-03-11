@@ -71,7 +71,7 @@ SCF)计算的细节,
 我们将不加推导地直接给出这节的一些结果, 这些结果可做为Hartree-Fock理论中主要方程的一个总结.
 
 3.2节会补足前一节的推导. 本节和前一节的材料经过人为组织, 以使如果读者愿意, 可以跳过本节. 
-若想充分了解Hartree-Fock理论, 那么可以阅读这一节. 本节现介绍泛函变分, 然后用这个级数来最小化单行列式的能量. 
+若想充分了解Hartree-Fock理论, 那么可以阅读这一节. 本节先介绍泛函变分, 然后用这个级数来最小化单行列式的能量. 
 接下来对自旋轨道进行酉变换以导出正则Hartree-Fock方程.
 
 3.3节继续介绍Hartree-Fock理论的形式部分. 
@@ -285,7 +285,7 @@ Hartree-Fock理论中,
 	f\ket{\chi_a} = \epsilon_a\ket{\chi_a}
 \end{align}
 这就是Hartree-Fock方程的常见形式. 
-Fock算符$f(1)$就是芯哈密顿算符$h(1)$加上如下的有效单电子势算符(称作Hartree-Fcok势)：
+Fock算符$f(1)$就是芯哈密顿算符$h(1)$加上如下的有效单电子势算符(称作Hartree-Fock势)：
 \begin{align}
 	\label{3.18}
 	v^\mathrm{HF}(1) = \sum_b\mathscr{J}_b(1) - \mathscr{K}_b(1)
@@ -1140,7 +1140,7 @@ $\beta$的结果也一样,
 左乘$\alpha^*(\omega_1)$并对自旋积分可得
 \begin{align}
 	\label{3.114}
-	\left[ \int\dd\omega_1\alpha^*(\omega_1)f(\mathbf{x}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) = \epsilon_i\psi_j(\mathbb{r}_1)
+	\left[ \int\dd\omega_1\alpha^*(\omega_1)f(\mathbf{x}_1)\alpha(\omega_1) \right]\psi_j(\mathbf{r}_1) = \epsilon_i\psi_j(\mathbf{r}_1)
 \end{align}
 下一步需算出\autoref{3.114}左侧的式子. 
 将自旋轨道的Fock算符写为
@@ -1348,7 +1348,7 @@ Roothaan\endnote{
 就将这个积分微分方程转化为矩阵方程
 \begin{align}
 	\label{3.135}
-	\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\nu^*(1)f(1)\phi_\nu(1) = \epsilon_i\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\nu^*(1)\phi_\nu(1)
+	\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\mu^*(1)f(1)\phi_\nu(1) = \epsilon_i\sum_\nu C_{\nu i}\int\dd{r}_1\,\phi_\mu^*(1)\phi_\nu(1)
 \end{align}
 
 现在定义两个矩阵：
@@ -1581,7 +1581,7 @@ $\mathbf{T,V^\mathrm{nucl}}$中的积分会具体地计算出来,
 还包括双电子部分$\mathbf{G}$, 
 它依赖密度矩阵$\mathbf{P}$及一组双电子积分:
 \begin{align}
-	(\mu\nu|\lambda\sigma) = \int\dd{r}_2\,\phi_\mu^*(1)\phi_\nu(1)\twoe\phi_\lambda^*(2)\phi_\sigma(2)
+	(\mu\nu|\lambda\sigma) = \int\dd{r}_1\,\int\dd{r}_2\,\phi_\mu^*(1)\phi_\nu(1)\twoe\phi_\lambda^*(2)\phi_\sigma(2)
 \end{align}
 由于双电子积分数目较多, 
 所以\hft 计算中的主要困难就是操作、计算这些双电子积分.
@@ -1621,7 +1621,7 @@ Roothaan方程就成为通常本征值方程的形式,
 \subsection{基的正交归一化}
 分子的计算中所使用的基组是非正交归一基. 
 基函数确实是归一的, 
-单它们之间不正交. 
+但它们之间不正交. 
 这就产生了Roothaan方程中的重叠矩阵. 
 为将Roothaan写为通常的矩阵本征值问题, 
 需要正交化基函数.
