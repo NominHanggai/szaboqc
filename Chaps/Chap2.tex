@@ -1790,9 +1790,7 @@ h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 
 
 \exercise{
-从方程(2.
-107)推出(2.
-110)
+从方程(2.107)推出(2.110)
 \Next
 若$\ket{K}=\ket{\chi_1\chi_2\chi_3}$, 
 证明
@@ -1800,14 +1798,10 @@ h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 
 本书中常要用到Hartree-Fock基态的矩阵元. 
 为方便计, 
-我们将表2.
-3和2.
-4中的规则重写了一遍, 
+我们将表2.3和2.4中的规则重写了一遍, 
 并将$a,b$等同于$m,n$(占据轨道), 
 $r,s$等同于$p,q$(未占轨道). 
-表2.
-5和2.
-6列出了Hartree-Fock基态的矩阵元(\textit{情形1})以及其与单激发行列式的矩阵元(\textit{情形2}), 
+表2.5和2.6列出了Hartree-Fock基态的矩阵元(\textit{情形1})以及其与单激发行列式的矩阵元(\textit{情形2}), 
 以及与双激发行列式的矩阵元(\textit{情形3}).
 
 \begin{table}[h]
@@ -1848,21 +1842,18 @@ E_0 = \braket{\Phi_0|\hs|\Phi_0} = \sum_{a}^{N}[a|h|a] + \frac{1}{2}\sum_{a}^{N}
 E_0 = \sum_{a}^{N}\braket{a|h|a} + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}\braket{ab||ab}
 \end{equation}
 如前所述, 
-(2.
-112)可以重写成:
+(2.112)可以重写成:
 \begin{equation}
 E_0 = \sum_{a}^{N}\braket{a|h|a} + \sum_{a}^{N}\sum_{b>a}^{N}\braket{ab||ab}
 \end{equation}
 在$\mathrm{H}_2$极小基下, 
 $\ket{\Phi_0}=\ket{\chi_1\chi_2}$, 
-那么由(2.
-113)可得
+那么由(2.113)可得
 \begin{align}
 E_0 =& \braket{1|h|1} + \braket{2|h|2} + \braket{12||12}\notag\\
     =& \braket{1|h|1} + \braket{2|h|2} + \braket{12|12} - \braket{12|21}
 \end{align}
-这与之前的结果(2.
-92)相同.
+这与之前的结果(2.92)相同.
 
 
 \exercise{用上面总结的规则计算$\mathrm{H}_2$极小基下的Full CI矩阵元. 与练习2.9的结果作比较.
@@ -1901,9 +1892,7 @@ $N$电子体系的Hartree-Fock基态能为$^NE_0=\braket{^N\Phi_0|\hs|^N\Phi_0}$
 
 \subsection{矩阵元规则的推导}
 \label{sec2.3.4}
-本节我们来推导表2.
-3和2.
-4中的矩阵元的计算规则. 
+本节我们来推导表2.3和2.4中的矩阵元的计算规则. 
 这些矩阵元就是单、双电子算符夹在$N$电子行列式之间的算式($N$电子行列式由自旋轨道构成). 
 由自旋轨道$\chi_i(\mathbf{x}_1),\chi_j(\mathbf{x}_1),\cdots,\chi_k(\mathbf{x}_N)$构成的$N$电子行列式就是(见式(1.
 38)):
@@ -1939,8 +1928,7 @@ $\ket{L}$如下
 \ket{L} = \ket{\chi_m'(1)\chi_n'(2)\cdots}
 \end{equation}
 假设两个行列式已经按最大相似方式进行了排列. 
-利用(2.
-115)中的行列式表达式, 
+利用(2.115)中的行列式表达式, 
 我们有
 \begin{align}
 \braket{K|L} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
@@ -2034,9 +2022,7 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \ket{K} &= \ket{\chi_m(1)\chi_n(2)\cdots}\\
 \ket{L} &= \ket{\chi_p(1)\chi_n(2)\cdots}
 \end{align}
-与在\textit{情形1}中从(2.
-125)导出(2.
-126)时相同, 
+与在\textit{情形1}中从(2.125)导出(2.126)时相同, 
 若积分结果不为0, 
 则算符的两边必须有相同的置换, 
 
@@ -2062,8 +2048,7 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \ket{K} = & \ket{\chi_m(1)\chi_n(2)\cdots}\\
 \ket{L} = & \ket{\chi_p(1)\chi_q(2)\cdots}
 \end{align}
-与(2.
-125)类似我们可以写出：
+与(2.125)类似我们可以写出：
 \begin{align}
 \braket{K|\mathcal{O}_1|K}
 = & N(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
@@ -2098,8 +2083,7 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 = & \frac{N(N-1)}{2}(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}r^{-1}_{12}\mathscr{P}_j\{\chi_m(1)\chi_n(2)\cdots\}
 \end{align}
-由于(2.
-138)(即上式)中的算符仅涉及电子1和2, 
+由于(2.138)(即上式)中的算符仅涉及电子1和2, 
 那么电子$3,4,\cdots,N$在$i$置换式和$j$置换式中需占据相同的自旋轨道, 
 唯如此积分才不为0(自旋轨道相互正交). 
 若电子$3,4,\cdots,N$在前后两个置换中已占据相同的自旋轨道, 
@@ -2153,8 +2137,7 @@ $\scr{P}_{12}\scr{P}_i$就是一偶置换,
 \braket{K|\mathcal{O}_2|L} =& \frac{N(N-1)}{2}(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!}(-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N\notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}r^{-1}_{12}\mathscr{P}_j\{\chi_p(1)\chi_n(2)\cdots\}
 \end{align}
-按照在\textit{情形1}下导出(2.
-141)式的办法, 
+按照在\textit{情形1}下导出(2.141)式的办法, 
 在\textit{情形2}同样可以写出
 \begin{align}
 \braket{K|\mathcal{O}_2|L} =& [2(N-2)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N\notag\\
@@ -2247,8 +2230,7 @@ $\chi_m,\chi_n$与后一置换中的所有自旋轨道正交, 所以它们分别
 
 
 为了在最简单的框架下说明这种转化手续, 
-考察$\mathrm{H}_2$极小基的Hartree-Fock基态(见式2.
-92), 
+考察$\mathrm{H}_2$极小基的Hartree-Fock基态(见式2.92), 
 以物理学家的记号
 \begin{equation}
 E_0 = \braket{\chi_1|h\chi_1} + \braket{\chi_2|h\chi_2} + \braket{\chi_1\chi_2|\chi_1\chi_2} - \braket{\chi_1\chi_2|\chi_2\chi_1}
@@ -2257,14 +2239,12 @@ E_0 = \braket{\chi_1|h\chi_1} + \braket{\chi_2|h\chi_2} + \braket{\chi_1\chi_2|\
 \begin{equation}
 E_0 = [{\chi_1|h|\chi_1}] + [{\chi_2|h|\chi_2}] + [{\chi_1\chi_1|\chi_2\chi_2}] - [{\chi_1\chi_2|\chi_2\chi_1}]
 \end{equation}
-回想起(见式(2.
-60))
+回想起(见式(2.60))
 \begin{align}
 \chi_1(\mathbf{x})\equiv \psi_1(\mathbf{x}) = \psi_1(\mathbf{\mathbf{r}})\alpha(\omega)\\
 \chi_2(\mathbf{x})\equiv \bar{\psi}_1(\mathbf{x}) = \psi_1(\mathbf{\mathbf{r}})\beta(\omega)
 \end{align}
-将上式定义带入(2.
-154), 
+将上式定义带入(2.154), 
 可得
 \begin{equation}
 E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\bar{\psi}_1\bar{\psi}_1}] - [{\psi_1\bar{\psi}_1|\bar{\psi}_1\psi_1}]
@@ -2290,10 +2270,10 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 由此可知$E_0$中单电子部分的能量贡献是$2(\psi_1|h|\psi_1)$.
 
 
-下面考虑(2.
-157)基态能量表达式中的第一项双电子积分
+下面考虑(2.157)基态能量表达式中的第一项双电子积分
 \begin{align}
-[{\psi_1\psi_1|\bar{\psi}_1\bar{\psi}_1}] = & \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_1(\mathbf{r_1})\alpha(\omega_1) r_{12}^{-1}\notag\\
+[{\psi_1\psi_1|\bar{\psi}_1\bar{\psi}_1}] = 
+& \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_1(\mathbf{r_1})\alpha(\omega_1) r_{12}^{-1}\notag\\
 &\times \psi_1^*(\mathbf{r_2})\beta^*(\omega_2)\psi_1(\mathbf{r_2})\beta(\omega_2)
 \end{align}
 将自旋变量$\omega_1,\omega_2$积掉,
@@ -2306,11 +2286,11 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 这个记号就是把化学家的记号中的方括号变成了圆括号. 
 此处不特别引入物理学家记号来表示空间积分. 
 因此$\braket{ij|kl}$代表对自旋轨道还是空间轨道积分只能通过上下文判断. 
-(2.
-157)中的最后一个积分为
+(2.157)中的最后一个积分为
 \begin{align}
-[{\psi_1\bar{\psi}_1|\bar{\psi}_1\psi_1}] = & \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\, \psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_(\mathbf{r_1})\beta(\omega_1)r_{12}^{-1}\notag\\
-& \times \psi_1^*(\mathbf{r_2})\beta^*(\omega_2)\psi_(\mathbf{r_2})\alpha(\omega_2) = 0
+[{\psi_1\bar{\psi}_1|\bar{\psi}_1\psi_1}] = 
+& \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\, \psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_1(\mathbf{r_1})\beta(\omega_1)r_{12}^{-1}\notag\\
+& \times \psi_1^*(\mathbf{r_2})\beta^*(\omega_2)\psi_1(\mathbf{r_2})\alpha(\omega_2) = 0
 \end{align} 
 最后一步是由于$\braket{\alpha|\beta}=\braket{\beta|\alpha} = 0$. 
 一般来说, 
@@ -2349,12 +2329,10 @@ E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1) \notag\\
 \ket{\Psi_0} & = \ket{\chi_1\chi_2\chi_3\chi_4\cdots\chi_{N-1}\chi_N} \notag\\
              & = \ket{\psi_1\bar{\psi}_1\psi_2\bar{\psi}_2\cdots\psi_{N/2}\bar{\psi}_{N/2}}
 \end{align}
-该波函数的图示为图2.
-10. 
+该波函数的图示为图2.10. 
 注意此处一对自旋$\alpha,\beta$对应同一个空间轨道.
 每个空间轨道由两个自旋相反的电子占据. 
-这个波函数对应的能量(若用自旋轨道$\{\chi_a|a=1,2,\cdots,N\}$表达)由式(2.
-111)给出:
+这个波函数对应的能量(若用自旋轨道$\{\chi_a|a=1,2,\cdots,N\}$表达)由式(2.111)给出:
 \begin{equation}
 E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba]
 \end{equation}
@@ -2386,8 +2364,7 @@ E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba
 \begin{minipage}[c]{0.6\textwidth}
 	\caption{闭壳层限制性Hatree-Fock基态行列式$\ket{\psi_1\bar{\psi}_1\psi_2\bar{\psi}_2\cdots\psi_{N/2}\bar{\psi}_{N/2}}$.}\end{minipage}
 \end{figure}
-由于波函数(2.
-168)包含$N/2$个$\alpha$自旋轨道$N/2$个$\beta$自旋轨道, 
+由于波函数(2.168)包含$N/2$个$\alpha$自旋轨道$N/2$个$\beta$自旋轨道, 
 我们可以将对自旋轨道的求和分成两部分：
 \begin{equation}
 \sum_{a}^{N} \chi_a = \sum_{a}^{N/2}\psi_a + \sum_{a}^{N/2}\bar{\psi}_a
@@ -2410,8 +2387,7 @@ E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba
 \begin{equation}
 \sum_{a}^{N}\sum_{b}^{N} = \sum_{a}^{N/2}\sum_{b}^{N/2} + \sum_{a}^{N/2}\sum_{\bar{b}}^{N/2} + \sum_{\bar{a}}^{N/2}\sum_{b}^{N/2} + \sum_{\bar{a}}^{N/2}\sum_{\bar{b}}^{N/2}
 \end{equation}
-现在可利用以上符号将(2.
-169)约化为仅含空间轨道的方程. 
+现在可利用以上符号将(2.169)约化为仅含空间轨道的方程. 
 先处理单电子积分:
 \begin{equation}
 \sum_{a}^{N}[a|h|a] = \sum_{a}^{N/2}[a|h|a] + \sum_{a}^{N/2}[\bar{a}|h|\bar{a}] = 2 \sum_{a}^{N/2}(\psi_a|h|\psi_a)
@@ -2429,8 +2405,7 @@ E_0 = 2 \sum_{a}^{N/2}(\psi_a|h|\psi_a) + \sum_{a}^{N/2}\sum_{b}^{N/2}2(\psi_a\p
 \end{equation}
 求和的上限(代表空间轨道的数目)实际上可以不写, 
 因为我们在使用之前定义的圆括符号. 
-因此(2.
-176)可写为
+因此(2.176)可写为
 \begin{equation}
 E_0 = 2 \sum_{a}^{N/2}({a|h|a}) + \sum_{a}^{N/2}\sum_{b}^{N/2}2({aa|bb}) - ({ab|ba})
 \end{equation}
@@ -2440,8 +2415,7 @@ E_0 = 2 \sum_{a}^{N/2}({a|h|a}) + \sum_{a}^{N/2}\sum_{b}^{N/2}2({aa|bb}) - ({ab|
 如果求和无上限, 
 那么求和是针对自旋轨道, 
 如果上限是$N/2$则是针对空间轨道. 
-所以用物理学家的记号(2.
-177)可以写为
+所以用物理学家的记号(2.177)可以写为
 \begin{equation}
 E_0 = 2 \sum_{a}^{N/2}\braket{a|h|a} + \sum_{a}^{N/2}\sum_{b}^{N/2}2\braket{ab|ab} - \braket{ab|ba}
 \end{equation}
@@ -2461,8 +2435,7 @@ E_0^{(2)} = \sum_{a,b=1}^{N/2}\sum_{r,s=(N/2+1)}^{K}\frac{\braket{ab|rs}(2\brake
 
 \subsection{库伦积分、交换积分}
 \label{sec2.3.6}
-现在来考虑(2.
-177)中所给出的闭壳层Hartree-Fock基态能量的物理意义.
+现在来考虑(2.177)中所给出的闭壳层Hartree-Fock基态能量的物理意义.
 
 \begin{equation}
 E_0 = 2 \sum_{a}^{N/2}(\psi_a|h|\psi_a) + \sum_{a}^{N/2}\sum_{b}^{N/2}2(\psi_a\psi_a|\psi_b\psi_b) - (\psi_a\psi_b|\psi_b\psi_a)
@@ -2498,8 +2471,7 @@ K_{ij} = (ij|ji) = \braket{ij|ji}
 同自旋电子的运动相互关联). 
 2.2.3节中已经看到, 
 将Hartree积反对称化得到Slater行列式这个过程会引入相关作用. 
-此处我们将(2.
-179)中的闭壳层体系Hartree-Fock基态能量用库伦积分和交换积分写出来:
+此处我们将(2.179)中的闭壳层体系Hartree-Fock基态能量用库伦积分和交换积分写出来:
 \begin{equation}
 E_0 = 2\sum_a h_{aa} + \sum_{ab}2J_{ab} - K_{ab} 
 \end{equation}
@@ -2537,8 +2509,7 @@ K_{12}         & 2h_{22} + J_{22}
 即系统此时的波函数为$\ket{{\psi}_1\bar{\psi}_2}$, 
 则此概率不为零. 
 那么一个合理的推测就是电子间的库伦排斥会使态$\ket{\bar{\psi}_1\bar{\psi}_2}$对应的能量比$\ket{\psi_1\bar{\psi}_2}$的能量低. 
-利用式(2.
-110), 
+利用式(2.110), 
 $\ket{\psi_1\bar{\psi}_2}$(记为$\ket{\uparrow\downarrow}$)的能量就是
 \begin{align}
 \ket{\uparrow\downarrow} & =[\psi_1|h|\psi_1] + [\bar{\psi}_2|h|\bar{\psi}_2] + [\psi_1\psi_1|\bar{\psi}_2\bar{\psi}_2] - [\psi_1\bar{\psi}_2|\bar{\psi}_2\psi_1]\notag\\
@@ -2551,10 +2522,7 @@ $\ket{\bar{\psi}_1\bar{\psi}_2}$(记为$\ket{\downarrow\downarrow}$)的能量就
 & = (1|h|1) + (2|h|2) + (11|22) - (12|21)\notag\\
 & = h_{11} + h_{22} + J_{12} - K_{12}
 \end{align}
-式中利用了式(2.
-160)(2.
-161)(2.
-165)将自旋坐标积掉. 
+式中利用了式(2.160)(2.161)(2.165)将自旋坐标积掉. 
 由于$K_{12}$是正值, 
 $\ket{\downarrow\downarrow}$就比$E(\uparrow\downarrow)$小. 
 因此, 
