@@ -76,7 +76,7 @@ Hessian矩阵元为
 \end{align}
 对于特殊的势能面寻找极值的问题，我们必须要指出：除非将代表$\mathbf{H}$的零特征值的旋转和平移移除，
 否则$\mathbf{H^{-1}(X)}$将不存在。这个工作可以通过Wilson和Eliashevich提出的$\mathbf{B}$矩阵实现:
-\endnote{See,for example,E.B.Wilson,J.C.Decius,and P.C.Cross,\textit{Molecular Vibrations},
+\endnote{See,for example,E.B.Wilson,J.C.Decius,and P.C.Cross,$Molecular Vibrations$,
 McGraw-Hill,New York,1955.}
 \begin{align}
 	\label{C.6}
@@ -218,14 +218,14 @@ Hartree-Fock能量显示的依赖占据轨道系数$\mathbf{C}$和$\mathbf{X}$�
 许多从头计算都是使用笛卡尔高斯函数进行的
 \begin{align}
 	\nonumber
-    \phi_{lmn}^{GF}=N_{lmn}x_{a}^{l}y_{a}^{m}z_{a}^{n} e^{-a|\mathbf{r}-\mathbf{R_{A}}|^2} 
+    \phi_{lmn}^{GF}=N_{lmn}x_{a}^{l}y_{a}^{m}z_{a}^{n} e^{-\alpha|\mathbf{r}-\mathbf{R_{A}}|^2} 
 \end{align}
 见\autoref{sec:3.6}，式中$N_{lmn}$是归一化参数，表达式为
 \begin{align}
 	\nonumber
-    N_{lmn}=\bigg[\frac{(8a)^{l+m+n}l!m!n!}{(2l)!(2m)!(2n)!} \bigg]^{1/2}(\frac{2a}{\pi})^{3/4}
+    N_{lmn}=\bigg[\frac{(8\alpha)^{l+m+n}l!m!n!}{(2l)!(2m)!(2n)!} \bigg]^{1/2}(\frac{2\alpha}{\pi})^{3/4}
 \end{align}
-其中小写字母a表示从原子核a测量的电子坐标。$\phi_{lmn}^{GF}$对核坐标的导数是可以显式直接得到的，例如
+其中小写字母a表示从原子核A测量的电子坐标。$\phi_{lmn}^{GF}$对核坐标的导数是可以显式直接得到的，例如
 \begin{align}
 	\nonumber
     \frac{\partial \phi_{lmn}^{GF}}{\partial X_A}=[(2l+1)a]^{1/2}\phi_{l+1.mn}^{GF}-2l(\frac{a}{2l-1})^{1/2}\phi_{l-1.mn}^{GF}
@@ -248,19 +248,77 @@ Hartree-Fock能量显示的依赖占据轨道系数$\mathbf{C}$和$\mathbf{X}$�
 双中心积分而言，可以沿着与高斯函数相同的方式进行推导。
 
 \autoref{C.12}相对简单，因为$\mathbf{P}$的导数没有出现，这不应与Hellmann-Feynman定理
-\endnote{H.Hellmann,\textit{Einf\ddot{u}hrung in du Quantenchmie,}Franz Deuticke,Leipzig,1937;R.P.
-Feynman Phys.Rev.\bf{41}:721(1939);A.C.Hurley,Proc.Roy.Soc.\bf{A226:}170,179(1954)}混淆。现在有
+\endnote{H.Hellmann,$Einf\ddot{u}hrung in du Quantenchmie$,Franz Deuticke,Leipzig,1937;
+R.P.Feynman $ Phys.Rev.\bf{41}:$721(1939);
+A.C.Hurley,$Proc.Roy.Soc.\bf{A226:}$170,179(1954)}
+混淆。现在有
 \begin{align}
 	\nonumber
     E= \braket{\Phi |\mathcal{H} |\Phi }
 \end{align}
 且$\braket{\Phi |\Phi }=1$，则
-
+\begin{align}
+	\label{C.13}
+    \frac{\partial E}{\partial X_A}=\braket{\frac{\partial \Phi}{\partial X_A} |\mathcal{H} |\Phi }+
+									 \braket{\Phi|\mathcal{H} | \frac{\partial\Phi}{\partial X_A} }+
+									 \braket{\Phi|\frac{\partial \mathcal{H}}{\partial X_A} | \Phi }
+\end{align}
+Hellmann-Feynman条件如下
 \begin{align}
 	\label{C.14}
-    \braket{\frac{\partial }{\partial X_A} |\mathcal{H} |\Phi }+ \braket{\Phi|\mathcal{H} | \frac{\partial }{\partial X_A} }
+    \braket{\frac{\partial \Phi}{\partial X_A} |\mathcal{H} |\Phi }+ \braket{\Phi|\mathcal{H} | \frac{\partial\Phi}{\partial X_A} }=0
 \end{align}
-上式只在精确解的时候成立
+上式只在精确解或者特定类型的试探函数的时候才成立。在\autoref{C.14}的约束下，\autoref{C.13}简化为
+\begin{align}
+	\label{C.15}
+    \frac{\partial E}{\partial X_A}=\braket{\Phi|\frac{\partial \mathcal{H}}{\partial X_A} | \Phi }
+\end{align}
+\autoref{C.15}是一个简单的单电子算符的期望值加上核排斥项的导数项。但是\autoref{C.12}并不依赖\autoref{C.14}。
+$\frac{\partial H^{core}}{\partial X_A}$和$ \frac{\partial (\mu \nu|| \sigma\lambda)}{\partial X_A}$中的积分
+通过“原子轨道跟随”包含了波函数——例如，$\frac{\partial \phi_{\mu}^{A} }{\partial X_A}$，其中$\phi_{\mu}^{A}$
+是一个以$A$为中心的原子轨道——并且比\autoref{C.15}复杂的多。事实上，即便在\autoref{C.13}下受力应该为0，
+但通过\autoref{C.15}算出来的受力也会很大，因此代表了能量函数的极值。然而，\autoref{C.15}的简洁很有吸引力，
+人们想知道，当目标是几何优化时，满足\autoref{C.14}的条件所增加的不便是否不像在使用\autoref{C.15}那样快。
+
+对于一个组态相互作用(CI)波函数，含有行列式$\ket{\Psi _I}$，
+\begin{align}
+	\nonumber
+    \ket{\Phi  _I}=\sum_{I}c_I\ket{\Psi _I}
+\end{align}
+我们可以得到它能量的导数为
+\begin{align}
+	\label{C.16}
+	\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}
+	+\sum_{\mu i}\frac{\partial E}{\partial C_{\mu i}}\frac{\partial C_{\mu i}}{\partial X_A}
+	+\sum_{I}\frac{\partial E}{\partial c_{I}}\frac{\partial c_{I}}{\partial X_A}
+\end{align}
+式中第一个求和便利所有的分子轨道系数。在这个情况下，只有1个多组态自恰场(MCSCF)函数时$\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}$。
+对于一般的Hartree-Fock和CI波函数，$\frac{\partial E}{\partial c_{I}}$，则
+\begin{align}
+	\label{C.17}
+	\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}
+	+\sum_{\mu i}\frac{\partial E}{\partial C_{\mu i}}\frac{\partial C_{\mu i}}{\partial X_A}
+\end{align}
+计算$\frac{\partial C_{\mu i}}{\partial X_A}$很复杂，但是可以通过微扰理论
+\endnote{See,for example,J.A.Pople,H.Krishnan,H.B.Schlegel,and J.S.Binkley,
+$Int.J.Quantum Chem.\\ \bf{S13:}$225(1979),and refences therein.}解决。
+对于一个大的CI系统能量对$\mathbf{C}$的依赖性降低时；或者对于没有大量极性键的系统时；或者对于分子轨道由对称性决定的系统时，第二项对力的贡献可能很小。
+在这种情况下，对于势能面的初始搜索可以使用\autoref{C.9}，但是对于精确的结果来说，依赖于这种近似是不令人满意的。
+
+Hartree-Fock能量的二阶导数可以从\autoref{C.12}直接得到
+\begin{align}
+	\nonumber
+	\frac{\partial^2 E}{\partial X_A\partial X_B}=&\sum_{ \mu \nu }P_{\nu \mu}\frac{\partial^2 H_{\mu \nu}^{core}}{\partial X_A\partial X_B}
+		+\frac{1}{2}\sum_{\mu \nu \sigma \lambda }P_{ \nu \mu }P_{\lambda \sigma}\frac{\partial^2 (\mu \nu|| \sigma\lambda)}{\partial X_A\partial X_B}
+		\\ \nonumber &
+		-\sum_{\mu \nu }Q_{ \nu \mu}\frac{\partial^2 S}{\partial X_A\partial X_B}
+		+\frac{\partial^2 V_{NN}}{\partial X_A\partial X_B}
+		+\sum_{\mu \nu }\frac{\partial P_{ \nu\mu}}{\partial X_B}\frac{\partial H_{\mu \nu}^{core}}{\partial X_A}
+		\\ \nonumber &
+		+\sum_{\mu \nu \sigma \lambda }\frac{\partial P_{ \nu \mu }}{\partial X_B}P_{\lambda \sigma}\frac{\partial (\mu \nu|| \sigma\lambda)}{\partial X_A}
+		-\sum_{\mu \nu }\frac{\partial Q_{ \nu\mu}}{\partial X_B}\frac{\partial S_{\mu \nu}}{\partial X_A}
+	\end{align}
+表达式的最后三项包含了分子轨道系数的导数并且不能用简单的方式避开。它们可以通过耦合微扰Hartree-Fock理论(CPHF)$^3$得到。
 %%%%%
 \section{优化技术}
 %%%%%
