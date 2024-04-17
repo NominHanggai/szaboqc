@@ -120,6 +120,147 @@ McGraw-Hill,New York,1955.}
 $\mathbf{H}$的6（或5）个为0的特征值会被一个任意的大数替换掉，本质上在求逆中解耦这些状态。
 %%%%%
 \section{解析导数}
+我们现在来考虑量子化学中$\mathbf{f}$和$\mathbf{H}$的计算。一个直接的方式是简单的数值微分能量。
+取而代之的是，我们可以通过解析求导的方式得到这些导数。让我们来举例说明Hartree-Fock计算框架中的
+一些基本思想。
+
+Hartree-Fock能量显示的依赖占据轨道系数$\mathbf{C}$和$\mathbf{X}$。它的导数由下式给出
+\begin{align}
+	\label{C.8}
+	\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}
+	+\sum_{\mu a}\frac{\partial E}{\partial C_{\mu a}}\frac{\partial C_{\mu a}}{\partial X_A}
+\end{align}
+式中，$\frac{\partial {\tilde{E} }}{\partial X_A}$表示所有显式依赖核坐标$X_A$的项的导数，
+并且其中链式规则项源于分子轨道系数对几何结构的隐含依赖性。因为$\frac{\partial E}{\partial C_{\mu a}}=0$
+是Hartree-Fock解的条件(\autoref{sec3.2.1})，
+\begin{align}
+	\label{C.9}
+	\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}
+\end{align}
+这种实现允许我们忽略分子轨道系数相对于几何结构变化的一阶变化。
+一个闭壳层体系在Hartree-Fock近似下的总能量可以表示为
+\begin{align}
+	\label{C.10}
+	E=\sum_{\mu \nu}P_{\nu \mu}H_{\mu \nu}^{core}
+		+\frac{1}{2}\sum_{\mu \nu \lambda \sigma }P_{\nu \mu}P_{\lambda \sigma}(\mu \nu||\sigma \lambda)
+		+V_{NN} 
+\end{align}
+(见\autoref{3.184}，\autoref{3.185}和\autoref{3.154})式中我们已经定义
+\begin{align}
+	\nonumber
+	V_{NN}=\sum_{A}\sum_{A \ge B}\frac{Z_A Z_B}{R_{AB}}
+\end{align}
+以及介绍了速记符号
+\begin{align}
+	\nonumber
+	(\mu \nu||\sigma \lambda)=(\mu \nu|\sigma \lambda)-\frac{1}{2}(\mu \lambda ||\sigma  \nu)
+\end{align}
+对于实轨道，密度矩阵表示为
+\begin{align}
+	\nonumber
+	P_{\nu \mu}=2\sum_{a}^{N/2}C_{\mu a}C_{\nu a}
+\end{align}
+(见\autoref{3.145})。微分\autoref{C.10}得
+\begin{align}
+	\label{C.11}
+    \frac{\partial E}{\partial X_A}=
+    &\sum_{\mu \nu}P_{\nu \mu}\frac{\partial H_{\mu \nu}^{core}}{\partial X_A}
+    +\frac{1}{2}\sum_{\mu \nu\lambda \sigma }P_{\nu \mu}P_{\lambda \sigma}
+      \frac{\partial (\mu \nu|| \sigma\lambda)}{\partial X_A}
+    +\frac{\partial V_{NN}}{\partial X_A} 
+	\\ \nonumber
+	&+\sum_{\mu \nu}\frac{\partial P_{\nu \mu}}{\partial X_A} H_{\mu \nu}^{core}
+	+\sum_{\mu \nu\lambda \sigma }\frac{\partial P_{\nu \mu} }{\partial X_A}P_{\lambda \sigma}(\mu \nu|| \sigma\lambda)
+\end{align}
+\autoref{C.11}表明需要求取组合系数的导数，然而\autoref{C.9}不需要！
+展开\autoref{C.11}的后两项得到
+\begin{align}
+	\nonumber
+	=&4\sum_{\mu \nu}\sum_{a}^{N/2}\frac{\partial C_{\mu a}}{\partial X_A}H_{\mu \nu}^{core}C_{\nu a}
+		+4\sum_{\mu \nu\lambda \sigma }\sum_{a}^{N/2}\frac{\partial C_{\mu a}}{\partial X_A}  P_{\lambda \sigma}(\mu \nu|| \sigma\lambda)  C_{\nu a}
+	\\ \nonumber
+	=&4\sum_{\mu \nu}\sum_{a}^{N/2}\frac{\partial C_{\mu a}}{\partial X_A}
+		[H_{\mu \nu}^{core}-\sum_{\lambda \sigma } P_{\lambda \sigma}(\mu \nu|| \sigma\lambda)]C_{\nu a}
+	\\ \nonumber
+	=&4\sum_{\mu \nu}\sum_{a}^{N/2}\frac{\partial C_{\mu a}}{\partial X_A}F_{\mu \nu}C_{\nu a}
+	\\ \nonumber
+	=&4\sum_{a}^{N/2}	\varepsilon_a \sum_{\mu \nu}\frac{\partial C_{\mu a}}{\partial X_A}S_{\mu \nu}C_{\nu a}
+\end{align}
+为了计算系数的导数，我们回顾一下分子轨道的正交归一化条件，即
+\begin{align}
+	\nonumber
+	\sum_{\mu \nu}C_{\mu a}S_{\mu \nu}C_{\nu a}=\delta_{ab} 
+\end{align}
+（见练习3.10）。微分上式得到
+\begin{align}
+	\nonumber
+	2\sum_{\mu \nu}\frac{\partial C_{\mu a}}{\partial X_A}S_{\mu \nu}C_{\nu a}
+	=-\sum_{\mu \nu}C_{\mu a}C_{\nu a}\frac{\partial S_{\mu \nu}}{\partial X_A}
+\end{align}
+组合这些表达式的结果得
+\begin{align}
+	\label{C.12}
+    \frac{\partial E}{\partial X_A}=
+    \sum_{\mu \nu}P_{\nu \mu}\frac{\partial H_{\mu \nu}^{core}}{\partial X_A}
+    +\frac{1}{2}\sum_{\mu \nu\lambda \sigma }P_{\nu \mu}P_{\lambda \sigma}
+      \frac{\partial (\mu \nu|| \sigma\lambda)}{\partial X_A}
+    -\sum_{\mu \nu}Q_{\nu \mu} \frac{\partial S_{\mu \nu}}{\partial X_A}
+    +\frac{\partial V_{NN}}{\partial X_A}
+\end{align}
+式中我们定义
+\begin{align}
+	\nonumber
+    Q_{\nu \mu}=2\sum_{a}^{N/2}\varepsilon_a C_{\mu a}C_{\nu a}
+\end{align}
+因此能量的导数可以通过分子轨道系数和重叠积分以及单电子、双电子积分的导数计算得到。
+
+以高效的方式获取电子结构理论中出现的积分的导数是一个有点专业化的领域，但我们很容易理解其一般思路。
+许多从头计算都是使用笛卡尔高斯函数进行的
+\begin{align}
+	\nonumber
+    \phi_{lmn}^{GF}=N_{lmn}x_{a}^{l}y_{a}^{m}z_{a}^{n} e^{-a|\mathbf{r}-\mathbf{R_{A}}|^2} 
+\end{align}
+见\autoref{sec:3.6}，式中$N_{lmn}$是归一化参数，表达式为
+\begin{align}
+	\nonumber
+    N_{lmn}=\bigg[\frac{(8a)^{l+m+n}l!m!n!}{(2l)!(2m)!(2n)!} \bigg]^{1/2}(\frac{2a}{\pi})^{3/4}
+\end{align}
+其中小写字母a表示从原子核a测量的电子坐标。$\phi_{lmn}^{GF}$对核坐标的导数是可以显式直接得到的，例如
+\begin{align}
+	\nonumber
+    \frac{\partial \phi_{lmn}^{GF}}{\partial X_A}=[(2l+1)a]^{1/2}\phi_{l+1.mn}^{GF}-2l(\frac{a}{2l-1})^{1/2}\phi_{l-1.mn}^{GF}
+\end{align}
+式中，现在的$X_A$特指核A的x坐标。需要指出的是当$l=0$时，不考虑上式第二项。
+
+所有单中心积分的导数为零，因为通常假设中心A上的所有轨道都遵循中心A的位移。动能算符和电子排斥势算符$r_{12}^{-1}$不是核坐标的函数。
+核排斥势能$V_{NN}$的导数也可以直接得到
+\begin{align}
+	\nonumber
+    \frac{\partial V_{NN}}{\partial X_A}=Z_A\sum_{B}\frac{Z_B(X_B-X_A)}{R_{AB}^{3}}
+\end{align}
+对于核-电子吸引项，可以得到
+\begin{align}
+	\nonumber
+    \frac{\partial V_{Ne}}{\partial X_A}=-Z_A\sum_{i}\frac{X_i-X_A}{r_{iA}^{3}}
+\end{align}
+上面的公式已经足够去求解电子结构计算中遇到的电子积分的导数了。但在实际计算中，需要使用许多技巧去减少计算量。
+使用Slater函数去计算梯度会更困难(见\autoref{sec:3.5}和\autoref{sec:3.6})，但是至少对于经常在半经验模型中出现的
+双中心积分而言，可以沿着与高斯函数相同的方式进行推导。
+
+\autoref{C.12}相对简单，因为$\mathbf{P}$的导数没有出现，这不应与Hellmann-Feynman定理
+\endnote{H.Hellmann,\textit{Einf\ddot{u}hrung in du Quantenchmie,}Franz Deuticke,Leipzig,1937;R.P.
+Feynman Phys.Rev.\bf{41}:721(1939);A.C.Hurley,Proc.Roy.Soc.\bf{A226:}170,179(1954)}混淆。现在有
+\begin{align}
+	\nonumber
+    E= \braket{\Phi |\mathcal{H} |\Phi }
+\end{align}
+且$\braket{\Phi |\Phi }=1$，则
+
+\begin{align}
+	\label{C.14}
+    \braket{\frac{\partial }{\partial X_A} |\mathcal{H} |\Phi }+ \braket{\Phi|\mathcal{H} | \frac{\partial }{\partial X_A} }
+\end{align}
+上式只在精确解的时候成立
 %%%%%
 \section{优化技术}
 %%%%%
