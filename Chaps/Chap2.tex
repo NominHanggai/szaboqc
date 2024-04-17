@@ -1770,7 +1770,7 @@ h(i)=-\frac{1}{2}\nabla_i^2-\sum_A\frac{Z_A}{r_{iA}}
 \end{subequations}
 \autoref{2.107}可以写成：
 \begin{align}
-\braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\frac{1}{2}\sum_m^N\sum_{n>m}^N\braket{mn||mn}\notag\\
+\braket{K|\mathscr{H}|K}=&\sum_m^N\braket{m|h|m}+\sum_m^N\sum_{n>m}^N\braket{mn||mn}\notag\\
 =&\sum_m[m|h|m]+\sum_m^N\sum_{n>m}^N[mm|nn]-[mn|nm]
 \end{align}
 反对称双电子积分的求和遍及$\ket{K}$中所有不同的占据自旋轨道对儿$\chi_m,\chi_n$. 
@@ -2261,7 +2261,7 @@ E_0 = [{\chi_1|h|\chi_1}] + [{\chi_2|h|\chi_2}] + [{\chi_1\chi_1|\chi_2\chi_2}] 
 60))
 \begin{align}
 \chi_1(\mathbf{x})\equiv \psi_1(\mathbf{x}) = \psi_1(\mathbf{\mathbf{r}})\alpha(\omega)\\
-\chi_2(\mathbf{x})\equiv \bar{\psi}_1(\mathbf{x}) = \psi_1(\mathbf{\mathbf{r}})\alpha(\omega)
+\chi_2(\mathbf{x})\equiv \bar{\psi}_1(\mathbf{x}) = \psi_1(\mathbf{\mathbf{r}})\beta(\omega)
 \end{align}
 将上式定义带入(2.
 154), 
@@ -2310,7 +2310,7 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 157)中的最后一个积分为
 \begin{align}
 [{\psi_1\bar{\psi}_1|\bar{\psi}_1\psi_1}] = & \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\, \psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_(\mathbf{r_1})\beta(\omega_1)r_{12}^{-1}\notag\\
-& \times \psi_1(\mathbf{r_2})\alpha^(\omega_2)\psi_(\mathbf{r_2})\beta(\omega_2) = 0
+& \times \psi_1^*(\mathbf{r_2})\beta^*(\omega_2)\psi_(\mathbf{r_2})\alpha(\omega_2) = 0
 \end{align} 
 最后一步是由于$\braket{\alpha|\beta}=\braket{\beta|\alpha} = 0$. 
 一般来说, 
@@ -2404,7 +2404,7 @@ E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba
 \begin{align}
 \sum_{a}^{N}\sum_{b}^{N}\chi_a\chi_b & = \sum_{a}^{N}\chi_a\sum_{b}^{N}\chi_b\notag\\
 & = \sum_{a}^{N/2}(\psi_a + \bar{\psi}_a)\sum_{b}^{N/2}(\psi_b + \bar{\psi}_b) \notag\\ 
-& = \sum_{a}^{N/2}\sum_{b}^{N/2}\psi_a\psi_b + \psi_a\bar{\psi}_b + \bar{\psi}{\psi} + \bar{\psi}_a\bar{\psi}_b 
+& = \sum_{a}^{N/2}\sum_{b}^{N/2}\psi_a\psi_b + \psi_a\bar{\psi}_b + \bar{\psi}_a{\psi}_b + \bar{\psi}_a\bar{\psi}_b 
 \end{align}
 或单纯写出符号
 \begin{equation}
@@ -2536,7 +2536,7 @@ K_{12}         & 2h_{22} + J_{22}
 但若这两个电子自旋相反, 
 即系统此时的波函数为$\ket{{\psi}_1\bar{\psi}_2}$, 
 则此概率不为零. 
-那么一个合理的推测就是电子间的库伦排斥会使态$\ket{\bar{\psi}_1\bar{\psi}_2}$对应的能量比$\ket{\psi}_1\bar{\psi}_2$的能量低. 
+那么一个合理的推测就是电子间的库伦排斥会使态$\ket{\bar{\psi}_1\bar{\psi}_2}$对应的能量比$\ket{\psi_1\bar{\psi}_2}$的能量低. 
 利用式(2.
 110), 
 $\ket{\psi_1\bar{\psi}_2}$(记为$\ket{\uparrow\downarrow}$)的能量就是
