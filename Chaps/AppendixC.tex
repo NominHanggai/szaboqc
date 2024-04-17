@@ -292,7 +292,7 @@ $\frac{\partial H^{core}}{\partial X_A}$和$ \frac{\partial (\mu \nu|| \sigma\la
 	+\sum_{\mu i}\frac{\partial E}{\partial C_{\mu i}}\frac{\partial C_{\mu i}}{\partial X_A}
 	+\sum_{I}\frac{\partial E}{\partial c_{I}}\frac{\partial c_{I}}{\partial X_A}
 \end{align}
-式中第一个求和便利所有的分子轨道系数。在这个情况下，只有1个多组态自恰场(MCSCF)函数时$\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}$。
+式中第一个求和遍历所有的分子轨道系数。在这个情况下，只有1个多组态自恰场(MCSCF)函数时$\frac{\partial E}{\partial X_A}=\frac{\partial {\tilde{E} }}{\partial X_A}$。
 对于一般的Hartree-Fock和CI波函数，$\frac{\partial E}{\partial c_{I}}$，则
 \begin{align}
 	\label{C.17}
@@ -302,7 +302,7 @@ $\frac{\partial H^{core}}{\partial X_A}$和$ \frac{\partial (\mu \nu|| \sigma\la
 计算$\frac{\partial C_{\mu i}}{\partial X_A}$很复杂，但是可以通过微扰理论
 \endnote{See,for example,J.A.Pople,H.Krishnan,H.B.Schlegel,and J.S.Binkley,
 $Int.J.Quantum Chem.\\ \bf{S13:}$225(1979),and refences therein.}解决。
-对于一个大的CI系统能量对$\mathbf{C}$的依赖性降低时；或者对于没有大量极性键的系统时；或者对于分子轨道由对称性决定的系统时，第二项对力的贡献可能很小。
+对于一个大的CI系统能量对$\mathbf{C}$的依赖性降低时；或者对于没有大量极性键的系统时；或者对于分子轨道由对称性决定的系统时，第二项对受力的贡献可能很小。
 在这种情况下，对于势能面的初始搜索可以使用\autoref{C.9}，但是对于精确的结果来说，依赖于这种近似是不令人满意的。
 
 Hartree-Fock能量的二阶导数可以从\autoref{C.12}直接得到
