@@ -343,7 +343,7 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 它是我们熟悉的Pauli不相容原理最常见的一种表述. 
 这个原理是量子力学的基本假设之一. 
 波函数不仅要满足\sch 方程, 
-也要满足反对称要求, 即\autoref{2.20}. 
+也要满足反对称要求, 即\autoref{2.22}. 
 以后我们就会明白, 反对称性可以用Slater行列式来保证.
  
 \section{轨道, Slater行列式,基函数}
@@ -1479,7 +1479,7 @@ $\braket{{\Phi_{1\bar{1}}^{2\bar{2}}} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}
 常将所有双电子积分中的傀标都写成电子1和2的坐标。
 现引入记号来表示含自旋轨道的双电子积分：
 \begin{equation}
-\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_1)r_{12}^{-1}\chi_k*(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
+\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_1)r_{12}^{-1}\chi_k(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
 \label{2.90}
 \end{equation}
 那么就有
@@ -2804,11 +2804,11 @@ $\cs_i$作用在左边的行列式上,
 我们取(2.194)的伴随. 
 由于(见练习1.3)：
 \begin{align}
-\left( \mathscr{AB} \right)^\dagger = \mathscr{B}\dagger\mathscr{A}^\dagger
+\left( \mathscr{AB} \right)^\dagger = \mathscr{B}^\dagger\mathscr{A}^\dagger
 \end{align} 
 那么
 \begin{equation}
-a_ja_i + a_ia+j = 0 =\{a_j,a_i\}
+a_ja_i + a_ia_j = 0 =\{a_j,a_i\}
 \end{equation}
 因此
 \begin{align}
@@ -3235,9 +3235,9 @@ a) 由(2.245)导出(2.247); b)推导式(2.248).
 
 在通常的非相对论处理下(本书即如此), 
 哈密顿量中并无自旋坐标, 
-因此$\ts,\ts_z$都与哈密顿量对易：
+因此$\ts^2,\ts_z$都与哈密顿量对易：
 \begin{align}
-[\hs \ts^2] = 0 = [\hs,\ts_z]
+[\hs,\ts^2] = 0 = [\hs,\ts_z]
 \end{align} 
 那么, 
 哈密顿量的精确本征函数也就是这两个自旋算子的本征函数：
@@ -3321,7 +3321,7 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 	\draw (0,0)--++(.5,0)node{$\uparrow$}-- ++(.5,0)node{$\downarrow$}-- ++(.5,0)node[right]{$\psi_1$};
 	\draw (0,.6)--++(.5,0)node{$\uparrow$}-- ++(.5,0)node{$\downarrow$}-- ++(.5,0)node[right]{$\psi_2$};
 	\draw (0,1.2)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0)node[right]{$\psi_3$};
-	\draw (0,1.8)--++(.5,0)node{$\uparrow$}-- ++(.5,0)node{$\uparrow$}-- ++(.5,0)node[right]{$\psi_4$};
+	\draw (0,1.8)--++(.5,0)node{$\uparrow$}-- ++(.5,0)node{$\downarrow$}-- ++(.5,0)node[right]{$\psi_4$};
 	\draw (0,2.4)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0)node[right]{$\psi_5$};
 	\draw (0,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0)node[right]{$\psi_5$};
 	\filldraw (0.75,3.4)circle(.5pt) (.75,3.6)circle(.5pt) (.75,3.8)circle(.5pt);
@@ -3365,7 +3365,7 @@ $s_+\psi\beta = \psi_\alpha$,
 }
 
 现来看开壳层限制性行列式. 
-开壳层行列式\emph{不是}$\ts_2$的本征函数, 
+开壳层行列式\emph{不是}$\ts^2$的本征函数, 
 除非所有开壳层电子的自旋都平行, 
 如图2.12中那样. 
 举个例子, 
@@ -3375,7 +3375,7 @@ $s_+\psi\beta = \psi_\alpha$,
 \begin{subequations}
 	\begin{align}
 	\ket{\Psi_1^{\bar{2}}} & = \ket{\bar{2}\bar{1}} = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\beta(1)\beta(2)\\
-	\ket{\Psi_1^{{2}}} & = \ket{12}  = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\alpha(1)\alpha(2)\\
+	\ket{\Psi_{\bar{1}}^2} & = \ket{12}  = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\alpha(1)\alpha(2)
 	\end{align}
 \end{subequations} 
 是$\ts^2$的本征函数, 
@@ -3386,7 +3386,7 @@ $s_+\psi\beta = \psi_\alpha$,
 \begin{subequations}
 	\begin{align}
 	\ket{\Psi_1^2} & = \ket{2\bar{1}}\\
-	\ket{\Psi_{\bar{1}}^{2}} & = \ket{1\bar{2}}
+	\ket{\Psi_{\bar{1}}^{\bar{2}}} & = \ket{1\bar{2}}
 	\end{align}
 \end{subequations} 
 不是纯自旋态. 
