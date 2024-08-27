@@ -334,13 +334,13 @@ $\ket{2}$由向上和向下的箭头表示:
 
 \[
 \begin{array}{ccc}
-\braket{1|\vs|1}&=V_{11}\longleftrightarrow &\tikz[baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (0,0.33)--node[right]{1}(0,0)--node[right]{1}(0,-.33);}
+\braket{1|\vs|1}&=V_{11}\longleftrightarrow &\tikz[baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (0,0.33)--node[right]{1}(0,0)node{\dian}--node[right]{1}(0,-.33);}
 \\[5mm]
-\braket{1|\vs|2}&=V_{12}\longleftrightarrow &\tikz[scale=.5,baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (-0.77,0.77)--(0,0)--(.77,.77);}
+\braket{1|\vs|2}&=V_{12}\longleftrightarrow &\tikz[scale=.5,baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (-0.77,0.77)--node[left]{1}(0,0)node{\dian}--node[right]{2}(.77,.77);}
 \\[5mm]
-\braket{2|\vs|1}&=V_{21}\longleftrightarrow &\tikz[scale=.5,baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (-0.77,-0.77)--(0,0)--(0.77,-0.77);}
+\braket{2|\vs|1}&=V_{21}\longleftrightarrow &\tikz[scale=.5,baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (-0.77,-0.77)--node[left]{2}(0,0)node{\dian}--node[right]{1}(0.77,-0.77);}
 \\[5mm]
-\braket{2|\vs|2}&=V_{22}\longleftrightarrow &\tikz[baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (0,-0.33)--node[right]{2}(0,0)--node[right]{2}(0,0.33);}
+\braket{2|\vs|2}&=V_{22}\longleftrightarrow &\tikz[baseline=(current bounding box.center)]{\path[draw=blue,postaction={on each segment={mid arrow}}] (0,-0.33)--node[right]{2}(0,0)node{\dian}--node[right]{2}(0,0.33);}
 \end{array}
 \]
 总之, 
