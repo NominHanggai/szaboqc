@@ -653,11 +653,9 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 (4.5,0)..controls+(-.75,.75)and+(-.75,-.75)..node[left]{2}(4.5,3);
 \end{tikzpicture} \hspace{.5cm}
  &\equiv \hspace{.5cm}
-\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]
-	\filldraw[blue] 
-(4.50,0)circle(1pt)   (4.5,3)circle(1pt); 
-\path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,3) arc (45:15:2.12cm)node[right,midway]{1} node{\dian} arc (15:-15:2.12cm)node[right,midway]{1}node{\dian} arc (-15:-45:2.12cm)node[right,midway]{1}
-(4.5,0) arc(225:135:2.12cm)node[left,midway]{2};
+\begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
+\path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,3) arc (45:15:2.12cm)node[right,midway]{1}node{\dian} arc (15:-15:2.12cm)node[right,midway]{1}node{\dian} arc (-15:-45:2.12cm)node[right,midway]{1}node{\dian}
+(4.5,0) arc(225:135:2.12cm)node[left,midway]{2}node{\dian};
 \end{tikzpicture}\vspace{.5cm}\\
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
 \filldraw[blue] 
@@ -669,10 +667,8 @@ $\braket{\text{穿入线的标签}| \vs |\text{穿出线的标签} }$.
 \end{tikzpicture} \hspace{.5cm}
 &\equiv \hspace{.5cm}
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
-\filldraw[blue] 
-(4.50,0)circle(1pt)   (4.5,3)circle(1pt); 
 \path [draw=blue,postaction={on each segment={mid arrow}}] (4.5,0) arc (-45:-15:2.12cm)node[right,midway]{2} node{\dian} arc (-15:45:2.12cm)node[right,midway]{2}node{\dian}
-(4.5,3) arc(135:165:2.12cm)node[left,midway]{1} arc(165:225:2.12cm)node[midway,left]{1};
+(4.5,3) arc(135:165:2.12cm)node[left,midway]{1}node{\dian} arc(165:225:2.12cm)node[midway,left]{1}node{\dian};
 \end{tikzpicture}\vspace{.5cm}\\
 \begin{tikzpicture}[baseline={(current bounding box.center)},scale=.67]\diagsize
 \filldraw[blue] 
