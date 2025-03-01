@@ -1899,7 +1899,7 @@ $N$电子体系的Hartree-Fock基态能为$^NE_0=\braket{^N\Phi_0|\hs|^N\Phi_0}$
 本节我们来推导\autoref{t2.3}和\autoref{t2.4}中的矩阵元的计算规则. 
 这些矩阵元就是单、双电子算符夹在$N$电子行列式之间的算式($N$电子行列式由自旋轨道构成). 
 由自旋轨道$\chi_i(\mathbf{x}_1),\chi_j(\mathbf{x}_1),\cdots,\chi_k(\mathbf{x}_N)$构成的$N$电子行列式就是(见\autoref{eq:1.38})):
-\begin{equation}
+\begin{equation}\label{eq:2.115}
 \ket{\chi_i\chi_k\cdots\chi_k}=(N!)^{-1/2}\sum_{n=1}^{N!}(-1)^{p_n}\mathscr{P}_n\left\{\chi_i(1)\chi_j(2)\cdots\chi_k(N) \right\}
 \end{equation}
 其中我们令$\chi(\mathbf{x}_l)=\chi(l)$. 
@@ -2726,7 +2726,7 @@ a_i^\dagger \ket{\chi_k\cdots\chi_l} = \ket{\chi_i\chi_k\cdots\chi_l}
 \end{align}
 由于$\ket{\chi_k\cdots\chi_l}$可以是任意行列式, 
 所以可得一个算符之间的关系：
-\begin{align}
+\begin{align}\label{eq:2.194}
 \cs_i\cs_j + \cs_j\cs_i = 0 = \{ \cs_i, \cs_j \}
 \end{align}
 其中使用了之前引入的两个算符的\emph{反对易子}记号(见见\autoref{eq:1.19a}). 
@@ -2817,13 +2817,13 @@ $\cs_i$作用在左边的行列式上,
 \end{align}
 
 为得到湮灭算子的反对易关系, 
-我们取(2.194)的伴随. 
-由于(见练习1.3)：
+我们取\autoref{eq:2.194}的伴随. 
+由于(见\autoref{ex:1.3})：
 \begin{align}
 \left( \mathscr{AB} \right)^\dagger = \mathscr{B}^\dagger\mathscr{A}^\dagger
 \end{align} 
 那么
-\begin{equation}
+\begin{equation}\label{eq:2.208}
 a_ja_i + a_ia_j = 0 =\{a_j,a_i\}
 \end{equation}
 因此
@@ -2863,7 +2863,7 @@ a_i\ket{\chi_k\cdots\chi_l} = 0\quad \text{若 } i\not\in\{k,\ldots,l \}
 \end{align}
 两种情况下所得的结果一样. 
 因此可得算符之间的关系
-\begin{align}
+\begin{align}\label{eq:2.214}
 (a_i\cs_i + \cs_ia_i) = 1 = \{ a_i,\cs_i \}
 \end{align}
 最后来考虑$(\cs_ja_i + a_i\cs_j)\ket{\chi_k\cdots\chi_j}(i\neq j)$. 
@@ -2887,8 +2887,8 @@ a_i\ket{\chi_k\cdots\chi_l} = 0\quad \text{若 } i\not\in\{k,\ldots,l \}
 \begin{align}
 a_i\cs_j + \cs_ja_i = 0 = \{ a_i, \cs_j \}\quad i\neq j
 \end{align}
-将此式与(2.214)合在一起就的到了产生算符和湮灭算符的反对易关系：
-\begin{align}
+将此式与\autoref{eq:2.214}合在一起就的到了产生算符和湮灭算符的反对易关系：
+\begin{align}\label{eq:2.217}
 a_i\cs_j + \cs_ja_i = \delta_{ij} = \{ a_i,\cs_j \}
 \end{align}
 有了这个式子, 
@@ -2916,7 +2916,7 @@ a_i\cs_j + \cs_ja_i = \delta_{ij} = \{ a_i,\cs_j \}
 }
 
 Slater行列式的所有性质都蕴含在这几个反对易关系中, 
-这些性质有：一对产生算符的反对易关系(式(2.194))、一对湮灭算符的反对易关系(式(2.208))、 产生算符和湮灭算符之间的反对易关系(式(2.217)). 
+这些性质有：一对产生算符的反对易关系(\autoref{eq:2.194})、一对湮灭算符的反对易关系(\autoref{eq:2.208})、 产生算符和湮灭算符之间的反对易关系(\autoref{eq:2.217}). 
 为了在二次量子化框架下定义Slater行列式, 
 需要引入一个真空态$\ket{\,\,}$. 
 所谓真空态, 是系统的一种状态：此时系统内没有任何电子. 进一步规定真空态是归一化的：
@@ -2943,16 +2943,17 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 从行列式中导出的一切结论同样能用产生算符和湮灭算符的代数性质导出来. 
 
 
-练习2.5中曾计算过两个行列式之间的重叠：
-\begin{align}
+\autoref{ex:2.5}中曾计算过两个行列式之间的重叠：
+\begin{align}\label{eq:2.223}
 \ket{K} = \ket{\chi_i\chi_j} = \cs_i\cs_j\ket{\,\,}\\
 \ket{L} = \ket{\chi_k\chi_l} = \cs_k\cs_i\ket{\,\,}
+\label{eq:2.224}
 \end{align}
 那里用的办法是将行列式展开, 
 再对两个电子的空间坐标和自旋坐标积分, 
 使用自旋轨道之间的正交性. 
 这里用二次量子化的办法计算这个重叠. 
-式(2.223)的伴随是：
+\autoref{eq:2.223}的伴随是：
 \begin{align}
 \bra{K} = \bra{\,\,}(\cs_i\cs_j)^\dagger = \bra{\,\,}a_ja_i
 \end{align}
@@ -2968,7 +2969,7 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 a_i\cs_k = \delta_{ik} - \cs_ka_i
 \end{align}
 我们有
-\begin{align}
+\begin{align}\nonumber
 \braket{K|L} & = \braket{\,\,|a_j(\delta_{ik}-\cs_ka_i)\cs_l|\,\,}\\
              & = \delta_{ik}\braket{\,\,|a_j\cs_l|\,\,} - \braket{\,\,|a_j\cs_ka_i\cs_l|\,\,}
 \end{align}
@@ -2985,7 +2986,7 @@ a_i\cs_k = \delta_{ik} - \cs_ka_i
 & = \delta_{jk}\delta_{jl} - \delta_{il}\delta_{jk}
 \end{align}
 第二个等号是由于真空态已预先规定为归一化的. 
-这里所得的结果于练习2.5中的相同. 
+这里所得的结果于\autoref{ex:2.5}中的相同. 
 
 \exercise{
 用二次量子化的办法证明$\braket{\chi_i|\chi_j} = \delta_{ij}$.
@@ -3078,7 +3079,7 @@ $\cs_i$作用在左边),
 \begin{align}
 \braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{ab} \braket{a|h|b}\delta_{ab} = \sum_a\braket{a|h|a}
 \end{align} 
-与表2.5给出的结果完全相同.
+与\autoref{t2.5}给出的结果完全相同.
 
 
 对双电子算符之和, 
@@ -3101,7 +3102,7 @@ $\cs_i$作用在左边),
 \end{align*}
 结果就是两项：第一项中令$c=a,d=b$, 
 第二项令$c=b,d=a$, 
-就得到与表2.6相同的结果：
+就得到与\autoref{t2.6}相同的结果：
 \begin{align}
 \braket{\Psi_0|\mathcal{O}_2|\Psi_0} = \frac{1}{2}\sum_{ab}\braket{ab|ab} - \braket{ab|ba}
 \end{align}
@@ -3123,7 +3124,7 @@ $\cs_i$作用在左边),
 \braket{\Psi_0|\cs_a a_r\cs_i\cs_j a_l a_k|\Psi_0} =& \delta_{rj}\delta_{al}\braket{\Psi_0|\cs_i a_k|\Psi_0} - \delta_{rj}\delta_{ak}\braket{\Psi_0|\cs_i a_l|\Psi_0}\\
 & + \delta_{ri}\delta_{ak}\braket{\Psi_0|\cs_j a_l|\Psi_0} - \delta_{ri}\delta_{al}\braket{\Psi_0|\cs_j a_k|\Psi_0}
 \end{align*}
-之后可参考练习2.27.
+之后可参考\autoref{ex:2.27}.
 
 }
 \section{自旋匹配组态}
@@ -3180,7 +3181,7 @@ $m_s$有$2s+1$个可能值：$-s,-s+1,-s+2,\ldots,s-1,s$.
 	\end{align}
 \end{subequations}
 这两个态是$s^2,s_z$的本征态：
-\begin{subequations}
+\begin{subequations}\label{eq:2.245}
 	\begin{align}
 	s^2\ket{\alpha} & = \frac{3}{4}\ket{\alpha},\quad s^2\ket{\beta} = \frac{3}{4}\ket{\beta}\\
 	s_z\ket{\alpha} & =\frac{1}{2}\ket{\alpha},\quad s_z\ket{\beta} = -\frac{1}{2}\ket{\beta}\\
@@ -3203,7 +3204,7 @@ $m_s$有$2s+1$个可能值：$-s,-s+1,-s+2,\ldots,s-1,s$.
 这两个算符可以升降$m_s$的值, 
 作用一次, 
 $m_s$的值改变$1$：
-\begin{subequations}
+\begin{subequations}\label{eq:2.247}
 	\begin{align}
 	s_+\ket{\alpha} = 0,\quad s_+\ket{\beta} = \ket{\alpha}\\
 	s_-\ket{\alpha} = \ket{\beta},\quad s_-\ket{\beta} = 0\\
@@ -3211,14 +3212,14 @@ $m_s$的值改变$1$：
 \end{subequations}
 用\autoref{eq:2.242}中的对易关系, 
 可将\autoref{eq:2.241}中的$s^2$的表达式改写为：
-\begin{subequations}
+\begin{subequations}\label{eq:2.248}
 	\begin{align}
 	s^2 = s_+s_- - s_z + s_z^2\\
 	s^2 = s_-s_+ + s_z + s_z^2 
 	\end{align}
 \end{subequations}
 \exercise{
-a) 由(2.245)导出(2.247); b)推导式(2.248).
+a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导式\autoref{eq:2.248}.
 \Next
 求出$s^2,s_z,s_+,s_-$在$\ket{\alpha},\ket{\beta}$为基时的矩阵表示. 
 验证式(2.248a,b)的矩阵表示.
@@ -3271,10 +3272,10 @@ a) 由(2.245)导出(2.247); b)推导式(2.248).
 但是将近似波函数限制为单重、双重、三重态等等会比较方便.
 
 
-所有的单行列式都是$\ts_z$的本征函数(见练习2.37). 
+所有的单行列式都是$\ts_z$的本征函数(见\autoref{ex:2.37}). 
 写出来就是
 \begin{align}
-\label{2.254}
+\label{eq:2.254}
 \ts_z\ket{\chi_i\chi_j\cdots\chi_k} = \frac{1}{2}(N^\alpha - N_\beta)\ket{\chi_i\chi_j\cdots\chi_k} = M_S\ket{\chi_i\chi_j\cdots\chi_k}
 \end{align}
 式中$N^\alpha$是具有$\alpha$自旋的轨道数目, 
@@ -3308,8 +3309,8 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 哈密顿量在单重、三重态组态(仅举一例)之间的矩阵元为0.
 
 \Next
-证明式(2.254). 
-\textit{提示：}使用式(2.115)将Slater行列式展开, 
+证明\autoref{eq:2.254}. 
+\textit{提示：}使用式\autoref{eq:2.115}将Slater行列式展开, 
 并注意到$\ts_z$与$\mathscr{P}_n$对易, 
 因为$\ts_z$在对电子指标的任意置换下都不变.
 
