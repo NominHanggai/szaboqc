@@ -1476,7 +1476,7 @@ $\braket{{\Phi_{1\bar{1}}^{2\bar{2}}} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}
 是因为积分变量包括电子1和2的空间坐标以及两个自旋坐标，
 共八个变量。
 习惯上，
-常将所有双电子积分中的傀标都写成电子1和2的坐标。
+常将所有双电子积分中的积分变量都写成电子1和2的坐标。
 现引入记号来表示含自旋轨道的双电子积分：
 \begin{equation}
 \braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\dd\mathbf{x}_1\dd\mathbf{x}_2\chi_i^*(\mathbf{x}_1)\chi_j^*(\mathbf{x}_1)r_{12}^{-1}\chi_k(\mathbf{x}_1)\chi_l(\mathbf{x}_2)
@@ -1576,7 +1576,7 @@ Hartree-Fock基态能量就成为
 		\multicolumn{1}{c}{\textit{自旋轨道}}\\
 		\parbox{\textwidth}{$[i|h|j]=\braket{i|h|j}=\int\ddx_1\chi_i^*(\bo{x}_1)h(\bo{r}_1)\chi_j(\bo{x}_1) $}\\
 		$\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\ddx_1\ddx_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)=[ik|jl] $\\
-		$[ij|kl]=[\chi_i\chi_j|\chi_k\chi_l]=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j(\bo{x}_2)r_{12}^{-1}\chi_k^*(\bo{x}_1)\chi_l(\bo{x}_2) = \braket{ik|jl}$\\
+		$[ij|kl]=[\chi_i\chi_j|\chi_k\chi_l]=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j(\bo{x}_1)r_{12}^{-1}\chi_k^*(\bo{x}_2)\chi_l(\bo{x}_2) = \braket{ik|jl}$\\
 		$\braket{ij||kl}=\braket{ij|kl} - \braket{ij|lk}=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2) $\\
 		\multicolumn{1}{c}{\textit{空间轨道}}\\
 		$(i|h|j)=h_{ij} = (\psi_i|h|\psi_j)=\int\dd\bo{r}_1\psi_i^*(\bo{r}_1)h(\bo{r}_1)\psi_j(\bo{r}_1)$\\
