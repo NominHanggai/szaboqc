@@ -1298,32 +1298,32 @@ Hartree-Fock基态行列式是:
 \end{tikzpicture}
 \end{equation}
 单激发行列式为:
-\begin{align*}
+\begin{subequations}\label{eq:2.76}
+    \begin{align}
 \ket{\Psi_1^2}=\ket{2\bar{1}}\qquad
 \begin{tikzpicture}[baseline={([yshift=-.8ex]current bounding box.center)}]
 \draw (0,0)node[left] {$u$}--node[pos=0.5]{$\uparrow$}(1.5,0)node[right]{2};
 \draw (0,-0.5)node[left] {$g$}--node[pos=0.5]{$\downarrow$}(1.5,-0.5)node[right]{1};
-\end{tikzpicture}\tag*{(2.76a)}
+\end{tikzpicture}
 \\
 \ket{\Psi_1^{\bar{2}}}=\ket{\bar{21}}\qquad
 \begin{tikzpicture}[baseline={([yshift=-.8ex]current bounding box.center)}]
 \draw (0,0)node[left] {$u$}--node[pos=0.5]{$\downarrow$}(1.5,0)node[right]{2};
 \draw (0,-0.5)node[left] {$g$}--node[pos=0.5]{$\downarrow$}(1.5,-0.5)node[right]{1};
-\end{tikzpicture}\tag*{(2.76b)}
-\\
-\ket{\Psi_{\bar{1}}^2}=\ket{{12}}\qquad
+\end{tikzpicture}
+\\                                                                                                    \ket{\Psi_{\bar{1}}^2}=\ket{{12}}\qquad
 \begin{tikzpicture}[baseline={([yshift=-.8ex]current bounding box.center)}]
 \draw (0,0)node[left] {$u$}--node[pos=0.5]{$\uparrow$}(1.5,0)node[right]{2};
 \draw (0,-0.5)node[left] {$g$}--node[pos=0.5]{$\uparrow$}(1.5,-0.5)node[right]{1};
-\end{tikzpicture}\tag*{(2.76c)}
+\end{tikzpicture}
 \\
 \ket{\Psi_{\bar{1}}^{\bar{2}}}=\ket{1\bar{2}}\qquad
 \begin{tikzpicture}[baseline={([yshift=-.8ex]current bounding box.center)}]
 \draw (0,0)node[left] {$u$}--node[pos=0.5]{$\downarrow$}(1.5,0)node[right]{2};
 \draw (0,-0.5)node[left] {${g}$}--node[pos=0.5]{$\uparrow$}(1.5,-0.5)node[right]{1};
-\end{tikzpicture}\tag*{(2.76d)}
-\addtocounter{equation}{1}
-\end{align*}
+\end{tikzpicture}
+    \end{align}
+\end{subequations}
 双激发行列式只有一个:
 \begin{equation}
 \ket{\Psi_{1\bar{1}}^{2\bar{2}}}=\ket{2\bar{2}}=\ket{\chi_3\chi_4}=\ket{\Psi_{12}^{34}}\qquad
@@ -3322,7 +3322,7 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 给定一组$K$个正交的空间轨道$\{\psi_i|i=1,2,\ldots,K\}$, 
 可以构造$2K$个自旋轨道$\{\chi_i|i=1,2,\ldots,2K\}$, 
 每个空间轨道乘以$\alpha$或$\beta$即可：
-\begin{align}
+\begin{align}\label{eq:2.255}
 \chi_{2i-1}(\mathbf{x}) & = \psi_i(\mathbf{r})\alpha(\omega) \notag\\
 \chi_{2i}(\mathbf{x})   & = \psi_i(\mathbf{r})\beta(\omega)
 \end{align}
@@ -3353,11 +3353,10 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 也即, 
 它是$\ts^2$的本征函数, 
 本征值为零：
-\begin{align}
+\begin{align}\label{eq:2.256}
 \ts^2\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j} = 0(0+1)\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j} = 0
 \end{align}
-可见练习2.
-38. 
+可见\autoref{ex:2.38} 
 最简单的闭壳层行列式就是\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock基态波函数：
 \begin{align}
 \ket{\Psi_0} = \ket{\psi_1\bar{\psi}_1} = [\psi_1(1)\psi_1(2)]^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2))
@@ -3368,11 +3367,11 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 双激发态$\ket{\Psi_{1\bar{1}}^{2\bar{2}}}$也是单重态.
 
 \exercise{
-证明式(2.256). 
+证明\autoref{eq:2.256}. 
 \textit{提示：}1) $\ts^2 = \ts_-\ts_+ + \ts_z + \ts^2_z$, 
-2) 用式(2.254)即可证明$\ts_+\ket{\psi_i\bar{\psi}_i}=0$, 
+2) 用\autoref{eq:2.254}即可证明$\ts_+\ket{\psi_i\bar{\psi}_i}=0$, 
 3)
-用式(2.115)展开行列式, 
+用\autoref{eq:2.115}展开行列式, 
 注意到$\ts_+$与置换算符对易, 
 4)最后一步, 
 $s_+\psi\beta = \psi_\alpha$, 
@@ -3384,9 +3383,9 @@ $s_+\psi\beta = \psi_\alpha$,
 现来看开壳层限制性行列式. 
 开壳层行列式\emph{不是}$\ts^2$的本征函数, 
 除非所有开壳层电子的自旋都平行, 
-如图2.12中那样. 
+如\autoref{fig:2.12}中那样. 
 举个例子, 
-考虑\phrase{极小基 $\hd$}的四个单激发行列式(见式(2.76), 
+考虑\phrase{极小基 $\hd$}的四个单激发行列式(见\autoref{eq:2.76}, 
 四个都是开壳层行列式). 
 其中的两个
 \begin{subequations}
@@ -3445,6 +3444,7 @@ $s_+\psi\beta = \psi_\alpha$,
 	\filldraw (4,2.8)circle(.5pt) (4,3)circle(.5pt) (4,3.2)circle(.5pt);
 	\end{tikzpicture}
 	\caption{双重和三重限制性行列式.}
+        \label{fig:2.12}
 \end{figure}
 真如我们所期望的, 
 $\ket{^1\Psi_1^2}$的自旋部分和闭壳层波函数(2.257)相同, 
