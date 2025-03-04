@@ -3358,7 +3358,7 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 \end{align}
 可见\autoref{ex:2.38} 
 最简单的闭壳层行列式就是\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock基态波函数：
-\begin{align}
+\begin{align}\label{eq:2.257}
 \ket{\Psi_0} = \ket{\psi_1\bar{\psi}_1} = [\psi_1(1)\psi_1(2)]^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2))
 \end{align}
 式中最后的等号就是将行列式展开. 
@@ -3388,7 +3388,7 @@ $s_+\psi\beta = \psi_\alpha$,
 考虑\phrase{极小基 $\hd$}的四个单激发行列式(见\autoref{eq:2.76}, 
 四个都是开壳层行列式). 
 其中的两个
-\begin{subequations}
+\begin{subequations}\label{eq:2.258}
 	\begin{align}
 	\ket{\Psi_1^{\bar{2}}} & = \ket{\bar{2}\bar{1}} = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\beta(1)\beta(2)\\
 	\ket{\Psi_{\bar{1}}^2} & = \ket{12}  = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\alpha(1)\alpha(2)
@@ -3399,7 +3399,7 @@ $s_+\psi\beta = \psi_\alpha$,
 都是三重态. 
 另一方面, 
 剩下的两个行列式
-\begin{subequations}
+\begin{subequations}\label{eq:2.259}
 	\begin{align}
 	\ket{\Psi_1^2} & = \ket{2\bar{1}}\\
 	\ket{\Psi_{\bar{1}}^{\bar{2}}} & = \ket{1\bar{2}}
@@ -3447,7 +3447,7 @@ $s_+\psi\beta = \psi_\alpha$,
         \label{fig:2.12}
 \end{figure}
 真如我们所期望的, 
-$\ket{^1\Psi_1^2}$的自旋部分和闭壳层波函数(2.257)相同, 
+$\ket{^1\Psi_1^2}$的自旋部分和闭壳层波函数\autoref{eq:2.257}相同, 
 因为二者都是单重态.
 
 \exercise{
@@ -3488,7 +3488,7 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 
 对双激发而言, 
 可能的单重自旋匹配组态很多, 
-结果已列在表2.7中. 
+结果已列在\autoref{t2.7}中. 
 若同一空间轨道的两个电子共同激发到另外一个空间轨道上, 
 由这种激发态构成的单重自旋匹配组态记为$\ket{^1\Psi_{aa}^{rr}}$. 
 同一空间轨道上的两个电子激发到了不同的空间轨道上, 
@@ -3501,8 +3501,12 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 记为$\ket{^A\Psi_{ab}^{rs}}, \ket{^B\Psi_{ab}^{rs}}$.
 
 
-\begin{table}
+\begin{table}[h]
+    \centering
+    \caption{\bf 双激发单重自旋匹配组态}
+    \label{t2.7}
 	\begin{tabular}{ll}
+            \hline \\
 		%============ 1 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)--++(.5,0);
@@ -3539,6 +3543,7 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 		{\ket{^A\Psi_{ab}^{rs}}} &= (12)^{-1/2}(2\ket{\Psi_{ab}^{rs}} + 2\ket{\Psi_{\bar{ab}}^{\bar{rs}}} - \ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} - \ket{\Psi_{a\bar{b}}^{s\bar{r}}}\\
 		{\ket{^B\Psi_{ab}^{rs}}} & = \frac{1}{2}(\ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} + \ket{\Psi_{a\bar{b}}^{s\bar{r}}})
 		\end{aligned}$
+                \\\hline
 	\end{tabular}
 \end{table}
 \subsection{非限制性行列式}
@@ -3547,10 +3552,10 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 $\alpha$自旋和$\beta$自旋的空间轨道被限制为相同的. 
 举个例子, 
 $\mathrm{Li}$原子的限制性Hartree-Fock基态为：
-\begin{align}
+\begin{align}\label{eq:2.264}
 \ket{^2\Psi_\mathrm{RHF}} = \ket{\psi_{1s}\bar{\psi}_{1s}\psi_{2s}}
 \end{align} 
-如图2.13所示. 
+如\autoref{fig:2.13}所示. 
 在这个行列式中, 
 $1s\alpha$电子的空间部分和$1s\beta$电子的空间部分被限制为相同的函数. 
 这个限制是真实的, 
@@ -3562,7 +3567,7 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 直觉上我们可以预期, 
 如果空间波函数相同这个限制被打开, 
 即不同自旋可对应不同的空间轨道：
-\begin{align}
+\begin{align}\label{eq:2.265}
 \ket{\Psi_\mathrm{UHF}} = \ket{\psi_{1s}^\alpha\bar{\psi}_{1s}^\beta\psi_{2s}^\alpha}
 \end{align}
 \begin{figure}[H]
@@ -3578,10 +3583,11 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 	\draw (5.8,0)--++(.5,0)--node{$\downarrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{1s}^\beta$};
 	\end{tikzpicture}
 	\caption{将限制性的单行列式放宽为非限制性的单行列式：以$\mathrm{Li}$原子为例.}
+        \label{fig:2.13}
 \end{figure}
 那么得到的能量应当更低. 
 事实确实如此. 
-波函数(2.265)是\emph{非限制性}行列式一例. 
+波函数\autoref{eq:2.265}是\emph{非限制性}行列式一例. 
 它就是$\mathrm{Li}$原子的非限制性基态波函数.
 
 
@@ -3608,7 +3614,7 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 \chi_{2i}(\mathbf{x})   &= \psi_i^\beta(\mathbf{r})\beta(\omega) 
 \end{split}
 \end{equation}
-正如练习2.1所示, 
+正如\autoref{ex:2.1}所示, 
 这$2K$个非限制性轨道构成一个正交归一集, 
 虽然在空间部分, 
 $\alpha$$\beta$轨道并不正交.
@@ -3618,12 +3624,12 @@ $\alpha$$\beta$轨道并不正交.
 此外， 
 它们也无法通过不多(a small number of)的行列式之间线性组合来成为自旋匹配的. 
 因此, 
-Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态. 
+Li原子的UHF基态不像RHF\autoref{eq:2.264}那样是一个纯双重态. 
 但是, 
 非限制性波函数常用作双重和三重态的初始近似. 
 
 
-图2.14代表一个非限制性波函数, 
+\autoref{fig:2.14}代表一个非限制性波函数, 
 它是近似单重的. 
 注意到$N^\alpha = N^\beta$. 
 图中为强调非限制性, 
@@ -3650,6 +3656,7 @@ Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态.
 	\filldraw (0.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt) (.75,3.6)circle(.5pt);
 	\end{tikzpicture}
 	\caption{一个\emph{近似}为单重态的非限制性行列式. }
+        \label{fig:2.14}
 \end{figure}
 非限制性单态常会收敛到对应的限制性单态上, 
 也就是闭壳层状态. 
@@ -3669,7 +3676,7 @@ Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态.
 
 
 若$N^\alpha=N^\beta+1$, 
-那么非限制性行列式近似地为双重态(见图2.15). 
+那么非限制性行列式近似地为双重态(见\autoref{fig:2.15}). 
 非限制性双重态常作为自由基的初级描述, 
 自由基有一个未配对电子, 
 如$\mathrm{CH}_3$. 
@@ -3678,9 +3685,9 @@ Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态.
 
 
 若$\ket{1},\ket{2},\ket{3}$等是精确的自旋单、双、三…态, 
-那么图2.14,
-2.15, 
-2.16中的非限制性态可以展开为：
+那么\autoref{fig:2.14},
+\autoref{fig:2.15}, 
+\autoref{fig:2.16}中的非限制性态可以展开为：
 \begin{subequations}
 	\begin{align}
 	\ket{^1\Psi} = c_1^1\ket{1} + c_3^1\ket{3} + c_5^1\ket{5} + \cdots\\
@@ -3714,6 +3721,7 @@ Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态.
 	\filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
 	\end{tikzpicture}
 	\caption{一个\emph{近似}为双重态的非限制性行列式. }
+        \label{fig:2.15}
 	\end{minipage}\qquad
 	\begin{minipage}{.48\textwidth}
 	\begin{tikzpicture}[thick]
@@ -3736,6 +3744,7 @@ Li原子的UHF基态不像RHF(2.264)那样是一个纯双重态.
 	\filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
 	\end{tikzpicture}
 	\caption{一个\emph{近似}为三重态的非限制性行列式. }
+        \label{fig:2.16}
 	\end{minipage}
 \end{figure}
 那么就可以将非限制性行列式近似作双重态、三重态等等. 
