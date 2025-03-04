@@ -1833,7 +1833,7 @@ $r,s$等同于$p,q$(未占轨道).
 
 利用这些表, 
 可以很快写出Hartree-Fock基态的能量(以化学家的记号):
-\begin{equation}
+\begin{equation}\label{eq:2.111}
 E_0 = \braket{\Phi_0|\hs|\Phi_0} = \sum_{a}^{N}[a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb]-[ab|ba]
 \end{equation}  
 或以物理学家记号:
@@ -2231,7 +2231,7 @@ $\chi_m,\chi_n$与后一置换中的所有自旋轨道正交, 所以它们分别
 考察$\mathrm{H}_2$极小基的Hartree-Fock基态(见\autoref{2.92}), 
 以物理学家的记号
 \begin{equation}
-E_0 = \braket{\chi_1|h\chi_1} + \braket{\chi_2|h\chi_2} + \braket{\chi_1\chi_2|\chi_1\chi_2} - \braket{\chi_1\chi_2|\chi_2\chi_1}
+E_0 = \bra{\chi_1}h\ket{\chi_1} + \bra{\chi_2}h\ket{\chi_2} + \braket{\chi_1\chi_2|\chi_1\chi_2} - \braket{\chi_1\chi_2|\chi_2\chi_1}
 \end{equation}
 以化学家的记号
 \begin{equation}
@@ -2272,7 +2272,7 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 由此可知$E_0$中单电子部分的能量贡献是$2(\psi_1|h|\psi_1)$.
 
 
-下面考虑入\autoref{2.157}基态能量表达式中的第一项双电子积分
+下面考虑\autoref{2.157}基态能量表达式中的第一项双电子积分
 \begin{align}
 [{\psi_1\psi_1|\bar{\psi}_1\bar{\psi}_1}] = 
 & \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_1(\mathbf{r_1})\alpha(\omega_1) r_{12}^{-1}\notag\\
@@ -2288,7 +2288,7 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 这个记号就是把化学家的记号中的方括号变成了圆括号. 
 此处不特别引入物理学家记号来表示空间积分. 
 因此$\braket{ij|kl}$代表对自旋轨道还是空间轨道积分只能通过上下文判断. 
-入\autoref{2.157}中的最后一个积分为
+\autoref{2.157}中的最后一个积分为
 \begin{align}
 [{\psi_1\bar{\psi}_1|\bar{\psi}_1\psi_1}] = 
 & \int\dd{r_1}\dd\omega_1\dd{r_2}\dd\omega_2\, \psi_1^*(\mathbf{r_1})\alpha^*(\omega_1)\psi_1(\mathbf{r_1})\beta(\omega_1)r_{12}^{-1}\notag\\
@@ -2308,7 +2308,7 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 因此\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock基态能就是
 \begin{align}
 E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1) \notag\\
-    & = 1(1|h|1) + (11|11)
+    & = 2(1|h|1) + (11|11)
 \end{align} 
 \exercise{
 对自旋变量积分, 
@@ -2316,11 +2316,11 @@ E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1) \notag\\
 \begin{equation*}
 \mathbf{H} = \begin{pmatrix}
 2(1|h|1) + (11|11) & (12|12) \\
-(21||21) & 2(2|h|2) + (22|22)
+(21|21) & 2(2|h|2) + (22|22)
 \end{pmatrix}
 \end{equation*}
 }
-现在将以上结果推广到有偶数电子的$N$电子系统个中, 
+现在将以上结果推广到有偶数电子的$N$电子系统中, 
 用空间积分表示该系统的Hartree-Fock能量. 
 与\phrase{极小基 $\mathrm{H}_2$}的波函数
 \begin{equation}
@@ -2328,17 +2328,17 @@ E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1) \notag\\
 \end{equation}
 类似, 
 可以写出$N$电子系统的\emph{闭壳层}\emph{限制性} Hartree-Fock波函数
-\begin{align}
+\begin{align}\label{eq:2.168}
 \ket{\Psi_0} & = \ket{\chi_1\chi_2\chi_3\chi_4\cdots\chi_{N-1}\chi_N} \notag\\
              & = \ket{\psi_1\bar{\psi}_1\psi_2\bar{\psi}_2\cdots\psi_{N/2}\bar{\psi}_{N/2}}
 \end{align}
 该波函数的图示为\autoref{fig2.10}.
 注意此处一对自旋$\alpha,\beta$对应同一个空间轨道.
 每个空间轨道由两个自旋相反的电子占据.
-这个波函数对应的能量(若用自旋轨道$\{\chi_a|a=1,2,\cdots,N\}$表达)由式(2.111)给出:
+这个波函数对应的能量(若用自旋轨道$\{\chi_a|a=1,2,\cdots,N\}$表达)由\autoref{eq:2.111}给出:\footnote{原书中(2.169)、(2.175)及更后的双指标求和均没有加括号。为不引起歧义，译者为(2.169)、(2.175)加了括号，后面的与原书同。 ——译者注}
 \begin{equation}
 \label{2.169}
-E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba]
+E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}([aa|bb] - [ab|ba])
 \end{equation}
 \begin{figure}[h]\centering
 \begin{minipage}[c]{.3\textwidth}
@@ -2368,18 +2368,18 @@ E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba
 \begin{minipage}[c]{0.6\textwidth}
 	\caption{闭壳层限制性Hatree-Fock基态行列式$\ket{\psi_1\bar{\psi}_1\psi_2\bar{\psi}_2\cdots\psi_{N/2}\bar{\psi}_{N/2}}$.}\label{fig2.10}\end{minipage}
 \end{figure}
-由于波函数(2.168)包含$N/2$个$\alpha$自旋轨道$N/2$个$\beta$自旋轨道, 
+由于波函数\autoref{eq:2.168}包含$N/2$个$\alpha$自旋轨道$N/2$个$\beta$自旋轨道, 
 我们可以将对自旋轨道的求和分成两部分：
 \begin{equation}
 \sum_{a}^{N} \chi_a = \sum_{a}^{N/2}\psi_a + \sum_{a}^{N/2}\bar{\psi}_a
 \end{equation} 
 其中使用了横线记号. 
-从符号角度来看, 
+从符号化的角度来看, 
 我们可以写下
 \begin{equation}
-\sum_{a}^{N} = \sum_{a}^{N/2} + \sum_{a}^{N/2}
+\sum_{a}^{N} = \sum_{a}^{N/2} + \sum_{\bar{a}}^{N/2}
 \end{equation}
-代表对自旋轨道的求和等于上自旋轨道之和加下自旋轨道之和. 
+其代表自旋轨道之和等于上自旋轨道之和加下自旋轨道之和. 
 对于双重求和, 
 可以写下
 \begin{align}
@@ -2387,7 +2387,7 @@ E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba
 & = \sum_{a}^{N/2}(\psi_a + \bar{\psi}_a)\sum_{b}^{N/2}(\psi_b + \bar{\psi}_b) \notag\\ 
 & = \sum_{a}^{N/2}\sum_{b}^{N/2}\psi_a\psi_b + \psi_a\bar{\psi}_b + \bar{\psi}_a{\psi}_b + \bar{\psi}_a\bar{\psi}_b 
 \end{align}
-或单纯写出符号
+或符号化地写作
 \begin{equation}
 \sum_{a}^{N}\sum_{b}^{N} = \sum_{a}^{N/2}\sum_{b}^{N/2} + \sum_{a}^{N/2}\sum_{\bar{b}}^{N/2} + \sum_{\bar{a}}^{N/2}\sum_{b}^{N/2} + \sum_{\bar{a}}^{N/2}\sum_{\bar{b}}^{N/2}
 \end{equation}
@@ -2398,10 +2398,10 @@ E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}[aa|bb] - [ab|ba
 \end{equation}
 双电子积分项：
 \begin{align}
-\frac{1}{2}\sum_{a}^{N} & \sum_{b}^{N}[aa|bb] - [ab|ba]\notag\\
-& = \frac{1}{2}\Bigg\{ \sum_{a}^{N/2}\sum_{b}^{N/2}[aa|bb]-[ab|ba] + \sum_{a}^{N/2}\sum_{b}^{N/2}[aa|\bar{bb}] -[a\bar{b}|\bar{b}a]\notag \\   
-& \quad + \sum_{a}^{N/2}\sum_{b}^{N/2}[\bar{aa}|bb] - [\bar{a}b|b\bar{a}] + \sum_{a}^{N/2}\sum_{b}^{N/2}[\bar{aa}|\bar{bb}] - [\bar{a}\bar{b}|\bar{b}\bar{a}] \Bigg\}\notag\\
-& = \sum_{a}^{N/2}\sum_{b}^{N/2} 2 (\psi_a\psi_a|\psi_b\psi_b) - (\psi_a\psi_b|\psi_b\psi_a)
+\frac{1}{2}\sum_{a}^{N} & \sum_{b}^{N}([aa|bb] - [ab|ba])\notag\\
+& = \frac{1}{2}\Bigg\{ \sum_{a}^{N/2}\sum_{b}^{N/2}([aa|bb]-[ab|ba]) + \sum_{a}^{N/2}\sum_{b}^{N/2}([aa|\bar{bb}] -[a\bar{b}|\bar{b}a])\notag \\   
+& \quad + \sum_{a}^{N/2}\sum_{b}^{N/2}([\bar{aa}|bb] - [\bar{a}b|b\bar{a}]) + \sum_{a}^{N/2}\sum_{b}^{N/2}([\bar{aa}|\bar{bb}] - [\bar{a}\bar{b}|\bar{b}\bar{a}]) \Bigg\}\notag\\
+& = \sum_{a}^{N/2}\sum_{b}^{N/2} \bigg(2 (\psi_a\psi_a|\psi_b\psi_b) - (\psi_a\psi_b|\psi_b\psi_a)\bigg)
 \end{align}
 因此闭壳层基态的Hartree-Fock能量就是
 \begin{equation}
@@ -2413,7 +2413,7 @@ E_0 = 2 \sum_{a}^{N/2}(\psi_a|h|\psi_a) + \sum_{a}^{N/2}\sum_{b}^{N/2}2(\psi_a\p
 因此\autoref{2.176}可写为
 \begin{equation}
 \label{2.177}
-E_0 = 2 \sum_{a}^{N/2}({a|h|a}) + \sum_{a}^{N/2}\sum_{b}^{N/2}2({aa|bb}) - ({ab|ba})
+E_0 = 2 \sum_{a}({a|h|a}) + \sum_{ab}^{N/2}2({aa|bb}) - ({ab|ba})
 \end{equation}
 当转为物理学家的符号时, 
 求和上限必须明确写出以指明到底是对空间轨道还是自旋轨道求和. 
@@ -2423,7 +2423,7 @@ E_0 = 2 \sum_{a}^{N/2}({a|h|a}) + \sum_{a}^{N/2}\sum_{b}^{N/2}2({aa|bb}) - ({ab|
 如果上限是$N/2$则是针对空间轨道. 
 所以用物理学家的记号\autoref{2.177}可以写为
 \begin{equation}
-E_0 = 2 \sum_{a}^{N/2}\braket{a|h|a} + \sum_{a}^{N/2}\sum_{b}^{N/2}2\braket{ab|ab} - \braket{ab|ba}
+E_0 = 2 \sum_{a}^{N/2}\braket{a|h|a} + \sum_{ab}^{N/2}2\braket{ab|ab} - \braket{ab|ba}
 \end{equation}
 \exercise{
 第六章中我们会研究微扰论, 
@@ -2435,7 +2435,7 @@ E_0^{(2)} = \frac{1}{4} \sum_{abrs} \frac{|\braket{ab||rs}|^2}{\varepsilon_a + \
 对闭壳层体系($\epsilon_i = \epsilon_{\bar{i}}$), 
 该式成为
 \begin{equation*}
-E_0^{(2)} = \sum_{a,b=1}^{N/2}\sum_{r,s=(N/2+1)}^{K}\frac{\braket{ab|rs}(2\braket{rs|ab}) - \braket{rs|ba}}{\varepsilon_a + \varepsilon_b - \varepsilon_r - \varepsilon_s}
+E_0^{(2)} = \sum_{a,b=1}^{N/2}\sum_{r,s=(N/2+1)}^{K}\frac{\braket{ab|rs}(2\braket{rs|ab} - \braket{rs|ba})}{\varepsilon_a + \varepsilon_b - \varepsilon_r - \varepsilon_s}
 \end{equation*}
 }
 
