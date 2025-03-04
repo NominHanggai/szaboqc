@@ -3681,7 +3681,7 @@ Li原子的UHF基态不像RHF\autoref{eq:2.264}那样是一个纯双重态.
 自由基有一个未配对电子, 
 如$\mathrm{CH}_3$. 
 近似的三重态$\alpha$电子比$\beta$电子多两个, 
-如图2.16所示.
+如\autoref{fig:2.16}所示.
 
 
 若$\ket{1},\ket{2},\ket{3}$等是精确的自旋单、双、三…态, 
@@ -3702,7 +3702,7 @@ Li原子的UHF基态不像RHF\autoref{eq:2.264}那样是一个纯双重态.
 \begin{figure}
 	\begin{minipage}{.48\textwidth}
 	\begin{tikzpicture}[thick]
-	\draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_2^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha}$};
+        \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_2^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha}$};
 	%=========== figure left, from bottom to top===========================
 	\draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
 	\draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
@@ -3753,7 +3753,7 @@ $\ts^2$的期望值常常过大,
 因为非自旋纯态(或称之为自旋污染态)的$S$值绘比纯态更大. 
 具体而言, 
 可以证明
-\begin{align}
+\begin{align}\label{eq:2.271}
 \braket{\ts^2}_\mathrm{UHF} = \braket{\ts^2}_\mathrm{Exact} + N^\beta - \sum_i^N\sum_j^N|S_{ij}^{\alpha\beta}|^2
 \end{align}
 式中已设$N^\alpha > N^\beta$, 
@@ -3770,7 +3770,7 @@ $\ts^2$的期望值常常过大,
 它由\emph{非正交}的空间轨道构成：$\braket{\psi_1^\alpha|\psi_1^\beta} = S_{11}^{\alpha\beta}$. 
 请证明只有当$\psi_1^\alpha=\psi_1^\beta$时$\ket{K}$才是$\ts^2$的本征函数. 
 另外证明$\braket{K|\ts^2|K} = 1 - |S_{11}^{\alpha\beta}|^2$, 
-与式(2.271)相吻合.
+与\autoref{eq:2.271}相吻合.
 
 }
 
