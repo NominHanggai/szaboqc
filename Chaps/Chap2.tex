@@ -528,21 +528,18 @@ Hartree积不满足反对称原理，
 考虑一个两电子系统，
 自旋轨道分别是$\chi_i$和$\chi_j$，
 若将电子1放在$\chi_i$上、电子2放在$\chi_j$上，则有
-\begin{equation}
 \begin{subequations}
-\Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_1})\chi_j(\bo{x_2})\tag{2.33a}
-\end{subequations}
+\begin{equation}
+\Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_1})\chi_j(\bo{x_2})\label{2.33a}
 \end{equation}
-\label{2.33a}
 另一方面, 
 若置电子1于$\chi_j$轨道, 
 电子2于$\chi_i$轨道, 
 则有
-\begin{equation*}
-\addtocounter{equation}{-1}
-\Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_2})\chi_j(\bo{x_1})\tag{2.33b}
-\end{equation*}
-\label{2.33b}
+\begin{equation}
+\Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_2})\chi_j(\bo{x_1})\label{2.33b}
+\end{equation}
+\end{subequations}
 这两种Hartree积都明显地区分电子, 
 但是如果将这两种Hartree积线性组合在一起, 
 则可以得到满足反对称原理的波函数:
@@ -567,7 +564,7 @@ $2^{-1/2}$是归一化因子. 式中的符号保证了$\Psi(\bo{x_1,x_2})$在交
 若$\chi_i$和$\chi_j$是某单电子算符$h$(见\autoref{2.29})的本征函数, 
 对应本征值为$\epsilon_i,\epsilon_j$. 
 证明, 
-方程\autoref{2.33a} \autoref{2.33b}中的Hartree积和\autoref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\autoref{2.28})的本征函数, 
+\autoref{2.33a}、\autoref{2.33b}中的Hartree积和\autoref{2.34}中的反对称波函数都是独立电子哈密顿量$\scr{H}=h(1)+h(2)$(见\autoref{2.28})的本征函数, 
 本征值是$\epsilon=\epsilon_i+\epsilon_j$}.
 
 
@@ -1896,63 +1893,63 @@ $N$电子体系的Hartree-Fock基态能为$^NE_0=\braket{^N\Phi_0|\hs|^N\Phi_0}$
 
 \subsection{矩阵元规则的推导}
 \label{sec2.3.4}
-本节我们来推导\autoref{t2.3}和\autoref{t2.4}中的矩阵元的计算规则. 
-这些矩阵元就是单、双电子算符夹在$N$电子行列式之间的算式($N$电子行列式由自旋轨道构成). 
-由自旋轨道$\chi_i(\mathbf{x}_1),\chi_j(\mathbf{x}_1),\cdots,\chi_k(\mathbf{x}_N)$构成的$N$电子行列式就是(见\autoref{eq:1.38})):
+本节推导\autoref{t2.3}和\autoref{t2.4}中的矩阵元计算规则,
+也就是单、双电子算符夹在正交归一自旋轨道构成的$N$电子行列式间的计算规则. 
+由自旋轨道$\chi_i(\mathbf{x}_1),\chi_j(\mathbf{x}_1),\cdots,\chi_k(\mathbf{x}_N)$构成的$N$电子Slater行列式的定义是(见\autoref{eq:1.38})):
 \begin{equation}\label{eq:2.115}
 \ket{\chi_i\chi_k\cdots\chi_k}=(N!)^{-1/2}\sum_{n=1}^{N!}(-1)^{p_n}\mathscr{P}_n\left\{\chi_i(1)\chi_j(2)\cdots\chi_k(N) \right\}
 \end{equation}
-其中我们令$\chi(\mathbf{x}_l)=\chi(l)$. 
-$\mathscr{P}_n$是一个能够对电子标号$1,2,\cdots,N$进行$n$阶置换的算符，
+其中$\chi(\mathbf{x}_l) \equiv \chi(l)$. 
+$\mathscr{P}_n$是对电子标号$1,2,\cdots,N$进行$n$阶置换的算符，%“nth”是否宜于译作“n阶”？第n个似更好。
 $p_n$是完成该置换所需的置换数(简单交换的数目).
 
 \exercise{
-将练习2.14的结果推广到$N$电子行列式上： 
-已知，由自旋轨道组成的Slater行列式$\ket{\chi_i\chi_j\cdots\chi_k}$是单电子算符$h$(见式2.29)的本征函数, 
-请证明它也是单电子哈密顿$\mathscr{H}=\sum_{i=1}^{N}h(i)$(见式2.28)的本征函数, 
+将\autoref{ex:2.14}的结果推广到$N$电子行列式上： 
+已知，由自旋轨道组成的Slater行列式$\ket{\chi_i\chi_j\cdots\chi_k}$是单电子算符$h$(见\autoref{2.29})的本征函数, 
+请证明它也是单电子哈密顿$\mathscr{H}=\sum_{i=1}^{N}h(i)$(见\autoref{2.28})的本征函数, 
 对应本征值为$\epsilon_i+\epsilon_j+\cdots+\epsilon_k$. 
 \textit{提示}：由于$\mathscr{H}$在对电子指标的置换操作下是不变的, 
 所以它与$\mathscr{P}$对易.
 
 }
 
-现在要计算该形式的矩阵元$\braket{K|\mathcal{O}|L}$, 
+现在要计算形如$\braket{K|\mathcal{O}|L}$的矩阵元, 
 其中
 \begin{equation}
 \ket{K} = \ket{\chi_m(1)\chi_n(2)\cdots}
 \end{equation}
-是由被占轨道$\chi_m,\chi_n,\cdots$构成的行列式. 
-而$\ket{K}$以某种已知的方式不同于$\ket{K}$. 
-在考察单、双电子算符的矩阵元和\textit{情形}1、2、3之前, 
-先令$\mathcal{O}$等于单位算符, 
-看看$\ket{K}$和一个任意的$\ket{L}$之间的重叠$\braket{K|L}$, 
+是由自旋轨道$\chi_m,\chi_n,\cdots$构成的行列式. 
+而$\ket{L}$以某种已知的方式不同于$\ket{K}$. 
+在考察单、双电子算符\autoref{t2.3}和\autoref{t2.4}中的和\textit{情形}1、2、3之前, 
+先令$\mathcal{O}$为单位算符, 
+看看由同一套自旋轨道生成的$\ket{K}$和$\ket{L}$之间的重叠$\braket{K|L}$, 
 $\ket{L}$如下
 \begin{equation}
 \ket{L} = \ket{\chi_m'(1)\chi_n'(2)\cdots}
 \end{equation}
 假设两个行列式已经按最大相似方式进行了排列. 
-利用(2.115)中的行列式表达式, 
+利用行列式表达\autoref{eq:2.115}, 
 我们有
 \begin{align}
 \braket{K|L} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
               &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\} \mathscr{P}_j\{\chi_m'(1)\chi_n'(2)\cdots\}
 \end{align}
-设(两组)自旋轨道(一起)构成正交归一集.
+设这套自旋轨道正交归一.
 若上面的重叠积分非零, 
-带撇的自旋轨道就必须与不带撇的自旋轨道(按脚标)对应相等. 
-否则就总会有一个$0$因子出现(因为$\ket{L}$中的某自旋轨道，如$\chi_n'$与$\ket{K}$中的自旋轨道$\chi_m,\chi_n,\cdots$正交). 
+带撇的自旋轨道就必须与不带撇的自旋轨道对应相等. 
+否则就总会有个$0$因子(因为某个$\ket{L}$中的自旋轨道$\chi_n'$与$\ket{K}$中的自旋轨道$\chi_m,\chi_n,\cdots$正交). 
 所以, 
 若某行列式中的自旋轨道与$\ket{K}$中的不完全相同, 
 那么$\ket{K}$就与其正交. 
-如过两个行列式中的行列式完美地相同, 
-即它们其实是相等的两个行列式,
+如过两个行列式中的自旋轨道一致、排列也完美地相同, 
+或者说它们是同一个行列式,
 那么
 \begin{align}
 \braket{K|K} =& (N!)^{-1} \sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\} \mathscr{P}_j\{\chi_m(1)\chi_n(2)\cdots\}
 \end{align}
 在上面的求和中, 
-仅当在$i$置换中的电子与在$j$置换中的电子都占据相同的自旋轨道时积分才不为$0$. 
+仅当在$i$置换中的电子与在$j$置换中的电子都占据相同的自旋轨道时, 积分才不为$0$. 
 那么求和中有效的项中, 
 两个置换必须相同($i=j$), 
 并且$(-1)^{2p_i}=1$, 
@@ -1976,20 +1973,19 @@ $\ket{K}$是归一化的.
 \end{equation}
 
 接下来考察单电子算符之和的矩阵元：
-\begin{equation}
+\begin{equation}\label{eq:2.123}
 \braket{K|\mathcal{O}_1|L} = \braket{K|h(1)+h(2)+\cdots+h(N)|L}
 \end{equation}
 由于行列式中的电子不可分辨, 
-所以$h(1)$的矩阵元和$h(2),h(3)$等等的矩阵元相同. 
-那么(2.
-123)中的每一项都相等, 
+$h(1)$的矩阵元和$h(2),h(3)$等等的矩阵元相同. 
+那么\autoref{eq:2.123}中的每一项都相等, 
 也就是
 \begin{equation}
 \braket{K|\mathcal{O}_1|L} = N\braket{K|h(1)|L}
 \end{equation}
 该式中我们按照惯例选择了电子1的算符. 
 先看\textit{情形1}下的结果：
-\begin{align}
+\begin{align}\label{eq:2.125}
 \braket{K|\mathcal{O}_1|K} = & N \braket{K|h(1)|L}\notag \\
                            = & N(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
                            &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}h(1) \mathscr{P}_j\{\chi_m'(1)\chi_n'(2)\cdots\}
@@ -2002,13 +1998,13 @@ $\ket{K}$是归一化的.
 结果就是, 
 只有两个置换等同时($i=j$)所得积分才不为$0$.
 
-\begin{align}
+\begin{align}\label{eq:2.126}
 \braket{K|\mathcal{O}_1|K}= & [(N-1)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}h(1) \mathscr{P}_j\{\chi_m(1)\chi_n(2)\cdots\}
 \end{align}
 上式对$N!$个置换求和, 
-电子1会占据每个自旋轨道$\{\chi_m|m=1,2,\cdots,N\}$各$(N-1)!$次, 
-就是说, 
+电子1会占据每个自旋轨道$\{\chi_m|m=1,2,\cdots,N\}$各$(N-1)!$次; 
+或者换个说法, 
 若电子1在某特定的自旋轨道$\chi_m$上, 
 则剩余的电子$2,3\cdots,N$在剩余的$(N-1)$个自旋轨道中共有$(N-1)!$种排列方式. 
 对电子$2,3\cdots,N$积分仅会产生一个因子$1$(自旋轨道已归一化), 
@@ -2025,7 +2021,7 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \ket{K} &= \ket{\chi_m(1)\chi_n(2)\cdots}\\
 \ket{L} &= \ket{\chi_p(1)\chi_n(2)\cdots}
 \end{align}
-与在\textit{情形1}中从(2.125)导出(2.126)时相同, 
+与在\textit{情形1}中从\autoref{eq:2.125}导出\autoref{eq:2.126}时相同, 
 若积分结果不为0, 
 则算符的两边必须有相同的置换, 
 
@@ -2033,13 +2029,13 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \braket{K|\mathcal{O}_1|L}= & [(N-1)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}h(1) \mathscr{P}_j\{\chi_p(1)\chi_n(2)\cdots\}
 \end{align}
-由于前面那个置换中轨道$\chi_m$与后一个置换中的所有自旋轨道都正交, 
-所以只有当它被电子1占据时, 
-才有可能和$h(1)$联动, 
+由于前面那个置换中轨道$\chi_m$与后一个置换中的任一自旋轨道都正交, 
+只有它被电子1占据时, 
+才有可能和$h(1)$``联动", 
 以使积分不为0. 
 固定了电子1之后, 
 电子$2,3,\cdots,N$在余下的$N-1$个自旋轨道($\chi_n,\cdots$)中共有$(N-1)!$种排列方式. 
-对这些电子坐标进行积分总会给出因子1(正交性), 
+对这些电子坐标进行积分总会给出因子1(归一性), 
 因此
 \begin{align}
 \braket{K|\mathcal{O}_1|L}= & (N-1)[(N-1)!]^{-1}\sum_{i}^{N!}\int\ddx_1\chi_m^*(1)h(1)\chi_p(1) \notag\\
@@ -2051,7 +2047,7 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \ket{K} = & \ket{\chi_m(1)\chi_n(2)\cdots}\\
 \ket{L} = & \ket{\chi_p(1)\chi_q(2)\cdots}
 \end{align}
-与(2.125)类似我们可以写出：
+与\autoref{eq:2.125}类似, 我们可以写出：
 \begin{align}
 \braket{K|\mathcal{O}_1|K}
 = & N(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
@@ -2073,44 +2069,43 @@ $\chi_p$出现在$\ket{L}$中而$\ket{K}$中则是$\chi_m$,
 \end{equation}
 其中的加和遍及所有电子对. 
 由于行列式并不区分全同电子, 
-所以上式求和中每一项都给出相同结果, 
-因此可以用一个双电子算符$r_{12}^{-1}$来代替$\mathcal{O}_2$——只要乘以一个因子就行(电子对的数目)：
+所以上述求和中每一项都相等, 
+因此可以用一个双电子算符$r_{12}^{-1}$来代替$\mathcal{O}_2$——只要乘以电子对的数目就行：
 \begin{equation}
 \braket{K|\mathcal{O}_2|L} = \frac{N(N-1)}{2}\braket{K|r_{12}^{-1}|L}
 \end{equation}
 
 从\textit{情形1}开始,
 
-\begin{align}
+\begin{align}\label{eq:2.138}
 \braket{K|\mathcal{O}_2|K}
 = & \frac{N(N-1)}{2}(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!} (-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N \notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}r^{-1}_{12}\mathscr{P}_j\{\chi_m(1)\chi_n(2)\cdots\}
 \end{align}
-由于(2.138)(即上式)中的算符仅涉及电子1和2, 
-那么电子$3,4,\cdots,N$在$i$置换式和$j$置换式中需占据相同的自旋轨道, 
-唯如此积分才不为0(自旋轨道相互正交). 
+由于\autoref{eq:2.138}中的算符仅涉及电子1和2, 
+那么只有电子$3,4,\cdots,N$在$i$置换式和$j$置换式中需占据相同的自旋轨道时, 
+积分才不为0(正交性). 
 若电子$3,4,\cdots,N$在前后两个置换中已占据相同的自旋轨道, 
 而电子1和2在$\mathscr{P}_i$置换中分别占据$\chi_k$和$\chi_l$, 
-此时对于$\mathscr{P}_j$置换有两种可能性：即电子1、2占据情况与$\mathscr{P}_i$中相同($\mathscr{P}_i=\mathscr{P}_j$); 
+此时$\mathscr{P}_j$置换有两种可能性：电子1、2占据$\mathscr{P}_i=\mathscr{P}_j$(与$\mathscr{P}_i$中相同); 
 或者与之相反, 
-即电子1在$\chi_l$, 
-电子2在$\chi_k$($\mathscr{P}_i=-\mathscr{P}_j$), 
-后一种情况中, 
-只是将电子1、2的坐标互换了. 
-那么, 
+电子1在$\chi_l$, 
+电子2在$\chi_k$, 
+$\mathscr{P}_i$与$\mathscr{P}_j$只有电子1、2的函数不同. 
+也就是说, 
 如果设
 \begin{equation}
 \scr{P}_i\{\chi_m(1)\chi_n(2)\cdots\}=[\chi_k(1)\chi_l(2)\cdots]
 \end{equation}
-则有
+则
 \begin{equation}
 \scr{P}_j\{\chi_m(1)\chi_n(2)\cdots\}=[\chi_k(1)\chi_l(2)\cdots]\quad\text{或}\quad[\chi_k(2)\chi_l(1)\cdots]
 \end{equation}
 设$\scr{P}_{12}$是交换电子1、2坐标的算符, 
 则可以将矩阵元写成
-\begin{align}
+\begin{align}\label{eq:2.141}
 \braket{K|\mathcal{O}_2|K}
-= & [(2N-1)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}\notag\\
+= & [2(N-2)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}\notag\\
 &\times r^{-1}_{12}\left[\mathscr{P}_i\{\chi_p(1)\chi_q(2)\cdots\} - \scr{P}_{12}\mathscr{P}_i\{\chi_p(1)\chi_q(2)\cdots\} \right]
 \end{align}
 式中$\scr{P}_{12}$前面的符号是由于, 
@@ -2129,7 +2124,7 @@ $\scr{P}_{12}\scr{P}_i$就是一偶置换,
  & = \frac{1}{2}\sum_{m}^{N}\sum_{n\neq m}^{N}\braket{mn|mn} - \braket{mn|nm}
 \end{align}
 由于$\braket{mn||mn}=\braket{mn|mn} - \braket{mn|nm}$当$m=n$时为0, 
-所以上式中求和的限制($m\neq n$)可以去掉, 
+上式中求和的限制($m\neq n$)可以去掉, 
 那么
 \begin{equation}
 \braket{K|\mathcal{O}_2|K} = \frac{1}{2} \sum_{m}^{N}\sum_{n}^{N}\braket{mn||mn}\qquad\textit{情形1}
@@ -2140,7 +2135,7 @@ $\scr{P}_{12}\scr{P}_i$就是一偶置换,
 \braket{K|\mathcal{O}_2|L} =& \frac{N(N-1)}{2}(N!)^{-1}\sum_{i}^{N!}\sum_{j}^{N!}(-1)^{p_i}(-1)^{p_j}\int\ddx_1\ddx_2\cdots\ddx_N\notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}r^{-1}_{12}\mathscr{P}_j\{\chi_p(1)\chi_n(2)\cdots\}
 \end{align}
-按照在\textit{情形1}下导出(2.141)式的办法, 
+按照在\textit{情形1}下导出\autoref{eq:2.141}的办法, 
 在\textit{情形2}同样可以写出
 \begin{align}
 \braket{K|\mathcal{O}_2|L} =& [2(N-2)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N\notag\\
@@ -2165,7 +2160,7 @@ $\scr{P}_{12}\scr{P}_i$就是一偶置换,
 积分号中的两项代表两种情况: 放在$\chi_m$上的电子可以是1号也可以是2号. 
 此外, 
 $r_{12}^{-1}=r_{21}^{-1}$且$\scr{P}_{12}=\scr{P}_{21}$, 
-所以我们可以改变上式第二项的积分变量, 
+所以我们可以交换上式第二项的积分变量, 
 如此第二项就等于第一项：
 \begin{align}
 \int\ddx_1&\ddx_2\chi_n^*(1)\chi^*_m(2)r_{12}^{-1}(1-\scr{P}_{12})\{\chi_n(1)\chi_p(2) \}\notag\\
@@ -2188,14 +2183,14 @@ $r_{12}^{-1}=r_{21}^{-1}$且$\scr{P}_{12}=\scr{P}_{21}$,
 \braket{K|\mathcal{O}_2|L} =& [2(N-2)!]^{-1}\sum_{i}^{N!}\int\ddx_1\ddx_2\cdots\ddx_N\notag\\
 &\times \mathscr{P}_i\{\chi_m^*(1)\chi_n^*(2)\cdots\}r^{-1}_{12}(1-\scr{P}_{12})\mathscr{P}_i\{\chi_p(1)\chi_q(2)\cdots\}
 \end{align}
-$\chi_m,\chi_n$与后一置换中的所有自旋轨道正交, 所以它们分别需由电子1和2(或2和1)占据. 剩余的电子$3,4,\cdots,N$共有$(N-2)!$种排法, 完成对这些剩余电子的积分可以得到
+$\chi_m,\chi_n$与后一置换中的所有自旋轨道正交, 所以它们分别需由电子1和2(或2和1)占据. 剩余的电子$3,4,\cdots,N$共有$(N-2)!$种排法, 对这些电子积分可得
 \begin{align}
 \braket{K|\mathcal{O}_2|L} = \frac{1}{2}\int\ddx_1\ddx_2& [\chi_m^*(1)\chi_n^*(2)r_{12}^{-1}(1-\scr{P}_{12})\{\chi_p(1)\chi_q(2) \} \notag\\
 &+  \chi_n^*(1)\chi_m^*(2)r_{12}^{-1}(1-\scr{P}_{12})\{\chi_q(1)\chi_p(2) \}]
 \end{align}
 与上一情形中一样, 
-可以通过交换\phrase{积分变量}证明上式中的两项是相等的. 
-所以有
+可以通过交换积分变量证明上式中的两项相等. 
+于是有
 \begin{align}
 \braket{K|\mathcal{O}_2|L} & = \int\ddx_1\ddx_2 \chi_m^*(1)\chi_n^*(2)r_{12}^{-1}(1-\scr{P}_{12})\{\chi_p(1)\chi_q(2) \}\notag\\
 & = \int\ddx_1\ddx_2 \chi_m^*(1)\chi_n^*(2)r_{12}^{-1}\left[ \chi_p(1)\chi_q(2) - \chi_q(1)\chi_p(2) \right]\notag\\
@@ -2207,7 +2202,7 @@ $\chi_m,\chi_n$与后一置换中的所有自旋轨道正交, 所以它们分别
 \begin{equation}
 \braket{K|\mathcal{O}_2|L} = 0
 \end{equation}
-到此我们就完成了对Slater行列式之间的矩阵元的计算规则的推导.
+到此我们就推导完了对Slater行列式间矩阵元的计算规则.
 
 \exercise{
 推导以上矩阵元规则还有另外一种方法, 
