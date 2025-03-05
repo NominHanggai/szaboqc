@@ -2445,17 +2445,17 @@ E_0^{(2)} = \sum_{a,b=1}^{N/2}\sum_{r,s=(N/2+1)}^{K}\frac{\braket{ab|rs}(2\brake
 
 \begin{equation}
 \label{2.179}
-E_0 = 2 \sum_{a}^{N/2}(\psi_a|h|\psi_a) + \sum_{a}^{N/2}\sum_{b}^{N/2}2(\psi_a\psi_a|\psi_b\psi_b) - (\psi_a\psi_b|\psi_b\psi_a)
+E_0 = 2 \sum_{a}(a|h|a) + \sum_{ab}2(aa|bb) - (ab|ba)
 \end{equation}
-线来看单电子项
+先来看单电子项
 \begin{equation}
 (a|h|a) \equiv h_{aa} = \int\dd{r_1}\psi_a^*(\mathbf{r_1})\left( -\frac{1}{2}\nabla_1^2 - \sum_A\frac{Z_A}{r_{1A}} \right)\psi_a(\mathbf{r_1})
 \end{equation}
 $h_{aa}$就是波函数$\psi_a(\mathbf{r_1})$所对应电子的平均动能加上核对它的吸引能量. 下面考虑双电子积分
 \begin{equation}
-(aa|bb) = \int\dd{r_1}\dd{r_2}|\psi_a(\mathbf{r_1})|^2r_{12}^{-1}|\psi_a(\mathbf{r_2})|^2
+(aa|bb) = \int\dd{r_1}\dd{r_2}|\psi_a(\mathbf{r_1})|^2r_{12}^{-1}|\psi_b(\mathbf{r_2})|^2
 \end{equation}
-这项就是电子云$|\psi_a(\mathbf{r_1})|^2$与电子云$|\psi_a(\mathbf{r_2})|^2$之间的经典库伦排斥. 
+这项就是电子云$|\psi_a(\mathbf{r_1})|^2$与电子云$|\psi_b(\mathbf{r_2})|^2$之间的经典库伦排斥. 
 我们把这个积分叫做\emph{库伦积分}并用$J_{ab}$来表示. 
 也就是说
 \begin{equation}
@@ -2472,7 +2472,7 @@ J_{ij} = (ii|jj) = \braket{ij|ij}
 \begin{equation}
 K_{ij} = (ij|ji) = \braket{ij|ji}
 \end{equation}
-库伦积分和交换积分的值都是正的\footnote{译者注：数学上严格证明交换积分为总为正是不平凡的一件事情. 可以参考 https://www.zhihu.com/question/37292504}. 
+库伦积分和交换积分的值都是正的\footnote{译者注：数学上严格证明交换积分总为正是不平凡的一件事情. 可以参考 https://www.zhihu.com/question/37292504}. 
 下面我们证明行列式对应的能量中的交换积分是由\emph{交换相关}(exhcange correlation)作用引起的(也就是说,
 在单行列式近似下, 
 同自旋电子的运动相互关联). 
@@ -2500,8 +2500,8 @@ K_{ij} & = (ij|ij) = (ji|ji)\\
 \begin{equation*}
 \mathbf{H} = 
 \begin{pmatrix}
-2h_{11} J_{11} & K_{12} \\
-K_{12}         & 2h_{22} + J_{22}
+2h_{11} + J_{11} & K_{12} \\
+K_{12}           & 2h_{22} + J_{22}
 \end{pmatrix}
 \end{equation*}
 }
@@ -2510,7 +2510,7 @@ K_{12}         & 2h_{22} + J_{22}
 讨论一下这个模型系统的能量, 
 以便令读者对交换积分的出现有个感觉. 
 之前已经说到, 
-在一个两电子自旋平行的系统$\ket{\bar{\psi}_1\bar{\psi}}_2$中, 
+在一个两电子自旋平行的系统$\ket{\bar{\psi}_1\bar{\psi}_2}$中, 
 在同一点同时找到这两个电子的概率为零. 
 但若这两个电子自旋相反, 
 即系统此时的波函数为$\ket{{\psi}_1\bar{\psi}_2}$, 
@@ -2525,15 +2525,15 @@ $\ket{\psi_1\bar{\psi}_2}$(记为$\ket{\uparrow\downarrow}$)的能量就是
 \end{align}
 $\ket{\bar{\psi}_1\bar{\psi}_2}$(记为$\ket{\downarrow\downarrow}$)的能量就是
 \begin{align}
-\ket{\uparrow\downarrow} & =[\bar{\psi}_1|h|\bar{\psi}_1] + [\bar{\psi}_2|h|\bar{\psi}_2] + [\bar{\psi}_1\bar{\psi}_1|\bar{\psi}_2\bar{\psi}_2] - [\bar{\psi}_1\bar{\psi}_2|\bar{\psi}_2\bar{\psi}_1]\notag\\
+\ket{\downarrow\downarrow} & =[\bar{\psi}_1|h|\bar{\psi}_1] + [\bar{\psi}_2|h|\bar{\psi}_2] + [\bar{\psi}_1\bar{\psi}_1|\bar{\psi}_2\bar{\psi}_2] - [\bar{\psi}_1\bar{\psi}_2|\bar{\psi}_2\bar{\psi}_1]\notag\\
 & = (1|h|1) + (2|h|2) + (11|22) - (12|21)\notag\\
 & = h_{11} + h_{22} + J_{12} - K_{12}
 \end{align}
 式中利用了\autoref{2.160}\autoref{2.161}\autoref{2.165}将自旋坐标积掉. 
 由于$K_{12}$是正值, 
-$\ket{\downarrow\downarrow}$就比$E(\uparrow\downarrow)$小. 
+$E(\downarrow\downarrow)$就比$E(\uparrow\downarrow)$小. 
 因此, 
-Slater行列式所对应的能量的表达式中会出现交换积分, 
+Slater行列式所对应的能量的表达式中交换积分的出现, 
 实际上反映了这样一个事实： 即使在单行列式近似下, 
 有相同自旋的两个电子的运动也是相互关联着的(相关 correlated).
 
