@@ -2569,21 +2569,21 @@ Hartree积近似下, 两个同自旋电子的运动之间没有关联, 因此如
 
 
 下面考察能量中的双电子贡献. 
-之前提过自旋轨道$\chi_i,\chi_j$中的一对电子在总能中贡献一项$\braket{ij|ij}$. 
+之前提过自旋轨道$\chi_i,\chi_j$中的一对电子在总能中贡献一项$\braket{ij||ij}$. 
 一对电子既可以有平行的自旋, 
 也可以是相反自旋. 
 若自旋相反, 
 即$\chi_i=\psi_i\alpha, \chi_j=\psi_j\beta$, 
 那么
 \begin{align}
-\braket{ij|ij} = [ \psi_i\psi_i | \bar{\psi}_j\bar{\psi}_j ] - [ \psi_i\bar{\psi}_j| \bar{\psi}_j\psi_i ] = J_{ij}
+\braket{ij||ij} = [ \psi_i\psi_i | \bar{\psi}_j\bar{\psi}_j ] - [ \psi_i\bar{\psi}_j| \bar{\psi}_j\psi_i ] = J_{ij}
 \end{align}
 与此相反, 
 若一对电子的自旋平行, 
 即$\chi_i=\psi_i\beta, \chi_j=\psi_j\beta$, 
 则
 \begin{align}
-\braket{ij|ij} = [ \bar{\psi}_i\bar{\psi}_i | \bar{\psi}_j\bar{\psi}_j ] - [ \bar{\psi}_i\bar{\psi}_j| \bar{\psi}_j\bar{\psi}_i ] = J_{ij} -K_{ij}
+\braket{ij||ij} = [ \bar{\psi}_i\bar{\psi}_i | \bar{\psi}_j\bar{\psi}_j ] - [ \bar{\psi}_i\bar{\psi}_j| \bar{\psi}_j\bar{\psi}_i ] = J_{ij} -K_{ij}
 \end{align}
 因此我们有如下论断：
 \emph{
@@ -2610,8 +2610,8 @@ Hartree积近似下, 两个同自旋电子的运动之间没有关联, 因此如
 \begin{align*}
 \ket{\bar{\psi}_1\psi_2\bar{\psi}_2\bar{\psi}_3} = 
 \begin{tikzpicture}[baseline={(current bounding box.center)}]
-\draw (0,-.5)--node{$\downarrow$}(1,-.5)node[right]{1};
-\draw (0,0)--node{$\uparrow\downarrow$}(1,0)node[right]{1};
+\draw (0,-.5)--node{$\downarrow$}(1,-.5)node[right]{3};
+\draw (0,0)--node{$\uparrow\downarrow$}(1,0)node[right]{2};
 \draw (0,.5)--node{$\downarrow$}(1,.5)node[right]{1};
 \end{tikzpicture}
 \end{align*}
@@ -2628,7 +2628,7 @@ Hartree积近似下, 两个同自旋电子的运动之间没有关联, 因此如
 \begin{tikzpicture}[baseline={(current bounding box.center)}]
 %=======subfigure(a)=============
 \draw (0,.4)node[left]{2}--node{$\uparrow$}+(1,0);
-\draw (0,0)--node{$\uparrow\downarrow$}+(1,0);
+\draw (0,0)node[left]{1}--node{$\uparrow$}+(1,0);
 \draw (.5,-.4)node{(a)};
 %=======subfigure(b)=============
 \draw (1.2,.4)--node{$\uparrow$}+(1,0);
@@ -2651,23 +2651,17 @@ Hartree积近似下, 两个同自旋电子的运动之间没有关联, 因此如
 \draw (6,0)--node{$\uparrow$}+(1,0);
 \draw (6.5,-.4)node{(f)};
 %=======subfigure(g)=============
-\draw (7.2,.4)--node{$\uparrow\downarrow$}+(1,0);
-\draw (7.2,0)--node{$\uparrow\downarrow$}+(1,0);
+\draw (7.2,.4)--node{$\uparrow\downarrow$}+(1,0)node[right]{2};
+\draw (7.2,0)--node{$\uparrow\downarrow$}+(1,0)node[right]{1};
 \draw (7.7,-.4)node{(g)};
 \end{tikzpicture}
 \end{align*}
-a. $h_{11} + h_{22} + J_{12} - K_{12}$
-
-b. $h_{11} + h_{22} + J_{12}$
-
-c. $2h_{11}+ J_{11} $
-
-d. $2h_{22}+ J_{22} $
-
-e. $2h_{11}+ h_{22} + J_{11} + 2J_{12} - K_{12}$
-
-f. $2h_{22}+ h_{11} + J_{22} + 2J_{12} - K_{12}$
-
+a. $h_{11} + h_{22} + J_{12} - K_{12}$\\
+b. $h_{11} + h_{22} + J_{12}$\\
+c. $2h_{11}+ J_{11} $\\
+d. $2h_{22}+ J_{22} $\\
+e. $2h_{11}+ h_{22} + J_{11} + 2J_{12} - K_{12}$\\
+f. $2h_{22}+ h_{11} + J_{22} + 2J_{12} - K_{12}$\\
 g. $2h_{11}+ 2h_{22}+ J_{11} + J_{22} + 4J_{12} - 2K_{12}$
 }
 
