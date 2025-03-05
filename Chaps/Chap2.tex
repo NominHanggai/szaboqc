@@ -2926,7 +2926,7 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 \end{align}
 或者更一般地
 \begin{align}
-\cs_i\cs_k\cdots\cs_i = \ket{\chi_i\chi_k\cdots\chi_l}
+\cs_i\cs_k\cdots\cs_l\ket{\,\,} = \ket{\chi_i\chi_k\cdots\chi_l}
 \end{align}
 这个式子就是二次量子化表象下的Slater行列式. 
 从行列式中导出的一切结论同样能用产生算符和湮灭算符的代数性质导出来. 
@@ -2935,7 +2935,7 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 \autoref{ex:2.5}中曾计算过两个行列式之间的重叠：
 \begin{align}\label{eq:2.223}
 \ket{K} = \ket{\chi_i\chi_j} = \cs_i\cs_j\ket{\,\,}\\
-\ket{L} = \ket{\chi_k\chi_l} = \cs_k\cs_i\ket{\,\,}
+\ket{L} = \ket{\chi_k\chi_l} = \cs_k\cs_l\ket{\,\,}
 \label{eq:2.224}
 \end{align}
 那里用的办法是将行列式展开, 
@@ -2948,7 +2948,7 @@ a_i \ket{\,\,} = 0 = \bra{\,\,} \cs_i
 \end{align}
 由此可知
 \begin{align}
-\braket{k|L} = \braket{\,,|a_ja_i\cs_k\cs_i|\,\,}
+\braket{K|L} = \braket{\,\,|a_ja_i\cs_k\cs_l|\,\,}
 \end{align}
 求这个矩阵元的一般策略就是利用反对易关系把湮灭算符挪到最右边, 
 这样就和真空态直接接触. 
@@ -2985,18 +2985,18 @@ a_i\cs_k = \delta_{ik} - \cs_ka_i
 \begin{align*}
 \ket{K} = \ket{\chi_1\chi_2\cdots\chi_N} = \cs_1\cs_2\cdots\cs_N\ket{\,\,}
 \end{align*}
-请证明在$i=j, i\in\{ 1,2,\ldots,N \}$的条件下, 
-$\braket{K|\cs_i\cs_j|K}=1$.
+请证明在$i=j$且$i\in\{ 1,2,\ldots,N \}$的条件下, 
+$\braket{K|\cs_i a_j|K}=1$, 否则等于零.
 
 \Next
-令$\ket{\Psi_0} = \ket{\chi_1\cdots\chi_a\chi_b\cdots\chi_N}$为一Hartree-Fock基态. 
+设$\ket{\Psi_0} = \ket{\chi_1\cdots\chi_a\chi_b\cdots\chi_N}$为一Hartree-Fock基态. 
 请证明
 \begin{enumerate}[{a.}]
 	\setlength{\itemsep}{0pt}
 	\item $a_r\ket{\Psi_0} = 0 = \bra{\Psi_0}\cs_r$.
 	\item $\cs_a\ket{\Psi_0} = 0 = \bra{\Psi_0}a_a$.
-	\item $\ket{\Psi_0} = \cs_ra_a\ket{\Psi_0}$.
-	\item $\bra{\psi_a^r} = \bra{\Psi_0}\cs_aa_r$.
+	\item $\ket{\Psi_a^r} = \cs_ra_a\ket{\Psi_0}$.
+	\item $\bra{\Psi_a^r} = \bra{\Psi_0}\cs_aa_r$.
 	\item $\ket{\Psi_{ab}^{rs}} = \cs_sa_b\cs_ra_a\ket{\Psi_0} = \cs_r\cs_sa_ba_a\ket{\Psi_{0}}$.
 	\item $\bra{\Psi_{ab}^{rs}} = \bra{\Psi_0}\cs_aa_r\cs_ba_s = \bra{\Psi_0}\cs_a\cs_ba_s a_r$.
 \end{enumerate}
