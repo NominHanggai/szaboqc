@@ -3015,7 +3015,7 @@ $\braket{K|\cs_i a_j|K}=1$, 否则等于零.
 其矩阵元$\braket{K|\mathcal{O}|L}$无论是用行列式的性质求, 
 还是用算符的代数性质来求, 
 数值必须相同. 
-$\mathcal{O}_1$(或单电子算符之和)与$\mathcal{O}_2$(或电子间的总的库伦排斥算符)正确的二次量子化表达式如下：
+$\mathcal{O}_1$(单电子算符之和)与$\mathcal{O}_2$(电子间的总的库伦排斥算符)的二次量子化表达式如下：
 \begin{align}
 \mathcal{O}_1 & = \sum_{ij} \braket{i|h|j}\cs_ia_j\\
 \mathcal{O}_2 & = \frac{1}{2}\sum_{ijkl}\braket{ij|kl}\cs_i\cs_ja_la_k
@@ -3032,13 +3032,13 @@ $\mathcal{O}_1$(或单电子算符之和)与$\mathcal{O}_2$(或电子间的总�
 令$\Psi_0 = \ket{\chi_1\chi_2} = \cs_1\cs_2\ket{\,\,}$为\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock波函数. 
 请用二次量子化的办法证明
 \begin{align*}
-\braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{ij}\braket{i|h|j}\braket{\,,|a_2 a_1 \cs_i a_j \cs_1\cs_2|\,\,}
+\braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{ij}\braket{i|h|j}\braket{\,\,|a_2 a_1 \cs_i a_j \cs_1\cs_2|\,\,}
 & = \braket{1|h|1} + \braket{2|h|2}
 \end{align*}
 }
 
 为说明二次量子化与之前用Slater行列式所得的结果等价, 
-现用二次量子化的办法计算Hartree-Fock基态$\ket{\Psi_0} = \ket{\chi_1\cdots\chi_a\chi_v\cdots\chi_N}$的能量. 
+现用二次量子化的办法计算Hartree-Fock基态$\ket{\Psi_0} = \ket{\chi_1\cdots\chi_a\chi_b\cdots\chi_N}$的能量. 
 对单电子算符之和, 
 我们有
 \begin{align}
@@ -3074,18 +3074,18 @@ $\cs_i$作用在左边),
 对双电子算符之和, 
 有
 \begin{align}
-\braket{\Psi_0|\mathcal{O}_2|\Psi_0} = \frac{1}{2}\sum_{ijkl}\braket{ij|kl}\braket{\Psi_0|\cs_i\cs_ja_ia_k|\Psi_0}
+\braket{\Psi_0|\mathcal{O}_2|\Psi_0} = \frac{1}{2}\sum_{ijkl}\braket{ij|kl}\braket{\Psi_0|\cs_i\cs_ja_la_k|\Psi_0}
 \end{align}
 基于和单电子算符那里一样的理由, 
 指标$i,j,k,l$应该限制在$\{a,b,\ldots\}$内：
 \begin{align}
-\braket{\Psi_0|\mathcal{O}_2|\Psi_0} =\frac{1}{2}\sum_{abcd}\braket{ab|cd}\braket{\Psi_0|\cs_a\cs_ba_ca_d|\Psi_0}
+\braket{\Psi_0|\mathcal{O}_2|\Psi_0} =\frac{1}{2}\sum_{abcd}\braket{ab|cd}\braket{\Psi_0|\cs_a\cs_ba_da_c|\Psi_0}
 \end{align}
 然后就是和上面一样的办法：将$\cs_a,\cs_b$挪到右边使其作用到$\ket{\Psi_0}$上：
 \begin{align*}
-\braket{\Psi_0|\cs_i\cs_ja_ia_k|\Psi_0} = & \delta_{bd}\braket{\Psi_0|\cs_a a_c|\Psi_0} - \braket{\Psi_0|\cs_a a_d \cs_b a_c|\Psi_0} \\
+\braket{\Psi_0|\cs_a\cs_ba_da_c|\Psi_0} = & \delta_{bd}\braket{\Psi_0|\cs_a a_c|\Psi_0} - \braket{\Psi_0|\cs_a a_d \cs_b a_c|\Psi_0} \\
 = & \delta_{bd}\delta_{ac}\braket{\Psi_0|\Psi_0} - \delta_{bd}\braket{\Psi_0|a_c\cs_a|\Psi_0}\\
-& - \delta_{bc}\braket{\Psi_0|\cs_aa_d|\Psi_0} + \braket{\Psi_0|\cs_ia_da_c\cs_b|\Psi_0}\\
+& - \delta_{bc}\braket{\Psi_0|\cs_aa_d|\Psi_0} + \braket{\Psi_0|\cs_aa_da_c\cs_b|\Psi_0}\\
 = & \delta_{bd}\delta_{ac} - \delta_{bc}\delta_{ad}\braket{\Psi_0|\Psi_{0}} + \delta_{bc}\braket{\Psi_0|a_d\cs_a|\Psi_0}\\
 =　& \delta_{bd}\delta_{ac} - \delta_{bc}\delta_{ad}
 \end{align*}
@@ -3106,7 +3106,7 @@ $\cs_i$作用在左边),
 \Next
 证明：
 \begin{align*}
-\braket{\Psi_a^r|\mathcal{O}_2|\Psi_0} = \sum_a^N\braket{rb||ab}
+\braket{\Psi_a^r|\mathcal{O}_2|\Psi_0} = \sum_b^N\braket{rb||ab}
 \end{align*}
 \textit{提示：}先证明
 \begin{align*}
