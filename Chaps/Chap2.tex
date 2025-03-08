@@ -613,7 +613,7 @@ $(N!)^{-1/2}$是归一化因子.
 
 由于交换行列式中的两行要改变符号, 
 所以上式中自旋轨道的顺序很重要. 
-在这种简计符号中, 
+在这种简记符号中, 
 Slater行列式的反对称性表现在:
 \begin{equation}\label{2.40}
 \ket{\cdots\chi_m\cdots\chi_n\cdots}=-\ket{\cdots\chi_n\cdots\chi_m\cdots}
@@ -3147,9 +3147,9 @@ s^2 = \vec{s}\cdot\vec{s} = s^2_x + s^2_y + s^2_z
 \end{align}
 自旋角动量分量满足如下对易关系：
 \begin{align}\label{eq:2.242}
-[s_x,s_y] = is_z,\quad [s_y,s_z] = s_x,\quad [s_z,s_x]=is_y
+[s_x,s_y] = is_z,\quad [s_y,s_z] = is_x,\quad [s_z,s_x]=is_y
 \end{align}
-描述单个粒子的完全集可以选为$s^2$及其某个分量的共同本征函数, 
+可以用$s^2$及其某个分量的共同本征函数集合作为单粒子自旋态的完备集, 
 一般将分量选为$s_z$:
 \begin{subequations}
 	\begin{align}
@@ -3162,7 +3162,7 @@ $m_s$是描述自旋$z$分量的量子数.
 $s$的允许值为$0,\frac{1}{2},1,\frac{3}{2},\ldots$, 
 $m_s$有$2s+1$个可能值：$-s,-s+1,-s+2,\ldots,s-1,s$. 
 对于电子这两个值是$s=\frac{1}{2},m_s=\pm\frac{1}{2}$. 
-那么描述电子自旋的完全集为
+那么描述电子自旋态的完备集就是
 \begin{subequations}
 	\begin{align}
 	\ket{\frac{1}{2},\frac{1}{2}} \equiv \ket{\alpha}\\
@@ -3176,7 +3176,7 @@ $m_s$有$2s+1$个可能值：$-s,-s+1,-s+2,\ldots,s-1,s$.
 	s_z\ket{\alpha} & =\frac{1}{2}\ket{\alpha},\quad s_z\ket{\beta} = -\frac{1}{2}\ket{\beta}\\
 \intertext{
 	但不是$s_x,s_y$的本征态：}
-	s_x\ket{\alpha} & = \frac{1}{2}\ket{\beta},\quad s_x\ket{\beta} = \frac{1}{1}\ket{\alpha}\\
+	s_x\ket{\alpha} & = \frac{1}{2}\ket{\beta},\quad s_x\ket{\beta} = \frac{1}{2}\ket{\alpha}\\
 	s_y\ket{\alpha} & =\frac{i}{2}\ket{\beta},\quad s_y\ket{\beta} = -\frac{i}{2}\ket{\alpha}
 	\end{align}
 \end{subequations}
@@ -3208,7 +3208,7 @@ $m_s$的值改变$1$：
 	\end{align}
 \end{subequations}
 \exercise{
-a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导式\autoref{eq:2.248}.
+a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导\autoref{eq:2.248}.
 \Next
 求出$s^2,s_z,s_+,s_-$在$\ket{\alpha},\ket{\beta}$为基时的矩阵表示. 
 验证式(2.248a,b)的矩阵表示.
@@ -3220,7 +3220,7 @@ a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导式\autoref{eq:2.248}.
 
 多电子体系的总自旋算符就是每个电子自旋算符的矢量和：
 \begin{align}
-\vec{\mathscr{S}} = \sum_{i=1}^{N}\vec{s}(i)
+\vec{\ts} = \sum_{i=1}^{N}\vec{s}(i)
 \end{align}
 由此式可以看出, 
 总自旋的分量以及阶梯算符就是对应的单电子算符之和：
@@ -3255,7 +3255,7 @@ a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导式\autoref{eq:2.248}.
 \end{subequations}
 式中$S,M_S$分别是$N$-电子态$\ket{\Phi}$的总自旋量子数及其分量. 
 总自旋为$S=0,\frac{1}{2},1,\frac{3}{2},\ldots$的态, 
-其多重度为$(2S+1)=1,2,3,4$, 
+其多重度为$(2S+1)=1,2,3,4,\ldots$, 
 我们分别把这些态称作单重态、双重态、三重态、四重态等等. 
 \sch 方程的近似解并不一定是纯自旋态. 
 但是将近似波函数限制为单重、双重、三重态等等会比较方便.
@@ -3265,7 +3265,7 @@ a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导式\autoref{eq:2.248}.
 写出来就是
 \begin{align}
 \label{eq:2.254}
-\ts_z\ket{\chi_i\chi_j\cdots\chi_k} = \frac{1}{2}(N^\alpha - N_\beta)\ket{\chi_i\chi_j\cdots\chi_k} = M_S\ket{\chi_i\chi_j\cdots\chi_k}
+\ts_z\ket{\chi_i\chi_j\cdots\chi_k} = \frac{1}{2}(N^\alpha - N^\beta)\ket{\chi_i\chi_j\cdots\chi_k} = M_S\ket{\chi_i\chi_j\cdots\chi_k}
 \end{align}
 式中$N^\alpha$是具有$\alpha$自旋的轨道数目, 
 $N^\beta$是具有$\beta$自旋的轨道数目. 
@@ -3293,7 +3293,7 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 设想厄米算符$\mathscr{A}$与$\hs$对易, 
 它的两个非简并本征函数为$\ket{\Phi_{1}},\ket{\Phi_2}$, 
 即$\mathscr{A}\ket{\Phi_1} = a_1\ket{\Phi_1},\mathscr{A}\ket{\Phi_2} = a_2\ket{\Phi_2}, a_1\neq a_2$. 
-请证明$\ket{\Phi_1|\hs|\Phi_2} = 0$. 
+请证明$\bra{\Phi_1}\hs\ket{\Phi_2} = 0$. 
 由此可知, 
 哈密顿量在单重、三重态组态(仅举一例)之间的矩阵元为0.
 
@@ -3318,7 +3318,6 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 这些自旋轨道称为\emph{限制性}自旋轨道, 
 用这些轨道构成的行列式称为限制性行列式. 
 在这样的行列式内, 
-
 \begin{figure}[H]
 	\centering
 	\begin{tikzpicture}[thick]
@@ -3334,23 +3333,22 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 	\end{tikzpicture}
 	\caption{一个单重态限制性行列式.}
 \end{figure}
-一个空间轨道$\psi_i$既可以由单个电子占据(自旋上下都可以), 也能被两个电子占据(自旋一上一下). 非限制性行列式可以按照单占据轨道的数目来分类. 所有轨道都被两个电子占据的行列式称为\emph{闭壳层}行列式. 一个\emph{开壳层}就代表一个仅含一个电子的空间轨道. 可以按照开壳层的数目来称呼行列式.
+一个空间轨道$\psi_i$既可以由单个电子占据(自旋上下都可以), 也能被两个电子占据(自旋一上一下). 限制性行列式可以按照单占据轨道的数目来分类. 所有轨道都被两个电子占据的行列式称为\emph{闭壳层}行列式. 一个\emph{开壳层}就代表一个仅含一个电子的空间轨道. 可以按照开壳层的数目来称呼行列式.
 
 闭壳层行列式中的所有电子都配对, 
 那么很自然, 
 闭壳层行列式就是一个纯自旋单态. 
 也即, 
 它是$\ts^2$的本征函数, 
-本征值为零：
+本征值为零(见\autoref{ex:2.38})：
 \begin{align}\label{eq:2.256}
-\ts^2\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j} = 0(0+1)\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j} = 0
+\ts^2\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j\ldots} = 0(0+1)\ket{\psi_i\bar{\psi}_i\psi_j\bar{\psi}_j\ldots} = 0
 \end{align}
-可见\autoref{ex:2.38} 
-最简单的闭壳层行列式就是\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock基态波函数：
+最简单的闭壳层行列式就是{极小基 $\mathrm{H}_2$}的Hartree-Fock基态波函数：
 \begin{align}\label{eq:2.257}
-\ket{\Psi_0} = \ket{\psi_1\bar{\psi}_1} = [\psi_1(1)\psi_1(2)]^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2))
+\ket{\Psi_0} = \ket{\psi_1\bar{\psi}_1} = [\psi_1(1)\psi_1(2)]2^{-1/2}(\alpha(1)\beta(2) - \beta(1)\alpha(2))
 \end{align}
-式中最后的等号就是将行列式展开. 
+式中第二个等号展开了行列式. 
 这个波函数的自旋部分就是一双电子系统的单重自旋函数. 
 同样, 
 双激发态$\ket{\Psi_{1\bar{1}}^{2\bar{2}}}$也是单重态.
@@ -3358,14 +3356,15 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 \exercise{
 证明\autoref{eq:2.256}. 
 \textit{提示：}1) $\ts^2 = \ts_-\ts_+ + \ts_z + \ts^2_z$, 
-2) 用\autoref{eq:2.254}即可证明$\ts_+\ket{\psi_i\bar{\psi}_i}=0$, 
+2) 用\autoref{eq:2.254}即可证明$\ts_+\ket{\psi_i\bar{\psi}_i\ldots}=0$, 
 3)
 用\autoref{eq:2.115}展开行列式, 
 注意到$\ts_+$与置换算符对易, 
-4)最后一步, 
-$s_+\psi\beta = \psi_\alpha$, 
-但行列式此式为0, 
-因为其中有相同的两列.
+4) $s_+\psi\alpha = 0$,
+5)最后一步, 
+$s_+\psi\beta = \psi\alpha$, 
+但此行列式为0, 
+因为其有两列相同.
 
 }
 
@@ -3380,7 +3379,7 @@ $s_+\psi\beta = \psi_\alpha$,
 \begin{subequations}\label{eq:2.258}
 	\begin{align}
 	\ket{\Psi_1^{\bar{2}}} & = \ket{\bar{2}\bar{1}} = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\beta(1)\beta(2)\\
-	\ket{\Psi_{\bar{1}}^2} & = \ket{12}  = -2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\alpha(1)\alpha(2)
+	\ket{\Psi_{\bar{1}}^2} & = \ket{12}  = 2^{-1/2}[\psi_1(1)\psi_2(2) - \psi_2(1)\psi_1(2)]\alpha(1)\alpha(2)
 	\end{align}
 \end{subequations} 
 是$\ts^2$的本征函数, 
@@ -3435,21 +3434,23 @@ $s_+\psi\beta = \psi_\alpha$,
 	\caption{双重和三重限制性行列式.}
         \label{fig:2.12}
 \end{figure}
-真如我们所期望的, 
+正如我们所期望的, 
 $\ket{^1\Psi_1^2}$的自旋部分和闭壳层波函数\autoref{eq:2.257}相同, 
 因为二者都是单重态.
 
 \exercise{
-用此式$\ts^2 = \ts_-\ts_+ + \ts_z + \ts^2_z$证明$\ket{^1\psi^2_1}$式单态, 
-$\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
-
+用此式 $\ts^2 = \ts_-\ts_+ + \ts_z + \ts^2_z$ 证明 $\ket{^1\psi^2_1}$ 是单态, 
+ $\ket{^3\Psi_1^2}$,
+$\ket{\Psi_{1}^{\bar{2}}}$ 
+和 $\ket{\Psi_{\bar{1}}^2}$ 是三态.
+%
 \Next
 证明
 \begin{align*}
-\braket{^2\Psi_1^2|\hs|^1\Psi_1^2} = h_{11} + h_{22} + J_{12} + K_{12}\\
+\braket{^1\Psi_1^2|\hs|^1\Psi_1^2} = h_{11} + h_{22} + J_{12} + K_{12}\\
 \braket{^3\Psi_1^2|\hs|^3\Psi_1^2} = h_{11} + h_{22} + J_{12} - K_{12}
 \end{align*}
-由此三重态的能量就闭单重态能量低. 
+由此三重态的能量就比单重态能量低. 
 请用波函数的空间部分解释此现象.
 
 }
@@ -3458,7 +3459,7 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 第四章和第五章会用到单重自旋匹配组态, 
 它由如下闭壳层Hatree-Fock基态的单激发和双激发组成：
 \begin{align}
-\ket{\Psi_0} = \ket{1\bar{1}\cdots a\bar{a} b\bar{b}}
+\ket{\Psi_0} = \ket{1\bar{1}\cdots a\bar{a} b\bar{b} \cdots}
 \end{align}
 到底怎么找到办法来把单激发和双激发行列式线性组合为正确的自旋匹配组态就超出了本书的范围；
 我们仅引用这些结果. 
@@ -3467,11 +3468,11 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 对这些方法的一个权威且清晰的描述由Paunz\endnote{R. Paunz, \textit{Spin Eigenfunctions}, Plenum, New York, 1979.}给出.
 
 
-由单激发态(一个电子由$\psi_a$激发到$\psi_r$)可以构建一个单重自旋匹配组态：
+由单激发态(一个电子由空间轨道$\psi_a$激发到$\psi_r$)可以构建一个单重自旋匹配组态：
 \begin{align}
 \ket{^1\Psi_a^r} = 2^{-1/2}(\ket{\Psi_{\bar{a}}^{\bar{r}}} + \ket{\Psi_a^r})
 \end{align}
-若$a=1,b=2$则上面的式子就退化为\phrase{极小基 $\hd$}的情形, 
+若$a=1,r=2$则上面的式子就退化为\phrase{极小基 $\hd$}的情形, 
 即\autoref{eq:2.260}.
 
 
@@ -3499,37 +3500,38 @@ $\ket{^3\Psi_1^2}$和$\ket{\Psi_{\bar{1}}^2}$是三态.
 		%============ 1 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)--++(.5,0);
-		\draw (0,.4)node[left]{$b$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
-		\draw (0,.8)node[left]{$r$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
-		\draw (0,1.2)node[left]{$s$}--++(.5,0)--++(.5,0);
+		\draw (0,.35)node[left]{$b$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
+		\draw (0,.7)node[left]{$r$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
+		\draw (0,1.05)node[left]{$s$}--++(.5,0)--++(.5,0);
 		\end{tikzpicture}
 		& ${\ket{^1\Psi_{aa}^{rr}}} = \ket{\Psi_{a\bar{a}}^{r\bar{r}}}$\\
+                \vspace{2mm}
 		%============ 2 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)--++(.5,0);
-		\draw (0,.4)node[left]{$b$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
-		\draw (0,.8)node[left]{$r$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
-		\draw (0,1.2)node[left]{$s$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
+		\draw (0,.35)node[left]{$b$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
+		\draw (0,.7)node[left]{$r$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
+		\draw (0,1.05)node[left]{$s$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
 		\end{tikzpicture}
 		& ${\ket{^1\Psi_{aa}^{rs}}} = 2^{-1/2}(\ket{\Psi_{a\bar{a}}^{r\bar{s}}} + \ket{\Psi_{a\bar{a}}^{s\bar{r}}})$\\
 		%============ 3 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
-		\draw (0,.4)node[left]{$b$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
-		\draw (0,.8)node[left]{$r$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
-		\draw (0,1.2)node[left]{$s$}--++(.5,0)--++(.5,0);
+		\draw (0,.35)node[left]{$b$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
+		\draw (0,.7)node[left]{$r$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
+		\draw (0,1.05)node[left]{$s$}--++(.5,0)--++(.5,0);
 		\end{tikzpicture}
 		& ${\ket{^1\Psi_{ab}^{rr}}} = 2^{-1/2}(\ket{\Psi_{a\bar{b}}^{\bar{r}r}} + \ket{\Psi_{a\bar{b}}^{r\bar{r}}}$\\
 		%============ 4 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
-		\draw (0,.4)node[left]{$b$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
-		\draw (0,.8)node[left]{$r$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
-		\draw (0,1.2)node[left]{$s$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
+		\draw (0,.35)node[left]{$b$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
+		\draw (0,.7)node[left]{$r$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
+		\draw (0,1.05)node[left]{$s$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
 		\end{tikzpicture}
 		& 
 		$\begin{aligned}
-		{\ket{^A\Psi_{ab}^{rs}}} &= (12)^{-1/2}(2\ket{\Psi_{ab}^{rs}} + 2\ket{\Psi_{\bar{ab}}^{\bar{rs}}} - \ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} - \ket{\Psi_{a\bar{b}}^{s\bar{r}}}\\
+                    {\ket{^A\Psi_{ab}^{rs}}} &= (12)^{-1/2}(2\ket{\Psi_{ab}^{rs}} + 2\ket{\Psi_{\bar{a}\bar{b}}^{\bar{r}\bar{s}}} - \ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} - \ket{\Psi_{a\bar{b}}^{s\bar{r}}}\\
 		{\ket{^B\Psi_{ab}^{rs}}} & = \frac{1}{2}(\ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} + \ket{\Psi_{a\bar{b}}^{s\bar{r}}})
 		\end{aligned}$
                 \\\hline
@@ -3547,7 +3549,7 @@ $\mathrm{Li}$原子的限制性Hartree-Fock基态为：
 如\autoref{fig:2.13}所示. 
 在这个行列式中, 
 $1s\alpha$电子的空间部分和$1s\beta$电子的空间部分被限制为相同的函数. 
-这个限制是真实的, 
+这确实起到了限制作用, 
 因为$1s\alpha$电子与$2s\alpha$电子间由交换作用, 
 但与$1s\beta$之间没有. 
 那么$2s\alpha$电子就会``极化”$1s$壳层. 
@@ -3559,26 +3561,24 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 \begin{align}\label{eq:2.265}
 \ket{\Psi_\mathrm{UHF}} = \ket{\psi_{1s}^\alpha\bar{\psi}_{1s}^\beta\psi_{2s}^\alpha}
 \end{align}
-\begin{figure}[H]
-	\centering
-	\begin{tikzpicture}[thick]
-	\draw (.75,-1)node{RHF};
-	\draw (0,0)--++(.5,0)node{$\uparrow$}--++(.5,0)node{$\downarrow$}--++(.5,0)node[right]{$\psi_{1s}$};
-	\draw (0,1)--++(.5,0)--node{$\uparrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{2s}$};
-	\draw[very thick,->] (1.8,.5)--(3,.5);
-	\draw (4.75,-1)node{UHF};
-	\draw (3.5,-.2)--++(.5,0)--node{$\uparrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{1s}^\alpha$};
-	\draw (3.5,1.2)--++(.5,0)--node{$\uparrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{2s}^\alpha$};
-	\draw (5.8,0)--++(.5,0)--node{$\downarrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{1s}^\beta$};
-	\end{tikzpicture}
-	\caption{将限制性的单行列式放宽为非限制性的单行列式：以$\mathrm{Li}$原子为例.}
-        \label{fig:2.13}
-\end{figure}
 那么得到的能量应当更低. 
 事实确实如此. 
 波函数\autoref{eq:2.265}是\emph{非限制性}行列式一例. 
 它就是$\mathrm{Li}$原子的非限制性基态波函数.
-
+\begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[thick]
+        \draw (.75,-1)node{RHF};
+        \draw (0,0)--++(.5,0)node{$\uparrow$}--++(.5,0)node{$\downarrow$}--++(.5,0)node[right]{$\psi_{1s}$};
+        \draw (0,1)--++(.5,0)--node{$\uparrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{2s}$};                    \draw[very thick,->] (1.8,.5)--(3,.5);
+        \draw (4.75,-1)node{UHF};
+        \draw (3.5,-.2)--++(.5,0)--node{$\uparrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{1s}^\alpha$};
+        \draw (3.5,1.2)--++(.5,0)--node{$\uparrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{2s}^\alpha$};
+        \draw (5.8,0)--++(.5,0)--node{$\downarrow$}++(.5,0)--++(.5,0)node[right]{$\psi_{1s}^\beta$};
+        \end{tikzpicture}
+        \caption{将限制性的单行列式放宽为非限制性的单行列式：以$\mathrm{Li}$原子为例.}
+        \label{fig:2.13}
+\end{figure}
 
 非限制性行列式由非限制自旋轨道构成. 
 使用非限制自旋轨道时, 
@@ -3611,44 +3611,42 @@ $\alpha$$\beta$轨道并不正交.
 
 非限制性行列式不是$\ts^2$的本征函数. 
 此外， 
-它们也无法通过不多(a small number of)的行列式之间线性组合来成为自旋匹配的. 
+它们也无法像限制性行列式那样用不多(a small number of)的行列式线性组合出自旋匹配的. 
 因此, 
-Li原子的UHF基态不像RHF\autoref{eq:2.264}那样是一个纯双重态. 
+Li原子的UHF基态不像RHF基态\autoref{eq:2.264}那样是一个纯双重态. 
 但是, 
 非限制性波函数常用作双重和三重态的初始近似. 
 
-
+\begin{figure}\centering
+        \begin{tikzpicture}[thick]
+        \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_1^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha\bar{\psi_3^\beta}}$};
+        %=========== figure left, from bottom to top===========================
+        \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
+        \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
+        \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,2.2)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
+        %=========== figure right, from bottom to top===========================
+        \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
+        \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
+        \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,1.7)--++(.5,0)--node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \filldraw (0.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt) (.75,3.6)circle(.5pt);
+        \end{tikzpicture}
+        \caption{一个\emph{近似}为单重态的非限制性行列式. }
+        \label{fig:2.14}
+\end{figure}
 \autoref{fig:2.14}代表一个非限制性波函数, 
 它是近似单重的. 
 注意到$N^\alpha = N^\beta$. 
 图中为强调非限制性, 
 将$\alpha,\beta$轨道特别画成非简并的状态.
-
-\begin{figure}\centering
-	\begin{tikzpicture}[thick]
-	\draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_1^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha\bar{\psi_3^\beta}}$};
-	%=========== figure left, from bottom to top===========================
-	\draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
-	\draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
-	\draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,2.2)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
-	%=========== figure right, from bottom to top===========================
-	\draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
-	\draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
-	\draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,1.7)--++(.5,0)--node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\filldraw (0.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt) (.75,3.6)circle(.5pt);
-	\end{tikzpicture}
-	\caption{一个\emph{近似}为单重态的非限制性行列式. }
-        \label{fig:2.14}
-\end{figure}
 非限制性单态常会收敛到对应的限制性单态上, 
-也就是闭壳层状态. 
+也就是闭壳层状态: 
 举个例子, 
 在我们的\phrase{极小基 $\hd$}中, 
 在正常的键长下, 
@@ -3663,6 +3661,51 @@ Li原子的UHF基态不像RHF\autoref{eq:2.264}那样是一个纯双重态.
 使用非限制性行列式要闭限制性所得的能量更低, 
 正如我们在下一章将看到的那样.
 
+\begin{figure}                                                                                                \begin{minipage}{.48\textwidth}                                                                       \begin{tikzpicture}[thick]                                                                            \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_2^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha}$};
+        %=========== figure left, from bottom to top===========================
+        \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
+        \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
+        \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,2.2)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
+        %=========== figure right, from bottom to top===========================
+        \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
+        \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
+        \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
+        \end{tikzpicture}
+        \caption{一个\emph{近似}为双重态的非限制性行列式. }
+        \label{fig:2.15}
+        \end{minipage}\qquad
+        \begin{minipage}{.48\textwidth}
+        \begin{tikzpicture}[thick]
+        \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_3^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha{\psi_3^\alpha}}$};
+        %=========== figure left, from bottom to top===========================
+        \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
+        \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
+        \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,2.2)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
+        %=========== figure right, from bottom to top===========================
+        \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
+        \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
+        \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+        \filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
+        \end{tikzpicture}
+        \caption{一个\emph{近似}为三重态的非限制性行列式. }
+        \label{fig:2.16}
+        \end{minipage}
+\end{figure}  
 
 若$N^\alpha=N^\beta+1$, 
 那么非限制性行列式近似地为双重态(见\autoref{fig:2.15}). 
@@ -3686,56 +3729,7 @@ Li原子的UHF基态不像RHF\autoref{eq:2.264}那样是一个纯双重态.
 \end{subequations}
 可以看出非限制波函数会包含更高自旋多重度的态, 
 而不包含更低的. 
-如果以上展式中领头项占主导地位, 
-
-\begin{figure}
-	\begin{minipage}{.48\textwidth}
-	\begin{tikzpicture}[thick]
-        \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_2^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha}$};
-	%=========== figure left, from bottom to top===========================
-	\draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
-	\draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
-	\draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,2.2)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
-	%=========== figure right, from bottom to top===========================
-	\draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
-	\draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
-	\draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
-	\end{tikzpicture}
-	\caption{一个\emph{近似}为双重态的非限制性行列式. }
-        \label{fig:2.15}
-	\end{minipage}\qquad
-	\begin{minipage}{.48\textwidth}
-	\begin{tikzpicture}[thick]
-	\draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_3^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha{\psi_3^\alpha}}$};
-	%=========== figure left, from bottom to top===========================
-	\draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
-	\draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
-	\draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,2.2)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
-	%=========== figure right, from bottom to top===========================
-	\draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
-	\draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
-	\draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-	\filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
-	\end{tikzpicture}
-	\caption{一个\emph{近似}为三重态的非限制性行列式. }
-        \label{fig:2.16}
-	\end{minipage}
-\end{figure}
+如果以上展式中领头项占主导地位,
 那么就可以将非限制性行列式近似作双重态、三重态等等. 
 在非限制性行列式下, 
 $\ts^2$的期望值常常过大, 
