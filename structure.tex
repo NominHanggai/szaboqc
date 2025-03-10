@@ -40,6 +40,7 @@
 
 \usepackage{mathtools} % For *rcases* environment
 \usepackage[scr=boondoxo, scrscaled=1]{mathalfa}
+\DeclareMathAlphabet{\mathrsfs}{U}{rsfs}{m}{n}
 %\usepackage{mathrsfs}
 %\usepackage{mathptmx}
 \usepackage{mathpazo}
@@ -234,7 +235,8 @@
 \newcommand{\bfr}{\mathbf{r}}
 \newcommand{\heh}{\mathrm{HeH}^+}
 \newcommand{\au}{\,\mathrm{a.u.}}
-\newcommand{\ts}{\mathscr{S}} %总自旋算符
+%\newcommand{\ts}{\mathscr{S}} %总自旋算符
+\newcommand{\ts}{\mathrsfs{S}}
 \usepackage{xeCJKfntef} % the package containing the command \CJKuderline*{} for the \mci command
 \newcommand{\mci}[1]{\CJKunderline{#1}}
 \newcommand{\phrase}[1]{\CJKunderline{#1}}
