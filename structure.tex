@@ -41,6 +41,12 @@
 \usepackage{mathtools} % For *rcases* environment
 \usepackage[scr=boondoxo, scrscaled=1]{mathalfa}
 \DeclareMathAlphabet{\mathrsfs}{U}{rsfs}{m}{n}
+\DeclareFontFamily{U}{rsfs}{\skewchar\font127 }
+\DeclareFontShape{U}{rsfs}{m}{n}{%
+   <-6> rsfs5
+   <6-8> rsfs7
+   <8-> rsfs10
+}{}
 %\usepackage{mathrsfs}
 %\usepackage{mathptmx}
 \usepackage{mathpazo}
