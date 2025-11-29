@@ -815,8 +815,8 @@ Hartree-Fock势$v^{\rm HF}(i)$, 或者叫作i电子感受到的场, 由其他电
 SCF的基本想法比较简单. 首先对自旋轨道作一个初始猜测, 此时就可以算出每个电子感受到的平均场$v^{\rm HF}$, 然后就可以利用这个有效势解方程\autoref{2.52}, 得到一组新的自旋轨道. 再用新自旋轨道得到新的平均场, 重复这个步骤直到方程自洽(即直到有效场不再变化, 自旋轨道与Fock算符的本征函数一致).
 
 \autoref{2.52}中Hartree-Fock本征值问题的解是一组正交的Hartree-Fock自旋轨道$\{\chi_k\}$和一组对应的本征值$\{\varepsilon_k\}$. 
-$N$个有最低能量的自旋轨道称为\emph{占据}自旋轨道或\emph{穴}自旋轨道. 
-由这N个轨道生成的Slater行列式就是Hartree-Fock基态波函数, 
+$N$个有最低能量的自旋轨道称为\emph{占据}自旋轨道或\emph{空穴}自旋轨道. 
+由这$N$个轨道生成的Slater行列式就是Hartree-Fock基态波函数, 
 也即Hartree-Fock单Slater行列式框架下体系波函数的最优变分近似. 
 我们暂且将占据轨道的指标记为$a,b,c\cdots$(即$\chi_a,\chi_b,\chi_c,\cdots$). 
 余下的轨道就是\emph{虚自旋轨道}, 或者叫\emph{未占据自旋轨道、粒子自旋轨道(particle)}. 
@@ -954,7 +954,7 @@ $R_{12}=\infty$那么$S_{12}=0$.
 
 利用两个定域原子轨道$\phi_1,\phi_2$, 
 可以采取线性组合的方式构建两个离域分子轨道. 
-对称组合生成$gerade$宇称的成键分子轨道(所谓gerade对称是指, 
+对称组合生成\textit{gerade}对称的成键分子轨道(所谓gerade对称是指, 
 以两核之间的中点作为反演点, 
 将分子轨道反演, 
 轨道保持不变, 
@@ -965,7 +965,7 @@ $R_{12}=\infty$那么$S_{12}=0$.
 \psi_1=[2(1+S_{12})]^{-1/2}(\phi_1+\phi_2)
 \end{equation}
 相反地也可以构建反对称组合, 
-生成具有$ungerade$对称性的反键分子轨道(也即在中点反演下轨道反对称):
+生成具有\textit{ungerade}对称性的反键分子轨道(也即在中点反演下轨道反对称):
 \begin{equation}
 \label{2.58}
 \psi_2=[2(1-S_{12})]^{-1/2}(\phi_1-\phi_2)
@@ -1012,32 +1012,35 @@ $\chi_3,\chi_4$也是简并的,
 如\autoref{fig2.6}所示.
 
 \begin{figure}[ht]
-	\begin{tikzpicture}[ thick,scale=2.5]
+	\begin{minipage}[t]{0.5\textwidth}
+	\begin{tikzpicture}[baseline={(0,.2)}]
 	% 1st four orbitals psi_0 = 
-	\node at (0, 0) {$\ket{\Psi_0}=$};
-	\draw (0.7,0.2)node[left]{$\chi_3$}--(1.5,0.2);
-	\draw (1.7,0.2)--(2.5,0.2)node[right]{$\chi_3$};
-	\draw (0.7,-.2)node[left]{$\chi_1$}--(1.5,-.2);
-	\draw (1.7,-.2)--(2.5,-.2)node[right]{$\chi_2$};
-	\node at(1.1,-.25) {\Huge\bf*};
-	\node at(2.1,-.25) {\Huge\bf*};
-	\node at (0.2, -1.2){$\equiv$};
-	\draw (0.7, -1)node[left]{$\chi_3$}--(1.5, -1);
-	\draw (1.7, -1)--(2.5, -1)node[right]{$\chi_4$};
+	\node at (0.6,3.9) {$\ket{\Psi_0}=$};
+	\draw (1.7,4.2)node[left]{$\chi_3$}--(2.9,4.2);
+	\draw (3.1,4.2)--(4.3,4.2)node[right]{$\chi_3$};
+	\draw (1.7,3.6)node[left]{$\chi_1$}--(2.9,3.6);
+	\draw (3.1,3.6)--(4.3,3.6)node[right]{$\chi_2$};
+	\node at(2.3,3.6) {\Large$*$};
+	\node at(3.7,3.6) {\Large$*$};
 	% replac asterisk by arrow 
-	\draw (0.7,-1.4)node[left]{$\chi_1$}--(1.5,-1.4);
-	\draw (1.7,-1.4)--(2.5,-1.4)node[right]{$\chi_2$};
-	\node at(1.1,-1.4) {$\mbf{\big\uparrow}$};
-	\node at(2.1,-1.4) {$\mbf{\big\downarrow}$};
+	\node at (1.0,2.0){$\equiv$};
+	\draw (1.7,2.4)node[left]{$\chi_3$}--(2.9,2.4);
+	\draw (3.1,2.4)--(4.3,2.4)node[right]{$\chi_4$};
+	\draw (1.7,1.8)node[left]{$\chi_1$}--(2.9,1.8);
+	\draw (3.1,1.8)--(4.3,1.8)node[right]{$\chi_2$};
+	\node at(2.3,1.8) {\Large$\uparrow$};
+	\node at(3.7,1.8) {\Large$\downarrow$};
 	
-	\node at (0.8,-2.4){$\equiv$};
-	\draw (1.2,-2.2)--(2.0,-2.2)node[right]{$\psi_2$};
-	\draw (1.2,-2.6)--(2.0,-2.6)node[right]{$\psi_1$};
-	\node at(1.47,-2.6) {$\mbf{\big\uparrow}$};
-	\node at(1.73,-2.6) {$\mbf{\big\downarrow}$};
+	\node at (1.7,0.3){$\equiv$};
+	\draw (2.4,0.6)--(3.6,0.6)node[right]{$\psi_2$};
+	\draw (2.4,0.0)--(3.6,0.0)node[right]{$\psi_1$};
+	\node at(2.8,0.0) {\Large$\uparrow$};
+	\node at(3.2,0.0) {\Large$\downarrow$};
 	\end{tikzpicture}
-	\caption{H$_2$的Hartree-Fock基态: 3种表达法}
-		\label{fig2.6}
+	\end{minipage}\qquad
+	\begin{minipage}[t]{0.4\textwidth}
+	\caption{最小基组H$_2$ Hartree-Fock基态的3种表示法}\label{fig2.6}
+	\end{minipage}
 \end{figure}
 有时用自旋轨道空间部分的记号来标记自旋轨道本身, 
 符号上面有无横线代表自旋是$\alpha$或$\beta$:
@@ -1132,7 +1135,7 @@ Hartree-Fock基态只是其一.
 		\caption{一个单激发行列式.}\label{f2.7}
 	\end{minipage}
 \end{figure}
-\begin{figure}[ht]
+\begin{figure}[ht!]
 	\begin{minipage}[t]{0.4\textwidth}
 		\begin{tikzpicture}[baseline={(0,.2)}]
 		\draw[](0,0)--node{\Large$*$}+(1.5,0)node[right]{$\chi_1$};
