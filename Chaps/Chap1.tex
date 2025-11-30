@@ -133,15 +133,15 @@
 $\{\vec{e}_i\}$ 的线性组合这一事实。
 
 现在我们对\emph{算符}进行定义：
-算符 $\mcr{O}$ 可以作用在一个矢量 $\vec{a}$ 上，
+算符 $\op{O}$ 可以作用在一个矢量 $\vec{a}$ 上，
 将之转变成另一个矢量 $\vec{b}$：
 \begin{equation}
- \mcr{O}\vec{a} = \vec{b}
+ \op{O}\vec{a} = \vec{b}
  \label{eq:1.11}
 \end{equation}
 对于任意的数 $x$ 和 $y$，如果一个算符满足下述关系：
 \begin{equation}
- \mcr{O}\left(x\vec{a} + y\vec{b}\right) = x\op{O}\vec{a} + y\op{O}\vec{b}
+ \op{O}\left(x\vec{a} + y\vec{b}\right) = x\op{O}\vec{a} + y\op{O}\vec{b}
  \label{eq:1.12}
 \end{equation}
 则$\op{O}$为\emph{线性}算符。
@@ -469,14 +469,14 @@ $p_i$为由标准排列 $1, 2, 3, \dots, N$ 到一个给定的排列 $i_1, i_2, 
 \end{enumerate}
 
 \exercise{
- 用一个$2\times 2$的行列式做例子，验证上述行列式的性质。
+ 验证$2\times 2$的行列式满足上述性质。
 \Next
  应用上述行列式性质，证明以下关系成立：
  \begin{enumerate}
      \item 如果行列式的两行或两列相等，则行列式的值为零。
      \item $\vert\mbf{A}^{-1}\vert = \left(\vert\mbf{A}\vert\right)^{-1}$
      \item 如果${\mbf A}{\madj A} = {\mbf 1}$，则$\vert{\mbf A}\vert\left(\vert\mbf{A}\vert\right)^{\ast} = \mbf{1}$。
-     \item 如果 $\madj{U}{\mbf O}{\mbf U} = \boldsymbol{\Omega}$和$\madj{U}{\mbf U} = \mbf{U}\madj{U} = \mbf 1$，则有 $\vert \mbf{O}\vert = \vert\mathbf{\Omega}\vert$。
+     \item 如果 $\madj{U}{\mbf O}{\mbf U} = \mbf{\Omega}$和$\madj{U}{\mbf U} = \mbf{U}\madj{U} = \mbf 1$，则有 $\vert \mbf{O}\vert = \vert\mbf{\Omega}\vert$。
  \end{enumerate}
 \Next
  对照\autoref{eq:1.39}，
@@ -819,7 +819,7 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 算符 $\op{O}$ 的矩阵表示具有什么样的联系。
 下一步我们得到的结果将在下一小节关于本征值问题的讨论中占据着中心地位。
 假设$\mbf O$是算符$\op{O}$在基组$\kbs{i}$中的矩阵表示，
-而$\boldsymbol{\Omega}$是该算符在基组$\kbs{\alpha}$中的矩阵表示，
+而$\mbf \Omega$是该算符在基组$\kbs{\alpha}$中的矩阵表示，
 则有：
 \begin{subequations}
  \begin{equation}
@@ -831,7 +831,7 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
      \label{eq:1.68b}
  \end{equation}
 \end{subequations}
-为了得到$\mbf O$和$\boldsymbol\Omega$之间的关系，
+为了得到$\mbf O$和$\mbf\Omega$之间的关系，
 我们可以使用已经熟悉的技巧，
 即在合适的位置插入单位算符：
 \begin{equation}
@@ -845,17 +845,17 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 即为：
 \begin{subequations}
  \begin{equation}
-     \boldsymbol\Omega = \madj{U}\mbf{O}\mbf{U}
+    \mbf \Omega = \madj{U}\mbf{O}\mbf{U}
      \label{eq:1.70a}
  \end{equation}
 或者在上式两边左乘$\mbf U$，右乘$\madj{U}$，得到：
 \begin{equation}
- \mbf O = \mbf{U}\boldsymbol\Omega\madj{U}
+ \mbf O = \mbf{U}\mbf\Omega\madj{U}
  \label{eq:1.70b}
 \end{equation}
 \end{subequations}
 上述方程说明，
-矩阵$\mbf{O}$和$\boldsymbol\Omega$可以通过一个\emph{幺正变换}联系起来。
+矩阵$\mbf{O}$和$\mbf \Omega$可以通过一个\emph{幺正变换}联系起来。
 幺正变换的重要性在于：对于任意的Hermitian算符，
 若它在基组$\kbs{i}$中的矩阵表示不是对角的，
 则总能找到一个基组$\kbs{\alpha}$，
@@ -869,8 +869,8 @@ Hermitian算符矩阵表示的矩阵元满足如下关系：
 \exercise{
  证明：幺正变换后，矩阵的迹不变。
  即，若
- \[\boldsymbol\Omega = \madj{U}\mbf{O}\mbf{U}\]
- 则有 $\tr{\boldsymbol\Omega} = \tr{\mbf O}$
+ \[\mbf\Omega = \madj{U}\mbf{O}\mbf{U}\]
+ 则有 $\tr{\mbf\Omega} = \tr{\mbf O}$
 }
 
 
@@ -971,18 +971,18 @@ Hermitian算符在一个任意基组$\kbs{i}$下的矩阵表示并不是对角�
 \end{equation}
 
 关于本征值问题，我们可以这样理解：
-给定一个 Hermitian算符$\op{O}$在一个正交归一基组$\left\{\ket{i},\; i = 1, 2, \dots, N\right\}$ 的矩阵表示$\mbf O$，
-我们需要找到一个新的基组 $\left\{\ket{\alpha},\; \alpha = 1, 2, \dots, N\right\}$，
+给定一个 Hermitian算符$\op{O}$在一个正交归一基组$\left\{\ket{i},\; i = 1, 2, \dots, N\right\}$ 下的矩阵表示$\mbf O$，
+我们希望找到另一组正交归一的基组 $\left\{\ket{\alpha},\; \alpha = 1, 2, \dots, N\right\}$，
 并要求在此基组下，
-算符$\op{O}$的矩阵表示 $\boldsymbol\Omega$为对角阵，
+算符$\op{O}$的矩阵表示 $\mbf\Omega$为对角阵，
 即$\Omega_{\alpha\beta} = \omega_\alpha\delta_{\alpha\beta}$。
 简单地说，
 我们需要将矩阵$\mbf O$对角化。上一小节介绍了算符$\op{O}$的两种表象通过一个幺正变换相关（\autoref{eq:1.70a}：
-\[\boldsymbol\Omega = \madj{U}\mbf{O}\mbf{U}\]
+\[\mbf\Omega = \madj{U}\mbf{O}\mbf{U}\]
 因此，
 对角化 Hermitian矩阵$\mbf O$的问题就转化成了\emph{寻找}能够将$\mbf O$变换成对角阵的那个幺正矩阵$\mathbf{U}$：
 \begin{equation}
- \madj{U}\mbf{O}\mbf{U} = \boldsymbol\omega = \begin{pmatrix}
+ \madj{U}\mbf{O}\mbf{U} = \mbf\omega = \begin{pmatrix}
      \omega_1     & & & &\\
           &\omega_2 &     &\mathbf{0} &\\
           & &\omega_3 & &\\
@@ -1750,11 +1750,14 @@ Dirac 符号的优美之处在于，它允许我们用完全相同的形式来�
  为了进一步展示我们所采用的符号体系的自洽性，
  考虑算符$\op{O}$在基组$\left\{\psi_i(x)\right\}$中的矩阵表示：
  已知
- \[\op{O}\psi_i(x) = \sum_j\psi_j(x)O_{ji}\]
+ \[
+    \op{O}\psi_i(x) = \sum_j\psi_j(x)O_{ji}
+    \tag{1}\label{eq:e1.15.1}
+ \]
  证明
  \[O_{ji} = \int\mrm{d}x\,\psi_j^\ast(x)\op{O}\psi_i(x)\]
  然后应用\autoref{eq:1.127a}和\autoref{eq:1.138}，
- 用 Dirac 符号重写第一个方程，
+ 用 Dirac 符号重写\autoref{eq:e1.15.1}，
  并证明其与\autoref{eq:1.55}等价。
 \Next
  考虑如下本征值问题：
@@ -1874,63 +1877,63 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \label{eq:1.145}
 \end{equation}
 此外，我们还假设$\op{H}$的本征函数构成一个完备基，
-因此，任意一个与$\left\{\ket{\Phi_\alpha}\right\}$具有相同的边界条件的函数$\vert\tilde{\Phi}\rangle$，都可以写为$\ket{\Phi_\alpha}$的线性组合：
+因此，任意一个与$\left\{\ket{\Phi_\alpha}\right\}$具有相同的边界条件的函数$\vert\widetilde{\Phi}\rangle$，都可以写为$\ket{\Phi_\alpha}$的线性组合：
 \begin{equation}
- \Ket{\tilde{\Phi}} = \sum_\alpha \mathinner{\Big\vert\Phi_\alpha\Big\rangle} c_\alpha = \sum_\alpha \Big\vert\Phi_\alpha\Big\rangle \Olp{\Phi_\alpha}{\tilde{\Phi}}
+ \Ket{\widetilde{\Phi}} = \sum_\alpha \mathinner{\Big\vert\Phi_\alpha\Big\rangle} c_\alpha = \sum_\alpha \Big\vert\Phi_\alpha\Big\rangle \Olp{\Phi_\alpha}{\widetilde{\Phi}}
  \label{eq:1.146}
 \end{equation}
 以及
 \begin{equation}
- \Bra{\tilde\Phi} = \sum_\alpha c_\alpha^\ast \Big\langle\Phi_\alpha\Big\vert = \sum_\alpha \Olp{\tilde\Phi}{\Phi_\alpha}\Big\langle\Phi_\alpha\Big\vert
+ \Bra{\widetilde\Phi} = \sum_\alpha c_\alpha^\ast \Big\langle\Phi_\alpha\Big\vert = \sum_\alpha \Olp{\widetilde\Phi}{\Phi_\alpha}\Big\langle\Phi_\alpha\Big\vert
  \label{eq:1.147}
 \end{equation}
 
 \subsection{变分原理}
 \label{sec:1.3.1}
 现在我们给出一个重要的定理，即\emph{变分原理}，的描述，并给予证明：
-对于一个符合恰当边界条件（通常是在无穷远处波函数为零）的归一化的波函数$\ket{\tilde\Phi}$，
+对于一个符合恰当边界条件（通常是在无穷远处波函数为零）的归一化的波函数$\ket{\widetilde\Phi}$，
 其 Hamiltonian 的期望值是精确基态能量的上限。即，若有
 \begin{equation}
- \Big\langle\tilde\Phi\Big\vert\tilde\Phi\Big\rangle = 1
+ \Big\langle\widetilde\Phi\Big\vert\widetilde\Phi\Big\rangle = 1
  \label{eq:1.148}
 \end{equation}
 则
 \begin{equation}
- \Big\langle\tilde\Phi\Big\vert\op{H}\Big\vert\tilde\Phi\Big\rangle \geq \mcr{E}_0
+ \Big\langle\widetilde\Phi\Big\vert\op{H}\Big\vert\widetilde\Phi\Big\rangle \geq \mcr{E}_0
  \label{eq:1.149}
 \end{equation}
 此定理的证明比较简单
 \footnote{
 译注：此处原书的证明有些冗余，实际上证明变分定理无需第二套基底$\Ket{\Phi_\beta}$。考虑
 \[
-    \Olp{\tilde\Phi}{\tilde\Phi} = \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2 = 1
+    \Olp{\widetilde\Phi}{\widetilde\Phi} = \sum_\alpha \Big\langle\widetilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\widetilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\widetilde\Phi\Big\rangle\Big\vert^2 = 1
 \]
 上式用到了\autoref{eq:1.146}。然后，
 \[
-    \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle =  \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
+    \Langle\widetilde\Phi\Lvert\op{H}\Lvert\widetilde\Phi\Rangle =  \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2
 \]
 上式用到了\autoref{eq:1.143}。最后，对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
 \[
-    \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
+    \Langle\widetilde\Phi\Lvert\op{H}\Lvert\widetilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha\Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2 \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
 \]
 即可证明\autoref{eq:1.149}，即变分原理。
 }
 。首先我们考虑
 \begin{equation}
  \begin{split}
-     \Olp{\tilde\Phi}{\tilde\Phi} &= 1 = \sum_{\alpha\beta}\Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\Phi_\beta\Big\rangle\Big\langle\Phi_\beta\Big\vert\tilde\Phi\Big\rangle = \sum_{\alpha\beta} \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\delta_{\alpha\beta}\Big\langle\Phi_\beta\Big\vert\tilde\Phi\Big\rangle \\
-     &= \sum_\alpha \Big\langle\tilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\tilde\Phi\Big\rangle\Big\vert^2
+     \Olp{\widetilde\Phi}{\widetilde\Phi} &= 1 = \sum_{\alpha\beta}\Big\langle\widetilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\Phi_\beta\Big\rangle\Big\langle\Phi_\beta\Big\vert\widetilde\Phi\Big\rangle = \sum_{\alpha\beta} \Big\langle\widetilde\Phi\Big\vert\Phi_\alpha\Big\rangle\delta_{\alpha\beta}\Big\langle\Phi_\beta\Big\vert\widetilde\Phi\Big\rangle \\
+     &= \sum_\alpha \Big\langle\widetilde\Phi\Big\vert\Phi_\alpha\Big\rangle\Big\langle\Phi_\alpha\Big\vert\widetilde\Phi\Big\rangle = \sum_\alpha \Big\vert\Big\langle\Phi_\alpha\Big\vert\widetilde\Phi\Big\rangle\Big\vert^2
  \end{split}
  \label{eq:1.150}
 \end{equation}
 其中，我们用到了\autoref{eq:1.144}、\autoref{eq:1.146}和\autoref{eq:1.147}。然后，
 \begin{equation}
- \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle = \sum_{\alpha\beta}\Langle\tilde\Phi\Lvert\Phi_\alpha\Rangle\Langle\Phi_\alpha\Lvert\op{H}\Lvert\Phi_\beta\Rangle\Langle\Phi_\beta\Lvert\tilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2
+ \Langle\widetilde\Phi\Lvert\op{H}\Lvert\widetilde\Phi\Rangle = \sum_{\alpha\beta}\Langle\widetilde\Phi\Lvert\Phi_\alpha\Rangle\Langle\Phi_\alpha\Lvert\op{H}\Lvert\Phi_\beta\Rangle\Langle\Phi_\beta\Lvert\widetilde\Phi\Rangle = \sum_\alpha \mcr{E}_\alpha \Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2
  \label{eq:1.151}
 \end{equation}
 上式用到了\autoref{eq:1.145}。最后，由于对于所有$\alpha$有$\mcr{E}_\alpha \geq \mcr{E}_0$，我们得到
 \begin{equation}
- \Langle\tilde\Phi\Lvert\op{H}\Lvert\tilde\Phi\Rangle \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\tilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
+ \Langle\widetilde\Phi\Lvert\op{H}\Lvert\widetilde\Phi\Rangle \geq \sum_\alpha \mcr{E}_0\Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2 = \mcr{E}_0\sum_\alpha \Lvert\Langle\Phi_\alpha\Lvert\widetilde\Phi\Rangle\Lvert^2 = \mcr{E}_0
  \label{eq:1.152}
 \end{equation}
 此处我们用到了正交化条件\autoref{eq:1.150}。
@@ -1940,9 +1943,9 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
 因此，可以用期望能量来检测波函数的质量：
 能量越低，波函数质量越好。
 上述即为变分原理的基础：
-我们采用了一个归一化的试探函数$\ket{\tilde\Phi}$，
+我们采用了一个归一化的试探函数$\ket{\widetilde\Phi}$，
 这个试探函数具有某些参数，
-改变这些参数使得期望值$\Mele{\tilde\Phi}{H}{\tilde\Phi}$达到其极小值。
+改变这些参数使得期望值$\Mele{\widetilde\Phi}{H}{\widetilde\Phi}$达到其极小值。
 这个极小值就是精确基态能量的变分估值。
 
 \exercise{
@@ -1951,7 +1954,7 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \left(-\frac{1}{2}\frac{\mrm{d}^2}{\mrm{d}x^2} - \delta(x)\right) \ket{\Phi} = \mcr{E}\ket{\Phi}
  \]
  采用如下试探函数，
- \[\Lvert\tilde\Phi\Rangle = N \mrm{e}^{-\alpha x^2}\]
+ \[\Lvert\widetilde\Phi\Rangle = N \mrm{e}^{-\alpha x^2}\]
  应用变分法，验证$-\pi^{-1}$是精确基态能量（-0.5）的一个上限。
  计算中可能会用到如下积分：
  \[
@@ -1964,7 +1967,7 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \]
  应用变分法并采用如下试探函数：
  \[
- \Ket{\tilde{\Phi}} = N \mrm{e}^{-\alpha r^2}
+ \Ket{\widetilde{\Phi}} = N \mrm{e}^{-\alpha r^2}
  \]
  验证$-4/3\pi = -0.4244$是精确基态能量(-0.5)的一个上限。
  计算中可能会用到如下公式：
@@ -1978,8 +1981,8 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \int_0^\infty\mrm{d}r\,r^{2m+1}\mrm{e}^{-\alpha r^2} = \frac{m!}{2\alpha^{m+1}}
  \]
 \Next
- 将变分原理应用于矩阵本征值问题时用到的列矢量$\mbf{c}$是归一化的（$\madj{c}\mbf{c} = 1$），
- 由此我们得到$\madj{c}\mbf{Oc}$不低于矩阵$\mbf{O}$的最低本征值的结论。
+ 变分原理在矩阵本征值问题的应用表明：若列矢量$\mbf{c}$是归一化的（$\madj{c}\mbf{c} = 1$），
+ 则$\madj{c}\mbf{Oc}$不小于矩阵$\mbf{O}$的最低本征值。
  对于一个$2\times2$对称矩阵（$O_{12}=O_{21}$），
  \[ \mbf{O} = 
  \begin{pmatrix}
@@ -1995,21 +1998,21 @@ $\ket{\Phi}$是波函数，$\op{E}$是体系能量。
  \[\omega(\theta) = \madj{c}\mbf{O}\mbf{c}\]
  并指出使$\omega(\theta)$取极小值的$\theta$，
  即$\theta_0$。
- 验证$\omega(\theta_0)$与矩阵$\mbf O$的最低本征值（见\autoref{eq:1.105} 和\autoref{eq:1.106a}相等。
+ 验证$\omega(\theta_0)$与矩阵$\mbf O$的最低本征值相等（见\autoref{eq:1.105} 和\autoref{eq:1.106a}）。
  你对这个结果有什么想法？
 }
 
 
 \subsection{线性变分问题}
 \label{sec:1.3.2}
-若试探函数$\ket{\tilde\Phi}$包含一系列参数，
-则其期望值$\langle\tilde\Phi\vert\op{H}\vert\tilde\Phi\rangle$也取决于这些参数。
+若试探函数$\ket{\widetilde\Phi}$包含一系列参数，
+则其期望值$\langle\widetilde\Phi\vert\op{H}\vert\widetilde\Phi\rangle$也取决于这些参数。
 通常情况下，
-寻找使$\langle\tilde\Phi\vert\op{H}\vert\tilde\Phi\rangle$取极小值的那组参数的值是一个非常复杂的问题，
+寻找使$\langle\widetilde\Phi\vert\op{H}\vert\widetilde\Phi\rangle$取极小值的那组参数的值是一个非常复杂的问题，
 以至于没有简单的方法来完成。
 然而，如果我们只允许试探函数存在线性的变化，即：
 \begin{equation}
- \Ket{\tilde\Phi} = \sum_{i=1}^{N} c_i \Lvert\Psi_i\Rangle
+ \Ket{\widetilde\Phi} = \sum_{i=1}^{N} c_i \Lvert\Psi_i\Rangle
  \label{eq:1.153}
 \end{equation}
 其中，$\left\{\vert\Psi_i\rangle\right\}$是一组\emph{固定}的基函数，
@@ -2031,21 +2034,21 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
 基函数为实函数，$\mbf H$为对称矩阵，
 即$H_{ij} = H_{ji}$。试探函数满足归一化条件
 \begin{equation}
- \Olp{\tilde\Phi}{\tilde\Phi} = \sum_{ij} c_i c_j \Langle\Psi_i\Lvert\Psi_j\Rangle = \sum_i c_i^2 = 1
+ \Olp{\widetilde\Phi}{\widetilde\Phi} = \sum_{ij} c_i c_j \Langle\Psi_i\Lvert\Psi_j\Rangle = \sum_i c_i^2 = 1
  \label{eq:1.156}
 \end{equation}
 其期望值
 \begin{equation}
- \Mele{\tilde\Phi}{H}{\tilde\Phi} = \sum_{ij}c_i\Langle\Psi_i\Lvert\op{H}\Lvert\Psi_j\Rangle c_j = \sum_{ij}c_ic_jH_{ij}
+ \Mele{\widetilde\Phi}{H}{\widetilde\Phi} = \sum_{ij}c_i\Langle\Psi_i\Lvert\op{H}\Lvert\Psi_j\Rangle c_j = \sum_{ij}c_ic_jH_{ij}
  \label{eq:1.157}
 \end{equation}
 是关于展开系数的函数。
 
-我们的问题是寻找使$\langle\tilde\Phi\vert\op{H}\vert\tilde\Phi\rangle$取极小值的那组参数。
+我们的问题是寻找使$\langle\widetilde\Phi\vert\op{H}\vert\widetilde\Phi\rangle$取极小值的那组参数。
 不幸的是，这$N$个参数不是互相独立的，
 因此我们不能简单地求解如下方程：
 \begin{equation}
- \frac{\partial}{\partial c_k} \Mele{\tilde\Phi}{H}{\tilde\Phi} = 0 \qquad k = 1, 2, \dots, N
+ \frac{\partial}{\partial c_k} \Mele{\widetilde\Phi}{H}{\widetilde\Phi} = 0 \qquad k = 1, 2, \dots, N
  \label{eq:1.158}
 \end{equation}
 由于试探函数是归一化的，
@@ -2055,14 +2058,14 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
 
 \begin{equation}
  \begin{split}
-     \mcr{L}\left(c_1, \dots, c_N, E\right) &= \Mele{\tilde\Phi}{H}{\tilde\Phi} - E\left(\Olp{\tilde\Phi}{\tilde\Phi} - 1\right) \\
+     \mcr{L}\left(c_1, \dots, c_N, E\right) &= \Mele{\widetilde\Phi}{H}{\widetilde\Phi} - E\left(\Olp{\widetilde\Phi}{\widetilde\Phi} - 1\right) \\
      &= \sum_{ij} c_ic_jH_{ij} - E\left(\sum_i c_i^2 -1\right)
  \end{split}
  \label{eq:1.159}
 \end{equation}
 由于试探函数是归一化的，
 实际上我们只在\autoref{eq:1.157}上加了一个零项，
-因此函数$\mele{\tilde\Phi}{H}{\tilde\Phi}$ 和$\mcr{L}$在取同一组参数值时同事具有极小值。
+因此$\mele{\widetilde\Phi}{H}{\widetilde\Phi}$ 和$\mcr{L}$在某一组参数值下同时具有极小值。
 如果将$c_1, c_2, \dots, c_{N-1}$选为任意的独立变量，
 则$c_N$可以通过归一性条件\autoref{eq:1.156}确定。
 这时我们有：
@@ -2119,21 +2122,21 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
 \end{equation}
 
 通过上述变换，
-我们实际上能够同时求出关于$\ket{\tilde\Phi}$的$N$组而不是一组展开系数：
+我们实际上能够同时求出关于$\ket{\widetilde\Phi}$的$N$组而不是一组展开系数：
 \begin{equation}
- \Ket{\tilde\Phi} = \sum_{i=1}^N c_i^\alpha \Lvert\Psi_i\Rangle = \sum_{i=1}^N C_{i\alpha}\Lvert\Psi_i\Rangle \qquad \alpha = 0, 1, \dots, N-1
+ \Ket{\widetilde\Phi} = \sum_{i=1}^N c_i^\alpha \Lvert\Psi_i\Rangle = \sum_{i=1}^N C_{i\alpha}\Lvert\Psi_i\Rangle \qquad \alpha = 0, 1, \dots, N-1
  \label{eq:1.168}
 \end{equation}
 并且这些本征矢满足正交归一关系：
 \begin{equation}
- \Langle\tilde\Phi_\alpha\Lvert\tilde\Phi_\beta\Rangle = \sum_{ij} c_i^\alpha c_j^\beta \Langle\Psi_i\Lvert\Psi_j\Rangle = \sum_{ij}c_i^\alpha c_j^\beta\delta_{ij} = \sum_i c_i^\alpha c_i^\beta = \delta_{\alpha\beta}
+ \Langle\widetilde\Phi_\alpha\Lvert\widetilde\Phi_\beta\Rangle = \sum_{ij} c_i^\alpha c_j^\beta \Langle\Psi_i\Lvert\Psi_j\Rangle = \sum_{ij}c_i^\alpha c_j^\beta\delta_{ij} = \sum_i c_i^\alpha c_i^\beta = \delta_{\alpha\beta}
  \label{eq:1.169}
 \end{equation}
 上式推导过程中我们用到了\autoref{eq:1.154}和\autoref{eq:1.166}。
 我们还需要发掘一下$E$的物理意义，考虑到：
 \begin{equation}
  \begin{split}
-     \Langle\tilde\Phi_\beta\Lvert\op{H}\Lvert\tilde\Phi_\alpha\Rangle &= \sum_{ij} c_i^\beta \Langle \Psi_i\Lvert\op{H}\Lvert\Psi_j\Rangle c_j^\alpha \\
+     \Langle\widetilde\Phi_\beta\Lvert\op{H}\Lvert\widetilde\Phi_\alpha\Rangle &= \sum_{ij} c_i^\beta \Langle \Psi_i\Lvert\op{H}\Lvert\Psi_j\Rangle c_j^\alpha \\
      &= \sum_{ij}c_j^\beta H_{ij}c_j^\alpha \\
      &= \left(\mbf{c}^\beta\right)^\dagger\mbf{H}\mbf{c}^\alpha \\
      &= E_\alpha \left(\mbf{c}^\beta\right)^\dagger\mbf{c}^\alpha = E_\alpha \delta_{\alpha\beta}
@@ -2141,12 +2144,12 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
  \label{eq:1.170}
 \end{equation}
 此处我们用到了\autoref{eq:1.165}和\autoref{eq:1.166}。
-因此，Hamiltonian 的本征值$E_\alpha$就是 对应于$\ket{\tilde\Phi}$的期望值。
+因此，Hamiltonian 的本征值$E_\alpha$就是 对应于$\ket{\widetilde\Phi}$的期望值。
 特别的，在基函数$\left\{\vert\Psi_i\rangle\right\}$张开的空间中，
 最低本征值$E_0$是$\op{H}$的基态能量的最好近似。
 此外，变分原理还保证了
 \begin{equation}
- E_0 = \Langle\tilde\Phi_0\Lvert\op{H}\Lvert\tilde\Phi_0\Rangle \geq \mcr{E}_0
+ E_0 = \Langle\widetilde\Phi_0\Lvert\op{H}\Lvert\widetilde\Phi_0\Rangle \geq \mcr{E}_0
  \label{eq:1.171}
 \end{equation}
 那么其他本征值$E$有什么物理意义呢？
@@ -2154,22 +2157,22 @@ Hamiltonian 算符在基组$\left\{\vert\Psi_i\rangle\right\}$中的矩阵表示
 $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一激发态能量的上限，以此类推。
 
 \exercise{
-          考虑一个归一化的试探函数$\ket{\tilde\Phi^\prime}$，
-          其正交于精确的基态波函数，即$\langle \tilde \Phi^\prime \vert \Phi_0 \rangle = 0$
+          考虑一个归一化的试探函数$\ket{\widetilde\Phi^\prime}$，
+          其正交于精确的基态波函数，即$\langle \widetilde \Phi^\prime \vert \Phi_0 \rangle = 0$
  \begin{enumerate}[a.]
      \item 推广\autoref{sec:1.3.1}中关于变分原理的证明，并验证
-     \[\Langle\tilde{\Phi}^\prime\Lvert\op{H}\Lvert\tilde{\Phi}^\prime\Rangle \geq \mcr{E}_1.\]
+     \[\Langle\widetilde{\Phi}^\prime\Lvert\op{H}\Lvert\widetilde{\Phi}^\prime\Rangle \geq \mcr{E}_1.\]
      \item 考虑如下函数
-     \[\Lvert\tilde{\Phi}^\prime\Rangle = x\Lvert\tilde\Phi_0\Rangle + y \Lvert\tilde\Phi_1\Rangle\]
-     其中$\ket{\tilde\Phi_\alpha}, \alpha = 0, 1$由\autoref{eq:1.168}给定。
+     \[\Lvert\widetilde{\Phi}^\prime\Rangle = x\Lvert\widetilde\Phi_0\Rangle + y \Lvert\widetilde\Phi_1\Rangle\]
+     其中$\ket{\widetilde\Phi_\alpha}, \alpha = 0, 1$由\autoref{eq:1.168}给定。
      若该函数归一，证明
      \[\vert x\vert^2 + \vert y \vert^2 = 1.\]
-     \item 若选定$x$和$y$使得$\ket{\tilde\Phi^\prime}$归一，
-     且满足关系$\olp{\tilde\Phi^\prime}{\Phi_0} = 0$，
-     则可由 (a) 得出$\mele{\tilde\Phi^\prime}{H}{\tilde\Phi^\prime} \geq \mcr{E}_1$。
+     \item 若选定$x$和$y$使得$\ket{\widetilde\Phi^\prime}$是归一化的，
+     且满足关系$\olp{\widetilde\Phi^\prime}{\Phi_0} = 0$，
+     则可由 (a) 得出$\mele{\widetilde\Phi^\prime}{H}{\widetilde\Phi^\prime} \geq \mcr{E}_1$。
      验证如下关系：
-     \[\Mele{\tilde\Phi^\prime}{H}{\tilde\Phi^\prime} = E_1 - \vert x\vert^2 (E_1 - E_0) \]
-     由于$E_1 \geq E_0$，我们可以得到结论$E_1 \geq \Mele{\tilde\Phi^\prime}{H}{\tilde\Phi^\prime} \geq \mcr{E}_1$。推广以上论证，证明$E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 2, 3, \dots .$
+     \[\Mele{\widetilde\Phi^\prime}{H}{\widetilde\Phi^\prime} = E_1 - \vert x\vert^2 (E_1 - E_0) \]
+     由于$E_1 \geq E_0$，我们可以得到结论$E_1 \geq \Mele{\widetilde\Phi^\prime}{H}{\widetilde\Phi^\prime} \geq \mcr{E}_1$。推广以上论证，证明$E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 2, 3, \dots .$
  \end{enumerate}
 }
 
@@ -2212,7 +2215,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \label{eq:1.176}
 \end{equation}
 上式的矩阵式与\autoref{eq:1.173}等同。
-如果使用\emph{完备}的正交归一基组 $\left\{\ket{\Psi_i},
+如果我们使用一组\emph{完备}的正交归一基组 $\left\{\ket{\Psi_i},
 \right. \, i = 1, 2,\allowbreak \dots, N, N+1, \left.\dots \right\}$，
 我们则会得到一个与\autoref{eq:1.173}等同，
 但其中的$\mbf{H}$为一个无限矩阵。
@@ -2225,7 +2228,7 @@ $E_\alpha \geq \mcr{E}_\alpha,\, \alpha = 1, 2, \dots$，因此，$E_1$是第一
  \left(-\frac{1}{2}\nabla^2 - \frac{1}{r} + Fr\cos\theta\right) \Ket{\Phi} = \left(\op{H}_0 + Fr\cos\theta\right)\Ket{\Phi} = \mcr{E}(F)\Ket{\Phi}
  \]
  使用如下试探函数，求$\mcr{E}(F)$的上限。
- \[\Ket{\tilde{\Phi}} = c_1\Lvert 1s\Rangle + c_2 \Lvert 2p_z\Rangle\]
+ \[\Ket{\widetilde{\Phi}} = c_1\Lvert 1s\Rangle + c_2 \Lvert 2p_z\Rangle\]
  其中$\ket{1s}$和$\ket{2p_z}$是$\op{H}$的正交归一本征函数，即：
  \[
  \begin{split}

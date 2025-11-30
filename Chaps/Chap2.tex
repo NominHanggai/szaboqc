@@ -44,10 +44,10 @@ Hatree-Fock近似的基本思想。
 $i$电子与$A$核之间的距离是$r_{iA}=|\bo{r}_i-\bo{R}_A|$; 
 $i$电子和$j$电子的距离是$r_{ij}=|\bo{r}_i-\bo{r}_j|$, 
 A核与B核之间的距离为$R_{AB}=|\bo{R}_A-\bo{R}_B|$.
-若用原子坐标,
+若用原子单位制,
 则$N$个电子$M$个核的哈密顿量就是:
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\begin{tikzpicture}[scale=2,inner sep=0,arrows=-latex]
 		\draw (0,0)--(0,2);
 		\draw (0,0)--(-1.2,-1.2);
@@ -91,11 +91,11 @@ Laplace算符$\nabla_i^2,\nabla_A^2$微分的对象分别是$i$电子的坐标�
 第四项和第五项分别是电子间和核之间的排斥势.
 
 
-\subsection{原子单位}
+\subsection{原子单位制}
 \label{sec2.1.1}
-本书所采用的单位是原子单位. 
-为了理解原子单位的由来,
-我们先看SI单位下氢原子的Schr\"odinger方程:
+本书所采用的单位是原子单位制. 
+为了理解原子单位制的由来,
+我们先看SI单位制下氢原子的Schr\"odinger方程:
 \begin{align}
 \label{2.3}
 \left[-\frac{\hbar^2}{2m_e}\nabla^2-\frac{e^2}{4\pi\varepsilon_0r}\right]\phi=\scr{E}\phi
@@ -111,7 +111,7 @@ $ \hbar $是Planck常数除以$ 2\pi $, $ m_e $是电子质量,$ -e $是电子�
 \label{2.5}
 \frac{\hbar^2}{m_e\lambda^2}=\frac{e^2}{4\pi\epsilon_0\lambda}=\scr{E}_a
 \end{equation}
-其中$ \scr{E}_a $就是原子坐标下的能量,
+其中$ \scr{E}_a $就是原子单位制下的能量,
 叫作\emph{Hartree}.
 由\autoref{2.5}可以求得$ \lambda $:
 \begin{equation}
@@ -119,57 +119,53 @@ $ \hbar $是Planck常数除以$ 2\pi $, $ m_e $是电子质量,$ -e $是电子�
 \lambda=\frac{4\pi\epsilon_0\hbar^2}{m_ee^2}=a_0
 \end{equation}
 所以$ \lambda $就是Bohr半径$ a_0 $,
-在原子单位中是长度单位,
+在原子单位制中是长度单位,
 叫作\emph{Bohr}.
 最后一点,
 由于
 \begin{equation}
-\scr{E}_a\left[-\frac{1}{2}\nabla'^2-\frac{1}{r'}\right]\phi'=\scr{E}'\phi'	
+\scr{E}_a\left[-\frac{1}{2}\nabla'^2-\frac{1}{r'}\right]\phi'=\scr{E}\phi'	
 \end{equation}
 如果定义$ \scr{E}'=\scr{E}/\scr{E}_a $,
 则可得到无量纲的方程
 \begin{equation}
 \left(-\frac{1}{2}\nabla'^2-\frac{1}{r'}\right)\phi'=\scr{E}'\phi'
 \end{equation}
-这就是原子坐标下的Schr\"odinger方程.
-该氢原子方程的基态解对应的能量是$-0.5\,\text{原子单位}\equiv -0.5\,\text{Hartrees}$. 
-\autoref{t2.1}中列出了原子单位和SI单位之间的转换因子$ X $,
-一个量在SI单位中的值$ Q $和原子单位中的值$ Q' $按如下方程联系:
+这就是原子单位制下的Schr\"odinger方程.
+对于基态氢原子，该方程的解可以导出能量$ \scr{E}' $为$-0.5\,\text{原子单位}\equiv -0.5\,\text{Hartrees}$. 
+\autoref{t2.1}中列出了原子单位和SI单位之间的换算系数$ X $,
+一个量在SI单位制下的值$ Q $和原子单位制下的值$ Q' $按如下方程联系:
 \begin{eqnarray}
 \label{2.9}
 Q=XQ'
 \end{eqnarray}
 
-\begin{table}[h!]
+\begin{table}[ht]
 	\centering
+	\caption{\bf 原子单位制与SI单位制之间的换算}
 	\begin{tabular}{lll}
 		\hline
-		物理量  & 转换因子$X$                   & $X$的值(SI单位)                                     \\ \hline
-		     &  \\
+		物理量  & 换算系数$X$                   & $X$的值(SI单位)                                     \\ \hline
 		长度   & $a_0$                     & $ 5.2918\times10^{-11}\,\text{m} $              \\
 		质量   & $m_e$                     & $9.1095\times10^{-31}\,\text{kg}$               \\
 		电荷   & $e$                       & $1.6022\times 10^{-19}\,\text{C}$               \\
-		能量   & $\scr{E}_a$               & $4.6598\times10^{-18}\,\text{J}$                \\
+		能量   & $\scr{E}_a$               & $4.3598\times10^{-18}\,\text{J}$                \\
 		角动量  & $\hbar$                   & $1.0546\times10^{-34}\,\text{Js}$               \\
 		电偶极矩 & $ea_0$                    & $8.4784\times10^{-30}\,\text{Cm}$               \\
 		电极化率 & $e^2a_0^2\scr{E}_a^{-1}$  & $1.6488\times10^{-41}\text{C$^2$m$^2$J$^{-1}$}$ \\
 		电场强度 & $\scr{E}_ae^{-1}a_0^{-1}$ & $5.1423\times10^{11}\text{Vm$^{-1}$}$           \\
 		波函数  & $a_0^{-3/2}$              & $2.5978\times10^{15}\,\text{m$^{-3/2}$}$        \\ \hline
 	\end{tabular}
-	\caption{SI转换为原子单位}
 	\label{t2.1}
 \end{table}
 
-下面是一些文献中常见的非SI单位下的物理量的转换因子.
+下面是一些文献中常见的非SI单位制下的物理量的换算系数.
 一原子单位长度等于$0.52918$埃($\text{\AA}$).
 一原子单位偶极矩(相距$a_0$的两个单位电荷)等于$2.5418$德拜(D),
-一原子单位能量等于$27.211$电子伏特(eV), 
-627.
-51\,
-kcal/mole.
+一原子单位能量等于$27.211$电子伏特(eV), 即627.51\,kcal/mole.
 
 
-从现在起我们开始采用原子单位,
+从现在起我们开始采用原子单位制,
 并去掉之前所有量中的撇号.
 
 
@@ -182,50 +178,50 @@ B. T. Sutcliffe, Fundamentals of computational quantum chemistry, in \textit{Com
 对该近似的定量层面作了清晰的讨论，包括如何推导对该近似的修正等. 
 由于原子核远比电子重，所以它们运动得较慢。
 因此，很大程度上可将分子中的电子视作在位置固定的核产生的势场中运动。
-在这个近似下，\autoref{eq:2.2}中第二项，即核动能项，可以被忽略；式中第三项，即核间排斥势可以视作常量。
+在这个近似下，\autoref{eq:2.2}中第二项，即核动能项，可以被忽略；式中最后一项项，即核间排斥势可以视作常量。
 任意常数加到算符上产生的效果就是本征值加一常数，而本征函数不变。
-\autoref{eq:2.2}中的剩余项称作电子的哈密顿量，或描述在M个点电荷产生的势场中运动的N个电子的哈密顿量，
+\autoref{eq:2.2}中的剩余项称作电子的哈密顿量，或描述在$M$个点电荷产生的势场中运动的$N$个电子的哈密顿量，
 \begin{equation}
 \label{2.10}
-\scr{H}_{elec}=-\sum_{i=1}^{N}\frac{1}{2}\nabla_i^2 - \sum_{i=1}^{N}\sum_{A=1}^{M}\frac{Z_A}{r_{iA}} + \sum_{i=1}^{N}\sum_{j>i}^{N}\frac{1}{r_{ij}}
+\scr{H}_{\rm elec}=-\sum_{i=1}^{N}\frac{1}{2}\nabla_i^2 - \sum_{i=1}^{N}\sum_{A=1}^{M}\frac{Z_A}{r_{iA}} + \sum_{i=1}^{N}\sum_{j>i}^{N}\frac{1}{r_{ij}}
 \end{equation}
 电子哈密顿量的\sch 方程为
 \begin{equation}
 \label{2.11}
-\scr{H}_{elec\rm}\Phi_{\rm elec}=\scr{E}_{\rm elec}\Phi_{\rm elec}
+\scr{H}_{\rm elec}\Phi_{\rm elec}=\scr{E}_{\rm elec}\Phi_{\rm elec}
 \end{equation}
 其解就是电子波函数，
 
 \begin{equation}
 \label{2.12}
-\Phi_{\rm elec}=\Phi_{\rm elec}(\{\bo{r}\};\{\bo{R}_A\})
+\Phi_{\rm elec}=\Phi_{\rm elec}(\{\bo{r}_i\};\{\bo{R}_A\})
 \end{equation}
 它描述电子的运动，
-并显式依赖于电子坐标，
-并以参数的方式依赖于核坐标，
+并\emph{显式}依赖于电子坐标，
+并\emph{以参数的方式}依赖于核坐标，
 电子能量也参数地依赖于核坐标：
 \begin{equation}
 \label{2.13}
 \scr{E}_{\rm elec}=\scr{E}_{\rm elec}(\{\bo{R}_A\})
 \end{equation}
 
-“参数地依赖”是指对每一种不同的核构型，
+“以参数的方式依赖”是指对每一种不同的核构型，
 $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样. 
-核坐标并不显示地出现在$\Phi_{\rm elec}$中. 
-核固定构型下的总能量需包含核排斥能.
+核坐标并不显式地出现在$\Phi_{\rm elec}$中. 
+核固定构型下的总能量还需包含核排斥能.
 \begin{equation}
 \label{2.14}
 \scr{E}_{\rm tot}=\scr{E}_{\rm elec}+\sum_{A=1}^{M}\sum_{B>A}^M\frac{Z_AZ_B}{R_{AB}}
 \end{equation}
 \autoref{2.10}到\autoref{2.14}就构成了所谓的电子问题, 
-即本书所关心的.
+这也正是本书所关心的.
 
 
 若电子问题已经得解, 
 则接下来可用与电子问题同样的假设来求解核运动. 
 因为电子运动远比核快, 
 所以一个合理的近似是将\autoref{eq:2.2}中的电子坐标换成坐标的平均值(用电子波函数来取平均). 
-由此得到在电子的平均势场中运动的核的\ha,
+由此得到在电子的平均势场中运动的核的哈密顿量,
 
 \begin{equation}
 \begin{split}
@@ -237,11 +233,10 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 \end{equation}
 总能量$ \scr{E}_{\rm tot}(\{\bo{R}_A\}) $是核运动的势能面. 
 势能面函数简例如\autoref{f2.2}所示. 
-在Born-Oppenheimer近似中, 
-有电子问题求解得到势能面, 
-核又在势能面上运动. 
+因此在Born-Oppenheimer近似中, 
+核在由电子问题求解得到的势能面上运动. 
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\def\FunctionA(#1){180*((0.6/(#1+.5))^(12) -(0.6/(#1+ .5))^(6)) + 60}
 	\def\FunctionF(#1){(#1)^3- 3*(#1)}
 	\begin{tikzpicture}
@@ -268,7 +263,7 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 \end{figure}
 核\sch 方程
 \begin{equation}
-\scr{H}_{\rm nucl}\Phi_{\rm nucl} = \scr{E}_{\rm nucl}\Phi_{\rm nucl}
+\scr{H}_{\rm nucl}\Phi_{\rm nucl} = \scr{E}\Phi_{\rm nucl}
 \end{equation}的解
 \begin{equation}
 \Phi_{\rm nucl}=\Phi_{\rm nucl}(\{\bo{R}_A\})
@@ -279,13 +274,13 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 包含着电子能量、振动、转动以及平动能量。
 \autoref{2.1}中的精确波函数的Born-Oppenheimer近似就是
 \begin{equation}
-\Phi(\{\bo{r}_i\};\{\bo{R}_A\}) = \Phi_{\rm elec}(\{\bo{r}\};\{\bo{R}_A\})\Phi_{\rm nucl}(\{\bo{R}_A\})
+\Phi(\{\bo{r}_i\};\{\bo{R}_A\}) = \Phi_{\rm elec}(\{\bo{r}_i\};\{\bo{R}_A\})\Phi_{\rm nucl}(\{\bo{R}_A\})
 \end{equation}
 从现在起,
-我们仅关心由\autoref{2.11}到\autoref{2.14}所代表的电子问题, 
-不把注意力放在振动-转动问题上.
+我们不考虑振动-转动问题，
+而仅关心由\autoref{2.11}到\autoref{2.14}所代表的电子问题.
 以后的表述中将舍弃下标``$\rm elec$", 
- 这意味着仅考虑电子哈密顿量和电子波函数. 
+这意味着仅考虑电子哈密顿量和电子波函数. 
 在必要和方便的时候, 
 我们会区分\autoref{2.13}所带表的电子能量和\autoref{2.14}所代表的总能量 (后者中包括核-核排斥能).
 
@@ -297,21 +292,21 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 必须引入\emph{自旋}. 
 此处采用自旋的非相对论描述, 
 即引入两个自旋函数$\alpha(\omega)$和$\beta(\omega)$, 
-分别代表自旋朝上和朝下. 
+分别代表自旋向上和向下. 
 函数变量是$\omega$, 
 但该变量并无明显的意义, 
 从操作角度而言, 
 只需要自旋函数正交完备:
 \begin{subequations}
 	\begin{align}
-\int\dd\omega\alpha^*(\omega)\alpha(\omega)=\int\dd\omega\beta^*(\omega)\beta(\omega)=1\\
-\braket{\alpha|\alpha}=\braket{\beta|\beta}=1
+\int\dd\omega\alpha^*(\omega)\alpha(\omega) &= \int\dd\omega\beta^*(\omega)\beta(\omega) = 1\\
+\braket{\alpha|\alpha} &= \braket{\beta|\beta} = 1
 	\end{align}
 \end{subequations}
 \begin{subequations}
 	\begin{align}
-	\int\dd\omega\alpha^*(\omega)\beta(\omega)=\int\dd\omega\beta^*(\omega)\alpha(\omega)=0\\
-	\braket{\alpha|\beta}=\braket{\beta|\alpha}=0
+	\int\dd\omega\alpha^*(\omega)\beta(\omega)&=\int\dd\omega\beta^*(\omega)\alpha(\omega)=0\\
+	\braket{\alpha|\beta}&=\braket{\beta|\alpha}=0
 	\end{align}
 \end{subequations}
 \label{2.20}
@@ -326,8 +321,8 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
  \bo{x}=\{\bo{r},\omega\}
  \end{equation}
 
- 随之, $N$电子波函数的变量就是$ \bo{x_1,x_2,\cdots ,x_N} $, 即写作$\Phi(\bo{x_1,x_2,\cdots ,x_N})$.
- 
+随之, $N$电子波函数的自变量就是$ \bo{x}_1,\bo{x}_2,\cdots ,\bo{x}_N $, 即写作$\Phi(\bo{x}_1,\bo{x}_2,\cdots ,\bo{x}_N)$.
+
 由于哈密顿算符中并无自旋，
 仅仅在波函数中强加自旋无法产生任何后果。
 但若对波函数加上一个额外的约束，就能得到一个完善的理论: 
@@ -336,11 +331,11 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 }
 \begin{equation}
 \label{2.22}
-\Phi(\bo{x_1,\cdots,x_i,\cdots,x_j,\cdots ,x_N})=-\Phi(\bo{x_1,\cdots,x_j,\cdots,x_i,\cdots ,x_N})
+\Phi(\bo{x}_1,\cdots,\bo{x}_i,\cdots,\bo{x}_j,\cdots ,\bo{x}_N)=-\Phi(\bo{x}_1,\cdots,\bo{x}_j,\cdots,\bo{x}_i,\cdots ,\bo{x}_N)
 \end{equation}
 
 这个额外的要求有时叫作\emph{反对称原理}, 
-它是我们熟悉的Pauli不相容原理最常见的一种表述. 
+它是我们熟悉的Pauli不相容原理很常见的一种表述. 
 这个原理是量子力学的基本假设之一. 
 波函数不仅要满足\sch 方程, 
 也要满足反对称要求, 即\autoref{2.22}. 
@@ -348,22 +343,26 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
  
 \section{轨道, Slater行列式,基函数}
 \label{sec2.2}
-本节来学习如何写出用来描述多电子系统波函数，以及各种命名和约定俗成的习惯。
+本节来学习如何写出用来描述多电子系统的波函数，以及各种命名和约定俗成的习惯。
 这里我们仅考虑用单Slater行列式或Slater行列式的线性组合来刻画多电子波函数。
 有时量子化学研究者也用其他特殊的函数形式来刻画一些小体系的波函数，
 但大部分情况下还是用Slater行列式。
 学习多电子波函数之前, 我们先来讨论单电子的波函数.
  
- \subsection{自旋轨道与空间轨道}
- \label{sec2.2.1}
- \emph{轨道}就是单粒子(这里是一个电子)的波函数. 我们关心分子中的电子, 所以将分子中电子的波函数叫作\emph{分子轨道}. 而所谓\emph{空间轨道}$\psi_i(\bo{r})$, 则是位置矢量 $\bo{r}$的函数, 用来描述电子的空间分布: $|\psi_i(\bo{r})|^2\dd \bo{r}$即在包含$\bo{r}$的体积微元$\dd\bo{r}$中找到电子的概率. 常认为空间分子轨道构成一组正交基
- \begin{equation}
- \int\dd\bo{r}\psi_i^*(\bo{r})\psi_j(\bo{r})=\delta_{ij}
- \end{equation}
- 若空间轨道集合$\{\psi_i \}$是完备的, 则用它可以精确地展开任意函数:
- \begin{equation}
- f(\bo{r})=\sum_{i=1}^{\infty}a_i\psi_i(\bo{r})
- \end{equation}
+\subsection{自旋轨道与空间轨道}
+\label{sec2.2.1}
+\emph{轨道}就是单粒子(这里是一个电子)的波函数. 
+我们关心分子中的电子, 所以将分子中电子的波函数叫作\emph{分子轨道}. 
+而所谓\emph{空间轨道}$\psi_i(\bo{r})$, 则是位置矢量 $\bo{r}$的函数, 用来描述电子的空间分布: 
+$|\psi_i(\bo{r})|^2\dd \bo{r}$即在包含$\bo{r}$的体积微元$\dd\bo{r}$中找到电子的概率. 
+常认为空间分子轨道构成一组正交基
+\begin{equation}
+\int\dd\bo{r}\psi_i^*(\bo{r})\psi_j(\bo{r})=\delta_{ij}
+\end{equation}
+若空间轨道集合$\{\psi_i \}$是完备的, 则用它可以精确地展开任意函数:
+\begin{equation}
+f(\bo{r})=\sum_{i=1}^{\infty}a_i\psi_i(\bo{r})
+\end{equation}
 其中$a_i$是常系数. 
 绝大多数情况, 
 这个集合想要完备则其元素必须无限多, 
@@ -377,7 +376,7 @@ $\Phi_\mathrm{elec}$(电子坐标的函数)的形式都不一样.
 为完整描述一个电子, 
 需要指定电子自旋. 
 描述电子自旋的完备集包括两个相互正交的函数$\alpha(\omega),\,\beta(\omega)$, 
-代表自旋朝上($\uparrow$)和自旋朝下($\downarrow$). 
+代表自旋向上($\uparrow$)和自旋向下($\downarrow$). 
 描述自旋和空间两部分的波函数叫作\emph{自旋轨道},
 $\chi(\bo{x})$,
 其中$\bo{x}$代表自旋坐标与空间坐标(\autoref{2.21}). 
@@ -397,8 +396,8 @@ $\chi(\bo{x})$,
 就可以构造$2K$个自旋轨道$\{\chi_i|i=1,2,\cdots, 2K\}$:
 \begin{equation}
 \begin{rcases}
-	\chi_{2i-1}(\bo{x})=\psi_i(\bo{r})\alpha(\omega)\\
-	\chi_{2i}(\bo{x})=\psi_i(\bo{r})\beta(\omega)
+	\chi_{2i-1}(\bo{x})&=\psi_i(\bo{r})\alpha(\omega)\\
+	\chi_{2i}(\bo{x})&=\psi_i(\bo{r})\beta(\omega)
 \end{rcases}
 i=1,2,\cdots,K
 \end{equation}
@@ -407,8 +406,8 @@ i=1,2,\cdots,K
 \begin{equation}
 \int\dd\bo{x}\chi_i^*(\bo{x})\chi_j(\bo{x})=\braket{\chi_i|\chi_j}=\delta_{ij}
 \end{equation}
-\begin{xercise}
-给定一组$K$个正交空间轨道\{$\psi_i^\alpha(\bo{r})$\}与另一组$K$个正交空间轨道$\{\psi_i^\beta(\bo{r})\}$, 
+\exercise{
+给定一组$K$个正交空间轨道集合$\{\psi_i^\alpha(\bo{r})\}$与另一组$K$个正交空间轨道集合$\{\psi_i^\beta(\bo{r})\}$, 
 但第一组和第二组之间不正交, 
 即
 \[
@@ -428,7 +427,7 @@ i=1,2,\cdots,K
 \end{equation*}
 它们之间相互正交.
 
-\end{xercise}
+}
 \subsection{Hartree积}
  \label{sec2.2.2}
 学习过用自旋轨道描述单电子之后, 
@@ -441,7 +440,7 @@ i=1,2,\cdots,K
 \label{2.28}
 \scr{H}=\sum_{i=1}^{N}h(i)
 \end{equation}
-其中$h(i)$是描述电子i的动能和势能的算符. 
+其中$h(i)$是描述第$i$个电子的动能和势能的算符. 
 若忽略电子间排斥, 
 则电子哈密顿就具有这种形式. 
 除此之外, 
@@ -461,7 +460,7 @@ h(i)\chi_j(\bo{x}_i)=\epsilon_j\chi_j(\bo{x}_i)
 如果将每个电子的自旋轨道乘在一起:
 \begin{equation}
 \label{2.30}
-\Psi^{\rm HP}(\bo{x_1,x_2,\cdots,x_N})=\chi_i(\bo{x_1})\chi_j(\bo{x_2})\cdots\chi_k(\bo{x_N})
+\Psi^{\rm HP}(\bo{x}_1,\bo{x}_2,\cdots,\bo{x}_N)=\chi_i(\bo{x}_1)\chi_j(\bo{x}_2)\cdots\chi_k(\bo{x}_N)
 \end{equation}
 它就是$\scr{H}$的一个本征函数:
 \begin{equation}
@@ -475,27 +474,27 @@ $E$是$\Psi^{\rm HP}$中每个自旋轨道的能量之和:
 E=\epsilon_i + \epsilon_j + \cdots + \epsilon_k
 \end{equation} 
 我们把这样的多电子波函数叫作\emph{Hartree积}, 
-其中电子1用$\chi_i$描述. 
-电子2用$\chi_j$描述, 
-如此.
+其中电子1用自旋轨道$\chi_i$描述, 
+电子2用自旋轨道$\chi_j$描述, 
+以此类推.
 
 
-\exercise{证明\autoref{2.30}中的Hartree积是$\scr{H}=\sum_{i=1}^Nh(i)$的本征函数, 本征值是\autoref{2.32}.}
+\exercise{
+证明\autoref{2.30}中的Hartree积是$\scr{H}=\sum_{i=1}^Nh(i)$的本征函数, 本征值是\autoref{2.32}.
+}
 
 Hartree积是独立电子波函数(或者叫无相关波函数, uncorrelated), 因为
 \begin{equation*}
-|\Psi^{\rm HP}(\bo{x_1,\cdots,x_N})|^2\dd\bo{x_1}\cdots\dd\bo{x_N}
+|\Psi^{\rm HP}(\bo{x}_1,\cdots,\bo{x}_N)|^2\dd\bo{x}_1\cdots\dd\bo{x}_N
 \end{equation*}
-
-即在体积微元$\dd\bo{x_1}$中找到电子1的概率, 
-同时在$\dd\bo{x_2}$中找到电子2的概率, 
+即在体积微元$\dd\bo{x}_1$中找到电子1的概率, 
+同时在$\dd\bo{x}_2$中找到电子2的概率, 
 等等, 
 就等于(按照\autoref{2.30}的定义):
 \begin{equation*}
-|\chi_i(\bo{x_1})|^2\dd\bo{x_1}|\chi_j(\bo{x_2})|^2\dd\bo{x_2}\cdots|\chi_k(\bo{x_N})|^2\dd\bo{x_N}
+|\chi_i(\bo{x}_1)|^2\dd\bo{x}_1|\chi_j(\bo{x}_2)|^2\dd\bo{x}_2\cdots|\chi_k(\bo{x}_N)|^2\dd\bo{x}_N
 \end{equation*}
-
-即电子1在$\dd\bo{x_1}$的概率乘以电子2在$\dd\bo{x_2}$的概率等等等等. 
+即电子1在$\dd\bo{x}_1$的概率乘以电子2在$\dd\bo{x}_2$的概率等等等等. 
 这种情况与扑克牌很类似: 52张牌中找到红心A的概率(1/52)等于红心的概率(1/4)乘以A的概率(1/13), 
 因为红心的概率和A的概率是不相关的(独立的). 
 Hartree积就意味着在空间中一点找到电子1的概率与找到电子2的概率是独立的. 
@@ -530,14 +529,14 @@ Hartree积不满足反对称原理，
 若将电子1放在$\chi_i$上、电子2放在$\chi_j$上，则有
 \begin{subequations}
 \begin{equation}
-\Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_1})\chi_j(\bo{x_2})\label{2.33a}
+\Psi^{\rm HP}_{1\,2}(\bo{x}_1,\bo{x}_2)=\chi_i(\bo{x}_1)\chi_j(\bo{x}_2)\label{2.33a}
 \end{equation}
 另一方面, 
 若置电子1于$\chi_j$轨道, 
 电子2于$\chi_i$轨道, 
 则有
 \begin{equation}
-\Psi^{\rm HP}_{1\,2}(\bo{x_1,x_2})=\chi_i(\bo{x_2})\chi_j(\bo{x_1})\label{2.33b}
+\Psi^{\rm HP}_{1\,2}(\bo{x}_1,\bo{x}_2)=\chi_i(\bo{x}_2)\chi_j(\bo{x}_1)\label{2.33b}
 \end{equation}
 \end{subequations}
 这两种Hartree积都明显地区分电子, 
@@ -687,7 +686,7 @@ P(\mathbf{r}_1,\mathbf{r}_2)\dd\bo{r_1}\dd\bo{r_2}&=\int\dd\omega_1\dd\omega_2|\
 &=\frac{1}{2}\left[|\psi_1(\bo{r_1})|^2|\psi_2(\bo{r_2})|^2+|\psi_1(\bo{r_2})|^2|\psi_2(\bo{r_1})|^2\right]\db{r_1}\db{r_2}
 \end{align}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[scale=2]
 	\draw[->,thick] (0,0)--(0,2);
@@ -815,11 +814,17 @@ Hartree-Fock势$v^{\rm HF}(i)$, 或者叫作i电子感受到的场, 由其他电
 
 SCF的基本想法比较简单. 首先对自旋轨道作一个初始猜测, 此时就可以算出每个电子感受到的平均场$v^{\rm HF}$, 然后就可以利用这个有效势解方程\autoref{2.52}, 得到一组新的自旋轨道. 再用新自旋轨道得到新的平均场, 重复这个步骤直到方程自洽(即直到有效场不再变化, 自旋轨道与Fock算符的本征函数一致).
 
-Hartree-Fock本征值问题\autoref{2.52}的解是一组正交的Hartree-Fock自旋轨道$\{\chi_k\}$和一组对应的本征值$\{\varepsilon_k\}$. N个有最低能量的自旋轨道称为\emph{被占}自旋轨道或\emph{穴}自旋轨道. 由这N个轨道生成的Slater行列式就是Hartree-Fock基态波函数, 也即Hartree-Fock单Slater行列式框架下体系波函数的最优变分近似. 我们暂且将占据轨道的指标记为$a,b,c\cdots$(即$\chi_a,\chi_b,\chi_c,\cdots$). 余下的轨道就是\emph{虚自旋轨道}, 或者叫\emph{未占据自旋轨道、粒子自旋轨道(particle)}. 暂将虚自旋轨道指标记为$r,s,t\cdots$($\chi_r,\chi_s,\chi_t,\cdots$).
+\autoref{2.52}中Hartree-Fock本征值问题的解是一组正交的Hartree-Fock自旋轨道$\{\chi_k\}$和一组对应的本征值$\{\varepsilon_k\}$. 
+$N$个有最低能量的自旋轨道称为\emph{占据}自旋轨道或\emph{空穴}自旋轨道. 
+由这$N$个轨道生成的Slater行列式就是Hartree-Fock基态波函数, 
+也即Hartree-Fock单Slater行列式框架下体系波函数的最优变分近似. 
+我们暂且将占据轨道的指标记为$a,b,c\cdots$(即$\chi_a,\chi_b,\chi_c,\cdots$). 
+余下的轨道就是\emph{虚自旋轨道}, 或者叫\emph{未占据自旋轨道、粒子自旋轨道(particle)}. 
+暂将虚自旋轨道指标记为$r,s,t\cdots$($\chi_r,\chi_s,\chi_t,\cdots$).
 
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{decorations.pathmorphing}
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[scale=2]
 % virtual orbitals
@@ -875,7 +880,7 @@ Hartree-Fock方程\autoref{2.52}有无数个解,
 余下$2K-N$个虚自旋轨道$\{\chi_r\}$. 
 由$\{\chi_{a}\}$构成的单Slater行列式就是变分Hartree-Fock框架下的基态, 
 我们用$\Psi_0$或$\ket{\Psi_0}$来记. 
-$\ket{\Psi_0}$的图示如图$\autoref{fig2.4}$. 
+$\ket{\Psi_0}$的图示如\autoref{fig2.4}. 
 在该图中, 
 $2K$个自旋轨道按能量顺序排列, 
 而且忽略了可能的简并态. 
@@ -895,7 +900,7 @@ Hartree-Fock能量$E_0$也会越来越低,
 任何有限的K(即基函数数目)都会产生一个高于Hartree-Fock极限的数值.
 
 
-\subsection{极小基$\hd$模型}
+\subsection{极小基\texorpdfstring{$\hd$}{H₂}模型}
  \label{sec2.2.5}
 现在来介绍一个简单的模型体系, 
 此模型贯穿全书, 
@@ -926,7 +931,7 @@ $\alpha$是Gaussian轨道指数. 此处我们不用关注1s原子轨道的具体
 \begin{equation}
 S_{12}=\int\db{r}\phi_1^*(\bo{r})\phi_2(\bo{r})
 \end{equation}
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[thick,scale=2]
 	\draw[<->] (0,2.5)--(0,0)--(2,0);
@@ -949,7 +954,7 @@ $R_{12}=\infty$那么$S_{12}=0$.
 
 利用两个定域原子轨道$\phi_1,\phi_2$, 
 可以采取线性组合的方式构建两个离域分子轨道. 
-对称组合生成$gerade$宇称的成键分子轨道(所谓gerade对称是指, 
+对称组合生成\textit{gerade}对称的成键分子轨道(所谓gerade对称是指, 
 以两核之间的中点作为反演点, 
 将分子轨道反演, 
 轨道保持不变, 
@@ -960,7 +965,7 @@ $R_{12}=\infty$那么$S_{12}=0$.
 \psi_1=[2(1+S_{12})]^{-1/2}(\phi_1+\phi_2)
 \end{equation}
 相反地也可以构建反对称组合, 
-生成具有$ungerade$对称性的反键分子轨道(也即在中点反演下轨道反对称):
+生成具有\textit{ungerade}对称性的反键分子轨道(也即在中点反演下轨道反对称):
 \begin{equation}
 \label{2.58}
 \psi_2=[2(1-S_{12})]^{-1/2}(\phi_1-\phi_2)
@@ -994,7 +999,7 @@ $R_{12}=\infty$那么$S_{12}=0$.
 \end{equation}
 对应自旋轨道的轨道能量可用Hartree-Fock算符得到. 
 但是无需计算就可以发现, 
-$\chi_1,\chi_2$是简并的, 
+$\chi_1$与$\chi_2$是简并的, 
 而且有更低的能量, 
 对应成键态. 
 $\chi_3,\chi_4$也是简并的, 
@@ -1006,33 +1011,36 @@ $\chi_3,\chi_4$也是简并的,
 \end{equation}
 如\autoref{fig2.6}所示.
 
-\begin{figure}[h]
-	\begin{tikzpicture}[ thick,scale=2.5]
+\begin{figure}[ht]
+	\begin{minipage}[t]{0.5\textwidth}
+	\begin{tikzpicture}[baseline={(0,.2)}]
 	% 1st four orbitals psi_0 = 
-	\node at (0, 0) {$\ket{\Psi_0}=$};
-	\draw (0.7,0.2)node[left]{$\chi_3$}--(1.5,0.2);
-	\draw (1.7,0.2)--(2.5,0.2)node[right]{$\chi_3$};
-	\draw (0.7,-.2)node[left]{$\chi_1$}--(1.5,-.2);
-	\draw (1.7,-.2)--(2.5,-.2)node[right]{$\chi_2$};
-	\node at(1.1,-.25) {\Huge\bf*};
-	\node at(2.1,-.25) {\Huge\bf*};
-	\node at (0.2, -1.2){$\equiv$};
-	\draw (0.7, -1)node[left]{$\chi_3$}--(1.5, -1);
-	\draw (1.7, -1)--(2.5, -1)node[right]{$\chi_4$};
+	\node at (0.6,3.9) {$\ket{\Psi_0}=$};
+	\draw (1.7,4.2)node[left]{$\chi_3$}--(2.9,4.2);
+	\draw (3.1,4.2)--(4.3,4.2)node[right]{$\chi_3$};
+	\draw (1.7,3.6)node[left]{$\chi_1$}--(2.9,3.6);
+	\draw (3.1,3.6)--(4.3,3.6)node[right]{$\chi_2$};
+	\node at(2.3,3.6) {\Large$*$};
+	\node at(3.7,3.6) {\Large$*$};
 	% replac asterisk by arrow 
-	\draw (0.7,-1.4)node[left]{$\chi_1$}--(1.5,-1.4);
-	\draw (1.7,-1.4)--(2.5,-1.4)node[right]{$\chi_2$};
-	\node at(1.1,-1.4) {$\bm{\big\uparrow}$};
-	\node at(2.1,-1.4) {$\bm{\big\downarrow}$};
+	\node at (1.0,2.0){$\equiv$};
+	\draw (1.7,2.4)node[left]{$\chi_3$}--(2.9,2.4);
+	\draw (3.1,2.4)--(4.3,2.4)node[right]{$\chi_4$};
+	\draw (1.7,1.8)node[left]{$\chi_1$}--(2.9,1.8);
+	\draw (3.1,1.8)--(4.3,1.8)node[right]{$\chi_2$};
+	\node at(2.3,1.8) {\Large$\uparrow$};
+	\node at(3.7,1.8) {\Large$\downarrow$};
 	
-	\node at (0.8,-2.4){$\equiv$};
-	\draw (1.2,-2.2)--(2.0,-2.2)node[right]{$\psi_2$};
-	\draw (1.2,-2.6)--(2.0,-2.6)node[right]{$\psi_1$};
-	\node at(1.47,-2.6) {$\bm{\big\uparrow}$};
-	\node at(1.73,-2.6) {$\bm{\big\downarrow}$};
+	\node at (1.7,0.3){$\equiv$};
+	\draw (2.4,0.6)--(3.6,0.6)node[right]{$\psi_2$};
+	\draw (2.4,0.0)--(3.6,0.0)node[right]{$\psi_1$};
+	\node at(2.8,0.0) {\Large$\uparrow$};
+	\node at(3.2,0.0) {\Large$\downarrow$};
 	\end{tikzpicture}
-	\caption{H$_2$的Hartree-Fock基态: 3种表达法}
-		\label{fig2.6}
+	\end{minipage}\qquad
+	\begin{minipage}[t]{0.4\textwidth}
+	\caption{最小基组H$_2$ Hartree-Fock基态的3种表示法}\label{fig2.6}
+	\end{minipage}
 \end{figure}
 有时用自旋轨道空间部分的记号来标记自旋轨道本身, 
 符号上面有无横线代表自旋是$\alpha$或$\beta$:
@@ -1102,31 +1110,33 @@ Hartree-Fock基态只是其一.
 但重要的是, 
 它们可以作为$N$电子基函数来展开精确的$N$电子态.
 
-\begin{figure}[H]
-	\begin{minipage}[t]{0.3\textwidth}
-	\begin{tikzpicture}[baseline={(0,.2)}]
-	\draw[](0,0)--node{\Large$*$}+(1.5,0)node[right]{$\chi_1$};
-	\draw[](0,.4)--node{\Large$*$}+(1.5,0)node[right]{$\chi_2$};
-	\filldraw (.75,.6)circle(.8pt) (.75,.8)circle(.8pt) (.75,1.0)circle(.8pt);
-	\draw  (0,1.2)--node{}+(1.5,0)node[right]{$\chi_a$};
-	\draw  (0,1.6)--node{\Large$*$}+(1.5,0)node[right]{$\chi_b$};
-	\filldraw (.75,1.8)circle(.8pt) ++(0,.2)circle(.8pt) ++(0,.2)circle(.8pt);
-	\draw  (0,2.4)--node{\Large$*$}+(1.5,0)node[right]{$\chi_N$};
-	\draw[line width=1.2mm,style={decorate, decoration={snake, amplitude=.3mm}}] (-.3,2.9)--++(2.6,0);
-	\draw (0,3.5)--+(1.5,0)node[right]{$\chi_{N+1}$};
-	\filldraw (.75,3.7)circle(.8pt) ++(0,.2)circle(.8pt) ++(0,.2)circle(.8pt);
-	\draw (0,4.3)--node{\Large$*$}+(1.5,0)node[right]{$\chi_{r}$};
-	\draw (0,4.7)--+(1.5,0)node[right]{$\chi_{s}$};
-	\filldraw (.75,4.9)circle(.8pt) ++(0,.2)circle(.8pt) ++(0,.2)circle(.8pt);
-	\draw (0,5.5)--+(1.5,0)node[right]{$\chi_{2K}$};
-	\draw[arrows =-latex] (.2,1.2)--++(0,3.1);
-	\draw (-.7,2)node{$\displaystyle\ket{\Psi_a^r}$};
-	\end{tikzpicture}\end{minipage}\qquad
-	\begin{minipage}[t]{0.6\textwidth}
-		\caption{一个单激发行列式.}\label{f2.7}\end{minipage}
+\begin{figure}[ht]
+	\begin{minipage}[t]{0.4\textwidth}
+		\begin{tikzpicture}[baseline={(0,.2)}]
+		\draw[](0,0)--node{\Large$*$}+(1.5,0)node[right]{$\chi_1$};
+		\draw[](0,.4)--node{\Large$*$}+(1.5,0)node[right]{$\chi_2$};
+		\filldraw (.75,.6)circle(.8pt) (.75,.8)circle(.8pt) (.75,1.0)circle(.8pt);
+		\draw  (0,1.2)--node{}+(1.5,0)node[right]{$\chi_a$};
+		\draw  (0,1.6)--node{\Large$*$}+(1.5,0)node[right]{$\chi_b$};
+		\filldraw (.75,1.8)circle(.8pt) ++(0,.2)circle(.8pt) ++(0,.2)circle(.8pt);
+		\draw  (0,2.4)--node{\Large$*$}+(1.5,0)node[right]{$\chi_N$};
+		\draw[line width=1.2mm,style={decorate, decoration={snake, amplitude=.3mm}}] (-.3,2.9)--++(2.6,0);
+		\draw (0,3.5)--+(1.5,0)node[right]{$\chi_{N+1}$};
+		\filldraw (.75,3.7)circle(.8pt) ++(0,.2)circle(.8pt) ++(0,.2)circle(.8pt);
+		\draw (0,4.3)--node{\Large$*$}+(1.5,0)node[right]{$\chi_{r}$};
+		\draw (0,4.7)--+(1.5,0)node[right]{$\chi_{s}$};
+		\filldraw (.75,4.9)circle(.8pt) ++(0,.2)circle(.8pt) ++(0,.2)circle(.8pt);
+		\draw (0,5.5)--+(1.5,0)node[right]{$\chi_{2K}$};
+		\draw[arrows =-latex] (.2,1.2)--++(0,3.1);
+		\draw (-.7,2)node{$\displaystyle\ket{\Psi_a^r}$};
+		\end{tikzpicture}
+	\end{minipage}\qquad
+	\begin{minipage}[t]{0.4\textwidth}
+		\caption{一个单激发行列式.}\label{f2.7}
+	\end{minipage}
 \end{figure}
-\begin{figure}[H]
-	\begin{minipage}[t]{0.3\textwidth}
+\begin{figure}[ht!]
+	\begin{minipage}[t]{0.4\textwidth}
 		\begin{tikzpicture}[baseline={(0,.2)}]
 		\draw[](0,0)--node{\Large$*$}+(1.5,0)node[right]{$\chi_1$};
 		\draw[](0,.4)--node{\Large$*$}+(1.5,0)node[right]{$\chi_2$};
@@ -1146,8 +1156,9 @@ Hartree-Fock基态只是其一.
 		\draw[arrows =-latex] (.3,1.6)--(.3,4.7);
 		\draw (-.7,2)node{$\displaystyle\ket{\Psi_{ab}^{rs}}$};
 		
-		\end{tikzpicture}\end{minipage}\qquad
-	\begin{minipage}[t]{0.6\textwidth}
+		\end{tikzpicture}
+	\end{minipage}\qquad
+	\begin{minipage}[t]{0.4\textwidth}
 		\caption{一个双激发行列式.}\label{f2.8}\end{minipage}
 \end{figure}
 
@@ -1249,7 +1260,7 @@ full CI所需要的行列式数目仍十分巨大.
 下面以$\text{H}_2$极小基模型为例, 
 阐述以上操作的核心 .
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\begin{tikzpicture}
 \begin{axis}[
 %standard,
@@ -1365,7 +1376,7 @@ Hartree-Fock基态中两个电子都在gerade轨道上,
 我们下节进行介绍.
 
 
-\section{算符及其矩阵元 }
+\section{算符及其矩阵元}
  \label{sec2.3}
 本节来讲如何求得某算符在正交归一轨道构成的行列式之间的矩阵元. 
 今有某算子$\mathcal{O}$与两个$N$电子行列式$\ket{K},\ket{L}$, 
@@ -1376,7 +1387,7 @@ Hartree-Fock基态中两个电子都在gerade轨道上,
 然后给出求这种矩阵元的一般规则.
 
 
-\subsection{\phrase{极小基 $\mathrm{H}_2$}的矩阵元}
+\subsection{\texorpdfstring{\phrase{极小基 $\mathrm{H}_2$}}{极小基H₂}的矩阵元}
  \label{sec2.3.1}
 我们先来计算\phrase{极小基 $\mathrm{H}_2$}模型的full CI矩阵元(方程\autoref{2.79}). 
 该模型的精确基态是Hartree-Fock基态$\ket{\Phi_0}=\ket{\chi_1\chi_2}=\ket{1\bar{1}}$和双激发态$\ket{\Phi_{12}^{34}}=\ket{\chi_3\chi_4}=\ket{\Phi_{1\bar{1}}^{2\bar{2}}}=\ket{2\bar{2}}$的线性组合, 
@@ -1454,7 +1465,7 @@ $\braket{{\Phi_{1\bar{1}}^{2\bar{2}}} |\mathscr{H} |{\Phi_{1\bar{1}}^{2\bar{2}}}
 \begin{align}
 \braket{\Psi_0|\mathcal{O}_2|\Psi_0}=&\int\dd\mathbf{x}_1\dd\mathbf{x}_2[2^{-1/2}(\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2)-\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2))]^*\notag\\
 \qquad&\times r_{12}^{-1} [2^{-1/2}(\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2)-\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2))]\notag\\
-=&\frac{1}{2}\int\dd{\mathbf{x}_1}\dd{\mathbf{x}_2}\{\chi_1^*(\mathbf{x}_1)\chi_2^*(\mathbf{x}_2)r_{12}^{-1}\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2) + \chi_2^*(\mathbf{x}_1)\chi_1^*(\mathbf{x}_2)r_{12}^{-1}\chi_2(\mathbf{x_1})\chi_1(\mathbf{x}_2) \notag\\
+=\frac{1}{2}\int\dd{\mathbf{x}_1}\dd{\mathbf{x}_2}&\{\chi_1^*(\mathbf{x}_1)\chi_2^*(\mathbf{x}_2)r_{12}^{-1}\chi_1(\mathbf{x}_1)\chi_2(\mathbf{x}_2) + \chi_2^*(\mathbf{x}_1)\chi_1^*(\mathbf{x}_2)r_{12}^{-1}\chi_2(\mathbf{x_1})\chi_1(\mathbf{x}_2) \notag\\
 \qquad& - \chi_1^*(\mathbf{x}_1)\chi_2^*(\mathbf{x}_2)r_{12}^{-1}\chi_2(\mathbf{x}_1)\chi_1(\mathbf{x}_2) - \chi_2^*(\mathbf{x}_1)\chi_1^*(\mathbf{x}_2)r_{12}^{-1}\chi_1(\mathbf{x_1})\chi_2(\mathbf{x}_2)
 \}
 \end{align}
@@ -1493,11 +1504,18 @@ Hartree-Fock基态能量就成为
 \exercise{
 用刚才介绍的方式写出极小基$\rm H_2$的full CI矩阵:
 \begin{equation*}
-\mathscr{H}=\begin{pmatrix}
-\braket{1|h|1}+\braket{2|h|2} +\braket{12|12}-\braket{12|21} &
+\mathscr{H}=
+\begin{pmatrix}
+\begin{aligned}
+\braket{1|h|1}&+\braket{2|h|2} \\+&\braket{12|12}-\braket{12|21}
+\end{aligned}
+&
 \braket{12|34}-\braket{12|43}\\
-\braket{34|12}-\braket{34|21}& 
-\braket{3|h|3}+\braket{4|h|4} +\braket{34|34}-\braket{34|43}
+\braket{34|12}-\braket{34|21}
+& 
+\begin{aligned}
+\braket{3|h|3}&+\braket{4|h|4} \\+&\braket{34|34}-\braket{34|43}
+\end{aligned}
 \end{pmatrix}
 \end{equation*}
 并证明其厄密性.
@@ -1563,23 +1581,33 @@ Hartree-Fock基态能量就成为
 [ij|kl]=[ji|kl]=[ij|lk]=[ji|lk]\tag{2.99b}
 \end{align}
 \addtocounter{equation}{1}
-\begin{table}[h]
-	\renewcommand\arraystretch{1.5}
+
+\begin{table}[ht]
+	\renewcommand\arraystretch{1.2}
 	\centering
-	\caption{\bf 关于自旋轨道($\chi$)以及关于空间轨道$\psi$的单、双电子积分}
-	\begin{tabular}{l}
+	\caption{\bf 关于自旋轨道($\chi$)以及关于空间轨道($\psi$)的单、双电子积分}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X}
 		\hline
 		\multicolumn{1}{c}{\textit{自旋轨道}}\\
-		\parbox{\textwidth}{$[i|h|j]=\braket{i|h|j}=\int\ddx_1\chi_i^*(\bo{x}_1)h(\bo{r}_1)\chi_j(\bo{x}_1) $}\\
-		$\braket{ij|kl}=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\ddx_1\ddx_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)=[ik|jl] $\\
-		$[ij|kl]=[\chi_i\chi_j|\chi_k\chi_l]=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j(\bo{x}_1)r_{12}^{-1}\chi_k^*(\bo{x}_2)\chi_l(\bo{x}_2) = \braket{ik|jl}$\\
-		$\braket{ij||kl}=\braket{ij|kl} - \braket{ij|lk}=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2) $\\
+        \(
+        \begin{aligned}
+            [i|h|j] &=\braket{i|h|j}=\int\ddx_1\chi_i^*(\bo{x}_1)h(\bo{r}_1)\chi_j(\bo{x}_1)\\
+            \braket{ij|kl} &=\braket{\chi_i\chi_j|\chi_k\chi_l}=\int\ddx_1\ddx_2\chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)=[ik|jl]\\
+            [ij|kl] &=[\chi_i\chi_j|\chi_k\chi_l]=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j(\bo{x}_1)r_{12}^{-1}\chi_k^*(\bo{x}_2)\chi_l(\bo{x}_2) = \braket{ik|jl}\\
+            \braket{ij||kl} &=\braket{ij|kl} - \braket{ij|lk}=\int\ddx_1\ddx_2 \chi_i^*(\bo{x}_1)\chi_j^*(\bo{x}_2)r_{12}^{-1}(1-\mathscr{P}_{12})\chi_k(\bo{x}_1)\chi_l(\bo{x}_2)
+        \end{aligned}
+        \)\\
 		\multicolumn{1}{c}{\textit{空间轨道}}\\
-		$(i|h|j)=h_{ij} = (\psi_i|h|\psi_j)=\int\dd\bo{r}_1\psi_i^*(\bo{r}_1)h(\bo{r}_1)\psi_j(\bo{r}_1)$\\
-		$(ij|kl)=(\psi_i\psi_j|\psi_k\psi_l)=\int\dd\bo{r}_1\dd\bo{r}_2\psi_i^*(\bo{r}_1)\psi_j(\bo{r}_1)r_{12}^{-1}\psi_k^*(\bo{r_2})\psi_l(\bo{r}_2) $\\
-		$J_{ij}\,\,=(ii|jj)$ 库伦积分\\
-		$K_{ij}=(ij|ji)$ 交换积分\\\hline
-	\end{tabular}
+        \(
+        \begin{aligned}
+            (i|h|j)&=h_{ij}=(\psi_i|h|\psi_j)=\int\dd\bo{r}_1\psi_i^*(\bo{r}_1)h(\bo{r}_1)\psi_j(\bo{r}_1)\\
+            (ij|kl)&=(\psi_i\psi_j|\psi_k\psi_l)=\int\dd\bo{r}_1\dd\bo{r}_2\psi_i^*(\bo{r}_1)\psi_j(\bo{r}_1)r_{12}^{-1}\psi_k^*(\bo{r_2})\psi_l(\bo{r}_2)\\
+            J_{ij}&=(ii|jj)\,\,\text{库伦积分}\\
+            K_{ij}&=(ij|ji)\,\,\text{交换积分}
+        \end{aligned}
+        \)\\
+        \hline
+	\end{tabularx}
 	\label{t2.2}
 \end{table}
 
@@ -1661,48 +1689,48 @@ $\ket{K}$中的$\chi_m,\chi_n$在$\ket{L}$中变成$\chi_p,\chi_q$，其余都�
 矩阵元同样也是0.
 
 
-\begin{table}[h]
+\begin{table}[ht]
 	\renewcommand\arraystretch{1.7}
 	\centering
 	\caption{\bf 单电子算符在行列式间的矩阵元（关于自旋轨道）}
 	\label{t2.3}
 	\begin{tabularx}{\textwidth}{lY}
 		\hline
-		\multicolumn{2}{c}{$\mathcal{O}_1=\sum_{i=1}^Nh(i)$} \\\hline
-		Case 1: $\ket{K}=\ket{\cdots mn\cdot}$&\\
-		\multicolumn{2}{c}{$\braket{K|\mathcal{O}_1|K} = \sum_m^N [m|h|m]=\sum_m^N\braket{m|h|m}$}\\
+		\multicolumn{2}{c}{$\displaystyle\mathcal{O}_1=\sum_{i=1}^Nh(i)$} \\\hline
+		Case 1: $\ket{K}=\ket{\cdots mn\cdots}$&\\
+		\multicolumn{2}{c}{$\displaystyle\braket{K|\mathcal{O}_1|K} = \sum_m^N [m|h|m]=\sum_m^N\braket{m|h|m}$}\\
 		Case 2: \parbox[t]{.5\textwidth}{
-		$\ket{K}=\ket{\cdots mn\cdot}$\\
-		$\ket{L}\,=\ket{\cdots pn\cdot}$
+		$\ket{K}=\ket{\cdots mn\cdots}$\\
+		$\ket{L}\,=\ket{\cdots pn\cdots}$
 			}&	\\
 		\multicolumn{2}{c}{$\braket{K|\mathcal{O}_1|L} = [m|h|p]=\braket{m|h|p}$}\\
 		Case 3: \parbox[t]{5cm}{
-			$\ket{K}=\ket{\cdots mn\cdot}$\\
-			$\ket{L}\,=\ket{\cdots pq\cdot}$}& \\
+			$\ket{K}=\ket{\cdots mn\cdots}$\\
+			$\ket{L}\,=\ket{\cdots pq\cdots}$}& \\
 		\multicolumn{2}{c}{$\braket{K|\mathcal{O}_1|L} = 0$}\\\hline
 		
 	\end{tabularx}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[ht]
 	\renewcommand\arraystretch{1.7}
 	\centering
 	\caption{\bf 双电子算符在行列式间的矩阵元（关于自旋轨道）}
 	\label{t2.4}
 	\begin{tabularx}{\textwidth}{lY}
 		\hline
-		\multicolumn{2}{c}{$\mathcal{O}_2=\sum_{i=1}^N\sum_{j>i}^{N}r_{ij}^{-1} $}\\\hline
-		Case 1: $\ket{K}=\ket{\cdots mn\cdot}$&\\
-		\multicolumn{2}{c}{$\braket{K|\mathcal{O}_2|K} = \frac{1}{2}\sum_m^N\sum_n^N [mm|nn]-[mn|nm]=\frac{1}{2}\sum_m^N\sum_n^N\braket{mn||mn}$}\\
+		\multicolumn{2}{c}{$\displaystyle\mathcal{O}_2=\sum_{i=1}^N\sum_{j>i}^{N}r_{ij}^{-1} $}\\\hline
+		Case 1: $\ket{K}=\ket{\cdots mn\cdots}$&\\
+		\multicolumn{2}{c}{$\displaystyle\braket{K|\mathcal{O}_2|K} = \frac{1}{2}\sum_m^N\sum_n^N [mm|nn]-[mn|nm]=\frac{1}{2}\sum_m^N\sum_n^N\braket{mn||mn}$}\\
 		Case 2: \parbox[t]{5cm}{
-			$\ket{K}=\ket{\cdots mn\cdot}$\\
-			$\ket{L}\,=\ket{\cdots pn\cdot}$
+			$\ket{K}=\ket{\cdots mn\cdots}$\\
+			$\ket{L}\,=\ket{\cdots pn\cdots}$
 		}	&\\
-		\multicolumn{2}{c}{$\braket{K|\mathcal{O}_2|L} = \sum_n^N[mp|nn]-[mn|np]=\sum_n^N\braket{mn||pn}$}\\
+		\multicolumn{2}{c}{$\displaystyle\braket{K|\mathcal{O}_2|L} = \sum_n^N[mp|nn]-[mn|np]=\sum_n^N\braket{mn||pn}$}\\
 		Case 3: \parbox[t]{5cm}{
-			$\ket{K}=\ket{\cdots mn\cdot}$\\
-			$\ket{L}\,=\ket{\cdots pq\cdot}$}&\\
-		\multicolumn{2}{c}{$\braket{K|\mathcal{O}_2|L} = [mp|nq]-[mq|np]=\braket{mn||pq}$}\\\hline
+			$\ket{K}=\ket{\cdots mn\cdots}$\\
+			$\ket{L}\,=\ket{\cdots pq\cdots}$}&\\
+		\multicolumn{2}{c}{$\displaystyle\braket{K|\mathcal{O}_2|L} = [mp|nq]-[mq|np]=\braket{mn||pq}$}\\\hline
 	\end{tabularx}
 \end{table}
 
@@ -1801,31 +1829,31 @@ $r,s$等同于$p,q$(未占轨道).
 \autoref{t2.5}和\autoref{t2.6}列出了Hartree-Fock基态的矩阵元(\textit{情形1})以及其与单激发行列式的矩阵元(\textit{情形2}), 
 以及与双激发行列式的矩阵元(\textit{情形3}).
 
-\begin{table}[h]
+\begin{table}[ht]
 	\renewcommand\arraystretch{1.7}
 	\centering
 	\caption{\bf Hartree-Fock基态下单电子算符的矩阵元}
 	\label{t2.5}
 	\begin{tabularx}{\textwidth}{lY}
 		\hline
-		\multicolumn{2}{c}{$\mathcal{O}_1=\sum_{i=1}^Nh(i) $}\\\hline
-		Case 1: & $\braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_m^N [a|h|a]=\sum_m^N\braket{a|h|a}$\\
-		Case 2: & $\braket{\Psi_0|\mathcal{O}_1|\Psi_a^r} = [a|h|r]=\braket{a|h|r}$\\
-		Case 3: & $\braket{\Psi_0|\mathcal{O}_1|\Psi_{ab}^{rs}} = 0$\\\hline
+		\multicolumn{2}{c}{$\displaystyle\mathcal{O}_1=\sum_{i=1}^Nh(i) $}\\\hline
+		Case 1: & $\displaystyle\braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_a^N [a|h|a]=\sum_a^N\braket{a|h|a}$\\
+		Case 2: & $\displaystyle\braket{\Psi_0|\mathcal{O}_1|\Psi_a^r} = [a|h|r]=\braket{a|h|r}$\\
+		Case 3: & $\displaystyle\braket{\Psi_0|\mathcal{O}_1|\Psi_{ab}^{rs}} = 0$\\\hline
 	\end{tabularx}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[ht]
 	\renewcommand\arraystretch{1.7}
 	\centering
 	\caption{\bf Hartree-Fock基态下双电子算符的矩阵元}
 	\label{t2.6}
 	\begin{tabularx}{\textwidth}{lY}
 		\hline
-		\multicolumn{2}{c}{\parbox{\textwidth}{\centering$\mathcal{O}_2=\sum_{i=1}^N\sum_{j>i}^{N}r_{ij}^{-1} $}}\\\hline
-		Case 1: & $\braket{\Psi_0|\mathcal{O}_2|\Psi_0} = \frac{1}{2}\sum_m^N\sum_n^N [aa|bb]-[ab|ba]=\frac{1}{2}\sum_m^N\sum_n^N\braket{ab||ab}$\\
-		Case 2: & $\braket{\Psi_0|\mathcal{O}_2|\Psi_a^r} = \sum_n^N[ar|bb]-[ab|br]=\sum_n^N\braket{ab||rb}$\\
-		Case 3: & $\braket{\Psi_0|\mathcal{O}_2|\Psi_{ab}^{rs}} = [ar|bs]-[as|br]=\braket{ab||rs}$\\\hline
+		\multicolumn{2}{c}{$\displaystyle\mathcal{O}_2=\sum_{i=1}^N\sum_{j>i}^{N}r_{ij}^{-1} $}\\\hline
+		Case 1: & $\displaystyle\braket{\Psi_0|\mathcal{O}_2|\Psi_0} = \frac{1}{2}\sum_a^N\sum_b^N [aa|bb]-[ab|ba]=\frac{1}{2}\sum_a^N\sum_b^N\braket{ab||ab}$\\
+		Case 2: & $\displaystyle\braket{\Psi_0|\mathcal{O}_2|\Psi_a^r} = \sum_b^N[ar|bb]-[ab|br]=\sum_b^N\braket{ab||rb}$\\
+		Case 3: & $\displaystyle\braket{\Psi_0|\mathcal{O}_2|\Psi_{ab}^{rs}} = [ar|bs]-[as|br]=\braket{ab||rs}$\\\hline
 	\end{tabularx}
 \end{table}
 
@@ -1866,7 +1894,9 @@ E_0 =& \braket{1|h|1} + \braket{2|h|2} + \braket{12||12}\notag\\
 =&\sum_c^N\braket{c|h|c}-\braket{a|h|a}+\braket{r|h|r} & \text{若}a=b,r=s
 \end{align*}
 \Next
-$N$电子体系的Hartree-Fock基态能为$^NE_0=\braket{^N\Phi_0|\hs|^N\Phi_0}$. 考虑一个被电离的体系（即其中一个电子被挪出了$\chi_a$轨道），其能量为$^{N-1}E_a=\braket{^{N-1}\Phi_a|\hs|^{N-1}\Phi_a}$, 其中$\ket{^{N-1}\Phi_a}$是除了$\chi_a$之外的被占轨道组成的单Slater行列式.
+$N$电子体系的Hartree-Fock基态能为$^NE_0=\braket{^N\Phi_0|\hs|^N\Phi_0}$. 
+考虑一个能量为$^{N-1}E_a=\braket{^{N-1}\Phi_a|\hs|^{N-1}\Phi_a}$的被电离的体系（即其中一个电子被挪出了$\chi_a$轨道），
+其中$\ket{^{N-1}\Phi_a}$是除了$\chi_a$之外的被占轨道组成的单Slater行列式.
 \[
 \ket{^{N-1}\Phi_a} = \ket{\chi_1\chi_2\cdots\chi_{a-1}\chi_{a+1}\cdots\chi_N}
 \]
@@ -1875,7 +1905,7 @@ $N$电子体系的Hartree-Fock基态能为$^NE_0=\braket{^N\Phi_0|\hs|^N\Phi_0}$
 \begin{equation*}
 ^NE_0-^{N-1}E_a = \braket{a|h|a} + \sum_b^N \braket{ab||ab}
 \end{equation*}
-为显出本节介绍的记忆方法的优势, 
+为显出本节介绍的记忆方法的优势，
 在此我们不借助运算来推导以上结果. 
 考虑\autoref{fig2.4}中$\ket{^N\Psi_0}$的表示.
 若从$\chi_a$中挪去一个电子, 
@@ -2251,7 +2281,7 @@ E_0 = [{\psi_1|h|\psi_1}] + [{\bar{\psi}_1|h|\bar{\psi}_1}] + [{\psi_1\psi_1|\ba
 \begin{equation}
 [\bar{\psi}_1|h|\bar{\psi}_1] = \int\dd{r}\dd\omega_1\psi_1^*(\mathbf{r}_1)\beta^*(\omega_1)h(\mathbf{r}_1)\psi_1(\mathbf{r}_1)\beta(\omega_1)
 \end{equation}
-式中假设单电子算符不依赖自旋(这正是非相对论\ha 的情况). 
+式中假设单电子算符不依赖自旋(这正是非相对论哈密顿量的情况). 
 完成对$\omega_1$的积分并注意到$\braket{\beta|\beta}=1$, 
 有
 \begin{equation}
@@ -2338,7 +2368,7 @@ E_0 & = 2(\psi_1|h|\psi_1) + (\psi_1\psi_1|\psi_1\psi_1) \notag\\
 \label{2.169}
 E_0 = \sum_{a}^{N} [a|h|a] + \frac{1}{2}\sum_{a}^{N}\sum_{b}^{N}([aa|bb] - [ab|ba])
 \end{equation}
-\begin{figure}[h]\centering
+\begin{figure}[ht]\centering
 \begin{minipage}[c]{.3\textwidth}
 	\begin{tikzpicture}
 	\filldraw[thick] 
@@ -2470,7 +2500,7 @@ J_{ij} = (ii|jj) = \braket{ij|ij}
 \begin{equation}
 K_{ij} = (ij|ji) = \braket{ij|ji}
 \end{equation}
-库伦积分和交换积分的值都是正的\footnote{译者注：数学上严格证明交换积分总为正是不平凡的一件事情. 可以参考 https://www.zhihu.com/question/37292504}. 
+库伦积分和交换积分的值都是正的\footnote{译者注：数学上严格证明交换积分总为正不是一件平凡的事情，具体证明可以参考 https://www.zhihu.com/question/37292504}. 
 下面我们证明行列式对应的能量中的交换积分是由\emph{交换相关}(exhcange correlation)作用引起的(也就是说,
 在单行列式近似下, 
 同自旋电子的运动相互关联). 
@@ -2484,8 +2514,8 @@ E_0 = 2\sum_a h_{aa} + \sum_{ab}2J_{ab} - K_{ab}
 证明交换积分和库伦积分有如下性质:
 \begin{gather*}
 J_{ii} = K_{ii}\\
-J_{ij}^* = J_{ij} \qquad K_{ij}^* = K_{ji}\\
-J_{ij} = J_{ij} \qquad K_{ij} = K_{ji}
+J_{ij}^* = J_{ij} \qquad K_{ij}^* = K_{ij}\\
+J_{ij} = J_{ji} \qquad K_{ij} = K_{ji}
 \end{gather*}
 \Next
 证明对于\emph{实}空间轨道
@@ -2557,8 +2587,8 @@ Hartree积近似下, 两个同自旋电子的运动之间没有关联, 因此如
 将限制性单行列式(由自旋轨道$\{ \psi_i\alpha \}$和$\{ \psi_i\beta \}$构成)的能量用$h_{ii}$、库伦积分$(J_{ij})$、交换积分$K_{ij}$写出. 
 实际上两种写法都很方便.
 
-先讨论能量中的单电子项. 
-之前提过自旋轨道$\chi_i$上的一电子会贡献出一项 $\braket{i|h|i}$ . 
+先讨论能量中的单电子贡献. 
+之前提过自旋轨道$\chi_i$上的一个电子会贡献出一项 $\braket{i|h|i}$ . 
 若$\chi_i=\psi_i\alpha$, 
  那么$\braket{i|h|i} = \braket{\psi_i\alpha|h|\psi_i\alpha} = (\psi_i|h|\psi_i) = h_{ii}$. 
 若$\chi_i = \psi_i\beta$, 
@@ -2746,7 +2776,7 @@ a_i^\dagger \ket{\chi_k\cdots\chi_l} = \ket{\chi_i\chi_k\cdots\chi_l}
 \begin{align*}
 (\cs_1\cs_2 + \cs_2\cs_1)\ket{K} = 0
 \end{align*}
-其中$\ket{K}$是以下行列式中的任意一个$\{ \ket{\chi_1\chi_2}, \ket{\chi_1\chi_3}, \ket{\chi_1\chi_4}, \ket{\chi_2\chi_3}, \ket{\chi_2\chi_4}, \ket{\chi_3\chi_4}, \}$
+其中$\ket{K}$是集合$\{ \ket{\chi_1\chi_2}, \ket{\chi_1\chi_3}, \ket{\chi_1\chi_4}, \ket{\chi_2\chi_3}, \ket{\chi_2\chi_4}, \ket{\chi_3\chi_4}\}$中的任意一个.
 }
 现在引进\emph{湮灭算符} $a_i$. 
 它是产生算符$\cs_i$的伴随算符(adjoint operator)(即$(\cs_i)^\dagger = a_i$). 
@@ -3030,7 +3060,7 @@ $\mathcal{O}_1$(单电子算符之和)与$\mathcal{O}_2$(电子间的总的库�
 令$\Psi_0 = \ket{\chi_1\chi_2} = \cs_1\cs_2\ket{\,\,}$为\phrase{极小基 $\mathrm{H}_2$}的Hartree-Fock波函数. 
 请用二次量子化的办法证明
 \begin{align*}
-\braket{\Psi_0|\mathcal{O}_1|\Psi_0} = \sum_{ij}\braket{i|h|j}\braket{\,\,|a_2 a_1 \cs_i a_j \cs_1\cs_2|\,\,}
+\braket{\Psi_0|\mathcal{O}_1|\Psi_0} &= \sum_{ij}\braket{i|h|j}\braket{\,\,|a_2 a_1 \cs_i a_j \cs_1\cs_2|\,\,}\\
 & = \braket{1|h|1} + \braket{2|h|2}
 \end{align*}
 }
@@ -3085,7 +3115,7 @@ $\cs_i$作用在左边),
 = & \delta_{bd}\delta_{ac}\braket{\Psi_0|\Psi_0} - \delta_{bd}\braket{\Psi_0|a_c\cs_a|\Psi_0}\\
 & - \delta_{bc}\braket{\Psi_0|\cs_aa_d|\Psi_0} + \braket{\Psi_0|\cs_aa_da_c\cs_b|\Psi_0}\\
 = & \delta_{bd}\delta_{ac} - \delta_{bc}\delta_{ad}\braket{\Psi_0|\Psi_{0}} + \delta_{bc}\braket{\Psi_0|a_d\cs_a|\Psi_0}\\
-=　& \delta_{bd}\delta_{ac} - \delta_{bc}\delta_{ad}
+= & \delta_{bd}\delta_{ac} - \delta_{bc}\delta_{ad}
 \end{align*}
 结果就是两项：第一项中令$c=a,d=b$, 
 第二项令$c=b,d=a$, 
@@ -3251,8 +3281,8 @@ a) 由\autoref{eq:2.245}导出\autoref{eq:2.247}; b)推导\autoref{eq:2.248}.
 	\ts_z\ket{\Phi} & = M_S\ket{\Phi}
 	\end{align}
 \end{subequations}
-式中$S,M_S$分别是$N$-电子态$\ket{\Phi}$的总自旋量子数及其分量. 
-总自旋为$S=0,\frac{1}{2},1,\frac{3}{2},\ldots$的态, 
+式中$S,M_S$分别是$N$-电子态$\ket{\Phi}$的总自旋量子数及其$z$方向上的分量. 
+总自旋量子数为$S=0,\frac{1}{2},1,\frac{3}{2},\ldots$的态, 
 其多重度为$(2S+1)=1,2,3,4,\ldots$, 
 我们分别把这些态称作单重态、双重态、三重态、四重态等等. 
 \sch 方程的近似解并不一定是纯自旋态. 
@@ -3316,7 +3346,7 @@ $N^\beta$是具有$\beta$自旋的轨道数目.
 这些自旋轨道称为\emph{限制性}自旋轨道, 
 用这些轨道构成的行列式称为限制性行列式. 
 在这样的行列式内, 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[thick]
 	%=========== figure left, from bottom to top===========================
@@ -3409,7 +3439,7 @@ $s_+\psi\beta = \psi\alpha$,
 & =2^{-1/2}[ \psi_1(1)\psi_2(2) - \psi_1(2)\psi_2(1)] 2^{-1/2}(\alpha(1)\beta(2) + \beta(1)\alpha(2))
 \end{align}
 
-\begin{figure}[H]
+\begin{figure}[ht]
 	\centering
 	\begin{tikzpicture}[thick]
 	%=========== figure left, from bottom to top===========================
@@ -3489,9 +3519,10 @@ $\ket{\Psi_{1}^{\bar{2}}}$
 记为$\ket{^A\Psi_{ab}^{rs}}, \ket{^B\Psi_{ab}^{rs}}$.
 
 
-\begin{table}[h]
+\begin{table}[ht]
     \centering
     \caption{\bf 双激发单重自旋匹配组态}
+	\footnotesize
     \label{t2.7}
 	\begin{tabular}{ll}
             \hline \\
@@ -3511,7 +3542,7 @@ $\ket{\Psi_{1}^{\bar{2}}}$
 		\draw (0,.7)node[left]{$r$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
 		\draw (0,1.05)node[left]{$s$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
 		\end{tikzpicture}
-		& ${\ket{^1\Psi_{aa}^{rs}}} = 2^{-1/2}(\ket{\Psi_{a\bar{a}}^{r\bar{s}}} + \ket{\Psi_{a\bar{a}}^{s\bar{r}}})$\\
+		& ${\ket{^1\Psi_{aa}^{rs}}} = 2^{-1/2}\left(\ket{\Psi_{a\bar{a}}^{r\bar{s}}} + \ket{\Psi_{a\bar{a}}^{s\bar{r}}}\right)$\\
 		%============ 3 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
@@ -3519,7 +3550,7 @@ $\ket{\Psi_{1}^{\bar{2}}}$
 		\draw (0,.7)node[left]{$r$}--++(.5,0)node{$\uparrow\downarrow$}--++(.5,0);
 		\draw (0,1.05)node[left]{$s$}--++(.5,0)--++(.5,0);
 		\end{tikzpicture}
-		& ${\ket{^1\Psi_{ab}^{rr}}} = 2^{-1/2}(\ket{\Psi_{a\bar{b}}^{\bar{r}r}} + \ket{\Psi_{a\bar{b}}^{r\bar{r}}}$\\
+		& ${\ket{^1\Psi_{ab}^{rr}}} = 2^{-1/2}\left(\ket{\Psi_{a\bar{b}}^{\bar{r}r}} + \ket{\Psi_{a\bar{b}}^{r\bar{r}}}\right)$\\
 		%============ 4 ===============
 		\begin{tikzpicture}[baseline={(current bounding box.center)}]
 		\draw (0, 0)node[left]{$a$}--++(.5,0)node{\raisebox{-15pt}{\Large*}}--++(.5,0);
@@ -3529,8 +3560,8 @@ $\ket{\Psi_{1}^{\bar{2}}}$
 		\end{tikzpicture}
 		& 
 		$\begin{aligned}
-                    {\ket{^A\Psi_{ab}^{rs}}} &= (12)^{-1/2}(2\ket{\Psi_{ab}^{rs}} + 2\ket{\Psi_{\bar{a}\bar{b}}^{\bar{r}\bar{s}}} - \ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} - \ket{\Psi_{a\bar{b}}^{s\bar{r}}}\\
-		{\ket{^B\Psi_{ab}^{rs}}} & = \frac{1}{2}(\ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} + \ket{\Psi_{a\bar{b}}^{s\bar{r}}})
+                    {\ket{^A\Psi_{ab}^{rs}}} &= (12)^{-1/2}\left(2\ket{\Psi_{ab}^{rs}} + 2\ket{\Psi_{\bar{a}\bar{b}}^{\bar{r}\bar{s}}} - \ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} - \ket{\Psi_{a\bar{b}}^{s\bar{r}}}\right)\\
+		{\ket{^B\Psi_{ab}^{rs}}} & = \frac{1}{2}\left(\ket{\Psi_{\bar{a}b}^{\bar{s}r}} + \ket{\Psi_{\bar{a}b}^{\bar{r}s}} + \ket{\Psi_{a\bar{b}}^{r\bar{s}}} + \ket{\Psi_{a\bar{b}}^{s\bar{r}}}\right)
 		\end{aligned}$
                 \\\hline
 	\end{tabular}
@@ -3563,7 +3594,7 @@ $1s\alpha$和$1s\beta$电子感受到的有效势场不相同,
 事实确实如此. 
 波函数\autoref{eq:2.265}是\emph{非限制性}行列式一例. 
 它就是$\mathrm{Li}$原子的非限制性基态波函数.
-\begin{figure}[H]
+\begin{figure}[ht]
         \centering
         \begin{tikzpicture}[thick]
         \draw (.75,-1)node{RHF};
@@ -3617,7 +3648,7 @@ Li原子的UHF基态不像RHF基态\autoref{eq:2.264}那样是一个纯双重态
 
 \begin{figure}\centering
         \begin{tikzpicture}[thick]
-        \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_1^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha\bar{\psi_3^\beta}}$};
+        \draw (2, -1.5)node{$\displaystyle \ket{^1\Psi} = \ket{\psi_1^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha\bar{\psi_3^\beta}}$};
         %=========== figure left, from bottom to top===========================
         \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
         \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
@@ -3659,51 +3690,54 @@ Li原子的UHF基态不像RHF基态\autoref{eq:2.264}那样是一个纯双重态
 使用非限制性行列式要闭限制性所得的能量更低, 
 正如我们在下一章将看到的那样.
 
-\begin{figure}                                                                                                \begin{minipage}{.48\textwidth}                                                                       \begin{tikzpicture}[thick]                                                                            \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_2^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha}$};
-        %=========== figure left, from bottom to top===========================
-        \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
-        \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
-        \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (0,2.2)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
-        %=========== figure right, from bottom to top===========================
-        \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
-        \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
-        \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
-        \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
-        \end{tikzpicture}
-        \caption{一个\emph{近似}为双重态的非限制性行列式. }
-        \label{fig:2.15}
-        \end{minipage}\qquad
-        \begin{minipage}{.48\textwidth}
-        \begin{tikzpicture}[thick]
-        \draw (2, -1.5)node{$\displaystyle {^1\Psi} = \ket{\psi_3^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha{\psi_3^\alpha}}$};
-        %=========== figure left, from bottom to top===========================
-        \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
-        \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
-        \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (0,2.2)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
-        %=========== figure right, from bottom to top===========================
-        \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
-        \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
-        \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
-        \draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
-        \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
-        \filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
-        \end{tikzpicture}
-        \caption{一个\emph{近似}为三重态的非限制性行列式. }
-        \label{fig:2.16}
-        \end{minipage}
-\end{figure}  
+\begin{figure}
+	\begin{minipage}{.45\textwidth}
+    \begin{tikzpicture}[thick]
+    \draw (2, -1.5)node{$\displaystyle \ket{^2\Psi} = \ket{\psi_1^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha}$};
+    %=========== figure left, from bottom to top===========================
+    \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
+    \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
+    \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (0,2.2)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
+    %=========== figure right, from bottom to top===========================
+    \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
+    \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
+    \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
+    \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
+    \end{tikzpicture}
+    \caption{一个\emph{近似}为双重态的非限制性行列式. }
+    \label{fig:2.15}
+    \end{minipage}\qquad
+    \begin{minipage}{.45\textwidth}
+    \begin{tikzpicture}[thick]
+    \draw (2, -1.5)node{$\displaystyle \ket{^3\Psi} = \ket{\psi_1^\alpha\bar{\psi_1^\beta}\psi_2^\alpha\bar{\psi_2^\beta}\psi_3^\alpha{\psi_4^\alpha}}$};
+    %=========== figure left, from bottom to top===========================
+    \draw (.75, -.6)node{$\displaystyle {\psi_i^\alpha}$};
+    \draw (0,0)-- ++(.5,0)-- node{$\uparrow$} ++(.5,0)-- ++(.5,0);
+    \draw (0,.8)--++(.5,0)-- node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (0,1.4)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (0,2.2)--++(.5,0)--node{$\uparrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (0,2.8)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \filldraw (0.75,3)circle(.5pt) (.75,3.2)circle(.5pt) (.75,3.4)circle(.5pt);
+    %=========== figure right, from bottom to top===========================
+    \draw (3.25, -.6)node{$\displaystyle {\psi_i^\beta}$};
+    \draw (2.5,.4)-- ++(.5,0)-- node{$\downarrow$} ++(.5,0)-- ++(.5,0);
+    \draw (2.5,1)--++(.5,0)-- node{$\downarrow$} ++(.5,0)node{}-- ++(.5,0);
+    \draw (2.5,1.7)--++(.5,0)--node{} ++(.5,0)node{}-- ++(.5,0);
+    \draw (2.5,2.5)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \draw (2.5,3)--++(.5,0)node{}-- ++(.5,0)node{}-- ++(.5,0);
+    \filldraw (3.25,3.2)circle(.5pt) (3.25,3.4)circle(.5pt) (3.25,3.6)circle(.5pt);
+    \end{tikzpicture}
+    \caption{一个\emph{近似}为三重态的非限制性行列式. }
+    \label{fig:2.16}
+    \end{minipage}
+\end{figure}
 
 若$N^\alpha=N^\beta+1$, 
 那么非限制性行列式近似地为双重态(见\autoref{fig:2.15}). 
